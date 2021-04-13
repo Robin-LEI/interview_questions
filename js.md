@@ -141,15 +141,75 @@
        }
        ```
 
-       
+3. 实现add(1)(2)(3)
+
+   - 考点：函数柯里化，柯里化是把接受多个参数的函数转变为接受一个单一参数的函数，并且返回接受余下的参数且返回结果的新函数的技术。
+
+     ```js
+     // 求和函数
+     function add(...args) {
+         return args.reduce((a, b) => a + b);
+     }
+     // 把求和函数变为柯里化函数
+     function currying(fn) {
+         let args = [];
+         return function temp(...newArgs) {
+             if (newArgs.length) { // 继续调用
+                 args = [...args, ...newArgs];
+                 return temp; // 继续返回函数，以便支持链式调用
+             } else { // 开始执行
+                 let val = fn.apply(this, args);
+                 args = []; // 清空，以便下一次使用的时候，不被污染
+                 return val;
+             }
+         }
+     }
+     // 测试
+     let addCurry = currying(add)
+     console.log(addCurry(1)(2)(3)(4, 5)())  //15
+     console.log(addCurry(12)(221)(3, 4, 5)())  //15
+     console.log(addCurry(1)(2, 3, 4, 5)())  //15
+     ```
+
+4. 类数组和数组的区别，dom的类数组如何转换为数组
+
+   - 数组是一个特殊的对象，与常规对象的区别：
+
+     - 当有新元素添加到列表中，自动更新length属性
+     - 设置length属性，可以截断数组
+     - 从Array.prototype中继承了方法
+
+   - 类数组是一个拥有length属性，并且它的属性为非负整数的普通对象，类数组不能直接调用数组的方法
+
+   - 本质区别：类数组是简单对象，它的原型关系和数组不同
+
+     ```js
+     let arrayLike = {
+         length: 10,
+     };
+     console.log(arrayLike instanceof Array); // false
+     console.log(arrayLike.__proto__.constructor === Array); // false
+     console.log(arrayLike.toString()); // [object Object]
+     console.log(arrayLike.valueOf()); // {length: 10}
+     
+     let array = [];
+     console.log(array instanceof Array); // true
+     console.log(array.__proto__.constructor === Array); // true
+     console.log(array.toString()); // ''
+     console.log(array.valueOf()); // []
+     ```
+
+   - 类数组转为数组
+
+     ```js
+     Array.from()
+     Array.prototype.slice.call()
+     Array.prototype.forEach() 进行属性遍历并组成一个新的数组
+     // 注意，转换后的数组长度由length属性决定，索引不连续时转换结果是连续的，会自动使用undefined补位。
+     ```
 
      
 
-     
+5. 。。。
 
-     
-
-     
-
-     
 
