@@ -81,4 +81,167 @@
      - link是XHTML标签，没有兼容性问题；@import是css2.1提出的，低版本浏览器不支持。
      - link支持使用JavaScript控制DOM去改变样式；而@import不支持。
 
-4. 
+4. 屏幕之间有个元素A，元素A中有文字A，随着屏幕宽度的增加，始终需要满足如下条件
+
+   ```html
+   <!-- 
+       A元素垂直居中于屏幕中央
+       A元素距离屏幕左右边距各10px
+       A元素里面的文字A的font-size:20px；水平垂直居中
+       A元素的高度始终是A元素宽度的50%；(如果搞不定可以实现为A元素的高度固定为200px)
+       请用html及css实现
+   -->
+   <!-- 方法1 -->
+   <!DOCTYPE html>
+   <html lang="en">
+   
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>居中</title>
+   
+     <style>
+       html,
+       body {
+         padding: 0;
+         margin: 0;
+         height: 100%;
+       }
+   
+       body {
+         display: flex;
+         align-items: center;
+       }
+   
+       .A {
+         flex: 1;
+         margin: 0 10px;
+         /* 当padding-top值为%的时候，定义基于父元素宽度的百分比内边距，但是在不同版本的浏览器中可能
+         会存在兼容性
+          */
+         padding-top: 50%;
+         position: relative;
+         background: #999;
+       }
+   
+       .A::after {
+         content: 'A';
+         display: block;
+         font-size: 20px;
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+       }
+     </style>
+   </head>
+   
+   <body>
+     <div class="A"></div>
+   </body>
+   
+   </html>
+   
+   <!-- 方法2 -->
+   <!DOCTYPE html>
+   <html lang="en">
+   
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>居中</title>
+   </head>
+   
+   <body>
+     <style>
+       * {
+         padding: 0;
+         margin: 0;
+       }
+   
+       .A {
+         margin: 0 10px;
+         text-align: center;
+         font-size: 20px;
+         position: absolute;
+         top: 50%;
+         transform: translateY(-50%);
+         width: calc(100vw - 20px);
+         height: calc(50vw - 10px);
+         line-height: calc(50vw - 10px);
+         background-color: aquamarine;
+       }
+     </style>
+     <div class="A">
+       A
+     </div>
+   </body>
+   
+   </html>
+   ```
+
+   
+
+5. Css实现一个半圆
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   
+   <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Document</title>
+     <style>
+       .box {
+         width: 200px;
+         height: 100px;
+         background-color: pink;
+       }
+       .box2 {
+         width: 100px;
+         height: 200px;
+         background-color: beige;
+       }
+       /* border-radius 顺序：左上、右上、右下、左下 */
+       /* 上半圆 */
+       .semi-circle1 {
+         border-radius: 100px 100px 0 0;
+       }
+   
+       /* 下半圆 */
+       .semi-circle2 {
+         border-radius: 0 0 100px 100px;
+       }
+       
+   
+       /* 左半圆 */
+       .semi-circle3 {
+         border-radius: 100px 0 0 100px;
+       }
+       
+   
+       /* 右半圆 */
+       .semi-circle4 {
+         border-radius: 0 100px 100px 0;
+       }
+       
+     </style>
+   </head>
+   
+   <body>
+     <div class="box semi-circle1"></div>
+     <div class="box semi-circle2"></div>
+     <div class="box2 semi-circle3"></div>
+     <div class="box2 semi-circle4"></div>
+   </body>
+   
+   </html>
+   ```
+
+   
+
+6. 
