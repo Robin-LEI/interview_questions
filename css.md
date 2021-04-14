@@ -244,4 +244,125 @@
 
    
 
-6. 
+6. 上下固定，中间滚动布局如何实现
+
+   ```html
+   <!-- flex布局 -->
+   <!DOCTYPE html>
+   <html lang="en">
+   
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>flex</title>
+     <style>
+       html,
+       body {
+         padding: 0;
+         margin: 0;
+         height: 100%;
+       }
+   
+       .wrap {
+         display: flex;
+         height: 100%;
+         flex-direction: column;
+       }
+   
+       .header,
+       .footer {
+         height: 40px;
+         line-height: 40px;
+         text-align: center;
+         background-color: cadetblue;
+       }
+   
+       .main {
+         flex: 1;
+         background-color: chocolate;
+         /* 内容过多，自动出现滚动条 */
+         overflow: auto;
+         text-align: center;
+       }
+     </style>
+   </head>
+   
+   <body>
+     <div class="wrap">
+       <div class="header">header</div>
+       <div class="main">main</div>
+       <div class="footer">footer</div>
+     </div>
+   </body>
+   
+   </html>
+   
+   <!-- 定位 -->
+   <!DOCTYPE html>
+   <html lang="en">
+   
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>position</title>
+     <style>
+       html,
+       body {
+         padding: 0;
+         margin: 0;
+         height: 100%;
+       }
+   
+       .header,
+       .footer {
+         position: absolute;
+         width: 100%;
+         height: 40px;
+         line-height: 40px;
+         text-align: center;
+         background-color: chocolate;
+       }
+   
+       .header {
+         top: 0;
+         left: 0;
+       }
+   
+       .footer {
+         bottom: 0;
+         left: 0;
+       }
+   
+       .main {
+         width: 100%;
+         position: absolute;
+         top: 40px;
+         left: 0;
+         bottom: 40px;
+         right: 0;
+         background-color: cadetblue;
+         overflow: auto;
+         text-align: center;
+       }
+     </style>
+   </head>
+   
+   <body>
+     <div class="wrap">
+       <div class="header">header</div>
+       <div class="main">
+         main
+         <div style="height:2000px;"></div>
+       </div>
+       <div class="footer">footer</div>
+     </div>
+   </body>
+   
+   </html>
+   ```
+
+   
+
+7. 
