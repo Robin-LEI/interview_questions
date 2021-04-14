@@ -210,6 +210,43 @@
 
      
 
-5. 。。。
+5. 说一下事件循环机制（node、浏览器）
+
+   [点击查看](https://blog.csdn.net/weixin_42259266/article/details/110492036?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161836442916780265449871%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=161836442916780265449871&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-1-110492036.nonecase&utm_term=%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF)
+
+6. 介绍下promise的特性、优缺点，内部是如何实现的，动手实现promise
+
+7. 实现链式调用
+
+   - 链式调用的核心就在于调用完的方法将自身实例返回
+
+     ```js
+     // demo1
+     function Class1() {
+         console.log('初始化')
+     }
+     Class1.prototype.method = function(param) {
+         console.log(param)
+         return this
+     }
+     let c1 = new Class1()
+     c1.method('第一次调用').method('第二次调用')
+     // demo2
+     var obj = {
+         a: function() {
+             console.log('a')
+             return this
+         },
+         b: function() {
+             console.log('b')
+             return this
+         }
+     };
+     obj.a().b();
+     ```
+
+     
+
+8. 
 
 
