@@ -245,8 +245,117 @@
      obj.a().b();
      ```
 
-     
+8. 手写数组转树
 
-8. 
+   ```js
+   // 例如将 input 转成output的形式
+   let input = [
+       {
+           id: 1, val: '学校', parentId: null
+       }, {
+           id: 2, val: '班级1', parentId: 1
+       }, {
+           id: 3, val: '班级2', parentId: 1
+       }, {
+           id: 4, val: '学生1', parentId: 2
+       }, {
+           id: 5, val: '学生2', parentId: 3
+       }, {
+           id: 6, val: '学生3', parentId: 3
+       },
+   ]
+   
+   let output = {
+       id: 1,
+       val: '学校',
+       children: [{
+           id: 2,
+           val: '班级1',
+           children: [
+               {
+                   id: 4,
+                   val: '学生1',
+                   children: []
+               },
+               {
+                   id: 5,
+                   val: '学生2',
+                   children: []
+               }
+           ]
+       }, {
+           id: 3,
+           val: '班级2',
+           children: [{
+               id: 6,
+               val: '学生3',
+               children: []
+           }]
+       }]
+   }
+   
+   // 代码实现
+   function arrayToTree(array) {
+       let root = array[0];
+       array.shift();
+       let tree = {
+           id: root.id,
+           val: root.val,
+           children: array.length > 0 ? toTree(root.id, array) : []
+       };
+       return tree;
+   }
+   
+   function toTree(parentId, array) {
+       let children = [];
+       let len = array.length;
+       for (let i = 0; i < len; i++) {
+           let node = array[i];
+           if (node.parentId === parentId) {
+               children.push({
+                   id: node.id,
+                   val: node.val,
+                   children: toTree(node.id, array)
+               })
+           }
+       }
+       return children;
+   }
+   // 测试
+   console.log(arrayToTree(input))
+   ```
+
+9. 单点登录实现原理
+
+   - 什么是单点登录
+
+     - 单点登录SSO（single sign on），是一个多系统共存的环境，用户在一处登录后，就不用再其它系统中登录，也就是用户的一次登录得到其它系统的信任
+     - 单点登录有一个独立的认证中心，只有认证中心才能接受用户的用户名和密码等信息进行认证，其他系统不提供登录入口，只接受认证中心的间接授权。间接授权通过令牌实现，当用户提供的用户名和密码通过认证中心认证后，认证中心会去创建授权令牌，在接下来的跳转过程中，授权令牌作为参数发送给各个子系统，子系统拿到令牌即得到了授权，然后创建局部会话。
+
+   - 单点登录原理（单点登录有同域和跨域两种情景）
+
+     - 同域
+
+       > 适用场景：都是企业自己的系统，所有系统都使用同一个一级域名通过不同的二级域名来区分。
+       >
+       > 举个例子：公司有一个一级域名zlt.com，我们有三个系统分别为：门户系统（sso.zlt.com）、应用1（app1.zlt.com）和应用2（app2.zlt.com），需要实现系统之间的单点登录，实现架构如下：
+       >
+       > 1. 门户系统设置的cookie的domain为一级域名也是zlt.com，这样就可以共享门户的cookie给所有的使用该域名xxx.zlt.com的系统
+       > 2. 使用spring session等技术让所有系统共享session
+       > 3. 这样只要门户系统登陆之后无论跳转应用1或者应用2，都能通过门户cookie中的sessionId读取到session中的登录信息实现单点登录
+
+     - 跨域
+
+       > 单点登录之间的系统域名不一样，例如第三方系统。由于域名不一样不能共享cookie了，需要一个独立的授权系统，即一个独立的认证中心（passport），子系统的登录均可以通过passport，子系统本身将不参与登录操作，当一个系统登录成功后，passport将会颁发一个令牌给子系统，子系统可以拿着令牌去获取数据，为了减少频繁认证，各个子系统在被passport授权以后，会建立一个局部会话，在一定时间内无需再次向passport发起认证。
+
+   - 注销流程
+
+     - 用户向系统提交注销操作
+     - 系统根据用户与系统1建立的会话，拿到令牌，向sso认证中心提交注销操作
+     - sso认证中心校验令牌有效，销毁全局会话，同时取出所有用此令牌注册的系统地址
+     - sso认证中心向所有注册系统发起注销请求，各注册系统销毁局部会话
+     - sso认证中心引导用户到登录页面
+
+10. 
 
 
