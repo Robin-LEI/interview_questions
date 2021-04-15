@@ -356,6 +356,104 @@
      - sso认证中心向所有注册系统发起注销请求，各注册系统销毁局部会话
      - sso认证中心引导用户到登录页面
 
-10. 
+10. 有哪几种方式可以解决跨域问题？（描述对应的原理）
+
+11. 原生实现ES5的Object.create() 方法
+
+    ```js
+    // Object.create(proto[, propertiesObject])
+    // 此方法使用指定的原型对象和其属性创建了一个新的对象
+    // 第二个参数表示属性描述符，如果是null或非原始包装对象，则抛出一个TypeError异常
+    // 如果不指定对应的属性描述符，默认都是false
+    /*
+        enumerable可枚举，默认为false
+        configurable可删除，默认为false,true表示不能删除，false可以删除
+        writable可赋值，默认为false
+        value属性的值
+    */
+    const person = {
+        isHuman: false
+    };
+    const me = Object.create(person, {
+        isHuman: {
+            configurable: true
+        }
+    });
+    // Object.defineProperties() 直接在一个对象上定义新的属性或者修改现有的属性，并返回该对象
+    // 判断一个值不是对象或者非原始包装对象：value === Object(value) 则是对象，反之不是
+    // 模拟实现
+    Object.create = function(prototype, properties) {
+        if (typeof prototype !== 'object') {
+            throw TypeError();
+        }
+        function Ctor() {}
+        Ctor.prototype = prototype;
+        let o = new Ctor();
+        if (prototype) {
+            o.constructor = Ctor;
+        }
+        if (properties != undefined) {
+            if (properties !== Object(properties)) {
+                throw TypeError();
+            }
+            Object.defineProperties(o, properties);
+        }
+        return o;
+    }
+    ```
+
+    
+
+12. 请列出至少5个JavaScript常用的内置对象，说明其用途
+
+    - 常用的五种内置对象
+      - encodeURI() 对统一资源标识符（URI）进行编码
+      - eval() 函数将传入的字符串当做JavaScript代码进行执行
+      - isFinite() 判断传入的参数是否为一个有限的数值
+      - isNaN() 判断一个值是否为NaN
+      - parseInt(string, radix) 将一个字符串string转换为radix进制的整数，radix为介于2-36之间的数
+    - 这里的术语“全局对象”（或标准内置对象）不应该与global对象混淆，这里的“全局对象”指的是处在全局作用域里面的多个对象。
+    - global对象在全局作用域下可以通过this访问到（非严格模式下，严格模式下得到undefined）
+    - 基本对象（包括一般对象、函数对象、错误对象）
+      - Object、Function、Boolean、Symbol（一般对象）
+      - Error、TypeError、SyntaxError、ReferenceError、RangeError（错误对象）
+
+13. 实现格式化输出，比如输入999999999，输出999,999,999
+
+    ```js
+    // 实现1
+    function formatOutput(val) {
+        if (val == null) return '';
+        let result = '';
+        val = val + '';
+        let str = val.split('').reverse().join('');
+        let start = 0;
+        let end = 3;
+        while (start < str.length) {
+            const temp = str.slice(start, end);
+            start += 3;
+            end += 3;
+            result += temp + ','
+        }
+        result = result.substring(0, result.length - 1);
+        result = result.split('').reverse().join('');
+        return result;
+    }
+    
+    // 实现2
+    function formatNumber(num){
+      return num.toLocaleString('en-US'); // 返回这个数字在特定语言环境下的表示字符串
+    }
+    
+    // 实现3
+    function formatNumber(num) {
+        // Intl对象是ECMAScript国际化API的一个命名空间，它提供了精确的字符串对比，数字格式化，日期和时间格式化
+        return new Intl.NumberFormat().format(num);
+    }
+    ```
+
+    
+
+14. 
 
 
