@@ -454,6 +454,228 @@
 
     
 
-14. 
+14. 请实现鼠标点击页面中的任意标签，alert该标签的名称（注意兼容性）
+
+    ```js
+    // 直接实现
+    document.onclick = function(e) {
+        e = e || window.event; // 处理兼容，获取事件的对象
+        let o = e.target || e.srcElement; // 获取触发事件的元素
+        alert(o.tagName.toLowerCase());
+    }
+    
+    // 优雅实现
+    window.onload = function() {
+        let body = document.getElementByTagName('body');
+        body[0].onclick = function(e) {
+        	e = e || window.event;
+        	let o = e.target || o.srcElement; // firefox支持target，IE支持srcElement
+            let eleName = o && o.tagName ? o.tagName.toLowerCase() : 'No tagName';
+            alert(eleName);
+    	}
+    }
+    ```
+
+    
+
+15. 多个tab只对应一个内容框，点击每个tab都会请求接口并渲染到内容框，怎么确保频繁点击tab但能够确保数据正常显示？
+
+    - 分析
+
+      > 因为每个请求处理时长不一致，可能会导致先发送的请求后响应，也就是请求响应的顺序和请求发送的顺序不一致，从而导致数据显示不正确。
+      >
+      > 可以简化为：连续触发多个请求，如何保证最后响应的结果是最后发送的请求。
+
+    - 类似场景
+
+      > input输入框的即时搜索、表格快速切换页码
+
+    - 解决方案
+
+      > 防抖（过滤掉一些非必要的请求）+ 取消上次未完成的请求（保证最后一次请求的响应顺序）
+      >
+      > 取消请求的方法：
+      >
+      > 1. XMLHttpRequest取消请求的方法，abort
+      > 2. Axios取消请求的方法，cancelToken
+
+    - 伪代码模拟实现(以setTimeout模拟请求、clearTimeout取消请求)
+
+      ```js
+      
+      ```
+
+      
+
+16. 尾递归实现
+
+    - 什么是尾递归
+
+      > 尾调用：当一个函数执行时的最后一个步骤是返回另一个函数的调用，这就叫做尾调用。
+      >
+      > <code>
+      >
+      > function f(x) {
+      >
+      > ​	return g(x);
+      >
+      > }
+      >
+      > </code>
+      >
+      > <!-- 注意：一下情况不属于尾调用 -->
+      >
+      > <code>
+      >
+      > function f(x) {
+      >
+      > ​	let y = g(x);
+      >
+      > ​	return y;
+      >
+      > }
+      >
+      > function f(x) {
+      >
+      > ​	return g(x) + 1;
+      >
+      > }
+      >
+      > </code>
+      >
+      > <!-- 注意：尾调用不一定出现再函数尾部，只要是函数的最后一步调用即可 -->
+      >
+      > 当一个函数尾调用自身，就叫做尾递归
+
+    - 尾调用优化
+
+      - [点击查看](http://www.ruanyifeng.com/blog/2015/04/tail-call.html)
+      - 只保留内层函数的调用记录，如果所有函数都是尾调用，那么完全可以做到每次执行时，调用记录只有一项，这将大大节省内存，这就是尾调用优化的意义。
+
+    - 尾递归应用
+
+      - 阶乘函数
+
+        ```js
+        function factorial(n, total = 1) {
+            if (n === 1) {
+                return total;
+            }
+            return factorial(n - 1, n * total);
+        }
+        ```
+
+      - 斐波那契数列
+
+        ```js
+        // 0 1 1 2 3 5 8 13 21 ...
+        function Fibonacci(n, prev = 1, current = 1) {
+            if (n <= 1) {
+                return current;
+            }
+            return Fibonacci(n - 1, prev, prev + current);
+        }
+        ```
+
+17. 手写发布订阅
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            // 被观察者要提供一个接受观察者的方法
+            // 观察者模式：观察者和被观察者之间是存在关系的，但是发布订阅二者之间是没有关系的
+            // 观察者必须要提供一个update方法用来通知状态更新了
+            // 被观察者要存入到观察者中
+            // 被观察者
+            class Subject {
+                constructor(name) {
+                    this.name = name;
+                    this.observers = [];
+                    this.state = '默认状态';
+                }
+                // 提供一个方法存入被观察者
+                attach(observer) {
+                    this.observers.push(observer);
+                }
+                // 用来更新自己的状态
+                setState(newState) {
+                    this.state = newState;
+                    // 通知观察者状态更新
+                    this.observers.forEach(o => o.update(newState));
+                }
+            }
+            //  观察者
+            class Observe {
+                update(newState) {
+                    console.log('状态更新，', newState);
+                }
+            }
+            let sub = new Subject('小猪');
+            let o1 = new Observe();
+            let o2 = new Observe();
+            sub.attach(o1);
+            sub.attach(o2);
+            sub.setState('开始吃饭');
+        </script>
+    </body>
+    </html>
+    ```
+
+    
+
+18. 请用JavaScript代码实现事件代理
+
+19. 说一下浏览器缓存
+
+20. cookie 与 session 的区别
+
+21. 浏览器如何做到 session 的功能的。
+
+22. 写一个处理加法可能产生精度的函数，比如 0.1 + 0.2 = 0.3
+
+    ```js
+    /**
+    小数点在计算机中是以二进制表示的，而有的小数在计算机中用二进制表示的时候是无穷的，这就出现了上述的现象
+    0.1换成二进制就是0.00011(0011无限循环)
+    解决办法：将浮点数转为整数，同时乘上一个倍数A,然后加起来在除以这个倍数A，这个倍数应该是这两个数中最小的那个数的倍数，比如0.1和0.02，倍数A等于100
+    **/
+    function accAdd(arg1,arg2){
+        var r1,r2,m;
+        try{r1=arg1.toString().split(".")[1].length}catch(e){r1=0}
+        try{r2=arg2.toString().split(".")[1].length}catch(e){r2=0}
+        m=Math.pow(10,Math.max(r1,r2));
+        return (arg1*m+arg2*m)/m;
+    }
+    ```
+
+    
+
+23. 写一个大数相乘的解决方案。传两个字符串进来，返回一个字符串
+
+24. 解释一下：csrf 和 xss
+
+25. 怎么防止 csrf 和 xss
+
+26. 跨域的处理方案有哪些
+
+27. CORS 是如何做的？
+
+28. 对于 CORS ，Get 和 POST 有区别吗？
+
+29. 了解 HTTPS 的过程吗？
+
+30. http 与 tcp 的关系
+
+31. tcp 可以建立多个连接吗？
+
+32. 介绍一下为什么要有 三次握手，四次挥手
 
 
