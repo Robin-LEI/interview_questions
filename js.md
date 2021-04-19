@@ -708,23 +708,218 @@
 
     - 表单是不存在跨域问题的
 
+      > 1. form表单提交数据之后，是没有数据返回的，浏览器认为这是无害的，所以不存在跨域问题
+      > 2. ajax提交后，会有响应数据，浏览器不允许一个域名下的js读取另外一个域下的js
+
+    - 什么是同源策略
+
+      > 同源策略是浏览器安全的基石，保护用户的信息安全，防止恶意的窃取用户数据。
+      >
+      > 所谓的“同源”指的是，协议、域名、端口号都相同
+      >
+      > 如果有一个不相同，就是非同源，在非同源的情况下，以下操作不能进行：
+      >
+      > 1. 获取cookie、localStorage、indexDB受到限制
+      > 2. DOM无法获取
+      > 3. Ajax不能正常发送
+
+    - 跨域：协议、域名、端口号都必须要完全相同，否则就会跨域，浏览器会拦截跨域
+
+    - jsonp
+
+      > 百度搜索就是使用的jsonp
+      >
+      > 用于浏览器同源策略的限制，浏览器只允许请求当前源（协议、域名、端口号都相同）的资源，但是html的script是一个例外，利用script这个开放的策略，网页可以得到从其它源动态产生的json资源。
+      >
+      > 缺点：不安全，容易遭受xss攻击，只能发送get请求
+      >
+      > 实现一个jsonp
+      >
+      > ```js
+      > jsonp({
+      >     url: 'http://localhost:3000/say',
+      >     params:{wd:'我爱你'},
+      >     cb:'show'
+      > }).then(data=>{
+      >     console.log(data);
+      > });
+      > 
+      > function jsonp({url,params,cb}) {
+      >     return new Promise((resolve,reject)=>{
+      >         let script = document.createElement('script');
+      >         window[cb] = function (data) {
+      >             resolve(data);
+      >             document.body.removeChild(script);
+      >         }
+      >         params = {...params,cb} // wd=b&cb=show
+      >         let arrs = [];
+      >         for(let key in params){
+      >             arrs.push(`${key}=${params[key]}`);
+      >         }
+      >         script.src = `${url}?${arrs.join('&')}`;
+      >         document.body.appendChild(script);
+      >     });
+      > }
+      > ```
+
+    - cors
+
+      > 特点：
+      >
+      > 1. 开发中常用，安全性高
+      > 2. 后端设置，跟前端没有关系
+      > 3. 主要是靠设置头解决跨域
+      >
+      > 常见的设置头：
+      >
+      > ```js
+      > // 设置哪个源可以访问我
+      > res.setHeader('Access-Control-Allow-Origin', origin);
+      > // 允许携带哪个头访问我
+      > res.setHeader('Access-Control-Allow-Headers','name');
+      > // 允许哪个方法访问我
+      > res.setHeader('Access-Control-Allow-Methods','PUT');
+      > // 允许携带cookie
+      > res.setHeader('Access-Control-Allow-Credentials', true);
+      > // 预检的存活时间
+      > res.setHeader('Access-Control-Max-Age',6);
+      > // 允许返回的头
+      > res.setHeader('Access-Control-Expose-Headers', 'name');
+      > ```
+
+    - postMessage
+
+      > 有一个http://localhost:3000/a.html，其中引入了一个b页面，在4000端口号下面的，在a页面的iframe加载完成之后，执行
+      >
+      > ```js
+      > frame.contentWindow.postMessage('我爱你','http://localhost:4000');// 发送数据给b页面
+      > // 监听b页面发送过来的消息
+      > window.onmessage = function (e) {
+      >     console.log(e.data);
+      > }
+      > ```
+      >
+      > b页面
+      >
+      > ```js
+      > window.onmessage = function (e) {
+      >     console.log(e.data);
+      >     e.source.postMessage('我不爱你',e.origin) // 发送消息给a页面
+      > }
+      > ```
+
+    - window.name
+
+      > window.name的特点：
+      >
+      > name值在不同的页面，甚至不同的域下加载后仍然存在，如果不修改则值不会发生变化，并且可以支持非常长的name值（2MB）。
+      >
+      > 案例：
+      >
+      > a和b是同域的，http://localhost:3000/
+      >
+      > c是独立域的 http://localhost:4000/
+      >
+      > a如果想要获取c数据，那么在a页面中首先要写上 <code><iframe src="http://localhost:4000/c.html" frameborder="0" onload="load()" id="iframe"></iframe></code>
+      >
+      > 在加载完成之后，执行如下代码：
+      >
+      > ```js
+      > let first = true
+      > function load() {
+      >     if(first){
+      >         let iframe = document.getElementById('iframe');
+      >         iframe.src = 'http://localhost:3000/b.html';
+      >         first = false;
+      >     }else{
+      >         console.log(iframe.contentWindow.name);
+      >     }
+      > }
+      > ```
+      >
+      > 也就是说，a先引用c，再把c的地址改为b。
+      >
+      > 注意：每个iframe都有自己的window窗口，这个窗口是top window的子窗口。
+
+    - location.hash
+
+      > 路径后面的hash可以用于通信
+      >
+      > a想要访问c，a给c传递一个hash值，c受到hash值后，把获取到的hash值传递给b，b将结果放到a的hash中
+      >
+      > a页面：
+      >
+      > ```js
+      > <iframe src="http://localhost:4000/c.html#iloveyou"></iframe>
+      > <script>
+      >     window.onhashchange = function () {
+      >     console.log(location.hash);
+      > }
+      > </script>
+      > ```
+      >
+      > c页面：
+      >
+      > ```js
+      > let iframe = document.createElement('iframe');
+      > iframe.src = 'http://localhost:3000/b.html#idontloveyou';
+      > document.body.appendChild(iframe);
+      > ```
+      >
+      > b页面：
+      >
+      > ```js
+      > window.parent.parent.location.hash = location.hash;
+      > ```
+
+    - domain
+
+      > 针对两个二级域名之间进行
+      >
+      > a页面
+      >
+      > ```js
+      > <iframe src="http://b.zf1.cn:3000/b.html" frameborder="0" onload="load()" id="frame"></iframe>
+      > <script>
+      >     document.domain = 'zf1.cn'
+      >     function load() {
+      >         console.log(frame.contentWindow.a); // 可以拿到b页面的a变量值
+      >     }
+      > </script>
+      > ```
+      >
+      > b页面：
+      >
+      > ```js
+      > <script>
+      >     document.domain = 'zf1.cn'
+      > 	var a = 100;
+      > </script>
+      > ```
+
+    - websocket
+
+      > websocket本身不存在跨域问题，可以通过websocket实现非同源之间的数据通信，一般采用socket.io实现
+
+    - nginx
+
 27. CORS 是如何做的？
 
-28. 对于 CORS ，Get 和 POST 有区别吗？
+    > 设置各种头
 
-29. 了解 HTTPS 的过程吗？
+28. 了解 HTTPS 的过程吗？
 
-30. http 与 tcp 的关系
+29. http 与 tcp 的关系
 
-31. tcp 可以建立多个连接吗？
+30. tcp 可以建立多个连接吗？
 
-32. 介绍一下为什么要有 三次握手，四次挥手
+31. 介绍一下为什么要有 三次握手，四次挥手
 
-33. node express生成二维码的插件，<b>svg-captcha</b>
+32. node express生成二维码的插件，<b>svg-captcha</b>
 
-34. 阻止默认的点击事件，<code>e.preventDefault()</code>
+33. 阻止默认的点击事件，<code>e.preventDefault()</code>
 
-35. 对域名的认识
+34. 对域名的认识
 
     > 一级域名 www.baidu.com
     >
@@ -732,65 +927,4 @@
     >
     > ![域名](https://z3.ax1x.com/2021/04/18/cI7FRU.png)
 
-
-
-同源策略
-
-为什么浏览器不支持跨域
-
-dom元素也有同源策略 iframe 同域可以修改
-
-
-
-jsonp 百度搜索
-
-缺点：只能发送get请求，不安全，xss攻击，不建议采用
-
-
-
-cors
-
-开发中常用，安全性高
-
-后端设置，跟前端没有关系
-
-主要是靠设置头解决跨域
-
-
-
-跨域：协议、域名、端口号，跨域是被浏览器拦截了
-
-
-
-options 先测试、试探一下，不会每次都发
-
-时间可以设置的，max-age
-
-ajax强制带上cookie，withCredentials，因为cookie不同域不会带上的
-
-
-
-getResponseHeaders('name')，后端需要cors设置：expose-header
-
-
-
-PostMessage
-
-iframe内部有自己的window对象
-
-
-
-document.domain
-
-window.name
-
-
-
-
-
-location.hash
-
-路径后面的hash值可以用来通信
-
-
-
+35. 请求时有时会会出现options，先试探，不会每次都会发送options，时间是可以设置的，max-age

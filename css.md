@@ -476,4 +476,462 @@
     >
     > 把border-radius设置为16px最合适，因为当长度和宽度相同的时候，把border-radius的值设置为长度（宽度）的一半是最合适的
 
-12. 
+12. Css超出省略怎么写，三行超出省略怎么写
+
+    ```css
+    <!-- 单行 -->
+    .single-ellipsis {
+        width: 500px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    
+    <!-- 多行 -->
+    .multiple-ellipsis {
+        将对象作为弹性伸缩盒子模型显示
+        display: -webkit-box;
+        word-break: break-all;
+        设置或检索伸缩盒子对象的子元素的排列方式
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    -webkit-line-clamp: 是一个不规范的属性，他没有出现在css规范草案中。
+    [工作中使用的是vue-clamp](https://www.npmjs.com/package/vue-clamp)
+    ```
+
+    
+
+13. Css绘制一个三角形
+
+    ```css
+    <!-- 上三角 -->
+    .triangle {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 25px 40px 25px;
+        border-color: transparent transparent red transparent;
+    }
+    <!-- 下三角 -->
+    .triangle-reverse {
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 40px 25px 0 25px;
+        border-color: red transparent transparent transparent;
+    }
+    ```
+
+14. 说一下CSS预处理器，less带来的好处？
+
+    > css预处理器：为css增加<strong>编程特性</strong>的扩展语言，可以使用变量、简单的逻辑判断、函数等基本编程技巧
+    >
+    > css预处理器输出的还是标准的css样式
+    >
+    > less、sass都是动态的样式语言，是css预处理器。
+    >
+    > less的变量符号是@，sass的变量符号是$
+
+    - 解决的问题
+
+      - css语法不够强大，因为无法嵌套导致有很多重复的选择器
+      - 没有变量和合理的样式的复用机制，难以维护
+
+    - less、sass常用语法
+
+      > 变量、嵌套语法、混入、@import、运算、函数、继承等
+
+    - css预处理器带来的好处
+
+      - 代码更加整洁，更易维护，代码量少
+      - 基础颜色使用变量，一处动，处处动
+      - 常用代码使用代码块，节省大量代码
+      - 代码嵌套减少了大量的重复选择器，避免了一些低级错误
+      - 变量、混入大大提升了样式的复用性
+
+    - 缺点
+
+      - 编译需要一定的时间
+
+15. 使用CSS实现一个水波纹效果
+
+    ```css
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+    	<meta charset="UTF-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Document</title>
+    	<style>
+    		.wave-content {
+    			height: 300px;
+    			width: 300px;
+    			left: 255px;
+    			top: 139px;
+    			position: relative;
+    		}
+    
+    		.wave {
+    			position: absolute;
+    			left: 0px;
+    			top: 0px;
+    			height: 100%;
+    			width: 100%;
+    			/* transform-origin: x-axis y-axis z-axis; */
+    			/* transform-origin: 50% 50% 0; */
+    			transform-origin: center center;
+    			background-color: transparent;
+    			border: 1px solid #979797;
+    			animation-duration: 7s;
+    			animation-name: wv;
+    			animation-timing-function: linear;
+    			animation-iteration-count: infinite;
+    			border-radius: 50%;
+    			opacity: 0;
+    		}
+    
+    		.wave1 {
+    			animation-delay: 0s;
+    		}
+    
+    		.wave2 {
+    			animation-delay: 1.5s;
+    		}
+    
+    		.wave3 {
+    			animation-delay: 3s;
+    		}
+    
+    		.wave4 {
+    			animation-delay: 4.5s;
+    		}
+    
+    		@keyframes wv {
+    			0% {
+    				opacity: 0;
+    				transform: scale(0.5);
+    			}
+    
+    			30% {
+    				opacity: 0.7;
+    				transform: scale(0.65);
+    			}
+    
+    			70% {
+    				opacity: 0.1;
+    				transform: scale(0.85);
+    			}
+    
+    			100% {
+    				opacity: -0.2;
+    				transform: scale(1);
+    			}
+    		}
+    	</style>
+    </head>
+    
+    <body>
+    	<div class="wave-content">
+    		<div class="wave wave1 "></div>
+    		<div class="wave wave2 "></div>
+    		<div class="wave wave3 "></div>
+    		<div class="wave wave4"></div>
+    	</div>
+    </body>
+    
+    </html>
+    ```
+
+    
+
+16. position定位都有什么属性
+
+    - 常用的
+
+      - static
+
+        > 默认值。一般不设置position属性时，元素会按照正常的文档流进行排列。
+
+      - relative
+
+        > 它是相对它原本的位置进行便宜的，需要注意的是，相对定位不会脱离文档流，原来的位置仍然保留。
+
+      - absolute
+
+        > 它是相对不是static的最近一级父元素来进行定位的，如果没有这样的元素，那么就相对body元素来进行定位，被定位的元素会脱离文档流，可以通过left，right，top，bottom来调整元素的位置。
+
+      - fixed
+
+        > 固定定位是最好理解的，它是相对于浏览器的窗口进行定位并脱离文档流的
+
+    - 不常用的
+
+      - inherit
+
+        > 继承父元素的position属性，但是需要注意的是IE8以及往前的版本都不支持inherit属性。
+
+      - initial
+
+        > initial关键字用于设置css属性为它的默认值，可作用于任何的css样式（IE不支持该关键字）。
+
+      - sticky
+
+        > 粘性定位。
+        >
+        > 设置了sticky的元素，在屏幕范围内时该元素的位置并不受到定位影响（设置top、left等属性无效），当该元素的位置将要移出视口范围时，定位又会变成fixed。
+        >
+        > 该元素并不脱离文档流，仍然保留元素原本在文档流中的位置。
+        >
+        > 元素固定的相对偏移是相对于离他最近的具有滚动框的祖先元素，如果祖先元素都不可以滚动，那么是相对于viewpoint来计算元素的偏移量。
+        >
+        > 但是这个属性的兼容性还不是很好，需要注意一下。
+
+17. justify-content: space-between和justify-content: around有什么区别
+
+    > space-between，使得每个块之间产生相同大小的间隔，但是不会在容器和块之间产生。
+    >
+    > around，会在每个块的两边产生一个相同大小的间隔
+
+18. 按照要求实现如下要求
+
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+    	<meta charset="UTF-8">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+    	<title>Document</title>
+    	<style>
+    		* {
+    			margin: 0;
+    			padding: 0;
+    		}
+    
+    		html,
+    		body,
+    		#app {
+    			margin: 0;
+    			padding: 0;
+    			height: 100%;
+    		}
+    
+    		#header,
+    		#footer {
+    			height: 50px;
+    			line-height: 50px;
+    			text-align: center;
+    			background: #555;
+    			color: #fff;
+    		}
+    
+    		#side {
+    			width: 200px;
+    			background: #eee;
+    		}
+    
+    		/* css here */
+    		#header {
+    			position: fixed;
+    			top: 0;
+    			left: 0;
+    			width: 100%;
+    		}
+    
+    		#footer {
+    			position: fixed;
+    			bottom: 0;
+    			left: 0;
+    			width: 100%;
+    		}
+    
+    		#side {
+    			position: fixed;
+    			height: calc(100% - 100px);
+    			top: 50px;
+    		}
+    
+    		#main {
+    			padding-top: 50px;
+    			padding-bottom: 50px;
+    			padding-left: 200px;
+    		}
+    
+    		#main ul {
+    			list-style: none;
+    		}
+    
+    		#main ul li {
+    			float: left;
+    			position: relative;
+    		}
+    
+    		#main ul li:nth-of-type(2n)::after {
+    			position: absolute;
+    			display: block;
+    			content: "|";
+    			right: 0px;
+    			top: 2px;
+    			width: 1px;
+    			height: 10px;
+    		}
+    	</style>
+    </head>
+    
+    <body>
+    	<div id="app">
+    		<header id="header">header</header>
+    		<aside id="side">side</aside>
+    		<div id="main">
+    			<ul>
+    				<li><a href="https://www.bilibili.com/1">Link1</a></li>
+    				<li><a href="https://www.bilibili.com/1">Link2</a></li>
+    				<li><a href="https://www.bilibili.com/1">Link3</a></li>
+    				<br>
+    				<li><a href="https://www.bilibili.com/1">Link4</a></li>
+    				<li><a href="https://www.bilibili.com/1">Link5</a></li>
+    			</ul>
+    		</div>
+    		<footer id="footer">footer</footer>
+    	</div>
+    	<script>
+    		// JS here
+    		/**
+    		 * 不考虑兼容性且不能更改dom结构，需求如下：
+    		完成经典的上 header ，下 footer ，左边是侧边栏，右边是内容。
+    		去掉列表前面的 · ，列表项水平排列，注意里面的br标签需要换行，同时每两个li后有一条竖线。
+    		点击列表项不跳转，弹出href内的内容。
+    		*/
+    		// let alist = document.querySelectorAll('#main ul li a');
+    		// for (let i = 0; i < alist.length; i++) {
+    		// 	alist[i].addEventListener('click', function (e) {
+    		// 		e.preventDefault();
+    		// 		alert(e.target);
+    		// 	}, true)
+    		// }
+    
+    		let ul = document.querySelector('#main ul');
+    		ul.addEventListener('click', function (e) {
+    			e = e || window.event;
+    			if (e.target.tagName === 'A') {
+    				e.preventDefault();
+    				alert(e.target);
+    			}
+    		})
+    	</script>
+    </body>
+    
+    </html>
+    ```
+
+    
+
+19. 输入URL到页面展示的过程
+
+    > 1. DNS解析
+    >
+    >    **解析过程**
+    >
+    >    在浏览器中输入url之后，操作系统会先在hosts文件中检查是否存在这个网址的映射关系，如果存在，返回ip，停止解析
+    >
+    >    如果没有，则会在本地的DNS服务器中查找，如果找到了，返回ip，完成ip的解析
+    >
+    >    如果本地DNS服务器也没有查找到，则继续向上查找，直至查找到根域名服务器，如果始终没有找到则浏览器界面展示一个信息，站点不存在，如果找到则返回ip。
+    >
+    > 2. 建立tcp连接
+    >
+    >    - tcp协议是用于两台机器在网络上通信上用的
+    >    - 如何保证数据传输之前两台机器都具备通信能力呢？需要两台机器之间先进行三次握手后，才能确定两台机器是否具备通信能力
+    >    - 第一次握手：目的是为了确认客户端可以发送信息。建立连接，客户端发送连接请求报文段，将SYN设置为1，Seq设置为X，然后客户端进入SYN_SEND状态，等待服务端的确认
+    >    - 第二次握手：目的是为了确认服务端可以接受信息。服务端收到SYN报文段，需要对报文段进行确认，设置ACK  = X + 1，同时自己还要发送SYN = 1，Seq = Y，服务器端将上述所有信息放到一个报文段（也就是SYN+ACK报文段）进行发送到客户端，此时，服务器进入SYN_RECV状态。
+    >    - 第三次握手：目的是为了确认服务端可以发送信息。客户端收到服务端发来的SYN+ACK报文段，然后将ACK设置为Y+1，向服务器发送ACK报文，这个报文段发送完毕之后，服务器和客户端都进入ESTABLISHED状态。
+    >
+    > ```sequence
+    > 客户端 -> 服务端: SYN = 1 Seq = X
+    > 服务端 -> 客户端: SYN = 1 ACK = X + 1 Seq = Y
+    > 客户端 -> 服务端: ACk = Y + 1 Seq = Z
+    > ```
+    >
+    > 3. 发送http请求，服务器处理请求，返回响应结果
+    >
+    >    - tcp连接建立之后，浏览器可以通过http/https协议向服务器发送请求了，服务器处理请求，响应结果（备注：服务器解析请求，如果头部有缓存相关信息，if-none-match和if-modified-since，则验证缓存是否有效，如果有效，返回304，如果无效，返回资源，响应200）
+    >
+    > 4. 关闭tcp连接，四次挥手
+    >
+    >    - 四次挥手的目的是为了在一次通讯结束之后，关闭无用连接释放掉服务器资源。
+    >    - 因为tcp是一种全双工通讯协议，要想达到上述目的的标志是客户端和服务端都关闭了接受数据和发送数据的接口
+    >    - 第一次挥手，主机1（可以是客户端也可以是服务端，这里的主机1，主机2也可以说是主动方和被动方）设置ACK和Seq，向主机2发送一个FIN报文段，此时主机1进入FIN_WAIT_1状态，这表明主机1没有数据要发送给主机2了
+    >    - 第二次挥手，主机2收到了主机1发送来的FIN报文段，向主机1返回一个ACK报文段，主机1进入FIN_WAIT_2状态，主机2告诉主机1，我同意你的关闭请求
+    >    - 第三次挥手，主机2向主机1发送FIN报文段，请求关闭连接，同时主机2进入LAST_ACK状态
+    >    - 第四次挥手，主机1收到主机2发送的FIN报文段，向主机2发送ACK报文段，然后主机1进入TIME_WAIT状态；主机2收到主机1的ACK报文段以后，就关闭连接；此时，主机1等待2MSL后依然没有收到回复，则证明Server端已正常关闭，那好，主机1也可以关闭连接了。
+    >
+    >    ```sequence
+    >    主机1 -> 主机2: Fin = 1 Ack = Z Seq = X
+    >    主机2 -> 主机1: Ack= X + 1 Seq = Z
+    >    主机2 -> 主机1: Fin = 1 Ack = X Seq = Y
+    >    主机1 -> 主机2: Ack = Y Seq = X
+    >    ```
+    >
+    >    
+    >
+    > 5. 浏览器渲染
+    >
+    >    ```mermaid
+    >    graph LR
+    >    A[构建DOM树] --> B(样式计算) --> C(页面布局) --> D(生成分层树) --> E(栅格化)
+    >    ```
+    >
+    >    - 构建DOM树
+    >
+    >      > 浏览器从网络或硬盘中获得HTML字节数据后会经过一个流程将字节解析为DOM树,先将HTML的原始字节数据转换为文件指定编码的字符,然后浏览器会根据HTML规范来将字符串转换成各种令牌标签，如html、body等。最终解析成一个树状的对象模型，就是dom树。
+    >      >
+    >      > 具体步骤：
+    >      >
+    >      > 1. 转码（Bytes -> Characters）—— 读取接收到的 HTML 二进制数据，按指定编码格式将字节转换为 HTML 字符串
+    >      > 2. Tokens 化（Characters -> Tokens）—— 解析 HTML，将 HTML 字符串转换为结构清晰的 Tokens，每个 Token 都有特殊的含义同时有自己的一套规则
+    >      > 3. 构建 Nodes（Tokens -> Nodes）—— 每个 Node 都添加特定的属性（或属性访问器），通过指针能够确定 Node 的父、子、兄弟关系和所属 treeScope（例如：iframe 的 treeScope 与外层页面的 treeScope 不同）
+    >      > 4. 构建 DOM 树（Nodes -> DOM Tree）—— 最重要的工作是建立起每个结点的父子兄弟关系
+    >
+    >    - 样式计算
+    >
+    >      > 渲染引擎将 CSS 样式表转化为浏览器可以理解的 styleSheets，计算出 DOM 节点的样式。
+    >      >
+    >      > CSS 样式来源主要有 3 种，分别是`通过 link 引用的外部 CSS 文件、style标签内的 CSS、元素的 style 属性内嵌的 CSS。`,其样式计算过程主要为：
+    >      >
+    >      > ```css
+    >      > body { font-size: 2em; }
+    >      > p { color: blue; }
+    >      > span { display: none; }
+    >      > div { font-weight: bold; }
+    >      > ```
+    >      >
+    >      > 可以看到上面的 CSS 文本中有很多属性值，如 2em、blue、bold，这些类型数值不容易被渲染引擎理解，所以需要将所有值转换为渲染引擎容易理解的、标准化的计算值，这个过程就是属性值标准化。处理完成后再处理样式的继承和层叠，有些文章将这个过程称为CSSOM的构建过程。
+    >
+    >    - 页面布局
+    >
+    >      > 布局过程，即排除 `script、meta` 等功能化、非视觉节点，排除 `display: none` 的节点，计算元素的位置信息，确定元素的位置，构建一棵只包含可见元素布局树。如图：
+    >      >
+    >      > ![](https://i.bmp.ovh/imgs/2021/04/a8cb48dc13bce454.png)
+    >
+    >    - 生成分层树
+    >
+    >      > 页面中有很多复杂的效果，如一些复杂的 3D 变换、页面滚动，或者使用 z-indexing 做 z 轴排序等，为了更加方便地实现这些效果，渲染引擎还需要为特定的节点生成专用的图层，并生成一棵对应的图层树。
+    >
+    >    - 栅格化
+    >
+    >      > 合成线程会按照视口附近的图块来优先生成位图，实际生成位图的操作是由栅格化来执行的。所谓栅格化，是指将图块转换为位图。如图：
+    >      >
+    >      > ![](https://ftp.bmp.ovh/imgs/2021/04/cb363fbeca14384c.png)
+    >      >
+    >      > 通常一个页面可能很大，但是用户只能看到其中的一部分，我们把用户可以看到的这个部分叫做视口（viewport）。在有些情况下，有的图层可以很大，比如有的页面你使用滚动条要滚动好久才能滚动到底部，但是通过视口，用户只能看到页面的很小一部分，所以在这种情况下，要绘制出所有图层内容的话，就会产生太大的开销，而且也没有必要。
+    >      >
+    >      > [参考掘金文章](https://juejin.cn/post/6844904054074654728#heading-5)
+
+20. 
+
