@@ -942,6 +942,14 @@
 
 22. 浏览器乱码的原因是什么？如何解决？
 
+    > 编码不一致。
+    >
+    > 网页源代码使用gbk，但是其中的中文使用utf-8，这样在浏览器渲染的时候就会造成页面乱码，反之也会乱码。
+    >
+    > 使用软件编辑html的内容使其编码统一。
+    >
+    > 如果浏览器浏览的时候出现了乱码，在浏览器中找到转换编码的菜单进行转换。
+
 23. html5中details标签
 
     - details标签，详细信息展现元素，默认关闭，添加open属性，默认打开信息展示
@@ -957,7 +965,203 @@
 
 24. base url
 
-    https://juejin.cn/post/6931263129661734925
+    > 当页面有大量的锚点或链接跳转时，这些跳转或者域名都在统一的域名下进行，我们就可以通过base标签来简化处理，把公共部分提取出来。
+    >
+    > ```html
+    > <!DOCTYPE html>
+    > <html lang="en">
+    > 
+    > <head>
+    > 	<meta charset="UTF-8">
+    > 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    > 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    > 	<title>Document</title>
+    > 	<base href="https://www.weibo.com/" target="_blank">
+    > </head>
+    > 
+    > <body>
+    > 	<a href="jackiechan">成龙</a>
+    > 	<a href="kukoujialing">贾玲</a>
+    > </body>
+    > 
+    > </html>
+    > ```
+    >
+    > 
 
-25. 
+25. 什么是重绘、重排，哪些操作会导致重绘、重排？
+
+    - 网页生成过程
+
+      - HTML被HTML解析器解析为DOM树
+      - CSS被css解析器解析为CSSOM树
+      - 结合dom树和cssom树生成一颗render树
+      - 生成布局（flow），即将所有渲染树的所有节点进行平面合成
+      - 将布局绘制（paint）在屏幕上
+      - 最后两步最费时，这两步就是我们通常所说的渲染
+
+      ![](https://ftp.bmp.ovh/imgs/2021/04/b143f0562d6f88c5.png)
+
+    - 渲染
+
+      - 网页生成的时候，至少会渲染一次
+      - 在用户访问的过程中，还会不断的重新渲染
+      - 注意，重新渲染会重新执行上面的第四步和第五步或者只有第五步
+
+    - 重排、重绘
+
+      - 重排：重新生成布局，重新排列元素
+      - 重绘：某些元素的外观被改变，例如颜色，字体大小
+      - 重排一定重绘，但是重绘不一定重排
+
+    - 重排（reflow）
+
+      > **概念：**当dom的变化影响了元素的几何位置（<b>dom对象的位置和尺寸大小</b>），浏览器需要重新计算元素的几何属性，将其安放在界面的正确位置，这个过程叫做重排。
+      >
+      > 重排也叫作回流。
+      >
+      > 常见引起重排的属性和方法：
+      >
+      > <u>任何会改变元素几何信息（元素的位置和尺寸大小）的操作，都会引起重排</u>
+      >
+      > 1. 新增或删除dom
+      > 2. 元素的尺寸改变，width、height、border的改变
+      > 3. 内容变化，比如在input中输入内容
+      > 4. 浏览器窗口尺寸改变，也就是resize事件被触发
+      > 5. 计算offsetWidth、offsetHeight属性
+      >
+      > 重排影响的范围：
+      >
+      > *由于浏览器渲染界面是基于流式布局模型的，所以触发重排时会对周围的dom重新排列，影响的范围有两种：*
+      >
+      > 1. 全局范围：从根节点`html`开始对整个渲染树进行重新布局。
+      > 2. 局部范围：对渲染树的某部分或某一个渲染对象进行重新布局
+      >
+      > 重排需要更新渲染树，性能花销很大。
+
+      
+
+    - 重绘（repaint）
+
+      > **概念：**当一个元素的外观发生变化，但是没有改变布局，重新把元素外观绘制出来的过程叫做重绘。
+      >
+      > 常见的引起重绘的属性：
+      >
+      > `color`、`border-style`、`visibility`、`background`、`text-decoration`、`background-image`、`background-position`、`outline`、`border-radius`、`box-shadow`
+
+    - 浏览器渲染队列
+
+      > **浏览器的渲染队列机制**：当我们修改了元素的几何属性，导致浏览器触发重排或重绘时。它会把该操作放进渲染队列，等到队列中的操作到了**一定的数量或者到了一定的时间间隔**时，浏览器就会批量执行这些操作。
+      >
+      > **强制刷新队列：**
+      >
+      > ```js
+      > div.style.left = '10px';
+      > console.log(div.offsetLeft);
+      > div.style.top = '10px';
+      > console.log(div.offsetTop);
+      > div.style.width = '20px';
+      > console.log(div.offsetWidth);
+      > div.style.height = '20px';
+      > console.log(div.offsetHeight);
+      > // 这段代码会触发4次重排+重绘，因为在console中你请求的这几个样式信息，无论何时浏览器都会立即执行渲染队列的任务，即使该值与你操作中修改的值没关联。
+      > // 因为队列中，可能会有影响到这些值的操作，为了给我们最精确的值，浏览器会立即重排+重绘。
+      > ```
+
+    - 重排优化建议
+
+      - 分离读写操作
+
+        ```js
+        div.style.left = '10px';
+        div.style.top = '10px';
+        div.style.width = '20px';
+        div.style.height = '20px';
+        console.log(div.offsetLeft);
+        console.log(div.offsetTop);
+        console.log(div.offsetWidth);
+        console.log(div.offsetHeight);
+        // 只触发了一次重排
+        // 在第一个console的时候，浏览器把之前上面四个写操作的渲染队列都给清空了。剩下的console，因为渲染队列本来就是空的，所以并没有触发重排，仅仅拿值而已。
+        ```
+
+        
+
+      - 样式集中改变
+
+        ```js
+        // 建议通过改变class或者csstext属性集中改变样式
+        // bad
+        var left = 10;
+        var top = 10;
+        el.style.left = left + "px";
+        el.style.top  = top  + "px";
+        // good 
+        el.className += " theclassname";
+        // good
+        el.style.cssText += "; left: " + left + "px; top: " + top + "px;";
+        ```
+
+        
+
+      - 缓存布局信息
+
+        ```js
+        // bad 强制刷新 触发两次重排
+        div.style.left = div.offsetLeft + 1 + 'px';
+        div.style.top = div.offsetTop + 1 + 'px';
+        
+        // good 缓存布局信息 相当于读写分离
+        var curLeft = div.offsetLeft;
+        var curTop = div.offsetTop;
+        div.style.left = curLeft + 1 + 'px';
+        div.style.top = curTop + 1 + 'px';
+        ```
+
+        
+
+      - 离线改变dom
+
+        > 1. 隐藏要操作的dom
+        >
+        >    ```js
+        >    // 在要操作dom之前，通过display隐藏dom，当操作完成之后，才将元素的display属性为可见，因为不可见的元素不会触发重排和重绘。
+        >    dom.display = 'none'
+        >    // 修改dom样式
+        >    dom.display = 'block'
+        >    ```
+        >
+        >    
+        >
+        > 2. 通过使用[DocumentFragment](https://developer.mozilla.org/zh-CN/docs/Web/API/DocumentFragment)创建一个`dom`碎片,在它上面批量操作dom，操作完成之后，再添加到文档中，这样只会触发一次重排。
+        >
+        > 3. 复制节点，在副本上工作，然后替换它！
+
+      - position属性为absolute或fixed
+
+        > position属性为absolute或fixed的元素，重排开销比较小，不用考虑它对其他元素的影响
+
+      - 优化动画
+
+        > 1. 可以把动画效果应用到position属性为absolute或fixed的元素上，这样对其他元素影响较小
+        >
+        > 2. 启用GPPU加速
+        >
+        >    ```js
+        >    // GPU 硬件加速是指应用 GPU 的图形性能对浏览器中的一些图形操作交给 GPU 来完成，因为 GPU 是专门为处理图形而设计，所以它在速度和能耗上更有效率。
+        >    // GPU 加速通常包括以下几个部分：Canvas2D，布局合成, CSS3转换（transitions），CSS3 3D变换（transforms），WebGL和视频(video)。
+        >    /*
+        >     * 根据上面的结论
+        >     * 将 2d transform 换成 3d
+        >     * 就可以强制开启 GPU 加速
+        >     * 提高动画性能
+        >     */
+        >    div {
+        >      transform: translate3d(10px, 10px, 0);
+        >    }
+        >    ```
+
+ 
+
+26. 
 
