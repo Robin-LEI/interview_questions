@@ -942,7 +942,18 @@
 
 22. 浏览器乱码的原因是什么？如何解决？
 
-23. html5中detalist是什么
+23. html5中details标签
+
+    - details标签，详细信息展现元素，默认关闭，添加open属性，默认打开信息展示
+
+      ```html
+      <details open>
+          <summary>Copyright 2011.</summary>
+          <p>All pages and graphics on this web site are the property of W3School.</p>
+      </details>
+      ```
+
+      
 
 24. base url
 
