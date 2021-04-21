@@ -1161,7 +1161,58 @@
         >    }
         >    ```
 
- 
+26. flex布局，如何实现把八个元素分两行摆放
 
-26. 
+    ```html
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+    	<meta charset="UTF-8">
+    	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+    	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<title>Document</title>
+    </head>
+    
+    <body>
+    	<style>
+    		.parent {
+    			width: 100%;
+    			height: 150px;
+    			display: flex;
+    			/* flex-flow: flex-direction flex-wrap */
+    			flex-flow: row wrap;
+    			/* 从起点开始放置 */
+    			align-content: flex-start;
+    		}
+    
+    		.child {
+    			box-sizing: border-box;
+    			background-color: white;
+    			/* flex: flex-grow flex-shrink flex-basis; 默认是0 1 auto 不放大 不缩小 项目占据主轴的空间 */
+    			flex: 0 0 25%;
+    			height: 50px;
+    			border: 1px solid red;
+    		}
+    	</style>
+    	<div class="parent">
+    		<div class="child"></div>
+    		<div class="child"></div>
+    		<div class="child"></div>
+    		<div class="child"></div>
+    		<div class="child"></div>
+    		<div class="child"></div>
+    		<div class="child"></div>
+    		<div class="child"></div>
+    	</div>
+    </body>
+    
+    </html>
+    ```
+
+    
+
+27. css实现一个不知道宽度和高度的div居中都有哪些方法
+
+28. 
 
