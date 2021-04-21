@@ -928,3 +928,7 @@
     > ![域名](https://z3.ax1x.com/2021/04/18/cI7FRU.png)
 
 35. 请求时有时会会出现options，先试探，不会每次都会发送options，时间是可以设置的，max-age
+
+36. 请描述JavaScript中的Scope
+
+37. 
