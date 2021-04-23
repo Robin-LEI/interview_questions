@@ -940,5 +940,9 @@
 38. Object.setPrototypeOf()
 
     > 创建对象的时候，改变对象的prototype
-
-39. Object.create()
+    >
+    > 第一个参数表示被定义的对象，第二个参数该对象新的原型
+    >
+    > let p = new Person()
+    >
+    > Object.setPrototypeOf(p, Obj) 等同于 p.\__proto__ = Obj.prototype;
