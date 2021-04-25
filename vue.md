@@ -27,6 +27,51 @@
    > 对数组方法重写的时候需要注意，不能直接改写，因为只有在vue中使用的数组才需要变成响应式，那些不在vue中使用的数组仍然需要采用原始方法。
    >
    > `arrayMethods = Object.create(Array.property)`
+   >
+   > <hr>
+   >
+   > **模板渲染**
+   >
+   > 1. 需要将模板变成一个render方法，render() { return _c('li', {}, name) } // <li>name</li>
+   > 2. 需要去当前实例上取值（vm），这里采用with语法
+   > 3. 得到虚拟dom，可以描述dom结构
+   > 4. 生成一个真实dom，扔到页面中
+   >
+   > **模板编译原理**
+   >
+   > 如何表示html（ast语法树），再把html在转换成js语法
+   >
+   > <hr>
+   >
+   > 在执行vue初始化调用init方法的时候，判断用户有没有传入el，如果传入了el，表明数据可以挂载到页面上。
+   >
+   > 调用`$mount(vm.$options.el)`方法，在此方法里，首先需要解析模板得到render函数，获取模板的优先级：render > template > 外部模板，然后调用`compileToFunctions(template)`编译模板得到render函数，再把render绑定到options上。
+   >
+   > `compileToFunctions`方法：
+   >
+   > 解析template。例如：
+   >
+   > ```html
+   > <div id="app">
+   >     <div style="color:red;">
+   >         <span>{{name}}</span>
+   >     </div>
+   > </div>
+   > ```
+   >
+   > 调用parseHTML(template)，采用边解析边删除的策略。采用栈来记录节点的父节点，同时跟踪children，最终次方法返回一颗AST语法树，树中包含了如下节点：
+   >
+   > ```js
+   > {
+   >     tagName: '',
+   >     attrs: [{ style: 'color: red;' }],
+   >     type: 1, // nodeType
+   >     parent: '',
+   >     children: []
+   > }
+   > ```
+   >
+   > 
 
 
 
@@ -61,6 +106,21 @@
    > 如果数组也采用这种方式进行拦截，当遇到一个数据量很大的数组的时候，非常浪费性能，因为需要递归遍历数组每一项，而用户通常使用的数组的时候很少会这样使用`arr[199] = xxx`，大部分会采用push、unshift、pop...等方法，所以只需要重写数组的这几个常用方法，同时添加更新操作即可。
    >
    > 对数组的七个方法进行拦截`pop、push、shift、unshift、splice、reverse、sort`，为什么不对`concat、slice、join、some、map、filter、every`这些方法进行拦截重写？因为这几个方法不会改变原数组，那七个方法会改变原数组。
+   
+6. nodeType有哪几种常用类型
+
+   | nodeType | 含义     |
+   | -------- | -------- |
+   | 1        | 元素     |
+   | 2        | 属性节点 |
+   | 3        | 文本节点 |
+   | 8        | 注释节点 |
+
+   
+
+7. 
+
+   
 
 
 
