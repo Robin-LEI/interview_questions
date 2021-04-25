@@ -1214,5 +1214,64 @@
 
 27. css实现一个不知道宽度和高度的div居中都有哪些方法
 
-28. 
+28. BFC
+
+    > **概念**
+    >
+    > 块级格式化上下文，它是指一个独立的块级渲染区域，只有块级盒子参与，该区域拥有一套渲染规则来约束块级盒子的布局，且与外部区域无关。
+    >
+    > **应用场景**
+    >
+    > 1. 取消margin塌陷
+    >
+    > 2. 阻止元素被浮动元素覆盖（给该元素设置overflow: hidden）
+    >
+    > **从一个现象说起**
+    >
+    > - 一个盒子不设置高度，当内部子元素都浮动的时候，无法撑起自身
+    >
+    >   ```html
+    >   <!DOCTYPE html>
+    >   <html lang="en">
+    >   
+    >   <head>
+    >       <meta charset="UTF-8">
+    >       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    >       <title>Document</title>
+    >       <style>
+    >           .father {
+    >               border: 1px solid red;
+    >           }
+    >           .son {
+    >               float: left;
+    >               width: 200px;
+    >               height: 200px;
+    >               background-color: aqua;
+    >           }
+    >       </style>
+    >   </head>
+    >   
+    >   <body>
+    >       <div class="father">
+    >           <div class="son"></div>
+    >           <div class="son"></div>
+    >           <div class="son"></div>
+    >       </div>
+    >   </body>
+    >   
+    >   </html>
+    >   ```
+    >
+    >   
+    >
+    > **如何形成BFC**
+    >
+    > - 在父盒子上添加`float`浮动，比如给`.father {float: left}`，注意，只要父盒子的值float值不是none都可以
+    > - 使得父盒子的position属性值不为static或者relative
+    > - 父盒子的display设置为inline-flex、inline-block、flex
+    > - 父盒子设置overflow: hidden，（以上几种方法中最好的）
+    >
+    > 
+
+29. 
 
