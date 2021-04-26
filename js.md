@@ -928,3 +928,93 @@
     > ![域名](https://z3.ax1x.com/2021/04/18/cI7FRU.png)
 
 35. 请求时有时会会出现options，先试探，不会每次都会发送options，时间是可以设置的，max-age
+
+36. 请描述JavaScript中的Scope
+
+37. 列出3种强制类型转换和2种隐式类型转换
+
+    - 概念
+
+      > 将值从一种类型转换为另外一种类型通常称为类型转换，也叫做显式转换，隐式转换也叫做强制类型转换。
+
+38. Object.setPrototypeOf()
+
+    > 创建对象的时候，改变对象的prototype
+    >
+    > 第一个参数表示被定义的对象，第二个参数该对象新的原型
+    >
+    > let p = new Person()
+    >
+    > Object.setPrototypeOf(p, Obj) 等同于 p.\__proto__ = Obj.prototype;
+    
+39. JavaScript的深浅拷贝
+
+    > 浅拷贝
+    >
+    > 如果拷贝的属性是基础类型，那么拷贝的是基础类型的值，如果属性是引用类型，那么拷贝的是属性的内存地址。
+    >
+    > ```js
+    > // 方法1
+    > function shalldowCopy(obj) {
+    >     let result = {}
+    >     for (let k in obj) {
+    >         if (obj.hasOwnProperty(k)) {
+    >             result[k] = obj[k]
+    >         }
+    >     }
+    >     return result
+    > }
+    > // 方法2
+    > Object.assign()
+    > // 方法3
+    > ...
+    > // 方法4
+    > // 数组的concat
+    > ```
+    >
+    > 
+    >
+    > **浅拷贝和赋值的区别**
+    >
+    > 赋值：`let b = a;`，这个时候是把a在栈中的地址赋值给b，此时a和b就指向了一块内存空间，它们二者之间是联动的。
+    >
+    > 赋值操作得到的结果和原数据指向同一对象。
+    >
+    > 浅拷贝：重新在堆中创建内存，拷贝前后对象的基本数据类型互不影响，拷贝前后对象的引用类型共享一块内存，会互相影响。 
+    >
+    > 浅拷贝得到的结果和原数据不是指向同一对象。
+    >
+    > <hr>
+    > 深拷贝
+    >
+    > 将对象从内存中完整的拷贝一份出来，并且在堆中开辟一个新的区域存放这个新对象，修改原对象不会影响新对象，反之亦然。
+    >
+    > ```js
+    > // 方法1
+    > function deepCopy(obj) {
+    >     let result = {}
+    >     if (obj instanceof RegExp) return new RegExp(obj)
+    >     if (obj instanceof Date) return new Date(obj)
+    >     if (typeof obj !== 'object' || obj === null) return obj
+    >     for (let k in obj) {
+    >         if (obj.hasOwnProperty(k)) {
+    >             result[k] = deepCopy(obj[k])
+    >         }
+    >     }
+    >     return result
+    > }
+    > // 方法2
+    > JSON.parse(JSON.stringify()) // 但是这种方式有问题，遇到有日期类、函数类、正则类属性时，失效
+    > // 方法3
+    > $.extend()
+    > // 方法4
+    > lodash的deepClone
+    > ```
+
+40. instanceof
+
+    > a instanceof b
+    >
+    > b的prototype是否在a的原型链上
+
+41. 
