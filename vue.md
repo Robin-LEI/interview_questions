@@ -71,7 +71,13 @@
    > }
    > ```
    >
-   > 
+   > 调用`generate`函数，传入获取的ast语法树，获取到code，code的形式为
+   >
+   > ```js
+   > _c('div', {style: 'color: red'}, _v('hello'))
+   > ```
+   >
+   > 使用with包裹code，`with(this) {return code}`，得到render字符串，在使用new Function(render) 得到返回值fn，这个返回值fn就是render函数
 
 
 
@@ -118,7 +124,27 @@
 
    
 
-7. 
+7. with和eval区别
+
+   ```js
+   // with的使用
+   function a() {
+       with(this) { // 这里this就绑定到了{name: 'test'}
+           console.log(name) // test
+       }
+   }
+   a.call({name: 'test'})
+   
+   // eval 不干净的执行
+   let a = 100
+   eval(`console.log(a)`) // 100
+   
+   // 注意，在严格模式下，with和eval都不能使用
+   ```
+   
+   
+   
+8. 
 
    
 
