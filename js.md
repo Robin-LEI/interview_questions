@@ -1017,4 +1017,107 @@
     >
     > b的prototype是否在a的原型链上
 
-41. 
+41. 数组扁平化的几种方式
+
+    ```js
+    // 方法1
+    let arr = [1, [2,3], [4,5,6]];
+    console.log(arr.flat(Infinity))
+    // 方法2
+    let arr = [1, [2,3], [4,5,6]];
+    let result = []
+    function flat(arr) {
+        if (!Array.isArray(arr)) return result.push(arr)
+        arr.forEach(item => {
+            if (Array.isArray(item)) {
+                flat(item)
+            } else {
+                result.push(item)
+            }
+        })
+        return result
+    }
+    flat(arr)
+    console.log(result)
+    // 方法3
+    let arr = [1, [2, 3], [4, 5, 6]];
+    function flat(arr) {
+        return arr.reduce((pre, cur) => {
+            return pre.concat(cur)
+        }, [])
+    }
+    console.log(flat(arr))
+    ```
+
+    
+
+42. 谈谈JS的运行机制
+
+    > 单线程：同一时间做同一件事情
+
+43. arguments对象是什么？
+
+    > 类数组对象，有length属性
+    >
+    > 如何转化为数组
+    >
+    > 1. ...，为什么 `... `可以转化？
+    >
+    > 2. Array.from
+    >
+    > 3. Array.prototype.slice.call()
+    >
+    > argument对象没有箭头函数
+
+44. 为什么在调用这个函数的时候，`b`会变成一个全局变量
+
+    ```js
+    function func() {
+        let a = b = 0;
+        // 上面这行代码相当于
+        let a = (b = 0);
+        // 执行到这行代码的时候，引擎会发现b这个变量没有声明，于是在全局中创建一个b变量
+    }
+    ```
+
+    
+
+45. V8引擎的垃圾回收机制
+
+46. 哪些操作会造成内存泄露？
+
+    > 1. 闭包
+    >
+    > 2. 意外的全局变量
+    >
+    > 3. 被遗忘的定时器
+    >
+    > 4. 脱离dom的引用
+    >
+    >    ```js
+    >    // dom 元素移除，但 对 dom 元素的引用没有解除，会导致内存泄漏。
+    >    // 解决办法：手工移除。elements.button = null
+    >    
+    >    var elements = {
+    >    	button: document.getElementById('button'),
+    >    	image: document.getElementById('image')
+    >    }
+    >    
+    >    function doStuff() {
+    >        image.src = 'http://some.url/image';
+    >        button.click();
+    >        console.log(text.innerHTML);
+    >    }
+    >    
+    >    function removeButton() {
+    >        document.body.removeChild(document.getElementById('button'));
+    >        // 虽然我们用removeChild移除了button, 但是还在elements对象里保存着#button的引用
+    >        // 换言之, DOM元素还在内存里面.
+    >    }
+    >    ```
+    >
+    >    
+
+47. js延迟加载的方式有哪些？
+
+48. 什么是高阶函数？
