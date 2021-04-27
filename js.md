@@ -1054,8 +1054,101 @@
 42. 谈谈JS的运行机制
 
     > 单线程：同一时间做同一件事情
+    >
+    > JavaScript是一门单线程语言
+    >
+    > 为什么js不是多线程？
+    >
+    > 比如页面中有一个dom元素，一个线程删除此dom节点，另外一个线程给节点添加样式，就不知道听谁的，所以js一开始就被设计为了单线程。
+    >
+    > js虽然是单线程，但是有同步和异步的概念，这就解决了阻塞的问题。
+    >
+    > 同步：在一个函数返回的时候，就能够得到预期结果，就好比`console.log()`
+    >
+    > 异步：在函数返回的时候调用者还得不到预期的结果，而是通过一定手段得到，如setTimeout
+    >
+    > 同步任务：在主线程排队执行的任务，只有前一个任务执行完成，才能执行后一个任务
+    >
+    > 异步任务：不进入主线程，进入专门存放异步任务的事件表里面，当同步任务执行完毕之后，在执行异步任务
+    >
+    > 浏览器会在一个宏任务执行完成之后，下一个微任务执行之前进行页面的渲染
+    >
+    > 宏任务（macrotask）：script脚本代码、setTimeout、setInterval、文件读写I/O
+    >
+    > 微任务（microtask）：promise.then、process.nextTick
+    >
+    > 先执行宏任务，没有宏任务就从事件队列中获取，在执行微任务
+    >
+    > 在执行代码的过程中，遇到微任务，将它添加到微任务的任务队列中。
+    >
+    > ```js
+    > async function async1() {
+    >     console.log('async1 start')
+    >     await async2()
+    >     console.log('async1 end')
+    > }
+    > async function async2() {
+    >     console.log('async2')
+    > }
+    > console.log('script start')
+    > setTimeout(() => {
+    >     console.log('setTimeout')
+    > }, 0);
+    > async1()
+    > new Promise(function(resolve) {
+    >     console.log('promise1')
+    >     resolve()
+    > }).then(function() {
+    >     console.log('promise2')
+    > })
+    > console.log('script end')
+    > ```
+    >
+    > 注意：promise中的异步体现在then和catch中，所以写在promise中的代码是被当做同步任务立即执行的。
+    >
+    > 在async、await中，在出现await之前，其中的代码也是立即执行的。
+    >
+    > await做了什么？
+    >
+    > await等待的是一个表达式，这个表达式的返回值可以是promise对象也可以是其它值。
+    >
+    > 很多人认为await会一直等待表达式执行完毕之后再去继续执行后面的代码，实际上await是一个让出线程标识。
+    >
+    > await后面的表达式会先执行一遍，将await后面的代码加入到微任务队列中，然后就会跳出整个async函数来执行后面的代码。
+    >
+    > async await本身是promise+generator的语法糖，所以await后面的代码是microtask。
+    >
+    > ```js
+    > async function async1() {
+    >   console.log('async1 start')
+    >   await async2()
+    >   setTimeout(() => {
+    >     console.log('setTimeout1')
+    >   }, 0)
+    > }
+    > async function async2() {
+    >   setTimeout(() => {
+    >     console.log('setTimeout2')
+    >   }, 0)
+    > }
+    > console.log('script start')
+    > setTimeout(() => {
+    >   console.log('setTimeout3')
+    > }, 0);
+    > async1()
+    > new Promise(resolve => {
+    >     console.log('promise1')
+    >     resolve()
+    >   })
+    >   .then(() => {
+    >     console.log('promise2')
+    >   })
+    > console.log('script end')
+    > ```
+    >
+    > 
 
-43. arguments对象是什么？
+43. arguments
 
     > 类数组对象，有length属性
     >
@@ -1121,3 +1214,14 @@
 47. js延迟加载的方式有哪些？
 
 48. 什么是高阶函数？
+
+49. 输入一个正数N，输出所有和为N的连续正数序列
+
+    ```js
+    // 例如，输入15
+    // 结果，[[1,2,3,4,5], [4,5,6], [7, 8]]
+    ```
+
+    
+
+50. 
