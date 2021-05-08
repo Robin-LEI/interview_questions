@@ -1273,5 +1273,68 @@
     >
     > 
 
-29. 
+29. CSS如何绘制一个扇形
+
+    ```html
+    <!-- 实现方式1 -->
+    .box {
+    	width: 200px;
+    	height: 200px;
+    	border-radius: 0 0 0 200px;
+    	background: blue;
+    }
+    <div class="box"></div>
+    
+    <!-- 实现方式2 -->
+    .box {
+    	width: 0;
+    	height: 0;
+    	border-width: 200px;
+    	border-radius: 200px;
+    	border-style: solid;
+    	border-color: transparent transparent red;
+    }
+    <div class="box"></div>
+    
+    <!-- 实现方式3 -->
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+        .wrapper {
+          width: 200px;
+          height: 200px;
+          position: relative;
+          background-color: antiquewhite;
+          border-radius: 50%;
+        }
+    
+        .box {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: red;
+          border-radius: 50%;
+          /* clip属性可以裁剪绝对定位元素, rect(top, right, bottom, left) */
+          clip: rect(0 100px 100px 0);
+          transform: rotate(180deg);
+        }
+      </style>
+    </head>
+    <body>
+      <div class="wrapper">
+        <div class="box">
+        </div>
+      </div>
+    </body>
+    </html>
+    ```
+
+    
+
+30. 
 

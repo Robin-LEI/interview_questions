@@ -1224,4 +1224,82 @@
 
     
 
-50. 
+50. JavaScript中几个优雅的运算符使用技巧
+
+    ```js
+    // ?.
+    let a = null;
+    a?.name // 等价于 a && a.name
+    
+    // 注意：一个nullish值要么是null要么是undefined
+    // ?? 运算符
+    undefined ?? 2 // 2
+    null ?? 2 // 2
+    0 ?? 2 // 0
+    true ?? 2 // true
+    false ?? 2 // false
+    
+    undefined || 2 // 2
+    null || 2 // 2
+    0 || 2 // 2
+    true || 2 // true
+    false || 2 // 2
+    // 所以，对于 ?? 来说，只有当值1位null或者undefined时候，才会返回值2
+    // 对于 || 来说，只有当值1为false才会返回值2
+    
+    // &&=
+    x &&= y // 等价于 x && (x = y) 只有当左侧为真的时候才赋值
+    
+    // ||=
+    x ||= y // 等价于 x || (x = y)
+    document.getElementById('search').innerHTML ||= '<i>No posts found matching this search.</i>'
+    
+    ```
+
+    
+
+51. js是如何存储的
+
+    ```js
+    var a = 111111111111111110000,
+    b = 1111;
+    var c = a + b;
+    console.log(c) ? 111111111111111110000
+    // 在JavaScript中number类型以64位存储。
+    // 64位中有符号位1位，指数位11位，实数位52位
+    // 2的53次方是最大值，值为：9007199254740992
+    // 超过这个值，运算结果就不正确
+    ```
+
+    
+
+52. 数组比较大小
+
+    ```js
+    var a = [1, 2, 3],
+        b = [1, 2, 3],
+        c = [1, 2, 4]
+    
+    console.log(a == b) // false
+    console.log(a === b) // false
+    console.log(a > c) // false
+    console.log(a < c) // true
+    // 引用类型比较大小是按照字典顺序比较，就是先比较第一项，相同在比较第二项，以此类推。
+    ```
+
+    
+
+53. 数组的原型是什么？
+
+    ```js
+    Array.isArray(Array.prototype) // true
+    // 数组的原型是数组
+    // 对象的原型是对象
+    // 函数的原型是函数
+    ```
+
+    
+
+54. 谈谈JS的垃圾回收机制
+
+55. 
