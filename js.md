@@ -1302,4 +1302,41 @@
 
 54. 谈谈JS的垃圾回收机制
 
-55. 
+55. instanceof的原理
+
+    ```js
+    A instanceof B // 判断A是不是在B的原型链上，A是实例，B是构造函数
+    
+    // 类型的判断
+    // typeof
+    console.log(typeof null) // object
+    console.log(typeof undefined) // undefined
+    console.log(typeof 1) // number
+    console.log(typeof '1') // string
+    console.log(typeof true) // boolean
+    console.log(typeof new Date()) // object
+    console.log(typeof /\d/) // object
+    console.log(typeof []) // object
+    console.log(typeof {}) // object
+    console.log(typeof function() {}) // function
+    // typeof只能判断除了null之外的简单数据类型，在判断复杂类型的时候，除了function之外都为object，无法正确区分
+    
+    //instanceof
+    let num = new Number(1)
+    let num2 = 1
+    let reg = new RegExp(/\d/)
+    let reg2 = /\d/
+    let str = new String('1')
+    let str2 = '1'
+    console.log(num instanceof Number) // true
+    console.log(num2 instanceof Number) // false
+    console.log(reg instanceof RegExp) // true
+    console.log(reg2 instanceof RegExp) // true
+    console.log(str instanceof String) // true
+    console.log(str2 instanceof String) // false
+    
+    ```
+
+    
+
+56. 
