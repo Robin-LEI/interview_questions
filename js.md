@@ -1334,6 +1334,31 @@
     console.log(reg2 instanceof RegExp) // true
     console.log(str instanceof String) // true
     console.log(str2 instanceof String) // false
+    console.log(null instanceof Object) // false
+    console.log(new Date() instanceof Date) // true
+    // 对于简单数据类型来说，如果声明方式不是构造函数声明的方式，那么使用instanceof判断失效
+    // 对于复杂数据类型可以判断出来
+    // 注意，由于原型链最后都是Object，有时候会导致判断模糊，例如下面
+    // [] instanceof Object // true
+    
+    // 实现instanceof
+    // 实现原理：如果 实例.__proto__ === 构造函数.prototype，则它们在一条原型链上
+    function MyInstanceOf(left, right) {
+        let leftProto = left.__proto__
+        let rightPrototype = right.prototype
+        while(true) {
+            if (leftProto == null) {
+                return false
+            }
+            if (leftProto === rightPrototype) {
+                return true
+            }
+            leftProto = leftProto.__proto__
+        }
+    }
+    
+    // toString
+    // 每个对象的原型上面都有一个toString方法
     
     ```
 
