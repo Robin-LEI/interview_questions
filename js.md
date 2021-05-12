@@ -1408,6 +1408,153 @@
     // 2. 鼠标移动的时候，被拖拽元素随着鼠标一起移动
     // 3. 当鼠标松开的时候，被拖拽元素固定在当前位置
     
+    // demo1
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style type="text/css">
+        .box1 {
+          height: 200px;
+          width: 400px;
+          border: 1px solid red;
+        }
+    
+        .box2 {
+          width: 400px;
+          height: 200px;
+          border: 1px solid rebeccapurple;
+        }
+    
+        img {
+          width: 200px;
+          height: 100%;
+        }
+      </style>
+    </head>
+    <body>
+      <div class="box1" ondragstart="dgstart1(event)" ondrop="drop(event)" ondragover="dgover(event)"></div>
+      <br>
+      <div class="box2" ondrop="drop2(event)" ondragover="dgover2(event)">
+        <img id="img" ondragstart="dgstart(event)" draggable="true" src="https://ss1.bdstatic.com/70cFvXSh_Q1YnxGkpoWK1HF6hhy/it/u=117985501,3237328278&fm=26&gp=0.jpg" alt="">
+      </div>
+    
+      <script>
+        function dgstart(ev) {
+          ev = ev || window.event;
+          ev.dataTransfer.setData('imgId', ev.target.id);
+        }
+    
+        function dgstart1(ev) {
+          ev = ev || window.event;
+          ev.dataTransfer.setData('imgId2', ev.target.id);
+        }
+    
+        function dgover(ev) { // 这里一定要阻止默认事件，否则不会触发ondrop事件
+          ev.preventDefault();
+        }
+    
+        function dgover2(ev) {
+          ev.preventDefault();
+        }
+    
+        function drop(ev) {
+          ev.preventDefault();
+          const imgId = ev.dataTransfer.getData('imgId');
+          document.querySelector('.box1').appendChild(document.getElementById(imgId));
+        }
+    
+        function drop2(ev) {
+          const imgId = ev.dataTransfer.getData('imgId2');
+          console.log(222, imgId)
+          document.querySelector('.box2').appendChild(document.getElementById(imgId));
+        }
+      </script>
+    </body>
+    </html>
+    
+    // demo2
+    <!DOCTYPE html>
+    <html lang="en">
+    
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+      <style>
+        .wrapper {
+          width: 600px;
+          height: 400px;
+          margin: auto;
+          display: flex;
+          justify-content: space-between;
+        }
+    
+        .box1, .box2 {
+          width: 300px;
+          height: 100%;
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        }
+    
+        .box1 {
+          border: 1px solid red;
+        }
+    
+        .box2 {
+          border: 1px solid greenyellow;
+        }
+    
+        .circle {
+          width: 100px;
+          height: 100px;
+          background-color: red;
+          border-radius: 50%;
+        }
+      </style>
+    </head>
+    
+    <body>
+      <div class="wrapper">
+        <div class="box1" ondrop="drop1(event)" ondragover="dgover(event)">
+          <div class="circle" id="circle1" ondragstart="dgstart(event)" draggable="true"></div>
+          <div class="circle" id="circle2" ondragstart="dgstart(event)" draggable="true"></div>
+          <div class="circle" id="circle3" ondragstart="dgstart(event)" draggable="true"></div>
+          <div class="circle" id="circle4" ondragstart="dgstart(event)" draggable="true"></div>
+          <div class="circle" id="circle5" ondragstart="dgstart(event)" draggable="true"></div>
+        </div>
+        <div class="box2" ondrop="drop(event)" ondragover="dgover(event)"></div>
+      </div>
+    
+      <script>
+        function dgstart(ev) {
+          ev.dataTransfer.setData('circleId', ev.target.id);
+        }
+    
+        function dgover(ev) {
+          ev.preventDefault();
+        }
+    
+        function drop(ev) {
+          ev.preventDefault();
+          const circleId = ev.dataTransfer.getData('circleId');
+          document.querySelector('.box2').appendChild(document.getElementById(circleId));
+        }
+    
+        function drop1(ev) {
+          ev.preventDefault();
+          const circleId = ev.dataTransfer.getData('circleId');
+          document.querySelector('.box1').appendChild(document.getElementById(circleId));
+        }
+      </script>
+    </body>
+    
+    </html>
     ```
 
     
