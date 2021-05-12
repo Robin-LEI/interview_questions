@@ -1396,6 +1396,32 @@
 
 60. js的new操作符做了哪些事情
 
+    ```js
+    // Object.create(null) // 产生的是一个空对象，没有原型链
+    // 注意如果new的构造函数本身有返回值，且返回值是一个对象，则new之后拿到的结果是这个对象
+    // 1、返回构造函数的一个实例对象
+    // 2、内部创建了一个空对象，空对象的__proto__指向构造函数的prototype
+    // 3、构造函数内部的this指向这个空对象
+    // 4、给这个空对象绑定属性
+    function Animal(type) {
+        this.type = type;
+    }
+    Animal.prototype.say = function() {}
+    
+    function mockNew() {
+        let obj = {}
+        let Contructor = [].shift.call(arguments);
+        obj.__proto__ = Contructor.prototype;
+        let r = Contructor.apply(obj, arguments);
+        return r instanceof Object ? r : obj
+    }
+    
+    let a = mockNew(Animal, 'dog')
+    console.log(a)
+    ```
+
+    
+
 61. js中各种位置的区别
 
     > [点击查看](https://www.jianshu.com/p/110626e6caf4)
@@ -1559,5 +1585,41 @@
 
     
 
-63. 
+63. call的原理
+
+64. apply的原理
+
+65. bind的原理
+
+    ```js
+    // 使用bind绑定之后，并不会立即执行，而是返回一个新的方法，我们需要执行新的方法
+    // 可以绑定this指向
+    // bind本身就是一个高阶函数
+    // bind函数第一个参数是上下文，第二个之后的参数的需要绑定传递的参数，这些参数也可以在其返回函数调用的时候传递
+    // 如果绑定的函数的返回值函数被new了，当前绑定函数的this就是当前的实例
+    // new出来的结果可以找到原有类(构造函数)的原型
+    
+    Function.prototype.bind = function(context) {
+        // 保存绑定函数
+        const that = this;
+        // 获取bind函数的参数
+        const bindArgs = [].slice.call(arguments, 1);
+        function Fn() { // bind是一个高阶函数
+            // 返回值函数也可以传递参数
+            const args = Array.prototype.slice.call(arguments);
+            // 执行绑定函数，并传入参数，如果绑定的函数的返回值函数被new了，当前绑定函数的this就是当前的实例
+            return that.apply(this instanceof Fn ? this : context, bindArgs.concat(args));
+        }
+        // new出来的结果可以找到原有构造函数的原型
+        const Tn = function() {}
+        Tn.prototype = that.prototype;
+        Fn.prototype = new Tn();
+        // 这里避免这样写：Fn.prototype = that.prototype; 如果这样写，当在Fn的原型对象上扩展方法的时候，会污染绑定函数的原型，且构不成一个完整的原型链，采取上面这种写法，Fn的原型对象相当于是一个实例对象，在实例对象上添加属性和方法不会影响绑定函数的原型，且构成了一个原型链
+        return Fn;
+    }
+    ```
+
+    
+
+66. 
 
