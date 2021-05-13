@@ -1686,6 +1686,38 @@
 
 69. 给数字增加逗号分割
 
+    ```js
+    // for 循环实现
+    function splitNum(num) {
+        num = String(num);
+        if (num.length <= 3) return Number(num);
+        let result = '';
+        for (let i = 1; i <= num.length; i++) {
+            result += num[i - 1];
+            if (i % 3 === 1) {
+                result += ',';
+            }
+        }
+        return result.slice(-1) === ',' ? result.slice(0, -1) : result;
+    }
+    // while 循环实现
+    function splitNum(num) {
+        num = String(num);
+        if (num.length <= 3) return Number(num);
+        let result = '', i = 1;
+        while(i <= num.length) {
+        	result += num[i - 1];
+            if (i % 3 === 1) {
+                result += ',';
+            }
+            i++;
+        }
+        return result.slice(-1) === ',' ? result.slice(0, -1) : result;
+    }
+    ```
+
+    
+
 70. js中求两个大数相加
 
 71. 实现一个reduce方法
