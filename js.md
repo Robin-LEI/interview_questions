@@ -1587,7 +1587,64 @@
 
 63. call的原理
 
+    ```js
+    // 可以改变this指向
+    // 调用函数会立即执行
+    function fn1(name, age) {
+        console.log(1, name, age)
+    }
+    function fn2() {
+        console.log(2)
+    }
+    Function.prototype.call = function(context) {
+        context = context ? Object(context) : window;
+        context.fn = this;
+        let args = [];
+        for (let i = 1; i < arguments.length; i++) {
+            args.push(`arguments[${i}]`);
+        }
+        const r = eval(`context.fn(${args})`)
+        delete context.fn;
+        return r;
+    }
+    fn1.call(fn2, 'xiaoming', 11);
+    fn1.call.call.call(fn2);
+    ```
+
+    
+
 64. apply的原理
+
+    ```js
+    // 可以改变this指向
+    // 调用函数立即执行，参数是数组
+    function fn1(name, age) {
+        console.log(1, name, age)
+    }
+    function fn2(name) {
+        console.log(2, name)
+    }
+    Function.prototype.apply = function(context, args) {
+        context = context ? Object(context) : window;
+        context.fn = this;
+        if (!args) return eval(`context.fn()`);
+        if (!Array.isArray(args)) {
+            throw TypeError('CreateListFromArrayLike called on non-object');
+        }
+        let arr = []
+        for (let i = 0;i < args.length; i++) {
+            arr.push(`args[${i}]`);
+        }
+        const r = eval(`context.fn(${arr})`);
+        delete context.fn;
+        return r;
+    }
+    fn1.apply(fn2)
+    fn1.apply(fn2, ['xiaoming', 11])
+    fn1.apply.apply(fn2, ['xiaohua'])
+    ```
+
+    
 
 65. bind的原理
 
@@ -1629,9 +1686,174 @@
 
 69. 给数字增加逗号分割
 
+    ```js
+    // for 循环实现
+    function splitNum(num) {
+        num = String(num);
+        if (num.length <= 3) return Number(num);
+        let result = '';
+        for (let i = 1; i <= num.length; i++) {
+            result += num[i - 1];
+            if (i % 3 === 1) {
+                result += ',';
+            }
+        }
+        return result.slice(-1) === ',' ? result.slice(0, -1) : result;
+    }
+    // while 循环实现
+    function splitNum(num) {
+        num = String(num);
+        if (num.length <= 3) return Number(num);
+        let result = '', i = 1;
+        while(i <= num.length) {
+        	result += num[i - 1];
+            if (i % 3 === 1) {
+                result += ',';
+            }
+            i++;
+        }
+        return result.slice(-1) === ',' ? result.slice(0, -1) : result;
+    }
+    ```
+
+    
+
 70. js中求两个大数相加
 
 71. 实现一个reduce方法
 
+    ```js
+    // reduce方法的第二个参数哪怕是undefined，也会当做初始化值使用
+    Array.prototype.reduce = function(fn, initValue) {
+        if (fn === null) throw TypeError(`null is not function`);
+        if (fn === undefined) throw TypeError(`undefined is not function`);
+        if (Array.prototype.toString.call(fn) !== "[object Function]") {
+            if (typeof fn === 'object') {
+                throw TypeError(`${Array.prototype.toString.call(fn)} is not function`);
+            }
+            throw TypeError(`${fn} is not function`);
+        }
+        let pre = 0, idx = 0;
+        if (arguments.length === 1) { // 没有传递initValue，此时pre的值为数组的第1个元素，索引要从1开始
+            pre = this[0];
+            idx = 1;
+        }
+        if (arguments.length > 1) { // 说明传递了initValue，此时pre的值为initValue
+            pre = initValue;
+            idx = 0;
+        }
+        for (let i = idx; i < this.length; i++) {
+            pre = fn(pre, this[i], i, this);
+        }
+        return pre;
+    }
+    ```
+
+    
+
 72. 手写一个Ajax
+
+    ```js
+    const ajax = {
+        get: function(url, cb) {
+            let xhr = null;
+            if (XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else { // 兼容IE5、IE6
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            // xhr.open有三个参数，第三个参数表示是否异步，true表示异步，false表示同步
+            xhr.open('get', url, false);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) { // 请求完成
+                    if (xhr.status === 200 || xhr.status === 304) {
+                        cb(xhr.responseText);
+                    }
+                }
+            }
+            xhr.send();
+        },
+        post: function(url, data, cb) {
+            let xhr = null;
+            if (XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else {
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            xhr.open('post', url, false);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 304) {
+                        cb(xhr.responseText);
+                    }
+                }
+            }
+            xhr.send(data);
+        }
+    }
+    
+    // promise版
+    const ajax = {
+        get: function(url) {
+            const promise = new Promise((resolve, reject) => {
+                let xhr = null;
+                if (XMLHttpRequest) {
+                    xhr = new XMLHttpRequest();
+                } else {
+                    xhr = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+                xhr.open('get', url, false);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) { // 请求完成
+                        if (xhr.status === 200 || xhr.status === 304) {
+                            resolve(xhr.responseText);
+                        } else {
+                            reject('error');
+                        }
+                    }
+                }
+                xhr.send();
+            });
+            return promise;
+        },
+        post: function(url, data) {
+            const promise = new Promise((resolve, reject) => {
+                let xhr = null;
+                if (XMLHttpRequest) {
+                    xhr = new XMLHttpRequest();
+                } else {
+                    xhr = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+                xhr.open('post', url, false);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) { // 请求完成
+                        if (xhr.status === 200 || xhr.status === 304) {
+                            resolve(xhr.responseText);
+                        } else {
+                            reject('error');
+                        }
+                    }
+                }
+                xhr.send(data);
+            });
+            return promise;
+        }
+    }
+    ```
+
+    
+
+73. 实现一个JSON.stringify
+
+74. 实现一个JSON.parse
+
+75. forEach、for、for...of、for...in
+
+    > - forEach、map 无法跳出循环
+    > - for、while、for...of可以通过break跳出
+    > - [优化地图](https://juejin.cn/post/6844903639635623949)
+
+    
+
+76. 
 
