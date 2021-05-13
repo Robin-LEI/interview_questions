@@ -1724,7 +1724,29 @@
 
     ```js
     // reduce方法的第二个参数哪怕是undefined，也会当做初始化值使用
-    
+    Array.prototype.reduce = function(fn, initValue) {
+        if (fn === null) throw TypeError(`null is not function`);
+        if (fn === undefined) throw TypeError(`undefined is not function`);
+        if (Array.prototype.toString.call(fn) !== "[object Function]") {
+            if (typeof fn === 'object') {
+                throw TypeError(`${Array.prototype.toString.call(fn)} is not function`);
+            }
+            throw TypeError(`${fn} is not function`);
+        }
+        let pre = 0, idx = 0;
+        if (arguments.length === 1) { // 没有传递initValue，此时pre的值为数组的第1个元素，索引要从1开始
+            pre = this[0];
+            idx = 1;
+        }
+        if (arguments.length > 1) { // 说明传递了initValue，此时pre的值为initValue
+            pre = initValue;
+            idx = 0;
+        }
+        for (let i = idx; i < this.length; i++) {
+            pre = fn(pre, this[i], i, this);
+        }
+        return pre;
+    }
     ```
 
     
