@@ -1753,3 +1753,107 @@
 
 72. 手写一个Ajax
 
+    ```js
+    const ajax = {
+        get: function(url, cb) {
+            let xhr = null;
+            if (XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else { // 兼容IE5、IE6
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            // xhr.open有三个参数，第三个参数表示是否异步，true表示异步，false表示同步
+            xhr.open('get', url, false);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) { // 请求完成
+                    if (xhr.status === 200 || xhr.status === 304) {
+                        cb(xhr.responseText);
+                    }
+                }
+            }
+            xhr.send();
+        },
+        post: function(url, data, cb) {
+            let xhr = null;
+            if (XMLHttpRequest) {
+                xhr = new XMLHttpRequest();
+            } else {
+                xhr = new ActiveXObject('Microsoft.XMLHTTP');
+            }
+            xhr.open('post', url, false);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200 || xhr.status === 304) {
+                        cb(xhr.responseText);
+                    }
+                }
+            }
+            xhr.send(data);
+        }
+    }
+    
+    // promise版
+    const ajax = {
+        get: function(url) {
+            const promise = new Promise((resolve, reject) => {
+                let xhr = null;
+                if (XMLHttpRequest) {
+                    xhr = new XMLHttpRequest();
+                } else {
+                    xhr = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+                xhr.open('get', url, false);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) { // 请求完成
+                        if (xhr.status === 200 || xhr.status === 304) {
+                            resolve(xhr.responseText);
+                        } else {
+                            reject('error');
+                        }
+                    }
+                }
+                xhr.send();
+            });
+            return promise;
+        },
+        post: function(url, data) {
+            const promise = new Promise((resolve, reject) => {
+                let xhr = null;
+                if (XMLHttpRequest) {
+                    xhr = new XMLHttpRequest();
+                } else {
+                    xhr = new ActiveXObject('Microsoft.XMLHTTP');
+                }
+                xhr.open('post', url, false);
+                xhr.onreadystatechange = function() {
+                    if (xhr.readyState === 4) { // 请求完成
+                        if (xhr.status === 200 || xhr.status === 304) {
+                            resolve(xhr.responseText);
+                        } else {
+                            reject('error');
+                        }
+                    }
+                }
+                xhr.send(data);
+            });
+            return promise;
+        }
+    }
+    ```
+
+    
+
+73. 实现一个JSON.stringify
+
+74. 实现一个JSON.parse
+
+75. forEach、for、for...of、for...in
+
+    > - forEach、map 无法跳出循环
+    > - for、while、for...of可以通过break跳出
+    > - [优化地图](https://juejin.cn/post/6844903639635623949)
+
+    
+
+76. 
+
