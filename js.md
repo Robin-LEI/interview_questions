@@ -1587,7 +1587,64 @@
 
 63. call的原理
 
+    ```js
+    // 可以改变this指向
+    // 调用函数会立即执行
+    function fn1(name, age) {
+        console.log(1, name, age)
+    }
+    function fn2() {
+        console.log(2)
+    }
+    Function.prototype.call = function(context) {
+        context = context ? Object(context) : window;
+        context.fn = this;
+        let args = [];
+        for (let i = 1; i < arguments.length; i++) {
+            args.push(`arguments[${i}]`);
+        }
+        const r = eval(`context.fn(${args})`)
+        delete context.fn;
+        return r;
+    }
+    fn1.call(fn2, 'xiaoming', 11);
+    fn1.call.call.call(fn2);
+    ```
+
+    
+
 64. apply的原理
+
+    ```js
+    // 可以改变this指向
+    // 调用函数立即执行，参数是数组
+    function fn1(name, age) {
+        console.log(1, name, age)
+    }
+    function fn2(name) {
+        console.log(2, name)
+    }
+    Function.prototype.apply = function(context, args) {
+        context = context ? Object(context) : window;
+        context.fn = this;
+        if (!args) return eval(`context.fn()`);
+        if (!Array.isArray(args)) {
+            throw TypeError('CreateListFromArrayLike called on non-object');
+        }
+        let arr = []
+        for (let i = 0;i < args.length; i++) {
+            arr.push(`args[${i}]`);
+        }
+        const r = eval(`context.fn(${arr})`);
+        delete context.fn;
+        return r;
+    }
+    fn1.apply(fn2)
+    fn1.apply(fn2, ['xiaoming', 11])
+    fn1.apply.apply(fn2, ['xiaohua'])
+    ```
+
+    
 
 65. bind的原理
 
