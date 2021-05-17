@@ -1855,5 +1855,114 @@
 
     
 
-76. 
+76. 冒泡排序
+
+    ```js
+    let arr = [1,2,9,73,54,9]
+    
+    for (let i = 0; i < arr.length - 1; i++) { // 轮数
+        for (let j = 0; j < arr.length - 1 - i; j++) { // 次数
+            if (arr[j] > arr[j + 1]) {
+                const temp = arr[j]
+                arr[j] = arr[j + 1]
+                arr[j + 1] = temp
+            }
+        }
+    }
+    
+    console.log(arr)
+    ```
+
+    
+
+77. Set、Map、weakSet、weakMap
+
+    ```js
+    // Set
+    // add
+    // delete
+    // has
+    // forEach
+    
+    // 注意：set集合可以存放引用类型，但是不建议，根据引用类型的地址判断的
+    // [...集合] 可以把集合转为数组
+    
+    // 字符串去重
+    let str = 'hello world'
+    console.log([...new Set(str)].join(''))
+    
+    let a = new Set([1, 2, 3]);
+    let b = new Set([4, 3, 2]);
+    // 并集
+    console.log(new Set([...a, ...b]))
+    
+    // 交集
+    console.log(new Set([...a].filter(x => b.has(x))))
+    
+    // 差集(a相对b)
+    console.log(new Set([...a].filter(x => !b.has(x))))
+    
+    // Map
+    // set
+    // get
+    // size
+    // has
+    // delete
+    // forEach、for...of，forEach循环拿到的每一项是value，for...of循环拿到的每一项是[key: value]
+    let map = new Map();
+    
+    // 面试题：console.log(['2', '3', '4'].map(parseInt)); [2, NaN, NaN]
+    // map循环会给parseInt注入两个参数item, index，但是parseInt有两个参数，第一个参数表示被解析的值，第二个参数表示解析的目标进制数，所以应该修改为如下：console.log(['2', '3', '4'].map(item => parseInt(item, 10)));
+    
+    // weakMap、weakSet
+    // 键只能是对象
+    // 二者与Set、Map的区别如下：
+    // 1. WeakSet中的元素和和WeakMap中的key都只能是对象类型(WeakMap的value可以是任意类型)；
+    // 2. WeakSet和WeakMap都没有size属性；
+    // 3. WeakSet和WeakMap都没有clear方法；
+    // 4. WeakSet和WeakMap都不可以遍历所包含的元素；
+    ```
+
+    
+
+78. window.onload和$(document).ready()区别
+
+    > - window.onload： 用0级事件绑定·只能绑定一个函数-是在页面中包含图片在内的所有元素全部加载完成后再执行
+    >
+    > - $(document).ready()用2级事件绑定的 监听DOMContentLoaded事件实现的，可以绑定多个函数:页面DOM结构渲染完成后执行
+    > - **因此$(document).ready()执行快于window.onload执行；**
+
+79. 模块化
+
+    > 发展历史
+    >
+    > 最原始的写法，在一个js文件很多变量，声明很多个函数，容易造成全局污染，命名冲突。
+    >
+    > 采用命名空间的形式，虽然可以有效避免，但是不安全，可以通过对象点属性的形式修改属性。
+    >
+    > IIFE（立即执行函数）
+    >
+    > 引入依赖
+
+    > 为什么需要模块化？
+    >
+    > 减少关联性、部署方便、解耦
+
+    > 模块化带来的问题？
+    >
+    > 依赖模糊、请求过多、难以维护
+
+    > 模块化规范？
+    >
+    > CommonJS（node）、AMD、CMD（阿里，使用的不多）、ES6
+    >
+    > CommonJS：每一个文件指的是js文件
+    >
+    > 暴露的本质是exports，module.exports本身是一个{}
+    >
+    > exports与module.exports
+    >
+    > https://www.cnblogs.com/fayin/p/6831071.html
+
+80. https://juejin.cn/post/6957913856488243237 
 
