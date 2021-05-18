@@ -1964,5 +1964,21 @@
     >
     > https://www.cnblogs.com/fayin/p/6831071.html
 
-80. https://juejin.cn/post/6957913856488243237 
+80. 判断对象为空
+
+    ```js
+    function judge(value) {
+        return value && Object.keys(value).length && value.contructor === 'Object'
+    }
+    // 因为在JavaScript中有9个内置构造函数，例如，new String().length === 0 // true
+    
+    // 数据类型分类
+    // 在最版本的JS标准中，数据类型分为了8类，包括
+    // 7种基本数据类型，undefined、null、string、boolean、number、symbol(es新增)、bigint(es10新增)
+    // 1种引用类型，包括function、array、date等
+    ```
+
+    
+
+81. 
 
