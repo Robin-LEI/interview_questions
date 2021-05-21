@@ -204,6 +204,91 @@
    1 <= intervals.length <= 10^4
    intervals[i].length == 2
    0 <= starti <= endi <= 10^4
+   
+   /**
+    * @param {number[][]} intervals
+    * @return {number[][]}
+    */
+   var merge = function(intervals) {
+       // 先排序，按照每一项的左边元素的大小从小到大排序
+       order(intervals)
+       console.log(intervals)
+       // 循环遍历排好序的数组，下一项节点的左边元素比上一项节点的右边元素值大，则没有重合，把当前项存在结果数组中
+       // 如果当前项的左边的值小于等于前一项右边的值，则有重合，此时比较当前项右边的值和前一项右边的值，把大的作为区间的右边元素值
+       return compare(intervals)
+   
+       function compare(arr) {
+           // 第一项作为初始值
+           let merged = [arr[0]]
+           for (let i = 1; i < arr.length; i++) {
+               console.time('calculate')
+               calculate(merged[merged.length - 1], arr[i], merged)
+               console.timeEnd('calculate')
+           }
+           return merged
+       }
+   
+       function calculate(prev, next, merged) {
+           if (next[0] > prev[1]) { // 没有重合
+               merged.push(next)
+           } else { // 存在重合
+               if (next[1] >= prev[1]) {
+                   prev[1] = next[1]
+               }
+           }
+       }
+   
+       function order(arr) {
+           /**
+           这里的排序使用的是冒泡排序
+           冒泡排序的性能不高，时间复杂度 O(n^2)
+           优化前：228ms-256ms
+            */
+           // 数组本身的sort排序
+           intervals = arr.sort((a, b) => a[0] - b[0])
+           
+           // 插入排序
+           // let handle = [arr[0]]
+           // for (let i = 1; i < arr.length; i++) {
+           //     let A = arr[i]
+           //     for (let j = handle.length - 1; j >= 0; j--) {
+           //         let B = handle[j]
+           //         if (A[0] > B[0]) {
+           //             handle.splice(j + 1,0,A)
+           //             break
+           //         }
+           //         if (j === 0) {
+           //             handle.unshift(A)
+           //         }
+           //     }
+           // }
+   
+           // intervals = handle
+           // return handle
+   		
+        	// 冒泡排序1
+           // for (let i = 0; i < arr.length - 1; i++) {
+           //     for (let j = 0; j < arr.length - 1 - i; j++) {
+           //         if (arr[j][0] > arr[j + 1][0]) {
+           //             const temp = arr[j]
+           //             arr[j] = arr[j + 1]
+           //             arr[j + 1] = temp
+           //         }
+           //     }
+           // }
+           
+   		// 冒泡排序2
+           // for (let i = 0; i < arr.length; i++) {
+           //     for (let j = 0; j < arr.length - i - 1; j++) {
+           //         if (arr[j][0] > arr[j + 1][0]) {
+           //             const temp = arr[j]
+           //             arr[j] = arr[j + 1]
+           //             arr[j + 1] = temp
+           //         }
+           //     }
+           // }
+       }
+   };
    ```
 
    
