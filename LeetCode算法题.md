@@ -321,9 +321,81 @@
    提示：
    1 <= digits.length <= 100
    0 <= digits[i] <= 9
+   
+   var plusOne = function(digits) {
+       for (let i = digits.length - 1; i>= 0; i--) {
+           digits[i]++
+           digits[i] %= 10
+           if (digits[i] != 0)
+               return digits;
+       }
+       // 针对处理 [9] 这种情况
+       digits.unshift(1)
+       return digits
+   }
    ```
 
    
 
-7. 
+7. 最后一个单词的长度
+
+   ```js
+   给你一个字符串 s，由若干单词组成，单词之间用空格隔开。返回字符串中最后一个单词的长度。如果不存在最后一个单词，请返回 0 。
+   单词 是指仅由字母组成、不包含任何空格字符的最大子字符串。
+   
+   示例 1：
+   输入：s = "Hello World"
+   输出：5
+   
+   示例 2：
+   输入：s = " "
+   输出：0
+   
+   提示：
+   1 <= s.length <= 104
+   s 仅有英文字母和空格 ' ' 组成
+   
+   /**
+    * @param {string} s
+    * @return {number}
+    */
+   var lengthOfLastWord = function(s) {
+       s = s.replace(/(^\s*)|(\s*$)/g, '') // 把字符串首尾空格全部去除
+       let reg = /^[a-zA-Z]+(\s*[a-zA-Z]+)*$/g // 判断去除首尾空格后的字符串是否是“单词”
+       if (!reg.test(s)) return 0 // 如果不是“单词”，返回0
+       reg = /[a-zA-Z]+$/g // 匹配最后一个单词
+       let res = s.match(reg) 
+       return res[res.length - 1].length
+   };
+   ```
+
+   
+
+8. 全排列
+
+   ```js
+   给定一个不含重复数字的数组 nums ，返回其 所有可能的全排列 。你可以 按任意顺序 返回答案。
+   
+   示例 1：
+   输入：nums = [1,2,3]
+   输出：[[1,2,3],[1,3,2],[2,1,3],[2,3,1],[3,1,2],[3,2,1]]
+   
+   示例 2：
+   输入：nums = [0,1]
+   输出：[[0,1],[1,0]]
+   
+   示例 3：
+   输入：nums = [1]
+   输出：[[1]]
+   
+   提示：
+   1 <= nums.length <= 6
+   -10 <= nums[i] <= 10
+   nums 中的所有整数 互不相同
+   
+   ```
+
+   
+
+9. 
 
