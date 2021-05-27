@@ -393,9 +393,99 @@
    -10 <= nums[i] <= 10
    nums 中的所有整数 互不相同
    
+   /**
+    * @param {number[]} nums
+    * @return {number[][]}
+    */
+   var permute = (nums) => {
+     const res = []; // 存储结果
+     const used = {};
+   
+     function dfs(path, curr) {
+       if (path.length == nums.length) { // 个数选够了
+         res.push(path.slice()); // 拷贝一份path，加入解集res
+         return;                 // 结束当前递归分支
+       }
+       for (const num of nums) { // for枚举出每个可选的选项
+         // if (path.includes(num)) continue; // 别这么写！查找的时间是O(n)，增加时间复杂度
+         if (used[num]) continue; // 使用过的，跳过
+         path.push(num);         // 选择当前的数，加入path
+         used[num] = true;       // 记录一下 使用了
+         dfs(path);              // 基于选了当前的数，递归
+         path.pop();             // 上一句的递归结束，回溯，将最后选的数pop出来
+         used[num] = false;      // 撤销这个记录
+       }
+     }
+   
+     dfs([], []); // 递归的入口，空path传进去
+     return res;
+   };
    ```
 
    
 
-9. 
+9. 有效的数独
+
+   ```js
+   请你判断一个 9x9 的数独是否有效。只需要 根据以下规则 ，验证已经填入的数字是否有效即可。
+   
+   1. 数字 1-9 在每一行只能出现一次。
+   2. 数字 1-9 在每一列只能出现一次。
+   3. 数字 1-9 在每一个以粗实线分隔的 3x3 宫内只能出现一次。（请参考示例图）
+   
+   数独部分空格内已填入了数字，空白格用 '.' 表示。
+   
+   注意：
+   一个有效的数独（部分已被填充）不一定是可解的。
+   只需要根据以上规则，验证已经填入的数字是否有效即可。
+   
+   提示：
+   board.length == 9
+   board[i].length == 9
+   board[i][j] 是一位数字或者 '.'
+   ```
+
+   ![数独](https://i0.hdslb.com/bfs/album/e6a3e158c01148e8673f84a43979cfda070ca025.png)
+
+   ![](https://i0.hdslb.com/bfs/album/58534aba52df0e951fd6ec34d283ecacc083491d.png)
+
+   ![](https://i0.hdslb.com/bfs/album/c4e18eb2b5fc9572fafa74e21c724fcbdb792044.png)
+
+   >  解释：除了第一行的第一个数字从 5 改为 8 以外，空格内其他数字均与 示例1 相同。 但由于位于左上角的 3x3 宫内有两个 8 存在, 因此这个数独是无效的。
+
+   
+
+10. 用栈实现队列
+
+11. 用队列实现栈
+
+12. 给定两个整数n和k，返回1...n中所有可能的k个数的组合
+
+    ```js
+    /* 
+    输入：n = 4,k = 2;
+    输出：
+    [
+      [2,4],
+      [3,4],
+      [2,3],
+      [1,2],
+      [1,3],
+      [1,4],
+    ]
+     */
+    ```
+
+    
+
+13. 给你一个包含n个整数的数组nums，判断nums中是否存在三个元素a、b、c，使得a+b+c=0？请你找出所有满足条件且不重复的三元组
+
+    ```js
+    // 示例
+    给定数组 nums = [-1, 0, 1, 2, -1, -4]， 满足要求的三元组集合为： [ [-1, 0, 1], [-1, -1, 2] ]
+    ```
+
+    
+
+14. 
 

@@ -28,8 +28,71 @@
    >
    > `arrayMethods = Object.create(Array.property)`
    >
-   > <hr>
+   > created 数据已经被劫持了，变成响应式了
    >
+   > beforeMount 渲染之前
+   >
+   > mounted 调用render方法
+   >
+   > 钩子中的this指向的vm实例
+   >
+   > mixin数据的合并会导致数据的来源不明确，mixin是一个静态方法，一个全局API
+   >
+   > mergeOptions(this.options，mixin)的实现原理：// this.options存储的是全局配置
+   >
+   > 两个参数 parent，child，把child合并到parent上
+   >
+   > 合并普通数据：
+   >
+   > 如果父亲有的，儿子也有，那么儿子覆盖父亲
+   >
+   > 如果父亲有，儿子没有，那么用父亲的
+   >
+   > 遍历parent
+   >
+   > 都是对象，直接合并
+   >
+   > 遍历儿子
+   >
+   > 引申出合并对象？？
+   >
+   > 如果合并的是钩子，采用合并钩子的策略
+   >
+   > 把两个钩子变成一个数组结构
+   >
+   > 合并为数组后依次执行
+   
+   组件的合并策略
+   
+   Vue.component 可以声明组件
+   
+   内部使用一个 Vue.extend API,返回一个通过对象创建的一个类，通过这个类去创建组件去使用
+   
+   new Vue({
+   
+   ​	components: {} // 冲突时这里声明的组件优先，先查找自己身上是否存在，没有查找父亲的 \__proto__
+   
+   })
+   
+   
+   
+   Vue.extend = function() {
+   
+   ​	
+   
+   }
+   
+   
+   
+   组件的渲染原理
+   
+   需要对标签名做过滤，因为标签名有可能是自定义组件
+   
+   组件独有componentOptios和hook（存放组件的构造函数）
+   
+   vue是如何渲染的？
+   
+   > <hr>
    > **模板渲染**
    >
    > 1. 需要将模板变成一个render方法，render() { return _c('li', {}, name) } // <li>name</li>

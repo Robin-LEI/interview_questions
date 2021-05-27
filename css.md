@@ -1336,5 +1336,69 @@
 
     
 
-30. 
+30. css性能优化
+
+    - 新特性 contain，控制页面的重排和重绘
+
+      - contain属性的主要目的是隔离指定内容的样式、布局和渲染
+
+      - 使用contain声明，会使得该元素及其子元素和页面上其它元素保持独立
+
+      - contain属性有七种不同的值
+
+        - none 无
+
+        - layout 开启布局限制
+
+        - style 开启样式限制
+
+        - paint 开启渲染限制
+
+        - size 开启size限制
+
+        - content 开启除了size之外的所有限制
+
+        - strict 开启layout、style和paint三种限制
+
+      - 应用场景
+
+        - 比如通常在页面上添加第三方的小饰件时
+        - 如果你有一个导航栏或其它类似的东西并不在屏幕可显示范围内出现，浏览器同样会为这些不可见的元素进行渲染。通过设置contain：paint，浏览器就会忽略这些屏幕外不可见的元素，从而加速渲染其它内容。
+        
+      - 对于第三方的小饰件，始终使用 contain：strict是很好的习惯，它可以保护你的页面不受他们的干扰而出现性能问题
+      
+    - 避免在css中使用@import
+    
+      > 比如在first.css中使用 @import url('second.css')
+      >
+      > 浏览器必须先下载和执行、分许first.css，然后再去下载second.css
+      >
+      > 建议使用link替代@import
+      >
+      > 因为使用link可以并行加载资源，提升网页的加载时间
+    
+    - 异步加载css
+    
+      > 在默认情况下，浏览器在加载`CSS`时将终止页面的样式呈现（同步加载），也就是加载`CSS`会阻塞`DOM树`的渲染（但并不会阻塞`DOM树`的构建），可以简单理解为：当在加载`CSS`的同时，也在构建`DOM树`，只是没有应用上样式。
+      >
+      > 实现异步加载的两种方式：
+      >
+      > 1. 使用媒体查询
+      >
+      >    ```css
+      >    <link rel="stylesheet" href="./index2.css" media="none" onload="this.media='all'">
+      >    这样浏览器将会异步加载这个CSS文件（优先度比较低），在加载完毕之后，使用onload属性将link的媒体类型设置为all，然后便开始渲染。
+      >    
+      >    <link rel="stylesheet" href="./index1.css">
+      >    ```
+      >
+      >    
+      >
+      > 2. 提前加载 `<link rel="preload" href="./index.css" as="style">`，这种方式浏览器的支持度不好
+    
+    - 最小化和压缩css
+    
+      > 去除没有用到的css，去除空格，压缩css
+    
+31. 
 

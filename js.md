@@ -2084,5 +2084,194 @@
 
 80. var let const 区别
 
-81. 
+    ```js
+    // let 与 const 声明的全局变量不会挂载到顶层对象window的下面，但是var声明的全局变量会
+    // let 与 const 声明的变量不存在变量提升，var声明的变量会进行变量提升
+    // let 与 const 声明的变量不可重复声明，但是var声明的变量可以重复声明，但是后面的会覆盖前面的
+    // let 与 var 声明变量可以不立即进行赋值，但是const声明的变量必须立即进行赋值
+    
+    // 临时死区（TDZ  Temporal dead zone）
+    /* 
+    	let 与 const声明的变量不会被提升，如果在声明之前访问这些变量会报错。
+    这是因为JavaScript引擎在扫描代码发现变量声明时，要么将它们提升到作用域顶部（遇到var声明），要么将它们放在TDZ中（遇到let与const声明）。访问TDZ中的变量会触发报错。
+    只有执行过变量声明的语句之后，变量才会从TDZ中移除，然后才可以访问。
+    */
+    
+    // let在循环中会形成块级作用域
+    
+    // let到底有没有进行提升
+    let a = 1
+    {
+        a = 2
+        let a
+    }
+    // 上面的代码会报错，这也说明了let声明会进行提升，如果不会进行提升，那么a=2会将a=1修改，所以let提升了， 但是由于TDZ的存在，不能在let声明之前使用变量。
+    ```
+
+    
+
+81. 定时器为什么是不精确的?
+
+    ```js
+    /*
+    1. 首先,我们知道 setInterval 的运行机制,setInterval 属于宏任务,要等到一轮同步代码以及微任务执行完后才会走到宏任务队列,但是前面的任务到底需要多长时间,这个我们是不确定的.
+    
+    2. 等到宏任务执行,代码会检查 setInterval 是否到了指定时间,如果到了,就会执行 setInterval,如果不到的话,那就要等到下次 EventLoop 重新判断
+    
+    3. 当然,还有一部分不确定因素,比如 setInterval 的时间戳小于 10ms,那么会被调整至 10ms 执行,因为这是 setInterval 设计以及规定,当然,由于其他任务的影响,这个 10ms 也会不精确.
+    
+    4. 还有一些物理原因,如果用户使用的设备处于供电状态等,为了节电,浏览器会使用系统定时器,时间间隔将被调整至 16.6ms
+    */
+    ```
+
+    
+
+82. js数组对象的去重
+
+    ```js
+    // 针对数组 arr 去重
+    let arr = [
+        {
+            code: 'test_code',
+            name: '1'
+        },
+        {
+            code: 'test_code-2'，
+            name: '2'
+        },
+        {
+            code: 'test_code',
+            name: 'test1'
+        }
+    ]
+    
+    let obj = {}
+    arr = arr.reduce((prev, next) => {
+        obj['code'] ? '' : obj['code'] = true && prev.push(next)
+        return prev
+    }, [])
+    ```
+
+    
+
+83. 说一下Taro编译原理
+
+    > taro:buld xxx是执行编译的命令，根据不同的参数，把代码编译成h5、小程序、react native等
+
+    > 编译步骤：
+    >
+    > 1. 先解析，将代码解析成抽象语法树
+    > 2. 然后对AST进行遍历和替换
+    > 3. 最后是生成，根据新的AST生成编译后的代码
+
+    > 如何做到一套代码，在不同平台执行的？
+    >
+    > 无论h5、小程序还是RN都有一个共同的部分：
+    >
+    > 都可以将源代码作为纯文本解析为抽象语法树的数据结构
+    >
+    > 当源代码解析为AST后，根据不同的平台的语法树规则，产生对应平台的语法树，然后产生代码。
+    >
+    > 这样就可以做到同一套代码可以在不同平台运行。
+
+    
+
+84. 原生js实现图片懒加载的思路
+
+    ```js
+    // 为什么要对图片进行懒加载
+    // 可以节省带宽、提升网页性能，实质是当图片进入可见区域内的时候才进行加载，否则不加载，也可以给一个默认的图片占位
+    
+    // 方法1 采用交叉观测器 IntersectionObserver
+    // InterSectionObserver是浏览器原生提供的构造函数，用来自动观测目标元素是否出现在可见区域内
+    // 该构造函数接受两个参数 callback、option
+    // callback：可见性发生改变时触发的回调函数
+    // option是配置对象，可选
+    // 构造函数的返回值是一个观测器实例
+    // 实例上的observer方法表示开始观测
+    // 实例上的unobserver表示停止观测
+    
+    function lazyLoad(imgs) {
+        // ioes 是 IntersectionObserverEntry对象，保存着目标元素的信息
+        const io = new IntersectionObserver(ioes =>  {
+            ioes.forEach(ioe => {
+                const img = ioe.target
+                const intersectionRatio = ioe.intersectionRatio
+                // intersectionRatio 为0时，表示完全不可见，为1时，表示完全可见
+                if (intersectionRatio > 0 && intersectionRatio <= 1) {
+                    if (!img.src) {
+                        img.src = img.dataset.src
+                    }
+                }
+                img.onload = img.onerror = (img) => io.unobserver(img)
+            })
+        })
+        imgs.forEach(img => io.observer(img))
+    }
+    
+    const imgs = document.querySelectorAll(img)
+    lazyLoad(imgs)
+    
+    // 提供一个定时器版本的节流函数
+    function throttle(func, wait) {
+        let timer = null
+        return function(...args) {
+            if (!timer) func(...args)
+            timer = setTimeout(() => {
+                timer = null
+            }, wait)
+        }
+    }
+    
+    // 方法2 利用 getBoundingClientRect()
+    // 这个方法用于获取某个元素相对于视口的位置集合，集合中包含了 top、right、bottom、left、width、height、x、y属性
+    
+    function lazyLoad2(imgs) {
+        // 判断是否在视口，且img没有src属性
+        function isIn(el) {
+            const bound = el.getBoundingClientRect();
+            const clientHeight = window.innerHeight;
+            return bound.top <= clientHeight + 100;
+        }
+        Array.from(imgs).forEach(function (img) {
+          if (isIn(img) && !img.src) {
+            img.src = img.dataset.src;
+          }
+        });
+    }
+    
+    window.onload = window.onscroll = function() {
+        throttle(lazyLoad2, 200)(imgs)
+    }
+    
+    // 方法3 H + S > offsetTop
+    function lazyLoad1(imgs) {
+        //offsetTop是元素与offsetParent的距离，循环获取直到页面顶部
+        function getTop(e) {
+            var T = e.offsetTop;
+            while ((e = e.offsetParent)) {
+                T += e.offsetTop;
+            }
+            return T;
+        }
+        var H = document.documentElement.clientHeight; //获取可视区域高度
+        var S = document.documentElement.scrollTop || document.body.scrollTop;
+        Array.from(imgs).forEach(function (img) {
+            // +100 提前100个像素就开始加载
+            // 并且只处理没有src即没有加载过的图片
+            if (H + S + 100 > getTop(img) && !img.src) {
+                img.src = img.dataset.src;
+            }
+        });
+    }
+    const throttleLazyLoad1 = throttle(lazyLoad1, 200);
+    
+    window.onload = window.onscroll = function() {
+        throttleLazyLoad1(imgs)
+    }
+    ```
+
+    
+
+85. 
 
