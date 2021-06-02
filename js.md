@@ -2283,5 +2283,37 @@
 
     
 
-86. 
+86. setInterval
+
+    ```js
+    // setInterval的弊端
+    1. 在定时器的内部，即使程序抛错，定时器仍然不会结束，会继续执行
+    2. setInterval无视网络延迟，容易造成请求堆积。在使用ajax轮询服务器是否有新数据的时候，有时候使用setInterval，但是当遇到网络比较差的时候，在上一次的请求还没有返回响应结果，下一次的请求又发送出去了，最后导致的结果就是请求堆积
+    3. setInterval并不定时，当调用的代码执行时间小于定时设置的时间，会跳过执行
+    
+    // 使用setTimeout模拟实现setInterval
+    function myInterval(fn, time) {
+        let timer = null
+        function interval() {
+           fn()
+            timer = setTimeout(interval, time)
+        }
+        interval()
+        myInterval.clear = () => {
+            clearTimeout(timer)
+        }
+    }
+    
+    // 使用setInterval模拟实现setTimeout
+    function myTimeout(fn, time) {
+        const timer = setInterval(() => {
+            clearInterval(timer)
+            fn()
+        })
+    }
+    ```
+
+    
+
+87. 
 
