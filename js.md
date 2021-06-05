@@ -2315,5 +2315,184 @@
 
     
 
-87. 
+87. Object.is
+
+    ```js
+    // 判断两个参数是不是同一个值
+    Object.is(value1, value2) // 如果二者相同，返回true，否则返回false
+    // example
+    Object.is(1,1) // true
+    Object.is(null,null) // true
+    Object.is(undefined,undefined) // true
+    Object.is({},{}) // false
+    Object.is([],[]) // false
+    Object.is(NaN,NaN) // true
+    Object.is(+0,-0) // false
+    
+    
+    // 实现自己的Object.is方法
+    Object.is = function(arg1, arg2) {
+        // 针对 Object.is 需要注意两点
+        // 1. NaN和NaN相比是true，但是 使用 === 比较是 false
+        // 2. +0 和 -0 相比是false，使用 === 比较是 true
+        if (Number.isNaN(arg1) && Number.isNaN(arg2)) {
+            return true
+        }
+        if (1 / arg1 === Infinity && 1 / arg2 === -Infinity) { // 利用 Infinity 和 -Infinity相比是false的原理
+            return false
+        }
+        return arg1 === arg2
+    }
+    ```
+
+    
+
+88. isNaN和Number.isNaN函数的区别
+
+    - isNaN接受到参数后，会尝试将参数转换为数字，如果可以转化，则返回`false`，如果不能转化或者传入的参数是字符串等，返回`true`，这种判断不准确
+    - Number.isNaN函数接收到参数后，首先会判断传入的参数是否为数字，如果是数字在继续判断是否为NaN，这种判断方法会更加准确，该方法只在参数为NaN的时候才会返回true
+
+89. 什么情况下会发生隐式强制类型值的转换
+
+    > （1） if (..) 语句中的条件判断表达式。（2） for ( .. ; .. ; .. ) 语句中的条件判断表达式（第二个）。（3） while (..) 和 do..while(..) 循环中的条件判断表达式。（4） ? : 中的条件判断表达式。（5） 逻辑运算符 ||（逻辑或）和 &&（逻辑与）左边的操作数（作为条件判断表达式）。
+
+90. 封装一个js的类型判断函数
+
+    ```js
+    function getType(value) {
+        if (value === null) {
+            return null + ''
+        }
+        if (typeof value === 'object') {
+            let type = Object.prototype.toString.call(value) // 获取诸如 [object Date]
+            type = type.split(' ')[1].split('') // 获取诸如 Date]
+            type.pop() // 把最后一个 ] 去除，获取诸如 Date
+            return type.join('').toLowerCase() // 结果转化为小写
+        } else { // 处理基本数据类型和函数
+            return typeof value
+        }
+    }
+    
+    console.log(getType(111)) // number
+    console.log(getType(true)) // boolean
+    console.log(getType({})) // object
+    console.log(getType([])) // array
+    console.log(getType(/\d/)) // regexp
+    console.log(getType(new Date())) // date
+    console.log(getType(function () { })) // function
+    console.log(getType(null)) // null
+    console.log(getType(undefined)) // undefined
+    console.log(getType(Symbol())) // symbol
+    ```
+
+    
+
+91. 什么是堆、什么是栈、他们之间的区别和联系
+
+    > 堆和栈用来存储变量数据的
+    >
+    > JavaScript的数据类型分为基本数据类型和引用数据类型
+    >
+    > 基本数据类型包括：undefined、null、number、string、boolean、symbol
+    >
+    > 引用数据类型包括：function、object、date、regexp等
+    >
+    > 基本数据类型存储在栈中的，引用数据类型的地址存储在栈中，它们的值存储在堆内存中。
+    >
+    > JavaScript的代码运行的时候，都是在执行上下文中执行的
+    >
+    > **执行上下文**
+    >
+    > 每当JavaScript代码执行的时候，都是在执行上小文中执行的
+    >
+    > **执行上下文的类型**
+    >
+    > - 全局执行上下文
+    >
+    >   > 这是一个默认的或者说是基础的上下文，任何不在函数中的代码都在这个全局上下文中，全局上下文只有一个，全局上下文干了两件事：
+    >   >
+    >   > - 创建一个全局的window对象
+    >   > - 让this指向这个全局的window对象
+    >
+    > - 函数执行上下文
+    >
+    >   > 当函数被调用的时候会创建一个新的函数执行上下文，函数执行上下文可以有任意多个，但是注意只有在函数被调用的时候才会创建
+    >
+    > - eval函数执行上下文
+    >
+    >   > eval函数内部的代码也会有自己的上下文
+    >
+    > **执行栈**
+    >
+    > > 执行栈也叫做调用栈
+    > >
+    > > 用来存储执行上下文的
+    > >
+    > > JS引擎在执行我们的脚本的时候，首先会创建一个全局执行上下文，并且把这个上下文压入执行栈中
+    > >
+    > > 后续当JS引擎遇到函数调用的时候，就会创建一个函数执行上下文，并且把这个上下文放到栈的顶部
+    > >
+    > > JS引擎会从栈顶依次执行上下文函数，执行完毕后，会弹出栈顶
+    > >
+    > > 一旦所有代码执行完毕，JS引擎从当前执行栈移除全局执行上下文
+    >
+    > **怎么样创建执行上下文**
+    >
+    > > 创建执行上下文分为两个阶段
+    > >
+    > > - 创建阶段
+    > > - 执行阶段
+    > >
+    > > 创建阶段干了三件事
+    > >
+    > > - this指向的确定
+    > > - 创建词法环境组件
+    > > - 创建变量环境组件
+    >
+    > **2**
+92. 输出结果
+
+    ```js
+    // 第一题
+    var length = 10
+    function f1() {
+        console.log(this.length)
+    }
+    var obj = {
+        x: 10,
+        f2: function(f1) {
+            f1()
+            arguments[0]()
+        }
+    }
+    obj.f2(f1,1,2,3)
+    // 以上的输出结果为：100  4
+    
+    
+    // 第二题
+    function f(something) {
+        console.log(this.a, something)
+        return this.a + something
+    }
+    
+    var obj = {
+        a: 2
+    }
+    
+    var f2 = function() {
+        f()
+        return f.apply(obj, arguments)
+    }
+    
+    var b = f2(3)
+    console.log(b)
+    // 以上的输出结果为：
+    undefined  undefined
+    2  3
+    5
+    ```
+
+    
+
+93. 
 
