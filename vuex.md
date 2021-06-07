@@ -9,3 +9,6 @@
 7. vuex中计算属性不能修改
 8. Vue.set可以动态设置不存在的属性为响应式
 9. 所有模块的getters默认都会合并到一个对象上，除非你设置namespaced
+10. commit时，传入的payload参数只能是一个基本值或者对象，也就是说只能传递一个
+11. 既然有localstorage，为什么还需要`vuex-persist`数据持久化插件？答：localstorage存储的数据变了会改变视图吗？肯定不会
+12. watch(oldValue, newValue)，在什么情况下，oldValue和newValue是一样的？答：当二者都是对象的时候

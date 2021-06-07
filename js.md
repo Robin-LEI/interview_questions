@@ -2450,6 +2450,7 @@
     > > - 创建变量环境组件
     >
     > **2**
+    
 92. 输出结果
 
     ```js
@@ -2494,5 +2495,375 @@
 
     
 
-93. 
+93. 实现一个你认为不错的js继承方式
+
+    ```js
+    <script>
+    // 实现一个你认为不错的 js 继承方式
+    function Parent(name) {
+      this.name = name;
+        // console.log('name', name, this.name) // undefined undefined
+        this.say = () => {
+           console.log(111, this.name);
+    	};
+    }
+    Parent.prototype.play = () => {
+        console.log(222);
+    };
+    function Children(name) {
+        Parent.call(this); // 借用构造函数继承
+        this.name = name;
+    }
+    
+    // Object.create(prototype, descriptors) 第二个参数可选
+    // 创建一个 具有指定原型的 属性可选择的 对象
+    // 也就是说 新创建的对象的 __proto__ 指向第一个参数原型对象
+    Children.prototype = Object.create(Parent.prototype);
+    // 上面这行代码一写，可以把 Children.prototype 看成一个整体 作为一个实例对象看待 而实例对象的constructor指向构造函数 但是我们
+    // 并不希望它指向继承的构造函数，希望指向自己，所以才有了下面这句
+    
+    // console.log(Children.prototype === Parent.prototype) // false
+    Children.prototype.constructor = Children;
+    // console.log(Children.prototype.constructor === Parent) // true
+     
+    // console.log(Children.prototype.__proto__ === Parent.prototype) // true
+    
+    // 为什么下面这种写法，会污染Parent的原型，而采用上面这种 Object.create的写法就不会???
+    // 下面这种写法，内存地址一样
+    // Children.prototype = Parent.prototype
+    // console.log(Children.prototype === Parent.prototype) true
+    // Children.prototype.test = function() {}
+    // console.log(Parent.prototype.test())
+    
+    
+    let child = new Children("111");
+    // console.log(child.constructor === Children.prototype) // false
+    // console.log(child.constructor === Children) // true 实例对象的constructor指向 其构造函数
+    console.log(child.name);
+    child.say();
+    child.play();
+    
+    //console.log(child instanceof Parent)
+    // 以上实现了混合继承
+    </script>
+    ```
+
+    
+
+94. 实现数组扁平化
+
+    ```js
+    // 实现数组的扁平化
+    let arr = [1,2,3,[5,6,7, [10,12, [100]]]]
+    
+    Array.prototype.mflat = function(tier) {
+        let that = this, count = 1, result = []
+        function fn(arr) {
+            if (tier === Infinity) {
+                for (let i = 0; i < arr.length; i++) {
+                    if (Array.isArray(arr[i])) {
+                        fn(arr[i])
+                    } else {
+                        result.push(arr[i])
+                    }
+                }
+            } else {
+                for (let i = 0; i < arr.length; i++) {
+                    if (count <= tier) {
+                        if (Array.isArray(arr[i])) {
+                            count++
+                            fn(arr[i])
+                        } else {
+                            result.push(arr[i])
+                        }
+                    } else {
+                        result.push(arr[i])
+                    }
+                }
+            }
+        }
+        fn(that)
+        return result
+    }
+    ```
+
+    
+
+95. 实现自己的发布订阅
+
+    ```js
+    <script>
+        // 实现自己的发布订阅
+        // 提供四个方法 on（订阅）、off（取消订阅）、once（订阅一次）、emit（派发）
+        class EventEmitter {
+            constructor() {
+                this.events = {}
+            }
+    
+            on(type, cb) {
+                if (!this.events[type]) {
+                    this.events[type] = [cb]
+                } else {
+                    this.events[type].push(cb)
+                }
+            }
+            once(type, cb) {
+                function fn() {
+                    cb()
+                    this.off(type, fn)
+                }
+                this.on(type, fn)
+            }
+            off(type, cb) {
+                if (!this.events[type]) return
+                this.events[type] = this.events[type].filter(item => item !== cb)
+            }
+            emit(type, ...rest) {
+                if (!this.events[type]) return
+                this.events[type].forEach(item => item.apply(this, rest))
+            }
+        }
+    
+    const event = new EventEmitter();
+    
+    const handle = (...rest) => {
+        console.log(rest);
+    };
+    
+    event.on("click", handle);
+    
+    event.emit("click", 1, 2, 3, 4);
+    
+    event.off("click", handle);
+    
+    event.emit("click", 1, 2);
+    
+    event.once("dbClick", () => {
+        console.log(123456);
+    });
+    event.emit("dbClick");
+    event.emit("dbClick");
+    </script>
+    ```
+
+    
+
+96. 遍历dom树
+
+    ```js
+    // 遍历指定元素下所有的子元素
+    
+    ```
+
+    
+
+97. 实现一个模板字符串解析的功能
+
+    ```js
+    let template = '我是{{name}}，年龄{{age}}，性别{{sex}}';
+    let data = {
+      name: '姓名',
+      age: 18
+    }
+    render(template, data); // 我是姓名，年龄18，性别undefined
+    
+    
+    // 实现代码
+    function render(template, data) {
+      let computed = template.replace(/\{\{(\w+)\}\}/g, function (match, key) {
+        return data[key];
+      });
+      return computed;
+    }
+    ```
+
+    
+
+98. 用es5实现数组去重
+
+    ```js
+    function unique(arr) {
+        let result = []
+        // array 代表原始数组
+        result = arr.filter((item, index, array) => {
+            return array.indexOf(item) === index
+        })
+        return result
+    }
+    
+    console.log(unique([1,2,1,2]))
+    
+    // 采用es6实现
+    [...new Set([1,2,1,2])]
+    ```
+
+    
+
+99. 解析url参数为对象
+
+    ```js
+    function parseurl(url) {
+        url = url || location.search
+        url = url.slice(1) // 去除 ? ，name=test&age=10
+        let arr = url.split('&') // [name=test, age=10]
+        let result = {}
+        arr.forEach(item => {
+            const temp = item.split('=')
+            const value = decodeURIComponent(temp[1]) // 解码
+            result[temp[0]] = /^\d+$/g.test(value) ? parseFloat(value) : value
+        })
+        return result
+    }
+    
+    console.log(parseUrl())
+    ```
+
+    
+
+100. 实现Object.assign
+
+     ```js
+     // 用法
+     // 把可枚举属性从多个源对象上拷贝到目标对象，并返回目标对象
+     // 该方法属于浅拷贝 Object() 也可以做到浅拷贝
+     // target不能是null或者undefined
+     Object.assign(target, ...source)
+     
+     // 实现
+     Object._assign = function(target, ...source) {
+         if (target == null) {
+             throw new TypeError('target is not undefined or null')
+         }
+         target = Object(target) // ?...
+         source.forEach(item => {
+             if (item != null) {
+                 for (let key in item) {
+                     if (item.hasOwnProperty(key)) {
+                         target[key] = item[key]
+                     }
+                 }
+             }
+         })
+         return target
+     }
+     ```
+
+     
+
+101. 实现数组的原型方法
+
+     ```js
+     // 实现数组的 forEach
+     // 实现数组的 map
+     // 实现数组的 filter
+     // 实现数组的 some
+     // 实现数组的 reduce
+     ```
+
+     
+
+102. 继承
+
+     ```js
+     // 原型链继承
+     // 借用构造函数实现继承
+     // 组合继承
+     // 寄生式组合继承
+     // class实现继承
+     
+     继承分为接口继承和实现继承
+     js不支持接口继承，只支持实现继承，而且实现继承主要是依靠原型链实现的
+     PS：接口继承只继承方法签名，实现继承则继承实际的方法
+     
+     // 构造函数、原型、实例的关系
+     每个构造函数都有一个原型对象，原型对象都包含一个指向构造函数的指针，而实例都包含一个指向原型对象的指针。
+     如果我们让原型对象等于另外一个实例，此时的原型对象将包含一个指向另外一个原型的指针，另外一个原型中也包含一个指向另外一个构造函数的指针，如此层层递进，就构成了原型链。
+     
+     JavaScript主要通过原型链实现继承，原型链的构建是通过将一个类型的实例赋值给另外一个构造函数的原型实现的。
+     
+     所有引用类型默认都继承了Object，这个继承也是通过原型链实现的
+     所有函数的默认原型都是Object的实例，因此默认原型都有一个内部指针，指向Object.prototype，这也正是所有自定义类型都会继承toString()、valueof()等默认方法的原因
+     
+     确定原型和实例的关系
+     1. instanceof // A instanceof B 判断A是否在B的原型链上
+     2. isPrototypeOf // B.prototype.isPropertyOf(instance) 判断B的原型链是否包含instance实例
+     
+     通过原型链实现继承时，不能使用对象字面量创建原型方法。因为这样做会重写原型链。
+     
+     原型链的终点：Object.prototype.__proto__ = null
+     
+     继承是通过将超类型的实例赋值给子类型的原型实现的
+     
+     // 原型链继承
+     function SuperType() {
+         this.property = true
+     }
+     SuperType.prototype.getSuperValue = function() {
+         return this.property
+     }
+     
+     function SubType() {
+         this.subproperty = false
+     }
+     SubType.prototype.getSubValue = function() {
+         return this.subproperty
+     }
+     
+     SubType.prototype = new SuperType()
+     // 原型链继承存在的问题
+     // 1. 在超类型构造函数中定义一个引用类型的属性，子类型构造函数继承超类型构造函数后，如果子类型的实例1修改了超类型中实例属性值，那么也会在子类型实例2中体现出来
+     // 2. 在创建子类型的实例时，不能向超类型的构造函数中传递参数
+     
+     // 为了解决引用类型属性的问题，引出了借用构造函数继承（也叫做经典继承）
+     // 就是在子类型的构造函数中调用超类型
+     function SuperType() {
+         this.colors = [1,2,3]
+     }
+     SuperType.prototype.say = function() {
+         console.log('say hello')
+     }
+     
+     function SubType() {
+         SuperType.call(this)
+     }
+     
+     let sub1 = new SubType()
+     sub1.colors.push(100)
+     console.log(sub1.colors) // [1,2,3,100]
+     
+     let sub2 = new SubType()
+     console.log(sub2.colors) // [1,2,3]
+     sub2.say() // 报错
+     // 借用构造函数继承的缺点：
+     // 在超类型原型上定义的方法对子类型不可见
+     
+     // 为了兼容以上，出现了混合继承
+     // 即原型链继承和借用构造函数继承
+     function SuperType() {
+         this.property = true
+         this.colors = [1,2,3]
+     }
+     SuperType.prototype.say = function() {
+         return 'say hello'
+     }
+     function SubType() {
+         SuperType.call(this)
+         this.subproperty = false
+     }
+     SubType.prototype = new SuperType()
+     SubType.prototype.constructor = SubType
+     
+     let sub1 = new SubType()
+     let sub2 = new SubType()
+     
+     sub1.colors.push(100)
+     
+     console.log(sub2.say()) // say hello
+     console.log(sub1.colors) // [1,2,3,100]
+     console.log(sub2.colors) // [1,2,3]
+     ```
+
+     
+
+103. 
 
