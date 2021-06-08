@@ -2702,6 +2702,7 @@
 99. 解析url参数为对象
 
     ```js
+    // 实现1
     function parseurl(url) {
         url = url || location.search
         url = url.slice(1) // 去除 ? ，name=test&age=10
@@ -2716,6 +2717,13 @@
     }
     
     console.log(parseUrl())
+    
+    // 实现2
+    function getParams(name) {
+        const {search} = location
+        const params = new URLSearchParams(search)
+        return params.get(name)
+    }
     ```
 
     
@@ -2769,7 +2777,6 @@
      // 借用构造函数实现继承
      // 组合继承
      // 寄生式组合继承
-     // class实现继承
      
      继承分为接口继承和实现继承
      js不支持接口继承，只支持实现继承，而且实现继承主要是依靠原型链实现的
@@ -2861,9 +2868,259 @@
      console.log(sub2.say()) // say hello
      console.log(sub1.colors) // [1,2,3,100]
      console.log(sub2.colors) // [1,2,3]
+     
+     // 原型式继承
+     // 在函数内部，先创建了一个临时的构造函数，然后将传入的对象作为这个构造函数的原型，最后返回这个临时类型的一个新的实例
+     function object(obj) {
+         function F() {}
+         F.prototype = obj
+         return new F()
+     }
+     let person = {
+         name: 'xiaoming',
+         friends: ['xiaohua', 'xiaoli']
+     }
+     
+     let anotherPerson = object(person)
+     anotherPerson.friends.push('xiaoguang')
+     
+     let yetAnotherPerson = object(person)
+     yetAnotherPerson.friends.push('xiaodong')
+     
+     console.log(person.friends) // ['xiaohua', 'xiaoli', 'xiaoguang', 'xiaodong']
+     
+     // 注意，es6新增的方法 Object.create()方法规范了原型式继承，也可以用于浅拷贝
+     
+     // 寄生组合继承
+     // 组合继承最大的问题在于不论什么时候，都会两次调用超类型构造函数，一次是在创建子类型原型的时候，一次在子类型构造函数内部
+     // 寄生组合继承就是为了解决组合继承的这个问题
+     function inheritPrototype(subType, superType) {
+         // 第一步创建超类型原型的一个副本
+         let prototype = object(superType.prototype)
+         // 第二步为创建的副本添加constructor属性，从而弥补因为重写原型而失去的默认的constructor属性
+         prototype.constructor = subType
+         // 最后一步，将新创建的对象赋值给子类型的原型
+         subType.prototype = prototype
+     }
+     function SuperType(name) {
+         this.name = name
+         this.colors = [1,2,3]
+     }
+     SuperType.prototype.sayName = function() {
+         console.log(this.name)
+     }
+     function SubType(name, age) {
+         SuperType.call(this, name)
+         this.age = age
+     }
+     inheritPrototype(Subtype, SuperType)
+     SubType.prototype.sayAge = function() {
+         console.log(this.age)
+     }
+     
+     // es6的继承和es5的继承有什么区别
+     1. ES5的继承时通过prototype或构造函数机制来实现。ES5的继承实质上是先创建子类的实例对象，然后再将父类的方法添加到this上（Parent.apply(this)）。
+     
+     2. ES6的继承机制完全不同，实质上是先创建父类的实例对象this（所以必须先调用父类的super()方法），然后再用子类的构造函数修改this。
+     
+     3. 具体的：ES6通过class关键字定义类，里面有构造方法，类之间通过extends关键字实现继承。子类必须在constructor方法中调用super方法，否则新建实例报错。因为子类没有自己的this对象，而是继承了父类的this对象，然后对其进行加工。如果不调用super方法，子类得不到this对象。
+     
+     ps：super关键字指代父类的实例，即父类的this对象。在子类构造函数中，调用super后，才可使用this关键字，否则报错。
      ```
 
      
 
-103. 
+103. js为什么要用纯函数
+
+     - 相同的输入一定产生相同的输出
+     - 没有副作用（包括但不限于：进行http请求、输出到屏幕或者控制台、dom查询/操作、获取当前时间、Math.random()）
+     - 不依赖外部的变量
+     - 如果纯函数调用纯函数，不产生副作用满足纯函数的定义仍然是纯函数
+     - 优点：没有副作用、可以减少bug的产生，方便调试，减少耦合，它的输出只与输入有关
+
+104. js元编程的应用场景
+
+     > 概念：可以生成代码、可以在程序运行的时候修改语言结构
+
+105. Cookie、sessionStorage、localStorage的区别
+
+106. Cookie如何防范XSS攻击
+
+107. 实现let、const
+
+     ```js
+     let a; // 不报错
+     const a; // 报错，const声明必须立即初始化
+     
+     // 实现let
+     // 定义一个仅作用于该代码块的变量
+     (function() { var a = 10; console.log(a); })
+     console.log(a) // 报错
+     
+     // 实现const
+     // const声明一个只读的变量，一旦声明需要立即赋值，而且值不能修改
+     // 核心用到 Object.defineProperty 拦截
+     var _const = function(data, value) {
+         window[data] = value
+         Object.definePoperty(window, data, {
+           enumberable: false, // 设置为不可枚举
+           configurable: false, // 不可删除
+           get: function() {
+               return window[data]
+           },
+           set: function(setValue) {
+               if (setValue !== value) {
+                   throw new TypeError('const不能被再次赋值')
+               } else {
+                   return value
+               }
+           }
+         })
+     }
+     ```
+
+     
+
+108. 写一个方法去除字符串中的空格
+
+     ```js
+     const str = ' h lo wedd   ed '
+     const POSITION = Object.freeze({
+         left: Symbol(),
+         right: Symbol(),
+         both: Symbol(),
+         center: Symbol(),
+         all: Symbol()
+     })
+     
+     function trim(str, position = POSITION.both) {
+         // !! 与  ! 的区别
+         // !! 常常在做类型判断的时候使用，省去了多次判断undefined、null、''的冗余代码
+         if (!!POSITION[position]) throw new Error('unexpected position value')
+         switch (position) {
+             case (POSITION.left):
+               str = str.replace(/^\s+/, '')
+               break;
+             case (POSITION.right):
+               str = str.replace(/\s+$/, '')
+               break;
+             case (POSITION.both):
+               str = str.replace(/^\s+/, '').replace(/\s+$/, '')
+               break;
+             case (POSITION.center):
+               while (str.match(/\w\s+\w/)) {
+                 str = str.replace(/(\w)(\s+)(\w)/, `$1$3`)
+               }
+               break;
+             case (POSITION.all):
+               str = str.replace(/\s/g, '')
+               break;
+             default:
+           }
+           return str
+         }
+     }
+     
+     const result = trim(str, POSITION.all)
+     console.log(result)
+     ```
+
+     
+
+109. Object.freeze
+
+     ```js
+     // 用来冻结一个对象
+     // 一个被冻结的对象不能被修改，也不能新增属性，不能修改已有的属性值，不能删除属性
+     // 不能修改对象属性的可枚举性、可配置性
+     
+     let person = {
+         name: 'xiaoming',
+         age: 10
+     }
+     let p = Object.freeze(person)
+     
+     delete p.name // 无法删除
+     delete person.name // 无法删除
+     
+     // 实现 Object.freeze
+     function _freeze(obj) {
+         if (obj instanceof obj) {
+             Object.seal(obj) // 封闭对象
+             for (let key in obj) {
+                 Object.defineProperty(obj, key, {
+                     writable: false
+                 })
+                 _freeze(obj[key])
+             }
+         }
+     }
+     ```
+
+     
+
+110. Object.seal
+
+     ```js
+     // 封闭一个对象
+     // 被封闭的对象不能新增属性，不能删除属性
+     // 注意，当前属性的值只要原来是可写的就可以改变
+     
+     // demo1
+     let person = {
+         name: 'xiaoming',
+         age: 10
+     }
+     
+     let p = Object.seal(person)
+     console.log(p === person) // true
+     console.log(Object.isSealed(person)) // true
+     
+     delete p.name // 无效
+     p.name = 'xxx' // 可修改
+     
+     // demo2
+     let person = {
+         age: 10
+     }
+     
+     Object.defineProperty(person, 'name', {
+         writable: false, // 设置不可修改
+         value: 10
+     })
+     
+     let p = Object.seal(person)
+     console.log(p === person) // true
+     console.log(Object.isSealed(person)) // true
+     
+     delete p.name // 无效
+     p.name = 'xxx' // 无效
+     ```
+
+     
+
+111. 写一个把字符串大小写切换的方法
+
+     ```js
+     function caseConvert(str) {
+         return str.replace(/([a-z]*)([A-Z]*)/g, (x, $1, $2) => {
+             return `${$1.toUpperCase()}${$2.toLowerCase()}`
+         })
+     }
+     caseConvert('qinPlus13')
+     ```
+
+     
+
+112. 写一个方法把下划线命名转成大驼峰命名
+
+     ```js
+     function strToCamel(str){
+         return str.replace(/(^|_)(\w)/g,(m,$1,$2)=>$2.toUpperCase());
+     }
+     ```
+
+     
+
+113. 
 
