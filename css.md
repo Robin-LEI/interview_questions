@@ -1400,5 +1400,75 @@
     
       > 去除没有用到的css，去除空格，压缩css
     
-31. 
+31. 常见移动端适配方案
+
+    > 1. 媒体查询
+    >
+    >    > 主要是通过查询设备的宽度来执行不同的css代码
+    >    >
+    >    > ```css
+    >    > @media screen (max-width:300px) {}
+    >    > @media screen (min-width:200px) and (max-width:300px) {}
+    >    > ```
+    >    >
+    >    > 优点：调整屏幕宽度的时候不用刷新页面即可生效、方法简单、成本低、bootstrap再用
+    >    >
+    >    > 缺点：代码量大
+    >
+    > 2. flex弹性布局
+    >
+    >    > 使用px作为单位
+    >
+    > 3. 百分比布局
+    >
+    >    > 原理简单、不存在兼容性问题
+    >    >
+    >    > 无法做到范围上的精细
+    >
+    > 4. 纯vw方案
+    >
+    >    > - **vw** : **1vw** 等于 **视口宽度** 的 **1%**
+    >    > - **vh** : **1vh** 等于 **视口高度** 的 **1% **
+    >    > - **vmin** : 选取 **vw** 和 **vh** 中 **最小** 的那个
+    >    > - **vmax** : 选取 **vw** 和 **vh** 中 **最大** 的那个
+    >    >
+    >    > ```scss
+    >    > $base_vw = 375;
+    >    > @function vw ($px) {
+    >    >     return ($px/$base_vw) * 100vw
+    >    > };
+    >    > ```
+    >    >
+    >    > 优点：纯css实现，不存在脚本依赖问题
+    >    >
+    >    > 缺点：存在兼容性问题，有些浏览器不支持
+    >
+    > 5. rem实现
+    >
+    >    > `rem`是相对长度单位，`rem`方案中的样式设计为相对于根元素`font-size`计算值的倍数。根据屏幕宽度设置`html`标签的`font-size`，在布局时使用 **rem** 单位布局，达到自适应的目的。
+    >    >
+    >    > ```js
+    >    > (function (doc, win) {
+    >    >      var html = doc.getElementsByTagName("html")[0],
+    >    >          // orientationchange->手机屏幕转屏事件
+    >    >          // resize->页面大小改变事件
+    >    >          reEvt = "orientationchange" in win ? "orientationchange" : "resize",
+    >    >          reFontSize = function () {
+    >    >              var clientW = doc.documentElement.clientWidth || doc.body.clientWidth;
+    >    >              if (!clientW) {
+    >    >                  return;
+    >    >              }
+    >    >              html.style.fontSize = 50 * (clientW / 375) + "px";
+    >    >          }
+    >    >      win.addEventListener(reEvt, reFontSize);
+    >    >      // DOMContentLoaded->dom加载完就执行,onload要dom/css/js都加载完才执行
+    >    >      doc.addEventListener("DOMContentLoaded", reFontSize);
+    >    >  })(document, window);
+    >    > ```
+    >    >
+    >    > 
+    >
+    >    
+
+32. 
 

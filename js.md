@@ -1385,9 +1385,58 @@
     >
     > **事件冒泡**
     >
+    > > 事件从最深的节点开始，然后逐步向上传播事件。
+    > >
+    > > 比如div下面有ul，ul下面有li，li下面有a，如果给a添加click事件，那么会冒泡到最上面的div上面。
+    > >
+    > > <mark>如何取消事件冒泡？</mark>
+    > >
+    > > ```js
+    > > event.stopPropagation() || event.cancelBubble = true(// 兼容IE) // 只阻止事件往上冒泡
+    > > return false // 不仅阻止了事件往上冒泡，而且阻止了事件本身（默认事件）
+    > > ```
+    > >
+    > > 
+    >
     > **事件捕获**
     >
-    > **事件委托**
+    > > 从上到下执行，像石头一样沉入海底。
+    > >
+    > > 如何控制事件在冒泡阶段执行还是在捕获阶段执行？
+    > >
+    > > 使用addEventListener注册事件，第一个参数是事件名，第二个参数是回调函数，第三个参数默认为false，表示在冒泡阶段触发，如果设置为true，表示在捕获阶段触发。
+    >
+    > **事件委托（事件代理）**
+    >
+    > > 原理是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。
+    > >
+    > > 为什么要用事件委托？
+    > >
+    > > 当页面中很多个dom需要绑定同一个事件时，如果单独给每一个dom绑定事件，会很消耗性能，因为需要不断的与dom节点进行交互，访问dom的次数越多，引起浏览器重绘和回流的次数也就越多，影响页面的性能。
+    > >
+    > > 比如页面上ul元素下面有1000、10000个li，我们需要给li添加点击事件，获取当前li的内容，如果不采用事件为委托的方式注册事件，就得采用传统的获取到每一个li，然后单独给每一个li添加事件。
+    > >
+    > > 每一个函数又是一个对象，是对象就得占用内存，如果绑定的函数过多，那么占用的内存就会越多，综上，当我们需要处理一类dom的事件的时候，借助事件委托是最好的选择。
+    > >
+    > > ```js
+    > > window.onload = function () { 
+    > >     var oUl = document.getElementById("ul1"); 
+    > >     oUl.onclick = function (ev) { 
+    > >         var ev = ev || window.event; 
+    > >         var target = ev.target || ev.srcElement; 
+    > >         if (target.nodeName.toLowerCase() == 'li') { 
+    > >             alert(123); 
+    > >             alert(target.innerHTML); 
+    > >         } 
+    > >     } 
+    > > }
+    > > ```
+    > >
+    > > <mark>如果动态新增一个节点，那么这个节点还具备这个事件吗？</mark>
+    > >
+    > > 如果采用传统的方式，对于新增节点需要再次循环遍历绑定事件。采用事件委托则不用做处理，这样就可以大大的减少dom的操作。
+    >
+    > 
     >
     > **mouseover和mouseenter的区别**
     >
@@ -3122,5 +3171,299 @@
 
      
 
-113. 
+113. js中delete删除对象的属性之后，会不会释放内存
+
+     ```js
+     // delete删除属性只是解除了对象和属性的绑定关系，当删除的属性值为对象时，删除时会造成内存泄露（其实还未删除）
+     
+     let person = {
+         name: {
+             firstname: 'xxx'
+         }
+     }
+     // let p = person.name
+     delete person.name // 如果对象的属性的值是一个引用类型，delete之后，如果这个属性没有被其它变量引用过，那么在适当的时候，JS引擎会GC它
+     // 但是如果被其它变量引用，delete会造成内存泄露，即使设置为null也不行
+     
+     // 变量不能被delete
+     let x = 1
+     delete x
+     console.log(x) // 1
+     
+     // 普通函数也无法delete
+     function bar() {}
+     delete bar
+     console.log(bar) // f bar() {}
+     ```
+
+     
+
+114. js哪些操作会引起内存泄露
+
+     ```js
+     
+     ```
+
+     
+
+115. 如何获取html元素实际的样式值
+
+     ```js
+     function getStyle(el, name) {
+         if (!!el) {
+             let css = null
+             css = window.getComputedStyle ? window.getComputedStyle(el) : el.currentStyle
+             // currentStyle 为了兼容IE11以下的版本
+     		return name ? css[name] : css
+         }
+     }
+     console.log(getStyle(document.getElementById('box'), 'width'))
+     ```
+
+     
+
+116. 如何对字符串版本号构成的数组进行排序
+
+     ```js
+     const arr = [
+         '1.1',
+         '2.3.3',
+         '4.3.5',
+         '0.3.1',
+         '0.302.1',
+         '4.20.0',
+         '4.3.5.1',
+         '1.2.3.4.5'
+     ];
+     
+     // 找出版本号的最大位数
+     const maxLen = (arr) => {
+         return Math.max(...arr.map(item => item.split('.').length))
+     }
+     
+     const gen = (version) => {
+         // acc 起始值 current 当前正在遍历的那个元素 index 当前那个元素的索引 array 原数组
+         return version.split('.').reduce((acc, current, index, array) => {
+             return acc + (+current) * Math.pow(10000, maxLen - index - 1)
+         }, 0)
+     }
+     
+     arr.sort((a, b) => {
+     	return gen(a) - gen(b) // 升序
+     })
+     // 原理就是把每一项都放大到相同倍数
+     ```
+
+     
+
+117. 为什么Promise比setTimeout快
+
+118. Object中的key是有序的吗
+
+     ```js
+     // 不一定是有序的
+     
+     // 1. 如果对象的key是number类型，则按照key的大小顺序输出
+     // 2. 如果key是数字字符串，则按照key的大小顺序输出
+     // 3. 如果key有number类型，有字符串类型，则先把number类型的key按照从大到小的顺序输出，其它类型的key按照定义时的顺序输出，PS：1.3 小数类型的key也当做其它类型去处理
+     
+     // 如何让对象按照key的顺序输出呢？
+     // 如果是类整数的key，可以先把key转换成非整数类型的字符串
+     // 给每个key后面加 . 转换成字符串
+     let obj = {
+         '-1.': 'test-1',
+         '1.': 'test1',
+         '0.': 'test0'
+     }
+     for (let key in obj) {
+         console.log(~~key, obj[key]) // ~~ 表示转换成整数
+     }
+     
+     // 如果key是由各种数据类型混合的，那就不能直接转换成整数了，可以这么做
+     let obj = {
+         '.a': '.a',
+         '.我': '.我',
+         '.1': '.1',
+         '.1.3': '.1.3'
+     }
+     
+     for (let key in obj) {
+         // 从第1个字符取原始的key
+         console.log(key.substring(1), obj[key]);
+     }
+     ```
+
+     
+
+119. typeof的原理是什么
+
+     > 不同的对象在底层都表示为二进制，在JavaScript中二进制前三位都是0的话会被判断为object类型，null的二进制全部为0，自然前三位也是0，所以执行typeof时会返回object
+     >
+     > 在JavaScript的最初版本中，使用的是32位系统，为了性能考虑使用低位存储了变量的类型信息：
+     >
+     > 000：对象
+     >
+     > 1：整数
+     >
+     > 010：浮点数
+     >
+     > 100：字符串
+     >
+     > 110：布尔
+
+120. ‘1’.toString()为什么可以调用
+
+     ```js
+     // 在运行过程中做了如下几件事
+     var s = new String('1')
+     s.toString()
+     s = null
+     ```
+
+     
+
+121. js中类型转换有哪几种
+
+     > - 转换成数字
+     > - 转换成布尔值
+     > - 转换成字符串
+
+122. 对象转原始类型是根据什么流程运行的
+
+     ```js
+     let obj = {
+         value: 3,
+         valueOf() {
+             return 4
+         },
+         toString() {
+             return '5'
+         },
+         [Symbol.toPrimitive]() {
+             return 6
+         }
+     }
+     console.log(obj = 1)
+     
+     // 如果对象内部存在 Symbol.toPrimitive() 方法，则优先调用
+     // 如果不存在，则检查是否存在 valueOf()，如果存在则调用
+     // 如果不存在，则检查是否存在 toString()，如果存在则调用
+     
+     let obj = {
+         value: 1
+     }
+     console.log(obj + 1) // [object Object]1
+     // 调用toString方法
+     ```
+
+     
+
+123. 如何让 if (a == 1 && a == 2) 成立
+
+     ```js
+     var a = {
+       value: 0,
+       valueOf: function() {
+         this.value++;
+         return this.value;
+       }
+     };
+     console.log(a == 1 && a == 2);//true
+     ```
+
+     
+
+124. forEach中return有效果吗？如何终止forEach循环？
+
+     ```js
+     // 在forEach中使用return无效
+     // 解决办法
+     // 1. 使用try监视代码块，在需要中断的地方抛出异常
+     // 2. 官方推荐：用every和some方法替换forEach，every在遇到return false的时候退出循环，some在遇到return true的时候退出循环
+     ```
+
+     
+
+125. 箭头函数
+
+     ```js
+     箭头函数没有this，里面的this会指向当前最近的非箭头函数的this，找不到就是window（严格模式下是undefined）
+     let obj = {
+       a: function() {
+         let do = () => {
+           console.log(this);
+         }
+         do();
+       }
+     }
+     obj.a(); // 找到最近的非箭头函数a，a现在绑定着obj, 因此箭头函数中的this是obj
+     ```
+
+     
+
+126. load和DOMContentLoaded的区别
+
+     > DOMContentLoaded只要dom加载完成就执行
+     >
+     > load需要等到dom、css、js、img全部执行完毕才会触发
+     >
+     > jQuery有三种针对文档加载的方法：
+     >
+     > ```js
+     > $(document).ready(function() {})
+     > // 等价于下面这种
+     > $(function() {}) // dom加载完成触发
+     > 
+     > $(document).load(function() {}) // 所有的都记载完毕才执行
+     > ```
+     >
+     > 
+
+127. 数据是如何存储的
+
+     > 
+
+128. prototype和proto的区别
+
+     > prototype是构造函数才有，指向构造函数的原型对象，是显示原型
+     >
+     > proto属于隐式原型，构成原型链
+     >
+     > proto是实例对象所有，查找一个实例对象上的属性的时候，会优先从自身查找，如果找不到沿着原型链依次向上查找，直至找到原型链的终点 Object.prototype.\__proto__
+     >
+     > 实例对象的proto指向其构造函数的原型对象
+     >
+     > Object.create(null) 创建出的对象没有proto
+
+129. 说一下对 BigInt 的理解，在什么场景下会使用？
+
+     > BigInt 是内置对象
+     >
+     > 表示大于 2^53 - 1的整数
+     >
+     > Number可表示的最大整数是 2^53 - 1
+     >
+     > BigInt 可以表示任意大的整数
+     >
+     > 可以在一个整数字面量后面 加 `n`来表示这是一个BigInt类型的整数，或者调用函数BigInt()
+     >
+     > 不能和Number实例混合计算
+     >
+     > 应用场景：科学计算和金融
+     >
+     > ```js
+     > BigInt(false) // 0n
+     > BigInt(true) // 1n
+     > // 必选传递一个整数类型的参数
+     > ```
+     >
+     > 
+
+130. 浏览器的本地存储的cookie了解多少
+
+131. 浏览器的本地存储的webStorage了解多少
+
+132. 能不能说一说CSRF攻击
+
+133. 能不能说一说CSS攻击
 
