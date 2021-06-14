@@ -207,9 +207,138 @@
    
    
    
-8. 
-
+   vue2基于options api，在vue3中依然可用
    
+   Vue2.0 采用的是构造函数，而不是类
+   
+   ```js
+   class Vue {
+       xxx() {},
+       xxx() {},
+       xxx() {}
+   }
+   
+   Vue.prototype.xxx = function() {}
+   // 如果采用类扩展方法，违背了原则，因为一方面使用类，一方面又采用原型扩展
+   ```
+   
+   $options 表示用户传入的所有的options选项
+   
+   new Vue首先调用init进行初始化
+   
+   initState初始化状态，把数据定义在vm实例上，后续数据更新，进行视图更新，最重要的是初始化数据
+   
+   initData数据初始化，最重要的是进行数据劫持，采用Object.defineProperty
+   
+   data不是函数就得是一个对象，data = typeof data === 'function' ? data.call(vm) : data
+   
+   调用observe(data)观测数据，只是对data这个对象进行观测，采用Observer类的形式观测
+   
+   vm._data 获取到观测后的数据，采用代理使得用户可以通过vm实例直接访问到data数据
+   
+   ，内部主要采用Object.defineProperty完成
+   
+   vue2中对数组不是采用的是不同的方法，并没有进行直接拦截，重写了数组的七个方法（因为·这7个方法会改变原数组，pop、push、shift、unshift、reverse、splice、sort），当我们观测的数据是数组的时候，改变其原型链，指向我们自己定义的方法，为什么数组不采用和对象一样的拦截方法，当数组数据量过大的时候，性能不好，因为多次递归，递归产生栈。
+   
+   value.\__proto__ = arrayMethods
+   
+   等价于
+   
+   Object.setPropertyOf(value, arrayMethods)
+   
+   数组中的对象数据改变了也需要更新视图
+   
+   不管是数组还是对象，只要被观测过了，其自身都会携带一个\__ob__属性，这可以为我们解决循环引用的问题
+   
+   
+   
+   vue大的执行流程
+   
+   1. 把模板变成render方法
+   2. 需要去当前实例取值
+   3. 产生虚拟dom，用来描述dom结构
+   4. 生成真实dom，扔到页面上
+   
+   
+   
+   ast语法树和虚拟dom区别
+   
+   
+   
+   模板编译的流程
+   
+   1. 判断用户是否传入el，如果传入el，则数据可挂载到页面上
+   2. 看用户是否传入render函数，如果传入，优先使用
+   3. 如果用户没有传render函数，看用户是否传入template，如果传入使用
+   4. 如果没有传递，获取el的outeHTML作为模板
+   5. 调用compileToFunctions传入template便以为render函数
+   
+   
+   
+   ast语法树，描述语法本身，也可以描述js、html、css等
+   
+   ```js
+   {
+       tag: 'div',
+       type: 1, // nodeType
+       attrs: [{style: 'color: red'}],
+       children: []
+   }
+   ```
+   
+   模板解析是怎么解析的？
+   
+   调用parseHTML(template)，每解析一块，就删除一块
+   
+   同时根据开始标签、结束标签、文本内容生成一个ast语法树
+   
+   
+   
+   vue3支持多个根元素（只是在最外层包了一个空元素）
+   
+   模板解析完成，获取ast语法树之后，调用generate(ast)生成code
+   
+   使用with语法对code进行包装，`with(this) {return code}`，这样做的好处是函数内部的变量都会从传入的this上取值
+   
+   然后把这个包装后的字符串作为参数传入new Function（这个函数会根据传入的字符串创建函数），这样得到的函数就是render函数
+
+
+
+在解析的过程中，遇到文本和普通元素的解析方式不一样，文本分为普通文本、混合文本、有{{}}的
+
+render函数拿到之后，调用mountComponent(vm, el)进行组件挂载
+
+默认vue通过watcher来进行渲染的，称之为渲染watcher，每一个组件都有一个渲染watcher
+
+new Watcher内部会调用一个updateComponent方法，每一个watcher都有一个id，作为唯一标识，每new一次watcher，id就自增一次，该方法内部会执行 vm.\_update(vm.\_render()),vm.\_render()返回虚拟节点，vm.\_update根据虚拟节点渲染真实dom
+
+vm.\_render方法内部会调用vm/$options.render方法，根据传入的vm实例，返回vnode
+
+createElement创建元素的虚拟节点
+
+createTextVnode创建文本的虚拟节点
+
+上面这两个方法内部会调用vnode进行数据的包装
+
+
+
+lifecycleMixin：更新逻辑
+
+renderMixin：调用render方法逻辑
+
+
+
+如何将虚拟节点变成真实节点？
+
+vm.$el 保存的是真实的dom节点
+
+调用vm.\_update传入vnode，生成真实的dom节点
+
+内部调用patch(vm.$options.el, vnode)方法，首先渲染的时候需要用虚拟节点更新真实的dom元素
+
+如何判断patch中的oldVNode参数是虚拟节点还是真实dom？
+
+判断该参数是否存在 nodeType，存在则是真实dom，内部调用createElm传入vnode，根据虚拟节点创建真实dom，赋值到vnode.el上，还需要调用updateProperties更新属性，不是，则进行diff算法
 
 
 
@@ -225,11 +354,16 @@
 
 1. rollup的配置文件为`rollup.config.js`
 
-2. 基础使用配置
+2. rollup打包比较纯粹，需要和babel配合使用
+
+3. 基础使用配置
 
    ```js
-   import babel from 'rollup-plugin-babel';
-   import serve from 'rollup-plugin-serve';
+   import babel from 'rollup-plugin-babel'; // rollup和babel的桥梁
+   import serve from 'rollup-plugin-serve'; // 启动webpack服务
+   
+   @babel/core // babel 核心模块
+   @babel/preset-env // es6-es5
    
    export default {
        input: '包的入口点，必填参数，比如 main.js、index.js、app.js等',
