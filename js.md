@@ -3467,3 +3467,471 @@
 
 133. 能不能说一说CSS攻击
 
+134. 一个 dom 必须要操作几百次，该如何解决，如何优化?
+
+     > 缓存DOM对象
+     >
+     > 比如在循环之前就将节点获取并缓存到内存中，在循环内部直接引用，而不是重新查询
+     >
+     > 文档碎片
+     >
+     > - document.createDocumentFragment创建的文档碎片是个虚拟节点对象，对他的操作不会影响真实dom，对他进行频繁操作，操作完成在一次性的添加到真实的dom中
+     > - 把需要复杂操作的元素复制一个副本cloneNode，在内存中进行操作在替换旧的
+     >
+     > 使用innerHtml代替高频的appendChild
+     >
+     > 虚拟dom：虚拟dom本质是一个js对象，dom diff之后最后在批量更新真实的dom结构
+     >
+     > 把可能导致重绘的操作放到requestAnimationFrame中，浏览器空闲的时候去处理
+
+135. 说说你对懒加载的理解？
+
+     > 懒加载也叫做延迟加载，指的是在长网页中延迟加载图像，是一种很好的优化网页性能的方式。
+     >
+     > 在某些情况下，还可以帮助减少服务器负载，适用于图片很多，页面很长的电商网站场景中。
+     >
+     > 能提升用户的体检。不妨设想下，用户打开像手机淘宝长页面的时候，如果页面上所有的图片都需要加载，由于图片数目较大，等待时间很长，用户难免会心生抱怨，这就严重影响用户体验 减少无效资源的加载，这样能明显减少服务器的压力和流量，也能够减少浏览器的负担 防止并发加载的资源过多会阻塞 js 的加载，影响网站的正常使用。
+     >
+     > **懒加载的原理**
+     >
+     > 首先将页面上的图片的src属性设置为空，图片的真实路径存在img的data-src中，当页面滚动的时候需要去监听scroll事件，在scroll的回调中，判断我们的懒加载的图片是否进入可视区域，如果图片在可视区域内就将img的data-src设置在src上，这样就可以实现懒加载。
+     >
+     > ```js
+     > <html lang="en">
+     > <head>
+     >  <meta charset="UTF-8" />
+     >  <title>Lazyload</title>
+     >  <style>
+     >    .image-item {
+     >      display: block;
+     >      margin-bottom: 50px;
+     >      /* 一定记得设置图片高度 */
+     >      height: 200px;
+     >    }
+     >  </style>
+     > </head>
+     > 
+     > <body>
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/1.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/2.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/3.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/4.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/5.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/6.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/7.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/8.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/9.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/10.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/11.png"
+     >  />
+     >  <img
+     >    src=""
+     >    class="image-item"
+     >    lazyload="true"
+     >    data-original="images/12.png"
+     >  />
+     >  <script>
+     >    var viewHeight = document.documentElement.clientHeight; //获取可视区高度
+     >    function lazyload() {
+     >      var eles = document.querySelectorAll("img[data-original][lazyload]");
+     >      Array.prototype.forEach.call(eles, function (item, index) {
+     >        var rect;
+     >        if (item.dataset.original === "") return;
+     >        rect = item.getBoundingClientRect(); // 用于获得页面中某个元素的左，上，右和下分别相对浏览器视窗的位置
+     >        if (rect.bottom >= 0 && rect.top < viewHeight) {
+     >          (function () {
+     >            var img = new Image();
+     >            img.src = item.dataset.original;
+     >            img.onload = function () {
+     >              item.src = img.src;
+     >            };
+     >            item.removeAttribute("data-original"); //移除属性，下次不再遍历
+     >            item.removeAttribute("lazyload");
+     >          })();
+     >        }
+     >      });
+     >    }
+     >    lazyload(); //刚开始还没滚动屏幕时，要先触发一次函数，初始化首页的页面图片
+     >    document.addEventListener("scroll", lazyload);
+     >  </script>
+     > </body>
+     > </html>
+     > ```
+     >
+     > 
+
+136. 图像预加载
+
+     > **什么是预加载**
+     >
+     > 资源预加载是另外一个性能优化的技术，我们可以使用该技术预先告知浏览器某些资源在未来可能会用到。
+     >
+     > 预加载简单来说就是将所有所需的资源提前请求加载到本地，这样后面在需要用到的时候直接从缓存中取出资源。
+     >
+     > **为什么要用预加载**
+     >
+     > 在网页全部加载之前，对一些主要内容进行加载，以提供给用户更好的体验，减少等待的事件。否则，如果一个页面的内容过于庞大，没有使用预加载技术的页面就会长时间的展现一片空白，直到所有内容加载完毕。
+
+137. JavaScript 中如何模拟实现方法的重载?
+
+     > JavaScript不支持重载的语法
+     >
+     > 它没有重载所需要的的函数签名
+     >
+     > 没有函数签名，函数重载是不可能做到的
+     >
+     > ```js
+     > // 利用闭包特性 addMethod 函数接受3个参数：目标对象、目标方法名、函数体
+     > // 先将目标object[name]的值存入变量old中，因此起初old的值可能不是一个函数
+     > // 接着向object[name]赋值一个代理函数，并且由于变量old、fnt在代理函数中被引用，所以old、fnt常驻内存不会被回收
+     > function addMethod(object, name, fnt) {
+     >  let old = object[name]
+     >  object[name] = function() {
+     >      if (fnt.length === arguments.length) {
+     >          return fnt.apply(this, arguments)
+     >      } else {
+     >          if (typeof old === 'function') {
+     >              return old.apply(this, arguments)
+     >          }
+     >      }
+     >  }
+     > }
+     > // 模拟重载 add
+     > let methods = {}
+     > addMethod(methods, 'add', function() {
+     >  return 0
+     > })
+     > addMethod(methods, 'add', function(a, b) {
+     >  return a + b
+     > })
+     > addMethod(methods, 'add', function(a, b, c) {
+     >  return a + b + c
+     > })
+     > // 执行
+     > console.log(methods.add())
+     > console.log(methods.add(10, 20)) // 30
+     > console.log(methods.add(10, 20, 30)) // 60
+     > ```
+     >
+     > 
+
+138. 说一下base64的编码方式
+
+139. 说一下import的原理，和require的不同之处在哪里
+
+140. 文件上传如何实现？除了input还有哪些别的方法？
+
+     > 1. FileUpload对象
+     >
+     >    > <input type='file'>
+     >    >
+     >    > 把这个标签放在form标签内，设置form的action为服务器的目标上传地址，并点击submit按钮或通过js调用form的submit方法就可以实现简单的文件上传，但是这样的上传会刷新页面
+     >
+     > 2. 使用ajax实现无刷新上传
+     >
+     >    ```js
+     >    let xhr = new XMLHttpRequest();
+     >    let formData = new FormData();
+     >    let fileInput = document.querySelector("#myFile");
+     >    let file = fileInput.files[0];
+     >    formData.append("myFile", file);
+     >    xhr.open("POST", "/upload.php");
+     >    xhr.onload = function () {
+     >      if (this.status === 200) {
+     >        // 对请求成功处理
+     >      }
+     >    };
+     >    xhr.send(formData);
+     >    xrh = null;
+     >    // 如果想查看进度，可以监听 xhr.upload.onprogress
+     >    ```
+     >
+     >    
+     >
+     > 3. 图片预览
+     >
+     >    > 常规思路是等待文件上传成功后，后台返回上传文件的url，然后把预览图片的img元素的src指向该url
+     >    >
+     >    > 但是还有更好的实现方式，就是使用HTML5提供的FileReader
+     >    >
+     >    > ```js
+     >    > function handleImageFile(file){
+     >    > let previewArea = document.querySelector("#previewArea");
+     >    > let img = document.createElement('img');
+     >    > let fileInput = document.querySelector('#myFile');
+     >    > let file = fileInput.files[0];
+     >    > img.file = file;
+     >    > previewArea.appendChild(img);
+     >    > // FileReader 用于异步读取文件
+     >    > let reader = new FileReader();
+     >    > reader.onload = (function(aImg){ // 文件读取成功后触发
+     >    >  return function(e){
+     >    >    aImg.src = e.target.result;
+     >    >  }
+     >    > })(img)
+     >    > reader.readAsDataURL(file); // 将文件读取为dataURL
+     >    > }
+     >    > ```
+     >    >
+     >    > 
+     >
+     > 4. 多文件上传
+     >
+     >    > <input type='file' multiple>
+     >
+     > 5. 二进制上传
+     >
+     >    > ```js
+     >    > // FileReader本身支持二进制上传
+     >    > let reader = new FileReader();
+     >    > reader.onload = function(){
+     >    > xhr.sendAsBinary(this.result);
+     >    > }
+     >    > // 把input里读取的文件内容，放到fileReader的result字段里
+     >    > reader.readAsBinaryString(file);
+     >    > 
+     >    > // 但是需要注意的是 ajax现在已经不支持 发送二进制数据了 需要自己实现一个
+     >    > 
+     >    > XMLHttpRequest.prototype.sendAsBinary = function(text){
+     >    > let data = new ArrayBuffer(text.length); // 表示通用的、固定长度的二进制缓冲区
+     >    > let ui8a = new Uint8Array(data,0); // 表示8位无符号整型数组，初始化为0
+     >    > for(let i =0;i<text.length;i++){
+     >    >  ui8a[i] = (text.charCodeAt(i) & 0xff);
+     >    > }
+     >    > this.send(ui8a);
+     >    > }
+     >    > ```
+
+141. 前端骨架屏的原理
+
+     > ```js
+     > <div id="root"><!-- shell --></div>
+     > // 占位符 将来把生成好的骨架屏结构替换这里的 <!-- shell -->
+     > ```
+     >
+     > ```js
+     > // 生成骨架屏的实现思路
+     > 1. 监听打包完成的事件
+     > 2. 当webpack编译完成后，我们可以启动一个服务，通过puppeteer去访问这个生成的页面，抓取骨架内容（dom结构和css），然后生成骨架屏的html插入到占位符 <!-- shell -->
+     > ```
+     >
+     > 
+
+142. es6代码转为es5代码的实现思路是什么?大致说一下babel的原理？
+
+     > **babel各种包的介绍**
+     >
+     > babel-core：核心包，提供转译的api，用于对代码进行转译，例如babel transform
+     >
+     > babylon：babel的词法解析器，将原始代码逐个字母的像扫描机一样读取分析得到AST语法树
+     >
+     > babel-traverse：对ast进行遍历转译
+     >
+     > babel-generator：将新的ast语法树生成新的代码
+     >
+     > babel-types：用于检验、构建和改变ast树的节点
+
+     > **babel的转译分为三个阶段**
+     >
+     > - 解析：将代码解析生成ast语法树，主要利用babylon包，简单来说，就是一个对象js代码的编译过程，进行了词法分析和语法分析的过程
+     > - 转换：对ast进行遍历转译，主要使用babel-traverse，在此过程中进行添加、更新、移除等操作
+     > - 生成：将转变后的代码在转换为js代码，使用的模块是babel-generator
+
+     > **demo： let a = 10**
+     >
+     > ```js
+     > {
+     > "type": "Program",
+     > "start": 0,
+     > "end": 10,
+     > "body": [
+     >  {
+     >    "type": "VariableDeclaration",
+     >    "start": 0,
+     >    "end": 10,
+     >    "declarations": [
+     >      {
+     >        "type": "VariableDeclarator",
+     >        "start": 4,
+     >        "end": 10,
+     >        "id": {
+     >          "type": "Identifier",
+     >          "start": 4,
+     >          "end": 5,
+     >          "name": "a"
+     >        },
+     >        "init": {
+     >          "type": "Literal",
+     >          "start": 8,
+     >          "end": 10,
+     >          "value": 10,
+     >          "raw": "10"
+     >        }
+     >      }
+     >    ],
+     >    "kind": "let"
+     >  }
+     > ],
+     > "sourceType": "module"
+     > }
+     > // 将以上 AST 语法树对象中的 ES6 语法 let 替换成 var。
+     > // 再将新的语法树生成新的代码 var a = 10。
+     > ```
+     >
+     > 
+
+143. 用原生js实现自定义事件
+
+     > 为什么以前js中用到的自定义事件很少，因为之前的js不是模块化开发，也很少协作。因为事件本质上是一种通信方式，是一种消息，只有存在多个对象，多个模块的情况下，才有可能需要用到事件进行通信。
+     >
+     > ```js
+     > // 实现方式1 Event构造函数
+     > let myEvent = new Event('rlei') // rlei 表示事件名称
+     > document.dispatchEvent(myEvent) // 派发事件
+     > // 在另外一个js文件中可以监听到事件派发
+     > document.addEventListener('rlei', (event) => {
+     > console.log('test', event)
+     > })
+     > 
+     > // 实现方式2 CustomEvent构造函数 可以用来传递数据
+     > let myEvent = new CustomEvent('rlei', {
+     >  detail: { // detail 用来传递数据
+     >      arr: [1,2,3]
+     >  }
+     > })
+     > document.dispatchEvent(myEvent)
+     > // 在另外一个js文件中可以监听到事件派发
+     > document.addEventListener('rlei', (event) => {
+     > console.log('获取到传递进来的数据', event.detail)
+     > })
+     > 
+     > // 应用场景1：比如微博列表中的“关注”按钮，点击之后，个人关注数会增加，同时会推荐类似微博等
+     > // 应用场景2：小王负责模块A开发，小陈负责模块B开发，模块B需要模块A正常运行之后才能执行
+     > ```
+     >
+     > 
+
+144. 哪些操作会导致js内存泄露
+
+     ```js
+     1. 一些意外的全局变量
+     function bar() {
+         bar = 'xxx' // 函数内部未定义的变量会在全局对象创建一个新变量
+     }
+     2. 缓存的数据量过大，sessionStorage是关闭浏览器才会清除，关闭标签是不清除的，sessionStorage是存储在内存的。localStorage存储在磁盘中。
+     3. 被遗忘的计时器或回调函数
+     定时器的回调函数只有在定时器停止的时候才会被回收
+     4. 脱离dom的引用
+     let elements = {
+         button: document.getElementById('button'),
+         image: document.getElementById('image'),
+         text: document.getElementById('text')
+     }
+     // 例如执行 如下方法
+     function removeButton() {
+         document.body.removeChild(document.getElementById('button'))
+     }
+     // 此时仍旧存在一个全局的#button的引用，elements字典中button元素仍然存在内存中，不能被GC回收
+     5. 闭包
+     ```
+
+     
+
+145. 实现数组的map方法
+
+     ```js
+     Array.prototype.map = function(mapCallback) {
+         let arr = this
+         if (!Array.isArray(arr) || !arr.length || typeof mapCallback != 'function') {
+             return
+         }
+         let result = []
+         for (let i = 0; i < arr.length; i++) {
+             result.push(mapCallback(arr[i], i, arr))
+         }
+         return result
+     }
+     let arr = [1,2,3].map(x => x * 2)
+     console.log(arr)
+     ```
+
+     
+
+146. 实现数组的filter方法
+
+     ```js
+     Array.prototype.filter = function(mapCallback) {
+         let arr = this
+         if (!Array.isArray(arr) || !arr.length || typeof mapCallback != 'function') {
+             return
+         }
+         let result = []
+         for (let i = 0; i < arr.length; i++) {
+             if (mapCallback(arr[i], i, arr)) {
+                 result.push(arr[i])
+             }
+         }
+         return result
+     }
+     let arr = [1,2,3].filter(x => x * 2)
+     console.log(arr)
+     ```
+
+     
+
+147. 
+
