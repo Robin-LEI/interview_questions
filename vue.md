@@ -342,6 +342,38 @@ vm.$el 保存的是真实的dom节点
 
 
 
+每个组件都有一个watcher
+
+new Vue的时候会产生一个渲染watcher
+
+数据更新如何自动更新视图，而不是手动触发（调用vm.\_update(vm.\_render)）
+
+依赖收集：属性取值的时候，需要记住这个watcher，稍后数据变了，去执行自己记住的watcher即可
+
+只有data上的数据被模板使用了才需要记住watcher
+
+把当前的watcher存放在一个Dep上（这是一个全局变量）
+
+每个属性都有dep
+
+
+
+vue的更新操作是异步的
+
+多次更新同一个属性值需要做合并操作
+
+vue更新原理：就是通过nextTick异步执行更新视图逻辑
+
+
+
+数组的依赖收集？
+
+如果对数组取值会将当前的watcher和数组进行关联，给数组增加dep属性，注意是给数组本身加dep而不是索引
+
+里层和外层收集的都是同一个watcher
+
+
+
 # vue打包工具采用rollup
 
 1. rollup相比webpack的优点？
