@@ -427,12 +427,32 @@ diff算法是平级比对，不会跨级比对
      newEndIndex = length - 1
      newStartNode
      newEndNode
-     ```
-
      
-
+  while(oldStartIndex <= oldEndIndex && newStartIndex <= newEndIndex) {
+         // 两个指针重合的时候停止
+  }
+     
+  // 常见的操作：尾部插入、头部插入、头移动到尾、尾移动到头、正序和反序
+     
+     如何判断两个节点是同一节点？
+     tag相同 && key相同
+     
+     向后插入：从头开始比
+     向前插入：从尾开始比
+     如何判断当前是向前插入还是向后插入？
+     看一眼newEndIndex下一个是否有值，如果有向前插入，如果没有向后插入
+     
+     // insertBefore的第二个参数为null的时候，等价于appendChild
+     
+     为什么v-for要加key？为什么key不建议用索引？
+     加key为了在做dom-diff的时候，减少不必要的创建dom，节省性能。因为在前端操作中，很多时候的时候，不一定要去创建新的dom，只是移动了顺序。
+     比如用户的操作只是为了逆序输出，如果用索引做key，在做比对的时候，认为它们是相同的节点，此时复用老节点，内部调用patch比对children，如果不一样，这个时候会创建新的dom替换老的，如果不是用索引做key，用一个唯一值id做key，这个时候在比对的时候进行首尾比较，只是移动顺序，不做dom的创建。
+     ```
+   
+     
+   
    - 老的有，新的无，innerHTML = ''
-
+   
    - 老的无，新的有，appendChild
 
 
