@@ -374,6 +374,69 @@ vue更新原理：就是通过nextTick异步执行更新视图逻辑
 
 
 
+在created的时候，数据已经被劫持了
+
+mounted的时候，调用render方法
+
+vue中钩子函数里面的this指向vue的实例
+
+
+
+Vue.mixin 内部主要是mergeOptions
+
+
+
+组件的合并策略
+
+Vue.component内部调用Vue.extend，传入一个对象，生成一个类，通过这个类去创建组件
+
+
+
+组件的虚拟节点和普通元素的虚拟节点是有区别的，组件的虚拟节点带有hook和componentOptions属性
+
+
+
+# diff算法
+
+diff算法是平级比对，不会跨级比对
+
+如果没有diff会多次创建真实dom，浪费性能，更新差异即可。
+
+两个虚拟节点的比对：
+
+1. 如果两个虚拟节点的标签不一样，直接替换掉结束，oldVnode.el.parentNode.replaceChild(createElm(vnode, oldVnode.el))
+
+2. 标签一样，但是是两个文本元素，看内容是否一样，文本的tag名是undefined
+
+3. 元素是相同的，复用老节点，比对；两个节点的属性值，分为以下情况
+
+   - 老的有，新的没有，删除属性
+   - 新的有，老的没有，直接用新的覆盖
+
+4. 更新儿子，分为以下情况
+
+   - 老的有儿子，新的有，dom-diff，调用updateChildren，利用双指针，也就是头尾各一个指针，注意这里比对的不是索引，是节点的比较
+
+     ```js
+     oldStartIndex = 0
+     oldEndIndex = length - 1
+     oldStartNode
+     oldSEndNode
+     
+     newStartIndex = 0
+     newEndIndex = length - 1
+     newStartNode
+     newEndNode
+     ```
+
+     
+
+   - 老的有，新的无，innerHTML = ''
+
+   - 老的无，新的有，appendChild
+
+
+
 # vue打包工具采用rollup
 
 1. rollup相比webpack的优点？
