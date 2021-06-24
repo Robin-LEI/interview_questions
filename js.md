@@ -3933,5 +3933,294 @@
 
      
 
-147. 
+147. 说说js语言
+
+     > js是一个解释型语言
+     >
+     > 运行时编译、运行前编译
+
+     > 浏览器的内核包括了js引擎和渲染引擎
+     >
+     > js代码的执行需要在机器上（node或浏览器）安装一个js引擎才能执行
+     >
+     > js早期是通过将源码编译成语法树，直接解释语法树的，但是这种方法效率不高
+     >
+     > js是动态弱类型脚本语言
+     >
+     > 解释型语言：使用专门的解释器对源代码逐行解释成特定平台的机器码并立即执行，不需要事先编译。
+     >
+     > 每次执行都需要解释，效率不高。
+     >
+     > 编译型语言，使用专门的编译器，针对特定的平台，将源代码一次性的编译成可被该平台硬件执行的机器码，如exe文件，以后再要运行的时候直接使用编译结果即可，如直接运行exe文件，因为只需要编译一次，以后运行不需要再次编译，所以编译型的语言执行效率高。
+
+     > js也是一门编译语言，但是和传统的编译语言不一样，她不是提前编译的，编译的结果也不能进行移植。
+     >
+     > 任何JavaScript代码在执行前都要进行编译
+     >
+     > 一段源代码在执行之前会经历三个步骤，统称为“编译”：
+     >
+     > 分词/词法分析：将字符组成的代码字符串分解成有意义的代码块，这些代码块被称为词法单元。比如var a = 2；被分解成 var、a、=、2这些词法单元。
+     >
+     > 解析：根据词法单元流（数组）构建ast抽象语法树，代表了程序的语法结构
+     >
+     > 代码生成：将ast转换为可执行代码的过程被称为代码生成。简单来说就是有某种方法可以将var a = 2；的ast转化为一组机器指令。
+
+148. 说说严格模式有什么特点
+
+     > 优点：使用严格模式的好处是可以提早知道代码中存在的错误
+
+     ```js
+     // 1. 不允许创建没有声明的变量
+     a = 1 // 不允许，报错，非严格模式下，声明为全局变量
+     
+     // 2. 不能对变量调用delete删除符
+     let color = 'red'
+     delete color; // 报错
+     
+     // 3. 不能使用关键字、保留字命名变量，否则会报错
+     // 如：interface、yield、implements、static、let、var、const、package等等
+     
+     // 4. 如果一个对象的某一个属性的 configurable 为false，此时如果使用 delete 删除属性，会报错
+     'use strict';
+     let obj = {}
+     Object.defineProperty(obj, 'name', {
+         value: 'name',
+         configurable: false
+     })
+     
+     delete obj.name
+     
+     // 5. 如果给一个不可扩展属性的对象添加新的属性，在严格模式下报错
+     
+     // 6. 严格模式下，函数的形参名称不允许重复，否则报错，非严格模式下，不会报错，第二个会覆盖第一个
+     function add(num, num) {
+         console.log(num)
+     }
+     
+     // 7. 非严格模式下，修改函数的形参值，最终会反映到形参arguments，但是在严格模式下不会，保持独立
+     
+     'use strict';
+     function add(num) {
+         num = 2
+         console.log(num, arguments[0]) // 2, 1
+     }
+     add(1)
+     
+     // 8. 在严格模式下，调用arguments.callee（引用函数本身）报错
+     
+     // 9. 严格模式对函数名也做了限制，不允许使用关键字和保留字作为函数名
+     
+     // 10. 在严格模式下，eval不会在上下文中创建变量或者函数
+     'use strict';
+     function add(num) {
+         eval('var a = 10')
+         console.log(a) // 报错 读取不到 a
+     }
+     
+     // 11. 严格模式下，抑制this，非严格模式下，调用call传入null或者undefined作为第一个参数，内部this指向window，但是在严格模式下，内部this指向undefined
+     
+     // 12. 严格模式下不能用with语句
+     
+     // 13. 严格模式下，不允许使用八进制，会报错，严格模式下 调用parseInt解析八进制字符串的时候，会把八进制字符串当做十进制去解析
+     'use strict';
+     let value = 010;
+     console.log(value) // 报错
+     console.log(parseInt('010')) // 10 非严格模式下为 8
+     ```
+
+     
+
+149. delete运算符
+
+     ```js
+     // 删除不了变量
+     let color = 'red'
+     delete color
+     console.log(color) // red
+     ```
+
+     
+
+150. 如何设置一个对象不可扩展
+
+     ```js
+     let obj = {
+         name: 'test'
+     }
+     
+     Object.preventExtensions(obj) // 阻止对象可扩展
+     
+     obj['age'] = 10
+     console.log(Object.isExtensible(obj)) // 判断对象是否可扩展，可扩展为 true
+     console.log(obj) // {name: 'test'}
+     ```
+
+     
+
+151. sessionStorage、localStorage、cookie区别
+
+     > 都是保存在浏览器的，同源
+     >
+     > cookie数据是游走在浏览器和服务器之间的，会通过http请求携带到服务端
+     >
+     > sessionStorage、localStorage不会把数据发送给服务器，保存在本地
+     >
+     > 存储大小也不一样，cookie不能超过4K，而sessionStorage、localStorage可以达到5M
+     >
+     > sessionStorage在浏览器窗口关闭之前有效
+     >
+     > localStorage始终有效
+     >
+     > cookie只在设置的cookie过期之前有效，即使浏览器窗口关闭或者浏览器关闭
+     >
+     > 作用域不同：
+     >
+     > sessionStorage只在当前浏览器的同一个窗口有效
+     >
+     > localStorage在所有的同源窗口有效，cookie也是
+
+152. 浏览器缓存
+
+     > **浏览器缓存，它把资源存在了哪里？**
+     >
+     > memory cache 内存
+     >
+     > disk cache 磁盘
+     >
+     > **三级缓存原理（访问缓存优先级）**
+     >
+     > 1. 先在内存中查找，内存中有，直接加载
+     > 2. 内存中没有，从硬盘中查找，找到了，直接加载
+     > 3. 找不到，进行网络请求资源
+     > 4. 把请求获取到的资源缓存到内存和硬盘中
+     >
+     > **浏览器缓存的分类**
+     >
+     > 1. 强缓存
+     >
+     >    > 当我们访问URL的时候，不会向服务器发送请求，直接从缓存中读取资源，但是会返回200
+     >
+     > 2. 协商缓存
+     >
+     > *浏览器向服务器请求资源时，首先判断是否命中强缓存，在判断是否命中协商缓存*
+     >
+     > **如何设置强缓存**
+     >
+     > 我们第一次进入页面，请求服务器，然后服务器进行应答，浏览器会根据response Header来判断是否对资源进行缓存，如果响应头中expires、pragma或者cache-control字段，代表这是强缓存，浏览器就会把资源缓存在memory cache 或 disk cache中。
+     >
+     > 第二次请求时，浏览器判断请求参数，如果符合强缓存条件就直接返回状态码200，从本地缓存中拿数据。否则把响应参数存在request header请求头中，看是否符合协商缓存，符合则返回状态码3
+     >
+     > 04，不符合则服务器会返回全新资源。
+     >
+     > ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/ca00bff3081e4cfd993a8f252f4fa23a~tplv-k3u1fbpfcp-watermark.image)
+
+     **expires**
+
+     > 是HTTP1.0控制网页缓存的字段，值为一个时间戳，准确来讲是格林尼治时间，服务器返回该请求结果缓存的到期时间，意思是，再次发送请求时，如果未超过过期时间，直接使用该缓存，如果过期了则重新请求。
+     >
+     > 有个缺点，就是它判断是否过期是用本地时间来判断的，本地时间是可以自己修改的。
+
+     
+
+     **cache-control**
+
+     > 是HTTP1.1中控制网页缓存的字段，当Cache-Control都存在时，Cache-Control优先级更高，主要取值为：
+     >
+     > public：资源客户端和服务器都可以缓存。
+     >
+     > privite：资源只有客户端可以缓存。
+     >
+     > no-cache：客户端缓存资源，但是是否缓存需要经过协商缓存来验证。
+     >
+     > no-store：不使用缓存。
+     >
+     > max-age：缓存保质期。
+     >
+     > ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1f169e913e244d52a44ff1e4185cb9ce~tplv-k3u1fbpfcp-watermark.image)
+     >
+     > Cache-Control使用了max-age相对时间，解决了expires的问题。
+
+     
+
+     **刷新对于强缓存和协商缓存的影响**
+
+     1. ctrl+f5 直接从服务器加载，跳过强缓存和协商缓存
+     2. f5，跳过强缓存，但是会检查协商缓存
+     3. 浏览器地址栏输入url，回车，浏览器发现缓存中有这个文件了，不用在继续请求了，直接去缓存中拿
+
+     **强缓存和协商缓存的区别**
+
+     1. 强缓存不发请求到服务器，所以有时候资源更新了浏览器还不知道，但是协商缓存会发请求到服务器，所以资源是否更新，服务器肯定知道。
+
+     2. 大部分web服务器都默认开启协商缓存。
+
+     **缓存方案**
+
+     > 目前的项目大多使用这种缓存方案的：
+     >
+     > - HTML: 协商缓存；
+     > - css、js、图片：强缓存，文件名带上hash。
+
+     
+
+     ## 缓存位置
+
+     **Servie worker**
+
+     > 一个服务器与浏览器之间的中间人角色，如果网站中注册了service worker那么它可以拦截当前网站所有的请求，进行判断（需要编写相应的判断程序），如果需要向服务器发起请求的就转给服务器，如果可以直接使用缓存的就直接返回缓存不再转给服务器。从而大大提高浏览体验。
+
+     **memory cache**
+
+     > 内存中的缓存，主要包含的是当前中页面中已经抓取到的资源，例如页面上已经下载的样式、脚本、图片等。读取内存中的数据肯定比磁盘快，内存缓存虽然读取高效，可是缓存持续性很短，会随着进程的释放而释放。一旦我们关闭 Tab 页面，内存中的缓存也就被释放了。
+
+     **disk cache**
+
+     > 存储在硬盘中的缓存，读取速度慢点，但是什么都能存储到磁盘中，比之 Memory Cache 胜在容量和存储时效性上。
+     >
+     > 在所有浏览器缓存中，Disk Cache 覆盖面基本是最大的。它会根据 HTTP Herder 中的字段判断哪些资源需要缓存，哪些资源可以不请求直接使用，哪些资源已经过期需要重新请求。并且即使在跨站点的情况下，相同地址的资源一旦被硬盘缓存下来，就不会再次去请求数据。绝大部分的缓存都来自 Disk Cache。
+     >
+     > memory cache 要比 disk cache 快的多。举个例子：从远程 web 服务器直接提取访问文件可能需要500毫秒(半秒)，那么磁盘访问可能需要10-20毫秒，而内存访问只需要100纳秒，更高级的还有 L1缓存访问(最快和最小的 CPU 缓存)只需要0.5纳秒。
+
+     **push cache**
+
+     > Push Cache（推送缓存）是 HTTP/2 中的内容，当以上三种缓存都没有命中时，它才会被使用。它只在会话（Session）中存在，一旦会话结束就被释放，并且缓存时间也很短暂，在Chrome浏览器中只有5分钟左右，同时它也并非严格执行HTTP头中的缓存指令。
+
+     
+
+     **协商缓存**
+
+     >  协商缓存就是强缓存失效后，浏览器携带缓存标识向服务器发送请求，由服务器根据缓存标识来决定是否使用缓存的过程。
+     >
+     >  主要有以下两种情况：
+     >
+     >  1. 协商缓存生效，返回304
+     >  2. 协商缓存失效，返回200和请求结果
+
+     
+
+     **如何设置协商缓存**
+
+     > **Last-Modified / If-Modified-Since**
+     >
+     > ##### Etag / If-None-Match
+     >
+     > Last-Modified是服务器响应请求时，返回该资源文件在服务器最后被修改的时间。
+     >
+     > ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/c6c3aabbfd9a43ab81c97dd519da3b9f~tplv-k3u1fbpfcp-watermark.image)
+     >
+     > If-Modified-Since则是客户端再次发起该请求时，携带上次请求返回的Last-Modified值，通过此字段值告诉服务器该资源上次请求返回的最后被修改时间。服务器收到该请求，发现请求头含有If-Modified-Since字段，则会根据If-Modified-Since的字段值与该资源在服务器的最后被修改时间做对比，若服务器的资源最后被修改时间大于If-Modified-Since的字段值，则重新返回资源，状态码为200；否则则返回304，代表资源无更新，可继续使用缓存文件。
+     >
+     > ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/fa2eae3bc57d48e39a871c8e659bf97d~tplv-k3u1fbpfcp-watermark.image)
+     >
+     > Etag是服务器响应请求时，返回当前资源文件的一个唯一标识(由服务器生成)。
+     >
+     > ![](https://p3-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/0da637ef7fa64aef8b1f932c3dd0297b~tplv-k3u1fbpfcp-watermark.image)
+     >
+     > If-None-Match是客户端再次发起该请求时，携带上次请求返回的唯一标识Etag值，通过此字段值告诉服务器该资源上次请求返回的唯一标识值。服务器收到该请求后，发现该请求头中含有If-None-Match，则会根据If-None-Match的字段值与该资源在服务器的Etag值做对比，一致则返回304，代表资源无更新，继续使用缓存文件；不一致则重新返回资源文件，状态码为200。
+     >
+     > ![](https://p6-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/2e9d32690cdf45b498e5dcabd4c12f71~tplv-k3u1fbpfcp-watermark.image)
+     >
+     > **Etag / If-None-Match优先级高于Last-Modified / If-Modified-Since，同时存在则只有Etag / If-None-Match生效。**
+
+153. 
 
