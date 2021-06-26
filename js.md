@@ -4222,5 +4222,27 @@
      >
      > **Etag / If-None-Match优先级高于Last-Modified / If-Modified-Since，同时存在则只有Etag / If-None-Match生效。**
 
-153. 
+153. 说说CSS盒模型
+
+     > 盒模型指的是每一个元素在页面中都会形成一个矩形区域，也就是盒子
+
+     > 盒模型由以下几部分组成：内部区域（content）、内边距（padding）、边框（border）、外边距（margin）
+
+     > box-sizing的设置使得设置的宽度和高度作用在真正内容区域上有多少
+     >
+     > content-box（默认）：设置在真正的内容区域的盒子上面
+     >
+     > border-box：设置的值包含在border、padding、content，要想获取真正的内容区域的盒子宽度和高度，需要拿设置的值减去padding、border
+
+     > 盒模型的分类
+     >
+     > 块盒：display：block；可以设置宽度和高度，宽度独占一行，高度默认为0，div，p，h1-h6
+     >
+     > 行盒：display：inline；不能设置宽度和高度，宽度和高度随着内容的撑开而撑开，span，a
+     >
+     > 行块盒：display：inline-block；可以设置宽度和高度，比如input、img
+
+     ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/485c061aa21a4f868d367764ab5d9959~tplv-k3u1fbpfcp-watermark.image)
+
+154. 
 

@@ -174,7 +174,20 @@
     >
     > 
 
-21. 
+21. path的区别
+
+    | 类别      | 配置名称    | 描述                                                         |
+    | --------- | ----------- | ------------------------------------------------------------ |
+    | output    | path        | 指定输出到硬盘上的目录                                       |
+    | output    | publicPath  | 表示的是打包生成的index.html文件里面引用资源的前缀<br />可以配置CDN地址：http://somecdn.com/assets/，上线之后把你的静态文件放在哪个目录 |
+    | devServer | publicPath  | 表示的是打包生成的静态文件所在的位置(若是devServer里面的publicPath没有设置，则会认为是output里面设置的publicPath的值) |
+    | devServer | contentBase | 用于配置提供额外静态文件内容的目录                           |
+
+    
+
+22. css-loader，解析css中的@import和url（）
+
+23. style-loader，可以把css插入到DOM中
 
 
 
