@@ -1,6 +1,8 @@
-1. 介绍防抖节流原理、区别以及应用，并用JavaScript进行实现
+1. 跨站请求伪造
 
-   1. 防抖
+   指的是黑客诱导用户点击链接，打开黑客的网站，然后黑客利用用户**目前的登录状态**发起跨站请求。介绍防抖节流原理、区别以及应用，并用JavaScript进行实现
+
+2. 1. 防抖
 
       - 原理：在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时
 
@@ -4244,5 +4246,692 @@
 
      ![](https://p9-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/485c061aa21a4f868d367764ab5d9959~tplv-k3u1fbpfcp-watermark.image)
 
-154. 
+154. 要实现一个JS的持续动画，你有什么比较好的方法？
+
+     ```js
+     // 使用 setInterval 和 requestAnimationFrame 都可以做到
+     let flag = true
+     let left = 0
+     let box = document.querySelector('#box')
+     
+     function render() {
+         if (flag) {
+             if (left > 100) {
+                 flag = false
+             }
+             box.style.left = `${++left}px`
+         } else {
+             if (left < 0) {
+                 flag = true
+             }
+             box.style.left = `${--left}px`
+         }
+     }
+     // 时间间隔为什么是60帧，因为屏幕一秒钟渲染60帧
+     setInterval(render, 1000 / 60)
+     
+     // 使用 requestAnimationFrame 实现
+     let e = document.getElementById("e");
+     let flag = true;
+     let left = 0;
+     
+     function render() {
+         if(flag == true){
+             if(left>=100){
+                 flag = false
+             }
+             e.style.left = ` ${left++}px`
+         }else{
+             if(left<=0){
+                 flag = true
+             }
+             e.style.left = ` ${left--}px`
+         }
+     }
+     
+     (function animloop() {
+         render();
+         window.requestAnimationFrame(animloop); // 正常情况下 requestAnimationFrame 这个方法在一秒内执行60次
+     })();
+     
+     // 目前大多数的设备的屏幕刷新率为1秒钟60帧
+     // 卡顿：每个帧的时间大约是16毫秒
+     // FPS表示每秒钟画面的更新次数，FPS越高，动画越流畅
+     ```
+
+     
+
+155. 使用CSS3动画代替JS的动画有什么好处？
+
+     不占用JS主线程
+
+     可以利用硬件加速
+
+     > 比如transform动画由GPU控制，支持硬件加速
+     >
+     > 浏览器接受到页面文档之后，会将文档中的标记语言解析为DOM树，DOM树和CSS结合形成浏览器构建页面的渲染树。
+     >
+     > 渲染树中包含了大量的渲染元素，每一个渲染元素会被分配到一个图层中，每一个图层又会被加载到GPU形成渲染纹理，而图层在GPU中transform是不会触发repaint的，最终这些使用transform的图层都由独立的合成器进行来进行处理
+
+     浏览器可以对动画做优化（元素不可见的时候不动画，减少对FPS的影响）
+
+156. 为什么使用JSX开发，vue不是都用template吗?
+
+     ```js
+     // 某些情况下可以简化template  render函数比模板更接近编译器，减少了调用compileToFunction(template)这一步骤
+     <!--nav-tmpl.vue-->
+     <template>
+       <h1 v-if="level === 1">
+         <slot></slot>
+       </h1>
+       <h2 v-else-if="level === 2">
+         <slot></slot>
+       </h2>
+       <h3 v-else-if="level === 3">
+         <slot></slot>
+       </h3>
+       <h4 v-else-if="level === 4">
+         <slot></slot>
+       </h4>
+       <h5 v-else-if="level === 5">
+         <slot></slot>
+       </h5>
+       <h6 v-else-if="level === 6">
+         <slot></slot>
+       </h6>
+     </template>
+     <script>
+     export default {
+       props: {
+         level: {
+           type: Number,
+           default: 1
+         }
+       }
+     };
+     </script>
+     
+     // 使用jsx改写
+     // nav-jsx.jsx
+     export default {
+       props: {
+         level: {
+           type: Number,
+           default: 1
+         }
+       },
+       render: function(h) {
+         const Tag = `h${this.level}`;
+         return <Tag>{this.$slots.default}</Tag>;
+       }
+     };
+     
+     // jsx和template的使用方式相同，引入之后，使用components注册就可以在页面中使用了
+     ```
+
+     
+
+157. 请解释JSONP的工作原理
+
+     > 是一种跨域解决方案，通过客户端的script标签发出
+     >
+     > 浏览器会进行同源检查，浏览器在接受服务端返回数据的时候，发现我们请求的是一个非同源的数据，浏览器会把响应报文丢弃掉
+     >
+     > 但是，通过script标签和src这种标签发出的请求不会被浏览器进行同源检查
+
+     ```js
+     // 实现步骤
+     // 1. 客户端准备一个函数，用来接受服务端返回的数据
+     function getdata(data) {
+         console.log(111, data)
+     }
+     
+     // 2. 客户端动态插入一个script标签并执行请求
+     let script = document.createElement('script')
+     script.src = "http://localhost:3456/product?callback=getdata"
+     document.head.appendChild(script);
+     document.head.removeChild(script);
+     
+     // 3. 服务端获取到客户端传递过来的函数名，将数据和函数名组合在一起成字符串返回
+     app.get('/product', (req, res) => {
+       let callback = req.query.callback;
+       res.send(`${callback}(${JSON.stringify({name: 'name'})});`)
+     })
+     
+     // 4. 客户端接受到响应并执行回调函数拿到数据
+     ```
+
+     > 缺点：只能用于get请求
+     >
+     > 动态插入的script脚本可能被注入恶意代码
+
+     ```js
+     // 实现自己的jsonp
+     function myJsonp(options) {
+         return new Promise((resolve, reject) => {
+             let {data, url, cbname} = options;
+             
+             window.getdata = function(res) { // 这里注意，需要挂载到window上，否则找不到这个函数会报错
+                 resolve(res);
+             }
+             
+             function parseData() {
+                 let param = ''
+                 for (let key in data) {
+                     param += key + '=' + encodeURIComponent(data[key]) + '&'
+                 }
+                 return param.substr(0, param.length - 1)
+             }
+             
+             url = `${url}?callback=getdata&${parseData()}`
+             
+             let script = document.createElement('script')
+             script.src = url
+             document.head.appendChild(script)
+     		document.head.removeChild(script)
+         })
+     }
+     
+     // 使用
+     myJsonp({
+         url: 'http://localhost:3456/product',
+         data: {
+             name: 'rlei',
+             age: 18
+         }
+     }).then(res => {
+         console.log(res)
+     })
+     ```
+
+     
+
+158. 怎么样在JavaScript中创建一个worker线程
+
+     > 浏览器端js是以单线程的方式运行的，也就是说JavaScript和UI渲染占用同一个主线程
+     >
+     > 那就意味着，如果JavaScript进行高负载的数据处理，UI渲染就有可能被阻断，浏览器就会出现卡顿，降低了用户的体验
+     >
+     > 为此，JavaScript提供了异步操作，比如定时器、ajax、I/O，我们把高负载的任务进行异步处理，它们将会被放入到浏览器的事件任务队列中，等到JavaScript执行线程空闲的时候再去执行。
+     >
+     > Web Worker可以实现主 UI 线程与复杂计运算线程的分离，从而极大减轻了因计算量大而造成 UI 阻塞而出现的界面渲染卡、掉帧的情况
+
+     > Worker是window对象的原生方法
+
+     ```js
+     let worker = new Worker('worker.js')
+     // worker可以通过postMessage、onmessage进行数据通信
+     // 主线程和子线程可以进行双向的数据通信
+     
+     // main.js
+     worker.postMessage('hello world')
+     worker.onmessage = function(event) {
+      console.log(event.data) // 拿到worker数据子线程传递过来的消息
+     }
+     // 或者使用 worker.addEventListener 监听
+     
+     // worker会自动关闭，如果它本身没有监听任何消息的话，也可以手动关闭，调用 worker.terminate()
+     
+     // work.js 子线程
+     addEventListener('message', function(event) {
+      console.log('收到了：', event.data)
+      // 子线程 发送消息告诉主线程
+      self.postMessage('我收到消息了，和你说一下')
+      
+      // 在子线程运行结束后，为了节省系统的资源，可以手动关闭子线程
+      close();
+     })
+     ```
+
+     > 使用的问题
+     >
+     > 1. 分配给worker线程的脚本文件（worker.js），必须与主线程的脚本文件（main.js）同源，同时也不支持文件域
+     >
+     >    > 实际开发中，我们不会把所有的代码全部放在一个文件中让子线程加载，肯定是模块化开发，通过工具把代码合并到一个文件中，然后把子线程的代码生成一个URL
+     >    >
+     >    > ```js
+     >    > let script = 'console.log("hello world!");'
+     >    > // 将动态生成的脚本转成 Blob 对象
+     >    > let workerBlob = new Blob([script], { type: "text/javascript" });
+     >    > // 给这个对象创建一个 URL
+     >    > let url = URL.createObjectURL(workerBlob);
+     >    > // 最后将创建好的URL作为地址传给worker的构造函数
+     >    > let worker = new Worker(url);
+     >    > ```
+     >
+     > 2. Worker子线程所在的全局对象，不在是window了，而是self，它与主线程不在同一个上下文环境，无法读取主线程所在网页的DOM对象，也不能使用 `document、window、parent`等对象，可以使用console.log，debugger，可以读取部分navigator对象
+     >
+     > 3. Worker子线程可以使用异步
+
+     > 使用场景：
+     >
+     > 1. 在Worker子线程可以进行大量的数学运算
+     >
+     > 2. 高频的用户交互适用于根据用户的输入习惯、历史记录以及缓存等信息来协助用户完成输入的纠错、校正功能等类似场景，用户频繁输入的响应处理同样可以考虑放在web worker中执行。例如，我们可以 做一个像Word一样的应用：当用户打字时后台在词典中进行查找，帮助用户自动纠错等等。
+
+159. 渲染大量的数据页面如何不卡顿
+
+     ```js
+     // 合理利用 createDocumentFragment和requestAnimationFrame
+     // 模拟实现
+     setTimeout(() => {
+         let count = 0
+         let totalCount = 100000
+         let pageSize = 20
+         // 计算需要插入多少次
+         let times = Math.ceil(totalCount / pageSize)
+         let ul = document.querySelector('ul')
+         
+         function add() {
+             // createDocumentFragment 创建虚拟节点，如果采用createElement会导致效率比较低，因为createElement每一次的插入都会引起重新渲染，DocumentFragment不属于文档树
+             // 除了使用 createDocumentFragment 还可以使用innerHTML，把创建的元素写到一个字符串上，然后一次性的写到innerHTML上，但是字符串的灵活性比较差，很难符合创建各种DOM元素的需求
+             const fragment = document.createDocumentFragment()
+             for (let i = 0; i < pageSize; i++) {
+                 let li = document.createElement('li')
+                 li.innerHTML = Math.floor(Math.random() * totalCount)
+                 // 文档片段存在于内存中，并不在DOM中，所以将子元素插入到文档片段并不会引起页面回流
+                 fragment.appendChild(li)
+             }
+             ul.appendChild(fragment) // 这里的添加并不是添加片段，而是添加片段的所有子节点
+             ++count
+             loop()
+         }
+         
+         function loop() {
+             if (count < times) {
+                 window.requestAnimationFrame(add)
+             }
+         }
+         
+         loop()
+     }, 0)
+     
+     // createDocumentFragment和createElement方法的区别
+     // 1. 文档片段存在于内存中，并不在DOM中，所以将子元素插入到文档片段并不会引起页面回流，但是使用createElement会
+     // 2. 使用createElement方法创建的元素的nodeType为1，使用 createDocumentFragment 创建出来的节点的nodeType为11
+     ```
+
+     
+
+160. zoom: 1的原理和应用
+
+     > zoom是IE浏览器的专有属性，它可以设置或检索对象的缩放比例
+     >
+     > 当设置了zoom之后，所设置的元素就会自动扩大或者缩小，高度和宽度就会重新计算了，一旦改变，会发生重新渲染
+     >
+     > 解决的问题：IE下子元素浮动时候父元素不随着自动扩大的问题
+
+161. 说一说XSS攻击
+
+     > 全称是跨站脚本攻击
+     >
+     > XSS攻击是指浏览器中执行恶意脚本（无论是同域还是跨域的），从而拿到用户的信息进行操作
+     >
+     > 比如可以窃取 cookie
+     >
+     > 监听用户行为，比如输入账号密码后登录到客户的黑客服务器
+     >
+     > 修改DOM伪造登录表单
+     >
+     > 在页面中生成浮窗广告
+
+     > 通常情况，XSS 攻击的实现有三种方式——**存储型**、**反射型**和**文档型**。原理都比较简单，先来一一介绍一下。
+
+     > **存储型**
+     >
+     > `存储型`，顾名思义就是将恶意脚本存储了起来，确实，存储型的 XSS 将脚本存储到了服务端的数据库，然后在客户端执行这些脚本，从而达到攻击的效果。
+     >
+     > 常见的场景是留言评论区提交一段脚本代码，如果前后端没有做好转义的工作，那评论内容存到了数据库，在页面渲染过程中`直接执行`, 相当于执行一段未知逻辑的 JS 代码，是非常恐怖的。这就是存储型的 XSS 攻击。
+
+     > **反射型**
+     >
+     > `反射型XSS`指的是恶意脚本作为**网络请求的一部分**。
+     >
+     > ```js
+     > http://sanyuan.com?q=<script>alert("你完蛋了")</script>
+     > ```
+     >
+     > 这样在服务器端会拿到`q`参数,然后将内容返回给浏览器端，浏览器将这些内容作为HTML的一部分解析，发现是一个脚本，直接执行，这样就被攻击了。
+     >
+     > 之所以叫它`反射型`, 是因为恶意脚本是通过作为网络请求的参数，经过服务器，然后再反射到HTML文档中，执行解析。和`存储型`不一样的是，服务器并不会存储这些恶意脚本。
+
+     > **文档型**
+     >
+     > 文档型的 XSS 攻击并不会经过服务端，而是作为中间人的角色，在数据传输过程劫持到网络数据包，然后**修改里面的 html 文档**！
+     >
+     > 这样的劫持方式包括`WIFI路由器劫持`或者`本地恶意软件`等。
+
+     > **防范措施**
+     >
+     > 明白了三种`XSS`攻击的原理，我们能发现一个共同点: 都是让恶意脚本直接能在浏览器中执行。
+     >
+     > 那么要防范它，就是要避免这些脚本代码的执行。
+     >
+     > 为了完成这一点，必须做到**一个信念，两个利用**。
+     >
+     > #### 一个信念
+     >
+     > 千万不要相信任何用户的输入！
+     >
+     > 无论是在前端和服务端，都要对用户的输入进行**转码**或者**过滤**。
+     >
+     > 如：
+     >
+     > ```js
+     > <script>alert('你完蛋了')</script>
+     > ```
+     >
+     > 转码后变为:
+     >
+     > ```js
+     > &lt;script&gt;alert(&#39;你完蛋了&#39;)&lt;/script&gt;
+     > ```
+     >
+     > 这样的代码在 html 解析的过程中是无法执行的。
+     >
+     > 当然也可以利用关键词过滤的方式，将 script 标签给删除。
+     >
+     > **利用 CSP**
+     >
+     > CSP，即浏览器中的内容安全策略，它的核心思想就是服务器决定浏览器加载哪些资源，具体来说可以完成以下功能:
+     >
+     > 1. 限制其他域下的资源加载。
+     > 2. 禁止向其它域提交数据。
+     > 3. 提供上报机制，能帮助我们及时发现 XSS 攻击。
+     >
+     > **利用 HttpOnly**
+     >
+     > 很多 XSS 攻击脚本都是用来窃取Cookie, 而设置 Cookie 的 HttpOnly 属性后，JavaScript 便无法读取 Cookie 的值。这样也能很好的防范 XSS 攻击。
+
+     > 1. > **总结**
+     >    >
+     >    > `XSS` 攻击是指浏览器中执行恶意脚本, 然后拿到用户的信息进行操作。主要分为`存储型`、`反射型`和`文档型`。防范的措施包括:
+     >    >
+     >    > - 一个信念: 不要相信用户的输入，对输入内容转码或者过滤，让其不可执行。
+     >    > - 两个利用: 利用 CSP，利用 Cookie 的 HttpOnly 属性。
+     >
+     > 
+
+162. 说一说CSRF攻击
+
+     > 跨站请求伪造
+     >
+     > 指的是黑客诱导用户点击链接，打开黑客的网站，然后黑客利用用户**目前的登录状态**发起跨站请求。
+
+     > 举个例子, 你在某个论坛点击了黑客精心挑选的小姐姐图片，你点击后，进入了一个新的页面。
+     >
+     > 那么恭喜你，被攻击了:）
+     >
+     > 你可能会比较好奇，怎么突然就被攻击了呢？接下来我们就来拆解一下当你点击了链接之后，黑客在背后做了哪些事情。
+     >
+     > 可能会做三样事情。列举如下：
+     >
+     > #### 1. 自动发 GET 请求
+     >
+     > 黑客网页里面可能有一段这样的代码:
+     >
+     > ```js
+     > <img src="https://xxx.com/info?user=hhh&count=100">
+     > ```
+     >
+     > 进入页面后自动发送 get 请求，值得注意的是，这个请求会自动带上关于 xxx.com 的 cookie 信息(这里是假定你已经在 xxx.com 中登录过)。
+     >
+     > 假如服务器端没有相应的验证机制，它可能认为发请求的是一个正常的用户，因为携带了相应的 cookie，然后进行相应的各种操作，可以是转账汇款以及其他的恶意操作。
+     >
+     > #### 2. 自动发 POST 请求
+     >
+     > 黑客可能自己填了一个表单，写了一段自动提交的脚本。
+     >
+     > ```js
+     > <form id='hacker-form' action="https://xxx.com/info" method="POST">
+     > <input type="hidden" name="user" value="hhh" />
+     > <input type="hidden" name="count" value="100" />
+     > </form>
+     > <script>document.getElementById('hacker-form').submit();</script>
+     > ```
+     >
+     > 同样也会携带相应的用户 cookie 信息，让服务器误以为是一个正常的用户在操作，让各种恶意的操作变为可能。
+     >
+     > #### 3. 诱导点击发送 GET 请求
+     >
+     > 在黑客的网站上，可能会放上一个链接，驱使你来点击:
+     >
+     > ```js
+     > <a href="https://xxx/info?user=hhh&count=100" taget="_blank">点击进入修仙世界</a>
+     > ```
+     >
+     > 点击后，自动发送 get 请求，接下来和`自动发 GET 请求`部分同理。
+     >
+     > **这就是`CSRF`攻击的原理**。和`XSS`攻击对比，CSRF 攻击并不需要将恶意代码注入用户当前页面的`html`文档中，而是跳转到新的页面，利用服务器的**验证漏洞**和**用户之前的登录状态**来模拟用户进行操作。
+
+     > **防范措施**
+     >
+     > #### 1. 利用Cookie的SameSite属性
+     >
+     > `CSRF攻击`中重要的一环就是自动发送目标站点下的 `Cookie`,然后就是这一份 Cookie 模拟了用户的身份。因此在`Cookie`上面下文章是防范的不二之选。
+     >
+     > 恰好，在 Cookie 当中有一个关键的字段，可以对请求中 Cookie 的携带作一些限制，这个字段就是`SameSite`。
+     >
+     > ```js
+     > SameSite`可以设置为三个值，`Strict`、`Lax`和`None
+     > ```
+     >
+     > **a.** 在`Strict`模式下，浏览器完全禁止第三方请求携带Cookie。比如请求`sanyuan.com`网站只能在`sanyuan.com`域名当中请求才能携带 Cookie，在其他网站请求都不能。
+     >
+     > **b.** 在`Lax`模式，就宽松一点了，但是只能在 `get 方法提交表单`况或者`a 标签发送 get 请求`的情况下可以携带 Cookie，其他情况均不能。
+     >
+     > **c.** 在`None`模式下，也就是默认模式，请求会自动携带上 Cookie。
+     >
+     > #### 2. 验证来源站点
+     >
+     > 这就需要要用到请求头中的两个字段: **Origin**和**Referer**。
+     >
+     > 其中，**Origin**只包含域名信息，而**Referer**包含了`具体`的 URL 路径。
+     >
+     > 当然，这两者都是可以伪造的，通过 Ajax 中自定义请求头即可，安全性略差。
+     >
+     > #### 3. CSRF Token
+     >
+     > 首先，浏览器向服务器发送请求时，服务器生成一个字符串，将其植入到返回的页面中。
+     >
+     > 然后浏览器如果要发送请求，就必须带上这个字符串，然后服务器来验证是否合法，如果不合法则不予响应。这个字符串也就是`CSRF Token`，通常第三方站点无法拿到这个 token, 因此也就是被服务器给拒绝。
+
+     > **总结**
+     >
+     > CSRF(Cross-site request forgery), 即跨站请求伪造，指的是黑客诱导用户点击链接，打开黑客的网站，然后黑客利用用户目前的登录状态发起跨站请求。
+     >
+     > `CSRF`攻击一般会有三种方式:
+     >
+     > - 自动 GET 请求
+     > - 自动 POST 请求
+     > - 诱导点击发送 GET 请求。
+     >
+     > 防范措施: `利用 Cookie 的 SameSite 属性`、`验证来源站点`和`CSRF Token`。
+
+163. 说说SQL注入
+
+     > 对敏感字符串做过滤，做字符屏蔽，比如一些and exec insert select delete update等，还有一些函数如 truncate、char、declare等
+
+164. 说一下JS原生对象和宿主对象的区别
+
+     > ***Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError、ActiveXObject(服务器方面)、Enumerator(集合遍历类)、RegExp（正则表达式）***
+     >
+     > 以上这些都是原生对象。
+     >
+     > 所有非原生对象都是宿主对象。
+     >
+     > **ECMAScript中的“宿主”当然就是我们网页的运行环境，即“操作系统”和“浏览器”**
+     >
+     > ***所有的 BOM 和 DOM 对象都是宿主对象。***
+     >
+     > 1. **宿主对象**：宿主对象不是引擎的原生对象，而是由宿主框架通过某种机制注册到JavaScript引擎中的对象
+
+165. 虚拟列表是什么?说一下它的实现原理?
+
+     > 虚拟列表是一种根据滚动容器元素的可视区域来渲染长列表数据中的某一个部分数据的技术。
+
+166. 说说ES6对Object类型做了哪些优化更新?
+
+     > ```js
+     > // 1. 对象属性变量式声明，特别在解构赋值的时候，体现最为明显
+     > let [name, age] = ['xiaoming', 18]
+     > let person = {name, age}
+     > 
+     > // 2. 对象的解构赋值
+     > let {name, age} = {name: 'xiaoming', age: 18}
+     > 
+     > // 3. 扩展运算符
+     > 
+     > // 4. Class类新增了Super关键字
+     > 
+     > // 5. Es6在Object原型上新增is方法，做两个对象的比较，NaN === NaN 为true
+     > 
+     > // 6. Es6在Object原型上新增了assign方法，用于对象新增属性或多个对象的合并
+     > ```
+     >
+     > 
+
+167. JS为什么要区分微任务和宏任务?
+
+     > 区分微任务和宏任务是为了将异步队列任务划分优先级，通俗的理解就是为了插队。
+     >
+     > 一个 Event Loop，Microtask 是在 Macrotask 之后调用，Microtask 会在下一个 Event Loop 之前执行调用完，并且其中会将 Microtask 执行当中新注册的 Microtask 一并调用执行完，然后才开始下一次 Event Loop，所以如果有新的 Macrotask 就需要一直等待，等到上一个 Event Loop 当中 Microtask 被清空为止。由此可见，我们可以在下一次 Event Loop 之前进行插队。
+     >
+     > 如果不区分 Microtask 和 Macrotask，那就无法在下一次 Event Loop 之前进行插队，其中新注册的任务得等到下一个 Macrotask 完成之后才能进行，这中间可能你需要的状态就无法在下一个 Macrotask 中得到同步。
+
+168. 讲一下你所了解的函数式编程
+
+     > 函数式编程的关注点在于函数，而不是过程
+     >
+     > 强调的是如何通过函数的组合变换去解决问题，而不是通过我写什么样的语句去解决问题
+
+     > **特点**
+     >
+     > 1. 函数是一等公民
+     > 2. 声明式编程
+     > 3. 惰性执行
+     > 4. 无状态--给定相同的输入，一定有相同的输出
+
+     > **如何理解函数是“一等公民”？**
+     >
+     > 这是函数式编程实现的前提，因为我们基本上都是在操作函数。
+     >
+     > 这个特性意味着函数和其他数据类型一样，处于平等地位，可以赋值给其它值，可以作为参数，或者作为别的函数的返回值
+
+     > **如何理解声明式编程？**
+     >
+     > 函数式编程大多时候都是在声明我需要做什么，而不是怎么做。这种编程风格称为声明式编程。
+     >
+     > 好处是代码的可读性高，解放了大量的人力，因为它不关心具体的实现，因此它可以把优化能力交给具体的实现。
+
+     > **惰性执行**
+     >
+     > 所谓的惰性执行指的是函数只是在需要的时候执行，即不产生无意义的中间变量，从头到尾几乎都在写函数。
+
+     > **副作用**
+     >
+     > 在完成函数主要功能之外，完成的其它功能。
+     >
+     > 比如在函数中，最主要的功能是根据输入输出结果，在函数中我们常见的副作用就是随意操纵外部变量。
+     >
+     > 保证函数没有副作用的好处？
+     >
+     > 一来能保证数据的不可变性，二来能避免很多因为共享状态带来的问题。
+
+     > **纯函数**
+     >
+     > 不依赖外部状态（无状态）：函数的运行结果不依赖全局变量，this等
+     >
+     > 没有副作用（数据不变）：不修改全局变量，不修改入参
+     >
+     > 相同的输入永远会得到相同的输出。
+     >
+     > 好处是什么？
+     >
+     > 方便测试，符合TDD（测试驱动开发）的思想
+     >
+     > 可缓存，因为相同的输入总是可以返回相同的输出，因此，我们可以提前缓存函数的执行结果
+     >
+     > ```js
+     > function memoize(fn) {
+     >  const cache = {};
+     >  return function() {
+     >    const key = JSON.stringify(arguments);
+     >    var value = cache[key];
+     >    if(!value) {
+     >      value = [fn.apply(null, arguments)];  // 放在一个数组中，方便应对 undefined，null 等异常情况
+     >      cache[key] = value; 
+     >    }
+     >    return value[0];
+     >  }
+     > }
+     > 
+     > const fibonacci = memoize(n => n < 2 ? n: fibonacci(n - 1) + fibonacci(n - 2));
+     > console.log(fibonacci(4))  // 执行后缓存了 fibonacci(2), fibonacci(3),  fibonacci(4)
+     > console.log(fibonacci(10)) // fibonacci(2), fibonacci(3),  fibonacci(4) 的结果直接从缓存中取出，同时缓存其他的
+     > ```
+     >
+     > **更少的 Bug**：使用纯函数意味着你的函数中**不存在指向不明的 this，不存在对全局变量的引用，不存在对参数的修改**，这些共享状态往往是绝大多数 bug 的源头。
+
+169. 了解函数式编程中的compose么?
+
+     > **函数式编程两种必不可少的操作，一个是柯里化（currying），一个是函数组合（compose）**
+     >
+     > **柯里化**
+     >
+     > 将一个多元函数变成一个依次调用的单元函数
+     >
+     > ```js
+     > f(a,b,c) => f(a)(b)(c)
+     > ```
+     >
+     > 写一个 `curry` 版本的 `add` 函数
+     >
+     > ```js
+     > var add = function(x) {
+     > return function(y) {
+     >  return x + y;
+     > }; 
+     > };
+     > const increment = add(1);
+     > 
+     > increment(10); // 11
+     > ```
+     >
+     > **函数组合**
+     >
+     > 目的是将多个函数合并为一个函数。
+     >
+     > ```js
+     > const compose = (f, g) => x => f(g(x))
+     > 
+     > const f = x => x + 1;
+     > const g = x => x * 2;
+     > const fg = compose(f, g);
+     > fg(1) //3
+     > 
+     > ```
+     >
+     > 函数组合的好处显而易见，它让代码变得简单富有可读性，同时通过不同的组合方式，我们可以组合出其他常用函数。
+
+170. 数组map的正确用法
+
+     ```js
+     // 错误使用
+     const list = [...];
+     // 修改 list 中的 type 和 age
+     list.map(item => {
+       item.type = 1;
+       item.age++; // 会产生副作用
+     })
+     
+     // 正确的写法
+     const list = [...];
+     // 修改 list 中的 type 和 age
+     const newList = list.map(item => ({...item, type: 1, age:item.age + 1}));
+     ```
+
+     
+
+171. 
 
