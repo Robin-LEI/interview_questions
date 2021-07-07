@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://www.zhufengpeixun.com/strong/html/10.fs.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t01.%20fs%E6%A8%A1%E5%9D%97">1. fs模块</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t12.%20%E6%95%B4%E4%BD%93%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6">2. 整体读取文件</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t22.1%20%E5%BC%82%E6%AD%A5%E8%AF%BB%E5%8F%96">2.1 异步读取</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t32.2%20%E5%90%8C%E6%AD%A5%E8%AF%BB%E5%8F%96">2.2 同步读取</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t43.%20%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6">3. 写入文件</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t53.1%20%E5%BC%82%E6%AD%A5%E5%86%99%E5%85%A5">3.1 异步写入</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t63.2%20%E5%90%8C%E6%AD%A5%E5%86%99%E5%85%A5">3.2 同步写入</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t73.3%20%E8%BF%BD%E5%8A%A0%E6%96%87%E4%BB%B6">3.3 追加文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t83.4%20%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6">3.4 拷贝文件</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t94.%20%E4%BB%8E%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%A4%84%E5%BC%80%E5%A7%8B%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6">4. 从指定位置处开始读取文件</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t104.1%20%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6">4.1 打开文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t114.2%20%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6">4.2 读取文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t124.3%20%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6">4.3 写入文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t134.4%20%E5%90%8C%E6%AD%A5%E7%A3%81%E7%9B%98%E7%BC%93%E5%AD%98">4.4 同步磁盘缓存</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t144.5%20%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6">4.5 关闭文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t154.6%20%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6">4.6 拷贝文件</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t165%20%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C">5 目录操作</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t175.1%20%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95">5.1 创建目录</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t185.2%20%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E6%9C%89%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE">5.2 判断一个文件是否有权限访问</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t195.3%20%E8%AF%BB%E5%8F%96%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%80%E6%9C%89%E7%9A%84%E6%96%87%E4%BB%B6">5.3 读取目录下所有的文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t205.4%20%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF">5.4 查看文件目录信息</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t215.5%20%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95">5.5 移动文件或目录</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t225.6%20%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6">5.6 删除文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t235.7%20%E6%88%AA%E6%96%AD%E6%96%87%E4%BB%B6">5.7 截断文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t245.8%20%20%E7%9B%91%E8%A7%86%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95">5.8  监视文件或目录</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t256%20%E9%80%92%E5%BD%92%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95">6 递归创建目录</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t266.1%20%E5%90%8C%E6%AD%A5%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95">6.1 同步创建目录</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t276.2%20%E5%BC%82%E6%AD%A5%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95">6.2 异步创建目录</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t286.3%20Async+Await%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95">6.3 Async+Await创建目录</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t297.%20%E9%80%92%E5%BD%92%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95">7. 递归删除目录</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t307.1%20%20%E5%90%8C%E6%AD%A5%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95(%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88)">7.1  同步删除目录(深度优先)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t317.2%20%E5%BC%82%E6%AD%A5%E5%88%A0%E9%99%A4%E9%9D%9E%E7%A9%BA%E7%9B%AE%E5%BD%95(Promise%E7%89%88)">7.2 异步删除非空目录(Promise版)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t327.3%20%E5%BC%82%E6%AD%A5%E4%B8%B2%E8%A1%8C%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95(%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88)">7.3 异步串行删除目录(深度优先)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t337.4%20%E5%BC%82%E6%AD%A5%E5%B9%B6%E8%A1%8C%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95(%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88)">7.4 异步并行删除目录(深度优先)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t347.5%20%E5%90%8C%E6%AD%A5%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95(%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88)">7.5 同步删除目录(广度优先)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t357.6%20%E5%BC%82%E6%AD%A5%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95(%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88)">7.6 异步删除目录(广度优先)</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t368.%20%20%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95">8.  遍历算法</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t378.1%20%E5%90%8C%E6%AD%A5%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88+%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86">8.1 同步深度优先+先序遍历</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t388.2%20%E5%BC%82%E6%AD%A5%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88+%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86">8.2 异步深度优先+先序遍历</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t398.3%20%E5%90%8C%E6%AD%A5%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88+%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86">8.3 同步广度优先+先序遍历</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t408.4%20%E5%BC%82%E6%AD%A5%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88+%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86">8.4 异步广度优先+先序遍历</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t418.%20path%E6%A8%A1%E5%9D%97">8. path模块</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t429.%20flags">9. flags</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t4310.%20%E5%8A%A9%E8%AE%B0">10. 助记</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t4411.%20linux%E6%9D%83%E9%99%90">11. linux权限</a></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. fs模块">1. fs模块 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t01.%20fs%E6%A8%A1%E5%9D%97"> # </a></h2>
+<ul>
+<li>在Node.js中，使用fs模块来实现所有有关文件及目录的创建、写入及删除操作。</li>
+<li>在fs模块中，所有的方法都分为同步和异步两种实现。</li>
+<li>具有<code>sync</code>后缀的方法为同步方法，不具有<code>sync</code>后缀的方法为异步方法。</li>
+</ul>
+<h2 id="t12. 整体读取文件">2. 整体读取文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t12.%20%E6%95%B4%E4%BD%93%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"> # </a></h2>
+<h3 id="t22.1 异步读取">2.1 异步读取 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t22.1%20%E5%BC%82%E6%AD%A5%E8%AF%BB%E5%8F%96"> # </a></h3>
+<pre><code class="lang-js">fs.readFile(path[, options], callback)
+</code></pre>
+<ul>
+<li>options<ul>
+<li>encoding</li>
+<li>flag flag <string> 默认 = 'r'</string></li>
+</ul>
+</li>
+</ul>
+<h3 id="t32.2 同步读取">2.2 同步读取 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t32.2%20%E5%90%8C%E6%AD%A5%E8%AF%BB%E5%8F%96"> # </a></h3>
+<pre><code class="lang-js">fs.readFileSync(path[, options])
+</code></pre>
+<h2 id="t43. 写入文件">3. 写入文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t43.%20%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6"> # </a></h2>
+<h3 id="t53.1 异步写入">3.1 异步写入 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t53.1%20%E5%BC%82%E6%AD%A5%E5%86%99%E5%85%A5"> # </a></h3>
+<pre><code class="lang-js">fs.writeFile(file, data[, options], callback)
+</code></pre>
+<ul>
+<li>options<ul>
+<li>encoding</li>
+<li>flag flag <string> 默认 = 'w'</string></li>
+<li>mode 读写权限，默认为0666</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+fs.writeFile(<span class="hljs-string">'./1.txt'</span>,<span class="hljs-built_in">Date</span>.now()+<span class="hljs-string">'\n'</span>,{<span class="hljs-attr">flag</span>:<span class="hljs-string">'a'</span>},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ok'</span>);
+});
+</code></pre>
+<h3 id="t63.2 同步写入">3.2 同步写入 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t63.2%20%E5%90%8C%E6%AD%A5%E5%86%99%E5%85%A5"> # </a></h3>
+<pre><code class="lang-js">fs.writeFileSync(file, data[, options])
+</code></pre>
+<h3 id="t73.3 追加文件">3.3 追加文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t73.3%20%E8%BF%BD%E5%8A%A0%E6%96%87%E4%BB%B6"> # </a></h3>
+<blockquote>
+<p>fs.appendFile(file, data[, options], callback)</p>
+</blockquote>
+<pre><code class="lang-js">fs.appendFile(<span class="hljs-string">'./1.txt'</span>,<span class="hljs-built_in">Date</span>.now()+<span class="hljs-string">'\n'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ok'</span>);
+})
+</code></pre>
+<h3 id="t83.4 拷贝文件">3.4 拷贝文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t83.4%20%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">copy</span>(<span class="hljs-params">src,target</span>)</span>{
+  fs.readFile(src,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,data</span>)</span>{
+    fs.writeFile(target,data);
+  })
+}
+</code></pre>
+<h2 id="t94. 从指定位置处开始读取文件">4. 从指定位置处开始读取文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t94.%20%E4%BB%8E%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%A4%84%E5%BC%80%E5%A7%8B%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"> # </a></h2>
+<h3 id="t104.1 打开文件">4.1 打开文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t104.1%20%E6%89%93%E5%BC%80%E6%96%87%E4%BB%B6"> # </a></h3>
+<blockquote>
+<p>fs.open(filename,flags,[mode],callback);</p>
+<ul>
+<li>FileDescriptor 是文件描述符</li>
+<li>FileDescriptor 可以被用来表示文件</li>
+<li>in  -- 标准输入(键盘)的描述符</li>
+<li>out -- 标准输出(屏幕)的描述符</li>
+<li>err -- 标准错误输出(屏幕)的描述符</li>
+</ul>
+</blockquote>
+<pre><code class="lang-js">fs.open(<span class="hljs-string">'./1,txt'</span>,<span class="hljs-string">'r'</span>,<span class="hljs-number">0600</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,fd</span>)</span>{});
+</code></pre>
+<h3 id="t114.2 读取文件">4.2 读取文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t114.2%20%E8%AF%BB%E5%8F%96%E6%96%87%E4%BB%B6"> # </a></h3>
+<blockquote>
+<p>fs.read(fd, buffer, offset, length, position, callback((err, bytesRead, buffer)))</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-comment">//珠峰培训</span>
+<span class="hljs-keyword">const</span> fs=<span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">const</span> path=<span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+fs.open(path.join(__dirname,<span class="hljs-string">'1.txt'</span>),<span class="hljs-string">'r'</span>,<span class="hljs-number">0o666</span>,<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err,fd</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(err);
+    <span class="hljs-keyword">let</span> buf = Buffer.alloc(<span class="hljs-number">6</span>);
+     fs.read(fd,buf,<span class="hljs-number">0</span>,<span class="hljs-number">6</span>,<span class="hljs-number">3</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, bytesRead, buffer</span>)</span>{
+       <span class="hljs-built_in">console</span>.log(bytesRead);<span class="hljs-comment">//6</span>
+       <span class="hljs-built_in">console</span>.log(buffer===buf);<span class="hljs-comment">//true</span>
+       <span class="hljs-built_in">console</span>.log(buf.toString());<span class="hljs-comment">//峰培</span>
+     })
+})
+</code></pre>
+<h3 id="t124.3 写入文件">4.3 写入文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t124.3%20%E5%86%99%E5%85%A5%E6%96%87%E4%BB%B6"> # </a></h3>
+<blockquote>
+<p>fs.write(fd, buffer[, offset[, length[, position]]], callback)</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> fs=<span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">const</span> path=<span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+fs.open(path.join(__dirname,<span class="hljs-string">'1.txt'</span>),<span class="hljs-string">'w'</span>,<span class="hljs-number">0o666</span>,<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err,fd</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(err);
+    <span class="hljs-keyword">let</span> buf=Buffer.from(<span class="hljs-string">'珠峰培训'</span>);
+     fs.write(fd,buf,<span class="hljs-number">3</span>,<span class="hljs-number">6</span>,<span class="hljs-number">0</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, bytesWritten, buffer</span>)</span>{
+       <span class="hljs-built_in">console</span>.log(bytesWritten);<span class="hljs-comment">//6</span>
+       <span class="hljs-built_in">console</span>.log(buffer===buf);<span class="hljs-comment">//true</span>
+       <span class="hljs-built_in">console</span>.log(buf.toString());<span class="hljs-comment">//珠峰培训</span>
+     })
+})
+</code></pre>
+<h3 id="t134.4 同步磁盘缓存">4.4 同步磁盘缓存 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t134.4%20%E5%90%8C%E6%AD%A5%E7%A3%81%E7%9B%98%E7%BC%93%E5%AD%98"> # </a></h3>
+<blockquote>
+<p>fs.fsync(fd,[callback]);</p>
+</blockquote>
+<h3 id="t144.5 关闭文件">4.5 关闭文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t144.5%20%E5%85%B3%E9%97%AD%E6%96%87%E4%BB%B6"> # </a></h3>
+<blockquote>
+<p>fs.close(fd,[callback]);</p>
+</blockquote>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> buf = Buffer.from(<span class="hljs-string">'珠峰培训'</span>);
+fs.open(<span class="hljs-string">'./2.txt'</span>, <span class="hljs-string">'w'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, fd</span>) </span>{
+  fs.write(fd, buf, <span class="hljs-number">3</span>, <span class="hljs-number">6</span>, <span class="hljs-number">0</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, written, buffer</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(written);
+    fs.fsync(fd, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+      fs.close(fd, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'写入完毕!'</span>)
+        }
+      );
+    });
+  })
+});
+</code></pre>
+<h3 id="t154.6 拷贝文件">4.6 拷贝文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t154.6%20%E6%8B%B7%E8%B4%9D%E6%96%87%E4%BB%B6"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> BUFFER_SIZE=<span class="hljs-number">1</span>;
+<span class="hljs-keyword">const</span> path=<span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">const</span> fs=<span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">copy</span>(<span class="hljs-params">src,dest,callback</span>) </span>{
+    <span class="hljs-keyword">let</span> buf=Buffer.alloc(BUFFER_SIZE);
+    fs.open(src,<span class="hljs-string">'r'</span>,(err,readFd)=&gt;{
+        fs.open(dest,<span class="hljs-string">'w'</span>,(err,writeFd) =&gt; {
+            !<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">read</span>(<span class="hljs-params"></span>) </span>{
+                fs.read(readFd,buf,<span class="hljs-number">0</span>,BUFFER_SIZE,<span class="hljs-literal">null</span>,(err,bytesRead) =&gt; {
+                    bytesRead&amp;&amp;fs.write(writeFd,buf,<span class="hljs-number">0</span>,bytesRead,read);
+                });
+            }()
+        })
+    });
+}
+copy(path.join(__dirname,<span class="hljs-string">'1.txt'</span>),path.join(__dirname,<span class="hljs-string">'2.txt'</span>),()=&gt;<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'ok'</span>));
+</code></pre>
+<h2 id="t165 目录操作">5 目录操作 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t165%20%E7%9B%AE%E5%BD%95%E6%93%8D%E4%BD%9C"> # </a></h2>
+<h3 id="t175.1 创建目录">5.1 创建目录 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t175.1%20%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"> # </a></h3>
+<blockquote>
+<p>fs.mkdir(path[, mode], callback)</p>
+</blockquote>
+<blockquote>
+<p>要求父目录必须存在</p>
+</blockquote>
+<h3 id="t185.2 判断一个文件是否有权限访问">5.2 判断一个文件是否有权限访问 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t185.2%20%E5%88%A4%E6%96%AD%E4%B8%80%E4%B8%AA%E6%96%87%E4%BB%B6%E6%98%AF%E5%90%A6%E6%9C%89%E6%9D%83%E9%99%90%E8%AE%BF%E9%97%AE"> # </a></h3>
+<blockquote>
+<p>fs.access(path[, mode], callback)</p>
+<pre><code class="lang-js">fs.access(<span class="hljs-string">'/etc/passwd'</span>, fs.constants.R_OK | fs.constants.W_OK, (err) =&gt; {
+  <span class="hljs-built_in">console</span>.log(err ? <span class="hljs-string">'no access!'</span> : <span class="hljs-string">'can read/write'</span>);
+});
+</code></pre>
+</blockquote>
+<h3 id="t195.3 读取目录下所有的文件">5.3 读取目录下所有的文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t195.3%20%E8%AF%BB%E5%8F%96%E7%9B%AE%E5%BD%95%E4%B8%8B%E6%89%80%E6%9C%89%E7%9A%84%E6%96%87%E4%BB%B6"> # </a></h3>
+<blockquote>
+<p>fs.readdir(path[, options], callback)</p>
+</blockquote>
+<h3 id="t205.4 查看文件目录信息">5.4 查看文件目录信息 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t205.4%20%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E4%BF%A1%E6%81%AF"> # </a></h3>
+<blockquote>
+<p>fs.stat(path, callback)</p>
+</blockquote>
+<ul>
+<li>stats.isFile()</li>
+<li>stats.isDirectory()</li>
+<li>atime(Access Time)上次被读取的时间。</li>
+<li>ctime(State Change Time)：属性或内容上次被修改的时间。</li>
+<li>mtime(Modified time)：档案的内容上次被修改的时间。</li>
+</ul>
+<h3 id="t215.5 移动文件或目录">5.5 移动文件或目录 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t215.5%20%E7%A7%BB%E5%8A%A8%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"> # </a></h3>
+<pre><code class="lang-js">fs.rename(oldPath, newPath, callback)
+</code></pre>
+<h3 id="t225.6 删除文件">5.6 删除文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t225.6%20%E5%88%A0%E9%99%A4%E6%96%87%E4%BB%B6"> # </a></h3>
+<pre><code class="lang-js">fs.unlink(path, callback)
+</code></pre>
+<h3 id="t235.7 截断文件">5.7 截断文件 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t235.7%20%E6%88%AA%E6%96%AD%E6%96%87%E4%BB%B6"> # </a></h3>
+<pre><code class="lang-js">fs.ftruncate(fd[, len], callback)
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> fd = fs.openSync(<span class="hljs-string">'temp.txt'</span>, <span class="hljs-string">'r+'</span>);
+<span class="hljs-comment">// 截断文件至前4个字节</span>
+fs.ftruncate(fd, <span class="hljs-number">4</span>, (err) =&gt; {
+  <span class="hljs-built_in">console</span>.log(fs.readFileSync(<span class="hljs-string">'temp.txt'</span>, <span class="hljs-string">'utf8'</span>));
+});
+</code></pre>
+<h3 id="t245.8  监视文件或目录">5.8  监视文件或目录 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t245.8%20%20%E7%9B%91%E8%A7%86%E6%96%87%E4%BB%B6%E6%88%96%E7%9B%AE%E5%BD%95"> # </a></h3>
+<pre><code class="lang-js">fs.watchFile(filename[, options], listener)
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+fs.watchFile(<span class="hljs-string">'1.txt'</span>, (curr, prev) =&gt; {
+  <span class="hljs-comment">//parse() 方法可解析一个日期时间字符串，并返回 1970/1/1 午夜距离该日期时间的毫秒数。</span>
+  <span class="hljs-keyword">if</span>(<span class="hljs-built_in">Date</span>.parse(prev.ctime)==<span class="hljs-number">0</span>){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'创建'</span>);
+  }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-built_in">Date</span>.parse(curr.ctime)==<span class="hljs-number">0</span>){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'删除'</span>);
+  }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(<span class="hljs-built_in">Date</span>.parse(prev.ctime) != <span class="hljs-built_in">Date</span>.parse(curr.ctime)){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'修改'</span>);
+  }
+});
+
+</code></pre>
+<h2 id="t256 递归创建目录">6 递归创建目录 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t256%20%E9%80%92%E5%BD%92%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"> # </a></h2>
+<h3 id="t266.1 同步创建目录">6.1 同步创建目录 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t266.1%20%E5%90%8C%E6%AD%A5%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> fs=<span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">let</span> path=<span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makepSync</span>(<span class="hljs-params">dir</span>) </span>{
+    <span class="hljs-keyword">let</span> parts=dir.split(path.sep);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">1</span>;i&lt;=parts.length;i++){
+        <span class="hljs-keyword">let</span> parent=parts.slice(<span class="hljs-number">0</span>,i).join(path.sep);
+        <span class="hljs-keyword">try</span> {
+            fs.accessSync(parent);
+        } <span class="hljs-keyword">catch</span> (error) {
+            fs.mkdirSync(parent);
+        }
+
+    }
+}
+</code></pre>
+<h3 id="t276.2 异步创建目录">6.2 异步创建目录 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t276.2%20%E5%BC%82%E6%AD%A5%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makepAsync</span>(<span class="hljs-params">dir,callback</span>) </span>{
+    <span class="hljs-keyword">let</span> parts=dir.split(path.sep);
+    <span class="hljs-keyword">let</span> i=<span class="hljs-number">1</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">if</span> (i&gt;parts.length)
+            <span class="hljs-keyword">return</span> callback&amp;&amp;callback();    
+        <span class="hljs-keyword">let</span> parent=parts.slice(<span class="hljs-number">0</span>,i++).join(path.sep);
+        fs.access(parent,err =&gt; {
+            <span class="hljs-keyword">if</span> (err) {
+                fs.mkdir(parent,next);
+            } <span class="hljs-keyword">else</span> {
+                next();
+            }
+        });
+    }
+    next();
+}
+</code></pre>
+<h3 id="t286.3 Async+Await创建目录">6.3 Async+Await创建目录 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t286.3%20Async+Await%E5%88%9B%E5%BB%BA%E7%9B%AE%E5%BD%95"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">mkdir</span>(<span class="hljs-params">parent</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,reject</span>) =&gt;</span> {
+        fs.mkdir(parent,err =&gt; {
+            <span class="hljs-keyword">if</span> (err) reject(err);
+            <span class="hljs-keyword">else</span> resolve();
+        });
+    });
+}
+
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">access</span>(<span class="hljs-params">parent</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,reject</span>) =&gt;</span> {
+        fs.access(parent,err =&gt; {
+            <span class="hljs-keyword">if</span> (err) reject(err);
+            <span class="hljs-keyword">else</span> resolve();
+        });
+    });
+}
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">makepPromise</span>(<span class="hljs-params">dir,callback</span>) </span>{
+    <span class="hljs-keyword">let</span> parts=dir.split(path.sep);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">1</span>;i&lt;=parts.length;i++){
+        <span class="hljs-keyword">let</span> parent=parts.slice(<span class="hljs-number">0</span>,i).join(path.sep);
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">await</span> access(parent);
+        }<span class="hljs-keyword">catch</span>(err) {
+            <span class="hljs-keyword">await</span> mkdir(parent);
+        }
+
+    }
+}
+</code></pre>
+<h2 id="t297. 递归删除目录">7. 递归删除目录 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t297.%20%E9%80%92%E5%BD%92%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95"> # </a></h2>
+<h3 id="t307.1  同步删除目录(深度优先)">7.1  同步删除目录(深度优先) <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t307.1%20%20%E5%90%8C%E6%AD%A5%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95(%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88)"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> fs=<span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">let</span> path=<span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>)
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rmSync</span>(<span class="hljs-params">dir</span>) </span>{
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">let</span> stat = fs.statSync(dir);
+        <span class="hljs-keyword">if</span> (stat.isFile()) {
+            fs.unlinkSync(dir);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">let</span> files=fs.readdirSync(dir);
+            files
+                .map(<span class="hljs-function"><span class="hljs-params">file</span> =&gt;</span> path.join(dir,file))
+                .forEach(<span class="hljs-function"><span class="hljs-params">item</span>=&gt;</span>rmSync(item));
+            fs.rmdirSync(dir);
+        }
+    } <span class="hljs-keyword">catch</span> (e) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'删除失败!'</span>);
+    }
+}
+rmSync(path.join(__dirname,<span class="hljs-string">'a'</span>));
+</code></pre>
+<h3 id="t317.2 异步删除非空目录(Promise版)">7.2 异步删除非空目录(Promise版) <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t317.2%20%E5%BC%82%E6%AD%A5%E5%88%A0%E9%99%A4%E9%9D%9E%E7%A9%BA%E7%9B%AE%E5%BD%95(Promise%E7%89%88)"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rmPromise</span>(<span class="hljs-params">dir</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve,reject</span>) =&gt;</span> {
+        fs.stat(dir,(err,stat) =&gt; {
+            <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">return</span> reject(err);
+            <span class="hljs-keyword">if</span> (stat.isDirectory()) {
+                fs.readdir(dir,(err,files) =&gt; {
+                    <span class="hljs-keyword">let</span> paths = files.map(<span class="hljs-function"><span class="hljs-params">file</span> =&gt;</span> path.join(dir,file));
+                    <span class="hljs-keyword">let</span> promises = paths.map(<span class="hljs-function"><span class="hljs-params">p</span>=&gt;</span>rmPromise(p));
+                    <span class="hljs-built_in">Promise</span>.all(promises).then(<span class="hljs-function">(<span class="hljs-params">(</span>) =&gt;</span> fs.rmdir(dir,resolve)));
+                });
+            } <span class="hljs-keyword">else</span> {
+                fs.unlink(dir,resolve);
+            }
+        });
+    });
+}
+rmPromise(path.join(__dirname,<span class="hljs-string">'a'</span>)).then(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'删除成功'</span>);
+})
+</code></pre>
+<h3 id="t327.3 异步串行删除目录(深度优先)">7.3 异步串行删除目录(深度优先) <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t327.3%20%E5%BC%82%E6%AD%A5%E4%B8%B2%E8%A1%8C%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95(%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88)"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rmAsyncSeries</span>(<span class="hljs-params">dir,callback</span>) </span>{
+    setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        fs.stat(dir,(err,stat) =&gt; {
+            <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">return</span> callback(err);
+            <span class="hljs-keyword">if</span> (stat.isDirectory()) {
+                fs.readdir(dir,(err,files) =&gt; {
+                    <span class="hljs-keyword">let</span> paths = files.map(<span class="hljs-function"><span class="hljs-params">file</span> =&gt;</span> path.join(dir,file));
+                    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span>(<span class="hljs-params">index</span>) </span>{
+                        <span class="hljs-keyword">if</span> (index&gt;=files.length) <span class="hljs-keyword">return</span> fs.rmdir(dir,callback);
+                        <span class="hljs-keyword">let</span> current=paths[index];
+                        rmAsyncSeries(current,()=&gt;next(index+<span class="hljs-number">1</span>));
+                    }
+                    next(<span class="hljs-number">0</span>);
+                });
+            } <span class="hljs-keyword">else</span> {
+                fs.unlink(dir,callback);
+            }
+        })
+    },<span class="hljs-number">1000</span>);
+}
+
+<span class="hljs-built_in">console</span>.time(<span class="hljs-string">'cost'</span>);
+rmAsyncSeries(path.join(__dirname,<span class="hljs-string">'a'</span>),err =&gt; {
+     <span class="hljs-built_in">console</span>.timeEnd(<span class="hljs-string">'cost'</span>);
+})
+</code></pre>
+<h3 id="t337.4 异步并行删除目录(深度优先)">7.4 异步并行删除目录(深度优先) <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t337.4%20%E5%BC%82%E6%AD%A5%E5%B9%B6%E8%A1%8C%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95(%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88)"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rmAsyncParallel</span>(<span class="hljs-params">dir,callback</span>) </span>{
+    setTimeout(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        fs.stat(dir,(err,stat) =&gt; {
+            <span class="hljs-keyword">if</span> (err) <span class="hljs-keyword">return</span> callback(err);
+            <span class="hljs-keyword">if</span> (stat.isDirectory()) {
+                fs.readdir(dir,(err,files) =&gt; {
+                    <span class="hljs-keyword">let</span> paths=files.map(<span class="hljs-function"><span class="hljs-params">file</span> =&gt;</span> path.join(dir,file));
+                    <span class="hljs-keyword">if</span> (paths.length&gt;<span class="hljs-number">0</span>) {
+                        <span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;
+                        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">done</span>(<span class="hljs-params"></span>) </span>{
+                            <span class="hljs-keyword">if</span> (++i == paths.length) {
+                                fs.rmdir(dir,callback);
+                            }
+                        }
+                      paths.forEach(<span class="hljs-function"><span class="hljs-params">p</span>=&gt;</span>rmAsyncParallel(p,done));
+                    } <span class="hljs-keyword">else</span> {
+                        fs.rmdir(dir,callback);
+                    }
+                });
+            } <span class="hljs-keyword">else</span> {
+                fs.unlink(dir,callback);
+            }
+        })
+    },<span class="hljs-number">1000</span>);
+}
+<span class="hljs-built_in">console</span>.time(<span class="hljs-string">'cost'</span>);
+rmAsyncParallel(path.join(__dirname,<span class="hljs-string">'a'</span>),err =&gt; {
+     <span class="hljs-built_in">console</span>.timeEnd(<span class="hljs-string">'cost'</span>);
+})
+</code></pre>
+<h3 id="t347.5 同步删除目录(广度优先)">7.5 同步删除目录(广度优先) <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t347.5%20%E5%90%8C%E6%AD%A5%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95(%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88)"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rmSync</span>(<span class="hljs-params">dir</span>)</span>{
+    <span class="hljs-keyword">let</span> arr=[dir];
+    <span class="hljs-keyword">let</span> index=<span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> (arr[index]) {
+        <span class="hljs-keyword">let</span> current=arr[index++];
+        <span class="hljs-keyword">let</span> stat=fs.statSync(current);
+        <span class="hljs-keyword">if</span> (stat.isDirectory()) {
+            <span class="hljs-keyword">let</span> dirs=fs.readdirSync(current);
+            arr=[...arr,...dirs.map(<span class="hljs-function"><span class="hljs-params">d</span> =&gt;</span> path.join(current,d))];
+        }
+    }
+    <span class="hljs-keyword">let</span> item;
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">null</span> != (item = arr.pop())) {
+        <span class="hljs-keyword">let</span> stat = fs.statSync(item);
+        <span class="hljs-keyword">if</span> (stat.isDirectory()) {
+            fs.rmdirSync(item);
+        } <span class="hljs-keyword">else</span> {
+            fs.unlinkSync(item);
+        }
+    }
+}
+</code></pre>
+<h3 id="t357.6 异步删除目录(广度优先)">7.6 异步删除目录(广度优先) <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t357.6%20%E5%BC%82%E6%AD%A5%E5%88%A0%E9%99%A4%E7%9B%AE%E5%BD%95(%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88)"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rmdirWideAsync</span>(<span class="hljs-params">dir,callback</span>)</span>{
+    <span class="hljs-keyword">let</span> dirs=[dir];
+    <span class="hljs-keyword">let</span> index=<span class="hljs-number">0</span>;
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">rmdir</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">let</span> current = dirs.pop();
+        <span class="hljs-keyword">if</span> (current) {
+            fs.stat(current,(err,stat) =&gt; {
+                <span class="hljs-keyword">if</span> (stat.isDirectory()) {
+                    fs.rmdir(current,rmdir);
+                } <span class="hljs-keyword">else</span> {
+                    fs.unlink(current,rmdir);
+                }
+            });
+        }
+    }
+    !<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">let</span> current=dirs[index++];
+        <span class="hljs-keyword">if</span> (current) {
+            fs.stat(current,(err,stat) =&gt; {
+                <span class="hljs-keyword">if</span> (err) callback(err);
+                <span class="hljs-keyword">if</span> (stat.isDirectory()) {
+                    fs.readdir(current,(err,files) =&gt; {
+                        dirs=[...dirs,...files.map(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> path.join(current,item))];
+                        next();
+                    });
+                } <span class="hljs-keyword">else</span> {
+                    next();
+                }
+            });
+        } <span class="hljs-keyword">else</span> {
+            rmdir();
+        }
+
+    }();
+}
+</code></pre>
+<h2 id="t368.  遍历算法">8.  遍历算法 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t368.%20%20%E9%81%8D%E5%8E%86%E7%AE%97%E6%B3%95"> # </a></h2>
+<ul>
+<li>目录是一个树状结构，在遍历时一般使用深度优先+先序遍历算法</li>
+<li>深度优先，意味着到达一个节点后，首先接着遍历子节点而不是邻居节点</li>
+<li>先序遍历，意味着首次到达了某节点就算遍历完成，而不是最后一次返回某节点才算数</li>
+<li>因此使用这种遍历方式时，下边这棵树的遍历顺序是A &gt; B &gt; D &gt; E &gt; C &gt; F。<pre><code class="lang-js">        A
+       / \
+      B   C
+     / \   \
+    D   E   F
+</code></pre>
+<h3 id="t378.1 同步深度优先+先序遍历">8.1 同步深度优先+先序遍历 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t378.1%20%E5%90%8C%E6%AD%A5%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88+%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deepSync</span>(<span class="hljs-params">dir</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(dir);
+  fs.readdirSync(dir).forEach(<span class="hljs-function"><span class="hljs-params">file</span>=&gt;</span>{
+      <span class="hljs-keyword">let</span> child = path.join(dir,file);
+      <span class="hljs-keyword">let</span> stat = fs.statSync(child);
+      <span class="hljs-keyword">if</span>(stat.isDirectory()){
+          deepSync(child);
+      }<span class="hljs-keyword">else</span>{
+          <span class="hljs-built_in">console</span>.log(child);
+      }
+  });
+}
+</code></pre>
+<h3 id="t388.2 异步深度优先+先序遍历">8.2 异步深度优先+先序遍历 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t388.2%20%E5%BC%82%E6%AD%A5%E6%B7%B1%E5%BA%A6%E4%BC%98%E5%85%88+%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">deep</span>(<span class="hljs-params">dir,callback</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(dir);
+  fs.readdir(dir,(err,files)=&gt;{
+      !<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span>(<span class="hljs-params">index</span>)</span>{
+          <span class="hljs-keyword">if</span>(index == files.length){
+              <span class="hljs-keyword">return</span> callback();
+          }
+          <span class="hljs-keyword">let</span> child = path.join(dir,files[index]);
+          fs.stat(child,(err,stat)=&gt;{
+              <span class="hljs-keyword">if</span>(stat.isDirectory()){
+                  deep(child,()=&gt;next(index+<span class="hljs-number">1</span>));
+              }<span class="hljs-keyword">else</span>{
+                  <span class="hljs-built_in">console</span>.log(child);
+                  next(index+<span class="hljs-number">1</span>);
+              }
+          })
+      }(<span class="hljs-number">0</span>)
+  })
+}
+</code></pre>
+<h3 id="t398.3 同步广度优先+先序遍历">8.3 同步广度优先+先序遍历 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t398.3%20%E5%90%8C%E6%AD%A5%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88+%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">wideSync</span>(<span class="hljs-params">dir</span>)</span>{
+  <span class="hljs-keyword">let</span> dirs = [dir];
+  <span class="hljs-keyword">while</span>(dirs.length&gt;<span class="hljs-number">0</span>){
+      <span class="hljs-keyword">let</span> current = dirs.shift();
+      <span class="hljs-built_in">console</span>.log(current);
+      <span class="hljs-keyword">let</span> stat = fs.statSync(current);
+      <span class="hljs-keyword">if</span>(stat.isDirectory()){
+          <span class="hljs-keyword">let</span> files = fs.readdirSync(current);
+          files.forEach(<span class="hljs-function"><span class="hljs-params">item</span>=&gt;</span>{
+              dirs.push(path.join(current,item));
+          });
+      }
+  }
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="t408.4 异步广度优先+先序遍历">8.4 异步广度优先+先序遍历 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t408.4%20%E5%BC%82%E6%AD%A5%E5%B9%BF%E5%BA%A6%E4%BC%98%E5%85%88+%E5%85%88%E5%BA%8F%E9%81%8D%E5%8E%86"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-comment">// 异步广度遍历</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">wide</span>(<span class="hljs-params">dir, cb</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(dir);
+    cb &amp;&amp; cb()
+    fs.readdir(dir, (err, files) =&gt; {
+        !<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">next</span>(<span class="hljs-params">i</span>)</span>{
+            <span class="hljs-keyword">if</span>(i&gt;= files.length) <span class="hljs-keyword">return</span>;
+            <span class="hljs-keyword">let</span> child = path.join(dir,files[i]);
+            fs.stat(child,(err,stat)=&gt;{
+                <span class="hljs-keyword">if</span>(stat.isDirectory()){
+                    wide(child, () =&gt; next(i+<span class="hljs-number">1</span>));
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-built_in">console</span>.log(child);
+                    next(i+<span class="hljs-number">1</span>);
+                }
+            })
+        }(<span class="hljs-number">0</span>);
+    })
+}
+wide(path.join(__dirname,<span class="hljs-string">'a'</span>));
+</code></pre>
+<h2 id="t418. path模块">8. path模块 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t418.%20path%E6%A8%A1%E5%9D%97"> # </a></h2>
+<p>path是node中专门处理路径的一个核心模块</p>
+<ul>
+<li>path.join
+将多个参数值字符串结合为一个路径字符串</li>
+<li>path.basename
+获取一个路径中的文件名</li>
+<li>path.extname
+获取一个路径中的扩展名</li>
+<li>path.sep
+操作系统提定的文件分隔符</li>
+<li>path.delimiter
+属性值为系统指定的环境变量路径分隔符</li>
+<li>path.normalize
+将非标准的路径字符串转化为标准路径字符串  特点：<ul>
+<li>可以解析 . 和 ..</li>
+<li>多个杠可以转换成一个杠</li>
+<li>在windows下反杠会转化成正杠</li>
+<li>如结尾以杠结尾的，则保留斜杠</li>
+</ul>
+</li>
+<li>resolve<ul>
+<li>以应用程序根目录为起点</li>
+<li>如果参数是普通字符串，则意思是当前目录的下级目录</li>
+<li>如果参数是.. 回到上一级目录</li>
+<li>如果是/开头表示一个绝对的根路径</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">var</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-comment">/**
+ * normalize 将非标准化的路径转化成标准化的路径
+ * 1.解析. 和 ..
+ * 2.多个斜杠会转成一个斜杠
+ * 3.window下的斜杠会转成正斜杠
+ * 4.如果以斜杠会保留
+ **/</span>
+
+<span class="hljs-built_in">console</span>.log(path.normalize(<span class="hljs-string">'./a////b//..\\c//e//..//'</span>));
+<span class="hljs-comment">//  \a\c\</span>
+
+<span class="hljs-comment">//多个参数字符串合并成一个路径 字符串</span>
+<span class="hljs-built_in">console</span>.log(path.join(__dirname,<span class="hljs-string">'a'</span>,<span class="hljs-string">'b'</span>));
+
+<span class="hljs-comment">/**
+ * resolve
+ * 以就用程序为根目录，做为起点，根据参数解析出一个绝对路径
+ *  1.以应用程序为根起点
+ *  2... .
+ *  3. 普通 字符串代表子目录
+ *  4. /代表绝地路径根目录
+ */</span>
+<span class="hljs-built_in">console</span>.log(path.resolve());<span class="hljs-comment">//空代表当前的目录 路径</span>
+<span class="hljs-built_in">console</span>.log(path.resolve(<span class="hljs-string">'a'</span>,<span class="hljs-string">'/c'</span>));<span class="hljs-comment">// /a/b</span>
+<span class="hljs-comment">// d:\c</span>
+<span class="hljs-comment">//可以获取两个路径之间的相对关系</span>
+<span class="hljs-built_in">console</span>.log(path.relative(__dirname,<span class="hljs-string">'/a'</span>));
+<span class="hljs-comment">// a</span>
+<span class="hljs-comment">//返回指定路径的所在目录</span>
+<span class="hljs-built_in">console</span>.log(path.dirname(__filename)); <span class="hljs-comment">// 9.path</span>
+<span class="hljs-built_in">console</span>.log(path.dirname(<span class="hljs-string">'./1.path.js'</span>));<span class="hljs-comment">//  9.path</span>
+<span class="hljs-comment">//basename 获取路径中的文件名</span>
+<span class="hljs-built_in">console</span>.log(path.basename(__filename));
+<span class="hljs-built_in">console</span>.log(path.basename(__filename,<span class="hljs-string">'.js'</span>));
+<span class="hljs-built_in">console</span>.log(path.extname(__filename));
+
+<span class="hljs-built_in">console</span>.log(path.sep);<span class="hljs-comment">//文件分隔符 window \ linux /</span>
+<span class="hljs-built_in">console</span>.log(path.win32.sep);
+<span class="hljs-built_in">console</span>.log(path.posix.sep);
+<span class="hljs-built_in">console</span>.log(path.delimiter);<span class="hljs-comment">//路径 分隔符 window ; linux :</span>
+</code></pre>
+<h2 id="t429. flags">9. flags <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t429.%20flags"> # </a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">r</td>
+<td style="text-align:left">读文件，文件不存在报错</td>
+</tr>
+<tr>
+<td style="text-align:left">r+</td>
+<td style="text-align:left">读取并写入，文件不存在报错</td>
+</tr>
+<tr>
+<td style="text-align:left">rs</td>
+<td style="text-align:left">同步读取文件并忽略缓存</td>
+</tr>
+<tr>
+<td style="text-align:left">w</td>
+<td style="text-align:left">写入文件，不存在则创建，存在则清空</td>
+</tr>
+<tr>
+<td style="text-align:left">wx</td>
+<td style="text-align:left">排它写入文件</td>
+</tr>
+<tr>
+<td style="text-align:left">w+</td>
+<td style="text-align:left">读取并写入文件，不存在则创建，存在则清空</td>
+</tr>
+<tr>
+<td style="text-align:left">wx+</td>
+<td style="text-align:left">和w+类似，排他方式打开</td>
+</tr>
+<tr>
+<td style="text-align:left">a</td>
+<td style="text-align:left">追加写入</td>
+</tr>
+<tr>
+<td style="text-align:left">ax</td>
+<td style="text-align:left">与a类似，排他方式写入</td>
+</tr>
+<tr>
+<td style="text-align:left">a+</td>
+<td style="text-align:left">读取并追加写入，不存在则创建</td>
+</tr>
+<tr>
+<td style="text-align:left">ax+</td>
+<td style="text-align:left">作用与a+类似，但是以排他方式打开文件</td>
+</tr>
+</tbody>
+</table>
+<h2 id="t4310. 助记">10. 助记 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t4310.%20%E5%8A%A9%E8%AE%B0"> # </a></h2>
+<ul>
+<li>r 读取</li>
+<li>w 写入</li>
+<li>s 同步</li>
+<li>+ 增加相反操作</li>
+<li>x 排他方式</li>
+<li>r+ w+的区别?<ul>
+<li>当文件不存在时，r+不会创建，而会导致调用失败，但w+会创建。</li>
+<li>如果文件存在，r+不会自动清空文件，但w+会自动把已有文件的内容清空。</li>
+</ul>
+</li>
+</ul>
+<h2 id="t4411. linux权限">11. linux权限 <a href="http://www.zhufengpeixun.com/strong/html/10.fs.html#t4411.%20linux%E6%9D%83%E9%99%90"> # </a></h2>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">文件类型与权限</th>
+<th style="text-align:left">链接占用的节点(i-node)</th>
+<th style="text-align:left">文件所有者</th>
+<th style="text-align:left">文件所有者的用户组</th>
+<th style="text-align:left">文件大小</th>
+<th style="text-align:left">文件的创建时间</th>
+<th style="text-align:left">最近修改时间</th>
+<th style="text-align:left">文件名称</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<p><img src="./珠峰架构师成长计划_files/authorigy.jpg" alt="权限"></p>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

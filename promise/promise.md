@@ -306,6 +306,12 @@ const isPromise = value => {
 }
 ```
 
+
+
+14. Promise.allSettled了解吗？手写Promise.allSettled
+
+    
+
 # 更多面试题：[点击访问](https://juejin.cn/post/6844904077537574919#heading-50)
 
 # promise 源码

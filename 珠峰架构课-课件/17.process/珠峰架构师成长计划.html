@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<!-- saved from url=(0056)http://www.zhufengpeixun.com/strong/html/17.process.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t01.%20%E8%BF%9B%E7%A8%8B">1. 进程</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t11.1%20%E8%BF%9B%E7%A8%8B%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7">1.1 进程对象属性</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t21.2%20memoryUsage%E6%96%B9%E6%B3%95">1.2 memoryUsage方法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t31.3%20nextTick%E6%96%B9%E6%B3%95">1.3 nextTick方法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t41.4%20chdir">1.4 chdir</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t51.5%20cwd%20%E6%96%B9%E6%B3%95">1.5 cwd 方法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t61.6%20chdir%20%E6%96%B9%E6%B3%95">1.6 chdir 方法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t71.7%20exit%20%E6%96%B9%E6%B3%95">1.7 exit 方法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t81.8%20kill%E6%96%B9%E6%B3%95">1.8 kill方法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t91.9%20uptime">1.9 uptime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t101.10%20hrtime">1.10 hrtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t111.11%20exit%E4%BA%8B%E4%BB%B6">1.11 exit事件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t121.12%20uncaughtException%E4%BA%8B%E4%BB%B6">1.12 uncaughtException事件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t131.13%20%E4%BF%A1%E5%8F%B7%E4%BA%8B%E4%BB%B6">1.13 信号事件</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t142.%20%E5%AD%90%E8%BF%9B%E7%A8%8B">2. 子进程</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t152.1%20spawn">2.1 spawn</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t162.1.1%20%E8%AF%AD%E6%B3%95">2.1.1 语法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t172.1.2%20close">2.1.2 close</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t182.1.3%20exit">2.1.3 exit</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t192.1.4%20error">2.1.4 error</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t202.1.5%20kill">2.1.5 kill</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t212.1.6%20%E6%A1%88%E4%BE%8B">2.1.6 案例</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t222.1.7%20detached">2.1.7 detached</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t232.2%20fork%E5%BC%80%E5%90%AF%E5%AD%90%E8%BF%9B%E7%A8%8B">2.2 fork开启子进程</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t242.2.1%20%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF">2.2.1 发送消息</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t252.2.2%20silent">2.2.2 silent</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t262.2.3%20%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%88%B6%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%ABHTTP%E6%9C%8D%E5%8A%A1%E5%99%A8">2.2.3 子进程与父进程共享HTTP服务器</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t272.2.4%20%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%88%B6%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%ABsocket%E5%AF%B9%E8%B1%A1">2.2.4 子进程与父进程共享socket对象</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t282.3%20exec%E5%BC%80%E5%90%AF%E5%AD%90%E8%BF%9B%E7%A8%8B">2.3 exec开启子进程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t292.4%20execFile%E5%BC%80%E5%90%AF%E5%AD%90%E8%BF%9B%E7%A8%8B">2.4 execFile开启子进程</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t303.%20cluster">3. cluster</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t313.1%20fork%E6%96%B9%E6%B3%95%E5%88%9B%E5%BB%BAwork%E5%AF%B9%E8%B1%A1">3.1 fork方法创建work对象</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t323.1.1%20%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E7%9A%84worker">3.1.1 获取所有的worker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t333.1.2%20%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9A%84worker%E5%92%8Cid">3.1.2 获取当前的worker和id</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t343.1.3%20%E6%9C%8D%E5%8A%A1%E5%99%A8">3.1.3 服务器</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t353.1.4%20fork%E4%BA%8B%E4%BB%B6">3.1.4 fork事件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t363.1.5%20online%E4%BA%8B%E4%BB%B6">3.1.5 online事件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t373.1.6%20listening">3.1.6 listening</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t383.1.7%20setupMaster">3.1.7 setupMaster</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t393.1.8%20%E5%9C%A8%E5%AD%90%E8%BF%9B%E7%A8%8B%E9%87%8C%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1%E5%99%A8">3.1.8 在子进程里运行服务器</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t403.1.9%20%E5%9C%A8%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%BD%BF%E7%94%A8%E5%8D%95%E7%8B%AC%E7%9A%84%E8%BE%93%E5%87%BA">3.1.9 在子进程使用单独的输出</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t413.2%20worker%E5%AF%B9%E8%B1%A1">3.2 worker对象</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t423.2.1%20online">3.2.1 online</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t433.2.2%20send">3.2.2 send</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t443.2.3%20%E5%85%B1%E4%BA%ABsocket">3.2.3 共享socket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t453.2.4%20kill">3.2.4 kill</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t463.2.5%20exit">3.2.5 exit</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t473.2.6%20disconnect">3.2.6 disconnect</a></li></ul></li></ul></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. 进程">1. 进程 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t01.%20%E8%BF%9B%E7%A8%8B"> # </a></h2>
+<ul>
+<li>在Node.js中每个应用程序都是一个进程类的实例对象。</li>
+<li>使用<code>process</code>对象代表应用程序,这是一个全局对象，可以通过它来获取Node.jsy应用程序以及运行该程序的用户、环境等各种信息的属性、方法和事件。</li>
+</ul>
+<h3 id="t11.1 进程对象属性">1.1 进程对象属性 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t11.1%20%E8%BF%9B%E7%A8%8B%E5%AF%B9%E8%B1%A1%E5%B1%9E%E6%80%A7"> # </a></h3>
+<ul>
+<li>execPath 可执行文件的绝对路径,如 <code>/usr/local/bin/node</code></li>
+<li>version 版本号</li>
+<li>versions 依赖库的版本号</li>
+<li>platform 运行平台。 如 darwin、freebsd、linux、sunos、win32</li>
+<li>stdin 标准输入流可读流，默认暂停状态</li>
+<li>stdout 标准输出可写流，同步操作 </li>
+<li>stderr 错误输出可写流，同步操作</li>
+<li>argv 属性值为数组</li>
+<li>env 操作系统环境信息</li>
+<li>pid 应用程序进程ID</li>
+<li>title 窗口标题</li>
+<li>arch 处理器架构 arm ia32 x64</li>
+</ul>
+<pre><code class="lang-javascript">process.stdin.resume();
+process.stdin.on(<span class="hljs-string">'data'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">chunk</span>)</span>{
+  process.stdout.write(<span class="hljs-string">`进程接收到数据: `</span>+chunk);
+});
+</code></pre>
+<pre><code class="lang-javascript">process.argv.forEach(<span class="hljs-function">(<span class="hljs-params">val,index,ary</span>)=&gt;</span> <span class="hljs-built_in">console</span>.log(index,val));
+</code></pre>
+<h3 id="t21.2 memoryUsage方法">1.2 memoryUsage方法 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t21.2%20memoryUsage%E6%96%B9%E6%B3%95"> # </a></h3>
+<pre><code class="lang-javascript">process.memoryUsage()
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/stack.png" alt="stack"></p>
+<ul>
+<li>rss（resident set size）：所有内存占用，包括指令区和堆栈。</li>
+<li>heapTotal："堆"占用的内存，包括用到的和没用到的。</li>
+<li>heapUsed：用到的堆的部分。</li>
+<li>external： V8 引擎内部的 C++ 对象占用的内存。</li>
+</ul>
+<h3 id="t31.3 nextTick方法">1.3 nextTick方法 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t31.3%20nextTick%E6%96%B9%E6%B3%95"> # </a></h3>
+<p>nextTick方法用于将一个函数推迟到代码中所书写的下一个同步方法执行完毕或异步方法的回调函数开始执行前调用</p>
+<h3 id="t41.4 chdir">1.4 chdir <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t41.4%20chdir"> # </a></h3>
+<p>chdir方法用于修改Node.js应用程序中使用的当前工作目录，使用方式如下 </p>
+<pre><code class="lang-javascript">process.chdir(directory);
+</code></pre>
+<h3 id="t51.5 cwd 方法">1.5 cwd 方法 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t51.5%20cwd%20%E6%96%B9%E6%B3%95"> # </a></h3>
+<p>cwd方法用返回当前目录，不使用任何参数</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(process.cwd());
+</code></pre>
+<h3 id="t61.6 chdir 方法">1.6 chdir 方法 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t61.6%20chdir%20%E6%96%B9%E6%B3%95"> # </a></h3>
+<p>改变当前的工作目录</p>
+<pre><code class="lang-javascript">console.log(`当前目录: ${process.cwd()}`);
+process.chdir('..);
+console.log(`上层目录: ${process.cwd()});
+</code></pre>
+<h3 id="t71.7 exit 方法">1.7 exit 方法 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t71.7%20exit%20%E6%96%B9%E6%B3%95"> # </a></h3>
+<p>退出运行Node.js应用程序的进程</p>
+<pre><code class="lang-javascript">process.exit(<span class="hljs-number">0</span>);
+</code></pre>
+<h3 id="t81.8 kill方法">1.8 kill方法 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t81.8%20kill%E6%96%B9%E6%B3%95"> # </a></h3>
+<p>用于向进程发送一个信号</p>
+<ul>
+<li>SIGINT 程序终止(interrupt)信号, 在用户键入INTR字符(通常是Ctrl-C)时发出，用于通知前台进程组终止进程。</li>
+<li>SIGTERM 程序结束(terminate)信号, 该信号可以被阻塞和处理。通常用来要求程序自己正常退出，shell命令kill缺省产生这个信号</li>
+</ul>
+<pre><code class="lang-javascript">process.kill(pid,[signal]);
+</code></pre>
+<ul>
+<li>pid是一个整数，用于指定需要接收信号的进程ID</li>
+<li>signal  发送的信号，默认为 SIGTERM</li>
+</ul>
+<h3 id="t91.9 uptime">1.9 uptime <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t91.9%20uptime"> # </a></h3>
+<p>返回当前程序的运行时间</p>
+<pre><code class="lang-javascript">process.uptime()
+</code></pre>
+<h3 id="t101.10 hrtime">1.10 hrtime <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t101.10%20hrtime"> # </a></h3>
+<p>测试一个代码段的运行时间,返回两个时间，第一个单位是秒，第二个单位是纳秒</p>
+<pre><code class="lang-javascript">let fs = require('fs);
+let time = process.hrtime();
+let data = fs.readFileSync('index.txt');
+let diff = process.hrtime(time);
+console.log(`读文件操作耗费的%d秒`,diff[0]);
+</code></pre>
+<h3 id="t111.11 exit事件">1.11 exit事件 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t111.11%20exit%E4%BA%8B%E4%BB%B6"> # </a></h3>
+<p>当运行Node.js应用程序进程退出时触发进程对象的exit事件。可以通过指定事件回调函数来指定进程退出时所执行的处理。</p>
+<pre><code class="lang-javascript">process.on('exit',function(){
+    console.log('Node.js进程被推出);
+});
+process.exit();
+</code></pre>
+<h3 id="t121.12 uncaughtException事件">1.12 uncaughtException事件 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t121.12%20uncaughtException%E4%BA%8B%E4%BB%B6"> # </a></h3>
+<p>当应用程序抛出一个未被捕获的异常时触发进程对象的uncaughtException事件</p>
+<pre><code class="lang-javascript">process.on(<span class="hljs-string">'uncaughtException'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'捕获到一个未被处理的错误:'</span>,err);
+});
+notExist();
+</code></pre>
+<h3 id="t131.13 信号事件">1.13 信号事件 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t131.13%20%E4%BF%A1%E5%8F%B7%E4%BA%8B%E4%BB%B6"> # </a></h3>
+<pre><code class="lang-javascript">process.stdin.resume();
+process.on(<span class="hljs-string">'SIGINT'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'接收到SIGINT信号'</span>);
+});
+</code></pre>
+<h2 id="t142. 子进程">2. 子进程 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t142.%20%E5%AD%90%E8%BF%9B%E7%A8%8B"> # </a></h2>
+<ul>
+<li>在Node.js中，只有一个线程执行所有操作，如果某个操作需要大量消耗CPU资源的情况下，后续操作都需要等待。</li>
+<li>在Node.js中，提供了一个<code>child_process</code>模块,通过它可以开启多个子进程，在多个子进程之间可以共享内存空间，可以通过子进程的互相通信来实现信息的交换。<h3 id="t152.1 spawn">2.1 spawn <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t152.1%20spawn"> # </a></h3>
+<h4 id="t162.1.1 语法">2.1.1 语法 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t162.1.1%20%E8%AF%AD%E6%B3%95"> # </a></h4>
+<pre><code class="lang-javascript">child_process.spawn(command,[args],[options]);
+</code></pre>
+</li>
+<li>command 必须指定的参数，指定需要执行的命令</li>
+<li>args 数组，存放了所有运行该命令需要的参数</li>
+<li>options 参数为一个对象，用于指定开启子进程时使用的选项<ul>
+<li>cwd 子进程的工作目录</li>
+<li>env 环境变量</li>
+<li>detached 如果为true,该子进程魏一个进程组中的领头进程，当父进程不存在时也可以独立存在</li>
+<li>stdio 三个元素的数组，设置标准输入/输出<ul>
+<li>pipe 在父进程和子进程之间创建一个管道，父进程可以通过子进程的stdio[0]访问子进程的标准输入，通过stdio[1]访问标准输出,stdio[2]访问错误输出</li>
+<li>ipc 在父进程和子进程之间创建一个专用与传递消息的IPC通道。可以调用子进程的send方法向子进程发消息，子进程会触发<code>message</code>事件</li>
+<li>ignore 指定不为子进程设置文件描述符。这样子进程的标准输入、标准输出和错误输出被忽略</li>
+<li>stream 子进程和父进程共享一个终端设备、文件、端口或管道</li>
+<li>正整数值 和共享一个steam是一样的</li>
+<li>null或undefined 在子进程中创建与父进程相连的管道</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>默认情况下，子进程的stdin,stdout,stderr导向了ChildProcess这个对象的child.stdin,child.stdout,child.stderr流,</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> spawn = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>).spawn;
+sapwn(<span class="hljs-string">'prg'</span>,[],{<span class="hljs-attr">stdio</span>:[<span class="hljs-string">'pipe'</span>,<span class="hljs-string">'pipe'</span>,process.stderr]});
+</code></pre>
+<ul>
+<li>ignore ['ignore','ignore','ignore'] 全部忽略</li>
+<li>pipe ['pipe','pipe','pipe'] 通过管道连接</li>
+<li>inherit [process.stdin,process.stdout,process.stderr]或[0,1,2] 和父进程共享输入输出</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> spawn = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>).spawn;
+spawn(<span class="hljs-string">'prg'</span>,[],{<span class="hljs-attr">stdio</span>:<span class="hljs-string">'inherit'</span>});
+</code></pre>
+<ul>
+<li>spawn方法返回一个隐式创建的代表子进程的ChildProcess对象</li>
+<li>子进程对象同样拥有stdin属性值为一个可用于读入子进程的标准输入流对象</li>
+<li>子进程对象同样拥有stdiout属性值和stderr属性值可分别用于写入子进程的标准输出流与标准错误输出流</li>
+</ul>
+<h4 id="t172.1.2 close">2.1.2 close <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t172.1.2%20close"> # </a></h4>
+<ul>
+<li>当子进程所有输入输出都终止时，会触发子进程对象的close事件。<pre><code class="lang-javascript">child.on(<span class="hljs-string">'close'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">code,signal</span>)</span>{});
+</code></pre>
+<ul>
+<li>code 为0表示正常推出，为null表示异常退出</li>
+<li>当在父进程中关闭子进程时，signal参数值为父进程发给子进程的信号名称</li>
+</ul>
+</li>
+</ul>
+<h4 id="t182.1.3 exit">2.1.3 exit <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t182.1.3%20exit"> # </a></h4>
+<ul>
+<li>当子进程退出时，触发子进程对象的exit事件</li>
+<li><p>因为多个进程可能会共享i 个输入/输出，所以当子进程退出时，子进程的输入/输出可能并未终止</p>
+<pre><code class="lang-javascript">child.on(<span class="hljs-string">'exit'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">code,signal</span>)</span>{});
+</code></pre>
+<h4 id="t192.1.4 error">2.1.4 error <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t192.1.4%20error"> # </a></h4>
+<p>如果子进程开启失败，那么将会触发子进程对象的error事件</p>
+<pre><code class="lang-javascript">child1.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(err);
+});
+</code></pre>
+<h4 id="t202.1.5 kill">2.1.5 kill <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t202.1.5%20kill"> # </a></h4>
+</li>
+<li>父进程还可以使用kill方法向子进程发送信号,参数为描述该信号的字符串，默认参数值为<code>SIGTERM</code></li>
+<li>SIGTERM 程序结束(terminate)信号, 与SIGKILL不同的是该信号可以被阻塞和处理. 通常用来要求程序自己正常退出</li>
+</ul>
+<pre><code class="lang-javascript">child.kill([signal]);
+</code></pre>
+<h4 id="t212.1.6 案例">2.1.6 案例 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t212.1.6%20%E6%A1%88%E4%BE%8B"> # </a></h4>
+<ol>
+<li>spawn.js<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> {
+ spawn
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>);
+<span class="hljs-comment">//默认情况下，子进程的stdin,stdout,stderr导向了ChildProcess这个对象的child.stdin,child.stdout,child.stderr流,</span>
+<span class="hljs-comment">//这和设置stdio为['pipe', 'pipe', 'pipe']是一样的</span>
+<span class="hljs-keyword">let</span> p1 = spawn(<span class="hljs-string">'node'</span>, [<span class="hljs-string">'test1.js'</span>, <span class="hljs-string">'a'</span>], {
+ <span class="hljs-attr">cwd</span>: path.join(__dirname, <span class="hljs-string">'test1'</span>)
+});
+<span class="hljs-keyword">let</span> p2 = spawn(<span class="hljs-string">'node'</span>, [<span class="hljs-string">'test3.js'</span>], {
+ <span class="hljs-attr">cwd</span>: path.join(__dirname, <span class="hljs-string">'test3'</span>),
+ <span class="hljs-attr">stdio</span>: <span class="hljs-string">'pipe'</span>
+});
+<span class="hljs-comment">//监听test1.js脚本子进程对象的标准输出的data事件，把数据写给p2</span>
+p1.stdout.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'P1:子进程的标准输出:'</span> + data);
+ p2.stdin.write(data);
+});
+p1.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'p1:子进程1开启失败'</span>);
+});
+p2.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'p2:子进程2开启失败'</span>);
+});
+</code></pre>
+</li>
+<li><p>test1.js</p>
+<pre><code class="lang-javascript">process.stdout.write(<span class="hljs-string">'p1:子进程当前工作目录为:'</span> + process.cwd() + <span class="hljs-string">'\r\n'</span>);
+process.stdout.write(<span class="hljs-string">'p1:'</span> + process.argv[<span class="hljs-number">2</span>] + <span class="hljs-string">' \r\n'</span>);
+</code></pre>
+</li>
+<li><p>test2.js</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> out = fs.createWriteStream(path.join(__dirname, <span class="hljs-string">'msg.txt'</span>));
+process.stdin.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+ out.write(data);
+});
+process.stdin.on(<span class="hljs-string">'end'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+ process.exit();
+});
+</code></pre>
+</li>
+</ol>
+<h4 id="t222.1.7 detached">2.1.7 detached <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t222.1.7%20detached"> # </a></h4>
+<ul>
+<li>在默认情况下，只有在子进程全部退出后，父进程才能退出。为了让父进程可以先退出，而让子进程继续进行I/O操作,可以在spawn方法中使用options参数，把detached属性值设置为true</li>
+<li>默认情况下父进程会等待所有的子进程退出后才可以退出，使用subprocess.unref方法可以让父进程不用等待子进程退出就可以直接退出<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> cp = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>);
+<span class="hljs-keyword">let</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> out = fs.openSync(path.join(__dirname, <span class="hljs-string">'msg.txt'</span>), <span class="hljs-string">'w'</span>, <span class="hljs-number">0o666</span>);
+<span class="hljs-keyword">let</span> sp = cp.spawn(<span class="hljs-string">'node'</span>, [<span class="hljs-string">'4.detached.js'</span>], {
+  <span class="hljs-attr">detached</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">stdio</span>: [<span class="hljs-string">'ignore'</span>, out, <span class="hljs-string">'ignore'</span>]
+});
+sp.unref();
+</code></pre>
+</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> count = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> $timer = setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+    process.stdout.write(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toString() + <span class="hljs-string">'\r\n'</span>);
+    <span class="hljs-keyword">if</span> (--count == <span class="hljs-number">0</span>) {
+        clearInterval($timer);
+    }
+}, <span class="hljs-number">500</span>);
+<span class="hljs-string">`
+</span></code></pre>
+<h3 id="t232.2 fork开启子进程">2.2 fork开启子进程 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t232.2%20fork%E5%BC%80%E5%90%AF%E5%AD%90%E8%BF%9B%E7%A8%8B"> # </a></h3>
+<ul>
+<li>衍生一个新的 Node.js 进程，并通过建立一个 IPC 通讯通道来调用一个指定的模块，该通道允许父进程与子进程之间相互发送信息</li>
+<li>fork方法返回一个隐式创建的代表子进程的ChildProcess对象</li>
+<li>子进程的输入/输出操作执行完毕后，子进程不会自动退出，必须使用<code>process.exit()</code>方法显式退出</li>
+</ul>
+<pre><code class="lang-javascript">child_process.fork(modulePath,[args],[options]);
+</code></pre>
+<ul>
+<li>args 运行该文件模块文件时许哟啊使用的参数</li>
+<li>options 选项对象<ul>
+<li>cwd 指定子进程当前的工作目录</li>
+<li>env 属性值为一个对象，用于以"键名/键值"的形式为子进程指定环境变量</li>
+<li>encoding 属性值为一个字符串，用于指定输出及标准错误输出数据的编码格式，默认值为'utf8'</li>
+<li>silent 属性值为布尔值，当属性值为false时，子进程和父进程对象共享标准(输入/输出),true时不共享</li>
+</ul>
+</li>
+</ul>
+<h4 id="t242.2.1 发送消息">2.2.1 发送消息 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t242.2.1%20%E5%8F%91%E9%80%81%E6%B6%88%E6%81%AF"> # </a></h4>
+<pre><code class="lang-javascript">child.send(message,[sendHandle]);<span class="hljs-comment">//在父进程中向子进程发送消息</span>
+process.send(message,[sendHandle]);<span class="hljs-comment">//在子进程中向主进程发送消息</span>
+</code></pre>
+<ul>
+<li>message是一个对象，用于指定需要发送的消息</li>
+<li>sendHandle是一个 net.Socket 或 net.Server 对象</li>
+<li>子进程可以监听父进程发送的message事件<pre><code class="lang-javascript">process.on(<span class="hljs-string">'message'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">m,setHandle</span>)</span>{});
+</code></pre>
+</li>
+<li>m 参数值为子进程收到的消息</li>
+<li>sendHandle为服务器对象或socket端口对象</li>
+</ul>
+<p>当父进程收到子进程发出的消息时，触发子进程的message事件</p>
+<pre><code class="lang-javascript">child.on(<span class="hljs-string">'message'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">m,setHandle</span>)</span>{
+  <span class="hljs-comment">//TODO事件回调函数代码</span>
+});
+</code></pre>
+<p>5.fork.js</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> {
+    fork
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> child = fork(path.join(__dirname, <span class="hljs-string">'fork.js'</span>));
+child.on(<span class="hljs-string">'message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">m</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'父进程接收到消息:'</span>, m);
+    process.exit();
+});
+child.send({
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'zfpx'</span>
+});
+child.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+    <span class="hljs-built_in">console</span>.error(<span class="hljs-built_in">arguments</span>);
+});
+</code></pre>
+<p>fork.js</p>
+<pre><code class="lang-javascript">process.on(<span class="hljs-string">'message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">m, setHandle</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程收到消息:'</span>, m);
+    process.send({
+        <span class="hljs-attr">age</span>: <span class="hljs-number">9</span>
+    });
+})
+</code></pre>
+<h4 id="t252.2.2 silent">2.2.2 silent <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t252.2.2%20silent"> # </a></h4>
+<p>在默认情况下子进程对象与父进程对象共享标准输入和标准输出。如果要让子进程对象用独立的标准输入输出，可以将silent属性值设置为 true
+forkslient.js</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> {
+    fork
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+
+<span class="hljs-keyword">let</span> p1 = fork(<span class="hljs-string">'node'</span>, [path.join(__dirname, <span class="hljs-string">'fork1.js'</span>)], {
+    <span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>
+});
+<span class="hljs-keyword">let</span> p2 = fork(<span class="hljs-string">'node'</span>,path.join(__dirname, <span class="hljs-string">'fork2.js'</span>));
+p1.stdout.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程1标准输出：'</span> + data);
+    p2.send(data.toString());
+});
+p1.on(<span class="hljs-string">'exit'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">code, signal</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程退出，退出代码为:'</span> + code);
+});
+p1.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程开启失败:'</span> + err);
+    process.exit();
+});
+</code></pre>
+<p>fork1.js</p>
+<pre><code class="lang-javascript">process.argv.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+    process.stdout.write(item + <span class="hljs-string">'\r\n'</span>);
+});
+</code></pre>
+<p>fork2.js</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">let</span> out = fs.createWriteStream(path.join(__dirname, <span class="hljs-string">'msg.txt'</span>));
+process.on(<span class="hljs-string">'message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+    out.write(data);
+});
+</code></pre>
+<h4 id="t262.2.3 子进程与父进程共享HTTP服务器">2.2.3 子进程与父进程共享HTTP服务器 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t262.2.3%20%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%88%B6%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%ABHTTP%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">let</span> {
+    fork
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>);
+<span class="hljs-keyword">let</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">let</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> child = fork(path.join(__dirname, <span class="hljs-string">'8.child.js'</span>));
+<span class="hljs-keyword">let</span> server = net.createServer();
+server.listen(<span class="hljs-number">8080</span>, <span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    child.send(<span class="hljs-string">'server'</span>, server);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'父进程中的服务器已经创建'</span>);
+    <span class="hljs-keyword">let</span> httpServer = http.createServer();
+    httpServer.on(<span class="hljs-string">'request'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+        <span class="hljs-keyword">if</span> (req.url != <span class="hljs-string">'/favicon.ico'</span>) {
+            <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100000</span>; i++) {
+                sum += <span class="hljs-number">1</span>;
+            }
+            res.write(<span class="hljs-string">'客户端请求在父进程中被处理。'</span>);
+            res.end(<span class="hljs-string">'sum='</span> + sum);
+        }
+    });
+    httpServer.listen(server);
+});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+process.on(<span class="hljs-string">'message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">msg, server</span>) </span>{
+    <span class="hljs-keyword">if</span> (msg == <span class="hljs-string">'server'</span>) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程中的服务器已经被创建'</span>);
+        <span class="hljs-keyword">let</span> httpServer = http.createServer();
+        httpServer.on(<span class="hljs-string">'request'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+            <span class="hljs-keyword">if</span> (req.url != <span class="hljs-string">'/favicon.ico'</span>) {
+                sum = <span class="hljs-number">0</span>;
+                <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10000</span>; i++) {
+                    sum += i;
+                }
+                res.write(<span class="hljs-string">'客户端请求在子进程中被处理'</span>);
+                res.end(<span class="hljs-string">'sum='</span> + sum);
+            }
+        });
+        httpServer.listen(server);
+    }
+});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">let</span> options = {
+    <span class="hljs-attr">hostname</span>: <span class="hljs-string">'localhost'</span>,
+    <span class="hljs-attr">port</span>: <span class="hljs-number">8080</span>,
+    <span class="hljs-attr">path</span>: <span class="hljs-string">'/'</span>,
+    <span class="hljs-attr">method</span>: <span class="hljs-string">'GET'</span>
+}
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; i++) {
+    <span class="hljs-keyword">let</span> req = http.request(options, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">res</span>) </span>{
+        res.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">chunk</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'响应内容:'</span> + chunk);
+        });
+    });
+    req.end();
+}
+</code></pre>
+<h4 id="t272.2.4 子进程与父进程共享socket对象">2.2.4 子进程与父进程共享socket对象 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t272.2.4%20%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%B8%8E%E7%88%B6%E8%BF%9B%E7%A8%8B%E5%85%B1%E4%BA%ABsocket%E5%AF%B9%E8%B1%A1"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> {
+    fork
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> child = fork(path.join(__dirname, <span class="hljs-string">'11.socket.js'</span>));
+<span class="hljs-keyword">let</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>).createServer();
+server.on(<span class="hljs-string">'connection'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Date</span>.now() % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+        child.send(<span class="hljs-string">'socket'</span>, socket);
+    } <span class="hljs-keyword">else</span> {
+        socket.end(<span class="hljs-string">'客户端请求被父进程处理!'</span>);
+    }
+});
+server.listen(<span class="hljs-number">41234</span>, );
+</code></pre>
+<pre><code class="lang-javascript">process.on(<span class="hljs-string">'message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">m, socket</span>) </span>{
+    <span class="hljs-keyword">if</span> (m === <span class="hljs-string">'socket'</span>) {
+        socket.end(<span class="hljs-string">'客户端请求被子进程处理.'</span>);
+    }
+});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> net.Socket();
+client.setEncoding(<span class="hljs-string">'utf8'</span>);
+client.connect(<span class="hljs-number">41234</span>, <span class="hljs-string">'localhost'</span>);
+client.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(data);
+});
+</code></pre>
+<h3 id="t282.3 exec开启子进程">2.3 exec开启子进程 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t282.3%20exec%E5%BC%80%E5%90%AF%E5%AD%90%E8%BF%9B%E7%A8%8B"> # </a></h3>
+<ul>
+<li>exec方法可以开启一个用于运行某个命令的子进程并缓存子进程的输出结果</li>
+<li>spawn是一个异步方法，exec是一个同步方法</li>
+<li>衍生一个 shell 并在 shell 上运行命令</li>
+</ul>
+<pre><code class="lang-javascript">child_process.exec(command,[options],[callback]);
+</code></pre>
+<ul>
+<li>command 需要执行的命令</li>
+<li>options 选项对象<ul>
+<li>cwd 子进程的当前工作目录</li>
+<li>env 指定子进程的环境变量</li>
+<li>encoding 指定输出的编码</li>
+<li>timeout  子进程的超时时间</li>
+<li>maxbuffer 指定缓存标准输出和错误输出的缓存区最大长度</li>
+<li>killSignal 指定关闭子进程的信号，默认值为 "SIGTERM"</li>
+</ul>
+</li>
+<li>callback 指定子进程终止时调用的回调函数<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,stdout,stderr</span>)</span>{}
+</code></pre>
+</li>
+<li>err 错误对象</li>
+<li>stdout 标准输出</li>
+<li>stderr 错误输出</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> {
+    exec
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> p1 = exec(<span class="hljs-string">'node test1.js a b c'</span>, {
+    <span class="hljs-attr">cwd</span>: path.join(__dirname, <span class="hljs-string">'test3'</span>)
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, stdout, stderr</span>) </span>{
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程开启失败:'</span> + err);
+        process.exit();
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程标准输出\r\n'</span> + stdout.toString());
+        p2.stdin.write(stdout.toString());
+    }
+});
+<span class="hljs-keyword">let</span> p2 = exec(<span class="hljs-string">'node test2.js'</span>, {
+    <span class="hljs-attr">cwd</span>: path.join(__dirname, <span class="hljs-string">'test3'</span>)
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, stdout, stderr</span>) </span>{
+    process.exit();
+});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+process.argv.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+    process.stdout.write(item + <span class="hljs-string">'\r\n'</span>);
+});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> out = fs.createWriteStream(path.join(__dirname, <span class="hljs-string">'msg.txt'</span>));
+process.stdin.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+    out.write(data);
+    process.exit();
+})
+</code></pre>
+<h3 id="t292.4 execFile开启子进程">2.4 execFile开启子进程 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t292.4%20execFile%E5%BC%80%E5%90%AF%E5%AD%90%E8%BF%9B%E7%A8%8B"> # </a></h3>
+<ul>
+<li>可以使用<code>execFile</code>开启一个专门用于运行某个可执行文件的子进程</li>
+<li>类似 child_process.exec()，但直接衍生命令，且无需先衍生一个 shell</li>
+</ul>
+<pre><code class="lang-javascript">child_process.execFile(file,[args],[optioins],[callback]);
+</code></pre>
+<ul>
+<li>file 指定需要运行的可执行文件路径及文件名</li>
+<li>args 运行该文件所需要的参数</li>
+<li>options 开启子进程的选项</li>
+<li>callback 指定子进程终止时调用的回调函数</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> {
+    execFile
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'child_process'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+
+<span class="hljs-keyword">let</span> p1 = execFile(<span class="hljs-string">'node'</span>, [<span class="hljs-string">'./test1.js'</span>], {
+    <span class="hljs-attr">cwd</span>: path.join(__dirname, <span class="hljs-string">'test4'</span>)
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, stdout, stderr</span>) </span>{
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程1开启失败:'</span> + err);
+        process.exit();
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程标准输出:'</span> + stdout.toString());
+        p2.stdin.write(stdout.toString());
+    }
+});
+<span class="hljs-keyword">let</span> p2 = execFile(<span class="hljs-string">'node'</span>, [<span class="hljs-string">'./test2.js'</span>], {
+    <span class="hljs-attr">cwd</span>: path.join(__dirname, <span class="hljs-string">'test4'</span>)
+}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, stdout, stderr</span>) </span>{
+    <span class="hljs-keyword">if</span> (err) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程2开启失败:'</span> + err);
+        process.exit();
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程标准输出:'</span> + stdout.toString());
+    }
+});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-meta">#!/usr/bin/env node</span>
+
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+process.argv.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+    process.stdout.write(item + <span class="hljs-string">'\r\n'</span>);
+});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-meta">#!/usr/bin/env node</span>
+
+<span class="hljs-keyword">let</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> out = fs.createWriteStream(path.join(__dirname, <span class="hljs-string">'msg.txt'</span>));
+process.stdin.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+    out.write(data);
+    process.exit();
+})
+</code></pre>
+<h2 id="t303. cluster">3. cluster <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t303.%20cluster"> # </a></h2>
+<p>为了利用多核CPU的优势，Node.js提供了一个cluster模块允许在多个子进程中运行不同的Node.js应用程序。</p>
+<h3 id="t313.1 fork方法创建work对象">3.1 fork方法创建work对象 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t313.1%20fork%E6%96%B9%E6%B3%95%E5%88%9B%E5%BB%BAwork%E5%AF%B9%E8%B1%A1"> # </a></h3>
+<ul>
+<li>可以使用fork方法开启多个子进程，在每个子进程中创建一个Node.js应用程序的实例，并且在该应用程序中运行一个模块文件。</li>
+<li>fork方法返回一个隐式创建的work对象</li>
+<li>在cluster模块中，分别提供了一个isMaster属性与一个isWork属性，都是布尔值<pre><code class="lang-javascript">cluster.fork([env]);
+</code></pre>
+</li>
+<li>env 为子进程指定环境变量</li>
+</ul>
+<h4 id="t323.1.1 获取所有的worker">3.1.1 获取所有的worker <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t323.1.1%20%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E7%9A%84worker"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> index <span class="hljs-keyword">in</span> cluster.workers){
+    <span class="hljs-built_in">console</span>.log(cluster.workers[index]);
+}
+</code></pre>
+<h4 id="t333.1.2 获取当前的worker和id">3.1.2 获取当前的worker和id <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t333.1.2%20%E8%8E%B7%E5%8F%96%E5%BD%93%E5%89%8D%E7%9A%84worker%E5%92%8Cid"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">if</span>(cluster.isMaster){
+  cluster.fork()
+}<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(cluster.isWorker){
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'I am worker #'</span>+cluster.worker.id);
+}
+</code></pre>
+<h4 id="t343.1.3 服务器">3.1.3 服务器 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t343.1.3%20%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> cluster = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cluster'</span>);
+<span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">if</span> (cluster.isMaster) {
+    cluster.fork();
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这段代码运行在主进程里'</span>);
+} <span class="hljs-keyword">else</span> {
+    http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+        <span class="hljs-keyword">if</span> (req.url != <span class="hljs-string">'/favicon.ico'</span>) {
+            res.end(<span class="hljs-string">'hello'</span>);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这段代码运行在子进程里'</span>);
+        }
+    }).listen(<span class="hljs-number">8080</span>);
+}
+</code></pre>
+<h4 id="t353.1.4 fork事件">3.1.4 fork事件 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t353.1.4%20fork%E4%BA%8B%E4%BB%B6"> # </a></h4>
+<p>当使用fork方法开启子进程时，将同时触发fork事件</p>
+<pre><code class="lang-javascript">cluster.on(<span class="hljs-string">'fork'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">worker</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程 '</span>+workder.id+<span class="hljs-string">'被开启'</span>);  
+});
+</code></pre>
+<h4 id="t363.1.5 online事件">3.1.5 online事件 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t363.1.5%20online%E4%BA%8B%E4%BB%B6"> # </a></h4>
+<ul>
+<li>在使用fork方法开启一个新的用于运行Node.js应用程序的子进程后，该应用程序将通过向主进程发送反馈信息，当主进程接收到该反馈信息后，触发online事件</li>
+</ul>
+<pre><code class="lang-javascript">cluster.on(<span class="hljs-string">'online'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">worker</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'已经收到子进程#'</span>+workder.id+<span class="hljs-string">"的消息"</span>);
+});
+</code></pre>
+<h4 id="t373.1.6 listening">3.1.6 listening <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t373.1.6%20listening"> # </a></h4>
+<p>当在子进程运行的Node.js应用程序中调用服务器的listen方法后，该服务器开始对指定地址及端口进行监听，同时触发listening事件。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> cluster = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cluster'</span>);
+<span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">if</span> (cluster.isMaster) {
+    cluster.fork();
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这段代码运行在主进程里'</span>);
+} <span class="hljs-keyword">else</span> {
+    http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+        <span class="hljs-keyword">if</span> (req.url != <span class="hljs-string">'/favicon.ico'</span>) {
+            res.end(<span class="hljs-string">'hello'</span>);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这段代码运行在子进程里'</span>);
+        }
+    }).listen(<span class="hljs-number">8080</span>, <span class="hljs-string">'localhost'</span>);
+}
+cluster.on(<span class="hljs-string">'online'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">worker</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'已经收到子进程#'</span> + worker.id + <span class="hljs-string">"的消息"</span>);
+});
+cluster.on(<span class="hljs-string">'listening'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">worker, address</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'子进程中的服务器开始监听,地址为:'</span> + address.address + <span class="hljs-string">":"</span> + address.port);
+});
+</code></pre>
+<h4 id="t383.1.7 setupMaster">3.1.7 setupMaster <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t383.1.7%20setupMaster"> # </a></h4>
+<p>子进程中的Node.js应用程序默认运行当前正在运行的Node.js应用程序中的主模块文件。可以使用setupMaster方法修改子进程中运行的模块文件</p>
+<pre><code class="lang-javascript">cluster.setupMaster([settings]);
+</code></pre>
+<ul>
+<li>settings设置子进程中运行的Node.js应用程序各种默认行为的对象<ul>
+<li>exec 子进程运行的模块文件名称的完整路径及文件名</li>
+<li>args 属性为一个数组，其中存放了所有运行子进程的Node.js运行程序所需要的参数</li>
+<li>silent 布尔值。当属性值为false时，子进程对象与主进程对象共享标准输入/输出</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> cluster = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cluster'</span>);
+cluster.setupMaster({
+    <span class="hljs-attr">exec</span>: <span class="hljs-string">'subtask.js'</span>
+});
+cluster.fork();
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这段代码被运行子主进程中'</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">'cluster.settings属性值: %j'</span>, cluster.settings);
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+    <span class="hljs-keyword">if</span> (req.url != <span class="hljs-string">'/favicon.ico'</span>) {
+        res.writeHead(<span class="hljs-number">200</span>);
+        res.end(<span class="hljs-string">'ok'</span>);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这段代码被运行在子进程中'</span>);
+    }
+}).listen(<span class="hljs-number">8080</span>);
+</code></pre>
+<h4 id="t393.1.8 在子进程里运行服务器">3.1.8 在子进程里运行服务器 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t393.1.8%20%E5%9C%A8%E5%AD%90%E8%BF%9B%E7%A8%8B%E9%87%8C%E8%BF%90%E8%A1%8C%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h4>
+<p>当在子进程里运行服务器时，客户端总是先被主进程接收，然后转发给子进程中的服务器。如果在多个子进程中运行服务器，当主进程接收到客户端请求后，将会自动分配给一个当前处于空闲状态的子进程。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> cluster = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cluster'</span>);
+<span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">if</span> (cluster.isMaster) {
+    cluster.fork();
+    cluster.fork();
+} <span class="hljs-keyword">else</span> {
+    http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+        <span class="hljs-keyword">if</span> (req.url !== <span class="hljs-string">'/favicon.ico'</span>) {
+            <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000000</span>; i++) {
+                sum += i;
+            }
+            res.writeHead(<span class="hljs-number">200</span>);
+            res.write(<span class="hljs-string">`客户端请求在子进程<span class="hljs-subst">${cluster.worker.id}</span>中被处理`</span>);
+            res.end(<span class="hljs-string">`子进程<span class="hljs-subst">${cluster.worker.id}</span>中的计算结果=<span class="hljs-subst">${sum}</span>`</span>);
+        }
+    }).listen(<span class="hljs-number">8080</span>);
+}
+</code></pre>
+<h4 id="t403.1.9 在子进程使用单独的输出">3.1.9 在子进程使用单独的输出 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t403.1.9%20%E5%9C%A8%E5%AD%90%E8%BF%9B%E7%A8%8B%E4%BD%BF%E7%94%A8%E5%8D%95%E7%8B%AC%E7%9A%84%E8%BE%93%E5%87%BA"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> cluster = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cluster'</span>);
+<span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">if</span> (cluster.isMaster) {
+    cluster.setupMaster({
+        <span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>
+    });
+    <span class="hljs-keyword">let</span> worker = cluster.fork();
+    worker.process.stdout.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'接收到来自客户端的请求，目标地址:'</span> + data);
+    });
+} <span class="hljs-keyword">else</span> {
+    http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+        <span class="hljs-keyword">if</span> (req.url !== <span class="hljs-string">'/favicon.ico'</span>) {
+            <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000000</span>; i++) {
+                sum += i;
+            }
+            res.writeHead(<span class="hljs-number">200</span>);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`客户端请求在子进程<span class="hljs-subst">${cluster.worker.id}</span>中被处理`</span>);
+            res.write(<span class="hljs-string">`客户端请求在子进程<span class="hljs-subst">${cluster.worker.id}</span>中被处理`</span>);
+            res.end(<span class="hljs-string">`子进程<span class="hljs-subst">${cluster.worker.id}</span>中的计算结果=<span class="hljs-subst">${sum}</span>`</span>);
+        }
+    }).listen(<span class="hljs-number">8080</span>);
+}
+</code></pre>
+<h3 id="t413.2 worker对象">3.2 worker对象 <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t413.2%20worker%E5%AF%B9%E8%B1%A1"> # </a></h3>
+<h4 id="t423.2.1 online">3.2.1 online <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t423.2.1%20online"> # </a></h4>
+<p>当新建一个工作进程后，工作进程应当响应一个online消息给主进程。当主进程收到online消息后触发这个事件</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> cluster = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cluster'</span>);
+<span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">if</span> (cluster.isMaster) {
+    <span class="hljs-keyword">let</span> worker = cluster.fork();
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'这段代码被运行在主进程里'</span>);
+    worker.on(<span class="hljs-string">'online'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`已经收到子进程<span class="hljs-subst">${worker.id}</span>的运行信息`</span>);
+    });
+} <span class="hljs-keyword">else</span> {
+    http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+        <span class="hljs-keyword">if</span> (req.url !== <span class="hljs-string">'/favicon.ico'</span>) {
+            <span class="hljs-keyword">let</span> sum = <span class="hljs-number">0</span>;
+            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">1000000</span>; i++) {
+                sum += i;
+            }
+            res.end(<span class="hljs-string">'ok'</span>);
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`这段代码被运行在子进程中。`</span>);
+        }
+    }).listen(<span class="hljs-number">8080</span>);
+}
+</code></pre>
+<h4 id="t433.2.2 send">3.2.2 send <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t433.2.2%20send"> # </a></h4>
+<p>在使用fork发放开启子进程后，可以使用fork方法所返回的worker对象的send方法在主进程中向子进程发送消息。</p>
+<pre><code class="lang-javascript">worker.send(message,[sendHandle]);<span class="hljs-comment">//在主进程中向子进程发送消息</span>
+process.send(message,[sendHandle]);<span class="hljs-comment">//在子进程中像主进程发送消息</span>
+process.on(<span class="hljs-string">'message'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">m,setHandle</span>)</span>{});
+</code></pre>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> cluster = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cluster'</span>);
+cluster.setupMaster({
+    <span class="hljs-attr">exec</span>: <span class="hljs-string">'child.js'</span>
+});
+<span class="hljs-keyword">let</span> worker = cluster.fork();
+worker.on(<span class="hljs-string">'message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">m</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'父进程接收到消息:'</span>, m);
+    process.exit();
+});
+worker.send({
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'zfpx'</span>
+});
+</code></pre>
+<h4 id="t443.2.3 共享socket">3.2.3 共享socket <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t443.2.3%20%E5%85%B1%E4%BA%ABsocket"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">let</span> cluster = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cluster'</span>);
+<span class="hljs-keyword">let</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+cluster.setupMaster({
+    <span class="hljs-attr">exec</span>: <span class="hljs-string">'22.subsocket.js'</span>
+});
+<span class="hljs-keyword">let</span> worker = cluster.fork();
+<span class="hljs-keyword">let</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>).createServer();
+server.on(<span class="hljs-string">'connection'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Date</span>.now() % <span class="hljs-number">2</span> == <span class="hljs-number">0</span>) {
+        worker.send(<span class="hljs-string">'socket'</span>, socket);
+    } <span class="hljs-keyword">else</span> {
+        socket.end(<span class="hljs-string">'客户端的请求在主进程中处理'</span>);
+    }
+
+});
+server.listen(<span class="hljs-number">41234</span>, <span class="hljs-string">'localhost'</span>);
+worker.on(<span class="hljs-string">'message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">m, socket</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(m);
+
+});
+</code></pre>
+<pre><code class="lang-javascript">process.on(<span class="hljs-string">'message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">msg, socket</span>) </span>{
+    <span class="hljs-keyword">if</span> (msg == <span class="hljs-string">'socket'</span>) {
+        socket.end(<span class="hljs-string">'子进程中返回消息:'</span> + msg);
+        process.send(<span class="hljs-string">'告诉父进程我处理了一个消息'</span>);
+    }
+});
+</code></pre>
+<h4 id="t453.2.4 kill">3.2.4 kill <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t453.2.4%20kill"> # </a></h4>
+<p>当使用fork方法开启子进程后，可以使用fork方法返回的worker对象的kill方法强制关闭子进程</p>
+<pre><code class="lang-javascript">worker.kill([signal]);
+</code></pre>
+<ul>
+<li>signal 强制关闭子进程的信号字符串。默认参数值为 "SIGTERM"</li>
+</ul>
+<h4 id="t463.2.5 exit">3.2.5 exit <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t463.2.5%20exit"> # </a></h4>
+<p>当子进程退出时，将会触发worker对象的exit事件</p>
+<pre><code>worker.on('exit',function(code,signal));
+</code></pre><ul>
+<li>code 退出代码。正常退出为0，异常退出为null</li>
+<li>worker.exitedAfterDisconnect可以用于区分自发退出还是被动退出，主进程可以根据这个值决定是否重新衍生新的工作进程。</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> cluster = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cluster'</span>);
+<span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">if</span> (cluster.isMaster) {
+    cluster.setupMaster({
+        <span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span>
+    });
+    <span class="hljs-keyword">let</span> worker = cluster.fork();
+    worker.process.stdout.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'接收到来自客户端的请求,目标地址为:'</span> + data);
+        worker.kill(); <span class="hljs-comment">//让子进程退出</span>
+    });
+    worker.on(<span class="hljs-string">'exit'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">code, signal</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">arguments</span>)
+        <span class="hljs-comment">//suicide可以判断是自动退出还是异常退出，退出之前时undefined.自动退出为true,异常退出为false</span>
+        <span class="hljs-keyword">if</span> (worker.exitedAfterDisconnect  == <span class="hljs-literal">true</span>) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`子进程%{worker.id}自动退出`</span>);
+        } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (worker.exitedAfterDisconnect  == <span class="hljs-literal">false</span>) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`子进程<span class="hljs-subst">${worker.id}</span>异常退出，退出代码为<span class="hljs-subst">${code}</span>`</span>);
+        }
+        <span class="hljs-keyword">if</span> (signal) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'退出信号为 %s'</span>, signal);
+        }
+    });
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">let</span> server = http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+        <span class="hljs-keyword">if</span> (req.url != <span class="hljs-string">'/favicon.ico'</span>) {
+            res.end(<span class="hljs-string">'hello'</span>);
+            process.stdout.write(req.url);
+        }
+    }).listen(<span class="hljs-number">8080</span>);
+}
+</code></pre>
+<h4 id="t473.2.6 disconnect">3.2.6 disconnect <a href="http://www.zhufengpeixun.com/strong/html/17.process.html#t473.2.6%20disconnect"> # </a></h4>
+<p>可以使用worker对象的disconnect方法使该子进程不再接收外部连接</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> cluster = <span class="hljs-built_in">require</span>(<span class="hljs-string">'cluster'</span>);
+<span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+<span class="hljs-keyword">if</span> (cluster.isMaster) {
+    cluster.setupMaster({ <span class="hljs-attr">silent</span>: <span class="hljs-literal">true</span> });
+    <span class="hljs-keyword">let</span> worker = cluster.fork();
+    worker.process.stdout.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'接收到来自客户端的请求,目标地址为:'</span> + data);
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            worker.disconnect();<span class="hljs-comment">//不再接收连接</span>
+            worker.send(<span class="hljs-string">'disconnect'</span>);
+        }, <span class="hljs-number">2000</span>);
+    });
+
+    worker.on(<span class="hljs-string">'disconnect'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`子进程<span class="hljs-subst">${worker.id}</span>断开连接`</span>);
+    });
+    worker.on(<span class="hljs-string">'exit'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">code, signal</span>) </span>{
+        <span class="hljs-keyword">if</span> (worker.exitedAfterDisconnect) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`子进程<span class="hljs-subst">${worker.id}</span>正常退出`</span>);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`子进程<span class="hljs-subst">${worker.id}</span>异常退出`</span>);
+        }
+        <span class="hljs-keyword">if</span> (signal) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">' 退出信号为'</span> + signal);
+        }
+    });
+
+} <span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">let</span> http = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>);
+    <span class="hljs-keyword">let</span> server = http.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+        <span class="hljs-keyword">if</span> (req.url != <span class="hljs-string">'/favicon.ico'</span>) {
+            res.end(<span class="hljs-string">'hello'</span>);
+            process.stdout.write(req.url);
+        }
+    }).listen(<span class="hljs-number">8080</span>);
+    process.on(<span class="hljs-string">'message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">msg</span>) </span>{
+        <span class="hljs-keyword">if</span> (msg == <span class="hljs-string">'disconnect'</span>) {
+            <span class="hljs-comment">//process.exit(0);</span>
+        }
+
+    });
+}
+
+</code></pre>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

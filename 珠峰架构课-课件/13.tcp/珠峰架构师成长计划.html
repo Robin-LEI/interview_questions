@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://www.zhufengpeixun.com/strong/html/13.tcp.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t01.%20TCP">1. TCP</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t11.1%20TCP%E6%9C%8D%E5%8A%A1%E5%99%A8">1.1 TCP服务器</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t21.1.1%20%E5%90%AF%E5%8A%A8TCP%E6%9C%8D%E5%8A%A1%E5%99%A8">1.1.1 启动TCP服务器</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t31.1.2%20%E4%BD%BF%E7%94%A8TCP%E6%9C%8D%E5%8A%A1%E5%99%A8">1.1.2 使用TCP服务器</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t41.1.3%20address">1.1.3 address</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t51.1.4%20getConnections">1.1.4 getConnections</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t61.1.5%20close">1.1.5 close</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t71.2%20socket">1.2 socket</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t81.2.1%20address">1.2.1 address</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t91.2.2%20%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE">1.2.2 读取数据</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t101.2.3%20%E7%9B%91%E5%90%AC%E5%85%B3%E9%97%AD%E4%BA%8B%E4%BB%B6">1.2.3 监听关闭事件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t111.2.4%20pipe">1.2.4 pipe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t121.2.5%20unpipe">1.2.5 unpipe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t131.2.5%20pause&amp;resume">1.2.5 pause&amp;resume</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t141.2.6%20setTimeout">1.2.6 setTimeout</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t151.2%20TCP%E5%AE%A2%E6%88%B7%E7%AB%AF">1.2 TCP客户端</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t161.2.1%20%E5%88%9B%E5%BB%BATCP%E5%AE%A2%E6%88%B7%E7%AB%AF">1.2.1 创建TCP客户端</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t171.2.2%20%E5%90%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE%E3%80%81end%20%E3%80%81error%E3%80%81destroy,close">1.2.2 向服务器端写入数据、end 、error、destroy,close</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t181.2.3%20close">1.2.3 close</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t191.2.4%20unref&amp;ref">1.2.4 unref&amp;ref</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t201.2.5%20bufferSize">1.2.5 bufferSize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t211.2.6%20keepAlive">1.2.6 keepAlive</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t221.2.7%20%E8%81%8A%E5%A4%A9%E5%AE%A41.0">1.2.7 聊天室1.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t231.2.8%20%E8%81%8A%E5%A4%A9%E5%AE%A42.0">1.2.8 聊天室2.0</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t241.3%20%E7%B1%BB%E6%96%B9%E6%B3%95">1.3 类方法</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t252.%20UDP">2. UDP</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t262.1%20%E5%88%9B%E5%BB%BAsocket">2.1 创建socket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t272.2%20%E5%90%91%E5%A4%96%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE">2.2 向外发送数据</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t282.3%20address">2.3 address</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t292.5%20UDP%E6%9C%8D%E5%8A%A1%E5%99%A8">2.5 UDP服务器</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t302.6%20UDP%E5%AE%A2%E6%88%B7%E7%AB%AF">2.6 UDP客户端</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t312.7%20%E5%B9%BF%E6%92%AD">2.7 广播</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t322.7.1%20%E6%9C%8D%E5%8A%A1%E5%99%A8">2.7.1 服务器</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t332.7.2%20%E5%AE%A2%E6%88%B7%E7%AB%AF">2.7.2 客户端</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t342.8%20%E7%BB%84%E6%92%AD">2.8 组播</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t352.8.1%20%E6%9C%8D%E5%8A%A1%E5%99%A8">2.8.1 服务器</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t362.8.2%20%E5%AE%A2%E6%88%B7%E7%AB%AF">2.8.2 客户端</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t37%E9%99%84%E5%BD%95">附录</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t38%E8%BD%AF%E4%BB%B6">软件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t39telnet">telnet</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t40%E6%89%93%E5%BC%80telnet%E5%8A%9F%E8%83%BD">打开telnet功能</a></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. TCP">1. TCP <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t01.%20TCP"> # </a></h2>
+<p>在Node.js中，提供了net模块用来实现TCP服务器和客户端的通信。</p>
+<h3 id="t11.1 TCP服务器">1.1 TCP服务器 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t11.1%20TCP%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h3>
+<pre><code class="lang-javascript">net.createServer([options][, connectionListener])
+</code></pre>
+<ul>
+<li>options.allowHalfOpen 是否允许单方面连接,默认值为false</li>
+<li>connectionListener参数用于指定当客户端与服务器建立连接时所要调用的回调函数，回调中有一个参数socket,指的是TCP服务器监听的socket端口对象</li>
+</ul>
+<p>也可以通过监听connection事件的方式来指定监听函数</p>
+<pre><code class="lang-javascript">server.on(<span class="hljs-string">'connection'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">socket</span>)</span>{});
+</code></pre>
+<h4 id="t21.1.1 启动TCP服务器">1.1.1 启动TCP服务器 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t21.1.1%20%E5%90%AF%E5%8A%A8TCP%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h4>
+<p>可以使用listen方法通知服务器开始监听客户端的连接</p>
+<pre><code class="lang-javascript">server.listen(port,[host],[backlog],[callback])
+</code></pre>
+<ul>
+<li>port 必须指定的端口号</li>
+<li>host 指定需要监听的IP地址或主机名，如果省略的话服务器将监听来自于任何客户端的连接</li>
+<li>backlog指定位于等待队列中的客户端连接的最大数量，默认值为511</li>
+</ul>
+<pre><code class="lang-javascript">server.on(<span class="hljs-string">'listening'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{});
+</code></pre>
+<h4 id="t31.1.2 使用TCP服务器">1.1.2 使用TCP服务器 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t31.1.2%20%E4%BD%BF%E7%94%A8TCP%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">socket</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'客户端已连接'</span>);
+});
+server.listen(<span class="hljs-number">8080</span>,<span class="hljs-string">'localhost'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'服务器开始监听'</span>);
+});
+</code></pre>
+<h4 id="t41.1.3 address">1.1.3 address <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t41.1.3%20address"> # </a></h4>
+<pre><code class="lang-javascript">server.address()
+</code></pre>
+<ul>
+<li>port 端口号</li>
+<li>address TCP服务器监听的地址</li>
+<li>family 协议的版本</li>
+</ul>
+<h4 id="t51.1.4 getConnections">1.1.4 getConnections <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t51.1.4%20getConnections"> # </a></h4>
+<p>查看当前与TCP服务器建立连接的客户端的连接数量以及设置最大连接数量</p>
+<pre><code class="lang-javascript">server.getConnections(callback);
+ server.maxConnections = <span class="hljs-number">2</span>;
+</code></pre>
+<h4 id="t61.1.5 close">1.1.5 close <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t61.1.5%20close"> # </a></h4>
+<p>使用close方法可以显式拒绝所有的客户端的连接请求,当所有已连接的客户端关闭后服务器会自动关闭,并触发服务器的close事件。</p>
+<pre><code class="lang-javascript">server.close();
+server.on(<span class="hljs-string">'close'</span>,callback);
+</code></pre>
+<h3 id="t71.2 socket">1.2 socket <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t71.2%20socket"> # </a></h3>
+<h4 id="t81.2.1 address">1.2.1 address <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t81.2.1%20address"> # </a></h4>
+<p>net.Socket代表一个socket端口对象,它是一个可读可写流。</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">let</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">'util'</span>);
+<span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">socket</span>)</span>{
+  server.getConnections(<span class="hljs-function">(<span class="hljs-params">err,count</span>)=&gt;</span>{
+      server.maxConnections = <span class="hljs-number">1</span>;
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'最大连接数量%d,当前连接数量%d'</span>,server.maxConnections,count); 
+  });  
+  <span class="hljs-keyword">let</span> address = socket.address();
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'客户端地址 %s'</span>,util.inspect(address));
+});
+</code></pre>
+<h4 id="t91.2.2 读取数据">1.2.2 读取数据 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t91.2.2%20%E8%AF%BB%E5%8F%96%E6%95%B0%E6%8D%AE"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    socket.setEncoding(<span class="hljs-string">'utf8'</span>);
+    socket.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'本次收到的内容为%s,累计收到的字节数是%d'</span>, data, socket.bytesRead);
+    });
+});
+</code></pre>
+<h4 id="t101.2.3 监听关闭事件">1.2.3 监听关闭事件 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t101.2.3%20%E7%9B%91%E5%90%AC%E5%85%B3%E9%97%AD%E4%BA%8B%E4%BB%B6"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    socket.on(<span class="hljs-string">'end'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'客户端已经关闭'</span>);
+    });
+});
+</code></pre>
+<h4 id="t111.2.4 pipe">1.2.4 pipe <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t111.2.4%20pipe"> # </a></h4>
+<p>pipe方法可以将客户端发送的数据写到文件或其它目标中。</p>
+<pre><code class="lang-javascript">socket.pipe(destinatin,[options]);
+</code></pre>
+<ul>
+<li>options.end 设置为false时当客户端结束写操作或关闭后并不会关闭目标对象，还可以继续写入数据</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> ws = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).createWriteStream(path.resolve(__dirname, <span class="hljs-string">'msg.txt'</span>));
+<span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    socket.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(data);
+    });
+    socket.pipe(ws, { <span class="hljs-attr">end</span>: <span class="hljs-literal">false</span> });
+    socket.on(<span class="hljs-string">'end'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        ws.end(<span class="hljs-string">'over'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            socket.unpipe(ws);
+        });
+    });
+});
+</code></pre>
+<h4 id="t121.2.5 unpipe">1.2.5 unpipe <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t121.2.5%20unpipe"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> file = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).createWriteStream(path.join(__dirname, <span class="hljs-string">'msg.txt'</span>));
+<span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    socket.pipe(file, {
+        <span class="hljs-attr">end</span>: <span class="hljs-literal">false</span>
+    });
+    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        file.end(<span class="hljs-string">'bye bye'</span>);
+        socket.unpipe(file);
+    }, <span class="hljs-number">5000</span>);
+    <span class="hljs-comment">// socket.on('end', function () {</span>
+    <span class="hljs-comment">//     file.end('bye bye');</span>
+    <span class="hljs-comment">// });</span>
+});
+server.listen(<span class="hljs-number">8080</span>);
+</code></pre>
+<h4 id="t131.2.5 pause&amp;resume">1.2.5 pause&amp;resume <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t131.2.5%20pause&amp;resume"> # </a></h4>
+<p><code>pause</code>可以暂停<code>data</code>事件触发，服务器会把客户端发送的数据暂存在缓存区里</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">const</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">const</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> file = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).createWriteStream(path.join(__dirname, <span class="hljs-string">'msg.txt'</span>));
+<span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    socket.pause();
+    setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        socket.resume();
+        socket.pipe(file);
+    }, <span class="hljs-number">10</span> * <span class="hljs-number">1000</span>);
+});
+server.listen(<span class="hljs-number">8080</span>);
+</code></pre>
+<h4 id="t141.2.6 setTimeout">1.2.6 setTimeout <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t141.2.6%20setTimeout"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">let</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> ws = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>).createWriteStream(path.resolve(__dirname, <span class="hljs-string">'msg.txt'</span>));
+<span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    socket.setTimeout(<span class="hljs-number">5</span> * <span class="hljs-number">1000</span>);
+    socket.pause();
+    socket.on(<span class="hljs-string">'timeout'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        socket.pipe(ws);
+    });
+
+    <span class="hljs-comment">//socket.setTimeout(0);取消超时时间的设置</span>
+});
+server.listen(<span class="hljs-number">8080</span>);
+</code></pre>
+<h3 id="t151.2 TCP客户端">1.2 TCP客户端 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t151.2%20TCP%E5%AE%A2%E6%88%B7%E7%AB%AF"> # </a></h3>
+<h4 id="t161.2.1 创建TCP客户端">1.2.1 创建TCP客户端 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t161.2.1%20%E5%88%9B%E5%BB%BATCP%E5%AE%A2%E6%88%B7%E7%AB%AF"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> socket = <span class="hljs-keyword">new</span> net.Socket([options])
+</code></pre>
+<ul>
+<li>fd socket文件描述符</li>
+<li>type 客户端所有协议</li>
+<li>allowHalfOpen 是否允许半连接,服务器收到FIN包时不回发FIN包，可以使服务器可以继续向客户端发数据</li>
+</ul>
+<pre><code class="lang-javascript">socket.connect(port, host, callback);
+socket.on(<span class="hljs-string">'connect'</span>, callback);
+</code></pre>
+<h4 id="t171.2.2 向服务器端写入数据、end 、error、destroy,close">1.2.2 向服务器端写入数据、end 、error、destroy,close <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t171.2.2%20%E5%90%91%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%AB%AF%E5%86%99%E5%85%A5%E6%95%B0%E6%8D%AE%E3%80%81end%20%E3%80%81error%E3%80%81destroy,close"> # </a></h4>
+<ul>
+<li>write表示向服务器写入数据</li>
+<li>end 用于结束连接</li>
+<li>error 连接发生错误</li>
+<li>destroy 销毁流</li>
+<li>close 表示连接关闭成功，hasError=true代表有可能有错误<pre><code>socket.write(data,[encoding],[callback]);
+</code></pre></li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"客户端已经连接"</span>);
+    socket.setEncoding(<span class="hljs-string">'utf8'</span>);
+    socket.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"已接收客户端发送的数据:%s"</span>, data);
+        socket.write(<span class="hljs-string">'服务器:'</span> + data);
+    })
+    socket.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'与客户端通信过程中发生了错误，错误编码为%s'</span>, err.code);
+        socket.destroy();
+    });
+    socket.on(<span class="hljs-string">'end'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'客户端已经关闭连接'</span>);
+        socket.destroy();
+    });
+    socket.on(<span class="hljs-string">'close'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">hasError</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(hasError ? <span class="hljs-string">'异常关闭'</span> : <span class="hljs-string">'正常关闭'</span>);
+    });
+});
+server.listen(<span class="hljs-number">808</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> client = <span class="hljs-keyword">new</span> net.Socket();
+    client.setEncoding(<span class="hljs-string">'utf8'</span>);
+    client.connect(<span class="hljs-number">808</span>, <span class="hljs-string">'127.0.0.1'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'客户端已连接'</span>);
+        client.write(<span class="hljs-string">'hello'</span>);
+        setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            client.end(<span class="hljs-string">'byebye'</span>);
+        }, <span class="hljs-number">5000</span>);
+    });
+    client.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'已经接收到客户端发过来的数据:%s'</span>, data);
+    });
+    client.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'与服务器通信过程中发生了错误，错误编码为%s'</span>, err.code);
+        client.destroy();
+    });
+
+});
+</code></pre>
+<h4 id="t181.2.3 close">1.2.3 close <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t181.2.3%20close"> # </a></h4>
+<p>停止server接受建立新的connections并保持已经存在的connections</p>
+<pre><code class="lang-javascript">  server.getConnections(<span class="hljs-function">(<span class="hljs-params">err, count</span>) =&gt;</span> {
+      <span class="hljs-keyword">if</span> (count == <span class="hljs-number">2</span>) server.close();
+ });
+</code></pre>
+<h4 id="t191.2.4 unref&amp;ref">1.2.4 unref&amp;ref <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t191.2.4%20unref&amp;ref"> # </a></h4>
+<p>unref方法指定发客户端连接被全部关闭时退出应用程序
+ 如果将allowHalfOpen方法，必须使用与客户端连接的socket端口对象的end 方法主动关闭服务器端连接</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">let</span> server = net.createServer({ <span class="hljs-attr">allowHalfOpen</span>: <span class="hljs-literal">true</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"客户端已经连接"</span>);
+    socket.setEncoding(<span class="hljs-string">'utf8'</span>);
+    socket.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"已接收客户端发送的数据:%s"</span>, data);
+        socket.write(<span class="hljs-string">'服务器确认数据:'</span> + data);
+    })
+    socket.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'与客户端通信过程中发生了错误，错误编码为%s'</span>, err.code);
+        socket.destroy();
+    });
+    socket.on(<span class="hljs-string">'end'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'客户端已经关闭连接'</span>);
+        socket.end();
+        server.unref();
+    });
+    socket.on(<span class="hljs-string">'close'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">hasError</span>) </span>{
+        <span class="hljs-keyword">if</span> (hasError) {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'由于错误导致socket关闭'</span>);
+            server.unref();
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'端口正常关闭'</span>);
+        }
+    });
+    server.getConnections(<span class="hljs-function">(<span class="hljs-params">err, count</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span> (count == <span class="hljs-number">2</span>) server.close();
+    });
+});
+server.listen(<span class="hljs-number">808</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ });
+server.on(<span class="hljs-string">'close'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'服务器关闭'</span>);
+});
+</code></pre>
+<h4 id="t201.2.5 bufferSize">1.2.5 bufferSize <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t201.2.5%20bufferSize"> # </a></h4>
+<p>write的返回值和bufferSize属性值</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> server = net.createServer({ <span class="hljs-attr">allowHalfOpen</span>: <span class="hljs-literal">true</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"客户端已经连接"</span>);
+    socket.setEncoding(<span class="hljs-string">'utf8'</span>);
+    <span class="hljs-keyword">let</span> rs = fs.createReadStream(path.resolve(__dirname, <span class="hljs-string">'a.txt'</span>), { <span class="hljs-attr">highWaterMark</span>: <span class="hljs-number">2</span> });
+    rs.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-keyword">let</span> flag = socket.write(data);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"flag:"</span>, flag);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'缓存字节:'</span> + socket.bufferSize);
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'已发送字节:'</span> + socket.bytesWritten);
+    })
+    socket.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'data'</span>, data);
+    });
+    socket.on(<span class="hljs-string">'drain'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{
+        <span class="hljs-string">"缓存区已全部发送"</span>
+    });
+});
+</code></pre>
+<h4 id="t211.2.6 keepAlive">1.2.6 keepAlive <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t211.2.6%20keepAlive"> # </a></h4>
+<p>当服务器和客户端建立连接后，当一方主机突然断电、重启、系统崩溃等意外情况时，将来不及向另一方发送FIN包，这样另一方将永远处于连接状态。
+可以使用setKeepAlive方法来解决这一个问题</p>
+<pre><code>socket.setKeepAlive([enaable],[initialDelay]);
+</code></pre><ul>
+<li>enable 是否启用嗅探，为true时会不但向对方发送探测包，没有响应则认为对方已经关闭连接，自己则关闭连接</li>
+<li>initialDelay  多久发送一次探测包，单位是毫秒</li>
+</ul>
+<h2 id="t221.2.7 聊天室1.0">1.2.7 聊天室1.0 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t221.2.7%20%E8%81%8A%E5%A4%A9%E5%AE%A41.0"> # </a></h2>
+<pre><code class="lang-javascript"><span class="hljs-comment">/**
+ * 1.创建一个服务器
+ * 2. 客户端可以连接服务器
+ * 3.客户端可以发言，然后广播给大家
+ * 4.客户端连接和退出后都要通知大家。
+ * 5.显示当前的在线人数
+ */</span>
+<span class="hljs-keyword">let</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">let</span> util = <span class="hljs-built_in">require</span>(<span class="hljs-string">'util'</span>);
+<span class="hljs-keyword">let</span> clients = {};
+<span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    server.getConnections(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, count</span>) </span>{
+        socket.write(<span class="hljs-string">`weclome,there is <span class="hljs-subst">${count}</span> users now,please input your username\r\n`</span>);
+    });
+    <span class="hljs-keyword">let</span> nickname;
+    socket.setEncoding(<span class="hljs-string">'utf8'</span>);
+    socket.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        data = data.replace(<span class="hljs-regexp">/\r\n/</span>, <span class="hljs-string">''</span>);
+        <span class="hljs-keyword">if</span> (data == <span class="hljs-string">'byebye'</span>) {
+            socket.end();
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">if</span> (nickname) {
+                broadcast(nickname, <span class="hljs-string">`<span class="hljs-subst">${nickname}</span>:<span class="hljs-subst">${data}</span>`</span>);
+            } <span class="hljs-keyword">else</span> {
+                nickname = data;
+                clients[nickname] = socket;
+                broadcast(nickname, <span class="hljs-string">`welcome <span class="hljs-subst">${nickname}</span> joined us!`</span>);
+            }
+        }
+
+    });
+    socket.on(<span class="hljs-string">'close'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        socket.destroy();
+    });
+}).listen(<span class="hljs-number">8088</span>);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">broadcast</span>(<span class="hljs-params">nickname, msg</span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> key <span class="hljs-keyword">in</span> clients) {
+        <span class="hljs-keyword">if</span> (key != nickname) {
+            clients[key].write(msg + <span class="hljs-string">'\r\n'</span>);
+            clients[nickname].destroy();
+            <span class="hljs-keyword">delete</span> clients[nickname];
+        }
+    }
+}
+</code></pre>
+<h2 id="t231.2.8 聊天室2.0">1.2.8 聊天室2.0 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t231.2.8%20%E8%81%8A%E5%A4%A9%E5%AE%A42.0"> # </a></h2>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> key = scoket.remoteAddress+<span class="hljs-string">':'</span>+socket.remotePort;
+users[key] = {<span class="hljs-attr">name</span>:<span class="hljs-string">'匿名'</span>,socket};
+
+socket.on(<span class="hljs-string">'data'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    parse(data);
+});
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parse</span>(<span class="hljs-params">msg</span>)</span>{
+  swtich(msg.type){
+   <span class="hljs-keyword">case</span> <span class="hljs-string">'secret'</span>:
+     secret(msg.user,msg.text);
+     <span class="hljs-keyword">break</span>;
+  }
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'boardcast'</span>:
+     boardcast(message.text);
+     <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'cname'</span>:
+     cname(messsage.text);
+     <span class="hljs-keyword">break</span>;
+  <span class="hljs-keyword">case</span> <span class="hljs-string">'list'</span>:
+     list();
+     <span class="hljs-keyword">break</span>;   
+  <span class="hljs-keyword">default</span>:
+     socket.write(<span class="hljs-string">'不能识别命令'</span>);
+     <span class="hljs-keyword">break</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">secret</span>(<span class="hljs-params">user,text</span>)</span>{
+
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">boardcast</span>(<span class="hljs-params">text</span>)</span>{
+
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">cname</span>(<span class="hljs-params">text</span>)</span>{
+
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">list</span>(<span class="hljs-params"></span>)</span>{
+
+}
+</code></pre>
+<pre><code class="lang-javascript">b:text 广播
+c:nickname:text 私聊
+n:nickname 改名
+l 列出在线用户列表
+
+on('data',function(data){
+   if(data == 'quit){
+
+   }else if(data == 'help'){
+
+   }else(){
+     write(data);
+   }
+});
+function convert(){
+
+}
+</code></pre>
+<h3 id="t241.3 类方法">1.3 类方法 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t241.3%20%E7%B1%BB%E6%96%B9%E6%B3%95"> # </a></h3>
+<ul>
+<li>isIP 判断字符串是否是IP</li>
+<li>isIPv4 判断字符串是否是IPv4地址</li>
+<li>isIPv6 判断字符串是否是IPv6地址</li>
+</ul>
+<h2 id="t252. UDP">2. UDP <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t252.%20UDP"> # </a></h2>
+<h3 id="t262.1 创建socket">2.1 创建socket <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t262.1%20%E5%88%9B%E5%BB%BAsocket"> # </a></h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> socket = dgram.createSocket(type,[callback]);
+socket.on(<span class="hljs-string">'messsage'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">msg,rinfo</span>)</span>{});
+</code></pre>
+<ul>
+<li>type 必须输入，制定时udp4还是udp6</li>
+<li>callback 从该接口接收到数据时调用的回调函数<ul>
+<li>msg 接收到的数据</li>
+<li>rinfo 信息对象<ul>
+<li>address 发送着的地址</li>
+<li>family ipv4还是ipv6</li>
+<li>port 发送者的socket端口号</li>
+<li>size 发送者所发送的数据字节数</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-javascript">socket.bind(port,[address],[callback]);
+socket.on(<span class="hljs-string">'listening'</span>,callabck;
+</code></pre>
+<ul>
+<li>port 绑定的端口号</li>
+<li>address 监听的地址</li>
+<li>callback 监听成功后的回调函数</li>
+</ul>
+<h3 id="t272.2 向外发送数据">2.2 向外发送数据 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t272.2%20%E5%90%91%E5%A4%96%E5%8F%91%E9%80%81%E6%95%B0%E6%8D%AE"> # </a></h3>
+<p> 如果发送数据前还没有绑定过地址和端口号，操作系统将为其分配一个随机端口并可以接收任何地址的数据</p>
+<pre><code class="lang-javascript"> socket.send(buf,offset,length,port,address,[callback]);
+</code></pre>
+<ul>
+<li>buffer 代表缓存区</li>
+<li>offset 从缓存区第几个字节开始发</li>
+<li>length 要发送的字节数</li>
+<li>port 对方的端口号</li>
+<li>address 接收数据的socket地址</li>
+<li><p>callback 制定当数据发送完毕时所需要的回调函数</p>
+<ul>
+<li>err 错误对象</li>
+<li>byets 实际发送的字节数</li>
+</ul>
+<h3 id="t282.3 address">2.3 address <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t282.3%20address"> # </a></h3>
+<p>获取此socket相关的地址信息</p>
+<pre><code>let address = socket.address();
+</code></pre></li>
+<li>port</li>
+<li>address</li>
+<li>family</li>
+</ul>
+<h3 id="t292.5 UDP服务器">2.5 UDP服务器 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t292.5%20UDP%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> dgram = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dgram'</span>);
+<span class="hljs-keyword">var</span> socket = dgram.createSocket(<span class="hljs-string">'udp4'</span>);
+socket.on(<span class="hljs-string">'message'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">msg,rinfo</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(msg.toString());
+  <span class="hljs-built_in">console</span>.log(rinfo);
+   socket.send(msg,<span class="hljs-number">0</span>,msg.length,rinfo.port,rinfo.address);
+});
+socket.bind(<span class="hljs-number">41234</span>,<span class="hljs-string">'localhost'</span>);
+</code></pre>
+<h3 id="t302.6 UDP客户端">2.6 UDP客户端 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t302.6%20UDP%E5%AE%A2%E6%88%B7%E7%AB%AF"> # </a></h3>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> dgram = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dgram'</span>);
+<span class="hljs-keyword">var</span> socket = dgram.createSocket(<span class="hljs-string">'udp4'</span>);
+socket.on(<span class="hljs-string">'message'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">msg,rinfo</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(msg.toString());
+    <span class="hljs-built_in">console</span>.log(rinfo);
+});
+socket.setTTL(<span class="hljs-number">128</span>);
+socket.send(<span class="hljs-keyword">new</span> Buffer(<span class="hljs-string">'珠峰培训'</span>),<span class="hljs-number">0</span>,<span class="hljs-number">6</span>,<span class="hljs-number">41234</span>,<span class="hljs-string">'localhost'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,bytes</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'发送了个%d字节'</span>,bytes);
+});
+socket.on(<span class="hljs-string">'error'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>)</span>{
+    <span class="hljs-built_in">console</span>.error(err);
+});
+</code></pre>
+<h3 id="t312.7 广播">2.7 广播 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t312.7%20%E5%B9%BF%E6%92%AD"> # </a></h3>
+<p>创建一个UDP服务器并通过该服务器进行数据的广播</p>
+<h4 id="t322.7.1 服务器">2.7.1 服务器 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t322.7.1%20%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h4>
+<pre><code class="lang-javascript">let dgram = require('dgram');
+let server = dgram.createSocket('udp4);
+server.on('message',function(msg){
+  let buf = new Bufffer('已经接收客户端发送的数据'+msg);
+  server.setBroadcast(true);
+  server.send(buf,0,buf.length,41235,"192.168.1.255");
+});
+server.bind(41234,'192.168.1.100');
+</code></pre>
+<h4 id="t332.7.2 客户端">2.7.2 客户端 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t332.7.2%20%E5%AE%A2%E6%88%B7%E7%AB%AF"> # </a></h4>
+<pre><code class="lang-javascript">let dgram = require('dgram');
+let client = dgram.createSocket('udp4);
+client.bind(41235,'192.168.1.102);
+let buf = new Buffer('hello');
+client.send(buf,0,buf.length,41234,'192.168.1.100');
+client.on('message',function(msg,rinfo){
+  console.log('received : ',msg);
+});
+</code></pre>
+<h3 id="t342.8 组播">2.8 组播 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t342.8%20%E7%BB%84%E6%92%AD"> # </a></h3>
+<ul>
+<li>所谓的组播，就是将网络中同一业务类型进行逻辑上的分组，从某个socket端口上发送的数据只能被该组中的其他主机所接收，不被组外的任何主机接收。</li>
+<li>实现组播时，并不直接把数据发送给目标地址，而是将数据发送到组播主机，操作系统将把该数据组播给组内的其他所有成员。</li>
+<li>在网络中，使用D类地址作为组播地址。范围是指 224.0.0.0 ~ 239.255.255.255,分为三类<ul>
+<li>局部组播地址: 224.0.0.0 ~ 224.0.0.255 为路由协议和其他用途保留</li>
+<li>预留组播地址: 224.0.1.0 ~ 238.255.255.255 可用于全球范围或网络协议</li>
+<li>管理权限组播地址 ： 239.0.0.0 ～ 239.255.255.255 组织内部使用，不可用于Internet</li>
+</ul>
+</li>
+</ul>
+<p>把该socket端口对象添加到组播组中。</p>
+<pre><code class="lang-javascript">socket.addMembership(multicastAddress,[multicastInterface]);
+</code></pre>
+<ul>
+<li>multicastAddress 必须指定，需要加入的组播组地址</li>
+<li>multicastInterface 可选参数，需要加入的组播组地址</li>
+</ul>
+<pre><code class="lang-javascript">socket.dropMembership(multicastAddress,[multicastInterface]);
+socket.setMulticastTTL(ttl);
+socket.setMulticastLoopback(flag);
+</code></pre>
+<h4 id="t352.8.1 服务器">2.8.1 服务器 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t352.8.1%20%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> dgram = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dgram'</span>);
+<span class="hljs-keyword">let</span> server = dgram.createSocket(<span class="hljs-string">'udp4'</span>);
+server.on(<span class="hljs-string">'listening'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+  server.MulticastTTL(<span class="hljs-number">128</span>);
+  server.setMulticastLoopback(<span class="hljs-literal">true</span>);
+  server.addMembership(<span class="hljs-string">'230.185.192.108'</span>);
+});
+setInterval(broadcast,<span class="hljs-number">1000</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">broadcast</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">let</span> buffer = Buffer.from(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toLocaleString());
+  server.send(buffer,<span class="hljs-number">0</span>,buffer.length,<span class="hljs-number">8080</span>,<span class="hljs-string">"230.185.192.108"</span>);
+}
+</code></pre>
+<h4 id="t362.8.2 客户端">2.8.2 客户端 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t362.8.2%20%E5%AE%A2%E6%88%B7%E7%AB%AF"> # </a></h4>
+<pre><code class="lang-javascript"><span class="hljs-keyword">let</span> dgram = <span class="hljs-built_in">require</span>(<span class="hljs-string">'dgram'</span>);
+<span class="hljs-keyword">let</span> client = dgram.createSocket(<span class="hljs-string">'udp4'</span>);
+client.on(<span class="hljs-string">'listening'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>)</span>{
+    client.addMembership(<span class="hljs-string">'230.185.192.108'</span>);
+});
+client.on(<span class="hljs-string">'message'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">message,remote</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(message.toString());
+});
+client.bind(<span class="hljs-number">8080</span>,<span class="hljs-string">'192.168.1.103'</span>);
+</code></pre>
+<h2 id="t37附录">附录 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t37%E9%99%84%E5%BD%95"> # </a></h2>
+<h3 id="t38软件">软件 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t38%E8%BD%AF%E4%BB%B6"> # </a></h3>
+<ul>
+<li>putty <a href="https://www.putty.org/">https://www.putty.org/</a> </li>
+<li>window用户装 科来网络分析系统 <a href="http://www.colasoft.com.cn/">http://www.colasoft.com.cn/</a></li>
+<li>mac用户装 wireshark <a href="https://www.wireshark.org/download.html">https://www.wireshark.org/download.html</a></li>
+</ul>
+<h3 id="t39telnet">telnet <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t39telnet"> # </a></h3>
+<pre><code>FF FB 1F FF FB 20 FF FB 18 FF FB 27 FF FD 01 FF FB 03 FF FD 03
+FF FB 1F window size
+FF FB 20 terminal speed
+FF FB 18 terminal type
+FF FB 27 Telnet Environment Option
+FF FD 01 echo
+FF FB 03 suppress go ahead
+FF FD 03 suppress go ahead
+如果不需要這些, 改用RAW模式就可以了
+</code></pre><h2 id="t40打开telnet功能">打开telnet功能 <a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html#t40%E6%89%93%E5%BC%80telnet%E5%8A%9F%E8%83%BD"> # </a></h2>
+<p><a href="https://jingyan.baidu.com/article/6181c3e0b7cc4a152ef153b4.html">打开telnet功能</a></p>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>
