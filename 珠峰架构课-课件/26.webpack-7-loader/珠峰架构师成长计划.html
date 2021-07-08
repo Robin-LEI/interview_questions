@@ -1,0 +1,1060 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t01.loader%E8%BF%90%E8%A1%8C%E7%9A%84%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B">1.loader运行的总体流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t12.%20loader%E9%85%8D%E7%BD%AE">2. loader配置</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t22.1%20%E5%8C%B9%E9%85%8D(test)%E5%8D%95%E4%B8%AA%20loader">2.1 匹配(test)单个 loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t32.2%20%E5%8C%B9%E9%85%8D(test)%E5%A4%9A%E4%B8%AA%20loaders">2.2 匹配(test)多个 loaders</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t42.3%20npm%20link">2.3 npm link</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t52.4%20alias">2.4 alias</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t63.%20loader%E7%94%A8%E6%B3%95">3. loader用法</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t73.1%20%E5%8D%95%E4%B8%AAloader%E7%94%A8%E6%B3%95">3.1 单个loader用法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t83.2%20%E5%A4%9A%E4%B8%AAloader">3.2 多个loader</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t94%20%E7%94%A8%E6%B3%95%E5%87%86%E5%88%99">4 用法准则</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t104.1%20%E7%AE%80%E5%8D%95">4.1 简单</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t114.2%20%E9%93%BE%E5%BC%8F(Chaining)">4.2 链式(Chaining)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t124.3%20%E6%A8%A1%E5%9D%97%E5%8C%96(Modular)">4.3 模块化(Modular)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t134.4%20%E6%97%A0%E7%8A%B6%E6%80%81(Stateless)">4.4 无状态(Stateless)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t144.5%20loader%E5%B7%A5%E5%85%B7%E5%BA%93">4.5 loader工具库</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t154.6%20loader%E4%BE%9D%E8%B5%96">4.6 loader依赖</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t164.7%20%E6%A8%A1%E5%9D%97%E4%BE%9D%E8%B5%96">4.7 模块依赖</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t174.8%20%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84">4.8 绝对路径</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t184.9%20%E5%90%8C%E7%AD%89%E4%BE%9D%E8%B5%96">4.9 同等依赖</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t195.%20API">5. API</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t205.1%20%20%E7%BC%93%E5%AD%98%E7%BB%93%E6%9E%9C">5.1  缓存结果</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t215.2%20%E5%BC%82%E6%AD%A5">5.2 异步</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t225.3%20%20%E8%BF%94%E5%9B%9E%E5%85%B6%E5%AE%83%E7%BB%93%E6%9E%9C">5.3  返回其它结果</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t235.4%20raw%20loader">5.4 raw loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t245.5%20%E8%8E%B7%E5%BE%97options">5.5 获得options</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t255.6%20%E5%85%B6%E5%AE%83%20Loader%20API">5.6 其它 Loader API</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t266.loader%E5%AE%9E%E6%88%98">6.loader实战</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t276.1%20%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87">6.1 项目准备</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t286.1.1%20webpack.config.js">6.1.1 webpack.config.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t296.1.2%20src\index.js">6.1.2 src\index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t306.1.3%20src\index.html">6.1.3 src\index.html</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t316.2%20babel-loader">6.2 babel-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t326.3%20banner-loader">6.3 banner-loader</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t336.3.1%20banner-loader.js">6.3.1 banner-loader.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t346.3.2%20banner.js">6.3.2 banner.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t356.3.3%20webpack.config.js">6.3.3 webpack.config.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t366.4%20file">6.4 file</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t376.4.1%20file-loader">6.4.1 file-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t386.4.2%20url-loader">6.4.2 url-loader</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t396.5%20pitch">6.5 pitch</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t406.5.1%20loaders\loader1.js">6.5.1 loaders\loader1.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t416.5.2%20loaders\loader2.js">6.5.2 loaders\loader2.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t426.5.3%20loaders\loader3.js">6.5.3 loaders\loader3.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t436.5.4%20webpack.config.js">6.5.4 webpack.config.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t446.6%20run-loader">6.6 run-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t456.7%20%E6%A0%B7%E5%BC%8F%E5%A4%84%E7%90%86">6.7 样式处理</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t466.7.1%20loader%E7%B1%BB%E5%9E%8B">6.7.1 loader类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t476.7.2%20%E4%BD%BF%E7%94%A8less-loader">6.7.2 使用less-loader</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t486.7.2.1%20index.js">6.7.2.1 index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t496.7.2.2%20src\index.less">6.7.2.2 src\index.less</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t506.7.2.3%20src\index.html">6.7.2.3 src\index.html</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t516.7.2.4%20webpack.config.js">6.7.2.4 webpack.config.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t526.7.3%20less-loader.js">6.7.3 less-loader.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t536.7.4%20style-loader">6.7.4 style-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t546.7.5%20%E4%B8%A4%E4%B8%AA%E5%B7%A6%E4%BE%A7%E6%A8%A1%E5%9D%97%E8%BF%9E%E7%94%A8">6.7.5 两个左侧模块连用</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t556.7.5.1%20less-loader.js">6.7.5.1 less-loader.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t566.7.5.2%20style-loader.js">6.7.5.2 style-loader.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t576.7.6%20css-loader.js">6.7.6 css-loader.js</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t586.7.6.1%20src\index.js">6.7.6.1 src\index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t596.7.6.2%20src\style.css">6.7.6.2 src\style.css</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t606.7.6.3%20src\global.css">6.7.6.3 src\global.css</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t616.7.6.4%20webpack.config.js">6.7.6.4 webpack.config.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t626.7.6.5%20css-loader.js">6.7.6.5 css-loader.js</a></li></ul></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t63%E5%8F%82%E8%80%83">参考</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t641.%20PostCSS">1. PostCSS</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t652.%20%E6%96%87%E6%A1%A3">2. 文档</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t663.%20%E7%B1%BB%E5%9E%8B">3. 类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t674.AST%E8%8A%82%E7%82%B9">4.AST节点</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t685.%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95">5.操作方法</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t695.1%20%E9%81%8D%E5%8E%86">5.1 遍历</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t705.2%20%E5%A4%84%E7%90%86">5.2 处理</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t715.3%20postcss%20plugin">5.3 postcss plugin</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t725.4%20%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8postcss%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%B8%8B%E7%9A%84%E6%96%B9%E6%B3%95">5.4 直接调用postcss命名空间下的方法</a></li></ul></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01.loader运行的总体流程">1.loader运行的总体流程 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t01.loader%E8%BF%90%E8%A1%8C%E7%9A%84%E6%80%BB%E4%BD%93%E6%B5%81%E7%A8%8B"> # </a></h2>
+<ol>
+<li>Compiler.js中会将用户配置与默认配置合并，其中就包括了loader部分</li>
+<li>webpack就会根据配置创建两个关键的对象——<code>NormalModuleFactory</code>和<code>ContextModuleFactory</code>。它们相当于是两个类工厂，通过其可以创建相应的<code>NormalModule</code>和<code>ContextModule</code></li>
+<li>在工厂创建NormalModule实例之前还要通过loader的resolver来解析loader路径</li>
+<li>在NormalModule实例创建之后，则会通过其.build()方法来进行模块的构建。构建模块的第一步就是使用loader来加载并处理模块内容。而loader-runner这个库就是webpack中loader的运行器</li>
+<li>最后，将loader处理完的模块内容输出，进入后续的编译流程</li>
+</ol>
+<p><img src="./珠峰架构师成长计划_files/loader.jpg" alt="loader"></p>
+<h2 id="t12. loader配置">2. loader配置 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t12.%20loader%E9%85%8D%E7%BD%AE"> # </a></h2>
+<p><code>loader</code>是导出为一个函数的<code>node</code>模块。该函数在<code>loader</code>转换资源的时候调用。给定的函数将调用<code>loader API</code>，并通过<code>this</code>上下文访问。</p>
+<h3 id="t22.1 匹配(test)单个 loader">2.1 匹配(test)单个 loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t22.1%20%E5%8C%B9%E9%85%8D(test)%E5%8D%95%E4%B8%AA%20loader"> # </a></h3>
+<p>匹配(test)单个 loader，你可以简单通过在 rule 对象设置 path.resolve 指向这个本地文件</p>
+<pre><code class="lang-js">{
+  <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>
+  use: [
+    {
+      <span class="hljs-attr">loader</span>: path.resolve(<span class="hljs-string">'path/to/loader.js'</span>),
+      <span class="hljs-attr">options</span>: {<span class="hljs-comment">/* ... */</span>}
+    }
+  ]
+}
+</code></pre>
+<h3 id="t32.2 匹配(test)多个 loaders">2.2 匹配(test)多个 loaders <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t32.2%20%E5%8C%B9%E9%85%8D(test)%E5%A4%9A%E4%B8%AA%20loaders"> # </a></h3>
+<p>，你可以使用 resolveLoader.modules 配置，webpack 将会从这些目录中搜索这些 loaders。</p>
+<pre><code class="lang-js">resolveLoader: {
+   <span class="hljs-attr">modules</span>: [path.resolve(<span class="hljs-string">'node_modules'</span>), path.resolve(__dirname, <span class="hljs-string">'src'</span>, <span class="hljs-string">'loaders'</span>)]
+},
+</code></pre>
+<h3 id="t42.3 npm link">2.3 npm link <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t42.3%20npm%20link"> # </a></h3>
+<ul>
+<li>第1步: 确保正在开发的本地 Npm 模块（也就是正在开发的 Loader）的 package.json 已经正确配置好</li>
+<li>第2步: 在本地<code>npm</code>模块根目录下执行<code>npm link</code>,把本地模块注册到全局</li>
+<li>第3步: 在项目根目录下执行 <code>npm link loader-name</code>,把第2步注册到全局的本地 <code>npm</code> 模块链接到项目的 <code>node_modules</code>目录 下，其中的<code>loader-name</code>是指在第1步中的 <code>package.json</code> 文件中配置的模块名称</li>
+</ul>
+<pre><code class="lang-js">npm link
+</code></pre>
+<h3 id="t52.4 alias">2.4 alias <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t52.4%20alias"> # </a></h3>
+<pre><code class="lang-js">resolveLoader: {
+        <span class="hljs-attr">alias</span>: {
+            <span class="hljs-string">"babel-loader"</span>: resolve(<span class="hljs-string">'./loaders/babel-loader.js'</span>),
+            <span class="hljs-string">"css-loader"</span>: resolve(<span class="hljs-string">'./loaders/css-loader.js'</span>),
+            <span class="hljs-string">"style-loader"</span>: resolve(<span class="hljs-string">'./loaders/style-loader.js'</span>),
+            <span class="hljs-string">"file-loader"</span>: resolve(<span class="hljs-string">'./loaders/file-loader.js'</span>),
+            <span class="hljs-string">"url-loader"</span>: resolve(<span class="hljs-string">'./loaders/url-loader.js'</span>)
+        }
+    },
+</code></pre>
+<h2 id="t63. loader用法">3. loader用法 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t63.%20loader%E7%94%A8%E6%B3%95"> # </a></h2>
+<h3 id="t73.1 单个loader用法">3.1 单个loader用法 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t73.1%20%E5%8D%95%E4%B8%AAloader%E7%94%A8%E6%B3%95"> # </a></h3>
+<ul>
+<li>loader只能传入一个包含包含资源文件内容的字符串</li>
+<li>同步 loader 可以简单的返回一个代表模块转化后的值</li>
+<li>loader 也可以通过使用 <code>this.callback(err, values...)</code> 函数，返回任意数量的值</li>
+<li>loader 会返回一个或者两个值。第一个值的类型是 <code>JavaScript 代码的字符串或者 buffer</code>。第二个参数值是 <code>SourceMap</code>,它是个 JavaScript 对象</li>
+</ul>
+<h3 id="t83.2 多个loader">3.2 多个loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t83.2%20%E5%A4%9A%E4%B8%AAloader"> # </a></h3>
+<ul>
+<li>当链式调用多个 <code>loader</code> 的时候，请记住它们会以相反的顺序执行。取决于数组写法格式，从右向左或者从下向上执行。</li>
+<li>最后的 loader 最早调用，将会传入原始资源内容。</li>
+<li>第一个 loader 最后调用，期望值是传出 JavaScript 和 source map(可选)</li>
+<li>中间的 loader 执行时，会传入前一个 loader 传出的结果。</li>
+</ul>
+<h2 id="t94 用法准则">4 用法准则 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t94%20%E7%94%A8%E6%B3%95%E5%87%86%E5%88%99"> # </a></h2>
+<h3 id="t104.1 简单">4.1 简单 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t104.1%20%E7%AE%80%E5%8D%95"> # </a></h3>
+<ul>
+<li>loaders 应该只做单一任务。这不仅使每个 loader 易维护，也可以在更多场景链式调用。</li>
+</ul>
+<h3 id="t114.2 链式(Chaining)">4.2 链式(Chaining) <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t114.2%20%E9%93%BE%E5%BC%8F(Chaining)"> # </a></h3>
+<ul>
+<li>利用 loader 可以链式调用的优势。写五个简单的 loader 实现五项任务，而不是一个 loader 实现五项任务</li>
+</ul>
+<h3 id="t124.3 模块化(Modular)">4.3 模块化(Modular) <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t124.3%20%E6%A8%A1%E5%9D%97%E5%8C%96(Modular)"> # </a></h3>
+<p>保证输出模块化。loader 生成的模块与普通模块遵循相同的设计原则。</p>
+<h3 id="t134.4 无状态(Stateless)">4.4 无状态(Stateless) <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t134.4%20%E6%97%A0%E7%8A%B6%E6%80%81(Stateless)"> # </a></h3>
+<p>确保 loader 在不同模块转换之间不保存状态。每次运行都应该独立于其他编译模块以及相同模块之前的编译结果。</p>
+<h3 id="t144.5 loader工具库">4.5 loader工具库 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t144.5%20loader%E5%B7%A5%E5%85%B7%E5%BA%93"> # </a></h3>
+<ul>
+<li><p><a href="https://github.com/webpack/loader-utils">loader-utils</a> 包。它提供了许多有用的工具，但最常用的一种工具是获取传递给 loader 的选项</p>
+</li>
+<li><p><a href="https://github.com/webpack-contrib/schema-utils">schema-utils</a> 包配合 loader-utils，用于保证 loader 选项，进行与 JSON Schema 结构一致的校验</p>
+</li>
+</ul>
+<h3 id="t154.6 loader依赖">4.6 loader依赖 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t154.6%20loader%E4%BE%9D%E8%B5%96"> # </a></h3>
+<p>如果一个 loader 使用外部资源（例如，从文件系统读取），必须声明它。这些信息用于使缓存 loaders 无效，以及在观察模式(watch mode)下重编译。</p>
+<h3 id="t164.7 模块依赖">4.7 模块依赖 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t164.7%20%E6%A8%A1%E5%9D%97%E4%BE%9D%E8%B5%96"> # </a></h3>
+<p>根据模块类型，可能会有不同的模式指定依赖关系。例如在 CSS 中，使用 @import 和 url(...) 语句来声明依赖。这些依赖关系应该由模块系统解析。</p>
+<h3 id="t174.8 绝对路径">4.8 绝对路径 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t174.8%20%E7%BB%9D%E5%AF%B9%E8%B7%AF%E5%BE%84"> # </a></h3>
+<ul>
+<li>不要在模块代码中插入绝对路径，因为当项目根路径变化时，文件绝对路径也会变化。</li>
+<li><code>loader-utils</code> 中的 <code>stringifyRequest</code> 方法，可以将绝对路径转化为相对路径。</li>
+</ul>
+<h3 id="t184.9 同等依赖">4.9 同等依赖 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t184.9%20%E5%90%8C%E7%AD%89%E4%BE%9D%E8%B5%96"> # </a></h3>
+<ul>
+<li>如果你的 loader 简单包裹另外一个包，你应该把这个包作为一个 <code>peerDependency</code> 引入。</li>
+<li>这种方式允许应用程序开发者在必要情况下，在<code>package.json</code> 中指定所需的确定版本。</li>
+</ul>
+<h2 id="t195. API">5. API <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t195.%20API"> # </a></h2>
+<h3 id="t205.1  缓存结果">5.1  缓存结果 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t205.1%20%20%E7%BC%93%E5%AD%98%E7%BB%93%E6%9E%9C"> # </a></h3>
+<ul>
+<li>在有些情况下，有些转换操作需要大量计算非常耗时，如果每次构建都重新执行重复的转换操作，构建将会变得非常缓慢。
+为此，Webpack 会默认缓存所有 Loader 的处理结果，也就是说在需要被处理的文件或者其依赖的文件没有发生变化时，
+是不会重新调用对应的 Loader 去执行转换操作的。</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source</span>) </span>{
+  <span class="hljs-comment">// 关闭该 Loader 的缓存功能</span>
+  <span class="hljs-keyword">this</span>.cacheable(<span class="hljs-literal">false</span>);
+  <span class="hljs-keyword">return</span> source;
+};
+</code></pre>
+<h3 id="t215.2 异步">5.2 异步 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t215.2%20%E5%BC%82%E6%AD%A5"> # </a></h3>
+<ul>
+<li>Loader 有同步和异步之分,上面介绍的 Loader 都是同步的 Loader，因为它们的转换流程都是同步的，转换完成后再返回结果。</li>
+<li>但在有些场景下转换的步骤只能是异步完成的，例如你需要通过网络请求才能得出结果，如果采用同步的方式网络请求就会阻塞整个构建，导致构建非常缓慢</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source</span>) </span>{
+    <span class="hljs-comment">// 告诉 Webpack 本次转换是异步的，Loader 会在 callback 中回调结果</span>
+    <span class="hljs-keyword">var</span> callback = <span class="hljs-keyword">this</span>.async();
+    someAsyncOperation(source, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err, result, sourceMaps, ast</span>) </span>{
+        <span class="hljs-comment">// 通过 callback 返回异步执行后的结果</span>
+        callback(err, result, sourceMaps, ast);
+    });
+};
+</code></pre>
+<h3 id="t225.3  返回其它结果">5.3  返回其它结果 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t225.3%20%20%E8%BF%94%E5%9B%9E%E5%85%B6%E5%AE%83%E7%BB%93%E6%9E%9C"> # </a></h3>
+<p>Loader有些场景下还需要返回除了内容之外的东西。</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source</span>) </span>{
+  <span class="hljs-comment">// 通过 this.callback 告诉 Webpack 返回的结果</span>
+  <span class="hljs-keyword">this</span>.callback(<span class="hljs-literal">null</span>, source, sourceMaps);
+  <span class="hljs-comment">// 当你使用 this.callback 返回内容时，该 Loader 必须返回 undefined，</span>
+  <span class="hljs-comment">// 以让 Webpack 知道该 Loader 返回的结果在 this.callback 中，而不是 return 中 </span>
+  <span class="hljs-keyword">return</span>;
+};
+</code></pre>
+<p>完整格式</p>
+<pre><code class="lang-js"><span class="hljs-keyword">this</span>.callback(
+    <span class="hljs-comment">// 当无法转换原内容时，给 Webpack 返回一个 Error</span>
+    err: <span class="hljs-built_in">Error</span> | <span class="hljs-literal">null</span>,
+    <span class="hljs-comment">// 原内容转换后的内容</span>
+    <span class="hljs-attr">content</span>: string | Buffer,
+    <span class="hljs-comment">// 用于把转换后的内容得出原内容的 Source Map，方便调试</span>
+    sourceMap?: SourceMap,
+    <span class="hljs-comment">// 如果本次转换为原内容生成了 AST 语法树，可以把这个 AST 返回，</span>
+    <span class="hljs-comment">// 以方便之后需要 AST 的 Loader 复用该 AST，以避免重复生成 AST，提升性能</span>
+    abstractSyntaxTree?: AST
+);
+</code></pre>
+<h3 id="t235.4 raw loader">5.4 raw loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t235.4%20raw%20loader"> # </a></h3>
+<ul>
+<li>在默认的情况下，Webpack 传给 Loader 的原内容都是<code>UTF-8</code>格式编码的字符串。</li>
+<li>但有些场景下 Loader 不是处理文本文件，而是处理二进制文件，例如 <code>file-loader</code>,就需要 Webpack 给 Loader 传入二进制格式的数据。
+为此，你需要这样编写 Loader<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source</span>) </span>{
+  <span class="hljs-comment">// 在 exports.raw === true 时，Webpack 传给 Loader 的 source 是 Buffer 类型的</span>
+  source <span class="hljs-keyword">instanceof</span> Buffer === <span class="hljs-literal">true</span>;
+  <span class="hljs-comment">// Loader 返回的类型也可以是 Buffer 类型的</span>
+  <span class="hljs-comment">// 在 exports.raw !== true 时，Loader 也可以返回 Buffer 类型的结果</span>
+  <span class="hljs-keyword">return</span> source;
+};
+<span class="hljs-comment">// 通过 exports.raw 属性告诉 Webpack 该 Loader 是否需要二进制数据 </span>
+<span class="hljs-built_in">module</span>.exports.raw = <span class="hljs-literal">true</span>;
+</code></pre>
+</li>
+</ul>
+<h3 id="t245.5 获得options">5.5 获得options <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t245.5%20%E8%8E%B7%E5%BE%97options"> # </a></h3>
+<ul>
+<li>可以获得给<code>Loader</code>配置的<code>options</code></li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> loaderUtils = <span class="hljs-built_in">require</span>(<span class="hljs-string">'loader-utils'</span>);
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">source</span>) </span>{
+  <span class="hljs-comment">// 获取到用户给当前 Loader 传入的 options</span>
+  <span class="hljs-keyword">const</span> options = loaderUtils.getOptions(<span class="hljs-keyword">this</span>);
+  <span class="hljs-keyword">return</span> source;
+};
+</code></pre>
+<h3 id="t255.6 其它 Loader API">5.6 其它 Loader API <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t255.6%20%E5%85%B6%E5%AE%83%20Loader%20API"> # </a></h3>
+<ul>
+<li><a href="https://webpack.js.org/api/loaders/">完整API</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">方法名</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>this.context</code></td>
+<td style="text-align:left">当前处理文件的所在目录，假如当前 Loader 处理的文件是 /src/main.js，则 this.context 就等于 /src</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>this.resource</code></td>
+<td style="text-align:left">当前处理文件的完整请求路径，包括 querystring，例如 /src/main.js?name=1。</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>this.resourcePath</code></td>
+<td style="text-align:left">当前处理文件的路径，例如 /src/main.js</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>this.resourceQuery</code></td>
+<td style="text-align:left">当前处理文件的 querystring</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>this.target</code></td>
+<td style="text-align:left">等于 Webpack 配置中的 Target</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>this.loadModule</code></td>
+<td style="text-align:left">但 Loader 在处理一个文件时，如果依赖其它文件的处理结果才能得出当前文件的结果时,就可以通过 this.loadModule(request: string, callback: function(err, source, sourceMap, module)) 去获得 request 对应文件的处理结果</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>this.resolve</code></td>
+<td style="text-align:left">像 require 语句一样获得指定文件的完整路径，使用方法为 resolve(context: string, request: string, callback: function(err, result: string))</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>this.addDependency</code></td>
+<td style="text-align:left">给当前处理文件添加其依赖的文件，以便再其依赖的文件发生变化时，会重新调用 Loader 处理该文件。使用方法为 addDependency(file: string)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>this.addContextDependency</code></td>
+<td style="text-align:left">和 addDependency 类似，但 addContextDependency 是把整个目录加入到当前正在处理文件的依赖中。使用方法为 addContextDependency(directory: string)</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>this.clearDependencies</code></td>
+<td style="text-align:left">清除当前正在处理文件的所有依赖，使用方法为 clearDependencies()</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>this.emitFile</code></td>
+<td style="text-align:left">输出一个文件，使用方法为 emitFile(name: string, content: Buffer/string, sourceMap: {...})</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>loader-utils.stringifyRequest</code></td>
+<td style="text-align:left">Turns a request into a string that can be used inside require() or import while avoiding absolute paths. Use it instead of JSON.stringify(...) if you're generating code inside a loader  把一个请求字符串转成一个字符串，以便能在require或者import中使用以避免绝对路径。如果你在一个loader中生成代码的话请使用这个而不要用JSON.stringify()</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>loader-utils.interpolateName</code></td>
+<td style="text-align:left">Interpolates a filename template using multiple placeholders and/or a regular expression. The template and regular expression are set as query params called name and regExp on the current loader's context. 使用多个占位符或一个正则表达式转换一个文件名的模块。这个模板和正则表达式被设置为查询参数，在当前loader的上下文中被称为name或者regExp</td>
+</tr>
+</tbody>
+</table>
+<h2 id="t266.loader实战">6.loader实战 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t266.loader%E5%AE%9E%E6%88%98"> # </a></h2>
+<h3 id="t276.1 项目准备">6.1 项目准备 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t276.1%20%E9%A1%B9%E7%9B%AE%E5%87%86%E5%A4%87"> # </a></h3>
+<pre><code class="lang-js">cnpm i webpack webpack-cli webpack-dev-server html-webpack-plugin @babel/core @babel/preset-env  babel-loader css-loader file-loader less less-loader style-loader url-loader -D
+</code></pre>
+<h4 id="t286.1.1 webpack.config.js">6.1.1 webpack.config.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t286.1.1%20webpack.config.js"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">const</span> HtmlWebpackPlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'html-webpack-plugin'</span>);
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">mode</span>: <span class="hljs-string">'development'</span>,
+  <span class="hljs-attr">context</span>: process.cwd(),
+  <span class="hljs-attr">devtool</span>: <span class="hljs-string">'source-map'</span>,
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">"./src/index.js"</span>,
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">path</span>: path.resolve(__dirname, <span class="hljs-string">"dist"</span>),
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">"bundle.js"</span>
+  },
+  <span class="hljs-attr">resolveLoader</span>: {
+    <span class="hljs-attr">modules</span>: [path.resolve(<span class="hljs-string">'./loaders'</span>), <span class="hljs-string">'node_modules'</span>]
+  },
+  <span class="hljs-attr">devServer</span>: {
+    <span class="hljs-attr">contentBase</span>: path.resolve(__dirname, <span class="hljs-string">'dist'</span>)
+  },
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.jsx?$/</span>,
+        <span class="hljs-attr">use</span>: {
+          <span class="hljs-attr">loader</span>: <span class="hljs-string">"babel-loader"</span>
+        },
+        <span class="hljs-attr">include</span>: path.join(__dirname, <span class="hljs-string">"src"</span>),
+        <span class="hljs-attr">exclude</span>: <span class="hljs-regexp">/node_modules/</span>
+      }
+    ]
+  },
+  <span class="hljs-attr">plugins</span>: [
+    <span class="hljs-keyword">new</span> HtmlWebpackPlugin({
+      <span class="hljs-attr">template</span>: <span class="hljs-string">'./src/index.html'</span>
+    })
+  ]
+};
+</code></pre>
+<h4 id="t296.1.2 src\index.js">6.1.2 src\index.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t296.1.2%20src\index.js"> # </a></h4>
+<p>src\index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a, b</span>) =&gt;</span> {
+    <span class="hljs-keyword">return</span> a + b;
+}
+<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>));
+</code></pre>
+<h4 id="t306.1.3 src\index.html">6.1.3 src\index.html <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t306.1.3%20src\index.html"> # </a></h4>
+<p>src\index.html</p>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"root"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h3 id="t316.2 babel-loader">6.2 babel-loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t316.2%20babel-loader"> # </a></h3>
+<ul>
+<li><a href="https://github.com/babel/babel-loader/blob/master/src/index.js">babel-loader</a></li>
+<li><a href="https://babeljs.io/docs/en/next/babel-core.html">@babel/core</a></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">属性</th>
+<th style="text-align:left">值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">this.request</td>
+<td style="text-align:left">/loaders/babel-loader.js!/src/index.js'</td>
+</tr>
+<tr>
+<td style="text-align:left">this.userRequest</td>
+<td style="text-align:left">/src/index.js</td>
+</tr>
+<tr>
+<td style="text-align:left">this.rawRequest</td>
+<td style="text-align:left">./src/index.js</td>
+</tr>
+<tr>
+<td style="text-align:left">this.resourcePath</td>
+<td style="text-align:left">/src/index.js</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> babel = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@babel/core"</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">source</span>) </span>{
+    <span class="hljs-comment">//C:\vipdata\prepare6\zhufeng_loader\loaders\babel-loader.js!C:\vipdata\prepare6\zhufeng_loader\src\index.js</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'this.request'</span>, <span class="hljs-keyword">this</span>.request);
+    <span class="hljs-keyword">const</span> options = {
+        <span class="hljs-attr">presets</span>: [<span class="hljs-string">'@babel/preset-env'</span>],
+        <span class="hljs-comment">//sourceMaps: true 如果没有此参数，则不会生成sourcemap文件</span>
+        <span class="hljs-comment">//注意此处的sourceMap是从转译前的代码到转译后的代码的map映射,如果此处不生成无法调试真正的源码了</span>
+        <span class="hljs-attr">sourceMaps</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-comment">//如果没有此参数则生成的map文件里文件中unknown</span>
+        <span class="hljs-attr">filename</span>: <span class="hljs-keyword">this</span>.request.split(<span class="hljs-string">'!'</span>)[<span class="hljs-number">1</span>].split(<span class="hljs-string">'/'</span>).pop()
+    }
+    <span class="hljs-comment">//在webpack.config.js中 增加devtool: 'source-map',这个source-map是从转译后的源码到bundle.js之间的map映射</span>
+    <span class="hljs-keyword">let</span> { code, map, ast } = babel.transform(source, options);
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.callback(<span class="hljs-literal">null</span>, code, map, ast);
+}
+
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<blockquote>
+<p>本案例是是学习如何编写loader以及如何通过<code>this.callback</code>返回多个值</p>
+</blockquote>
+<h3 id="t326.3 banner-loader">6.3 banner-loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t326.3%20banner-loader"> # </a></h3>
+<ul>
+<li>本案例学习如何获取参数，验证参数，实现异步loader以及使用缓存</li>
+</ul>
+<h4 id="t336.3.1 banner-loader.js">6.3.1 banner-loader.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t336.3.1%20banner-loader.js"> # </a></h4>
+<p>loaders\banner-loader.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> loaderUtils = <span class="hljs-built_in">require</span>(<span class="hljs-string">'loader-utils'</span>);
+<span class="hljs-keyword">const</span> validateOptions = <span class="hljs-built_in">require</span>(<span class="hljs-string">'schema-utils'</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">source</span>) </span>{
+    <span class="hljs-comment">//把loader改为异步,任务完成后需要手工执行callback</span>
+    <span class="hljs-keyword">let</span> cb = <span class="hljs-keyword">this</span>.async();
+    <span class="hljs-comment">//启用loader缓存</span>
+    <span class="hljs-keyword">this</span>.cacheable &amp;&amp; <span class="hljs-keyword">this</span>.cacheable();
+    <span class="hljs-comment">//用来验证options的合法性</span>
+    <span class="hljs-keyword">let</span> schema = { 
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'object'</span>,
+        <span class="hljs-attr">properties</span>: {
+            <span class="hljs-attr">filename</span>: {
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
+            },
+            <span class="hljs-attr">text</span>: {
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'string'</span>
+            }
+        }
+    }
+    <span class="hljs-comment">//通过工具方法获取options</span>
+    <span class="hljs-keyword">let</span> options = loaderUtils.getOptions(<span class="hljs-keyword">this</span>);
+    <span class="hljs-comment">//用来验证options的合法性</span>
+    validateOptions(schema, options);
+    <span class="hljs-keyword">let</span> {filename } = options;
+    fs.readFile(filename, <span class="hljs-string">'utf8'</span>, (err, text) =&gt; {
+        cb(err, text + source);
+    });
+}
+
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<h4 id="t346.3.2 banner.js">6.3.2 banner.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t346.3.2%20banner.js"> # </a></h4>
+<p>loaders\banner.js</p>
+<pre><code class="lang-js"><span class="hljs-comment">/**copyright: zhufengjiagu*/</span>
+</code></pre>
+<h4 id="t356.3.3 webpack.config.js">6.3.3 webpack.config.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t356.3.3%20webpack.config.js"> # </a></h4>
+<p>webpack.config.js</p>
+<pre><code class="lang-diff">  module: {
+    rules: [
+      {
+        test: /\.jsx?$/,
+<span class="hljs-addition">+        use: [{</span>
+<span class="hljs-addition">+          loader: 'banner-loader',</span>
+<span class="hljs-addition">+          options: { filename: path.resolve(__dirname, 'loaders/banner.js') }</span>
+<span class="hljs-addition">+        }, {</span>
+          loader: "babel-loader"
+        }],
+        include: path.join(__dirname, "src"),
+        exclude: /node_modules/
+      }
+    ]
+  },
+</code></pre>
+<h3 id="t366.4 file">6.4 file <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t366.4%20file"> # </a></h3>
+<ul>
+<li><code>file-loader</code> 并不会对文件内容进行任何转换，只是复制一份文件内容，并根据配置为他生成一个唯一的文件名。</li>
+<li>主案例主要是学习<code>loader-utils</code>用法 </li>
+</ul>
+<h4 id="t376.4.1 file-loader">6.4.1 file-loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t376.4.1%20file-loader"> # </a></h4>
+<ul>
+<li><a href="https://github.com/webpack/loader-utils">loader-utils</a></li>
+<li><a href="https://github.com/webpack-contrib/file-loader/blob/master/src/index.js">file-loader</a></li>
+<li><a href="https://webpack.js.org/guides/public-path/#on-the-fly">public-path</a></li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> { getOptions, interpolateName } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'loader-utils'</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">content</span>) </span>{
+  <span class="hljs-keyword">let</span> options=getOptions(<span class="hljs-keyword">this</span>)||{};
+  <span class="hljs-keyword">let</span> url = interpolateName(<span class="hljs-keyword">this</span>, options.filename || <span class="hljs-string">"[hash].[ext]"</span>, {content});
+  <span class="hljs-keyword">this</span>.emitFile(url, content);
+  <span class="hljs-keyword">return</span> <span class="hljs-string">`module.exports = <span class="hljs-subst">${<span class="hljs-built_in">JSON</span>.stringify(url)}</span>`</span>;
+}
+loader.raw = <span class="hljs-literal">true</span>;
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<ul>
+<li>通过 <code>loaderUtils.interpolateName</code> 方法可以根据 options.name 以及文件内容生成一个唯一的文件名 url（一般配置都会带上hash，否则很可能由于文件重名而冲突）</li>
+<li>通过 <code>this.emitFile(url, content)</code> 告诉 webpack 我需要创建一个文件，webpack会根据参数创建对应的文件，放在 <code>public path</code> 目录下</li>
+<li>返回 <code>module.exports = ${JSON.stringify(url)}</code>,这样就会把原来的文件路径替换为编译后的路径</li>
+</ul>
+<h4 id="t386.4.2 url-loader">6.4.2 url-loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t386.4.2%20url-loader"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> { getOptions } = <span class="hljs-built_in">require</span>(<span class="hljs-string">'loader-utils'</span>);
+<span class="hljs-keyword">var</span> mime = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mime'</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">source</span>) </span>{
+    <span class="hljs-keyword">let</span> options=getOptions(<span class="hljs-keyword">this</span>)||{};
+    <span class="hljs-keyword">let</span> { limit, fallback=<span class="hljs-string">'file-loader'</span> } = options;
+    <span class="hljs-keyword">if</span> (limit) {
+      limit = <span class="hljs-built_in">parseInt</span>(limit, <span class="hljs-number">10</span>);
+    }
+    <span class="hljs-keyword">const</span> mimeType=mime.getType(<span class="hljs-keyword">this</span>.resourcePath);
+    <span class="hljs-keyword">if</span> (!limit || source.length &lt; limit) {
+        <span class="hljs-keyword">let</span> base64 = <span class="hljs-string">`data:<span class="hljs-subst">${mimeType}</span>;base64,<span class="hljs-subst">${source.toString(<span class="hljs-string">'base64'</span>)}</span>`</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-string">`module.exports = <span class="hljs-subst">${<span class="hljs-built_in">JSON</span>.stringify(base64)}</span>`</span>;
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">let</span> fileLoader = <span class="hljs-built_in">require</span>(fallback || <span class="hljs-string">'file-loader'</span>);
+        <span class="hljs-keyword">return</span> fileLoader.call(<span class="hljs-keyword">this</span>, source);
+    }
+}
+loader.raw = <span class="hljs-literal">true</span>;
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<h3 id="t396.5 pitch">6.5 pitch <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t396.5%20pitch"> # </a></h3>
+<ul>
+<li>以<code>a!b!c!module</code>为例,正常调用顺序应该是<code>c=&gt;b=&gt;a</code>,但是真正调用顺序是 <code>a(pitch)=&gt;b(pitch)=&gt;c(pitch)=&gt;c=&gt;b=&gt;a</code>,如果其中任何一个<code>pitching loader</code>返回了值就相当于在它以及它右边的loader已经执行完毕</li>
+<li>比如如果<code>b</code>返回了字符串<code>result_b</code>, 接下来只有<code>a</code>会被系统执行，且<code>a</code>的<code>loader</code>收到的参数是<code>result_b</code></li>
+<li>loader根据返回值分为两种，一种是返回<code>js</code>代码(一个module的代码，含有类似module.export语句)的loader,另一种是不能作为最左边<code>loader</code>的其他<code>loader</code></li>
+<li>有时候我们想把两个第一种<code>loader</code> 连接起来，比如<code>style-loader!css-loader!</code>
+问题是<code>css-loader</code>的返回值是一串js代码，如果按正常方式写<code>style-loader</code>的参数就是一串代码字符串</li>
+<li>为了解决这种问题，我们需要在<code>style-loader</code>里执行<code>require(css-loader!resources)</code></li>
+</ul>
+<p>pitch与loader本身方法的执行顺序图</p>
+<pre><code class="lang-js">|- a-loader <span class="hljs-string">`pitch`</span>
+  |- b-loader <span class="hljs-string">`pitch`</span>
+    |- c-loader <span class="hljs-string">`pitch`</span>
+      |- requested <span class="hljs-built_in">module</span> is picked up <span class="hljs-keyword">as</span> a dependency
+    |- c-loader normal execution
+  |- b-loader normal execution
+|- a-loader normal execution
+</code></pre>
+<h4 id="t406.5.1 loaders\loader1.js">6.5.1 loaders\loader1.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t406.5.1%20loaders\loader1.js"> # </a></h4>
+<p>loaders\loader1.js</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">source</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'loader1'</span>,<span class="hljs-keyword">this</span>.data);
+    <span class="hljs-keyword">return</span> source+<span class="hljs-string">"//loader1"</span>;
+}
+loader.pitch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">remainingRequest,previousRequest,data</span>) </span>{
+    data.name = <span class="hljs-string">'pitch1'</span>;
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'pitch1'</span>);
+}
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<h4 id="t416.5.2 loaders\loader2.js">6.5.2 loaders\loader2.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t416.5.2%20loaders\loader2.js"> # </a></h4>
+<p>loaders\loader2.js</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">source</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'loader2'</span>);
+    <span class="hljs-keyword">return</span> source+<span class="hljs-string">"//loader2"</span>;
+}
+loader.pitch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">remainingRequest,previousRequest,data</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'remainingRequest='</span>,remainingRequest);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'previousRequest='</span>,previousRequest);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'pitch2'</span>);
+    <span class="hljs-comment">//return 'console.log("pitch2")';</span>
+}
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<h4 id="t426.5.3 loaders\loader3.js">6.5.3 loaders\loader3.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t426.5.3%20loaders\loader3.js"> # </a></h4>
+<p>loaders\loader3.js</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">source</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'loader3'</span>);
+    <span class="hljs-keyword">return</span> source+<span class="hljs-string">"//loader3"</span>;
+}
+loader.pitch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'pitch3'</span>);
+}
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<h4 id="t436.5.4 webpack.config.js">6.5.4 webpack.config.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t436.5.4%20webpack.config.js"> # </a></h4>
+<pre><code class="lang-js"> {
+    <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>,
+    <span class="hljs-attr">use</span>: [<span class="hljs-string">'loader1'</span>, <span class="hljs-string">'loader2'</span>, <span class="hljs-string">'loader3'</span>]
+ }
+</code></pre>
+<h3 id="t446.6 run-loader">6.6 run-loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t446.6%20run-loader"> # </a></h3>
+<ul>
+<li><a href="https://github.com/webpack/loader-runner/blob/v2.4.0/lib/LoaderRunner.js">LoaderRunner</a></li>
+<li><a href="https://github.com/webpack/webpack/blob/v4.39.3/lib/NormalModuleFactory.js#L180">NormalModuleFactory-noPreAutoLoaders</a></li>
+<li><a href="https://github.com/webpack/webpack/blob/v4.39.3/lib/NormalModule.js#L292">NormalModule-runLoaders</a></li>
+</ul>
+<p>run-loader.js</p>
+<pre><code class="lang-js"><span class="hljs-comment">//@ts-check</span>
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">const</span> fs = <span class="hljs-built_in">require</span>(<span class="hljs-string">'fs'</span>);
+<span class="hljs-keyword">const</span> readFile = fs.readFileSync;
+<span class="hljs-comment">//入口文件</span>
+<span class="hljs-keyword">let</span> entry = <span class="hljs-string">'./src/title.js'</span>;
+<span class="hljs-keyword">let</span> options = {
+    <span class="hljs-attr">resource</span>: path.join(__dirname, entry),<span class="hljs-comment">//要加载的资源,它是个绝对路径</span>
+    <span class="hljs-attr">loaders</span>: [
+        path.join(__dirname, <span class="hljs-string">'loaders/a-loader.js'</span>),<span class="hljs-comment">//C:\vipdata\lesson\201911projects\7.loader\loaders\a-loader.js</span>
+        path.join(__dirname, <span class="hljs-string">'loaders/b-loader.js'</span>),<span class="hljs-comment">//C:\vipdata\lesson\201911projects\7.loader\loaders\b-loader.js</span>
+        path.join(__dirname, <span class="hljs-string">'loaders/c-loader.js'</span>)<span class="hljs-comment">//C:\vipdata\lesson\201911projects\7.loader\loaders\c-loader.js</span>
+    ]
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createLoaderObject</span>(<span class="hljs-params">loaderPath</span>) </span>{
+    <span class="hljs-keyword">let</span> loaderObject = { <span class="hljs-attr">data</span>: {} };
+    loaderObject.path = loaderPath;<span class="hljs-comment">// 存放此loader的绝地路径</span>
+    loaderObject.normal = <span class="hljs-built_in">require</span>(loaderPath);
+    loaderObject.pitch = loaderObject.normal.pitch;
+    <span class="hljs-keyword">return</span> loaderObject;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">runLoaders</span>(<span class="hljs-params">options, finalCallback</span>) </span>{
+    <span class="hljs-keyword">let</span> loaderContext = {};<span class="hljs-comment">//这个对象将会成为webpack loader中的this</span>
+    <span class="hljs-keyword">let</span> resource = options.resource;<span class="hljs-comment">//获取要加载的资源 C:\vipdata\lesson\201911projects\7.loader\src\title.js</span>
+    <span class="hljs-keyword">let</span> loaders = options.loaders;
+    loaders = loaders.map(createLoaderObject);
+    loaderContext.loaderIndex = <span class="hljs-number">0</span>;<span class="hljs-comment">//当前正在执行的loader的索引</span>
+    loaderContext.readResource = readFile;<span class="hljs-comment">//指定一个读取文件的方法 readFile</span>
+    loaderContext.resource = resource;<span class="hljs-comment">//resource放置着要读取的资源</span>
+    loaderContext.loaders = loaders;<span class="hljs-comment">//缓存了loaderObject的数组</span>
+
+    <span class="hljs-built_in">Object</span>.defineProperty(loaderContext, <span class="hljs-string">'request'</span>, {
+        <span class="hljs-keyword">get</span>() {
+            <span class="hljs-keyword">return</span> loaderContext.loaders.map(<span class="hljs-function"><span class="hljs-params">loaderObject</span> =&gt;</span> loaderObject.path)
+                .concat(loaderContext.resource).join(<span class="hljs-string">'!'</span>)
+        }
+    });
+    <span class="hljs-built_in">Object</span>.defineProperty(loaderContext, <span class="hljs-string">'previousRequest'</span>, {
+        <span class="hljs-keyword">get</span>() {
+            <span class="hljs-keyword">return</span> loaderContext.loaders.slice(<span class="hljs-number">0</span>, loaderContext.loaderIndex).map(<span class="hljs-function"><span class="hljs-params">loaderObject</span> =&gt;</span> loaderObject.path)
+                .join(<span class="hljs-string">'!'</span>)
+        }
+    });
+    <span class="hljs-built_in">Object</span>.defineProperty(loaderContext, <span class="hljs-string">'remainingRequest'</span>, {
+        <span class="hljs-keyword">get</span>() {
+            <span class="hljs-keyword">return</span> loaderContext.loaders.slice(loaderContext.loaderIndex + <span class="hljs-number">1</span>).map(<span class="hljs-function"><span class="hljs-params">loaderObject</span> =&gt;</span> loaderObject.path)
+                .concat(loaderContext.resource).join(<span class="hljs-string">'!'</span>)
+        }
+    });
+    <span class="hljs-built_in">Object</span>.defineProperty(loaderContext, <span class="hljs-string">'data'</span>, {
+        <span class="hljs-keyword">get</span>() {
+            <span class="hljs-keyword">return</span> loaderContext.loaders[loaderContext.loaderIndex].data;
+        }
+    });
+    iteratePitchingLoaders(loaderContext, finalCallback);
+    <span class="hljs-comment">//在这里要读取要加载的模块的内容</span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">processResource</span>(<span class="hljs-params">loaderContext, finalCallback</span>) </span>{
+        <span class="hljs-keyword">let</span> buffer = loaderContext.readResource(loaderContext.resource);<span class="hljs-comment">// 读取文件的内容 </span>
+        iterateNormalLoaders(loaderContext, buffer, finalCallback);<span class="hljs-comment">//进行正掌中的loader执行</span>
+    }
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">convertArgs</span>(<span class="hljs-params">args, raw</span>) </span>{
+        <span class="hljs-keyword">if</span> (!raw &amp;&amp; Buffer.isBuffer(args))
+            args = args.toString(<span class="hljs-string">"utf8"</span>);
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (raw &amp;&amp; <span class="hljs-keyword">typeof</span> args === <span class="hljs-string">"string"</span>)
+            args = <span class="hljs-keyword">new</span> Buffer(args, <span class="hljs-string">"utf8"</span>); <span class="hljs-comment">// eslint-disable-line</span>
+    }
+    <span class="hljs-comment">//执行正常的 </span>
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">iterateNormalLoaders</span>(<span class="hljs-params">loaderContext, args, finalCallback</span>) </span>{
+        <span class="hljs-keyword">if</span> (loaderContext.loaderIndex &lt; <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">return</span> finalCallback(<span class="hljs-literal">null</span>, args);
+        }
+        <span class="hljs-keyword">let</span> currentLoaderObject = loaderContext.loaders[loaderContext.loaderIndex];
+        <span class="hljs-keyword">let</span> normalFn = currentLoaderObject.normal;<span class="hljs-comment">//拿到当前的normal函数</span>
+        <span class="hljs-keyword">let</span> isSync = <span class="hljs-literal">true</span>;<span class="hljs-comment">//默认当前的执行模式是同步模式</span>
+        <span class="hljs-keyword">const</span> innerCallback = loaderContext.callback = <span class="hljs-function">(<span class="hljs-params">err, args</span>) =&gt;</span> {
+            loaderContext.loaderIndex--;
+            iterateNormalLoaders(loaderContext, args, finalCallback)
+        }
+        loaderContext.async = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {<span class="hljs-comment">//如果调了它，会把同步变成异步</span>
+            isSync = <span class="hljs-literal">false</span>;
+            <span class="hljs-keyword">return</span> innerCallback;
+        }
+        args = convertArgs(args, normalFn.raw)
+        args = normalFn.call(loaderContext, args);
+        <span class="hljs-keyword">if</span> (isSync) {<span class="hljs-comment">//如果是同步的话。</span>
+            loaderContext.loaderIndex--;
+            iterateNormalLoaders(loaderContext, args, finalCallback);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">//如果是异步，就不会再递归迭代了</span>
+        }
+    }
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">iteratePitchingLoaders</span>(<span class="hljs-params">loaderContext, finalCallback</span>) </span>{
+        <span class="hljs-keyword">if</span> (loaderContext.loaderIndex &gt;= loaderContext.loaders.length) {
+            loaderContext.loaderIndex--;<span class="hljs-comment">//因为已经越界了,所以让索引减1 </span>
+            <span class="hljs-keyword">return</span> processResource(loaderContext, finalCallback);
+        }
+        <span class="hljs-keyword">let</span> currentLoaderObject = loaderContext.loaders[loaderContext.loaderIndex];<span class="hljs-comment">//0 获取当前的loaderObject</span>
+        <span class="hljs-keyword">let</span> pitchFn = currentLoaderObject.pitch;
+        <span class="hljs-keyword">if</span> (!pitchFn) {<span class="hljs-comment">//如果没有pitch函数，则直接 跳过当前loader,执行下一个loader</span>
+            loaderContext.loaderIndex++;
+            <span class="hljs-keyword">return</span> iteratePitchingLoaders(loaderContext, finalCallback);
+        }
+        <span class="hljs-keyword">let</span> args = pitchFn.call(loaderContext, loaderContext.remainingRequest, loaderContext.previousRequest, loaderContext.data);
+        <span class="hljs-keyword">if</span> (args) {<span class="hljs-comment">//如果有返回值，则跳过当前和后面的normal函数以及读取模块文件的逻辑 ，直接把结果返回给前一个loader的normal参数</span>
+            loaderContext.loaderIndex--;
+            <span class="hljs-keyword">return</span> iterateNormalLoaders(loaderContext, args, finalCallback);
+        } <span class="hljs-keyword">else</span> {
+            loaderContext.loaderIndex++;
+            <span class="hljs-keyword">return</span> iteratePitchingLoaders(loaderContext, finalCallback);
+        }
+    }
+
+}
+<span class="hljs-built_in">console</span>.time(<span class="hljs-string">'cost'</span>);
+runLoaders(options, (err, result) =&gt; {
+    <span class="hljs-comment">//   title//c-loader//b-loader//a-loader</span>
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'经过loader编译后的结果'</span>, result);
+    <span class="hljs-built_in">console</span>.timeEnd(<span class="hljs-string">'cost'</span>);
+});
+</code></pre>
+<h3 id="t456.7 样式处理">6.7 样式处理 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t456.7%20%E6%A0%B7%E5%BC%8F%E5%A4%84%E7%90%86"> # </a></h3>
+<ul>
+<li><a href="https://github.com/webpack-contrib/css-loader/blob/master/lib/loader.js">css-loader</a> 的作用是处理css中的 @import 和 url 这样的外部资源</li>
+<li><a href="https://github.com/webpack-contrib/style-loader/blob/master/index.js">style-loader</a> 的作用是把样式插入到 DOM中，方法是在head中插入一个style标签，并把样式写入到这个标签的 innerHTML里</li>
+<li><a href="https://github.com/webpack-contrib/less-loader">less-loader</a> 把less编译成css</li>
+<li><a href="https://webpack.js.org/api/loaders/#pitching-loader">pitching-loader</a></li>
+<li><a href="https://github.com/webpack/loader-utils">loader-utils</a></li>
+<li><a href="https://webpack.js.org/concepts/loaders/#configuration">!!</a></li>
+</ul>
+<h4 id="t466.7.1 loader类型">6.7.1 loader类型 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t466.7.1%20loader%E7%B1%BB%E5%9E%8B"> # </a></h4>
+<ul>
+<li><a href="https://github.com/webpack/webpack/blob/v4.39.3/lib/NormalModuleFactory.js#L339">loader的叠加顺序</a> = post(后置)+inline(内联)+normal(正常)+pre(前置)</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> result = [useLoadersPost,useLoaders,useLoadersPre];
+loaders = results[<span class="hljs-number">0</span>].concat(loaders, results[<span class="hljs-number">1</span>], results[<span class="hljs-number">2</span>]);
+useLoadersPost+inlineLoader+useLoaders(normal loader)+useLoadersPre
+</code></pre>
+<p><a href="https://webpack.js.org/concepts/loaders/#configuration">Configuration</a></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">符号</th>
+<th style="text-align:left">变量</th>
+<th style="text-align:left">含义</th>
+<th style="text-align:left"></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>-!</code></td>
+<td style="text-align:left">noPreAutoLoaders</td>
+<td style="text-align:left">不要前置和普通loader</td>
+<td style="text-align:left">Prefixing with -! will disable all configured preLoaders and loaders but not postLoaders</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>!</code></td>
+<td style="text-align:left">noAutoLoaders</td>
+<td style="text-align:left">不要普通loader</td>
+<td style="text-align:left">Prefixing with ! will disable all configured normal loaders</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>!!</code></td>
+<td style="text-align:left">noPrePostAutoLoaders</td>
+<td style="text-align:left">不要前后置和普通loader,只要内联loader</td>
+<td style="text-align:left">Prefixing with !! will disable all configured loaders (preLoaders, loaders, postLoaders)</td>
+</tr>
+</tbody>
+</table>
+<h4 id="t476.7.2 使用less-loader">6.7.2 使用less-loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t476.7.2%20%E4%BD%BF%E7%94%A8less-loader"> # </a></h4>
+<h5 id="t486.7.2.1 index.js">6.7.2.1 index.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t486.7.2.1%20index.js"> # </a></h5>
+<p>src\index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> <span class="hljs-string">'./index.less'</span>;
+</code></pre>
+<h5 id="t496.7.2.2 src\index.less">6.7.2.2 src\index.less <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t496.7.2.2%20src\index.less"> # </a></h5>
+<p>src\index.less</p>
+<pre><code class="lang-less"><span class="hljs-variable">@color:</span>red;
+<span class="hljs-selector-id">#root</span>{
+    <span class="hljs-attribute">color</span>:<span class="hljs-variable">@color</span>;
+}
+</code></pre>
+<h5 id="t506.7.2.3 src\index.html">6.7.2.3 src\index.html <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t506.7.2.3%20src\index.html"> # </a></h5>
+<p>src\index.html</p>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"root"</span>&gt;</span>hello<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+</code></pre>
+<h5 id="t516.7.2.4 webpack.config.js">6.7.2.4 webpack.config.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t516.7.2.4%20webpack.config.js"> # </a></h5>
+<p>webpack.config.js</p>
+<pre><code class="lang-js">{
+  <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.less$/</span>,
+  <span class="hljs-attr">use</span>: [
+    <span class="hljs-string">'style-loader'</span>,
+    <span class="hljs-string">'less-loader'</span>
+  ]
+}
+</code></pre>
+<h4 id="t526.7.3 less-loader.js">6.7.3 less-loader.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t526.7.3%20less-loader.js"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> less = <span class="hljs-built_in">require</span>(<span class="hljs-string">'less'</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">source</span>) </span>{
+    <span class="hljs-keyword">let</span> callback = <span class="hljs-keyword">this</span>.async();
+    less.render(source, { <span class="hljs-attr">filename</span>: <span class="hljs-keyword">this</span>.resource }, (err, output) =&gt; {
+        callback(err, output.css);
+    });
+}
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<h4 id="t536.7.4 style-loader">6.7.4 style-loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t536.7.4%20style-loader"> # </a></h4>
+<pre><code class="lang-js"> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">source</span>) </span>{
+    <span class="hljs-keyword">let</span> script=(<span class="hljs-string">`
+      let style = document.createElement("style");
+      style.innerHTML = <span class="hljs-subst">${<span class="hljs-built_in">JSON</span>.stringify(source)}</span>;
+    document.head.appendChild(style);
+    module.exports = "";
+    `</span>);
+    <span class="hljs-keyword">return</span> script;
+} 
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<h4 id="t546.7.5 两个左侧模块连用">6.7.5 两个左侧模块连用 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t546.7.5%20%E4%B8%A4%E4%B8%AA%E5%B7%A6%E4%BE%A7%E6%A8%A1%E5%9D%97%E8%BF%9E%E7%94%A8"> # </a></h4>
+<h5 id="t556.7.5.1 less-loader.js">6.7.5.1 less-loader.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t556.7.5.1%20less-loader.js"> # </a></h5>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> less = <span class="hljs-built_in">require</span>(<span class="hljs-string">'less'</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">source</span>) </span>{
+    <span class="hljs-keyword">let</span> callback = <span class="hljs-keyword">this</span>.async();
+    less.render(source, { <span class="hljs-attr">filename</span>: <span class="hljs-keyword">this</span>.resource }, (err, output) =&gt; {
+        callback(err, <span class="hljs-string">`module.exports = <span class="hljs-subst">${<span class="hljs-built_in">JSON</span>.stringify(output.css)}</span>`</span>);
+    });
+}
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<h5 id="t566.7.5.2 style-loader.js">6.7.5.2 style-loader.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t566.7.5.2%20style-loader.js"> # </a></h5>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> loaderUtils = <span class="hljs-built_in">require</span>(<span class="hljs-string">"loader-utils"</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">loader</span>(<span class="hljs-params">source</span>) </span>{
+
+}
+<span class="hljs-comment">//https://github.com/webpack/webpack/blob/v4.39.3/lib/NormalModuleFactory.js#L339</span>
+loader.pitch = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">remainingRequest, previousRequest, data</span>) </span>{
+  <span class="hljs-comment">//C:\webpack-analysis2\loaders\less-loader.js!C:\webpack-analysis2\src\index.less</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'previousRequest'</span>, previousRequest);<span class="hljs-comment">//之前的路径</span>
+  <span class="hljs-comment">//console.log('currentRequest', currentRequest);//当前的路径</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'remainingRequest'</span>, remainingRequest);<span class="hljs-comment">//剩下的路径</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'data'</span>, data);
+  <span class="hljs-comment">// !! noPrePostAutoLoaders 不要前后置和普通loader</span>
+  <span class="hljs-comment">//__webpack_require__(/*! !../loaders/less-loader.js!./index.less */ "./loaders/less-loader.js!./src/index.less");</span>
+  <span class="hljs-keyword">let</span> style = <span class="hljs-string">`
+    var style = document.createElement("style");
+    style.innerHTML = require(<span class="hljs-subst">${loaderUtils.stringifyRequest(<span class="hljs-keyword">this</span>, <span class="hljs-string">"!!"</span> + remainingRequest)}</span>);
+    document.head.appendChild(style);
+ `</span>;
+  <span class="hljs-keyword">return</span> style;
+}
+<span class="hljs-built_in">module</span>.exports = loader;
+</code></pre>
+<h4 id="t576.7.6 css-loader.js">6.7.6 css-loader.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t576.7.6%20css-loader.js"> # </a></h4>
+<ul>
+<li><code>css-loader</code> 的作用是处理css中的 <code>@import</code> 和 <code>url</code> 这样的外部资源</li>
+<li><a href="https://github.com/postcss/postcss#usage">postcss</a></li>
+<li>Avoid CSS @import CSS @importallows stylesheets to import other stylesheets. When CSS @import isused from an external stylesheet, the browser is unable to downloadthe stylesheets in parallel, which adds additional round-trip timesto the overall page load.</li>
+</ul>
+<h5 id="t586.7.6.1 src\index.js">6.7.6.1 src\index.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t586.7.6.1%20src\index.js"> # </a></h5>
+<p>src\index.js</p>
+<pre><code class="lang-js"><span class="hljs-built_in">require</span>(<span class="hljs-string">'./style.css'</span>);
+</code></pre>
+<h5 id="t596.7.6.2 src\style.css">6.7.6.2 src\style.css <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t596.7.6.2%20src\style.css"> # </a></h5>
+<pre><code class="lang-css"><span class="hljs-keyword">@import</span> <span class="hljs-string">'./global.css'</span>;
+<span class="hljs-selector-class">.avatar</span> {
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">url</span>(<span class="hljs-string">'./baidu.png'</span>);
+  <span class="hljs-attribute">background-size</span>: cover;
+}
+<span class="hljs-selector-tag">div</span>{
+  <span class="hljs-attribute">color</span>:red;
+}
+</code></pre>
+<h5 id="t606.7.6.3 src\global.css">6.7.6.3 src\global.css <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t606.7.6.3%20src\global.css"> # </a></h5>
+<pre><code class="lang-css"><span class="hljs-selector-tag">body</span> {
+    <span class="hljs-attribute">background-color</span>: green;
+}
+</code></pre>
+<h5 id="t616.7.6.4 webpack.config.js">6.7.6.4 webpack.config.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t616.7.6.4%20webpack.config.js"> # </a></h5>
+<pre><code class="lang-diff"><span class="hljs-addition">+      {</span>
+<span class="hljs-addition">+        test: /\.css$/,</span>
+<span class="hljs-addition">+        use: [</span>
+<span class="hljs-addition">+          'style-loader',</span>
+<span class="hljs-addition">+          'css-loader'</span>
+<span class="hljs-addition">+        ]</span>
+<span class="hljs-addition">+      },</span>
+<span class="hljs-addition">+      {</span>
+<span class="hljs-addition">+        test: /\.png$/,</span>
+<span class="hljs-addition">+        use: [</span>
+<span class="hljs-addition">+          'file-loader'</span>
+<span class="hljs-addition">+        ]</span>
+<span class="hljs-addition">+      }</span>
+</code></pre>
+<h5 id="t626.7.6.5 css-loader.js">6.7.6.5 css-loader.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t626.7.6.5%20css-loader.js"> # </a></h5>
+<p>loaders\css-loader.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> postcss = <span class="hljs-built_in">require</span>(<span class="hljs-string">"postcss"</span>);
+<span class="hljs-keyword">var</span> loaderUtils = <span class="hljs-built_in">require</span>(<span class="hljs-string">"loader-utils"</span>);
+<span class="hljs-keyword">var</span> Tokenizer = <span class="hljs-built_in">require</span>(<span class="hljs-string">"css-selector-tokenizer"</span>);
+
+<span class="hljs-keyword">const</span> cssLoader = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">inputSource</span>) </span>{
+    <span class="hljs-keyword">const</span> cssPlugin = <span class="hljs-function">(<span class="hljs-params">options</span>) =&gt;</span> {
+        <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">root</span>) =&gt;</span> {
+            root.walkAtRules(<span class="hljs-regexp">/^import$/i</span>, (rule) =&gt; {
+                rule.remove();
+                options.imports.push(rule.params.slice(<span class="hljs-number">1</span>, <span class="hljs-number">-1</span>));
+            });
+            root.walkDecls(<span class="hljs-function">(<span class="hljs-params">decl</span>) =&gt;</span> {
+                <span class="hljs-keyword">var</span> values = Tokenizer.parseValues(decl.value);
+                values.nodes.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+                    value.nodes.forEach(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> {
+                        <span class="hljs-keyword">if</span> (item.type === <span class="hljs-string">"url"</span>) {
+                            item.url = <span class="hljs-string">"`+require("</span> + loaderUtils.stringifyRequest(<span class="hljs-keyword">this</span>, <span class="hljs-string">"!!"</span> + item.url) + <span class="hljs-string">")+`"</span>;
+                        }
+                    });
+                });
+                decl.value = Tokenizer.stringifyValues(values);
+            });
+        };
+    }
+
+    <span class="hljs-keyword">let</span> callback = <span class="hljs-keyword">this</span>.async();
+    <span class="hljs-keyword">let</span> options = { <span class="hljs-attr">imports</span>: [] };
+    <span class="hljs-keyword">let</span> pipeline = postcss([cssPlugin(options)]);
+    pipeline.process(inputSource).then(<span class="hljs-function">(<span class="hljs-params">result</span>) =&gt;</span> {
+        <span class="hljs-keyword">let</span> importCss = options.imports.map(<span class="hljs-function"><span class="hljs-params">url</span> =&gt;</span> <span class="hljs-string">"`+require("</span> + loaderUtils.stringifyRequest(<span class="hljs-keyword">this</span>, <span class="hljs-string">"!!css-loader!"</span> + url) + <span class="hljs-string">")+`"</span>).join(<span class="hljs-string">'\r\n'</span>);
+        callback(
+            <span class="hljs-literal">null</span>,
+            <span class="hljs-string">'module.exports=`'</span> + importCss + <span class="hljs-string">'\r\n'</span> + result.css + <span class="hljs-string">'`'</span>
+        );
+    });
+};
+
+<span class="hljs-built_in">module</span>.exports = cssLoader;
+</code></pre>
+<h2 id="t63参考">参考 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t63%E5%8F%82%E8%80%83"> # </a></h2>
+<h3 id="t641. PostCSS">1. PostCSS <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t641.%20PostCSS"> # </a></h3>
+<ul>
+<li><a href="https://www.postcss.com.cn/">PostCSS</a>是一个用 JavaScript 工具和插件转换 CSS 代码的工具</li>
+<li>增强代码的可读性</li>
+<li>将未来的 CSS 特性带到今天！</li>
+<li>终结全局  CSS</li>
+<li>避免  CSS 代码中的错误</li>
+<li>强大的网格系统</li>
+</ul>
+<h3 id="t652. 文档">2. 文档 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t652.%20%E6%96%87%E6%A1%A3"> # </a></h3>
+<ul>
+<li><a href="http://api.postcss.org/">api</a></li>
+<li><a href="https://astexplorer.net/#/2uBU1BLuJ1">astexplorer</a> postcss会帮我们分析出css的抽象语法树</li>
+</ul>
+<h3 id="t663. 类型">3. 类型 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t663.%20%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>CSS AST主要有3种父类型<ul>
+<li><code>AtRule</code> @xxx的这种类型，如@screen</li>
+<li><code>Comment</code> 注释</li>
+<li><code>Rule</code> 普通的css规则</li>
+</ul>
+</li>
+<li>子类型<ul>
+<li><code>decl</code> 指的是每条具体的css规则</li>
+<li><code>rule</code> 作用于某个选择器上的css规则集合</li>
+</ul>
+</li>
+</ul>
+<h3 id="t674.AST节点">4.AST节点 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t674.AST%E8%8A%82%E7%82%B9"> # </a></h3>
+<ul>
+<li>nodes: CSS规则的节点信息集合<ul>
+<li>decl: 每条css规则的节点信息</li>
+<li>prop: 样式名,如width</li>
+<li>value: 样式值,如10px</li>
+</ul>
+</li>
+<li>type: 类型</li>
+<li>source: 包括start和end的位置信息，start和end里都有line和column表示行和列</li>
+<li>selector: type为rule时的选择器</li>
+<li>name: type为atRule时@紧接rule名，譬如@import 'xxx.css'中的import</li>
+<li>params: type为atRule时@紧接rule名后的值，譬如@import 'xxx.css'中的xxx.css</li>
+<li>text: type为comment时的注释内容</li>
+</ul>
+<h3 id="t685.操作方法">5.操作方法 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t685.%E6%93%8D%E4%BD%9C%E6%96%B9%E6%B3%95"> # </a></h3>
+<h4 id="t695.1 遍历">5.1 遍历 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t695.1%20%E9%81%8D%E5%8E%86"> # </a></h4>
+<ul>
+<li>walk: 遍历所有节点信息，无论是atRule、rule、comment的父类型，还是rule、 decl的子类型</li>
+<li>walkAtRules：遍历所有的AtRules</li>
+<li>walkComments 遍历所有的Comments</li>
+<li>walkDecls 遍历所有的Decls </li>
+<li>walkRules 遍历所有的Rules</li>
+</ul>
+<pre><code class="lang-js">root.walkDecls(<span class="hljs-function"><span class="hljs-params">decl</span> =&gt;</span> {
+    decl.prop = decl.prop.split(<span class="hljs-string">''</span>).reverse().join(<span class="hljs-string">''</span>);
+});
+</code></pre>
+<h4 id="t705.2 处理">5.2 处理 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t705.2%20%E5%A4%84%E7%90%86"> # </a></h4>
+<ul>
+<li>postCss给出了很多操作css规则的方法</li>
+<li><a href="http://api.postcss.org/AtRule.html">api</a></li>
+<li>处理css的方式其实有2种：编写postcss plugin，如果你的操作非常简单也可以直接利用<code>postcss.parse</code>方法拿到<code>css ast</code>后分析处理</li>
+</ul>
+<h4 id="t715.3 postcss plugin">5.3 postcss plugin <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t715.3%20postcss%20plugin"> # </a></h4>
+<ul>
+<li>postcss插件如同babel插件一样，有固定的格式</li>
+<li>注册个插件名，并获取插件配置参数<code>opts</code></li>
+<li>返回值是个函数，这个函数主体是你的处理逻辑，有2个参数，一个是root,AST的根节点。另一个是result，返回结果对象，譬如<code>result.css</code>，获得处理结果的css字符串</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> postcss.plugin(<span class="hljs-string">'postcss-plugin-name'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">opts</span>) </span>{
+  opts = opts || {};
+  <span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">root, result</span>) </span>{
+    <span class="hljs-comment">// 处理逻辑</span>
+  };
+});
+</code></pre>
+<h3 id="t725.4 直接调用postcss命名空间下的方法">5.4 直接调用postcss命名空间下的方法 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html#t725.4%20%E7%9B%B4%E6%8E%A5%E8%B0%83%E7%94%A8postcss%E5%91%BD%E5%90%8D%E7%A9%BA%E9%97%B4%E4%B8%8B%E7%9A%84%E6%96%B9%E6%B3%95"> # </a></h3>
+<ul>
+<li>可以用postcss.parse来处理一段css文本，拿到css ast，然后进行处理，再通过调用toResult().css拿到处理后的css输出</li>
+</ul>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

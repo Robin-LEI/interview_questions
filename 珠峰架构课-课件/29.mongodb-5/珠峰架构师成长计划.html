@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<!-- saved from url=(0058)http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t01.%20MongoDB%E7%AE%80%E4%BB%8B">1. MongoDB简介</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t12.%20Mongoose%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F">2. Mongoose是什么？</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t23.%20%E4%BD%BF%E7%94%A8%20mongoose">3. 使用 mongoose</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t33.1%20%E5%AE%89%E8%A3%85mongoose">3.1 安装mongoose</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t43.2%20%E4%BD%BF%E7%94%A8mongoose">3.2 使用mongoose</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t53.3%20%E4%BD%BF%E7%94%A8mongoose">3.3 使用mongoose</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t63.4%20Schema">3.4 Schema</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t73.4.1%20Schema.Type">3.4.1 Schema.Type</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t83.4.2%20%E5%AE%9A%E4%B9%89Schema">3.4.2 定义Schema</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t93.4.3%20Model">3.4.3 Model</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t103.4.4%20Entity%E7%AE%80%E8%BF%B0">3.4.4 Entity简述</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t113.4.5%20%E4%BF%9D%E5%AD%98Entity">3.4.5 保存Entity</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t123.4.6%20ObjectId">3.4.6 ObjectId</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t133.5%20%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C">3.5 基础操作</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t143.5.1%20%E6%9F%A5%E8%AF%A2">3.5.1 查询</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t153.5.2%20Model%E4%BF%9D%E5%AD%98">3.5.2 Model保存</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t163.5.3%20Entity%E4%BF%9D%E5%AD%98">3.5.3 Entity保存</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t173.5.4%20%E6%9B%B4%E6%96%B0">3.5.4 更新</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t183.5.5%20%E5%88%A0%E9%99%A4">3.5.5 删除</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t193.5.6%20%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2">3.5.6 基本查询</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t203.5.6.1%20%20%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE">3.5.6.1  准备数据</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t213.5.6.2%20%20%E5%B1%9E%E6%80%A7%E8%BF%87%E6%BB%A4">3.5.6.2  属性过滤</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t223.5.6.3%20%20findOne(%E6%9F%A5%E8%AF%A2%E5%8D%95%E6%9D%A1)">3.5.6.3  findOne(查询单条)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t233.5.6.4%20%20findById(%E6%8C%89ID%E5%8D%95%E6%9D%A1%E6%95%B0%E6%8D%AE)">3.5.6.4  findById(按ID单条数据)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t243.5.6.5%20%20$gt%E3%80%81$lt(%E5%A4%A7%E4%BA%8E%E3%80%81%E5%B0%8F%E4%BA%8E)">3.5.6.5  $gt、$lt(大于、小于)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t253.5.6.6%20$ne(%E4%B8%8D%E7%AD%89%E4%BA%8E)">3.5.6.6 $ne(不等于)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t263.5.6.7%20$in(%E5%8C%85%E5%90%AB)">3.5.6.7 $in(包含)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t273.5.6.8%20$or(%E6%88%96%E8%80%85)">3.5.6.8 $or(或者)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t283.5.6.9%20$exists(%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8)">3.5.6.9 $exists(是否存在)</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t293.5.7%20%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2">3.5.7 高级查询</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t303.5.7.1%20limit(%E9%99%90%E5%88%B6%E6%95%B0%E9%87%8F)">3.5.7.1 limit(限制数量)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t313.5.7.2%20skip(%E8%B7%B3%E8%BF%87/%E7%95%A5%E8%BF%87%E7%9A%84%E6%95%B0%E9%87%8F)">3.5.7.2 skip(跳过/略过的数量)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t323.5.7.3%20sort%E5%87%BD%E6%95%B0">3.5.7.3 sort函数</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t333.5.7.4%20%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2">3.5.7.4 分页查询</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t343.5.7.5%20populate">3.5.7.5 populate</a></li></ul></li></ul></li></ul></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. MongoDB简介">1. MongoDB简介 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t01.%20MongoDB%E7%AE%80%E4%BB%8B"> # </a></h2>
+<ul>
+<li>Mongodb是一个开源的NoSQL数据库，相比MySQL那样的关系型数据库，它更显得 轻巧、灵活，非常适合在数据规模很大、事务性不强的场合下使用。</li>
+<li>同时它也是一个对象数据库，没有表和行的概念，也没有固定的模式和结构，所有的数据都是以文档的形式存存储(文档，就是一个关联数组式的对象，它的内部由属性组成，一个属性对应的值可能是一个数、字符串、日期、数组、甚至是一个嵌套文档)，数据格式就是JSON。</li>
+</ul>
+<h2 id="t12. Mongoose是什么？">2. Mongoose是什么？ <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t12.%20Mongoose%E6%98%AF%E4%BB%80%E4%B9%88%EF%BC%9F"> # </a></h2>
+<ul>
+<li>Mongoose是MongoDB的一个对象模型工具</li>
+<li>同时它也是针对MongoDB操作的一个对象模型库,封装了MongoDB对文档的的一些增删改查等常用方法</li>
+<li>让NodeJS操作Mongodb数据库变得更加灵活简单</li>
+<li>Mongoose因为封装了MongoDB对文档操作的常用方法，可以高效处理mongodb,还提供了类似Schema的功能，如hook、plugin、virtual、populate等机制。</li>
+<li>官网 <a href="http://mongoosejs.com/">mongoosejs</a></li>
+</ul>
+<h2 id="t23. 使用 mongoose">3. 使用 mongoose <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t23.%20%E4%BD%BF%E7%94%A8%20mongoose"> # </a></h2>
+<h3 id="t33.1 安装mongoose">3.1 安装mongoose <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t33.1%20%E5%AE%89%E8%A3%85mongoose"> # </a></h3>
+<pre><code class="lang-js">$ cnpm install mongoose -S
+</code></pre>
+<h3 id="t43.2 使用mongoose">3.2 使用mongoose <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t43.2%20%E4%BD%BF%E7%94%A8mongoose"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">"mongoose"</span>);
+<span class="hljs-keyword">let</span> db = mongoose.createConnection(<span class="hljs-string">"mongodb://user:pass@ip:port/database"</span>,{ <span class="hljs-attr">useNewUrlParser</span>: <span class="hljs-literal">true</span>,<span class="hljs-attr">useUnifiedTopology</span>: <span class="hljs-literal">true</span>});
+</code></pre>
+<ul>
+<li>user 用户名</li>
+<li>pass 密码</li>
+<li>ip IP地址</li>
+<li>port 端口号</li>
+<li>database 数据库</li>
+</ul>
+<h3 id="t53.3 使用mongoose">3.3 使用mongoose <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t53.3%20%E4%BD%BF%E7%94%A8mongoose"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mongoose'</span>);
+<span class="hljs-keyword">let</span> connection = mongoose.createConnection(<span class="hljs-string">"mongodb://127.0.0.1/zfpx"</span>,{ <span class="hljs-attr">useNewUrlParser</span>: <span class="hljs-literal">true</span>,<span class="hljs-attr">useUnifiedTopology</span>: <span class="hljs-literal">true</span>});
+connection.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'数据库连接失败: '</span> + error);
+});
+connection.on(<span class="hljs-string">'open'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'数据库连接成功'</span>);
+});
+</code></pre>
+<h3 id="t63.4 Schema">3.4 Schema <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t63.4%20Schema"> # </a></h3>
+<ul>
+<li>Schema是数据库集合的模型骨架</li>
+<li>定义了集合中的字段的名称和类型以及默认值等信息</li>
+</ul>
+<h4 id="t73.4.1 Schema.Type">3.4.1 Schema.Type <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t73.4.1%20Schema.Type"> # </a></h4>
+<ul>
+<li>NodeJS中的基本数据类型都属于 Schema.Type</li>
+<li>另外Mongoose还定义了自己的类型</li>
+<li>基本属性类型有:<ul>
+<li>字符串(String)</li>
+<li>日期型(Date)</li>
+<li>数值型(Number)</li>
+<li>布尔型(Boolean)</li>
+<li>null</li>
+<li>数组([])</li>
+<li>内嵌文档</li>
+</ul>
+</li>
+</ul>
+<h4 id="t83.4.2 定义Schema">3.4.2 定义Schema <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t83.4.2%20%E5%AE%9A%E4%B9%89Schema"> # </a></h4>
+<pre><code class="lang-js"> <span class="hljs-keyword">var</span> personSchema = <span class="hljs-keyword">new</span> Schema({
+      <span class="hljs-attr">name</span>:<span class="hljs-built_in">String</span>, <span class="hljs-comment">//姓名</span>
+      <span class="hljs-attr">binary</span>:Buffer,<span class="hljs-comment">//二进制</span>
+      <span class="hljs-attr">living</span>:<span class="hljs-built_in">Boolean</span>,<span class="hljs-comment">//是否活着</span>
+      <span class="hljs-attr">birthday</span>:<span class="hljs-built_in">Date</span>,<span class="hljs-comment">//生日</span>
+      <span class="hljs-attr">age</span>:<span class="hljs-built_in">Number</span>,<span class="hljs-comment">//年龄</span>
+      <span class="hljs-attr">_id</span>:Schema.Types.ObjectId,  <span class="hljs-comment">//主键</span>
+      <span class="hljs-attr">_fk</span>:Schema.Types.ObjectId,  <span class="hljs-comment">//外键</span>
+      <span class="hljs-attr">array</span>:[],<span class="hljs-comment">//数组</span>
+      <span class="hljs-attr">arrOfString</span>:[<span class="hljs-built_in">String</span>],<span class="hljs-comment">//字符串数组</span>
+      <span class="hljs-attr">arrOfNumber</span>:[<span class="hljs-built_in">Number</span>],<span class="hljs-comment">//数字数组</span>
+      <span class="hljs-attr">arrOfDate</span>:[<span class="hljs-built_in">Date</span>],<span class="hljs-comment">//日期数组</span>
+      <span class="hljs-attr">arrOfBuffer</span>:[Buffer],<span class="hljs-comment">//Buffer数组</span>
+      <span class="hljs-attr">arrOfBoolean</span>:[<span class="hljs-built_in">Boolean</span>],<span class="hljs-comment">//布尔值数组</span>
+      <span class="hljs-attr">arrOfObjectId</span>:[Schema.Types.ObjectId]<span class="hljs-comment">//对象ID数组</span>
+      <span class="hljs-attr">nested</span>:{ <span class="hljs-attr">name</span>:<span class="hljs-built_in">String</span>} <span class="hljs-comment">//内嵌文档</span>
+    });
+
+    <span class="hljs-keyword">let</span> p = <span class="hljs-keyword">new</span> Person();
+    p.name= <span class="hljs-string">'zfpx'</span>;
+    p.age = <span class="hljs-number">25</span>;
+    p.birthday = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>();
+    p.married = <span class="hljs-literal">false</span>;
+    p.mixed= {<span class="hljs-attr">any</span>:{<span class="hljs-attr">other</span>:<span class="hljs-string">'other'</span>}};
+    p._otherId = <span class="hljs-keyword">new</span> mongoose.Types.ObjectId;
+    p.hobby.push(<span class="hljs-string">'smoking'</span>);
+    p.ofString.push(<span class="hljs-string">'string'</span>);
+    p.ofNumber.pop(<span class="hljs-number">3</span>);
+    p.ofDates.addToSet(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>);
+    p.ofBuffer.pop();
+    p.ofMixed = [<span class="hljs-string">'anything'</span>,<span class="hljs-number">3</span>,{<span class="hljs-attr">name</span>:<span class="hljs-string">'zfpx'</span>}];
+    p.nested.name = <span class="hljs-string">'zfpx'</span>;
+
+</code></pre>
+<h4 id="t93.4.3 Model">3.4.3 Model <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t93.4.3%20Model"> # </a></h4>
+<p>Model是由通过Schema构造而成
+除了具有Schema定义的数据库骨架以外，还可以操作数据库
+如何通过Schema来创建Model呢，如下:</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mongoose'</span>);
+<span class="hljs-keyword">var</span> connection = mongoose.createConnection(<span class="hljs-string">"mongodb://127.0.0.1/zfpx"</span>,{ <span class="hljs-attr">useNewUrlParser</span>: <span class="hljs-literal">true</span>,<span class="hljs-attr">useUnifiedTopology</span>: <span class="hljs-literal">true</span>});
+connection.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'数据库连接失败: '</span> + error);
+});
+connection.on(<span class="hljs-string">'open'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'数据库连接成功'</span>);
+});
+<span class="hljs-keyword">let</span> PersonSchema = <span class="hljs-keyword">new</span> mongoose.Schema({
+      <span class="hljs-attr">name</span>:<span class="hljs-built_in">String</span>, <span class="hljs-comment">//姓名</span>
+      <span class="hljs-attr">age</span>:<span class="hljs-built_in">Number</span>,<span class="hljs-comment">//年龄</span>
+});
+<span class="hljs-comment">//两个参数表示定义一个模型</span>
+<span class="hljs-keyword">var</span> PersonModel = connection.model(<span class="hljs-string">"Person"</span>, PersonSchema);
+<span class="hljs-comment">// 如果该Model已经定义，则可以直接通过名字获取</span>
+<span class="hljs-keyword">var</span> PersonModel = connection.model(<span class="hljs-string">'Person'</span>);<span class="hljs-comment">//一个参数表示获取已定义的模型</span>
+</code></pre>
+<blockquote>
+<p>拥有了Model，我们也就拥有了操作数据库的能力
+在数据库中的集合名称等于 模型名转小写再转复数,比如 
+Person&gt;person&gt;people,Child&gt;child&gt;children</p>
+</blockquote>
+<h4 id="t103.4.4 Entity简述">3.4.4 Entity简述 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t103.4.4%20Entity%E7%AE%80%E8%BF%B0"> # </a></h4>
+<ul>
+<li>通过Model创建的实体，它也可以操作数据库</li>
+<li>使用Model创建Entity，如下示例</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> personEntity = <span class="hljs-keyword">new</span> PersonModel({
+     <span class="hljs-attr">name</span> : <span class="hljs-string">"zhufeng"</span>,
+     <span class="hljs-attr">age</span>  : <span class="hljs-number">6</span>
+});
+<span class="hljs-built_in">console</span>.log(personEntity);<span class="hljs-comment">//{ _id: 5d9c70438e748c3ae032a7fd, name: 'zhufeng', age: 6 }</span>
+</code></pre>
+<blockquote>
+<p>Schema生成Model，Model创造Entity，Model和Entity都可对数据库操作,但Model比Entity可以实现的功能更多 </p>
+</blockquote>
+<h4 id="t113.4.5 保存Entity">3.4.5 保存Entity <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t113.4.5%20%E4%BF%9D%E5%AD%98Entity"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">"mongoose"</span>);
+<span class="hljs-keyword">let</span> conn = mongoose.createConnection(<span class="hljs-string">"mongodb://127.0.0.1/zfpx"</span>,{ <span class="hljs-attr">useNewUrlParser</span>: <span class="hljs-literal">true</span>,<span class="hljs-attr">useUnifiedTopology</span>: <span class="hljs-literal">true</span>});
+<span class="hljs-keyword">let</span> PersonSchema = <span class="hljs-keyword">new</span> mongoose.Schema({
+    <span class="hljs-attr">name</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>},
+    <span class="hljs-attr">age</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">Number</span>, <span class="hljs-attr">default</span>: <span class="hljs-number">0</span>}
+});
+<span class="hljs-keyword">let</span> PersonModel = conn.model(<span class="hljs-string">"Person"</span>, PersonSchema);
+
+<span class="hljs-keyword">let</span> PersonEntity = <span class="hljs-keyword">new</span> PersonModel({
+    <span class="hljs-attr">name</span>: <span class="hljs-string">"zfpx"</span>,
+    <span class="hljs-attr">age</span>: <span class="hljs-number">6</span>
+});
+
+PersonEntity.save(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, doc</span>) </span>{
+    <span class="hljs-keyword">if</span> (error) {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"error :"</span> + error);
+    } <span class="hljs-keyword">else</span> {
+       <span class="hljs-comment">//doc是返回刚存的person对象 </span>
+        <span class="hljs-built_in">console</span>.log(doc);
+    }
+});
+</code></pre>
+<h4 id="t123.4.6 ObjectId">3.4.6 ObjectId <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t123.4.6%20ObjectId"> # </a></h4>
+<ul>
+<li>存储在mongodb集合中的每个文档都有一个默认的主键_id</li>
+<li>这个主键名称是固定的，它可以是mongodb支持的任何数据类型，默认是ObjectId 该类型的值由系统自己生成，从某种意义上几乎不会重复</li>
+<li>ObjectId使用12字节的存储空间，是一个由24个16进制数字组成的字符串（每个字节可以存储两个16进制数字）</li>
+</ul>
+<p><code>5d9c70b3 f88966 4f24 d9caa5</code></p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">部分</th>
+<th style="text-align:left">值</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">4字节</td>
+<td style="text-align:left">5d9c70b3</td>
+<td style="text-align:left">时间戳是自 1970 年 1 月 1 日（08:00:00 GMT）至当前时间的总秒数，它也被称为 Unix 时间戳，单位为秒</td>
+</tr>
+<tr>
+<td style="text-align:left">3字节</td>
+<td style="text-align:left">f88966</td>
+<td style="text-align:left">所在主机的唯一标识符,通常是机器主机名的散列值(hash),可以确保不同主机生成不同的<code>ObjectId</code>不产生冲突</td>
+</tr>
+<tr>
+<td style="text-align:left">2字节</td>
+<td style="text-align:left">4f24</td>
+<td style="text-align:left">产生ObjectId的进程的进程标识符(PID)</td>
+</tr>
+<tr>
+<td style="text-align:left">3字节</td>
+<td style="text-align:left">d9caa5</td>
+<td style="text-align:left">由一个随机数开始的计数器生成的值</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> ts = <span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'5d9c70b3'</span>, <span class="hljs-number">16</span>);;
+<span class="hljs-built_in">console</span>.log(ts);
+<span class="hljs-keyword">let</span> date = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(ts*<span class="hljs-number">1000</span>);
+<span class="hljs-built_in">console</span>.log(date.toLocaleString());
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'4f24'</span>,<span class="hljs-number">16</span>));<span class="hljs-comment">//20260</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">parseInt</span>(<span class="hljs-string">'d9caa5'</span>,<span class="hljs-number">16</span>))<span class="hljs-comment">//14273189</span>
+</code></pre>
+<blockquote>
+<p>前9个字节保证了同一秒钟不同机器不同进程产生的ObjectId是唯一的,最后3个字节是一个自动增加的计数器，确保相同进程同一秒产生的ObjectId也是不一样的,一秒钟最多允许每个进程拥有256的3次方(16777216)个不同的ObjectId
+每一个文档都有一个特殊的键_id，这个键在文档所属的集合中是唯一的。</p>
+</blockquote>
+<h3 id="t133.5 基础操作">3.5 基础操作 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t133.5%20%E5%9F%BA%E7%A1%80%E6%93%8D%E4%BD%9C"> # </a></h3>
+<h4 id="t143.5.1 查询">3.5.1 查询 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t143.5.1%20%E6%9F%A5%E8%AF%A2"> # </a></h4>
+<p>语法</p>
+<pre><code class="lang-js">Model.find(查询条件,callback);
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js">Model.find({},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>)</span>{
+  <span class="hljs-comment">//若没有向find传递参数，默认的是显示所有文档</span>
+});
+
+Model.find({ <span class="hljs-string">"age"</span>: <span class="hljs-number">6</span> }, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, docs</span>) </span>{
+  <span class="hljs-keyword">if</span>(error){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">"error :"</span> + error);
+  }<span class="hljs-keyword">else</span>{
+    <span class="hljs-built_in">console</span>.log(docs); <span class="hljs-comment">//docs: age为6的所有文档</span>
+  }
+});
+</code></pre>
+<h4 id="t153.5.2 Model保存">3.5.2 Model保存 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t153.5.2%20Model%E4%BF%9D%E5%AD%98"> # </a></h4>
+<p>语法</p>
+<pre><code class="lang-js">Model.create(文档数据, callback))
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js"> PersonModel.create({ <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx"</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">7</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,doc</span>)</span>{
+    <span class="hljs-keyword">if</span>(error) {
+        <span class="hljs-built_in">console</span>.log(error);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(doc);
+    }
+});
+<span class="hljs-string">`
+</span></code></pre>
+<h4 id="t163.5.3 Entity保存">3.5.3 Entity保存 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t163.5.3%20Entity%E4%BF%9D%E5%AD%98"> # </a></h4>
+<p>语法</p>
+<pre><code class="lang-js">Entity.save(callback))
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> PersonEntity = <span class="hljs-keyword">new</span> PersonModel({<span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx"</span>,<span class="hljs-attr">age</span>: <span class="hljs-number">9</span>});
+
+PersonEntity.save(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,doc</span>) </span>{
+   <span class="hljs-keyword">if</span>(error) {
+      <span class="hljs-built_in">console</span>.log(error);
+   } <span class="hljs-keyword">else</span> {
+      <span class="hljs-built_in">console</span>.log(doc);
+   }
+});
+</code></pre>
+<h4 id="t173.5.4 更新">3.5.4 更新 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t173.5.4%20%E6%9B%B4%E6%96%B0"> # </a></h4>
+<p>语法</p>
+<pre><code class="lang-js">Model.update(查询条件,更新对象,callback);
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> conditions = {<span class="hljs-attr">name</span> : <span class="hljs-string">'zfpx'</span>};
+  <span class="hljs-keyword">var</span> update = {<span class="hljs-attr">$set</span> : { <span class="hljs-attr">age</span> : <span class="hljs-number">100</span> }};
+  PersonModel.update(conditions, update, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{
+      <span class="hljs-keyword">if</span>(error) {
+          <span class="hljs-built_in">console</span>.log(error);
+      } <span class="hljs-keyword">else</span> {
+          <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Update success!'</span>);
+        }
+    });
+</code></pre>
+<p>请注意如果匹配到多条记录，默认只更新一条，如果要更新匹配到的所有记录的话需要加一个参数 {multi:true}</p>
+<h4 id="t183.5.5 删除">3.5.5 删除 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t183.5.5%20%E5%88%A0%E9%99%A4"> # </a></h4>
+<p>语法</p>
+<pre><code class="lang-js">Model.remove(查询条件,callback);
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> conditions = { <span class="hljs-attr">name</span>: <span class="hljs-string">'zfpx'</span> };
+PersonModel.remove(conditions, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error</span>)</span>{
+    <span class="hljs-keyword">if</span>(error) {
+          <span class="hljs-built_in">console</span>.log(error);
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Delete success!'</span>);
+    }
+});
+</code></pre>
+<h4 id="t193.5.6 基本查询">3.5.6 基本查询 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t193.5.6%20%E5%9F%BA%E6%9C%AC%E6%9F%A5%E8%AF%A2"> # </a></h4>
+<h5 id="t203.5.6.1  准备数据">3.5.6.1  准备数据 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t203.5.6.1%20%20%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"> # </a></h5>
+<pre><code class="lang-js">        PersonModel.create([
+                          { <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx1"</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">1</span> },
+                          { <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx2"</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">2</span> },
+                          { <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx3"</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">3</span> },
+                          { <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx4"</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">4</span> },
+                          { <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx5"</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">5</span> },
+                          { <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx6"</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">6</span>},
+                          { <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx7"</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">7</span> },
+                          { <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx8"</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">8</span> },
+                          { <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx9"</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">9</span>},
+                          { <span class="hljs-attr">name</span>:<span class="hljs-string">"zfpx10"</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">10</span> }
+                         ], <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>) </span>{
+            <span class="hljs-keyword">if</span>(error) {
+                <span class="hljs-built_in">console</span>.log(error);
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'save ok'</span>);
+            }
+        });
+</code></pre>
+<h5 id="t213.5.6.2  属性过滤">3.5.6.2  属性过滤 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t213.5.6.2%20%20%E5%B1%9E%E6%80%A7%E8%BF%87%E6%BB%A4"> # </a></h5>
+<p>语法</p>
+<pre><code class="lang-js">find(Conditions,field,callback)
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js"><span class="hljs-comment">//field省略或为Null，则返回所有属性。</span>
+<span class="hljs-comment">//返回只包含name、age两个键的所有记录</span>
+Model.find({},{<span class="hljs-attr">name</span>:<span class="hljs-number">1</span>, <span class="hljs-attr">age</span>:<span class="hljs-number">1</span>, <span class="hljs-attr">_id</span>:<span class="hljs-number">0</span>}，<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,docs</span>)</span>{
+   <span class="hljs-comment">//docs 查询结果集</span>
+})
+</code></pre>
+<p>我们只需要把显示的属性设置为大于零的数就可以，当然1是最好理解的，_id是默认返回，如果不要显示加上("_id":0)</p>
+<h5 id="t223.5.6.3  findOne(查询单条)">3.5.6.3  findOne(查询单条) <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t223.5.6.3%20%20findOne(%E6%9F%A5%E8%AF%A2%E5%8D%95%E6%9D%A1)"> # </a></h5>
+<p>与find相同，但只返回单个文档，也就说当查询到即一个符合条件的数据时，将停止继续查询，并返回查询结果 
+语法</p>
+<pre><code class="lang-js">findOne(Conditions,callback)
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js">TestModel.findOne({ <span class="hljs-attr">age</span>: <span class="hljs-number">6</span>}, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, doc</span>)</span>{
+       <span class="hljs-comment">// 查询符合age等于6的第一条数据</span>
+       <span class="hljs-comment">// doc是查询结果</span>
+});
+</code></pre>
+<h5 id="t233.5.6.4  findById(按ID单条数据)">3.5.6.4  findById(按ID单条数据) <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t233.5.6.4%20%20findById(%E6%8C%89ID%E5%8D%95%E6%9D%A1%E6%95%B0%E6%8D%AE)"> # </a></h5>
+<p>与findOne相同，但它只接收文档的_id作为参数，返回单个文档 语法</p>
+<pre><code class="lang-js">findById(_id, callback)
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js">PersonModel.findById(person._id, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err, doc</span>)</span>{
+     <span class="hljs-comment">//doc 查询结果文档</span>
+});
+</code></pre>
+<h5 id="t243.5.6.5  $gt、$lt(大于、小于)">3.5.6.5  $gt、$lt(大于、小于) <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t243.5.6.5%20%20$gt%E3%80%81$lt(%E5%A4%A7%E4%BA%8E%E3%80%81%E5%B0%8F%E4%BA%8E)"> # </a></h5>
+<p>查询时我们经常会碰到要根据某些字段进行条件筛选查询，比如说Number类型，怎么办呢，我们就可以使用$gt(&gt;)、$lt(&lt;)、$lte(&lt;=)、$gte(&gt;=)操作符进行排除性的查询，如下示例：</p>
+<pre><code class="lang-js">Model.find({<span class="hljs-string">"age"</span>:{<span class="hljs-string">"$gt"</span>:<span class="hljs-number">6</span>}},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>)</span>{
+   <span class="hljs-comment">//查询所有nage大于6的数据</span>
+});
+
+Model.find({<span class="hljs-string">"age"</span>:{<span class="hljs-string">"$lt"</span>:<span class="hljs-number">6</span>}},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>)</span>{
+   <span class="hljs-comment">//查询所有nage小于6的数据</span>
+});
+
+Model.find({<span class="hljs-string">"age"</span>:{<span class="hljs-string">"$gt"</span>:<span class="hljs-number">6</span>,<span class="hljs-string">"$lt"</span>:<span class="hljs-number">9</span>}},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>)</span>{
+  <span class="hljs-comment">//查询所有nage大于6小于9的数据</span>
+});
+</code></pre>
+<h5 id="t253.5.6.6 $ne(不等于)">3.5.6.6 $ne(不等于) <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t253.5.6.6%20$ne(%E4%B8%8D%E7%AD%89%E4%BA%8E)"> # </a></h5>
+<p>$ne(!=)操作符的含义相当于不等于、不包含，查询时我们可通过它进行条件判定，具体使用方法如下：</p>
+<pre><code class="lang-js">Model.find({ <span class="hljs-attr">age</span>:{ <span class="hljs-attr">$ne</span>:<span class="hljs-number">6</span>}},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>)</span>{
+  <span class="hljs-comment">//查询age不等于6的所有数据</span>
+});
+</code></pre>
+<h5 id="t263.5.6.7 $in(包含)">3.5.6.7 $in(包含) <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t263.5.6.7%20$in(%E5%8C%85%E5%90%AB)"> # </a></h5>
+<p>和$ne操作符相反，$in相当于包含、等于，查询时查找包含于指定字段条件的数据</p>
+<pre><code class="lang-js">Model.find({ <span class="hljs-attr">age</span>:{ <span class="hljs-attr">$in</span>: <span class="hljs-number">6</span>}},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>)</span>{
+   <span class="hljs-comment">//查询age等于6的所有数据</span>
+});
+
+Model.find({ <span class="hljs-attr">age</span>:{<span class="hljs-attr">$in</span>:[<span class="hljs-number">6</span>,<span class="hljs-number">7</span>]}},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>)</span>{
+  <span class="hljs-comment">//可以把多个值组织成一个数组</span>
+});
+</code></pre>
+<h5 id="t273.5.6.8 $or(或者)">3.5.6.8 $or(或者) <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t273.5.6.8%20$or(%E6%88%96%E8%80%85)"> # </a></h5>
+<p>可以查询多个键值的任意给定值，只要满足其中一个就可返回，用于存在多个条件判定的情况下使用，如下示例：</p>
+<pre><code class="lang-js">Model.find({<span class="hljs-string">"$or"</span>:[{<span class="hljs-string">"name"</span>:<span class="hljs-string">"zfpx"</span>},{<span class="hljs-string">"age"</span>:<span class="hljs-number">6</span>}]},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>)</span>{
+    <span class="hljs-comment">//查询name为zfpx或age为6的全部文档</span>
+});
+</code></pre>
+<h5 id="t283.5.6.9 $exists(是否存在)">3.5.6.9 $exists(是否存在) <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t283.5.6.9%20$exists(%E6%98%AF%E5%90%A6%E5%AD%98%E5%9C%A8)"> # </a></h5>
+<p>$exists操作符，可用于判断某些关键字段是否存在来进行条件查询。如下示例：</p>
+<pre><code class="lang-js">Model.find({<span class="hljs-attr">name</span>: {<span class="hljs-attr">$exists</span>: <span class="hljs-literal">true</span>}},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>)</span>{
+      <span class="hljs-comment">//查询所有存在name属性的文档</span>
+});
+
+Model.find({<span class="hljs-attr">email</span>: {<span class="hljs-attr">$exists</span>: <span class="hljs-literal">false</span>}},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">error,docs</span>)</span>{
+      <span class="hljs-comment">//查询所有不存在email属性的文档</span>
+});
+</code></pre>
+<h4 id="t293.5.7 高级查询">3.5.7 高级查询 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t293.5.7%20%E9%AB%98%E7%BA%A7%E6%9F%A5%E8%AF%A2"> # </a></h4>
+<p>可以限制结果的数量,跳过部分结果,根据任意键对结果进行各种排序</p>
+<p>所有这些选项都要在查询被发送到服务器之前指定</p>
+<h5 id="t303.5.7.1 limit(限制数量)">3.5.7.1 limit(限制数量) <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t303.5.7.1%20limit(%E9%99%90%E5%88%B6%E6%95%B0%E9%87%8F)"> # </a></h5>
+<p>在查询操作中,有时数据量会很大,这时我们就需要对返回结果的数量进行限制
+那么我们就可以使用limit函数，通过它来限制结果数量。
+语法</p>
+<pre><code class="lang-js">find(Conditions,fields,options,callback);
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js">Model.find({},<span class="hljs-literal">null</span>,{<span class="hljs-attr">limit</span>:<span class="hljs-number">20</span>},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,docs</span>)</span>{
+        <span class="hljs-built_in">console</span>.log(docs);
+});
+</code></pre>
+<p>如果匹配的结果不到20个，则返回匹配数量的结果，也就是说limit函数指定的是上限而非下限</p>
+<h5 id="t313.5.7.2 skip(跳过/略过的数量)">3.5.7.2 skip(跳过/略过的数量) <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t313.5.7.2%20skip(%E8%B7%B3%E8%BF%87/%E7%95%A5%E8%BF%87%E7%9A%84%E6%95%B0%E9%87%8F)"> # </a></h5>
+<p>skip函数的功能是略过指定数量的匹配结果，返回余下的查询结果
+如下示例：</p>
+<pre><code class="lang-js">find(Conditions,fields,options,callback);
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js">Model.find({},<span class="hljs-literal">null</span>,{<span class="hljs-attr">skip</span>:<span class="hljs-number">4</span>},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,docs</span>)</span>{
+        <span class="hljs-built_in">console</span>.log(docs);
+});
+</code></pre>
+<p>如果查询结果数量中少于4个的话，则不会返回任何结果。</p>
+<h5 id="t323.5.7.3 sort函数">3.5.7.3 sort函数 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t323.5.7.3%20sort%E5%87%BD%E6%95%B0"> # </a></h5>
+<p>sort函数可以将查询结果数据进行排序操作
+该函数的参数是一个或多个键/值对
+键代表要排序的键名,值代表排序的方向,1是升序,-1是降序
+语法</p>
+<pre><code class="lang-js">find(Conditions,fields,options,callback)
+</code></pre>
+<p>代码</p>
+<pre><code class="lang-js"> Model.find({},<span class="hljs-literal">null</span>,{<span class="hljs-attr">sort</span>:{<span class="hljs-attr">age</span>:<span class="hljs-number">-1</span>}},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,docs</span>)</span>{
+      <span class="hljs-comment">//查询所有数据，并按照age降序顺序返回数据docs</span>
+});
+</code></pre>
+<p>sort函数可根据用户自定义条件有选择性的来进行排序显示数据结果。</p>
+<h5 id="t333.5.7.4 分页查询">3.5.7.4 分页查询 <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t333.5.7.4%20%E5%88%86%E9%A1%B5%E6%9F%A5%E8%AF%A2"> # </a></h5>
+<pre><code class="lang-js">Model(<span class="hljs-string">'User'</span>).find({})
+  .sort({<span class="hljs-attr">createAt</span>:<span class="hljs-number">-1</span>})
+  .skip((pageNum<span class="hljs-number">-1</span>)*pageSize)
+  .limit(pageSize)
+  .populate(<span class="hljs-string">'user'</span>)
+  .exec(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,docs</span>)</span>{
+     <span class="hljs-built_in">console</span>.log(docs);
+  });
+</code></pre>
+<h5 id="t343.5.7.5 populate">3.5.7.5 populate <a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html#t343.5.7.5%20populate"> # </a></h5>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mongoose'</span>);
+<span class="hljs-comment">//连接数据库</span>
+mongoose.connect(<span class="hljs-string">'mongodb://localhost:27017/201606blog'</span>);
+<span class="hljs-comment">//定义课程Schema</span>
+<span class="hljs-keyword">var</span> CourseSchema = <span class="hljs-keyword">new</span> mongoose.Schema({
+    <span class="hljs-attr">name</span>:<span class="hljs-built_in">String</span>
+});
+<span class="hljs-keyword">var</span> CourseModel = mongoose.model(<span class="hljs-string">'Course'</span>,CourseSchema);
+<span class="hljs-keyword">var</span> PersonSchema = <span class="hljs-keyword">new</span> mongoose.Schema({
+    <span class="hljs-attr">name</span>:{
+        <span class="hljs-attr">type</span>:<span class="hljs-built_in">String</span>,
+        <span class="hljs-attr">required</span>:<span class="hljs-literal">true</span>
+    },
+    <span class="hljs-comment">// 外键 别的集合的主键</span>
+    <span class="hljs-attr">course</span>:{
+        <span class="hljs-attr">type</span>:mongoose.Schema.Types.ObjectId,
+        <span class="hljs-attr">ref</span>:<span class="hljs-string">'Course'</span> <span class="hljs-comment">//指明此外键是哪个集合中的外键</span>
+    }
+});
+<span class="hljs-keyword">var</span> PersonModel = mongoose.model(<span class="hljs-string">'Person'</span>,PersonSchema);
+CourseModel.create({<span class="hljs-attr">name</span>:<span class="hljs-string">'node.js'</span>},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,course</span>)</span>{
+    PersonModel.create({<span class="hljs-attr">name</span>:<span class="hljs-string">'zfpx'</span>,<span class="hljs-attr">course</span>:course._id},<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,doc</span>)</span>{
+        <span class="hljs-built_in">console</span>.log(doc);
+        PersonModel.findById(doc._id).populate(<span class="hljs-string">'course'</span>).exec(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err,doc</span>)</span>{
+            <span class="hljs-built_in">console</span>.log(doc);
+        })
+    })
+});
+</code></pre>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

@@ -310,6 +310,65 @@ const isPromise = value => {
 
 14. Promise.allSettled了解吗？手写Promise.allSettled
 
+    ```js
+    const resolved = Promise.resolve(42);
+    const rejected = Promise.reject(-1);
+    
+    // 参数是一组Promise实例
+    // 返回一个新的Promise实例
+    // 只有等到这些参数实例全部都返回结果，不管结果是成功还是失败，才会结束
+    // 一旦结束，状态总是成功
+    const allSettledPromise = Promise.allSettled([resolved, rejected]);
+    
+    // 新的实例给监听函数传递一个数组，数组的每个成员是一个对象，每一个对象有一个status属性，
+    // 记录成功还是失败，如果是成功，还有一个额外的value属性，如果是失败，还有一个额外的属性reason
+    allSettledPromise.then(function (results) {
+        console.log(results);
+    });
+    
+    // 应用场景：有时候我们不关心异步操作的结果，只关心异步操作有没有结束，这个方法比较适用
+    // [
+    //    { status: 'fulfilled', value: 42 },
+    //    { status: 'rejected', reason: -1 }
+    // ]
+    
+    const formatSettledResult = (success, value) =>
+    success
+    ? { status: "fulfilled", value }
+    : { status: "rejected", reason: value };
+    
+    Promise.all_settled = function (iterators) {
+        const promises = Array.from(iterators);
+        const num = promises.length;
+        const resultList = new Array(num);
+        let resultNum = 0;
+    
+        return new Promise((resolve) => {
+            promises.forEach((promise, index) => {
+                Promise.resolve(promise)
+                    .then((value) => {
+                    resultList[index] = formatSettledResult(true, value);
+                    if (++resultNum === num) {
+                        resolve(resultList);
+                    }
+                })
+                    .catch((error) => {
+                    resultList[index] = formatSettledResult(false, error);
+                    if (++resultNum === num) {
+                        resolve(resultList);
+                    }
+                });
+            });
+        });
+    };
+    
+    const resolved = Promise.resolve(42);
+    const rejected = Promise.reject(-1);
+    Promise.all_settled([resolved, rejected]).then((results) => {
+        console.log(results);
+    });
+    ```
+
     
 
 # 更多面试题：[点击访问](https://juejin.cn/post/6844904077537574919#heading-50)

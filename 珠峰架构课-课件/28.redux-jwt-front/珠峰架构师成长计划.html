@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<!-- saved from url=(0064)http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t01.%20%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE">1. 生成项目</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t12.%E8%B7%91%E9%80%9A%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BB%93%E5%BA%93">2.跑通路由和仓库</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t22.1%20history.js">2.1 history.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t32.2%20src/index.js">2.2 src/index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t42.3%20src/containers/App.js">2.3 src/containers/App.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t52.4%20store/index.js">2.4 store/index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t62.5%20store/reducers/index.js">2.5 store/reducers/index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t72.6%20store/reducers/user.js">2.6 store/reducers/user.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t83.%20%E8%BF%9E%E6%8E%A5%E7%BB%84%E4%BB%B6%E5%92%8C%E4%BB%93%E5%BA%93">3. 连接组件和仓库</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t93.1%20NavHeader.js">3.1 NavHeader.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t103.2%20Home.js">3.2 Home.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t113.3%20Signin.js">3.3 Signin.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t123.4%20Signup.js">3.4 Signup.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t133.5%20article/Add.js">3.5 article/Add.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t143.6%20reducers/user.js">3.6 reducers/user.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t154.%20%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95">4. 用户登录</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t164.1%20NavHeader.js">4.1 NavHeader.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t174.2%20App.js">4.2 App.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t184.3%20Signin.js">4.3 Signin.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t194.4%20action-types.js">4.4 action-types.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t204.5%20index.js">4.5 index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t214.6%20saga.js">4.6 saga.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t224.7%20user.js">4.7 user.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t234.8%20index.js">4.8 index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t244.9%20user.js">4.9 user.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t254.10%20index.js">4.10 index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t264.11%20user.js">4.11 user.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t274.12%20jwt.js">4.12 jwt.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t285.%20%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6">5. 发表文章权限控制</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t295.1%20article/Add.js">5.1 article/Add.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t305.2%20action-types.js">5.2 action-types.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t315.3%20saga.js">5.3 saga.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t325.4%20actions/article.js">5.4 actions/article.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t335.5%20article.js">5.5 article.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t345.6%20api/index.js">5.6 api/index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t355.7%20api/user.js">5.7 api/user.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t365.8%20reducers/article.js">5.8 reducers/article.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t375.9%20reducers/index.js">5.9 reducers/index.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t38%E5%8F%82%E8%80%83%E4%BB%93%E5%BA%93">参考仓库</a></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. 生成项目">1. 生成项目 <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t01.%20%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE"> # </a></h2>
+<pre><code class="lang-js">$ create-react-app jwt-frontend
+cd jwt-frontend
+cnpm i redux react-redux redux-logger redux-saga react-router-dom react-router-redux@next history axios jsonwebtoken -S
+</code></pre>
+<h2 id="t12.跑通路由和仓库">2.跑通路由和仓库 <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t12.%E8%B7%91%E9%80%9A%E8%B7%AF%E7%94%B1%E5%92%8C%E4%BB%93%E5%BA%93"> # </a></h2>
+<h3 id="t22.1 history.js">2.1 history.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t22.1%20history.js"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> createHistory <span class="hljs-keyword">from</span> <span class="hljs-string">'history/createBrowserHistory'</span>;
+<span class="hljs-keyword">let</span> history=createHistory();
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> history;
+</code></pre>
+<h3 id="t32.2 src/index.js">2.2 src/index.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t32.2%20src/index.js"> # </a></h3>
+<pre><code class="lang-diff"><span class="hljs-addition">+ import {Provider} from 'react-redux';</span>
+<span class="hljs-addition">+ import store from './store';</span>
+<span class="hljs-addition">+ import App from './containers/App';</span>
+<span class="hljs-addition">+ import {ConnectedRouter} from 'react-router-redux';</span>
+<span class="hljs-addition">+ import history from './history';</span>
+<span class="hljs-addition">+ import 'bootstrap/dist/css/bootstrap.css'</span>
+<span class="hljs-addition">+ ReactDOM.render(&lt;Provider store={store}&gt;</span>
+<span class="hljs-addition">+     &lt;ConnectedRouter history={history}&gt;</span>
+<span class="hljs-addition">+         &lt;App /&gt;</span>
+<span class="hljs-addition">+     &lt;/ConnectedRouter&gt;</span>
+<span class="hljs-addition">+ &lt;/Provider&gt;, document.getElementById('root'));</span>
+</code></pre>
+<h3 id="t42.3 src/containers/App.js">2.3 src/containers/App.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t42.3%20src/containers/App.js"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component,Fragment} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> {Link} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-dom'</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">App</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Fragment</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"navbar navbar-default"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"container-fluid"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"navbar-header"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"navbar-brand"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>珠峰博客<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"nav navbar-nav"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/"</span>&gt;</span>首页<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/users/signup"</span>&gt;</span>注册<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/users/signin"</span>&gt;</span>登录<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/articles/add"</span>&gt;</span>发表文章<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Fragment</span>&gt;</span></span>
+        )
+    }
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> App;
+</code></pre>
+<h3 id="t52.4 store/index.js">2.4 store/index.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t52.4%20store/index.js"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {createStore} <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+<span class="hljs-keyword">import</span> reducers <span class="hljs-keyword">from</span> <span class="hljs-string">'./reducers'</span>;
+<span class="hljs-keyword">let</span> store=createStore(reducers);
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> store;
+</code></pre>
+<h3 id="t62.5 store/reducers/index.js">2.5 store/reducers/index.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t62.5%20store/reducers/index.js"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {combineReducers} <span class="hljs-keyword">from</span> <span class="hljs-string">'redux'</span>;
+<span class="hljs-keyword">import</span> user <span class="hljs-keyword">from</span> <span class="hljs-string">'./user'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> combineReducers({
+  user
+});
+</code></pre>
+<h3 id="t72.6 store/reducers/user.js">2.6 store/reducers/user.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t72.6%20store/reducers/user.js"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> initState={};
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state=initState,action</span>) </span>{
+    <span class="hljs-keyword">return</span> state;
+}
+</code></pre>
+<h2 id="t83. 连接组件和仓库">3. 连接组件和仓库 <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t83.%20%E8%BF%9E%E6%8E%A5%E7%BB%84%E4%BB%B6%E5%92%8C%E4%BB%93%E5%BA%93"> # </a></h2>
+<h3 id="t93.1 NavHeader.js">3.1 NavHeader.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t93.1%20NavHeader.js"> # </a></h3>
+<p>src/components/NavHeader.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> {Link} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-dom'</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-redux'</span>;
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NavHeader</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">nav</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"navbar navbar-default"</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"container-fluid"</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"navbar-header"</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"navbar-brand"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>珠峰博客<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"nav navbar-nav"</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/"</span>&gt;</span>首页<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/users/signup"</span>&gt;</span>注册<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/users/signin"</span>&gt;</span>登录<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/articles/add"</span>&gt;</span>发表文章<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+                           <span class="hljs-tag">&lt;<span class="hljs-name">ul</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"nav navbar-nav navbar-right"</span>&gt;</span>
+                           <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                               <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/users/signout"</span>&gt;</span>欢迎:{this.props.username}<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">li</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/users/signout"</span>&gt;</span>退出<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">li</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">ul</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">nav</span>&gt;</span></span>
+        )
+    }
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> connect(<span class="hljs-function"><span class="hljs-params">state</span>=&gt;</span>state.user)(NavHeader);
+</code></pre>
+<h3 id="t103.2 Home.js">3.2 Home.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t103.2%20Home.js"> # </a></h3>
+<p>src/containers/Home.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Home</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Home<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+</code></pre>
+<h3 id="t113.3 Signin.js">3.3 Signin.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t113.3%20Signin.js"> # </a></h3>
+<p>src/containers/Signin.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Signin</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Signin<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+</code></pre>
+<h3 id="t123.4 Signup.js">3.4 Signup.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t123.4%20Signup.js"> # </a></h3>
+<p>src/containers/Signup.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Signup</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Signup<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+</code></pre>
+<h3 id="t133.5 article/Add.js">3.5 article/Add.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t133.5%20article/Add.js"> # </a></h3>
+<p>src/containers/article/Add.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Add</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Article Add<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+</code></pre>
+<h3 id="t143.6 reducers/user.js">3.6 reducers/user.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t143.6%20reducers/user.js"> # </a></h3>
+<p>src/store/reducers/user.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-let initState={};</span>
+<span class="hljs-addition">+let initState={username:'张三'};</span>
+</code></pre>
+<h2 id="t154. 用户登录">4. 用户登录 <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t154.%20%E7%94%A8%E6%88%B7%E7%99%BB%E5%BD%95"> # </a></h2>
+<h3 id="t164.1 NavHeader.js">4.1 NavHeader.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t164.1%20NavHeader.js"> # </a></h3>
+<p>src/components/NavHeader.js</p>
+<pre><code class="lang-diff"> import React,{Component} from 'react'
+ import {Link} from 'react-router-dom';
+ import {connect} from 'react-redux';
+<span class="hljs-addition">+import actions from '../store/actions/user';</span>
+ class NavHeader extends Component{
+<span class="hljs-addition">+    componentDidMount() {</span>
+<span class="hljs-addition">+        this.props.loadUser();</span>
+<span class="hljs-addition">+    }</span>
+     render() {
+         return (
+             &lt;nav className="navbar navbar-default"&gt;
+                     &lt;div className="container-fluid"&gt;
+                         &lt;div className="navbar-header"&gt;
+<span class="hljs-deletion">-                            &lt;a className="navbar-brand" href="#"&gt;珠峰博客&lt;/a&gt;</span>
+<span class="hljs-addition">+                            &lt;a className="navbar-brand" href="/"&gt;珠峰博客&lt;/a&gt;</span>
+                         &lt;/div&gt;
+                         &lt;div&gt;
+                             &lt;ul className="nav navbar-nav"&gt;
+<span class="hljs-deletion">-                                &lt;li&gt;&lt;Link to="/"&gt;首页&lt;/Link&gt;&lt;/li&gt;</span>
+<span class="hljs-deletion">-                                &lt;li&gt;&lt;Link to="/users/signup"&gt;注册&lt;/Link&gt;&lt;/li&gt;</span>
+<span class="hljs-deletion">-                                &lt;li&gt;&lt;Link to="/users/signin"&gt;登录&lt;/Link&gt;&lt;/li&gt;</span>
+<span class="hljs-deletion">-                                &lt;li&gt;&lt;Link to="/articles/add"&gt;发表文章&lt;/Link&gt;&lt;/li&gt;</span>
+<span class="hljs-deletion">-                            &lt;/ul&gt;</span>
+<span class="hljs-deletion">-                           &lt;ul className="nav navbar-nav navbar-right"&gt;</span>
+<span class="hljs-deletion">-                           &lt;li&gt;</span>
+<span class="hljs-deletion">-                               &lt;Link to="/users/signout"&gt;欢迎:{this.props.username}&lt;/Link&gt;</span>
+<span class="hljs-deletion">-                            &lt;/li&gt;</span>
+<span class="hljs-addition">+                            &lt;li&gt;&lt;Link to="/"&gt;首页&lt;/Link&gt;&lt;/li&gt;</span>
+<span class="hljs-addition">+                            {</span>
+<span class="hljs-addition">+                                !this.props.user&amp;&amp;(&lt;li&gt;&lt;Link to="/users/signup"&gt;注册&lt;/Link&gt;&lt;/li&gt;</span>
+<span class="hljs-addition">+                                )</span>
+<span class="hljs-addition">+                            }</span>
+<span class="hljs-addition">+                            {</span>
+<span class="hljs-addition">+                                !this.props.user&amp;&amp;(&lt;li&gt;&lt;Link to="/users/signin"&gt;登录&lt;/Link&gt;&lt;/li&gt;)</span>
+<span class="hljs-addition">+                            }</span>
+<span class="hljs-addition">+                            {</span>
+<span class="hljs-addition">+                                this.props.user&amp;&amp;this.props.user.admin&amp;&amp;&lt;li&gt;&lt;Link to="/articles/add"&gt;发表文章&lt;/Link&gt;&lt;/li&gt;</span>
+<span class="hljs-addition">+                            }</span>
+<span class="hljs-addition">+                        &lt;/ul&gt;</span>
+<span class="hljs-addition">+                        {</span>
+<span class="hljs-addition">+                            this.props.user&amp;&amp;&lt;ul className="nav navbar-nav navbar-right"&gt;</span>
+                             &lt;li&gt;
+<span class="hljs-deletion">-                                &lt;Link to="/users/signout"&gt;退出&lt;/Link&gt;</span>
+<span class="hljs-deletion">-                            &lt;/li&gt;</span>
+<span class="hljs-deletion">-                            &lt;/ul&gt;</span>
+<span class="hljs-addition">+                                &lt;Link to="/users/signout"&gt;欢迎:{this.props.user.username}&lt;/Link&gt;</span>
+<span class="hljs-addition">+                             &lt;/li&gt;</span>
+<span class="hljs-addition">+                             &lt;li&gt;</span>
+<span class="hljs-addition">+                                    &lt;a onClick={this.props.logout}&gt;退出&lt;/a&gt;</span>
+<span class="hljs-addition">+                             &lt;/li&gt;</span>
+<span class="hljs-addition">+                             &lt;/ul&gt;</span>
+<span class="hljs-addition">+                        }</span>
+                         &lt;/div&gt;
+                     &lt;/div&gt;
+                 &lt;/nav&gt;
+         )
+     }
+ }
+<span class="hljs-deletion">-export default connect(state=&gt;state.user)(NavHeader);</span>
+<span class="hljs-addition">+export default connect(state=&gt;state.user,actions)(NavHeader);</span>
+</code></pre>
+<h3 id="t174.2 App.js">4.2 App.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t174.2%20App.js"> # </a></h3>
+<p>src/containers/App.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-import {Link,Route} from 'react-router-dom';</span>
+<span class="hljs-addition">+import {Route} from 'react-router-dom';</span>
+</code></pre>
+<h3 id="t184.3 Signin.js">4.3 Signin.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t184.3%20Signin.js"> # </a></h3>
+<p>src/containers/Signin.js</p>
+<pre><code class="lang-diff"> import React,{Component} from 'react'
+<span class="hljs-deletion">-export default class Signin extends Component{</span>
+<span class="hljs-addition">+import actions from '../store/actions/user';</span>
+<span class="hljs-addition">+import {connect} from 'react-redux';</span>
+<span class="hljs-addition">+class Signin extends Component{</span>
+<span class="hljs-addition">+    handleSubmit=(event) =&gt; {</span>
+<span class="hljs-addition">+        event.preventDefault();</span>
+<span class="hljs-addition">+        let username=this.username.value;</span>
+<span class="hljs-addition">+        let password=this.password.value;</span>
+<span class="hljs-addition">+        let user={username,password};</span>
+<span class="hljs-addition">+        this.props.login(user);</span>
+<span class="hljs-addition">+    }</span>
+     render() {
+         return (
+<span class="hljs-deletion">-            &lt;div&gt;Signin&lt;/div&gt;</span>
+<span class="hljs-addition">+            &lt;form onSubmit={this.handleSubmit}&gt;</span>
+<span class="hljs-addition">+                &lt;div className="form-group"&gt;</span>
+<span class="hljs-addition">+                    &lt;label htmlFor="username"&gt;用户名&lt;/label&gt;</span>
+<span class="hljs-addition">+                    &lt;input className="form-control" ref={input=&gt;this.username=input}/&gt;</span>
+<span class="hljs-addition">+                &lt;/div&gt;</span>
+<span class="hljs-addition">+                &lt;div className="form-group"&gt;</span>
+<span class="hljs-addition">+                    &lt;label htmlFor="password"&gt;密码&lt;/label&gt;</span>
+<span class="hljs-addition">+                    &lt;input className="form-control" ref={input=&gt;this.password=input}/&gt;</span>
+<span class="hljs-addition">+                &lt;/div&gt;</span>
+<span class="hljs-addition">+                &lt;div className="form-group"&gt;</span>
+<span class="hljs-addition">+                    &lt;input type="submit" className="btn btn-primary"/&gt;</span>
+<span class="hljs-addition">+                &lt;/div&gt;</span>
+<span class="hljs-addition">+                {</span>
+<span class="hljs-addition">+                    this.props.error&amp;&amp;(</span>
+<span class="hljs-addition">+                        &lt;div className="form-group"&gt;</span>
+<span class="hljs-addition">+                                &lt;div className="alert alert-danger"&gt;</span>
+<span class="hljs-addition">+                                    {this.props.error.toString()}</span>
+<span class="hljs-addition">+                                &lt;/div&gt;</span>
+<span class="hljs-addition">+                        &lt;/div&gt;</span>
+<span class="hljs-addition">+                    )</span>
+<span class="hljs-addition">+                }</span>
+<span class="hljs-addition">+                </span>
+<span class="hljs-addition">+            &lt;/form&gt;</span>
+         )
+     }
+<span class="hljs-deletion">-}</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+export default connect(</span>
+<span class="hljs-addition">+    state =&gt; state.user,</span>
+<span class="hljs-addition">+    actions</span>
+<span class="hljs-addition">+)(Signin);</span>
+</code></pre>
+<h3 id="t194.4 action-types.js">4.4 action-types.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t194.4%20action-types.js"> # </a></h3>
+<p>src/store/action-types.js</p>
+<pre><code class="lang-diff">export const LOGIN='LOGIN';
+export const LOGOUT='LOGOUT';
+export const LOGIN_SUCCESS='LOGIN_SUCCESS';
+export const LOGIN_ERROR='LOGIN_ERROR';
+export const LOGIN_OUT_SUCCESS='LOGIN_OUT_SUCCESS';
+export const LOAD_USER='LOAD_USER';
+</code></pre>
+<h3 id="t204.5 index.js">4.5 index.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t204.5%20index.js"> # </a></h3>
+<p>src/store/index.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-import {createStore} from 'redux';</span>
+<span class="hljs-addition">+import {createStore,applyMiddleware} from 'redux';</span>
+ import reducers from './reducers';
+<span class="hljs-deletion">-let store=createStore(reducers);</span>
+<span class="hljs-addition">+import createSagaMiddelware from 'redux-saga';</span>
+<span class="hljs-addition">+import logger from 'redux-logger';</span>
+<span class="hljs-addition">+import rootSaga from './saga';</span>
+<span class="hljs-addition">+import {routerMiddleware} from 'react-router-redux';</span>
+<span class="hljs-addition">+import history from '../history';</span>
+<span class="hljs-addition">+let router=routerMiddleware(history);</span>
+<span class="hljs-addition">+let sagaMiddleware=createSagaMiddelware();</span>
+<span class="hljs-addition">+let store=createStore(reducers,applyMiddleware(sagaMiddleware,router,logger));</span>
+<span class="hljs-addition">+sagaMiddleware.run(rootSaga);</span>
+ export default store;
+</code></pre>
+<h3 id="t214.6 saga.js">4.6 saga.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t214.6%20saga.js"> # </a></h3>
+<p>src/store/saga.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> types <span class="hljs-keyword">from</span> <span class="hljs-string">'./action-types'</span>;
+<span class="hljs-keyword">import</span> {put,call,take,all,takeEvery} <span class="hljs-keyword">from</span> <span class="hljs-string">'redux-saga/effects'</span>;
+<span class="hljs-keyword">import</span> {push} <span class="hljs-keyword">from</span> <span class="hljs-string">'react-router-redux'</span>;
+<span class="hljs-keyword">import</span> userApi <span class="hljs-keyword">from</span> <span class="hljs-string">'./api/user'</span>;
+<span class="hljs-keyword">import</span> {decode} <span class="hljs-keyword">from</span> <span class="hljs-string">'../utils/jwt'</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">login</span>(<span class="hljs-params">action</span>) </span>{
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">const</span> response=<span class="hljs-keyword">yield</span> call(userApi.login,action.user);
+        <span class="hljs-keyword">let</span> {<span class="hljs-attr">data</span>: {<span class="hljs-attr">data</span>: {token}}}=response;
+        <span class="hljs-built_in">window</span>.localStorage.setItem(<span class="hljs-string">'token'</span>,token);
+        <span class="hljs-keyword">const</span> user=decode(token);
+        <span class="hljs-keyword">yield</span> put({<span class="hljs-attr">type</span>: types.LOGIN_SUCCESS,user});
+        <span class="hljs-keyword">yield</span> put(push(<span class="hljs-string">'/'</span>));
+    } <span class="hljs-keyword">catch</span> (error) {
+        <span class="hljs-keyword">yield</span> put({<span class="hljs-attr">type</span>: types.LOGIN_ERROR,error});
+    }
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">logout</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">window</span>.localStorage.removeItem(<span class="hljs-string">'token'</span>);
+    <span class="hljs-keyword">yield</span> put({<span class="hljs-attr">type</span>: types.LOGIN_OUT_SUCCESS});
+    <span class="hljs-keyword">yield</span> put(push(<span class="hljs-string">'/'</span>));
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">loginFlow</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">yield</span> takeEvery(types.LOGIN,login);
+    <span class="hljs-keyword">yield</span> takeEvery(types.LOGOUT,logout);
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">loadUser</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">let</span> token = <span class="hljs-built_in">window</span>.localStorage.getItem(<span class="hljs-string">'token'</span>);
+    <span class="hljs-keyword">if</span> (token) {
+        <span class="hljs-keyword">const</span> user=decode(token);
+        <span class="hljs-keyword">if</span> (user) {
+            <span class="hljs-keyword">yield</span> put({<span class="hljs-attr">type</span>: types.LOGIN_SUCCESS,user});
+            <span class="hljs-keyword">yield</span> put(push(<span class="hljs-string">'/'</span>));
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">yield</span> put(push(<span class="hljs-string">'/users/signin'</span>));
+        }
+    }
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">watchLoadUser</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">yield</span> takeEvery(types.LOAD_USER,loadUser);
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span>* <span class="hljs-title">rootSaga</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">yield</span> all([loginFlow(),watchLoadUser()]);
+}
+</code></pre>
+<h3 id="t224.7 user.js">4.7 user.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t224.7%20user.js"> # </a></h3>
+<p>src/store/actions/user.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> types <span class="hljs-keyword">from</span> <span class="hljs-string">'../action-types'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    login(user) {
+        <span class="hljs-keyword">return</span> {<span class="hljs-attr">type</span>:types.LOGIN,user}
+    },
+    logout() {
+        <span class="hljs-keyword">return</span> {<span class="hljs-attr">type</span>:types.LOGOUT};
+    },
+    loadUser() {
+        <span class="hljs-keyword">return</span> {<span class="hljs-attr">type</span>:types.LOAD_USER};
+    }
+}
+</code></pre>
+<h3 id="t234.8 index.js">4.8 index.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t234.8%20index.js"> # </a></h3>
+<p>src/store/api/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> axios <span class="hljs-keyword">from</span> <span class="hljs-string">'axios'</span>;
+<span class="hljs-keyword">const</span> BASE_URL=<span class="hljs-string">'http://localhost:8080'</span>;
+axios.interceptors.request.use(<span class="hljs-function"><span class="hljs-params">config</span> =&gt;</span> {
+    <span class="hljs-keyword">let</span> token=localStorage.getItem(<span class="hljs-string">'token'</span>);
+    <span class="hljs-keyword">if</span> (token) {
+        config.headers.Authorization=token;
+    }
+    <span class="hljs-keyword">return</span> config;
+});
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">post</span>(<span class="hljs-params">url,body</span>) </span>{
+    <span class="hljs-keyword">return</span> axios.post(BASE_URL+<span class="hljs-string">'/users/signin'</span>,body);
+}
+</code></pre>
+<h3 id="t244.9 user.js">4.9 user.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t244.9%20user.js"> # </a></h3>
+<p>src/store/api/user.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {post} <span class="hljs-keyword">from</span> <span class="hljs-string">'./index'</span>;
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-keyword">return</span> post(<span class="hljs-string">'/users/signin'</span>,body);    
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    login
+}
+</code></pre>
+<h3 id="t254.10 index.js">4.10 index.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t254.10%20index.js"> # </a></h3>
+<p>src/store/reducers/index.js</p>
+<pre><code class="lang-diff"> import {combineReducers} from 'redux';
+ import user from './user';
+<span class="hljs-addition">+import {routerReducer} from 'react-router-redux';</span>
+ export default combineReducers({
+<span class="hljs-addition">+  router:routerReducer</span>
+ });
+</code></pre>
+<h3 id="t264.11 user.js">4.11 user.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t264.11%20user.js"> # </a></h3>
+<p>src/store/reducers/user.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-let initState={username:'张三'};</span>
+<span class="hljs-addition">+import * as types from '../action-types';</span>
+<span class="hljs-addition">+let initState={};</span>
+ export default function (state=initState,action) {
+<span class="hljs-deletion">-    return state;</span>
+<span class="hljs-addition">+    switch (action.type) {</span>
+<span class="hljs-addition">+        case types.LOGIN_SUCCESS:</span>
+<span class="hljs-addition">+            return {...state,user:action.user,error: null};</span>
+<span class="hljs-addition">+        case types.LOGIN_ERROR:</span>
+<span class="hljs-addition">+            return {...state,user: null,error: action.error};</span>
+<span class="hljs-addition">+            case types.LOGIN_OUT_SUCCESS:</span>
+<span class="hljs-addition">+            return {...state,user: null,error: null};</span>
+<span class="hljs-addition">+        default:</span>
+<span class="hljs-addition">+            return state;</span>
+<span class="hljs-addition">+    }</span>
+}
+</code></pre>
+<h3 id="t274.12 jwt.js">4.12 jwt.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t274.12%20jwt.js"> # </a></h3>
+<p>src/utils/jwt.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> jwt <span class="hljs-keyword">from</span> <span class="hljs-string">'jsonwebtoken'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">decode</span>(<span class="hljs-params">token</span>) </span>{
+    <span class="hljs-keyword">return</span> jwt.decode(token);;
+}
+</code></pre>
+<h2 id="t285. 发表文章权限控制">5. 发表文章权限控制 <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t285.%20%E5%8F%91%E8%A1%A8%E6%96%87%E7%AB%A0%E6%9D%83%E9%99%90%E6%8E%A7%E5%88%B6"> # </a></h2>
+<h3 id="t295.1 article/Add.js">5.1 article/Add.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t295.1%20article/Add.js"> # </a></h3>
+<p>src/containers/article/Add.js</p>
+<pre><code class="lang-diff"> import React,{Component} from 'react'
+<span class="hljs-deletion">-export default class Add extends Component{</span>
+<span class="hljs-addition">+import actions from '../../store/actions/article';</span>
+<span class="hljs-addition">+import {connect} from 'react-redux';</span>
+<span class="hljs-addition">+class Signin extends Component{</span>
+<span class="hljs-addition">+    handleSubmit=(event) =&gt; {</span>
+<span class="hljs-addition">+        event.preventDefault();</span>
+<span class="hljs-addition">+        let title=this.title.value;</span>
+<span class="hljs-addition">+        let content=this.content.value;</span>
+<span class="hljs-addition">+        let article={title,content};</span>
+<span class="hljs-addition">+        this.props.add(article);</span>
+<span class="hljs-addition">+    }</span>
+     render() {
+         return (
+<span class="hljs-deletion">-            &lt;div&gt;Article Add&lt;/div&gt;</span>
+<span class="hljs-addition">+            &lt;form onSubmit={this.handleSubmit}&gt;</span>
+<span class="hljs-addition">+                &lt;div className="form-group"&gt;</span>
+<span class="hljs-addition">+                    &lt;label htmlFor="title"&gt;标题&lt;/label&gt;</span>
+<span class="hljs-addition">+                    &lt;input className="form-control" ref={input=&gt;this.title=input}/&gt;</span>
+<span class="hljs-addition">+                &lt;/div&gt;</span>
+<span class="hljs-addition">+                &lt;div className="form-group"&gt;</span>
+<span class="hljs-addition">+                    &lt;label htmlFor="content"&gt;内容&lt;/label&gt;</span>
+<span class="hljs-addition">+                    &lt;textarea className="form-control" ref={input=&gt;this.content=input}/&gt;</span>
+<span class="hljs-addition">+                &lt;/div&gt;</span>
+<span class="hljs-addition">+                &lt;div className="form-group"&gt;</span>
+<span class="hljs-addition">+                    &lt;input type="submit" className="btn btn-primary"/&gt;</span>
+<span class="hljs-addition">+                &lt;/div&gt;</span>
+<span class="hljs-addition">+                {</span>
+<span class="hljs-addition">+                    this.props.error&amp;&amp;(</span>
+<span class="hljs-addition">+                        &lt;div className="form-group"&gt;</span>
+<span class="hljs-addition">+                                &lt;div className="alert alert-danger"&gt;</span>
+<span class="hljs-addition">+                                    {this.props.error.toString()}</span>
+<span class="hljs-addition">+                                &lt;/div&gt;</span>
+<span class="hljs-addition">+                        &lt;/div&gt;</span>
+<span class="hljs-addition">+                    )</span>
+<span class="hljs-addition">+                }</span>
+<span class="hljs-addition">+                </span>
+<span class="hljs-addition">+            &lt;/form&gt;</span>
+         )
+     }
+<span class="hljs-deletion">-}</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+export default connect(</span>
+<span class="hljs-addition">+    state =&gt; state.article,</span>
+<span class="hljs-addition">+    actions</span>
+<span class="hljs-addition">+)(Signin);</span>
+</code></pre>
+<h3 id="t305.2 action-types.js">5.2 action-types.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t305.2%20action-types.js"> # </a></h3>
+<p>src/store/action-types.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-export const LOAD_USER='LOAD_USER';</span>
+<span class="hljs-addition">+export const LOAD_USER='LOAD_USER';</span>
+<span class="hljs-addition">+export const ADD_ARTICLE='ADD_ARTICLE';</span>
+<span class="hljs-addition">+export const ADD_ARTICLE_SUCCESS='ADD_ARTICLE_SUCCESS';</span>
+<span class="hljs-addition">+export const ADD_ARTICLE_ERROR='ADD_ARTICLE_ERROR';</span>
+</code></pre>
+<h3 id="t315.3 saga.js">5.3 saga.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t315.3%20saga.js"> # </a></h3>
+<p>src/store/saga.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+function* addArticle(action) {</span>
+<span class="hljs-addition">+    try {</span>
+<span class="hljs-addition">+        debugger;</span>
+<span class="hljs-addition">+        yield call(articleApi.add,action.article);</span>
+<span class="hljs-addition">+        yield put(push('/'));</span>
+<span class="hljs-addition">+    } catch (error) {</span>
+<span class="hljs-addition">+        yield put({type: types.ADD_ARTICLE_ERROR,error});</span>
+<span class="hljs-addition">+    }</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+</span>
+<span class="hljs-addition">+function* watchAddArticle() {</span>
+<span class="hljs-addition">+    yield takeEvery(types.ADD_ARTICLE,addArticle);</span>
+<span class="hljs-addition">+}</span>
+<span class="hljs-addition">+</span>
+ export default function* rootSaga() {
+<span class="hljs-deletion">-    yield all([loginFlow(),watchLoadUser()]);</span>
+<span class="hljs-addition">+    yield all([loginFlow(),watchLoadUser(),watchAddArticle()]);</span>
+ }
+
+</code></pre>
+<h3 id="t325.4 actions/article.js">5.4 actions/article.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t325.4%20actions/article.js"> # </a></h3>
+<p>src/store/actions/article.js</p>
+<pre><code class="lang-diff">import * as types from '../action-types';
+export default {
+    add(article) {
+        return {type:types.ADD_ARTICLE,article}
+    }
+}
+`
+</code></pre>
+<h3 id="t335.5 article.js">5.5 article.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t335.5%20article.js"> # </a></h3>
+<p>src/store/api/article.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {post} <span class="hljs-keyword">from</span> <span class="hljs-string">'.'</span>;
+<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">add</span>(<span class="hljs-params">body</span>) </span>{
+    <span class="hljs-keyword">return</span> post(<span class="hljs-string">'/articles/add'</span>,body);    
+}
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+    add
+}
+</code></pre>
+<h3 id="t345.6 api/index.js">5.6 api/index.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t345.6%20api/index.js"> # </a></h3>
+<p>src/store/api/index.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-    return axios.post(BASE_URL+'/users/signin',body);</span>
+<span class="hljs-addition">+    return axios.post(BASE_URL+url,body);</span>
+</code></pre>
+<h3 id="t355.7 api/user.js">5.7 api/user.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t355.7%20api/user.js"> # </a></h3>
+<p>src/store/api/user.js</p>
+<pre><code class="lang-js">-<span class="hljs-keyword">import</span> {post} <span class="hljs-keyword">from</span> <span class="hljs-string">'./index'</span>;
++<span class="hljs-keyword">import</span> {post} <span class="hljs-keyword">from</span> <span class="hljs-string">'.'</span>;
+ <span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params">body</span>) </span>{
+     <span class="hljs-keyword">return</span> post(<span class="hljs-string">'/users/signin'</span>,body);    
+ }
+</code></pre>
+<h3 id="t365.8 reducers/article.js">5.8 reducers/article.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t365.8%20reducers/article.js"> # </a></h3>
+<p>src/store/reducers/article.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> types <span class="hljs-keyword">from</span> <span class="hljs-string">'../action-types'</span>;
+<span class="hljs-keyword">let</span> initState={};
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">state=initState,action</span>) </span>{
+    <span class="hljs-keyword">switch</span> (action.type) {
+        <span class="hljs-keyword">case</span> types.ADD_ARTICLE_ERROR:
+            <span class="hljs-keyword">return</span> {...state,<span class="hljs-attr">user</span>: <span class="hljs-literal">null</span>,<span class="hljs-attr">error</span>: action.error};
+        <span class="hljs-keyword">default</span>:
+            <span class="hljs-keyword">return</span> state;
+    }
+}
+
+</code></pre>
+<h3 id="t375.9 reducers/index.js">5.9 reducers/index.js <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t375.9%20reducers/index.js"> # </a></h3>
+<p>src/store/reducers/index.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+ import {routerReducer} from 'react-router-redux';</span>
+export default combineReducers({
+  user,
+<span class="hljs-addition">+  article,</span>
+  router:routerReducer
+});
+</code></pre>
+<h2 id="t38参考仓库">参考仓库 <a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html#t38%E5%8F%82%E8%80%83%E4%BB%93%E5%BA%93"> # </a></h2>
+<ul>
+<li><a href="https://github.com/ReactTraining/react-router/tree/master/packages/react-router-redux">react-router-redux</a></li>
+<li><a href="https://gitee.com/zhufengpeixun/jwt-frontend">jwt-frontend</a></li>
+</ul>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

@@ -1,0 +1,935 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t02.%20%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86">2. 预备知识</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t12.1%20toStringTag">2.1 toStringTag</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t22.2%20Object.create(null)">2.2 Object.create(null)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t32.3%20getter">2.3 getter</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t42.3.1%20%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%8F%AF%E5%90%8C%E6%97%B6%E5%85%B7%E6%9C%89%E7%9A%84%E9%94%AE%E5%80%BC">2.3.1 描述符可同时具有的键值</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t52.3.2%20%E7%A4%BA%E4%BE%8B">2.3.2 示例</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t62.%20%E5%90%8C%E6%AD%A5%E5%8A%A0%E8%BD%BD">2. 同步加载</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t72.1%20webpack.config.js">2.1 webpack.config.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t82.2%20index.js">2.2 index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t92.3%20title.js">2.3 title.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t102.4%20%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90">2.4 打包文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t112.5%20%E5%AE%9E%E7%8E%B0">2.5 实现</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t122.5.1%20webpack_require">2.5.1 webpack_require</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t132.5.2%20d(defineProperty)">2.5.2 d(defineProperty)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t142.5.3%20r">2.5.3 r</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t152.5.4%20n">2.5.4 n</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t162.5.5%20t">2.5.5 t</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t173.%20harmony">3. harmony</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t183.1%20common.js%E5%8A%A0%E8%BD%BD%20common.js">3.1 common.js加载 common.js</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t193.1.1%20index.js">3.1.1 index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t203.1.2%20title.js">3.1.2 title.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t213.1.3%20bundle.js">3.1.3 bundle.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t223.2%20common.js%E5%8A%A0%E8%BD%BD%20ES6%20modules">3.2 common.js加载 ES6 modules</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t233.2.1%20index.js">3.2.1 index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t243.2.2%20title.js">3.2.2 title.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t253.2.3%20bundle.js">3.2.3 bundle.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t263.3%20ES6%20modules%20%E5%8A%A0%E8%BD%BD%20ES6%20modules">3.3 ES6 modules 加载 ES6 modules</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t273.3.1%20index.js">3.3.1 index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t283.3.2%20title.js">3.3.2 title.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t293.3.3%20bundle.js">3.3.3 bundle.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t303.4%20ES6%20modules%20%E5%8A%A0%E8%BD%BD%20common.js">3.4 ES6 modules 加载 common.js</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t313.4.1%20index.js">3.4.1 index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t323.4.2%20title.js">3.4.2 title.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t333.4.3%20bundle.js">3.4.3 bundle.js</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t344.%20%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD">4. 异步加载</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t354.1%20%E6%BA%90%E6%96%87%E4%BB%B6">4.1 源文件</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t364.1.1%20index.html">4.1.1 index.html</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t374.1.2%20src\index.js">4.1.2 src\index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t384.1.3%20src\title.js">4.1.3 src\title.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t394.2%20%E6%89%93%E5%8C%85%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6">4.2 打包后的文件</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t404.2.1">4.2.1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t414.2.2%20title.bundle.js">4.2.2 title.bundle.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t424.3%20%E5%AE%9E%E7%8E%B0bundle.js">4.3 实现bundle.js</a></li></ul></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <p>﻿## 1. webpack介绍</p>
+<ul>
+<li><code>Webpack</code>是一个前端资源加载/打包工具。它将根据模块的依赖关系进行静态分析，然后将这些模块按照指定的规则生成对应的静态资源。</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/webpack_intro.gif" alt="webpack_intro"></p>
+<h2 id="t02. 预备知识">2. 预备知识 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t02.%20%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"> # </a></h2>
+<h3 id="t12.1 toStringTag">2.1 toStringTag <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t12.1%20toStringTag"> # </a></h3>
+<ul>
+<li><code>Symbol.toStringTag</code> 是一个内置 symbol，它通常作为对象的属性键使用，对应的属性值应该为字符串类型，这个字符串用来表示该对象的自定义类型标签，通常只有内置的 <code>Object.prototype.toString()</code> 方法会去读取这个标签并把它包含在自己的返回值里。</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-string">'foo'</span>));     <span class="hljs-comment">// "[object String]"</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>]));    <span class="hljs-comment">// "[object Array]"</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-number">3</span>));         <span class="hljs-comment">// "[object Number]"</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-literal">true</span>));      <span class="hljs-comment">// "[object Boolean]"</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-literal">undefined</span>)); <span class="hljs-comment">// "[object Undefined]"</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(<span class="hljs-literal">null</span>));      <span class="hljs-comment">// "[object Null]"</span>
+<span class="hljs-keyword">let</span> myExports={};
+<span class="hljs-built_in">Object</span>.defineProperty(myExports, <span class="hljs-built_in">Symbol</span>.toStringTag, { <span class="hljs-attr">value</span>: <span class="hljs-string">'Module'</span> });
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.prototype.toString.call(myExports));
+</code></pre>
+<h3 id="t22.2 Object.create(null)">2.2 Object.create(null) <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t22.2%20Object.create(null)"> # </a></h3>
+<ul>
+<li>使用<code>create</code>创建的对象，没有任何属性,把它当作一个非常纯净的map来使用，我们可以自己定义<code>hasOwnProperty</code>、<code>toString</code>方法,完全不必担心会将原型链上的同名方法覆盖掉</li>
+<li>在我们使用<code>for..in</code>循环的时候会遍历对象原型链上的属性，使用<code>create(null)</code>就不必再对属性进行检查了</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> ns = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);
+<span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Object</span>.create !== <span class="hljs-string">"function"</span>) {
+    <span class="hljs-built_in">Object</span>.create = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">proto</span>) </span>{
+        <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">F</span>(<span class="hljs-params"></span>) </span>{}
+        F.prototype = proto;
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> F();
+    };
+}
+<span class="hljs-built_in">console</span>.log(ns)
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Object</span>.getPrototypeOf(ns));
+</code></pre>
+<h3 id="t32.3 getter">2.3 getter <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t32.3%20getter"> # </a></h3>
+<ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Object/defineProperty">defineProperty</a> 方法会直接在一个对象上定义一个新属性，或者修改一个对象的现有属性， 并返回这个对象。<ul>
+<li>obj 要在其上定义属性的对象。</li>
+<li>prop 要定义或修改的属性的名称。</li>
+<li>descriptor 将被定义或修改的属性描述符。</li>
+</ul>
+</li>
+</ul>
+<h3 id="t42.3.1 描述符可同时具有的键值">2.3.1 描述符可同时具有的键值 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t42.3.1%20%E6%8F%8F%E8%BF%B0%E7%AC%A6%E5%8F%AF%E5%90%8C%E6%97%B6%E5%85%B7%E6%9C%89%E7%9A%84%E9%94%AE%E5%80%BC"> # </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left"></th>
+<th style="text-align:left">configurable</th>
+<th style="text-align:left">enumerable</th>
+<th style="text-align:left">value</th>
+<th style="text-align:left">writable</th>
+<th style="text-align:left">get</th>
+<th style="text-align:left">set</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">数据描述符</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">No</td>
+</tr>
+<tr>
+<td style="text-align:left">存取描述符</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes    No</td>
+<td style="text-align:left">No</td>
+<td style="text-align:left">Yes</td>
+<td style="text-align:left">Yes</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t52.3.2 示例">2.3.2 示例 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t52.3.2%20%E7%A4%BA%E4%BE%8B"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> ageValue = <span class="hljs-number">10</span>;
+<span class="hljs-keyword">let</span> obj = {};
+<span class="hljs-built_in">Object</span>.defineProperty(obj, <span class="hljs-string">"age"</span>, {
+    <span class="hljs-comment">//value: 10,//数据描述符和存取描述符不能混合使用</span>
+    <span class="hljs-keyword">get</span>() {
+        <span class="hljs-keyword">return</span> ageValue;
+    },
+    <span class="hljs-keyword">set</span>(newValue) {
+        ageValue = newValue;
+    },
+    <span class="hljs-comment">//writable: true,//是否可修改</span>
+    <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否可枚举</span>
+    <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span><span class="hljs-comment">//是否可配置可删除</span>
+});
+<span class="hljs-built_in">Object</span>.defineProperty(obj, <span class="hljs-string">"name"</span>, {
+    <span class="hljs-attr">value</span>: <span class="hljs-string">'zhufeng'</span>,<span class="hljs-comment">//数据描述符和存取描述符不能混合使用</span>
+    <span class="hljs-attr">writable</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否可修改</span>
+    <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>,<span class="hljs-comment">//是否可枚举</span>
+    <span class="hljs-attr">configurable</span>: <span class="hljs-literal">true</span><span class="hljs-comment">//是否可配置可删除</span>
+});
+<span class="hljs-built_in">console</span>.log(obj.age, obj.name);
+obj.age = <span class="hljs-number">100</span>;
+obj.name = <span class="hljs-string">'jiagou'</span>;
+<span class="hljs-built_in">console</span>.log(obj.age, obj.name);
+</code></pre>
+<h2 id="t62. 同步加载">2. 同步加载 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t62.%20%E5%90%8C%E6%AD%A5%E5%8A%A0%E8%BD%BD"> # </a></h2>
+<h3 id="t72.1 webpack.config.js">2.1 webpack.config.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t72.1%20webpack.config.js"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">const</span> HtmlWebpackPlugin=<span class="hljs-built_in">require</span>(<span class="hljs-string">'html-webpack-plugin'</span>);
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">mode</span>:<span class="hljs-string">'development'</span>,
+  <span class="hljs-attr">devtool</span>:<span class="hljs-string">"none"</span>,
+  <span class="hljs-attr">context</span>: process.cwd(),
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">'./src/index.js'</span>,
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">'bundle.js'</span>
+  },
+  <span class="hljs-attr">devServer</span>:{
+    <span class="hljs-attr">contentBase</span>:path.resolve(__dirname,<span class="hljs-string">'./dist'</span>)
+  },
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>,
+        <span class="hljs-attr">use</span>: {
+          <span class="hljs-attr">loader</span>: <span class="hljs-string">"babel-loader"</span>,
+          <span class="hljs-attr">options</span>: {
+            <span class="hljs-attr">presets</span>:[<span class="hljs-string">"@babel/preset-env"</span>]
+          }
+        },
+        <span class="hljs-attr">include</span>: path.join(__dirname, <span class="hljs-string">"src"</span>),
+        <span class="hljs-attr">exclude</span>: <span class="hljs-regexp">/node_modules/</span>
+      }
+    ]
+  },
+  <span class="hljs-attr">plugins</span>: []
+};
+</code></pre>
+<h3 id="t82.2 index.js">2.2 index.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t82.2%20index.js"> # </a></h3>
+<p>src\index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> title = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./title.js'</span>);
+<span class="hljs-built_in">console</span>.log(title);
+</code></pre>
+<h3 id="t92.3 title.js">2.3 title.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t92.3%20title.js"> # </a></h3>
+<p>src\title.js</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-string">"title"</span>;
+</code></pre>
+<h3 id="t102.4 打包文件分析">2.4 打包文件分析 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t102.4%20%E6%89%93%E5%8C%85%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90"> # </a></h3>
+<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>) </span>{
+  <span class="hljs-comment">// webpack的启动函数</span>
+  <span class="hljs-comment">//模块的缓存</span>
+  <span class="hljs-keyword">var</span> installedModules = {};
+  <span class="hljs-comment">//定义在浏览器中使用的require方法</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) </span>{
+    <span class="hljs-comment">//检查模块是否在缓存中</span>
+    <span class="hljs-keyword">if</span> (installedModules[moduleId]) {
+      <span class="hljs-keyword">return</span> installedModules[moduleId].exports;
+    }
+    <span class="hljs-comment">//创建一个新的模块并且放到模块的缓存中</span>
+    <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = (installedModules[moduleId] = {
+      <span class="hljs-attr">i</span>: moduleId,
+      <span class="hljs-attr">l</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">exports</span>: {}
+    });
+
+    <span class="hljs-comment">//执行模块函数</span>
+    modules[moduleId].call(
+      <span class="hljs-built_in">module</span>.exports,
+      <span class="hljs-built_in">module</span>,
+      <span class="hljs-built_in">module</span>.exports,
+      __webpack_require__
+    );
+
+    <span class="hljs-comment">//把模块设置为已经加载</span>
+    <span class="hljs-built_in">module</span>.l = <span class="hljs-literal">true</span>;
+
+    <span class="hljs-comment">//返回模块的导出对象</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports;
+  }
+
+  <span class="hljs-comment">//暴露出模块对象</span>
+  __webpack_require__.m = modules;
+
+  <span class="hljs-comment">//暴露出模块缓存</span>
+  __webpack_require__.c = installedModules;
+
+  <span class="hljs-comment">//为harmony导出定义getter函数</span>
+  __webpack_require__.d = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exports, name, getter</span>) </span>{
+    <span class="hljs-keyword">if</span> (!__webpack_require__.o(exports, name)) {
+      <span class="hljs-built_in">Object</span>.defineProperty(exports, name, { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">get</span>: getter });
+    }
+  };
+
+  <span class="hljs-comment">//在导出对象上定义__esModule属性</span>
+  __webpack_require__.r = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">exports</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Symbol</span> !== <span class="hljs-string">"undefined"</span> &amp;&amp; <span class="hljs-built_in">Symbol</span>.toStringTag) {
+      <span class="hljs-built_in">Object</span>.defineProperty(exports, <span class="hljs-built_in">Symbol</span>.toStringTag, { <span class="hljs-attr">value</span>: <span class="hljs-string">"Module"</span> });
+    }
+    <span class="hljs-built_in">Object</span>.defineProperty(exports, <span class="hljs-string">"__esModule"</span>, { <span class="hljs-attr">value</span>: <span class="hljs-literal">true</span> });
+  };
+
+  <span class="hljs-comment">/**
+   * 创建一个模拟的命名空间对象
+   * mode &amp; 1 value是模块ID直接用__webpack_require__加载
+   * mode &amp; 2 把所有的属性合并到命名空间ns上
+   * mode &amp; 4 当已经是命名空间的时候(__esModule=true)可以直接返回值
+   * mode &amp; 8|1 行为类似于require
+   */</span>
+  __webpack_require__.t = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">value, mode</span>) </span>{
+    <span class="hljs-keyword">if</span> (mode &amp; <span class="hljs-number">1</span>) value = __webpack_require__(value);
+    <span class="hljs-keyword">if</span> (mode &amp; <span class="hljs-number">8</span>) <span class="hljs-keyword">return</span> value;
+    <span class="hljs-keyword">if</span> (mode &amp; <span class="hljs-number">4</span> &amp;&amp; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">"object"</span> &amp;&amp; value &amp;&amp; value.__esModule)
+      <span class="hljs-keyword">return</span> value;
+    <span class="hljs-keyword">var</span> ns = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>); <span class="hljs-comment">//定义一个空对象</span>
+    __webpack_require__.r(ns);
+    <span class="hljs-built_in">Object</span>.defineProperty(ns, <span class="hljs-string">"default"</span>, { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">value</span>: value });
+    <span class="hljs-keyword">if</span> (mode &amp; <span class="hljs-number">2</span> &amp;&amp; <span class="hljs-keyword">typeof</span> value != <span class="hljs-string">"string"</span>)
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> value)
+        __webpack_require__.d(
+          ns,
+          key,
+          <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">key</span>) </span>{
+            <span class="hljs-keyword">return</span> value[key];
+          }.bind(<span class="hljs-literal">null</span>, key)
+        );
+    <span class="hljs-keyword">return</span> ns;
+  };
+
+  <span class="hljs-comment">// getDefaultExport函数为了兼容那些非non-harmony模块</span>
+  __webpack_require__.n = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module</span>) </span>{
+    <span class="hljs-keyword">var</span> getter =
+      <span class="hljs-built_in">module</span> &amp;&amp; <span class="hljs-built_in">module</span>.__esModule
+        ? <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDefault</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>[<span class="hljs-string">"default"</span>];
+          }
+        : <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getModuleExports</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>;
+          };
+    __webpack_require__.d(getter, <span class="hljs-string">"a"</span>, getter);
+    <span class="hljs-keyword">return</span> getter;
+  };
+
+  <span class="hljs-comment">//判断对象身上是否拥有此属性</span>
+  __webpack_require__.o = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">object, property</span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.prototype.hasOwnProperty.call(object, property);
+  };
+
+  <span class="hljs-comment">//公共路径</span>
+  __webpack_require__.p = <span class="hljs-string">""</span>;
+
+  <span class="hljs-comment">//加载入口模块并且返回导出对象</span>
+  <span class="hljs-keyword">return</span> __webpack_require__((__webpack_require__.s = <span class="hljs-string">"./src/index.js"</span>));
+})({
+  <span class="hljs-string">"./src/index.js"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports, __webpack_require__</span>) </span>{
+    <span class="hljs-keyword">var</span> title = __webpack_require__(<span class="hljs-string">"./src/title.js"</span>);
+    <span class="hljs-built_in">console</span>.log(title);
+  },
+  <span class="hljs-string">"./src/title.js"</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports</span>) </span>{
+    <span class="hljs-built_in">module</span>.exports = <span class="hljs-string">"title"</span>;
+  }
+});
+</code></pre>
+<h3 id="t112.5 实现">2.5 实现 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t112.5%20%E5%AE%9E%E7%8E%B0"> # </a></h3>
+<h4 id="t122.5.1 webpack_require">2.5.1 webpack_require <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t122.5.1%20webpack_require"> # </a></h4>
+<ul>
+<li>实现require方法</li>
+</ul>
+<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">modules</span>)</span>{
+    <span class="hljs-keyword">var</span> installedModules = {};
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>)</span>{
+        <span class="hljs-keyword">if</span>(installedModules[moduleId]){
+            <span class="hljs-keyword">return</span> installedModules[moduleId];
+        }
+        <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = installedModules[moduleId] = {
+            <span class="hljs-attr">i</span>:moduleId,
+            <span class="hljs-attr">l</span>:<span class="hljs-literal">false</span>,
+            <span class="hljs-attr">exports</span>:{}
+        }
+        modules[moduleId].call(modules.exports,<span class="hljs-built_in">module</span>,<span class="hljs-built_in">module</span>.exports,__webpack_require__);
+        <span class="hljs-built_in">module</span>.l = <span class="hljs-literal">true</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports;
+    }
+    <span class="hljs-keyword">return</span> __webpack_require__((__webpack_require__.s = <span class="hljs-string">"./src/index.js"</span>));
+})({
+    <span class="hljs-string">"./src/index.js"</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module,exports,__webpack_require__</span>)</span>{
+        <span class="hljs-keyword">var</span> title = __webpack_require__(<span class="hljs-string">'./src/title.js'</span>);
+        <span class="hljs-built_in">console</span>.log(title);
+    },
+    <span class="hljs-string">"./src/title.js"</span>:<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module,exports</span>)</span>{
+       <span class="hljs-built_in">module</span>.exports = <span class="hljs-string">"title"</span>;
+    }
+})
+</code></pre>
+<h4 id="t132.5.2 d(defineProperty)">2.5.2 d(defineProperty) <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t132.5.2%20d(defineProperty)"> # </a></h4>
+<ul>
+<li>通过<code>getter</code>的方式增加属性</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">d</span>(<span class="hljs-params">exports, name, getter</span>) </span>{
+    <span class="hljs-keyword">if</span> (!exports.hasOwnProperty(name)) {
+        <span class="hljs-built_in">Object</span>.defineProperty(exports, name, { <span class="hljs-attr">get</span>: getter });
+    }
+}
+
+<span class="hljs-keyword">let</span> obj = {};
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ageGetter</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">10</span>;
+}
+d(obj, <span class="hljs-string">'age'</span>, ageGetter);
+<span class="hljs-built_in">console</span>.log(obj.age);
+</code></pre>
+<h4 id="t142.5.3 r">2.5.3 r <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t142.5.3%20r"> # </a></h4>
+<ul>
+<li>表示此对象是一个ES6模块对象<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">r</span>(<span class="hljs-params">exports</span>) </span>{
+  <span class="hljs-built_in">Object</span>.defineProperty(exports, <span class="hljs-built_in">Symbol</span>.toStringTag, { <span class="hljs-attr">value</span>: <span class="hljs-string">'Module'</span> });
+  <span class="hljs-built_in">Object</span>.defineProperty(exports, <span class="hljs-string">'__esModule'</span>, { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">value</span>: <span class="hljs-literal">true</span> });
+};
+<span class="hljs-keyword">let</span> obj2 = {};
+r(obj2);
+<span class="hljs-built_in">console</span>.log(obj2);
+</code></pre>
+</li>
+</ul>
+<h4 id="t152.5.4 n">2.5.4 n <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t152.5.4%20n"> # </a></h4>
+<ul>
+<li>获取此对象的默认导出</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">n</span>(<span class="hljs-params">module</span>) </span>{
+    <span class="hljs-keyword">var</span> getter = <span class="hljs-built_in">module</span>.__esModule ?
+        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>[<span class="hljs-string">'default'</span>]; } :
+        <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>; };
+    d(getter, <span class="hljs-string">'a'</span>, getter);
+    <span class="hljs-keyword">return</span> getter;
+};
+<span class="hljs-keyword">let</span> m = { <span class="hljs-attr">age</span>: <span class="hljs-number">10</span> };
+<span class="hljs-keyword">let</span> getter = n(m);
+<span class="hljs-built_in">console</span>.log(getter.a);
+<span class="hljs-keyword">let</span> m2 = { <span class="hljs-attr">default</span>: { <span class="hljs-attr">age</span>: <span class="hljs-number">20</span> }, <span class="hljs-attr">__esModule</span>: <span class="hljs-literal">true</span> };
+<span class="hljs-keyword">let</span> getter2 = n(m2);
+<span class="hljs-built_in">console</span>.log(getter2.a);
+</code></pre>
+<h4 id="t162.5.5 t">2.5.5 t <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t162.5.5%20t"> # </a></h4>
+<ul>
+<li>把任意模块包装成ES6模块</li>
+<li>mode &amp; 1: value is a module id, require it 表示传的是模块ID</li>
+<li>mode &amp; 2: merge all properties of value into the ns  需要合并属性</li>
+<li>mode &amp; 4: return value when already ns object 如果是ES6模块直接返回</li>
+<li>mode &amp; 8|1: behave like require 等同于require方法</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> modules = {
+    <span class="hljs-comment">//相当于require</span>
+    <span class="hljs-string">'moduleA'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports</span>) </span>{
+        <span class="hljs-built_in">module</span>.exports = <span class="hljs-string">'moduleA导出内容'</span>;
+    },
+    <span class="hljs-comment">//是ES6模块直接返回</span>
+    <span class="hljs-string">'moduleB'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports</span>) </span>{
+        <span class="hljs-built_in">module</span>.exports = { <span class="hljs-attr">__esModule</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">default</span>: <span class="hljs-string">'moduleB导出内容'</span> };
+    },
+    <span class="hljs-comment">//封装成ES6模块</span>
+    <span class="hljs-string">'moduleC'</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports</span>) </span>{
+        <span class="hljs-built_in">module</span>.exports = { <span class="hljs-attr">name</span>: <span class="hljs-string">'moduleC导出内容'</span> };
+    }
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) </span>{
+    <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = {
+        <span class="hljs-attr">i</span>: moduleId,
+        <span class="hljs-attr">l</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">exports</span>: {}
+    }
+    modules[moduleId].call(modules.exports, <span class="hljs-built_in">module</span>, <span class="hljs-built_in">module</span>.exports, __webpack_require__);
+    <span class="hljs-built_in">module</span>.l = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports;
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">t</span>(<span class="hljs-params">value, mode</span>) </span>{
+    <span class="hljs-keyword">if</span> (mode &amp; <span class="hljs-number">1</span>) value = __webpack_require__(value);
+    <span class="hljs-keyword">if</span> (mode &amp; <span class="hljs-number">8</span>) <span class="hljs-keyword">return</span> value;
+    <span class="hljs-keyword">if</span> ((mode &amp; <span class="hljs-number">4</span>) &amp;&amp; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'object'</span> &amp;&amp; value &amp;&amp; value.__esModule) <span class="hljs-keyword">return</span> value;
+    <span class="hljs-keyword">var</span> ns = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);
+    <span class="hljs-built_in">Object</span>.defineProperty(ns, <span class="hljs-built_in">Symbol</span>.toStringTag, { <span class="hljs-attr">value</span>: <span class="hljs-string">'Module'</span> });
+    <span class="hljs-built_in">Object</span>.defineProperty(ns, <span class="hljs-string">'__esModule'</span>, { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">value</span>: <span class="hljs-literal">true</span> });
+    <span class="hljs-built_in">Object</span>.defineProperty(ns, <span class="hljs-string">'default'</span>, { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">value</span>: value });
+    <span class="hljs-keyword">if</span> (mode &amp; <span class="hljs-number">2</span> &amp;&amp; <span class="hljs-keyword">typeof</span> value != <span class="hljs-string">'string'</span>)
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> value)
+            <span class="hljs-built_in">Object</span>.defineProperty(ns, key, { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">get</span>: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> value[key] });
+    <span class="hljs-keyword">return</span> ns;
+};
+<span class="hljs-keyword">let</span> result1 = t(<span class="hljs-string">'moduleA'</span>, <span class="hljs-number">0b1001</span>);
+<span class="hljs-built_in">console</span>.log(result1);
+<span class="hljs-keyword">let</span> result2 = t(<span class="hljs-string">'moduleB'</span>, <span class="hljs-number">0b0101</span>);
+<span class="hljs-built_in">console</span>.log(result2);
+<span class="hljs-keyword">let</span> result3 = t(<span class="hljs-string">'moduleC'</span>, <span class="hljs-number">0b0011</span>);
+<span class="hljs-built_in">console</span>.log(result3, result3.name);
+</code></pre>
+<h2 id="t173. harmony">3. harmony <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t173.%20harmony"> # </a></h2>
+<h3 id="t183.1 common.js加载 common.js">3.1 common.js加载 common.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t183.1%20common.js%E5%8A%A0%E8%BD%BD%20common.js"> # </a></h3>
+<h4 id="t193.1.1 index.js">3.1.1 index.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t193.1.1%20index.js"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> title = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./title'</span>);
+<span class="hljs-built_in">console</span>.log(title.name);
+<span class="hljs-built_in">console</span>.log(title.age);
+</code></pre>
+<h4 id="t203.1.2 title.js">3.1.2 title.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t203.1.2%20title.js"> # </a></h4>
+<pre><code class="lang-js">exports.name = <span class="hljs-string">'title_name'</span>;
+exports.age = <span class="hljs-string">'title_age'</span>;
+</code></pre>
+<h4 id="t213.1.3 bundle.js">3.1.3 bundle.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t213.1.3%20bundle.js"> # </a></h4>
+<pre><code class="lang-js">{
+<span class="hljs-string">"./src/index.js"</span>:
+  (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports, __webpack_require__</span>) </span>{
+    <span class="hljs-keyword">var</span> title = __webpack_require__(<span class="hljs-string">"./src/title.js"</span>);
+    <span class="hljs-built_in">console</span>.log(title.name);
+    <span class="hljs-built_in">console</span>.log(title.age);
+  }),
+<span class="hljs-string">"./src/title.js"</span>:
+  (<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, exports</span>) </span>{
+    exports.name = <span class="hljs-string">'title_name'</span>;
+    exports.age = <span class="hljs-string">'title_age'</span>;
+  })
+}
+</code></pre>
+<h3 id="t223.2 common.js加载 ES6 modules">3.2 common.js加载 ES6 modules <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t223.2%20common.js%E5%8A%A0%E8%BD%BD%20ES6%20modules"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/commes6.png" alt="commes6"></p>
+<h4 id="t233.2.1 index.js">3.2.1 index.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t233.2.1%20index.js"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> title = <span class="hljs-built_in">require</span>(<span class="hljs-string">'./title'</span>);
+<span class="hljs-built_in">console</span>.log(title);
+<span class="hljs-built_in">console</span>.log(title.default);
+<span class="hljs-built_in">console</span>.log(title.age);
+</code></pre>
+<h4 id="t243.2.2 title.js">3.2.2 title.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t243.2.2%20title.js"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> name = <span class="hljs-string">'title_name'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> age = <span class="hljs-string">'title_age'</span>;
+</code></pre>
+<h4 id="t253.2.3 bundle.js">3.2.3 bundle.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t253.2.3%20bundle.js"> # </a></h4>
+<pre><code class="lang-js">{
+    <span class="hljs-string">"./src/index.js"</span>:
+      (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports, __webpack_require__</span>) </span>{
+        <span class="hljs-keyword">var</span> title = __webpack_require__(<span class="hljs-comment">/*! ./title */</span> <span class="hljs-string">"./src/title.js"</span>);
+        <span class="hljs-built_in">console</span>.log(title.name);
+        <span class="hljs-built_in">console</span>.log(title.age);
+      }),
+
+    <span class="hljs-string">"./src/title.js"</span>:
+      (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, __webpack_exports__, __webpack_require__</span>) </span>{
+        __webpack_require__.r(__webpack_exports__);
+        <span class="hljs-comment">/* harmony export (binding) */</span>
+        __webpack_require__.d(__webpack_exports__, <span class="hljs-string">"age"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> age; });
+        <span class="hljs-comment">/* harmony default export */</span>
+        __webpack_exports__[<span class="hljs-string">"default"</span>] = (name = <span class="hljs-string">'title_name'</span>);
+        <span class="hljs-keyword">var</span> age = <span class="hljs-string">'title_age'</span>;
+      })
+  }
+</code></pre>
+<h3 id="t263.3 ES6 modules 加载 ES6 modules">3.3 ES6 modules 加载 ES6 modules <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t263.3%20ES6%20modules%20%E5%8A%A0%E8%BD%BD%20ES6%20modules"> # </a></h3>
+<h4 id="t273.3.1 index.js">3.3.1 index.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t273.3.1%20index.js"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> name,{age} <span class="hljs-keyword">from</span> <span class="hljs-string">'./title'</span>;
+<span class="hljs-built_in">console</span>.log(name);
+<span class="hljs-built_in">console</span>.log(age);
+</code></pre>
+<h4 id="t283.3.2 title.js">3.3.2 title.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t283.3.2%20title.js"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> name  = <span class="hljs-string">'title_name'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">const</span> age = <span class="hljs-string">'title_age'</span>;
+</code></pre>
+<h4 id="t293.3.3 bundle.js">3.3.3 bundle.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t293.3.3%20bundle.js"> # </a></h4>
+<pre><code class="lang-js">{
+
+    <span class="hljs-string">"./src/index.js"</span>:
+      (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, __webpack_exports__, __webpack_require__</span>) </span>{
+        <span class="hljs-string">"use strict"</span>;
+        __webpack_require__.r(__webpack_exports__);
+        <span class="hljs-keyword">var</span> _title__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(<span class="hljs-comment">/*! ./title */</span> <span class="hljs-string">"./src/title.js"</span>);
+        <span class="hljs-built_in">console</span>.log(_title__WEBPACK_IMPORTED_MODULE_0__[<span class="hljs-string">"default"</span>]);
+        <span class="hljs-built_in">console</span>.log(_title__WEBPACK_IMPORTED_MODULE_0__[<span class="hljs-string">"age"</span>]);
+      }),
+    <span class="hljs-string">"./src/title.js"</span>:
+      (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, __webpack_exports__, __webpack_require__</span>) </span>{
+        __webpack_require__.r(__webpack_exports__);
+        __webpack_require__.d(__webpack_exports__, <span class="hljs-string">"age"</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> age; });
+        __webpack_exports__[<span class="hljs-string">"default"</span>] = (name = <span class="hljs-string">'title_name'</span>);
+        <span class="hljs-keyword">var</span> age = <span class="hljs-string">'title_age'</span>;
+      })
+  }
+</code></pre>
+<h3 id="t303.4 ES6 modules 加载 common.js">3.4 ES6 modules 加载 common.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t303.4%20ES6%20modules%20%E5%8A%A0%E8%BD%BD%20common.js"> # </a></h3>
+<h4 id="t313.4.1 index.js">3.4.1 index.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t313.4.1%20index.js"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> home, { name, age } <span class="hljs-keyword">from</span> <span class="hljs-string">'./title'</span>;
+<span class="hljs-built_in">console</span>.log(name);
+<span class="hljs-built_in">console</span>.log(age);
+<span class="hljs-built_in">console</span>.log(home);
+</code></pre>
+<h4 id="t323.4.2 title.js">3.4.2 title.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t323.4.2%20title.js"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = { <span class="hljs-attr">home</span>: <span class="hljs-string">'beijing'</span> };
+<span class="hljs-built_in">module</span>.exports.name = <span class="hljs-string">'title_name'</span>;
+<span class="hljs-built_in">module</span>.exports.age = <span class="hljs-string">'title_age'</span>;
+</code></pre>
+<h4 id="t333.4.3 bundle.js">3.4.3 bundle.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t333.4.3%20bundle.js"> # </a></h4>
+<pre><code class="lang-js">  {
+    <span class="hljs-string">"./src/index.js"</span>:
+      (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, __webpack_exports__, __webpack_require__</span>) </span>{
+        __webpack_require__.r(__webpack_exports__);
+    <span class="hljs-comment">/* harmony import */</span> <span class="hljs-keyword">var</span> _title__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(<span class="hljs-comment">/*! ./title */</span> <span class="hljs-string">"./src/title.js"</span>);
+    <span class="hljs-comment">/* harmony import */</span> <span class="hljs-keyword">var</span> _title__WEBPACK_IMPORTED_MODULE_0___default = <span class="hljs-comment">/*#__PURE__*/</span>__webpack_require__.n(_title__WEBPACK_IMPORTED_MODULE_0__);
+        <span class="hljs-built_in">console</span>.log(_title__WEBPACK_IMPORTED_MODULE_0__[<span class="hljs-string">"name"</span>]);
+        <span class="hljs-built_in">console</span>.log(_title__WEBPACK_IMPORTED_MODULE_0__[<span class="hljs-string">"age"</span>]);
+        <span class="hljs-built_in">console</span>.log(_title__WEBPACK_IMPORTED_MODULE_0___default.a);
+      }),
+
+    <span class="hljs-string">"./src/title.js"</span>:
+      (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports</span>) </span>{
+        <span class="hljs-built_in">module</span>.exports = {
+          <span class="hljs-attr">home</span>: <span class="hljs-string">'beijing'</span>
+        };
+        <span class="hljs-built_in">module</span>.exports.name = <span class="hljs-string">'title_name'</span>;
+        <span class="hljs-built_in">module</span>.exports.age = <span class="hljs-string">'title_age'</span>;
+      })
+  }
+</code></pre>
+<h2 id="t344. 异步加载">4. 异步加载 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t344.%20%E5%BC%82%E6%AD%A5%E5%8A%A0%E8%BD%BD"> # </a></h2>
+<h3 id="t354.1 源文件">4.1 源文件 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t354.1%20%E6%BA%90%E6%96%87%E4%BB%B6"> # </a></h3>
+<h4 id="t364.1.1 index.html">4.1.1 index.html <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t364.1.1%20index.html"> # </a></h4>
+<pre><code class="lang-html"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<h4 id="t374.1.2 src\index.js">4.1.2 src\index.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t374.1.2%20src\index.js"> # </a></h4>
+<p>src\index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> button = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"button"</span>);
+button.innerHTML = <span class="hljs-string">"点我"</span>;
+button.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">import</span>(<span class="hljs-comment">/*webpackChunkName: 'title'*/</span><span class="hljs-string">'./title.js'</span>).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">result</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(result, result.default);
+    });
+};
+<span class="hljs-built_in">document</span>.body.appendChild(button);
+</code></pre>
+<h4 id="t384.1.3 src\title.js">4.1.3 src\title.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t384.1.3%20src\title.js"> # </a></h4>
+<p>src\title.js</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+    <span class="hljs-attr">name</span>: <span class="hljs-string">'title'</span>
+}
+<span class="hljs-built_in">module</span>.exports.age = <span class="hljs-number">10</span>;
+</code></pre>
+<h3 id="t394.2 打包后的文件">4.2 打包后的文件 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t394.2%20%E6%89%93%E5%8C%85%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6"> # </a></h3>
+<h4 id="t404.2.1">4.2.1 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t404.2.1"> # </a></h4>
+<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">modules</span>) </span>{ <span class="hljs-comment">// 启动函数</span>
+  <span class="hljs-comment">//安装一个为了加载额外代码块的JSON回调函数</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">webpackJsonpCallback</span>(<span class="hljs-params">data</span>) </span>{
+    <span class="hljs-keyword">var</span> chunkIds = data[<span class="hljs-number">0</span>];<span class="hljs-comment">//代码块ID</span>
+    <span class="hljs-keyword">var</span> moreModules = data[<span class="hljs-number">1</span>];<span class="hljs-comment">//更多的模块</span>
+    <span class="hljs-comment">//向模块对象上增加更多的模块，然后把所有的chunkIds设置为已经加载并触发回调</span>
+    <span class="hljs-keyword">var</span> moduleId, chunkId, i = <span class="hljs-number">0</span>, resolves = [];
+    <span class="hljs-keyword">for</span> (; i &lt; chunkIds.length; i++) {
+      chunkId = chunkIds[i];
+      <span class="hljs-keyword">if</span> (installedChunks[chunkId]) {
+        resolves.push(installedChunks[chunkId][<span class="hljs-number">0</span>]);
+      }
+      installedChunks[chunkId] = <span class="hljs-number">0</span>;<span class="hljs-comment">//标识这个代码块为已经OK</span>
+    }
+    <span class="hljs-keyword">for</span> (moduleId <span class="hljs-keyword">in</span> moreModules) {<span class="hljs-comment">//把新拉下来的模块合并到模块对象上</span>
+      <span class="hljs-keyword">if</span> (<span class="hljs-built_in">Object</span>.prototype.hasOwnProperty.call(moreModules, moduleId)) {
+        modules[moduleId] = moreModules[moduleId];
+      }
+    }
+    <span class="hljs-keyword">if</span> (parentJsonpFunction) parentJsonpFunction(data);<span class="hljs-comment">//如果有父JSONP函数就调用</span>
+
+    <span class="hljs-keyword">while</span> (resolves.length) {
+      resolves.shift()();<span class="hljs-comment">//让所有的promise都OK</span>
+    }
+  };
+
+  <span class="hljs-comment">// 模块缓存</span>
+  <span class="hljs-keyword">var</span> installedModules = {};
+
+  <span class="hljs-comment">//用来存放加载完成或加载中的代码块对象</span>
+  <span class="hljs-comment">// undefined = 代码块未加载, null = 代码块正在预加载或者预获取</span>
+  <span class="hljs-comment">// Promise = 代码块更在加载中, 0 = 代码块已经加载</span>
+  <span class="hljs-keyword">var</span> installedChunks = {
+    <span class="hljs-string">"main"</span>: <span class="hljs-number">0</span>
+  };
+
+  <span class="hljs-comment">//JSON加载的路径</span>
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">jsonpScriptSrc</span>(<span class="hljs-params">chunkId</span>) </span>{
+    <span class="hljs-keyword">return</span> __webpack_require__.p + <span class="hljs-string">""</span> + chunkId + <span class="hljs-string">".bundle.js"</span>
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) </span>{
+    <span class="hljs-keyword">if</span> (installedModules[moduleId]) {
+      <span class="hljs-keyword">return</span> installedModules[moduleId].exports;
+    }
+    <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = installedModules[moduleId] = {
+      <span class="hljs-attr">i</span>: moduleId,
+      <span class="hljs-attr">l</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">exports</span>: {}
+    };
+    modules[moduleId].call(<span class="hljs-built_in">module</span>.exports, <span class="hljs-built_in">module</span>, <span class="hljs-built_in">module</span>.exports, __webpack_require__);
+    <span class="hljs-built_in">module</span>.l = <span class="hljs-literal">true</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports;
+  }
+
+  <span class="hljs-comment">//这个文件只包含入口代码块</span>
+  <span class="hljs-comment">//用来加载额外的代码块的函数</span>
+  __webpack_require__.e = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">requireEnsure</span>(<span class="hljs-params">chunkId</span>) </span>{
+    <span class="hljs-keyword">var</span> promises = [];
+    <span class="hljs-comment">//JSONP代码块加载</span>
+    <span class="hljs-keyword">var</span> installedChunkData = installedChunks[chunkId];
+    <span class="hljs-keyword">if</span> (installedChunkData !== <span class="hljs-number">0</span>) { <span class="hljs-comment">// 0的意思是已经安装</span>
+      <span class="hljs-comment">// a Promise means "currently loading". 如果是一个Promise的话表示正在加载</span>
+      <span class="hljs-keyword">if</span> (installedChunkData) {
+        promises.push(installedChunkData[<span class="hljs-number">2</span>]);<span class="hljs-comment">//如果已经在加载中了，则添加Promise</span>
+      } <span class="hljs-keyword">else</span> {
+        <span class="hljs-comment">//在代码块缓存中放置Promise</span>
+        <span class="hljs-keyword">var</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve, reject</span>) </span>{
+          installedChunkData = installedChunks[chunkId] = [resolve, reject];
+        });
+        promises.push(installedChunkData[<span class="hljs-number">2</span>] = promise);
+
+        <span class="hljs-comment">// 开始加载代码块</span>
+        <span class="hljs-keyword">var</span> script = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'script'</span>);
+        <span class="hljs-keyword">var</span> onScriptComplete;
+
+        script.charset = <span class="hljs-string">'utf-8'</span>;
+        script.timeout = <span class="hljs-number">120</span>;
+        <span class="hljs-comment">//// HTMLElement 接口的 nonce 属性返回只使用一次的加密数字，被内容安全政策用来决定这次请求是否被允许处理。</span>
+        <span class="hljs-keyword">if</span> (__webpack_require__.nc) {
+          script.setAttribute(<span class="hljs-string">"nonce"</span>, __webpack_require__.nc);
+        }
+        <span class="hljs-comment">//设置源文件路径</span>
+        script.src = jsonpScriptSrc(chunkId);
+
+        <span class="hljs-comment">//在栈展开之前创建错误以获取有用的堆栈信息</span>
+        <span class="hljs-keyword">var</span> error = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>();
+        onScriptComplete = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+          script.onerror = script.onload = <span class="hljs-literal">null</span>;
+          clearTimeout(timeout);
+          <span class="hljs-keyword">var</span> chunk = installedChunks[chunkId];
+          <span class="hljs-keyword">if</span> (chunk !== <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">if</span> (chunk) {
+              <span class="hljs-keyword">var</span> errorType = event &amp;&amp; (event.type === <span class="hljs-string">'load'</span> ? <span class="hljs-string">'missing'</span> : event.type);
+              <span class="hljs-keyword">var</span> realSrc = event &amp;&amp; event.target &amp;&amp; event.target.src;
+              error.message = <span class="hljs-string">'Loading chunk '</span> + chunkId + <span class="hljs-string">' failed.\n('</span> + errorType + <span class="hljs-string">': '</span> + realSrc + <span class="hljs-string">')'</span>;
+              error.name = <span class="hljs-string">'ChunkLoadError'</span>;
+              error.type = errorType;
+              error.request = realSrc;
+              chunk[<span class="hljs-number">1</span>](error);
+            }
+            installedChunks[chunkId] = <span class="hljs-literal">undefined</span>;
+          }
+        };
+        <span class="hljs-keyword">var</span> timeout = setTimeout(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+          onScriptComplete({ <span class="hljs-attr">type</span>: <span class="hljs-string">'timeout'</span>, <span class="hljs-attr">target</span>: script });
+        }, <span class="hljs-number">120000</span>);
+        script.onerror = script.onload = onScriptComplete;
+        <span class="hljs-built_in">document</span>.head.appendChild(script);
+      }
+    }
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.all(promises);
+  };
+
+  __webpack_require__.m = modules;
+
+  __webpack_require__.c = installedModules;
+
+  __webpack_require__.d = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">exports, name, getter</span>) </span>{
+    <span class="hljs-keyword">if</span> (!__webpack_require__.o(exports, name)) {
+      <span class="hljs-built_in">Object</span>.defineProperty(exports, name, { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">get</span>: getter });
+    }
+  };
+
+  __webpack_require__.r = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">exports</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> <span class="hljs-built_in">Symbol</span> !== <span class="hljs-string">'undefined'</span> &amp;&amp; <span class="hljs-built_in">Symbol</span>.toStringTag) {
+      <span class="hljs-built_in">Object</span>.defineProperty(exports, <span class="hljs-built_in">Symbol</span>.toStringTag, { <span class="hljs-attr">value</span>: <span class="hljs-string">'Module'</span> });
+    }
+    <span class="hljs-built_in">Object</span>.defineProperty(exports, <span class="hljs-string">'__esModule'</span>, { <span class="hljs-attr">value</span>: <span class="hljs-literal">true</span> });
+  };
+
+  __webpack_require__.t = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value, mode</span>) </span>{
+    <span class="hljs-keyword">if</span> (mode &amp; <span class="hljs-number">1</span>) value = __webpack_require__(value);
+    <span class="hljs-keyword">if</span> (mode &amp; <span class="hljs-number">8</span>) <span class="hljs-keyword">return</span> value;
+    <span class="hljs-keyword">if</span> ((mode &amp; <span class="hljs-number">4</span>) &amp;&amp; <span class="hljs-keyword">typeof</span> value === <span class="hljs-string">'object'</span> &amp;&amp; value &amp;&amp; value.__esModule) <span class="hljs-keyword">return</span> value;
+    <span class="hljs-keyword">var</span> ns = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);
+    __webpack_require__.r(ns);
+    <span class="hljs-built_in">Object</span>.defineProperty(ns, <span class="hljs-string">'default'</span>, { <span class="hljs-attr">enumerable</span>: <span class="hljs-literal">true</span>, <span class="hljs-attr">value</span>: value });
+    <span class="hljs-keyword">if</span> (mode &amp; <span class="hljs-number">2</span> &amp;&amp; <span class="hljs-keyword">typeof</span> value != <span class="hljs-string">'string'</span>) <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">in</span> value) __webpack_require__.d(ns, key, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">key</span>) </span>{ <span class="hljs-keyword">return</span> value[key]; }.bind(<span class="hljs-literal">null</span>, key));
+    <span class="hljs-keyword">return</span> ns;
+  };
+
+  __webpack_require__.n = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module</span>) </span>{
+    <span class="hljs-keyword">var</span> getter = <span class="hljs-built_in">module</span> &amp;&amp; <span class="hljs-built_in">module</span>.__esModule ?
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getDefault</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>[<span class="hljs-string">'default'</span>]; } :
+      <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getModuleExports</span>(<span class="hljs-params"></span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>; };
+    __webpack_require__.d(getter, <span class="hljs-string">'a'</span>, getter);
+    <span class="hljs-keyword">return</span> getter;
+  };
+
+  __webpack_require__.o = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">object, property</span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-built_in">Object</span>.prototype.hasOwnProperty.call(object, property); };
+
+  __webpack_require__.p = <span class="hljs-string">""</span>;
+
+  <span class="hljs-comment">//异步加载中的错误处理函数</span>
+  __webpack_require__.oe = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">err</span>) </span>{ <span class="hljs-built_in">console</span>.error(err); <span class="hljs-keyword">throw</span> err; };
+  <span class="hljs-comment">//刚开始的时候会把数组赋给window["webpackJsonp"],并且赋给jsonpArray</span>
+  <span class="hljs-keyword">var</span> jsonpArray = <span class="hljs-built_in">window</span>[<span class="hljs-string">"webpackJsonp"</span>] = <span class="hljs-built_in">window</span>[<span class="hljs-string">"webpackJsonp"</span>] || [];
+  <span class="hljs-comment">//绑定push函数为oldJsonpFunction</span>
+  <span class="hljs-keyword">var</span> oldJsonpFunction = jsonpArray.push.bind(jsonpArray);
+  <span class="hljs-comment">//狸猫换太子，把webpackJsonpCallback赋给了jsonpArray.push方法</span>
+  jsonpArray.push = webpackJsonpCallback;
+  <span class="hljs-comment">//把数组进行截取得到一个新的数组</span>
+  jsonpArray = jsonpArray.slice();
+  <span class="hljs-comment">//如果数组不为空，就把全部安装一次</span>
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; jsonpArray.length; i++) webpackJsonpCallback(jsonpArray[i]);
+  <span class="hljs-comment">//把oldJsonpFunction赋给parentJsonpFunction</span>
+  <span class="hljs-keyword">var</span> parentJsonpFunction = oldJsonpFunction;
+
+  <span class="hljs-keyword">return</span> __webpack_require__(__webpack_require__.s = <span class="hljs-string">"./src/index.js"</span>);
+})
+  ({
+
+    <span class="hljs-string">"./src/index.js"</span>:
+      (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports, __webpack_require__</span>) </span>{
+        <span class="hljs-keyword">var</span> button = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"button"</span>);
+        button.innerHTML = <span class="hljs-string">"点我"</span>;
+        button.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+          __webpack_require__.e(<span class="hljs-string">"title"</span>).then(__webpack_require__.t.bind(<span class="hljs-literal">null</span>, <span class="hljs-string">"./src/title.js"</span>, <span class="hljs-number">7</span>)).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">result</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(result[<span class="hljs-string">"default"</span>]);
+          });
+        };
+        <span class="hljs-built_in">document</span>.body.appendChild(button);
+      })
+  });
+</code></pre>
+<h4 id="t414.2.2 title.bundle.js">4.2.2 title.bundle.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t414.2.2%20title.bundle.js"> # </a></h4>
+<p>dist\title.bundle.js</p>
+<pre><code class="lang-js">(<span class="hljs-built_in">window</span>[<span class="hljs-string">"webpackJsonp"</span>] = <span class="hljs-built_in">window</span>[<span class="hljs-string">"webpackJsonp"</span>] || []).push([[<span class="hljs-string">"title"</span>], {
+  <span class="hljs-string">"./src/title.js"</span>:
+    (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports</span>) </span>{
+      <span class="hljs-built_in">module</span>.exports = {
+        <span class="hljs-attr">name</span>: <span class="hljs-string">'title'</span>
+      };
+      <span class="hljs-built_in">module</span>.exports.age = <span class="hljs-number">10</span>;
+    })
+}]);
+</code></pre>
+<h3 id="t424.3 实现bundle.js">4.3 实现bundle.js <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html#t424.3%20%E5%AE%9E%E7%8E%B0bundle.js"> # </a></h3>
+<pre><code class="lang-js">(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">modules</span>) </span>{
+    <span class="hljs-keyword">var</span> installedModules = {};
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">__webpack_require__</span>(<span class="hljs-params">moduleId</span>) </span>{
+        <span class="hljs-keyword">if</span> (installedModules[moduleId]) {
+            <span class="hljs-keyword">return</span> installedModules[moduleId].exports;
+        }
+        <span class="hljs-keyword">var</span> <span class="hljs-built_in">module</span> = installedModules[moduleId] = {
+            <span class="hljs-attr">i</span>: moduleId,
+            <span class="hljs-attr">l</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-attr">exports</span>: {}
+        }
+        modules[moduleId].call(modules.exports, <span class="hljs-built_in">module</span>, <span class="hljs-built_in">module</span>.exports, __webpack_require__);
+        <span class="hljs-built_in">module</span>.l = <span class="hljs-literal">true</span>;
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">module</span>.exports;
+    }
+    <span class="hljs-keyword">var</span> installedChunks = {
+        <span class="hljs-string">"main"</span>: <span class="hljs-number">0</span>
+    };
+
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">webpackJsonpCallback</span>(<span class="hljs-params">data</span>) </span>{
+        <span class="hljs-keyword">var</span> chunkIds = data[<span class="hljs-number">0</span>];<span class="hljs-comment">//代码块ID</span>
+        <span class="hljs-keyword">var</span> moreModules = data[<span class="hljs-number">1</span>];<span class="hljs-comment">//更多的模块</span>
+        <span class="hljs-keyword">var</span> moduleId, chunkId, resolves = [];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; chunkIds.length; i++) {
+            chunkId = chunkIds[i];
+            resolves.push(installedChunks[chunkId][<span class="hljs-number">0</span>]);
+            installedChunks[chunkId] = <span class="hljs-number">0</span>;<span class="hljs-comment">//标识这个代码块为已经OK</span>
+        }
+        <span class="hljs-keyword">for</span> (moduleId <span class="hljs-keyword">in</span> moreModules) {<span class="hljs-comment">//把新拉下来的模块合并到模块对象上</span>
+            modules[moduleId] = moreModules[moduleId];
+        }
+        <span class="hljs-keyword">while</span> (resolves.length) {
+            resolves.shift()();<span class="hljs-comment">//让所有的promise都OK</span>
+        }
+    }
+    __webpack_require__.t = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">value</span>) </span>{
+        value = __webpack_require__(value);
+        <span class="hljs-keyword">var</span> ns = <span class="hljs-built_in">Object</span>.create(<span class="hljs-literal">null</span>);
+        ns.default = value;
+        <span class="hljs-keyword">return</span> ns;
+    };
+    __webpack_require__.e = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">chunkId</span>) </span>{
+        <span class="hljs-keyword">var</span> promises = [];
+        <span class="hljs-keyword">var</span> installedChunkData = installedChunks[chunkId];
+        <span class="hljs-keyword">if</span> (installedChunkData !== <span class="hljs-number">0</span>) {
+            <span class="hljs-keyword">var</span> promise = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Promise</span>(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">resolve, reject</span>) </span>{
+                installedChunkData = installedChunks[chunkId] = [resolve, reject];
+            });
+            installedChunkData[<span class="hljs-number">2</span>] = promise;
+            promises.push(promise);
+            <span class="hljs-keyword">var</span> script = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'script'</span>);
+            script.src = chunkId + <span class="hljs-string">".bundle.js"</span>;
+            <span class="hljs-built_in">document</span>.head.appendChild(script);
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-built_in">Promise</span>.all(promises);
+    }
+    <span class="hljs-keyword">var</span> jsonpArray = <span class="hljs-built_in">window</span>[<span class="hljs-string">"webpackJsonp"</span>] = <span class="hljs-built_in">window</span>[<span class="hljs-string">"webpackJsonp"</span>] || [];
+    jsonpArray.push = webpackJsonpCallback;
+    <span class="hljs-keyword">return</span> __webpack_require__(<span class="hljs-string">"./src/index.js"</span>);
+})({
+    <span class="hljs-string">"./src/index.js"</span>:
+        (<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">module, exports, __webpack_require__</span>) </span>{
+            <span class="hljs-keyword">var</span> button = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">"button"</span>);
+            button.innerHTML = <span class="hljs-string">"点我"</span>;
+            button.onclick = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                __webpack_require__.e(<span class="hljs-string">"title"</span>).then(__webpack_require__.t.bind(<span class="hljs-literal">null</span>, <span class="hljs-string">"./src/title.js"</span>, <span class="hljs-number">7</span>)).then(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">result</span>) </span>{
+                    <span class="hljs-built_in">console</span>.log(result[<span class="hljs-string">"default"</span>]);
+                });
+            };
+            <span class="hljs-built_in">document</span>.body.appendChild(button);
+        })
+})
+</code></pre>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">学号:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统学号">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

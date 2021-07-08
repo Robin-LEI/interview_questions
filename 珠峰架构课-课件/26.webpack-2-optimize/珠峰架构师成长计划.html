@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<!-- saved from url=(0067)http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t01.%20purgecss-webpack-plugin">1. purgecss-webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t12.DLL">2.DLL</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t22.1%20%E5%AE%9A%E4%B9%89Dll">2.1 定义Dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t32.2%20%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E6%96%87%E4%BB%B6">2.2 使用动态链接库文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t42.3%20html%E4%B8%AD%E4%BD%BF%E7%94%A8">2.3 html中使用</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t53.%20%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%84%E7%90%86">3. 多进程处理</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t63.1%20thread-loader">3.1 thread-loader</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t74.%20CDN">4. CDN</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t84.1%20%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98">4.1 使用缓存</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t94.2%20%E5%9F%9F%E5%90%8D%E9%99%90%E5%88%B6">4.2 域名限制</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t104.3%20%E6%8E%A5%E5%85%A5CDN">4.3 接入CDN</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t115.Tree%20Shaking">5.Tree Shaking</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t125.1%20%E5%BC%80%E5%90%AF">5.1 开启</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t135.2%20%E6%B2%A1%E6%9C%89%E5%AF%BC%E5%85%A5%E5%92%8C%E4%BD%BF%E7%94%A8">5.2 没有导入和使用</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t145.3%20%E4%BB%A3%E7%A0%81%E4%B8%8D%E4%BC%9A%E8%A2%AB%E6%89%A7%E8%A1%8C%EF%BC%8C%E4%B8%8D%E5%8F%AF%E5%88%B0%E8%BE%BE">5.3 代码不会被执行，不可到达</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t155.4%20%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%9A%84%E7%BB%93%E6%9E%9C%E4%B8%8D%E4%BC%9A%E8%A2%AB%E7%94%A8%E5%88%B0">5.4 代码执行的结果不会被用到</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t165.4%20%E4%BB%A3%E7%A0%81%E4%B8%AD%E5%8F%AA%E5%86%99%E4%B8%8D%E8%AF%BB%E7%9A%84%E5%8F%98%E9%87%8F">5.4 代码中只写不读的变量</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t176.%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2">6.代码分割</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t186.1%20%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2%E7%9A%84%E6%84%8F%E4%B9%89">6.1 代码分割的意义</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t196.2%20Entry%20Points">6.2 Entry Points</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t206.2%20%E5%8A%A8%E6%80%81%E5%AF%BC%E5%85%A5%E5%92%8C%E6%87%92%E5%8A%A0%E8%BD%BD">6.2 动态导入和懒加载</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t216.3%20%E6%8F%90%E5%8F%96%E5%85%AC%E5%85%B1%E4%BB%A3%E7%A0%81">6.3 提取公共代码</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t226.1%20%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%8F%90%E5%8F%96%E5%85%AC%E5%85%B1%E4%BB%A3%E7%A0%81">6.1 为什么需要提取公共代码</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t236.2%20%E5%A6%82%E4%BD%95%E6%8F%90%E5%8F%96">6.2 如何提取</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t246.3%20%E6%8F%90%E5%8F%96%E5%85%AC%E5%85%B1%E4%BB%A3%E7%A0%81">6.3 提取公共代码</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t257.%E5%BC%80%E5%90%AF%20Scope%20Hoisting">7.开启 Scope Hoisting</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t267.1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE">7.1 开发环境插件配置</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t277.2%20%E4%BB%A3%E7%A0%81">7.2 代码</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t288.%20%E7%94%A8%20HMR%20%E6%8F%90%E9%AB%98%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87">8. 用 HMR 提高开发效率</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t298.1%20%E6%A8%A1%E5%9D%97%E7%83%AD%E6%9B%BF%E6%8D%A2%E5%8E%9F%E7%90%86">8.1 模块热替换原理</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t308.2%20%E9%85%8D%E7%BD%AE">8.2 配置</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t318.2.1%20%E9%85%8D%E7%BD%AEhot">8.2.1 配置hot</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t328.2.2%20%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0">8.2.2 代码实现</a></li></ul></li></ul></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <p>﻿</p>
+<h2 id="t01. purgecss-webpack-plugin">1. purgecss-webpack-plugin <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t01.%20purgecss-webpack-plugin"> # </a></h2>
+<ul>
+<li><a href="https://www.purgecss.com/">purgecss</a></li>
+<li>可以去除未使用的 css，一般与 glob、glob-all 配合使用</li>
+<li>必须和<code>mini-css-extract-plugin</code>配合使用</li>
+<li><code>paths</code>路径是绝对路径 </li>
+</ul>
+<pre><code class="lang-js">npm i -D purgecss-webpack-plugin mini-css-extract-plugin glob
+</code></pre>
+<p>webpack.config.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+ const glob = require('glob');</span>
+<span class="hljs-addition">+ const PurgecssPlugin = require('purgecss-webpack-plugin');</span>
+
+module.exports = {
+  mode: 'development',
+  plugins: [
+<span class="hljs-addition">+    new PurgecssPlugin({</span>
+<span class="hljs-addition">+      paths: glob.sync(`${path.join(__dirname, 'src')}/**/*`</span>
+<span class="hljs-addition">+    }),</span>
+  ],
+}
+</code></pre>
+<pre><code class="lang-diff">plugins: [
+<span class="hljs-addition">+        new MiniCssExtractPlugin({</span>
+<span class="hljs-addition">+            filename: '[name].css',</span>
+<span class="hljs-addition">+            chunkFilename:'[id].css'</span>
+<span class="hljs-addition">+        }),</span>
+
+{
+                test: /\.css/,
+                include: path.resolve(__dirname,'src'),
+                exclude: /node_modules/,
+                use: [{
+<span class="hljs-addition">+                    loader: MiniCssExtractPlugin.loader</span>
+                },'css-loader']
+            }
+</code></pre>
+<h2 id="t12.DLL">2.DLL <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t12.DLL"> # </a></h2>
+<ul>
+<li><code>.dll</code>为后缀的文件称为动态链接库，在一个动态链接库中可以包含给其他模块调用的函数和数据</li>
+<li>把基础模块独立出来打包到单独的动态连接库里</li>
+<li>当需要导入的模块在动态连接库里的时候，模块不能再次被打包，而是去动态连接库里获取</li>
+<li><a href="https://webpack.js.org/plugins/dll-plugin/">dll-plugin</a></li>
+</ul>
+<h3 id="t22.1 定义Dll">2.1 定义Dll <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t22.1%20%E5%AE%9A%E4%B9%89Dll"> # </a></h3>
+<ul>
+<li>DllPlugin插件： 用于打包出一个个动态连接库</li>
+<li>DllReferencePlugin: 在配置文件中引入DllPlugin插件打包好的动态连接库</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> path=<span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">const</span> DllPlugin=<span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack/lib/DllPlugin'</span>);
+<span class="hljs-built_in">module</span>.exports={
+    <span class="hljs-attr">entry</span>: {
+        <span class="hljs-attr">react</span>:[<span class="hljs-string">'react'</span>,<span class="hljs-string">'react-dom'</span>]
+    },<span class="hljs-comment">// 把 React 相关模块的放到一个单独的动态链接库</span>
+    <span class="hljs-attr">output</span>: {
+        <span class="hljs-attr">path</span>: path.resolve(__dirname,<span class="hljs-string">'dist'</span>),<span class="hljs-comment">// 输出的文件都放到 dist 目录下</span>
+        <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name].dll.js'</span>,<span class="hljs-comment">//输出的动态链接库的文件名称，[name] 代表当前动态链接库的名称</span>
+        <span class="hljs-attr">library</span>: <span class="hljs-string">'_dll_[name]'</span>,<span class="hljs-comment">//存放动态链接库的全局变量名称,例如对应 react 来说就是 _dll_react</span>
+    },
+    <span class="hljs-attr">plugins</span>: [
+        <span class="hljs-keyword">new</span> DllPlugin({
+            <span class="hljs-comment">// 动态链接库的全局变量名称，需要和 output.library 中保持一致</span>
+            <span class="hljs-comment">// 该字段的值也就是输出的 manifest.json 文件 中 name 字段的值</span>
+            <span class="hljs-comment">// 例如 react.manifest.json 中就有 "name": "_dll_react"</span>
+            <span class="hljs-attr">name</span>: <span class="hljs-string">'_dll_[name]'</span>,
+            <span class="hljs-comment">// 描述动态链接库的 manifest.json 文件输出时的文件名称</span>
+            <span class="hljs-attr">path</span>: path.join(__dirname, <span class="hljs-string">'dist'</span>, <span class="hljs-string">'[name].manifest.json'</span>)
+        })
+    ]
+}
+</code></pre>
+<pre><code class="lang-js">webpack --config webpack.dll.config.js --mode development
+</code></pre>
+<h3 id="t32.2 使用动态链接库文件">2.2 使用动态链接库文件 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t32.2%20%E4%BD%BF%E7%94%A8%E5%8A%A8%E6%80%81%E9%93%BE%E6%8E%A5%E5%BA%93%E6%96%87%E4%BB%B6"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> DllReferencePlugin = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack/lib/DllReferencePlugin'</span>)
+<span class="hljs-attr">plugins</span>: [
+  <span class="hljs-keyword">new</span> DllReferencePlugin({
+    <span class="hljs-attr">manifest</span>:<span class="hljs-built_in">require</span>(<span class="hljs-string">'./dist/react.manifest.json'</span>)
+  })
+]
+</code></pre>
+<pre><code class="lang-js">webpack --config webpack.config.js --mode development
+</code></pre>
+<h3 id="t42.3 html中使用">2.3 html中使用 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t42.3%20html%E4%B8%AD%E4%BD%BF%E7%94%A8"> # </a></h3>
+<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"react.dll.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"bundle.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h2 id="t53. 多进程处理">3. 多进程处理 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t53.%20%E5%A4%9A%E8%BF%9B%E7%A8%8B%E5%A4%84%E7%90%86"> # </a></h2>
+<h3 id="t63.1 thread-loader">3.1 thread-loader <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t63.1%20thread-loader"> # </a></h3>
+<ul>
+<li>把这个 loader 放置在其他 loader 之前， 放置在这个 loader 之后的 loader 就会在一个单独的 worker 池(worker pool)中运行</li>
+<li><a href="https://webpack.js.org/loaders/thread-loader/">thread-loader</a></li>
+</ul>
+<pre><code class="lang-js">{
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.(js)$/</span>,
+        <span class="hljs-attr">use</span>: [
+           {
+            <span class="hljs-attr">loader</span>:<span class="hljs-string">'thread-loader'</span>,
+            <span class="hljs-attr">options</span>:{
+              <span class="hljs-attr">workers</span>:<span class="hljs-number">3</span>
+            }
+          }, 
+          {
+            <span class="hljs-attr">loader</span>:<span class="hljs-string">'babel-loader'</span>
+          }
+        ],
+      }
+</code></pre>
+<h2 id="t74. CDN">4. CDN <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t74.%20CDN"> # </a></h2>
+<ul>
+<li><a href="https://www.qiniu.com/">qiniu</a></li>
+<li>CDN 又叫内容分发网络，通过把资源部署到世界各地，用户在访问时按照就近原则从离用户最近的服务器获取资源，从而加速资源的获取速度。</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/cdn2.jpg" alt="cdn"></p>
+<ul>
+<li>HTML文件不缓存，放在自己的服务器上，关闭自己服务器的缓存，静态资源的URL变成指向CDN服务器的地址</li>
+<li>静态的JavaScript、CSS、图片等文件开启CDN和缓存，并且文件名带上HASH值</li>
+<li>为了并行加载不阻塞，把不同的静态资源分配到不同的CDN服务器上</li>
+</ul>
+<h3 id="t84.1 使用缓存">4.1 使用缓存 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t84.1%20%E4%BD%BF%E7%94%A8%E7%BC%93%E5%AD%98"> # </a></h3>
+<ul>
+<li>由于 CDN 服务一般都会给资源开启很长时间的缓存，例如用户从 CDN 上获取到了 index.html 这个文件后， 即使之后的发布操作把 index.html 文件给重新覆盖了，但是用户在很长一段时间内还是运行的之前的版本，这会新的导致发布不能立即生效
+解决办法</li>
+<li>针对 HTML 文件：不开启缓存，把 HTML 放到自己的服务器上，而不是 CDN 服务上，同时关闭自己服务器上的缓存。自己的服务器只提供 HTML 文件和数据接口。</li>
+<li>针对静态的 JavaScript、CSS、图片等文件：开启 CDN 和缓存，上传到 CDN 服务上去，同时给每个文件名带上由文件内容算出的 Hash 值</li>
+<li>带上 Hash 值的原因是文件名会随着文件内容而变化，只要文件发生变化其对应的 URL 就会变化，它就会被重新下载，无论缓存时间有多长。</li>
+<li>启用CDN之后 相对路径，都变成了绝对的指向 CDN 服务的 URL 地址</li>
+</ul>
+<h3 id="t94.2 域名限制">4.2 域名限制 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t94.2%20%E5%9F%9F%E5%90%8D%E9%99%90%E5%88%B6"> # </a></h3>
+<ul>
+<li>同一时刻针对同一个域名的资源并行请求是有限制</li>
+<li>可以把这些静态资源分散到不同的 CDN 服务上去</li>
+<li>多个域名后会增加域名解析时间</li>
+<li>可以通过在 HTML HEAD 标签中 加入<code>&lt;link rel="dns-prefetch" href="http://img.zhufengpeixun.cn"&gt;</code>去预解析域名，以降低域名解析带来的延迟</li>
+</ul>
+<h3 id="t104.3 接入CDN">4.3 接入CDN <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t104.3%20%E6%8E%A5%E5%85%A5CDN"> # </a></h3>
+<p>要给网站接入 CDN，需要把网页的静态资源上传到 CDN 服务上去，在服务这些静态资源的时候需要通过 CDN 服务提供的 URL 地址去访问</p>
+<pre><code class="lang-diff">    output: {
+        path: path.resolve(__dirname, 'dist'),
+<span class="hljs-addition">+        filename: '[name]_[hash:8].js',</span>
+<span class="hljs-addition">+        publicPath: 'http://img.zhufengpeixun.cn'</span>
+    },
+</code></pre>
+<h2 id="t115.Tree Shaking">5.Tree Shaking <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t115.Tree%20Shaking"> # </a></h2>
+<ul>
+<li>一个模块可以有多个方法，只要其中某个方法使用到了，则整个文件都会被打到bundle里面去，tree shaking就是只把用到的方法打入bundle,没用到的方法会uglify阶段擦除掉</li>
+<li>原理是利用es6模块的特点,只能作为模块顶层语句出现,import的模块名只能是字符串常量</li>
+</ul>
+<h3 id="t125.1 开启">5.1 开启 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t125.1%20%E5%BC%80%E5%90%AF"> # </a></h3>
+<ul>
+<li>webpack默认支持，在.babelrc里设置<code>module:false</code>即可在<code>production mode</code>下默认开启</li>
+<li>还要注意把devtool设置为null</li>
+</ul>
+<p>.babelrc</p>
+<pre><code class="lang-diff">    "presets":[
+<span class="hljs-addition">+        ["@babel/preset-env",{"modules":false}],//转译 ES6 ES7</span>
+        "@babel/preset-react"//转译JSX语法
+    ],
+</code></pre>
+<h3 id="t135.2 没有导入和使用">5.2 没有导入和使用 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t135.2%20%E6%B2%A1%E6%9C%89%E5%AF%BC%E5%85%A5%E5%92%8C%E4%BD%BF%E7%94%A8"> # </a></h3>
+<p>functions.js</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func1</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-string">'func1'</span>;
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">func2</span>(<span class="hljs-params"></span>)</span>{
+     <span class="hljs-keyword">return</span> <span class="hljs-string">'func2'</span>;
+}
+<span class="hljs-keyword">export</span> {
+  func1,
+  func2
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {func2} <span class="hljs-keyword">from</span> <span class="hljs-string">'./functions'</span>;
+<span class="hljs-keyword">var</span> result2 = func2();
+<span class="hljs-built_in">console</span>.log(result2);
+</code></pre>
+<h3 id="t145.3 代码不会被执行，不可到达">5.3 代码不会被执行，不可到达 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t145.3%20%E4%BB%A3%E7%A0%81%E4%B8%8D%E4%BC%9A%E8%A2%AB%E6%89%A7%E8%A1%8C%EF%BC%8C%E4%B8%8D%E5%8F%AF%E5%88%B0%E8%BE%BE"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">if</span>(<span class="hljs-literal">false</span>){
+ <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'false'</span>)
+}
+</code></pre>
+<h3 id="t155.4 代码执行的结果不会被用到">5.4 代码执行的结果不会被用到 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t155.4%20%E4%BB%A3%E7%A0%81%E6%89%A7%E8%A1%8C%E7%9A%84%E7%BB%93%E6%9E%9C%E4%B8%8D%E4%BC%9A%E8%A2%AB%E7%94%A8%E5%88%B0"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> {func2} <span class="hljs-keyword">from</span> <span class="hljs-string">'./functions'</span>;
+func2();
+</code></pre>
+<h3 id="t165.4 代码中只写不读的变量">5.4 代码中只写不读的变量 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t165.4%20%E4%BB%A3%E7%A0%81%E4%B8%AD%E5%8F%AA%E5%86%99%E4%B8%8D%E8%AF%BB%E7%9A%84%E5%8F%98%E9%87%8F"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> aabbcc=<span class="hljs-string">'aabbcc'</span>;
+aabbcc=<span class="hljs-string">'eeffgg'</span>;
+</code></pre>
+<h2 id="t176.代码分割">6.代码分割 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t176.%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2"> # </a></h2>
+<h3 id="t186.1 代码分割的意义">6.1 代码分割的意义 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t186.1%20%E4%BB%A3%E7%A0%81%E5%88%86%E5%89%B2%E7%9A%84%E6%84%8F%E4%B9%89"> # </a></h3>
+<ul>
+<li>对于大的Web应用来讲，将所有的代码都放在一个文件中显然是不够有效的，特别是当你的某些代码块是在某些特殊的时候才会被用到。</li>
+<li>webpack有一个功能就是将你的代码库分割成chunks语块，当代码运行到需要它们的时候再进行加载。
+适用的场景 </li>
+<li>抽离相同代码到一个共享块</li>
+<li>脚本懒加载，使得初始下载的代码更小</li>
+</ul>
+<h3 id="t196.2 Entry Points">6.2 Entry Points <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t196.2%20Entry%20Points"> # </a></h3>
+<ul>
+<li>Entry Points：入口文件设置的时候可以配置</li>
+<li>这种方法的问题<ul>
+<li>如果入口 chunks 之间包含重复的模块(lodash)，那些重复模块都会被引入到各个 bundle 中</li>
+<li>不够灵活，并且不能将核心应用程序逻辑进行动态拆分代码</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js">entry: {
+        <span class="hljs-attr">index</span>: <span class="hljs-string">"./src/index.js"</span>,
+        <span class="hljs-attr">login</span>: <span class="hljs-string">"./src/login.js"</span>
+}
+</code></pre>
+<h3 id="t206.2 动态导入和懒加载">6.2 动态导入和懒加载 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t206.2%20%E5%8A%A8%E6%80%81%E5%AF%BC%E5%85%A5%E5%92%8C%E6%87%92%E5%8A%A0%E8%BD%BD"> # </a></h3>
+<ul>
+<li>用户当前需要用什么功能就只加载这个功能对应的代码，也就是所谓的按需加载 在给单页应用做按需加载优化时，一般采用以下原则：<ul>
+<li>对网站功能进行划分，每一类一个chunk</li>
+<li>对于首次打开页面需要的功能直接加载，尽快展示给用户,某些依赖大量代码的功能点可以按需加载</li>
+<li>被分割出去的代码需要一个按需加载的时机</li>
+</ul>
+</li>
+</ul>
+<p>hello.js</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = <span class="hljs-string">"hello"</span>;
+</code></pre>
+<p>index.js</p>
+<pre><code class="lang-js"><span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">'#clickBtn'</span>).addEventListener(<span class="hljs-string">'click'</span>,() =&gt; {
+    <span class="hljs-keyword">import</span>(<span class="hljs-string">'./hello'</span>).then(<span class="hljs-function"><span class="hljs-params">result</span> =&gt;</span> {
+        <span class="hljs-built_in">console</span>.log(result.default);
+    });
+});
+</code></pre>
+<p>index.html</p>
+<pre><code class="lang-js">&lt;button id="clickBtn"&gt;点我&lt;/button&gt;
+</code></pre>
+<h3 id="t216.3 提取公共代码">6.3 提取公共代码 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t216.3%20%E6%8F%90%E5%8F%96%E5%85%AC%E5%85%B1%E4%BB%A3%E7%A0%81"> # </a></h3>
+<h3 id="t226.1 为什么需要提取公共代码">6.1 为什么需要提取公共代码 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t226.1%20%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E6%8F%90%E5%8F%96%E5%85%AC%E5%85%B1%E4%BB%A3%E7%A0%81"> # </a></h3>
+<p>大网站有多个页面，每个页面由于采用相同技术栈和样式代码，会包含很多公共代码，如果都包含进来会有问题</p>
+<ul>
+<li>相同的资源被重复的加载，浪费用户的流量和服务器的成本；</li>
+<li>每个页面需要加载的资源太大，导致网页首屏加载缓慢，影响用户体验。</li>
+<li>如果能把公共代码抽离成单独文件进行加载能进行优化，可以减少网络传输流量，降低服务器成本</li>
+</ul>
+<h3 id="t236.2 如何提取">6.2 如何提取 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t236.2%20%E5%A6%82%E4%BD%95%E6%8F%90%E5%8F%96"> # </a></h3>
+<ul>
+<li>基础类库，方便长期缓存</li>
+<li>页面之间的公用代码</li>
+<li>各个页面单独生成文件</li>
+<li><a href="https://www.webpackjs.com/plugins/split-chunks-plugin/">文档</a></li>
+<li><a href="https://github.com/webpack/webpack/tree/master/examples/common-chunk-and-vendor-chunk">common-chunk-and-vendor-chunk</a></li>
+<li>webpack将会基于以下条件自动分割代码块:<ul>
+<li>新的代码块被共享或者来自node_modules文件夹</li>
+<li>新的代码块大于30kb(在min+giz之前)</li>
+<li>按需加载代码块的请求数量应该&lt;=5</li>
+<li>页面初始化时加载代码块的请求数量应该&lt;=3</li>
+</ul>
+</li>
+</ul>
+<p>默认配置</p>
+<pre><code class="lang-js">optimization: {
+        <span class="hljs-attr">splitChunks</span>: {
+            <span class="hljs-attr">chunks</span>: <span class="hljs-string">"all"</span>,<span class="hljs-comment">//默认作用于异步chunk，值为all/initial/async</span>
+            <span class="hljs-attr">minSize</span>: <span class="hljs-number">30000</span>,  <span class="hljs-comment">//默认值是30kb,代码块的最小尺寸</span>
+            <span class="hljs-attr">minChunks</span>: <span class="hljs-number">1</span>,  <span class="hljs-comment">//被多少模块共享,在分割之前模块的被引用次数</span>
+            <span class="hljs-attr">maxAsyncRequests</span>: <span class="hljs-number">5</span>,  <span class="hljs-comment">//按需加载最大并行请求数量</span>
+            <span class="hljs-attr">maxInitialRequests</span>: <span class="hljs-number">3</span>,  <span class="hljs-comment">//一个入口的最大并行请求数量</span>
+            <span class="hljs-attr">name</span>: <span class="hljs-literal">true</span>,  <span class="hljs-comment">//打包后的名称，默认是chunk的名字通过分隔符（默认是～）分隔开，如vendor~</span>
+            <span class="hljs-attr">automaticNameDelimiter</span>: <span class="hljs-string">'~'</span>,<span class="hljs-comment">//默认webpack将会使用入口名和代码块的名称生成命名,比如 'vendors~main.js'</span>
+            <span class="hljs-attr">cacheGroups</span>: { <span class="hljs-comment">//设置缓存组用来抽取满足不同规则的chunk,下面以生成common为例</span>
+                <span class="hljs-attr">vendors</span>: {
+                    <span class="hljs-attr">chunks</span>: <span class="hljs-string">"initial"</span>,
+                    <span class="hljs-attr">test</span>: <span class="hljs-regexp">/node_modules/</span>,<span class="hljs-comment">//条件</span>
+                    <span class="hljs-attr">priority</span>: <span class="hljs-number">-10</span> <span class="hljs-comment">///优先级，一个chunk很可能满足多个缓存组，会被抽取到优先级高的缓存组中,为了能够让自定义缓存组有更高的优先级(默认0),默认缓存组的priority属性为负值.</span>
+                },
+                <span class="hljs-attr">commons</span>: {
+                    <span class="hljs-attr">chunks</span>: <span class="hljs-string">"initial"</span>,
+                    <span class="hljs-attr">minSize</span>: <span class="hljs-number">0</span>,<span class="hljs-comment">//最小提取字节数</span>
+                    <span class="hljs-attr">minChunks</span>: <span class="hljs-number">2</span>, <span class="hljs-comment">//最少被几个chunk引用</span>
+                    <span class="hljs-attr">priority</span>: <span class="hljs-number">-20</span>,
+                    <span class="hljs-attr">reuseExistingChunk</span>: <span class="hljs-literal">true</span><span class="hljs-comment">//    如果该chunk中引用了已经被抽取的chunk，直接引用该chunk，不会重复打包代码</span>
+                }
+            }
+        },
+}
+</code></pre>
+<h3 id="t246.3 提取公共代码">6.3 提取公共代码 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t246.3%20%E6%8F%90%E5%8F%96%E5%85%AC%E5%85%B1%E4%BB%A3%E7%A0%81"> # </a></h3>
+<p>pageA.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> utils1 <span class="hljs-keyword">from</span> <span class="hljs-string">'./utils1'</span>;
+<span class="hljs-keyword">import</span> utils2 <span class="hljs-keyword">from</span> <span class="hljs-string">'./utils2'</span>;
+<span class="hljs-keyword">import</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">'jquery'</span>;
+<span class="hljs-built_in">console</span>.log(utils1,utils2,$);
+</code></pre>
+<p>pageB.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> utils1 <span class="hljs-keyword">from</span> <span class="hljs-string">'./utils1'</span>;
+<span class="hljs-keyword">import</span> utils2 <span class="hljs-keyword">from</span> <span class="hljs-string">'./utils2'</span>;
+<span class="hljs-keyword">import</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">'jquery'</span>;
+<span class="hljs-built_in">console</span>.log(utils1,utils2,$);;
+</code></pre>
+<p>pageC.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> utils3 <span class="hljs-keyword">from</span> <span class="hljs-string">'./utils3'</span>;
+<span class="hljs-keyword">import</span> utils1 <span class="hljs-keyword">from</span> <span class="hljs-string">'./utils1'</span>;
+<span class="hljs-keyword">import</span> $ <span class="hljs-keyword">from</span> <span class="hljs-string">'jquery'</span>;
+<span class="hljs-built_in">console</span>.log(utils1,utils3,$);
+</code></pre>
+<p>utils1.js</p>
+<pre><code class="lang-js">
+</code></pre>
+<p>utils2.js</p>
+<pre><code class="lang-js">
+</code></pre>
+<p>utils3.js</p>
+<pre><code class="lang-js">
+</code></pre>
+<p>webpack.config.js</p>
+<pre><code class="lang-js">    entry: {
+        <span class="hljs-attr">pageA</span>: <span class="hljs-string">'./src/pageA'</span>,
+        <span class="hljs-attr">pageB</span>: <span class="hljs-string">'./src/pageB'</span>,
+        <span class="hljs-attr">pageC</span>: <span class="hljs-string">'./src/pageC'</span>
+    },
+    <span class="hljs-attr">output</span>: {
+        <span class="hljs-attr">path</span>: path.resolve(__dirname,<span class="hljs-string">'dist'</span>),
+        <span class="hljs-attr">filename</span>: <span class="hljs-string">'[name].js'</span>
+    },
+  <span class="hljs-attr">plugins</span>:[
+       <span class="hljs-keyword">new</span> HtmlWebpackPlugin({
+            <span class="hljs-attr">template</span>: <span class="hljs-string">'./src/index.html'</span>,
+            <span class="hljs-attr">filename</span>: <span class="hljs-string">'pageA.html'</span>,
+            <span class="hljs-attr">excludeChunks</span>: [<span class="hljs-string">'pageB'</span>,<span class="hljs-string">'pageC'</span>]
+        }),
+        <span class="hljs-keyword">new</span> HtmlWebpackPlugin({
+            <span class="hljs-attr">template</span>: <span class="hljs-string">'./src/index.html'</span>,
+            <span class="hljs-attr">filename</span>: <span class="hljs-string">'pageB.html'</span>,
+            <span class="hljs-attr">excludeChunks</span>: [<span class="hljs-string">'pageA'</span>,<span class="hljs-string">'pageC'</span>]
+        }),
+        <span class="hljs-keyword">new</span> HtmlWebpackPlugin({
+            <span class="hljs-attr">template</span>: <span class="hljs-string">'./src/index.html'</span>,
+            <span class="hljs-attr">filename</span>: <span class="hljs-string">'pageC.html'</span>,
+            <span class="hljs-attr">excludeChunks</span>: [<span class="hljs-string">'pageA'</span>,<span class="hljs-string">'pageB'</span>]
+        })
+    ]
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/splitchunks.png" alt="splitchunks"></p>
+<h2 id="t257.开启 Scope Hoisting">7.开启 Scope Hoisting <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t257.%E5%BC%80%E5%90%AF%20Scope%20Hoisting"> # </a></h2>
+<ul>
+<li>Scope Hoisting 可以让 Webpack 打包出来的代码文件更小、运行的更快， 它又译作 "作用域提升"，是在 Webpack3 中新推出的功能。</li>
+<li>初webpack转换后的模块会包裹上一层函数,import会转换成require</li>
+<li>代码体积更小，因为函数申明语句会产生大量代码</li>
+<li>代码在运行时因为创建的函数作用域更少了，内存开销也随之变小</li>
+<li>大量作用域包裹代码会导致体积增大</li>
+<li>运行时创建的函数作用域变多，内存开销增大</li>
+<li>scope hoisting的原理是将所有的模块按照引用顺序放在一个函数作用域里，然后适当地重命名一些变量以防止命名冲突</li>
+<li>这个功能在mode为production下默认开启,开发环境要用 <code>webpack.optimize.ModuleConcatenationPlugin</code>插件</li>
+<li>也要使用ES6 Module,CJS不支持</li>
+</ul>
+<h3 id="t267.1 开发环境插件配置">7.1 开发环境插件配置 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t267.1%20%E5%BC%80%E5%8F%91%E7%8E%AF%E5%A2%83%E6%8F%92%E4%BB%B6%E9%85%8D%E7%BD%AE"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">resolve</span>: {
+    <span class="hljs-comment">// 针对 Npm 中的第三方模块优先采用 jsnext:main 中指向的 ES6 模块化语法的文件</span>
+    <span class="hljs-attr">mainFields</span>: [<span class="hljs-string">'jsnext:main'</span>, <span class="hljs-string">'browser'</span>, <span class="hljs-string">'main'</span>]
+  },
+  <span class="hljs-attr">plugins</span>: [
+    <span class="hljs-comment">// 开启 Scope Hoisting</span>
+    <span class="hljs-keyword">new</span> webpack.optimize.ModuleConcatenationPlugin(),
+  ],
+};
+</code></pre>
+<h3 id="t277.2 代码">7.2 代码 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t277.2%20%E4%BB%A3%E7%A0%81"> # </a></h3>
+<p>hello.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-string">'Hello'</span>;
+</code></pre>
+<p>index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> str <span class="hljs-keyword">from</span> <span class="hljs-string">'./hello.js'</span>;
+<span class="hljs-built_in">console</span>.log(str);
+</code></pre>
+<p>输出的结果main.js</p>
+<pre><code class="lang-js"><span class="hljs-string">"./src/index.js"</span>:
+(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">module, __webpack_exports__, __webpack_require__</span>) </span>{
+__webpack_require__.r(__webpack_exports__);
+<span class="hljs-keyword">var</span> hello = (<span class="hljs-string">'hello'</span>);
+<span class="hljs-built_in">console</span>.log(hello);
+ })
+</code></pre>
+<blockquote>
+<p>函数由两个变成了一个，hello.js 中定义的内容被直接注入到了 main.js 中</p>
+</blockquote>
+<h2 id="t288. 用 HMR 提高开发效率">8. 用 HMR 提高开发效率 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t288.%20%E7%94%A8%20HMR%20%E6%8F%90%E9%AB%98%E5%BC%80%E5%8F%91%E6%95%88%E7%8E%87"> # </a></h2>
+<ul>
+<li>HMR 全称是 Hot Module Replacement，即模块热替换</li>
+<li>Hot Reloading，当代码变更时通知浏览器刷新页面，以避免频繁手动刷新浏览器页面</li>
+<li>HMR 可以理解为增强版的 Hot Reloading，但不用整个页面刷新，而是局部替换掉部分模块代码并且使其生效</li>
+<li>原理是当一个源码发生变化时，只重新编译发生变化的模块，再用新输出的模块替换掉浏览器中对应的老模块</li>
+<li>模块热替换技术的优势有：<ul>
+<li>实时预览反应更快，等待时间更短。</li>
+<li>不刷新浏览器能保留当前网页的运行状态，例如在使用 Redux 来管理数据的应用中搭配模块热替换能做到代码更新时Redux 中的数据还保持不变</li>
+</ul>
+</li>
+</ul>
+<h3 id="t298.1 模块热替换原理">8.1 模块热替换原理 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t298.1%20%E6%A8%A1%E5%9D%97%E7%83%AD%E6%9B%BF%E6%8D%A2%E5%8E%9F%E7%90%86"> # </a></h3>
+<ul>
+<li>模块热替换的原理和自动刷新原理类似，都需要往要开发的网页中注入一个代理客户端用于连接 DevServer 和网页</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/webpackhmr.png" alt="hotupdate"></p>
+<h3 id="t308.2 配置">8.2 配置 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t308.2%20%E9%85%8D%E7%BD%AE"> # </a></h3>
+<h4 id="t318.2.1 配置hot">8.2.1 配置hot <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t318.2.1%20%E9%85%8D%E7%BD%AEhot"> # </a></h4>
+<ul>
+<li>DevServer 默认不会开启模块热替换模式，要开启该模式，只需在启动时带上参数 <code>--hot</code><pre><code class="lang-js"><span class="hljs-keyword">const</span> webpack = <span class="hljs-built_in">require</span>(<span class="hljs-string">'webpack'</span>);
+<span class="hljs-built_in">module</span>.exports = {
+<span class="hljs-attr">entry</span>:{
+  <span class="hljs-attr">main</span>:<span class="hljs-string">'./src/index.js'</span>,
+},
+<span class="hljs-attr">plugins</span>: [
+  <span class="hljs-comment">// 该插件的作用就是实现模块热替换，实际上当启动时带上 `--hot` 参数，会注入该插件，生成 .hot-update.json 文件。</span>
+  <span class="hljs-keyword">new</span> webpack.NamedModulesPlugin(), <span class="hljs-comment">// 用于启动 HMR 时可以显示模块的相对路径</span>
+  <span class="hljs-keyword">new</span> webpack.HotModuleReplacementPlugin(), <span class="hljs-comment">// Hot Module Replacement 的插件</span>
+],
+<span class="hljs-attr">devServer</span>:{
+  <span class="hljs-comment">// 告诉 DevServer 要开启模块热替换模式</span>
+  <span class="hljs-attr">hot</span>: <span class="hljs-literal">true</span>,      
+}  
+};
+</code></pre>
+<blockquote>
+<p>在启动 Webpack 时带上参数 --hot 其实就是自动为你完成以上配置。</p>
+</blockquote>
+</li>
+</ul>
+<h4 id="t328.2.2 代码实现">8.2.2 代码实现 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html#t328.2.2%20%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> { render } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
+<span class="hljs-keyword">import</span> App <span class="hljs-keyword">from</span> <span class="hljs-string">'./App'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'./index.css'</span>;
+render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>));
+
+<span class="hljs-comment">// 只有当开启了模块热替换时 module.hot 才存在</span>
+<span class="hljs-keyword">if</span> (<span class="hljs-built_in">module</span>.hot) {
+  <span class="hljs-comment">// accept 函数的第一个参数指出当前文件接受哪些子模块的替换，这里表示只接受 ./AppComponent 这个子模块</span>
+  <span class="hljs-comment">// 第2个参数用于在新的子模块加载完毕后需要执行的逻辑</span>
+  <span class="hljs-built_in">module</span>.hot.accept([<span class="hljs-string">'./App'</span>], () =&gt; {
+    <span class="hljs-comment">// 新的 AppComponent 加载成功后重新执行下组建渲染逻辑</span>
+    <span class="hljs-keyword">let</span> App=<span class="hljs-built_in">require</span>(<span class="hljs-string">'./App'</span>).default;  
+    render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">App</span>/&gt;</span></span>, <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>));
+  });
+}
+</code></pre>
+<ul>
+<li>module.hot 是当开启模块热替换后注入到全局的 API，用于控制模块热替换的逻辑</li>
+<li>当子模块发生更新时，更新事件会一层层往上传递，也就是从<code>App.js</code>文件传递到<code>index.js</code>文件， 直到有某层的文件接受了当前变化的模块</li>
+<li>如果事件一直往上抛到最外层都没有文件接受它，就会直接刷新网页</li>
+<li><code>.css</code>文件都会触发模块热替换的原因是<code>style-loader</code>会注入用于接受 CSS 的代码</li>
+</ul>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

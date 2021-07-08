@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t01.%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91(Abstract%20Syntax%20Tree)">1.抽象语法树(Abstract Syntax Tree)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t12.%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91%E7%94%A8%E9%80%94">2.抽象语法树用途</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t23.%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91%E5%AE%9A%E4%B9%89">3.抽象语法树定义</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t34.JavaScript%20Parser">4.JavaScript Parser</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t44.1%20%E5%B8%B8%E7%94%A8%E7%9A%84JavaScript%20Parser">4.1 常用的JavaScript Parser</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t54.2%20esprima">4.2 esprima</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t65.babel%E6%8F%92%E4%BB%B6">5.babel插件</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t75.1%20%E8%BD%AC%E6%8D%A2%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0">5.1 转换箭头函数</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t85.2.%20%E9%A2%84%E8%AE%A1%E7%AE%97babel%E6%8F%92%E4%BB%B6">5.2. 预计算babel插件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t95.3.%20%E6%8A%8A%E7%B1%BB%E7%BC%96%E8%AF%91%E4%B8%BAFunction">5.3. 把类编译为Function</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t106.%20webpack%20babel%E6%8F%92%E4%BB%B6">6. webpack babel插件</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t116.1%20%E5%AE%9E%E7%8E%B0%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD">6.1 实现按需加载</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t126.2%20webpack%E9%85%8D%E7%BD%AE">6.2 webpack配置</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t136.3%20babel%E6%8F%92%E4%BB%B6">6.3 babel插件</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t149.%20AST">9. AST</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t159.1%20%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B">9.1 解析过程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t169.2%20%E8%AF%AD%E6%B3%95%E5%8D%95%E5%85%83">9.2 语法单元</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t179.3%20%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90">9.3 词法分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t189.4%20%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90">9.4 语法分析</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t199.%20%E5%8F%82%E8%80%83">9. 参考</a></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01.抽象语法树(Abstract Syntax Tree)">1.抽象语法树(Abstract Syntax Tree) <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t01.%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91(Abstract%20Syntax%20Tree)"> # </a></h2>
+<p><code>webpack</code>和<code>Lint</code>等很多的工具和库的核心都是通过<code>Abstract Syntax Tree</code>抽象语法树这个概念来实现对代码的检查、分析等操作的</p>
+<ul>
+<li>通过了解抽象语法树这个概念，你也可以随手编写类似的工具</li>
+</ul>
+<h2 id="t12.抽象语法树用途">2.抽象语法树用途 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t12.%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91%E7%94%A8%E9%80%94"> # </a></h2>
+<ul>
+<li>代码语法的检查、代码风格的检查、代码的格式化、代码的高亮、代码错误提示、代码自动补全等等<ul>
+<li>如JSLint、JSHint对代码错误或风格的检查，发现一些潜在的错误</li>
+<li>IDE的错误提示、格式化、高亮、自动补全等等</li>
+</ul>
+</li>
+<li>代码混淆压缩<ul>
+<li>UglifyJS2等</li>
+</ul>
+</li>
+<li>优化变更代码，改变代码结构使达到想要的结构<ul>
+<li>代码打包工具webpack、rollup等等</li>
+<li>CommonJS、AMD、CMD、UMD等代码规范之间的转化</li>
+<li>CoffeeScript、TypeScript、JSX等转化为原生Javascript</li>
+</ul>
+</li>
+</ul>
+<h2 id="t23.抽象语法树定义">3.抽象语法树定义 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t23.%E6%8A%BD%E8%B1%A1%E8%AF%AD%E6%B3%95%E6%A0%91%E5%AE%9A%E4%B9%89"> # </a></h2>
+<p>这些工具的原理都是通过<code>JavaScript Parser</code>把代码转化为一颗抽象语法树（AST），这颗树定义了代码的结构，通过操纵这颗树，我们可以精准的定位到声明语句、赋值语句、运算语句等等，实现对代码的分析、优化、变更等操作</p>
+<blockquote>
+<p>在计算机科学中，抽象语法树（abstract syntax tree或者缩写为AST），或者语法树（syntax tree），是源代码的抽象语法结构的树状表现形式，这里特指编程语言的源代码。</p>
+</blockquote>
+<blockquote>
+<p>Javascript的语法是为了给开发者更好的编程而设计的，但是不适合程序的理解。所以需要转化为AST来使之更适合程序分析，浏览器编译器一般会把源码转化为AST来进行进一步的分析等其他操作。</p>
+</blockquote>
+<p><img src="./珠峰架构师成长计划_files/ast.jpg" alt="ast"></p>
+<h2 id="t34.JavaScript Parser">4.JavaScript Parser <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t34.JavaScript%20Parser"> # </a></h2>
+<ul>
+<li><p>JavaScript Parser，把js源码转化为抽象语法树的解析器。</p>
+</li>
+<li><p>浏览器会把js源码通过解析器转为抽象语法树，再进一步转化为字节码或直接生成机器码。</p>
+</li>
+<li><p>一般来说每个js引擎都会有自己的抽象语法树格式，Chrome的v8引擎，firefox的SpiderMonkey引擎等等，MDN提供了详细SpiderMonkey AST format的详细说明，算是业界的标准。</p>
+</li>
+</ul>
+<h3 id="t44.1 常用的JavaScript Parser">4.1 常用的JavaScript Parser <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t44.1%20%E5%B8%B8%E7%94%A8%E7%9A%84JavaScript%20Parser"> # </a></h3>
+<ul>
+<li>esprima</li>
+<li>traceur</li>
+<li>acorn</li>
+<li>shift</li>
+</ul>
+<h3 id="t54.2 esprima">4.2 esprima <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t54.2%20esprima"> # </a></h3>
+<ul>
+<li>通过 <a href="https://www.npmjs.com/package/esprima">esprima</a> 把源码转化为AST</li>
+<li>通过 <a href="https://www.npmjs.com/package/estraverse">estraverse</a> 遍历并更新AST</li>
+<li>通过 <a href="https://www.npmjs.com/package/escodegen">escodegen</a> 将AST重新生成源码</li>
+<li><a href="https://astexplorer.net/">astexplorer</a> AST的可视化工具</li>
+</ul>
+<pre><code class="lang-js">mkdir zhufengast
+cd zhufengast
+
+cnpm i esprima estraverse escodegen- S
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> esprima = <span class="hljs-built_in">require</span>(<span class="hljs-string">'esprima'</span>);
+<span class="hljs-keyword">var</span> estraverse = <span class="hljs-built_in">require</span>(<span class="hljs-string">'estraverse'</span>);
+<span class="hljs-keyword">var</span> escodegen = <span class="hljs-built_in">require</span>(<span class="hljs-string">"escodegen"</span>);
+<span class="hljs-keyword">let</span> code = <span class="hljs-string">'function ast(){}'</span>;
+<span class="hljs-keyword">let</span> ast=esprima.parse(code);
+<span class="hljs-keyword">let</span> indent=<span class="hljs-number">0</span>;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">pad</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-string">' '</span>.repeat(indent);
+}
+estraverse.traverse(ast,{
+    enter(node) {
+        <span class="hljs-built_in">console</span>.log(pad()+node.type);
+        <span class="hljs-keyword">if</span>(node.type == <span class="hljs-string">'FunctionDeclaration'</span>){
+            node.id.name = <span class="hljs-string">'ast_rename'</span>;
+        }
+        indent+=<span class="hljs-number">2</span>;
+     },
+    leave(node) {
+        indent-=<span class="hljs-number">2</span>;
+        <span class="hljs-built_in">console</span>.log(pad()+node.type);
+
+     }
+ });
+<span class="hljs-keyword">let</span> generated = escodegen.generate(ast);
+<span class="hljs-built_in">console</span>.log(generated);
+</code></pre>
+<pre><code>Program
+  FunctionDeclaration
+    Identifier
+    Identifier
+    BlockStatement
+    BlockStatement
+  FunctionDeclaration
+Program
+</code></pre><h2 id="t65.babel插件">5.babel插件 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t65.babel%E6%8F%92%E4%BB%B6"> # </a></h2>
+<ul>
+<li>访问者模式Visitor 对于某个对象或者一组对象，不同的访问者，产生的结果不同，执行操作也不同</li>
+<li><a href="https://www.npmjs.com/package/@babel/core">@babel/core</a> Babel 的编译器，核心 API 都在这里面，比如常见的 transform、parse</li>
+<li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">babylon</a> Babel 的解析器</li>
+<li><a href="https://github.com/babel/babel/tree/master/packages/babel-types">babel-types</a> 用于 AST 节点的 Lodash 式工具库, 它包含了构造、验证以及变换 AST 节点的方法，对编写处理 AST 逻辑非常有用</li>
+<li><a href="https://www.npmjs.com/package/babel-traverse">babel-traverse</a>用于对 AST 的遍历，维护了整棵树的状态，并且负责替换、移除和添加节点</li>
+<li><a href="https://babeljs.io/docs/en/next/babel-types.html">babel-types-api</a></li>
+<li><a href="https://github.com/brigand/babel-plugin-handbook/blob/master/translations/zh-Hans/README.md#asts">Babel 插件手册</a></li>
+<li><a href="https://babeljs.io/en/repl.html">babeljs.io</a> babel可视化编译器</li>
+</ul>
+<h3 id="t75.1 转换箭头函数">5.1 转换箭头函数 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t75.1%20%E8%BD%AC%E6%8D%A2%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0"> # </a></h3>
+<ul>
+<li><a href="https://www.npmjs.com/package/babel-plugin-transform-es2015-arrow-functions">babel-plugin-transform-es2015-arrow-functions</a></li>
+</ul>
+<p>转换前</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> sum = <span class="hljs-function">(<span class="hljs-params">a,b</span>)=&gt;</span>a+b
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/arrow-left.png" alt="arrow-left"></p>
+<p>转换后</p>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> sum = <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">a, b</span>) </span>{
+  <span class="hljs-keyword">return</span> a + b;
+};
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/arrow-right.png" alt="arrow-right"></p>
+<pre><code class="lang-js">npm i @babel/core babel-types -D
+</code></pre>
+<p>实现</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> babel = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@babel/core'</span>);
+<span class="hljs-keyword">let</span> t = <span class="hljs-built_in">require</span>(<span class="hljs-string">'babel-types'</span>);
+<span class="hljs-keyword">const</span> code = <span class="hljs-string">`const sum = (a,b)=&gt;a+b`</span>;
+<span class="hljs-keyword">let</span> transformArrowFunctions = {
+    <span class="hljs-attr">visitor</span>: {
+        <span class="hljs-attr">ArrowFunctionExpression</span>: <span class="hljs-function">(<span class="hljs-params">path</span>) =&gt;</span> {
+            <span class="hljs-keyword">let</span> node = path.node;
+            <span class="hljs-keyword">let</span> id = path.parent.id;
+            <span class="hljs-keyword">let</span> params = node.params;
+            <span class="hljs-keyword">let</span> body=t.blockStatement([
+                t.returnStatement(node.body)
+            ]);
+            <span class="hljs-keyword">let</span> functionExpression = t.functionExpression(id,params,body,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>);
+            path.replaceWith(functionExpression);
+        }
+    }
+}
+<span class="hljs-keyword">const</span> result = babel.transform(code, {
+    <span class="hljs-attr">plugins</span>: [transformArrowFunctions]
+});
+<span class="hljs-built_in">console</span>.log(result.code);
+</code></pre>
+<h3 id="t85.2. 预计算babel插件">5.2. 预计算babel插件 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t85.2.%20%E9%A2%84%E8%AE%A1%E7%AE%97babel%E6%8F%92%E4%BB%B6"> # </a></h3>
+<ul>
+<li>path.parentPath 父路径</li>
+</ul>
+<p>转换前</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> result = <span class="hljs-number">1</span> + <span class="hljs-number">2</span>;
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/precalcleft.png" alt="precalcleft"></p>
+<p>转换后</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> result = <span class="hljs-number">3</span>;
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/precalcright.png" alt="precalcright"></p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> babel = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@babel/core'</span>);
+<span class="hljs-keyword">let</span> t=<span class="hljs-built_in">require</span>(<span class="hljs-string">'babel-types'</span>);
+<span class="hljs-keyword">let</span> preCalculator={
+    <span class="hljs-attr">visitor</span>: {
+        BinaryExpression(path) {
+            <span class="hljs-keyword">let</span> node=path.node;
+            <span class="hljs-keyword">let</span> left=node.left;
+            <span class="hljs-keyword">let</span> operator=node.operator;
+            <span class="hljs-keyword">let</span> right=node.right;
+            <span class="hljs-keyword">if</span> (!<span class="hljs-built_in">isNaN</span>(left.value) &amp;&amp; !<span class="hljs-built_in">isNaN</span>(right.value)) {
+                <span class="hljs-keyword">let</span> result=<span class="hljs-built_in">eval</span>(left.value+operator+right.value);
+                path.replaceWith(t.numericLiteral(result));
+                <span class="hljs-keyword">if</span> (path.parent&amp;&amp; path.parent.type == <span class="hljs-string">'BinaryExpression'</span>) {
+                    preCalculator.visitor.BinaryExpression.call(<span class="hljs-literal">null</span>,path.parentPath);
+                }
+            }
+        }
+    }
+}
+
+
+<span class="hljs-keyword">const</span> result = babel.transform(<span class="hljs-string">'const sum = 1+2+3'</span>,{
+    <span class="hljs-attr">plugins</span>:[
+        preCalculator
+    ]
+});
+<span class="hljs-built_in">console</span>.log(result.code);
+</code></pre>
+<h3 id="t95.3. 把类编译为Function">5.3. 把类编译为Function <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t95.3.%20%E6%8A%8A%E7%B1%BB%E7%BC%96%E8%AF%91%E4%B8%BAFunction"> # </a></h3>
+<ul>
+<li><a href="https://www.npmjs.com/package/babel-plugin-transform-es2015-classes">babel-plugin-transform-es2015-classes</a></li>
+</ul>
+<p>es6</p>
+<pre><code class="lang-js">    <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+        <span class="hljs-keyword">constructor</span>(name) {
+            <span class="hljs-keyword">this</span>.name=name;
+        }
+        getName() {
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;
+        }
+    }
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/classast.png" alt="classast"></p>
+<p>es5</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Person</span>(<span class="hljs-params">name</span>) </span>{
+    <span class="hljs-keyword">this</span>.name=name;
+}
+Person.prototype.getName=<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;
+}
+
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/es5class1.png" alt="es5class1">
+<img src="./珠峰架构师成长计划_files/es5class2.png" alt="es5class2"></p>
+<p>实现</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> babel = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@babel/core'</span>);
+<span class="hljs-keyword">let</span> t=<span class="hljs-built_in">require</span>(<span class="hljs-string">'babel-types'</span>);
+<span class="hljs-keyword">let</span> source=<span class="hljs-string">`
+    class Person {
+        constructor(name) {
+            this.name=name;
+        }
+        getName() {
+            return this.name;
+        }
+    }
+`</span>;
+<span class="hljs-keyword">let</span> ClassPlugin={
+    <span class="hljs-attr">visitor</span>: {
+        ClassDeclaration(path) {
+            <span class="hljs-keyword">let</span> node=path.node;
+            <span class="hljs-keyword">let</span> id=node.id;
+            <span class="hljs-keyword">let</span> constructorFunction = t.functionDeclaration(id,[],t.blockStatement([]),<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>);
+            <span class="hljs-keyword">let</span> methods=node.body.body;
+            <span class="hljs-keyword">let</span> functions = [];
+            methods.forEach(<span class="hljs-function"><span class="hljs-params">method</span> =&gt;</span> {
+                <span class="hljs-keyword">if</span> (method.kind == <span class="hljs-string">'constructor'</span>) {
+                    constructorFunction = t.functionDeclaration(id,method.params,method.body,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>);
+                    functions.push(constructorFunction);
+                } <span class="hljs-keyword">else</span> {
+                    <span class="hljs-keyword">let</span> memberObj=t.memberExpression(t.memberExpression(id,t.identifier(<span class="hljs-string">'prototype'</span>)),method.key);
+                    <span class="hljs-keyword">let</span> memberFunction = t.functionExpression(id,method.params,method.body,<span class="hljs-literal">false</span>,<span class="hljs-literal">false</span>);
+                    <span class="hljs-keyword">let</span> assignment = t.assignmentExpression(<span class="hljs-string">'='</span>,memberObj,memberFunction);
+                    functions.push(assignment);
+                }
+            });
+            <span class="hljs-keyword">if</span> (functions.length ==<span class="hljs-number">0</span>) {
+                path.replaceWith(constructorFunction);
+            }<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (functions.length ==<span class="hljs-number">1</span>) {
+                path.replaceWith(functions[<span class="hljs-number">0</span>]);
+            } <span class="hljs-keyword">else</span> {
+                path.replaceWithMultiple(functions);
+            }
+        }
+    }
+}
+
+
+<span class="hljs-keyword">const</span> result = babel.transform(source,{
+    <span class="hljs-attr">plugins</span>:[
+        ClassPlugin
+    ]
+});
+<span class="hljs-built_in">console</span>.log(result.code);
+</code></pre>
+<h2 id="t106. webpack babel插件">6. webpack babel插件 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t106.%20webpack%20babel%E6%8F%92%E4%BB%B6"> # </a></h2>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> babel = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@babel/core"</span>);
+<span class="hljs-keyword">let</span> { transform } = <span class="hljs-built_in">require</span>(<span class="hljs-string">"@babel/core"</span>);
+</code></pre>
+<h3 id="t116.1 实现按需加载">6.1 实现按需加载 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t116.1%20%E5%AE%9E%E7%8E%B0%E6%8C%89%E9%9C%80%E5%8A%A0%E8%BD%BD"> # </a></h3>
+<ul>
+<li><a href="https://www.lodashjs.com/docs/4.17.5.html#concat">lodashjs</a></li>
+<li><a href="https://babeljs.io/docs/en/babel-core">babel-core</a></li>
+<li><a href="https://www.npmjs.com/package/babel-plugin-import">babel-plugin-import</a></li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> { flatten,concat } <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash"</span>
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/treeshakingleft.png" alt="treeshakingleft"></p>
+<p>转换为</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> flatten <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash/flatten"</span>;
+<span class="hljs-keyword">import</span> concat <span class="hljs-keyword">from</span> <span class="hljs-string">"lodash/flatten"</span>;
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/treeshakingright.png" alt="treeshakingright"></p>
+<h3 id="t126.2 webpack配置">6.2 webpack配置 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t126.2%20webpack%E9%85%8D%E7%BD%AE"> # </a></h3>
+<pre><code class="lang-js">cnpm i webpack webpack-cli -D
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> path=<span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-built_in">module</span>.exports={
+    <span class="hljs-attr">mode</span>:<span class="hljs-string">'development'</span>,
+    <span class="hljs-attr">entry</span>: <span class="hljs-string">'./src/index.js'</span>,
+    <span class="hljs-attr">output</span>: {
+        <span class="hljs-attr">path</span>: path.resolve(<span class="hljs-string">'dist'</span>),
+        <span class="hljs-attr">filename</span>:<span class="hljs-string">'bundle.js'</span>
+    },
+    <span class="hljs-attr">module</span>: {
+        <span class="hljs-attr">rules</span>: [
+            {
+                <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.js$/</span>,
+                <span class="hljs-attr">use</span>: {
+                    <span class="hljs-attr">loader</span>: <span class="hljs-string">'babel-loader'</span>,
+                    <span class="hljs-attr">options</span>: {
+                        <span class="hljs-attr">plugins</span>:[[<span class="hljs-string">'import'</span>,{<span class="hljs-attr">library</span>:<span class="hljs-string">'lodash'</span>}]]
+                    }
+                }
+            }
+        ]
+    }
+}
+</code></pre>
+<blockquote>
+<p>编译顺序为首先<code>plugins</code>从左往右,然后<code>presets</code>从右往左</p>
+</blockquote>
+<h3 id="t136.3 babel插件">6.3 babel插件 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t136.3%20babel%E6%8F%92%E4%BB%B6"> # </a></h3>
+<ul>
+<li><code>babel-plugin-import.js</code>放置在node_modules目录下</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> babel = <span class="hljs-built_in">require</span>(<span class="hljs-string">'@babel/core'</span>);
+<span class="hljs-keyword">let</span> types = <span class="hljs-built_in">require</span>(<span class="hljs-string">'babel-types'</span>);
+<span class="hljs-keyword">const</span> visitor = {
+    <span class="hljs-attr">ImportDeclaration</span>:{
+        enter(path,state={opts}){
+            <span class="hljs-keyword">const</span> specifiers = path.node.specifiers;
+            <span class="hljs-keyword">const</span> source = path.node.source;
+            <span class="hljs-keyword">if</span>(state.opts.library == source.value &amp;&amp; !types.isImportDefaultSpecifier(specifiers[<span class="hljs-number">0</span>])){
+                <span class="hljs-keyword">const</span> declarations = specifiers.map(<span class="hljs-function">(<span class="hljs-params">specifier,index</span>)=&gt;</span>{
+                    <span class="hljs-keyword">return</span> types.ImportDeclaration(
+                        [types.importDefaultSpecifier(specifier.local)],
+                        types.stringLiteral(<span class="hljs-string">`<span class="hljs-subst">${source.value}</span>/<span class="hljs-subst">${specifier.local.name}</span>`</span>)
+                    )
+                });
+                path.replaceWithMultiple(declarations);
+            }
+        }
+    }
+}
+<span class="hljs-built_in">module</span>.exports = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">babel</span>)</span>{
+    <span class="hljs-keyword">return</span> {
+        visitor
+    }
+}
+</code></pre>
+<h2 id="t149. AST">9. AST <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t149.%20AST"> # </a></h2>
+<h3 id="t159.1 解析过程">9.1 解析过程 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t159.1%20%E8%A7%A3%E6%9E%90%E8%BF%87%E7%A8%8B"> # </a></h3>
+<p>AST整个解析过程分为两个步骤</p>
+<ul>
+<li>分词：将整个代码字符串分割成语法单元数组</li>
+<li>语法分析：建立分析语法单元之间的关系</li>
+</ul>
+<h3 id="t169.2 语法单元">9.2 语法单元 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t169.2%20%E8%AF%AD%E6%B3%95%E5%8D%95%E5%85%83"> # </a></h3>
+<p>Javascript 代码中的语法单元主要包括以下这么几种</p>
+<ul>
+<li>关键字：<code>const</code>、<code>let</code>、<code>var</code>等</li>
+<li>标识符：可能是一个变量，也可能是 if、else 这些关键字，又或者是 true、false 这些常量</li>
+<li>运算符</li>
+<li>数字</li>
+<li>空格</li>
+<li>注释</li>
+</ul>
+<h3 id="t179.3 词法分析">9.3 词法分析 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t179.3%20%E8%AF%8D%E6%B3%95%E5%88%86%E6%9E%90"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> jsx = <span class="hljs-string">`let element=&lt;h1&gt;hello&lt;/h1&gt;`</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">lexical</span>(<span class="hljs-params">code</span>) </span>{
+    <span class="hljs-keyword">const</span> tokens=[];
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;code.length;i++){
+        <span class="hljs-keyword">let</span> char=code.charAt(i);
+        <span class="hljs-keyword">if</span> (char == <span class="hljs-string">'='</span>) {
+            tokens.push({
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'operator'</span>,
+                <span class="hljs-attr">value</span>:char
+            });
+        }
+        <span class="hljs-keyword">if</span> (char==<span class="hljs-string">'&lt;'</span>) {
+            <span class="hljs-keyword">const</span> token={
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'JSXElement'</span>,
+                <span class="hljs-attr">value</span>:char
+            }
+            tokens.push(token);
+            <span class="hljs-keyword">let</span> isClose = <span class="hljs-literal">false</span>;
+            <span class="hljs-keyword">for</span> (i++;i&lt;code.length;i++){
+                char=code.charAt(i);
+                token.value+=char;
+                <span class="hljs-keyword">if</span> (char==<span class="hljs-string">'&gt;'</span>) {
+                    <span class="hljs-keyword">if</span> (isClose) {
+                        <span class="hljs-keyword">break</span>;
+                    } <span class="hljs-keyword">else</span> {
+                        isClose=<span class="hljs-literal">true</span>;
+                    }
+                }
+            }
+            <span class="hljs-keyword">continue</span>;
+        }
+        <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/[a-zA-Z\$\_]/</span>.test(char)) {
+            <span class="hljs-keyword">const</span> token={
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'Identifier'</span>,
+                <span class="hljs-attr">value</span>:char
+            }
+            tokens.push(token);
+            <span class="hljs-keyword">for</span> (i++;i&lt;code.length;i++){
+                char=code.charAt(i);
+                <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/[a-zA-Z\$\_]/</span>.test(char)) {
+                    token.value+=char;
+                } <span class="hljs-keyword">else</span> {
+                    i--;
+                    <span class="hljs-keyword">break</span>;
+                }
+            }
+            <span class="hljs-keyword">continue</span>;
+        }
+
+        <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/\s/</span>.test(char)) {
+            <span class="hljs-keyword">const</span> token={
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'whitespace'</span>,
+                <span class="hljs-attr">value</span>:char
+            }
+            tokens.push(token);
+            <span class="hljs-keyword">for</span> (i++;i&lt;code.length;i++){
+                char=code.charAt[i];
+                <span class="hljs-keyword">if</span> (<span class="hljs-regexp">/\s/</span>.test(char)) {
+                    token.value+=char;
+                } <span class="hljs-keyword">else</span> {
+                    i--;
+                    <span class="hljs-keyword">break</span>;
+                }
+            }
+            <span class="hljs-keyword">continue</span>;
+        }
+    }
+    <span class="hljs-keyword">return</span>  tokens;
+}
+<span class="hljs-keyword">let</span> result=lexical(jsx);
+<span class="hljs-built_in">console</span>.log(result);
+</code></pre>
+<pre><code class="lang-js">[
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'Identifier'</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">'let'</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'whitespace'</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">' '</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'Identifier'</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">'element'</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'operator'</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">'='</span> },
+  { <span class="hljs-attr">type</span>: <span class="hljs-string">'JSXElement'</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">'&lt;h1&gt;hello&lt;/h1&gt;'</span> }
+]
+</code></pre>
+<h3 id="t189.4 语法分析">9.4 语法分析 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t189.4%20%E8%AF%AD%E6%B3%95%E5%88%86%E6%9E%90"> # </a></h3>
+<ul>
+<li>语义分析则是将得到的词汇进行一个立体的组合，确定词语之间的关系</li>
+<li>简单来说语法分析是对语句和表达式识别，这是个递归过程</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">// babylon7 https://astexplorer.net/</span>
+<span class="hljs-comment">// babylon7 https://astexplorer.net/</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parse</span>(<span class="hljs-params">tokens</span>) </span>{
+    <span class="hljs-keyword">const</span> ast={
+        <span class="hljs-attr">type</span>: <span class="hljs-string">'Program'</span>,
+        <span class="hljs-attr">body</span>: [],
+        <span class="hljs-attr">sourceType</span>:<span class="hljs-string">'script'</span>
+    }
+    <span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;<span class="hljs-comment">//标示当前位置</span>
+    <span class="hljs-keyword">let</span> currentToken;<span class="hljs-comment">//当前的符号</span>
+    <span class="hljs-keyword">while</span> ((currentToken = tokens[i])) {
+        <span class="hljs-keyword">if</span> (currentToken.type == <span class="hljs-string">'Identifier'</span> &amp;&amp; (currentToken.value == <span class="hljs-string">'let'</span>||currentToken.value == <span class="hljs-string">'var'</span>)) {
+            <span class="hljs-keyword">const</span> VariableDeclaration={
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'VariableDeclaration'</span>,
+                <span class="hljs-attr">declarations</span>:[]
+            }
+            i+=<span class="hljs-number">2</span>;
+            currentToken=tokens[i];
+            <span class="hljs-keyword">let</span> VariableDeclarator = {
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'VariableDeclarator'</span>,
+                <span class="hljs-attr">id</span>: {
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">'Identifier'</span>,
+                    <span class="hljs-attr">name</span>:currentToken.value
+                }
+            };
+            VariableDeclaration.declarations.push(VariableDeclarator);
+            i+=<span class="hljs-number">2</span>;
+            currentToken=tokens[i];
+            <span class="hljs-keyword">if</span> (currentToken.type==<span class="hljs-string">'JSXElement'</span>) {
+                <span class="hljs-keyword">let</span> value=currentToken.value;
+                <span class="hljs-keyword">let</span> [,type,children]=value.match(<span class="hljs-regexp">/([^&lt;]+?)&gt;([^&lt;]+)&lt;\/\1&gt;/</span>);
+                VariableDeclarator.init={
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">'JSXElement'</span>,
+                    <span class="hljs-attr">openingElement</span>:{
+                       <span class="hljs-attr">type</span>:<span class="hljs-string">'JSXOpeningElement'</span>,
+                       <span class="hljs-attr">name</span>:{
+                           <span class="hljs-attr">type</span>:<span class="hljs-string">'JSXIdentifier'</span>,
+                           <span class="hljs-attr">name</span>:<span class="hljs-string">'h1'</span>
+                       }
+                    },
+                    <span class="hljs-attr">closingElement</span>:{
+                       <span class="hljs-attr">type</span>:<span class="hljs-string">'JSXClosingElement'</span>,
+                       <span class="hljs-attr">name</span>:{
+                           <span class="hljs-attr">type</span>:<span class="hljs-string">'JSXIdentifier'</span>,
+                           <span class="hljs-attr">name</span>:<span class="hljs-string">'h1'</span>
+                       }
+                    },
+                    <span class="hljs-attr">name</span>: type,
+                    <span class="hljs-attr">children</span>:[
+                        {
+                            <span class="hljs-attr">type</span>:<span class="hljs-string">'JSXText'</span>,
+                            <span class="hljs-attr">value</span>:<span class="hljs-string">'hello'</span>
+                        }
+                    ]
+                }
+            } <span class="hljs-keyword">else</span> {
+                VariableDeclarator.init={
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">'Literal'</span>,
+                    <span class="hljs-attr">value</span>:currentToken.value
+                }
+            }
+            ast.body.push(VariableDeclaration);
+        }
+        i++;
+    }
+    <span class="hljs-keyword">return</span> ast;
+}
+
+<span class="hljs-keyword">let</span> tokens=[
+    {<span class="hljs-attr">type</span>: <span class="hljs-string">'Identifier'</span>,<span class="hljs-attr">value</span>: <span class="hljs-string">'let'</span>},
+    {<span class="hljs-attr">type</span>: <span class="hljs-string">'whitespace'</span>,<span class="hljs-attr">value</span>: <span class="hljs-string">' '</span>},
+    {<span class="hljs-attr">type</span>: <span class="hljs-string">'Identifier'</span>,<span class="hljs-attr">value</span>: <span class="hljs-string">'element'</span>},
+    {<span class="hljs-attr">type</span>: <span class="hljs-string">'operator'</span>,<span class="hljs-attr">value</span>: <span class="hljs-string">'='</span>},
+    {<span class="hljs-attr">type</span>: <span class="hljs-string">'JSXElement'</span>,<span class="hljs-attr">value</span>: <span class="hljs-string">'&lt;h1&gt;hello&lt;/h1&gt;'</span>}
+];
+<span class="hljs-keyword">let</span> result = parse(tokens);
+<span class="hljs-built_in">console</span>.log(result);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">JSON</span>.stringify(result));
+</code></pre>
+<pre><code class="lang-json">{
+    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Program"</span>,
+    <span class="hljs-attr">"body"</span>: [{
+        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"VariableDeclaration"</span>,
+        <span class="hljs-attr">"declarations"</span>: [{
+            <span class="hljs-attr">"type"</span>: <span class="hljs-string">"VariableDeclarator"</span>,
+            <span class="hljs-attr">"id"</span>: {
+                <span class="hljs-attr">"type"</span>: <span class="hljs-string">"Identifier"</span>,
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"element"</span>
+            },
+            <span class="hljs-attr">"init"</span>: {
+                <span class="hljs-attr">"type"</span>: <span class="hljs-string">"JSXElement"</span>,
+                <span class="hljs-attr">"openingElement"</span>: {
+                    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"JSXOpeningElement"</span>,
+                    <span class="hljs-attr">"name"</span>: {
+                        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"JSXIdentifier"</span>,
+                        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"h1"</span>
+                    }
+                },
+                <span class="hljs-attr">"closingElement"</span>: {
+                    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"JSXClosingElement"</span>,
+                    <span class="hljs-attr">"name"</span>: {
+                        <span class="hljs-attr">"type"</span>: <span class="hljs-string">"JSXIdentifier"</span>,
+                        <span class="hljs-attr">"name"</span>: <span class="hljs-string">"h1"</span>
+                    }
+                },
+                <span class="hljs-attr">"name"</span>: <span class="hljs-string">"h1"</span>,
+                <span class="hljs-attr">"children"</span>: [{
+                    <span class="hljs-attr">"type"</span>: <span class="hljs-string">"JSXText"</span>,
+                    <span class="hljs-attr">"value"</span>: <span class="hljs-string">"hello"</span>
+                }]
+            }
+        }]
+    }],
+    <span class="hljs-attr">"sourceType"</span>: <span class="hljs-string">"script"</span>
+}
+</code></pre>
+<h2 id="t199. 参考">9. 参考 <a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html#t199.%20%E5%8F%82%E8%80%83"> # </a></h2>
+<ul>
+<li><a href="https://github.com/brigand/babel-plugin-handbook/blob/master/translations/zh-Hans/README.md#asts">Babel 插件手册</a></li>
+<li><a href="https://github.com/babel/babel/tree/master/packages/babel-types">babel-types</a></li>
+<li><a href="https://astexplorer.net/">不同的parser解析js代码后得到的AST</a></li>
+<li><a href="http://resources.jointjs.com/demos/javascript-ast">在线可视化的看到AST</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/28143410">babel从入门到入门的知识归纳</a></li>
+<li><a href="https://octman.com/blog/2016-08-27-babel-notes/">Babel 内部原理分析</a></li>
+<li><a href="https://github.com/chikara-chan/babel-plugin-react-scope-binding">babel-plugin-react-scope-binding</a></li>
+<li><a href="https://www.npmjs.com/package/babel-plugin-transform-runtime">transform-runtime</a>  Babel 默认只转换新的 JavaScript 语法，而不转换新的 API。例如，Iterator、Generator、Set、Maps、Proxy、Reflect、Symbol、Promise 等全局对象，以及一些定义在全局对象上的方法（比如 Object.assign）都不会转译,启用插件 <code>babel-plugin-transform-runtime</code> 后，Babel 就会使用 babel-runtime 下的工具函数</li>
+<li><a href="https://github.com/babel/babylon/blob/master/ast/spec.md">ast-spec</a></li>
+<li><a href="https://github.com/jamiebuilds/babel-handbook/blob/master/translations/zh-Hans/README.md">babel-handbook</a></li>
+</ul>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>
