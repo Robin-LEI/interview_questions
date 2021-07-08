@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t01.%20%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90">1. 持续集成</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t12.%20Jenkins">2. Jenkins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t23.%20Git%E5%AE%89%E8%A3%85">3. Git安装</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t33.1%20git%E6%9C%8D%E5%8A%A1%E5%99%A8">3.1 git服务器</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t43.1.1%20%E5%AE%89%E8%A3%85git">3.1.1 安装git</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t53.1.2%20%E5%88%9B%E5%BB%BAgit%E7%94%A8%E6%88%B7">3.1.2 创建git用户</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t63.1.3%20%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93">3.1.3 创建仓库</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t73.2%20git%E5%AE%A2%E6%88%B7%E7%AB%AF(web%E6%9C%8D%E5%8A%A1%E5%99%A8)">3.2 git客户端(web服务器)</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t83.2.1%20%E5%AE%89%E8%A3%85git">3.2.1 安装git</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t93.2.2%20%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95">3.2.2 免密码登录</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t103.2.2.1%20%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5">3.2.2.1 生成秘钥</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t113.2.2.2%20%E6%8B%B7%E8%B4%9D%E5%85%AC%E9%92%A5">3.2.2.2 拷贝公钥</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t123.2.2.3%20%E5%85%81%E8%AE%B8%E5%85%AC%E9%92%A5%E7%99%BB%E5%BD%95">3.2.2.3 允许公钥登录</a></li></ul></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t134.%20Jenkins">4. Jenkins</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t144.1%20%E5%AE%89%E8%A3%85JDK">4.1 安装JDK</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t154.2%20%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">4.2 修改配置文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t164.3%20%E7%94%9F%E6%95%88%E9%85%8D%E7%BD%AE">4.3 生效配置</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t174.4%20%E5%AE%89%E8%A3%85jenkins">4.4 安装jenkins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t184.5%20%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99">4.5 关闭防火墙</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t194.6%20%E5%90%AF%E5%8A%A8jenkins">4.6 启动jenkins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t204.7%20%E9%80%89%E6%8B%A9java%E7%89%88%E6%9C%AC">4.7 选择java版本</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t214.8%20%E8%BF%90%E8%A1%8C%E7%94%A8%E6%88%B7">4.8 运行用户</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t224.8%20%E8%AE%BF%E9%97%AEjenkins">4.8 访问jenkins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t234.9%20%E5%AE%89%E8%A3%85maven">4.9 安装maven</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t244.10%20%E4%BD%BF%E7%94%A8jenkins">4.10 使用jenkins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t254.11%20%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E5%8A%A0%E9%80%9F">4.11 下载插件加速</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t264.12%20%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E5%91%98%E7%94%A8%E6%88%B7">4.12 创建管理员用户</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t274.13%20%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD">4.13 主要功能</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t285.%20%E8%A7%92%E8%89%B2%E5%92%8C%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86">5. 角色和用户管理</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t296.%20%E5%8F%82%E6%95%B0%E5%8C%96%E6%9E%84%E5%BB%BA">6. 参数化构建</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t307.%20%E4%B8%BB%E4%BB%8E%E6%A8%A1%E5%BC%8F">7. 主从模式</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t318.%20%E6%B5%81%E6%B0%B4%E7%BA%BF">8. 流水线</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t329.%20%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5">9. 邮件通知</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3310.%20%E5%8F%91%E5%B8%83PHP%E9%A1%B9%E7%9B%AE">10. 发布PHP项目</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3410.1%20%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE">10.1 创建本地项目</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3510.2%20%E6%8B%89%E5%8F%96%E4%BB%A3%E7%A0%81">10.2 拉取代码</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3610.3%20%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83">10.3 部署环境</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3710.4%20%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE">10.4 创建项目</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3810.4.1%20%E6%9E%84%E5%BB%BA%E5%8F%82%E6%95%B0">10.4.1 构建参数</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3910.4.2%20pipeline%E8%84%9A%E6%9C%AC">10.4.2 pipeline脚本</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4011.%20%E5%8F%91%E5%B8%83Java%E9%A1%B9%E7%9B%AE">11. 发布Java项目</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4111.1%20%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE">11.1 创建本地项目</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4210.2%20%E6%8B%89%E5%8F%96%E4%BB%A3%E7%A0%81">10.2 拉取代码</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4310.3%20%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83">10.3 部署环境</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4410.4%20pipeline%E8%84%9A%E6%9C%AC">10.4 pipeline脚本</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4512.%20Jenkins+Docker%E5%AE%9E%E7%8E%B0%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90">12. Jenkins+Docker实现持续集成</a></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. 持续集成">1. 持续集成 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t01.%20%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90"> # </a></h2>
+<ul>
+<li>持续集成(Continuous Integration,CI) 代码合并、构建、布署、测试在一起，不断执行这个过程并对结果进行反馈</li>
+<li>持续部署(Continuous Deloyment,CD) 部署到生产环境</li>
+<li>持续交付(Continuous Delivery,CD) 部署到生产环境，给用户使用</li>
+<li>DevOps 是一个完整的面向IT运维的工作流，以 IT 自动化以及持续集成（CI）、持续部署（CD）为基础，来优化程式开发、测试、系统运维等所有环节</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/cicd.jpg" alt="cicd"></p>
+<h2 id="t12. Jenkins">2. Jenkins <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t12.%20Jenkins"> # </a></h2>
+<p><img src="./珠峰架构师成长计划_files/cicdwithoutdocker.png" alt="cicdwithoutdocker"></p>
+<p><img src="./珠峰架构师成长计划_files/dockercicd.png" alt="dockercicd"></p>
+<h2 id="t23. Git安装">3. Git安装 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t23.%20Git%E5%AE%89%E8%A3%85"> # </a></h2>
+<h3 id="t33.1 git服务器">3.1 git服务器 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t33.1%20git%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h3>
+<h4 id="t43.1.1 安装git">3.1.1 安装git <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t43.1.1%20%E5%AE%89%E8%A3%85git"> # </a></h4>
+<pre><code class="lang-js">yum install -y git
+</code></pre>
+<h4 id="t53.1.2 创建git用户">3.1.2 创建git用户 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t53.1.2%20%E5%88%9B%E5%BB%BAgit%E7%94%A8%E6%88%B7"> # </a></h4>
+<pre><code class="lang-js">useradd git
+passwd git
+</code></pre>
+<h4 id="t63.1.3 创建仓库">3.1.3 创建仓库 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t63.1.3%20%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93"> # </a></h4>
+<pre><code class="lang-js">su - git
+mkdir -p ~<span class="hljs-regexp">/repos/</span>app.git
+cd ~<span class="hljs-regexp">/repos/</span>app.git
+git --bare init
+</code></pre>
+<h3 id="t73.2 git客户端(web服务器)">3.2 git客户端(web服务器) <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t73.2%20git%E5%AE%A2%E6%88%B7%E7%AB%AF(web%E6%9C%8D%E5%8A%A1%E5%99%A8)"> # </a></h3>
+<h4 id="t83.2.1 安装git">3.2.1 安装git <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t83.2.1%20%E5%AE%89%E8%A3%85git"> # </a></h4>
+<pre><code class="lang-js">yum install -y git
+</code></pre>
+<pre><code class="lang-js">cd /usr/local/src
+git clone git@<span class="hljs-number">192.168</span><span class="hljs-number">.20</span><span class="hljs-number">.131</span>:<span class="hljs-regexp">/home/gi</span>t/repos/app.git
+cd app
+git config --global user.email <span class="hljs-string">"zhufengjiagou@126.com"</span>
+git config --global user.name <span class="hljs-string">"zhufengjiagou"</span>
+touch index.html
+git add -A
+git commit -m<span class="hljs-string">"init"</span>
+git push origin master
+</code></pre>
+<h4 id="t93.2.2 免密码登录">3.2.2 免密码登录 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t93.2.2%20%E5%85%8D%E5%AF%86%E7%A0%81%E7%99%BB%E5%BD%95"> # </a></h4>
+<h5 id="t103.2.2.1 生成秘钥">3.2.2.1 生成秘钥 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t103.2.2.1%20%E7%94%9F%E6%88%90%E7%A7%98%E9%92%A5"> # </a></h5>
+<ul>
+<li>先登录web服务器生成秘钥并拷贝公钥<pre><code class="lang-js">ssh-keygen -t rsa
+cat ~<span class="hljs-regexp">/.ssh/i</span>d_rsa.pub 
+</code></pre>
+</li>
+</ul>
+<h5 id="t113.2.2.2 拷贝公钥">3.2.2.2 拷贝公钥 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t113.2.2.2%20%E6%8B%B7%E8%B4%9D%E5%85%AC%E9%92%A5"> # </a></h5>
+<ul>
+<li>再登录git服务器</li>
+<li>要注意如果你要免登录<code>git</code>用户，就需要把自己的公钥拷贝到<code>git</code>用户的<code>authorized_keys</code>文件里</li>
+</ul>
+<pre><code class="lang-js">ssh-keygen -t rsa
+chmod <span class="hljs-number">700</span> /home/git/.ssh
+vi /home/git/.ssh/authorized_keys 
+chmod <span class="hljs-number">600</span> /home/git/.ssh/authorized_keys
+</code></pre>
+<h5 id="t123.2.2.3 允许公钥登录">3.2.2.3 允许公钥登录 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t123.2.2.3%20%E5%85%81%E8%AE%B8%E5%85%AC%E9%92%A5%E7%99%BB%E5%BD%95"> # </a></h5>
+<ul>
+<li>再登录git服务器</li>
+<li>vim /etc/ssh/sshd_config </li>
+</ul>
+<pre><code class="lang-js">PubkeyAuthentication yes
+</code></pre>
+<pre><code class="lang-js">systemctl restart sshd
+</code></pre>
+<h2 id="t134. Jenkins">4. Jenkins <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t134.%20Jenkins"> # </a></h2>
+<ul>
+<li><a href="https://www.oracle.com/technetwork/java/javase/downloads/index.html">jdk</a></li>
+<li><a href="https://jenkins.io/">jenkins官网</a></li>
+</ul>
+<h3 id="t144.1 安装JDK">4.1 安装JDK <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t144.1%20%E5%AE%89%E8%A3%85JDK"> # </a></h3>
+<ul>
+<li><a href="https://www.oracle.com/technetwork/java/javase/downloads/java-archive-javase10-4425482.html">jdk</a></li>
+</ul>
+<pre><code class="lang-js">cd /usr/local/src
+wget http:<span class="hljs-comment">//img.zhufengpeixun.cn/jdk1.8.0_211.tar.gz</span>
+tar -xzvf jdk1<span class="hljs-number">.8</span><span class="hljs-number">.0</span>_211.tar.gz 
+cp -r /usr/local/src/jdk1<span class="hljs-number">.8</span><span class="hljs-number">.0</span>_211 /usr/java
+rm -rf /usr/bin/java　&amp;&amp;　ln -s /usr/java/jdk1<span class="hljs-number">.8</span><span class="hljs-number">.0</span>_211/bin/java /usr/bin/java
+</code></pre>
+<h3 id="t154.2 修改配置文件">4.2 修改配置文件 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t154.2%20%E4%BF%AE%E6%94%B9%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"> # </a></h3>
+<p>vi /etc/profile</p>
+<pre><code class="lang-js">JAVA_HOME=<span class="hljs-regexp">/usr/</span>java/jdk1<span class="hljs-number">.8</span><span class="hljs-number">.0</span>_211
+<span class="hljs-keyword">export</span> CLASSPATH=.:${JAVA_HOME}/jre/lib/rt.jar:${JAVA_HOME}/lib/dt.jar:${JAVA_HOME}/lib/tools.jar
+<span class="hljs-keyword">export</span> PATH=$PATH:${JAVA_HOME}/bin
+</code></pre>
+<h3 id="t164.3 生效配置">4.3 生效配置 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t164.3%20%E7%94%9F%E6%95%88%E9%85%8D%E7%BD%AE"> # </a></h3>
+<pre><code class="lang-js">source /etc/profile
+java --version
+</code></pre>
+<h3 id="t174.4 安装jenkins">4.4 安装jenkins <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t174.4%20%E5%AE%89%E8%A3%85jenkins"> # </a></h3>
+<pre><code class="lang-js">wget -O /etc/yum.repos.d/jenkins.repo https:<span class="hljs-comment">//pkg.jenkins.io/redhat-stable/jenkins.repo</span>
+rpm --<span class="hljs-keyword">import</span> https:<span class="hljs-comment">//pkg.jenkins.io/redhat-stable/jenkins.io.key</span>
+yum install -y jenkins
+</code></pre>
+<h3 id="t184.5 关闭防火墙">4.5 关闭防火墙 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t184.5%20%E5%85%B3%E9%97%AD%E9%98%B2%E7%81%AB%E5%A2%99"> # </a></h3>
+<pre><code class="lang-js">systemctl stop firewalld.service
+systemctl disable firewalld.service
+</code></pre>
+<pre><code class="lang-js">javap -v JNLPMain.class
+J2SE <span class="hljs-number">8</span> = <span class="hljs-number">52</span>
+J2SE <span class="hljs-number">7</span> = <span class="hljs-number">51</span>
+J2SE <span class="hljs-number">6.0</span> = <span class="hljs-number">50</span>
+J2SE <span class="hljs-number">5.0</span> = <span class="hljs-number">49</span>
+JDK <span class="hljs-number">1.4</span> = <span class="hljs-number">48</span>
+JDK <span class="hljs-number">1.3</span> = <span class="hljs-number">47</span>
+JDK <span class="hljs-number">1.2</span> = <span class="hljs-number">46</span>
+JDK <span class="hljs-number">1.1</span> = <span class="hljs-number">45</span>
+</code></pre>
+<h3 id="t194.6 启动jenkins">4.6 启动jenkins <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t194.6%20%E5%90%AF%E5%8A%A8jenkins"> # </a></h3>
+<pre><code class="lang-js">systemctl start jenkins
+systemctl daemon-reload
+systemctl status jenkins
+</code></pre>
+<h3 id="t204.7 选择java版本">4.7 选择java版本 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t204.7%20%E9%80%89%E6%8B%A9java%E7%89%88%E6%9C%AC"> # </a></h3>
+<p>vi /etc/init.d/jenkins</p>
+<pre><code class="lang-js">candidates="
+#/etc/alternatives/java
+#/usr/lib/jvm/java-1.8.0/bin/java
+#/usr/lib/jvm/jre-1.8.0/bin/java
+#/usr/lib/jvm/java-1.7.0/bin/java
+#/usr/lib/jvm/jre-1.7.0/bin/java
+/usr/bin/java
+"
+</code></pre>
+<h3 id="t214.8 运行用户">4.8 运行用户 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t214.8%20%E8%BF%90%E8%A1%8C%E7%94%A8%E6%88%B7"> # </a></h3>
+<p>一定要改一下root用户，不然流水线SCM拉不到脚本
+vi /etc/sysconfig/jenkins </p>
+<pre><code class="lang-js">JENKINS_USER=<span class="hljs-string">"root"</span>
+</code></pre>
+<h3 id="t224.8 访问jenkins">4.8 访问jenkins <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t224.8%20%E8%AE%BF%E9%97%AEjenkins"> # </a></h3>
+<p><a href="http://192.168.20.133:8080/">http://192.168.20.133:8080</a></p>
+<h3 id="t234.9 安装maven">4.9 安装maven <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t234.9%20%E5%AE%89%E8%A3%85maven"> # </a></h3>
+<pre><code class="lang-js">yum install maven -y
+
+# rpm -ql maven
+
+/etc/m2.conf
+/etc/maven
+/etc/maven/settings.xml
+/usr/bin/mvn
+/usr/share/maven/conf/settings.xml
+</code></pre>
+<h3 id="t244.10 使用jenkins">4.10 使用jenkins <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t244.10%20%E4%BD%BF%E7%94%A8jenkins"> # </a></h3>
+<ul>
+<li><a href="https://plugins.jenkins.io/">jenkins</a></li>
+<li>OWASP(Open Web Application Security Project),开放式Web应用程序安全项目,它识别项目依赖关系，并检查是否存在任何已知的和公开的漏洞.</li>
+<li>PAM（Pluggable Authentication Modules ）是由Sun提出的一种认证机制。它通过提供一些动态链接库和一套统一的API，将系统提供的服务和该服务的认证方式分开，使得系统管理员可以灵活地根据需要给不同的服务配置不同的认证方式而无需更改服务程序，同时也便于向系统中添加新的认证手段。 PAM模块是一种嵌入式模块，修改后即时生效。</li>
+<li>LDAP（Light Directory Access Portocol）,它是基于X.500标准的轻量级目录访问协议</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">插件名称</th>
+<th style="text-align:left">插件作用</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Folders</td>
+<td style="text-align:left">(<a href="https://plugins.jenkins.io/cloudbees-folder),%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6%E6%94%AF%E6%8C%81%E7%94%A8%E6%88%B7%E4%BD%BF%E7%94%A8%E7%9B%AE%E5%BD%95%E7%AE%A1%E7%90%86%E9%A1%B9%E7%9B%AE%EF%BC%8C%E7%9B%AE%E5%BD%95%E6%94%AF%E6%8C%81%E5%B5%8C%E5%A5%97%EF%BC%8C%E5%B9%B6%E4%B8%94%E6%94%AF%E6%8C%81%E7%9B%AE%E5%BD%95%E4%B8%AD%E5%88%9B%E5%BB%BA%E8%A7%86%E5%9B%BE">https://plugins.jenkins.io/cloudbees-folder),这个插件支持用户使用目录管理项目，目录支持嵌套，并且支持目录中创建视图</a></td>
+</tr>
+<tr>
+<td style="text-align:left">OWASP Markup Formatter</td>
+<td style="text-align:left">OWASP标记格式化程序插件,使用OWASP Java HTML Sanitizer ，可以在项目描述等中输入安全的HTML标记</td>
+</tr>
+<tr>
+<td style="text-align:left">Build Timeout</td>
+<td style="text-align:left">构建超时,此插件允许构建在指定的时间过后自动终止</td>
+</tr>
+<tr>
+<td style="text-align:left">Credentials Binding</td>
+<td style="text-align:left">证书绑定</td>
+</tr>
+<tr>
+<td style="text-align:left">Timestamper</td>
+<td style="text-align:left">将时间戳添加到控制台输出</td>
+</tr>
+<tr>
+<td style="text-align:left">Workspace Cleanup</td>
+<td style="text-align:left">(<a href="https://plugins.jenkins.io/ws-cleanup),%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6%E6%94%AF%E6%8C%81%E5%9C%A8%E6%9E%84%E5%BB%BA%E5%89%8D%E5%90%8E">https://plugins.jenkins.io/ws-cleanup),这个插件支持在构建前后</a> 删除或者部分删除workspace</td>
+</tr>
+<tr>
+<td style="text-align:left">Ant</td>
+<td style="text-align:left">向Jenkins添加Apache Ant支持</td>
+</tr>
+<tr>
+<td style="text-align:left">Gradle</td>
+<td style="text-align:left">这个插件允许Jenkins直接调用Gradle构建脚本</td>
+</tr>
+<tr>
+<td style="text-align:left">Pipeline</td>
+<td style="text-align:left">管道,一套插件可让您协调自动化</td>
+</tr>
+<tr>
+<td style="text-align:left">Pipeline: GitHub Groovy Libraries</td>
+<td style="text-align:left">允许从GitHub动态加载Pipeline Groovy库</td>
+</tr>
+<tr>
+<td style="text-align:left">Pipeline: Stage View</td>
+<td style="text-align:left">查看每一步的执行结果</td>
+</tr>
+<tr>
+<td style="text-align:left">GitHub Branch Source</td>
+<td style="text-align:left">GitHub组织文件夹插件</td>
+</tr>
+<tr>
+<td style="text-align:left">Git</td>
+<td style="text-align:left">(<a href="https://plugins.jenkins.io/git),%E6%94%AF%E6%8C%81%E4%BD%BF%E7%94%A8Github%E3%80%81GitLab%E3%80%81Gerrit%E7%AD%89%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E4%BB%A3%E7%A0%81%E4%BB%93%E5%BA%93">https://plugins.jenkins.io/git),支持使用Github、GitLab、Gerrit等系统管理代码仓库</a></td>
+</tr>
+<tr>
+<td style="text-align:left">Subversion</td>
+<td style="text-align:left">(<a href="https://plugins.jenkins.io/subversion),%E6%94%AF%E6%8C%81Subversion%E7%B3%BB%E7%BB%9F%E7%AE%A1%E7%90%86%E6%BA%90%E4%BB%A3%E7%A0%81">https://plugins.jenkins.io/subversion),支持Subversion系统管理源代码</a></td>
+</tr>
+<tr>
+<td style="text-align:left">SSH Slaves</td>
+<td style="text-align:left">SSH登录到一个远程服务器以执行必要的脚本</td>
+</tr>
+<tr>
+<td style="text-align:left">Matrix Authorization Strategy</td>
+<td style="text-align:left">矩阵授权策略插件,提供基于矩阵的安全授权策略（全局和每个项目）</td>
+</tr>
+<tr>
+<td style="text-align:left">PAM Authentication</td>
+<td style="text-align:left">为Jenkins添加Unix可插入身份验证模块（PAM）支持</td>
+</tr>
+<tr>
+<td style="text-align:left">LDAP</td>
+<td style="text-align:left">(<a href="https://plugins.jenkins.io/ldap),%E8%BF%99%E4%B8%AA%E6%8F%92%E4%BB%B6%E5%85%81%E8%AE%B8%E4%BD%BF%E7%94%A8LDAP%E5%AF%B9%E7%94%A8%E6%88%B7%E8%BF%9B%E8%A1%8C%E8%AE%A4%E8%AF%81%EF%BC%8CLDAP">https://plugins.jenkins.io/ldap),这个插件允许使用LDAP对用户进行认证，LDAP</a> 服务器可以为Active Directory 或者 OpenLDAP</td>
+</tr>
+<tr>
+<td style="text-align:left">Email Extension</td>
+<td style="text-align:left">这个插件是Jenkins的电子邮件发布者的替代品。它允许配置电子邮件通知的各个方面：发送电子邮件时，应该收到谁以及电子邮件说明的内容</td>
+</tr>
+<tr>
+<td style="text-align:left">Mailer</td>
+<td style="text-align:left">发邮件服务</td>
+</tr>
+<tr>
+<td style="text-align:left">Localization: Chinese (Simplified)</td>
+<td style="text-align:left">本地化构建</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t254.11 下载插件加速">4.11 下载插件加速 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t254.11%20%E4%B8%8B%E8%BD%BD%E6%8F%92%E4%BB%B6%E5%8A%A0%E9%80%9F"> # </a></h3>
+<ul>
+<li><a href="http://mirrors.jenkins-ci.org/status.html">mirrors</a></li>
+<li><a href="https://mirrors.tuna.tsinghua.edu.cn/jenkins/updates/update-center.json">update-center</a></li>
+</ul>
+<h3 id="t264.12 创建管理员用户">4.12 创建管理员用户 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t264.12%20%E5%88%9B%E5%BB%BA%E7%AE%A1%E7%90%86%E5%91%98%E7%94%A8%E6%88%B7"> # </a></h3>
+<h3 id="t274.13 主要功能">4.13 主要功能 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t274.13%20%E4%B8%BB%E8%A6%81%E5%8A%9F%E8%83%BD"> # </a></h3>
+<ul>
+<li>新建任务</li>
+<li>用户</li>
+<li>构建历史</li>
+<li>系统管理</li>
+<li>我的视图</li>
+<li>Credentials</li>
+<li>新建视图</li>
+</ul>
+<h2 id="t285. 角色和用户管理">5. 角色和用户管理 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t285.%20%E8%A7%92%E8%89%B2%E5%92%8C%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"> # </a></h2>
+<ul>
+<li>安装 Role-based Authorization Strategy 插件</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/manageroles.png" alt="manageroles"></p>
+<p><img src="./珠峰架构师成长计划_files/assignusers.png" alt="assignusers"></p>
+<p><img src="./珠峰架构师成长计划_files/jprojects.png" alt="jprojects"></p>
+<h2 id="t296. 参数化构建">6. 参数化构建 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t296.%20%E5%8F%82%E6%95%B0%E5%8C%96%E6%9E%84%E5%BB%BA"> # </a></h2>
+<ul>
+<li>Extended Choice Parameter 插件</li>
+<li>Git Parameter 插件</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/parameterbuild.png" alt="parameterbuild"></p>
+<p><img src="./珠峰架构师成长计划_files/execshell.png" alt="execshell"></p>
+<p><img src="./珠峰架构师成长计划_files/extendparameterbuild.png" alt="extendparameterbuild"></p>
+<p><img src="./珠峰架构师成长计划_files/buildspec.png" alt="buildspec"></p>
+<p>vi /etc/sysconfig/jenkins
+一定要改一下root用户，不然流水线SCM拉不到脚本</p>
+<pre><code class="lang-js">JENKINS_USER=<span class="hljs-string">"root"</span>
+</code></pre>
+<pre><code class="lang-js">git branch test
+git checkout test
+git branch
+touch <span class="hljs-number">5.</span>txt
+git add -A
+git commit -m<span class="hljs-string">"add 5.txt"</span>
+git git push origin test
+git push origin test
+</code></pre>
+<h2 id="t307. 主从模式">7. 主从模式 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t307.%20%E4%B8%BB%E4%BB%8E%E6%A8%A1%E5%BC%8F"> # </a></h2>
+<p><img src="./珠峰架构师成长计划_files/masterslave2.jpg" alt="masterslave2"></p>
+<p><img src="./珠峰架构师成长计划_files/configureslave.png" alt="configureslave"></p>
+<p><img src="./珠峰架构师成长计划_files/limitproject.png" alt="limitproject"></p>
+<p><img src="./珠峰架构师成长计划_files/configslave2.png" alt="configslave2"></p>
+<h2 id="t318. 流水线">8. 流水线 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t318.%20%E6%B5%81%E6%B0%B4%E7%BA%BF"> # </a></h2>
+<ul>
+<li>Pipeline 插件</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/mystageview.png" alt="mystageview"></p>
+<p><img src="./珠峰架构师成长计划_files/pipelinegrammar.png" alt="pipelinegrammar"></p>
+<pre><code class="lang-js">node {
+    stage (<span class="hljs-string">'checkout'</span>){
+       echo <span class="hljs-string">"checkout"</span>
+    }
+    stage (<span class="hljs-string">'build'</span>){
+        echo <span class="hljs-string">"build"</span>
+    }
+    stage (<span class="hljs-string">'deploy'</span>){
+        echo <span class="hljs-string">"deploy"</span>
+    }
+    stage (<span class="hljs-string">'test'</span>){
+        echo <span class="hljs-string">"test"</span>
+    }
+}
+</code></pre>
+<p><img src="./珠峰架构师成长计划_files/scmscript.png" alt="scmscript"></p>
+<pre><code class="lang-js">node(<span class="hljs-string">'slave'</span>) {
+    stage (<span class="hljs-string">'checkout'</span>){
+       echo <span class="hljs-string">"checkout2"</span>
+       sleep time: <span class="hljs-number">10</span>, <span class="hljs-attr">unit</span>: <span class="hljs-string">'SECONDS'</span>
+    }
+    stage (<span class="hljs-string">'build'</span>){
+        echo <span class="hljs-string">"build"</span>
+    }
+    stage (<span class="hljs-string">'deploy'</span>){
+        echo <span class="hljs-string">"deploy"</span>
+    }
+    stage (<span class="hljs-string">'test'</span>){
+        echo <span class="hljs-string">"test"</span>
+    }
+}
+</code></pre>
+<h2 id="t329. 邮件通知">9. 邮件通知 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t329.%20%E9%82%AE%E4%BB%B6%E9%80%9A%E7%9F%A5"> # </a></h2>
+<ul>
+<li>Email Extension Plugin 插件 </li>
+</ul>
+<h2 id="t3310. 发布PHP项目">10. 发布PHP项目 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3310.%20%E5%8F%91%E5%B8%83PHP%E9%A1%B9%E7%9B%AE"> # </a></h2>
+<h3 id="t3410.1 创建本地项目">10.1 创建本地项目 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3410.1%20%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE"> # </a></h3>
+<ul>
+<li>先登录git服务器创建php仓库</li>
+</ul>
+<pre><code class="lang-js">mkdir -p /home/git/repos/dev-php.git
+cd /home/git/repos/dev-php.git
+git init --bare
+</code></pre>
+<h3 id="t3510.2 拉取代码">10.2 拉取代码 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3510.2%20%E6%8B%89%E5%8F%96%E4%BB%A3%E7%A0%81"> # </a></h3>
+<ul>
+<li>拉取并初始化本地仓库<pre><code class="lang-js">git clone  git@<span class="hljs-number">192.168</span><span class="hljs-number">.20</span><span class="hljs-number">.131</span>:<span class="hljs-regexp">/home/gi</span>t/repos/dev-php.git
+cd php
+echo <span class="hljs-string">"&lt;?php echo info()?&gt;"</span> &gt; index.php
+git add -A
+git commit -m<span class="hljs-string">"add index.php"</span>
+git push origin master
+</code></pre>
+</li>
+</ul>
+<h3 id="t3610.3 部署环境">10.3 部署环境 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3610.3%20%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83"> # </a></h3>
+<ul>
+<li>安装php</li>
+<li>安装nginx</li>
+</ul>
+<h3 id="t3710.4 创建项目">10.4 创建项目 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3710.4%20%E5%88%9B%E5%BB%BA%E9%A1%B9%E7%9B%AE"> # </a></h3>
+<h4 id="t3810.4.1 构建参数">10.4.1 构建参数 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3810.4.1%20%E6%9E%84%E5%BB%BA%E5%8F%82%E6%95%B0"> # </a></h4>
+<p><img src="./珠峰架构师成长计划_files/constphp.png" alt="constphp"></p>
+<p><img src="./珠峰架构师成长计划_files/phppipeline.png" alt="phppipeline"></p>
+<h4 id="t3910.4.2 pipeline脚本">10.4.2 pipeline脚本 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t3910.4.2%20pipeline%E8%84%9A%E6%9C%AC"> # </a></h4>
+<ul>
+<li>先在git服务器里创建一个<code>dev-php</code>项目</li>
+<li>然后到web服务器上克隆此项目并在里面添加文件</li>
+<li>在pipeline服务器里添加新的脚本</li>
+<li><p>给web服务器添加标签名并在pipeline脚本中引用</p>
+</li>
+<li><p>web服务器上的工作目录 /var/lib/jenkins/workspace/dev-php </p>
+</li>
+<li>credentialsId  git/git</li>
+</ul>
+<p>cat /root/pipeline/Jenkinsfile-php</p>
+<pre><code class="lang-js">node('webserver') {
+    stage ('checkout'){
+       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '8e8e63f9-4806-4f2e-8633-c92badbdefd7', url: "git@192.168.20.131:/home/git/repos/${JOB_NAME}.git"]]])
+    }
+    stage ('build'){
+       sh '''rm -rf ${WORKSPACE}/.git
+       [ -e /data/backup ] ||  mkdir -p /data/backup
+       [ -e /usr/share/nginx/html/${JOB_NAME} ] || mkdir /usr/share/nginx/html/${JOB_NAME}
+       mv /usr/share/nginx/html/${JOB_NAME} /data/backup/${JOB_NAME}"-$(date +%F_%T)"
+       cp -rf ${WORKSPACE} /usr/share/nginx/html'''
+    }
+    stage ('test'){
+        sh "curl http://www.${JOB_NAME}.com/status"
+    }
+}
+</code></pre>
+<h2 id="t4011. 发布Java项目">11. 发布Java项目 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4011.%20%E5%8F%91%E5%B8%83Java%E9%A1%B9%E7%9B%AE"> # </a></h2>
+<h3 id="t4111.1 创建本地项目">11.1 创建本地项目 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4111.1%20%E5%88%9B%E5%BB%BA%E6%9C%AC%E5%9C%B0%E9%A1%B9%E7%9B%AE"> # </a></h3>
+<ul>
+<li>先登录git服务器创建java仓库</li>
+</ul>
+<pre><code class="lang-js">mkdir -p /home/git/repos/dev-java.git
+cd /home/git/repos/dev-java.git
+git init --bare
+</code></pre>
+<h3 id="t4210.2 拉取代码">10.2 拉取代码 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4210.2%20%E6%8B%89%E5%8F%96%E4%BB%A3%E7%A0%81"> # </a></h3>
+<ul>
+<li>拉取并初始化本地仓库<pre><code class="lang-js">git clone git@github.com:zhufengnodejs/blog2.git
+git clone git@<span class="hljs-number">192.168</span><span class="hljs-number">.20</span><span class="hljs-number">.131</span>:<span class="hljs-regexp">/home/gi</span>t/repos/dev-java.git
+git add -A &amp;&amp; git commit -m<span class="hljs-string">"blog2"</span> &amp;&amp; git push origin master
+</code></pre>
+</li>
+</ul>
+<h3 id="t4310.3 部署环境">10.3 部署环境 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4310.3%20%E9%83%A8%E7%BD%B2%E7%8E%AF%E5%A2%83"> # </a></h3>
+<ul>
+<li>jdk</li>
+<li>maven</li>
+<li>tomcat</li>
+</ul>
+<h3 id="t4410.4 pipeline脚本">10.4 pipeline脚本 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4410.4%20pipeline%E8%84%9A%E6%9C%AC"> # </a></h3>
+<pre><code class="lang-js">node ("webserver") {
+   stage('git checkout') { 
+       checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: '8e8e63f9-4806-4f2e-8633-c92badbdefd7', url: "git@192.168.20.131:/home/git/repos/${JOB_NAME}.git"]]])
+   }
+   stage('maven build') {
+        sh '''export JAVA_HOME=/usr/java/jdk1.8.0_211
+        /usr/bin/mvn clean package'''
+   }
+   stage('deploy') {
+        sh '''
+        JENKINS_NODE_COOKIE=dontkillme
+        export JAVA_HOME=/usr/java/jdk1.8.0_211
+        TOMCAT_NAME=tomcat
+        TOMCAT_HOME=/usr/local/$TOMCAT_NAME
+        WWWROOT=$TOMCAT_HOME/webapps/ROOT
+
+        if [ -d $WWWROOT ]; then
+           mv $WWWROOT /data/backup/${TOMCAT_NAME}-$(date +"%F_%T")
+        fi
+        unzip ${WORKSPACE}/target/*.war -d $WWWROOT
+        PID=$(ps -ef |grep $TOMCAT_NAME |egrep -v "grep|$$" |awk '{print $2}')
+        [ -n "$PID" ] &amp;&amp; kill -9 $PID
+        /bin/bash $TOMCAT_HOME/bin/startup.sh'''
+   }
+   stage('test') {
+       sh "curl http://www.de-java.com/status.html"
+   }
+}
+</code></pre>
+<h2 id="t4512. Jenkins+Docker实现持续集成">12. Jenkins+Docker实现持续集成 <a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html#t4512.%20Jenkins+Docker%E5%AE%9E%E7%8E%B0%E6%8C%81%E7%BB%AD%E9%9B%86%E6%88%90"> # </a></h2>
+<pre><code class="lang-js">node ("webserver") { 
+   stage('Git Checkout') { 
+        checkout([$class: 'GitSCM', branches: [[name: '$Tag']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'git@192.168.0.219:/home/git/solo.git']]])
+   }
+   stage('Maven Build') {
+        sh '''
+        export JAVA_HOME=/usr/local/jdk1.8
+        /usr/local/maven3.5/bin/mvn clean package -Dmaven.test.skip=true
+        '''
+   }
+   stage('Build and Push Image') {
+    sh '''
+        REPOSITORY=192.168.0.2/project/dev-docker:${Tag}
+        cat &gt; Dockerfile &lt;&lt; EOF
+        FROM 192.168.0.2/library/tomcat-85:latest
+        RUN rm -rf /usr/local/tomcat/webapps/ROOT
+        COPY target/*.war /usr/local/tomcat/webapps/ROOT.war
+        CMD ["catalina.sh", "run"]
+        EOF
+        docker build -t $REPOSITORY .
+        docker login -u zhangrenyang -p xxx= 192.168.0.2
+        docker push $REPOSITORY
+    '''
+   }
+   stage('Deploy to Docker') {
+        sh '''
+        REPOSITORY=192.168.0.219/project/dev-docker:${Tag}
+        docker rm -f dev-docker: |true
+        docker image rm $REPOSITORY |true
+        docker login -u zhangrenyang -p xxx= 192.168.0.2
+        docker container run -d --name dev-docker -v /usr/local/jdk1.8:/usr/local/jdk -p 88:8080 $REPOSITORY
+        '''
+   }
+}
+</code></pre>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

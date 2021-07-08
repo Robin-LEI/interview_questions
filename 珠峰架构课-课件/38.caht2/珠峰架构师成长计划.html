@@ -1,0 +1,1881 @@
+<!DOCTYPE html>
+<!-- saved from url=(0054)http://www.zhufengpeixun.com/strong/html/38.chat2.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t01.%20%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE">1. 生成项目</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t12.%20%E5%AE%9E%E7%8E%B0%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95">2. 实现注册和登录</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t22.1%20User/_layout.js">2.1 User/_layout.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t32.2%20User/User.less">2.2 User/User.less</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t42.3%20User/Register.js">2.3 User/Register.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t52.4%20%20User/Register.less">2.4  User/Register.less</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t63.%20%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81%E9%AA%8C%E8%AF%81">3. 实现手机验证码验证</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t73.1%20request.js">3.1 request.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t83.2%20User/Register.js">3.2 User/Register.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t93.3%20models/register.js">3.3 models/register.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t103.4%20services/register.js">3.4 services/register.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t113.5%20server/app.js">3.5 server/app.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t123.6%20routes/user.js">3.6 routes/user.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t133.7%20server/config.js">3.7 server/config.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t144.%E6%89%8B%E6%9C%BA%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95">4.手机注册和登录</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t154.1%20server/app.js">4.1 server/app.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t164.2%20server/config.js">4.2 server/config.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t174.3%20models/index.js">4.3 models/index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t184.4%20routes/user.js">4.4 routes/user.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t194.5%20Rooms/index.jsx">4.5 Rooms/index.jsx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t204.6%20User/Login.jsx">4.6 User/Login.jsx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t214.7%20User/Login.less">4.7 User/Login.less</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t224.8%20User/Register.jsx">4.8 User/Register.jsx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t234.9%20models/login.js">4.9 models/login.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t244.10%20models/register.js">4.10 models/register.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t254.11%20services/login.js">4.11 services/login.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t264.12%20services/register.js">4.12 services/register.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t274.13%20utils/request.js">4.13 utils/request.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t285.%20%E5%AE%9E%E7%8E%B0%E6%88%BF%E9%97%B4%E5%8A%9F%E8%83%BD">5. 实现房间功能</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t295.1%20server/app.js">5.1 server/app.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t305.2%20models/index.js">5.2 models/index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t315.3%20routes/room.js">5.3 routes/room.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t325.4%20Room/index.jsx">5.4 Room/index.jsx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t335.5%20Room/index.less">5.5 Room/index.less</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t345.6%20models/room.js">5.6 models/room.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t355.7%20services/room.js">5.7 services/room.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t366.%20%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%8A%9F%E8%83%BD">6. 实现聊天功能</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t376.1%20server/app.js">6.1 server/app.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t386.2%20models/index.js">6.2 models/index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t396.3%20routes/user.js">6.3 routes/user.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t406.4%20Room/$id.jsx">6.4 Room/$id.jsx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t416.5%20Room/index.jsx">6.5 Room/index.jsx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t426.6%20models/chat.js">6.6 models/chat.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t436.7%20models/room.js">6.7 models/room.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t446.8%20models/login.js">6.8 models/login.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t457.%20%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87">7. 上传图片</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t467.1%20server/app.js">7.1 server/app.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t477.2%20models/index.js">7.2 models/index.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t487.3%20routes/room.js">7.3 routes/room.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t497.4%20routes/user.js">7.4 routes/user.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t507.5%20Room/index.jsx">7.5 Room/index.jsx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t517.6%20/models/chat.js">7.6 /models/chat.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t527.7%20models/room.js">7.7 models/room.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t537.8%20models/login.js">7.8 models/login.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t547.9%20services/login.js">7.9 services/login.js</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t55%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5">参考链接</a></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. 生成项目">1. 生成项目 <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t01.%20%E7%94%9F%E6%88%90%E9%A1%B9%E7%9B%AE"> # </a></h2>
+<pre><code class="lang-js">$ npm install dva-cli -g
+$ dva -v
+$ dva <span class="hljs-keyword">new</span> zhufeng-dva-chat
+</code></pre>
+<h2 id="t12. 实现注册和登录">2. 实现注册和登录 <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t12.%20%E5%AE%9E%E7%8E%B0%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95"> # </a></h2>
+<h3 id="t22.1 User/_layout.js">2.1 User/_layout.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t22.1%20User/_layout.js"> # </a></h3>
+<p>src/pages/User/_layout.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> styles <span class="hljs-keyword">from</span> <span class="hljs-string">'./User.less'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UserLayout</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    render() {
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.container}</span>&gt;</span>
+                {this.props.children}
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )
+    }
+}
+</code></pre>
+<h3 id="t32.2 User/User.less">2.2 User/User.less <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t32.2%20User/User.less"> # </a></h3>
+<p>src/pages/User/User.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.container</span>{
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">justify-content</span>: center;
+    <span class="hljs-attribute">align-items</span>: center;
+}
+</code></pre>
+<h3 id="t42.3 User/Register.js">2.3 User/Register.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t42.3%20User/Register.js"> # </a></h3>
+<p>src/pages/User/Register.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">'dva'</span>;
+<span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">'umi/link'</span>;
+<span class="hljs-keyword">import</span> { Form, Input, Button, Select, Row, Col, Popover, Progress } <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">import</span> styles <span class="hljs-keyword">from</span> <span class="hljs-string">'./Register.less'</span>;
+<span class="hljs-keyword">const</span> FormItem = Form.Item;
+<span class="hljs-keyword">const</span> { Option } = Select;
+<span class="hljs-keyword">const</span> InputGroup=Input.Group;
+
+<span class="hljs-keyword">const</span> passwordStatusMap = {
+    <span class="hljs-attr">ok</span>: (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.success}</span>&gt;</span>
+        强度: 强
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    ),
+    <span class="hljs-attr">pass</span>: (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.warning}</span>&gt;</span>
+        v强度: 中
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    ),
+    <span class="hljs-attr">poor</span>: (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.error}</span>&gt;</span>
+        强度: 太短
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    ),
+};
+<span class="hljs-keyword">const</span> passwordProgressMap = {
+    <span class="hljs-attr">ok</span>: <span class="hljs-string">'success'</span>,
+    <span class="hljs-attr">pass</span>: <span class="hljs-string">'normal'</span>,
+    <span class="hljs-attr">poor</span>: <span class="hljs-string">'exception'</span>,
+  };
+
+
+@connect(<span class="hljs-function">(<span class="hljs-params">{ register, loading }</span>) =&gt;</span> ({
+    register,
+    <span class="hljs-attr">submitting</span>: loading.effects[<span class="hljs-string">'register/submit'</span>],
+  }))
+@Form.create()
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    state = {
+        <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">confirmDirty</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">visible</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">help</span>: <span class="hljs-string">''</span>,
+        <span class="hljs-attr">prefix</span>: <span class="hljs-string">'86'</span>,
+    };
+    getPasswordStatus=<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> { form } = <span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">const</span> value = form.getFieldValue(<span class="hljs-string">'password'</span>);
+        <span class="hljs-keyword">if</span> (value &amp;&amp; value.length &gt; <span class="hljs-number">9</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">'ok'</span>;
+        }
+        <span class="hljs-keyword">if</span> (value &amp;&amp; value.length &gt; <span class="hljs-number">5</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">'pass'</span>;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'poor'</span>;
+    };
+
+    renderPasswordProgress = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> { form } = <span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">const</span> value = form.getFieldValue(<span class="hljs-string">'password'</span>);
+        <span class="hljs-keyword">const</span> passwordStatus = <span class="hljs-keyword">this</span>.getPasswordStatus();
+        <span class="hljs-keyword">return</span> value &amp;&amp; value.length ? (
+          <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles[</span>`<span class="hljs-attr">progress-</span>${<span class="hljs-attr">passwordStatus</span>}`]}&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">Progress</span>
+              <span class="hljs-attr">status</span>=<span class="hljs-string">{passwordProgressMap[passwordStatus]}</span>
+              <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.progress}</span>
+              <span class="hljs-attr">strokeWidth</span>=<span class="hljs-string">{6}</span>
+              <span class="hljs-attr">percent</span>=<span class="hljs-string">{value.length</span> * <span class="hljs-attr">10</span> &gt;</span> 100 ? 100 : value.length * 10}
+              showInfo={false}
+            /&gt;
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        ) : <span class="hljs-literal">null</span>;
+      };
+
+      checkPassword = <span class="hljs-function">(<span class="hljs-params">rule, value, callback</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> { visible, confirmDirty } = <span class="hljs-keyword">this</span>.state;
+        <span class="hljs-keyword">if</span> (!value) {
+          <span class="hljs-keyword">this</span>.setState({
+            <span class="hljs-attr">help</span>:<span class="hljs-string">"请输入密码!"</span>,
+            <span class="hljs-attr">visible</span>: !!value,
+          });
+          callback(<span class="hljs-string">'error'</span>);
+        } <span class="hljs-keyword">else</span> {
+          <span class="hljs-keyword">this</span>.setState({
+            <span class="hljs-attr">help</span>: <span class="hljs-string">''</span>,
+          });
+          <span class="hljs-keyword">if</span> (!visible) {
+            <span class="hljs-keyword">this</span>.setState({
+              <span class="hljs-attr">visible</span>: !!value,
+            });
+          }
+          <span class="hljs-keyword">if</span> (value.length &lt; <span class="hljs-number">6</span>) {
+            callback(<span class="hljs-string">'error'</span>);
+          } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">const</span> { form } = <span class="hljs-keyword">this</span>.props;
+            <span class="hljs-keyword">if</span> (value &amp;&amp; confirmDirty) {
+              form.validateFields([<span class="hljs-string">'confirm'</span>], { <span class="hljs-attr">force</span>: <span class="hljs-literal">true</span> });
+            }
+            callback();
+          }
+        }
+      };
+    checkConfirm = <span class="hljs-function">(<span class="hljs-params">rule, value, callback</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> { form } = <span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">if</span> (value &amp;&amp; value !== form.getFieldValue(<span class="hljs-string">'password'</span>)) {
+          callback(<span class="hljs-string">'两次输入的密码不匹配!'</span>);
+        } <span class="hljs-keyword">else</span> {
+          callback();
+        }
+    };
+    changePrefix = <span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> {
+        <span class="hljs-keyword">this</span>.setState({
+          <span class="hljs-attr">prefix</span>: value,
+        });
+    };
+    onGetCaptcha = <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">let</span> count = <span class="hljs-number">59</span>;
+        <span class="hljs-keyword">this</span>.setState({ count });
+        <span class="hljs-keyword">this</span>.interval = setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+          count -= <span class="hljs-number">1</span>;
+          <span class="hljs-keyword">this</span>.setState({ count });
+          <span class="hljs-keyword">if</span> (count === <span class="hljs-number">0</span>) {
+            clearInterval(<span class="hljs-keyword">this</span>.interval);
+          }
+        }, <span class="hljs-number">1000</span>);
+      };
+    render() {
+        <span class="hljs-keyword">const</span> { form, submitting } = <span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">const</span> {getFieldDecorator}=form;
+        <span class="hljs-keyword">const</span> { count, prefix, help, visible } = <span class="hljs-keyword">this</span>.state;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.register}</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>用户注册<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Form</span> <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">{this.handleSubmit}</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span>&gt;</span>
+                        {getFieldDecorator('mail', {
+                            rules: [
+                                {
+                                required: true,
+                                message:  '邮箱必须输入',
+                                },
+                                {
+                                type: 'email',
+                                message: '邮箱格式不合法',
+                                },
+                            ],
+                        })(
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"邮箱"</span>/&gt;</span>
+                        )}
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span> <span class="hljs-attr">help</span>=<span class="hljs-string">{help}</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Popover</span>
+                        <span class="hljs-attr">content</span>=<span class="hljs-string">{</span>
+                            &lt;<span class="hljs-attr">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">padding:</span> '<span class="hljs-attr">4px</span> <span class="hljs-attr">0</span>' }}&gt;</span>
+                                {passwordStatusMap[this.getPasswordStatus()]}
+                                {this.renderPasswordProgress()}
+                                <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">marginTop:</span> <span class="hljs-attr">10</span> }}&gt;</span>
+                                  请至少输入 6 个字符。请不要使用容易被猜到的密码。
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                        }
+                        overlayStyle={{ width: 240 }}
+                        placement="right"
+                        visible={visible}
+                        &gt;
+                        {getFieldDecorator('password', {
+                            rules: [
+                            {
+                                validator: this.checkPassword,
+                            },
+                            ],
+                        })(
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Input</span>
+                              <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                              <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span>
+                              <span class="hljs-attr">placeholder</span>=<span class="hljs-string">'至少六位密码，区分大小写'</span>
+                            /&gt;</span>
+                        )}
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Popover</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span>&gt;</span>
+                    {getFieldDecorator('confirm', {
+                    rules: [
+                        {
+                         required: true,
+                         message: '请输入确认密码！',
+                        },
+                        {
+                         validator: this.checkConfirm,
+                        },
+                    ],
+                    })(
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Input</span>
+                        <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                        <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span>
+                        <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"确认密码"</span>
+                    /&gt;</span>
+                    )}
+                <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">InputGroup</span> <span class="hljs-attr">compact</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Select</span>
+                        <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                        <span class="hljs-attr">value</span>=<span class="hljs-string">{prefix}</span>
+                        <span class="hljs-attr">onChange</span>=<span class="hljs-string">{this.changePrefix}</span>
+                        <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">width:</span> '<span class="hljs-attr">20</span>%' }}
+                    &gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"86"</span>&gt;</span>+86<span class="hljs-tag">&lt;/<span class="hljs-name">Option</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"87"</span>&gt;</span>+87<span class="hljs-tag">&lt;/<span class="hljs-name">Option</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Select</span>&gt;</span>
+                    {getFieldDecorator('mobile', {
+                        rules: [
+                        {
+                            required: true,
+                            message: '请输入手机号!',
+                        },
+                        {
+                            pattern: /^\d{11}$/,
+                            message: '手机号格式错误！',
+                        },
+                        ],
+                    })(
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Input</span>
+                        <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                        <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">width:</span> '<span class="hljs-attr">80</span>%' }}
+                        <span class="hljs-attr">placeholder</span>=<span class="hljs-string">'手机号'</span>
+                        /&gt;</span>
+                    )}
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">InputGroup</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">gutter</span>=<span class="hljs-string">{8}</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{16}</span>&gt;</span>
+                            {getFieldDecorator('captcha', {
+                            rules: [
+                                {
+                                required: true,
+                                message: '请输入验证码！',
+                                },
+                            ],
+                            })(
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Input</span>
+                                <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                                <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"验证码"</span>
+                            /&gt;</span>
+                            )}
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{8}</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+                            <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                            <span class="hljs-attr">disabled</span>=<span class="hljs-string">{count}</span>
+                            <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.getCaptcha}</span>
+                            <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.onGetCaptcha}</span>
+                            &gt;</span>
+                              {count? `${count} s`: '获取验证码'}
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+                    <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                    <span class="hljs-attr">loading</span>=<span class="hljs-string">{submitting}</span>
+                    <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.submit}</span>
+                    <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>
+                    <span class="hljs-attr">htmlType</span>=<span class="hljs-string">"submit"</span>
+                    &gt;</span>
+                    注册
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.login}</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/User/Login"</span>&gt;</span>
+                      使用已有账户登录
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+              <span class="hljs-tag">&lt;/<span class="hljs-name">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+        );
+    }
+}
+</code></pre>
+<h3 id="t52.4  User/Register.less">2.4  User/Register.less <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t52.4%20%20User/Register.less"> # </a></h3>
+<p>src/pages/User/Register.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.register</span>{
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">450px</span>;
+    <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#CCC</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span>;
+    <span class="hljs-selector-tag">h3</span>{
+        <span class="hljs-attribute">text-align</span>: center;
+    }
+    <span class="hljs-selector-class">.getCaptcha</span>{
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">display</span>:block;
+    }
+    <span class="hljs-selector-class">.login</span>{
+        <span class="hljs-attribute">float</span>:right;
+    }
+}
+</code></pre>
+<h2 id="t63. 实现手机验证码验证">3. 实现手机验证码验证 <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t63.%20%E5%AE%9E%E7%8E%B0%E6%89%8B%E6%9C%BA%E9%AA%8C%E8%AF%81%E7%A0%81%E9%AA%8C%E8%AF%81"> # </a></h2>
+<h3 id="t73.1 request.js">3.1 request.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t73.1%20request.js"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> fetch <span class="hljs-keyword">from</span> <span class="hljs-string">'dva/fetch'</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">parseJSON</span>(<span class="hljs-params">response</span>) </span>{
+  <span class="hljs-keyword">return</span> response.json();
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkStatus</span>(<span class="hljs-params">response</span>) </span>{
+  <span class="hljs-keyword">if</span> (response.status &gt;= <span class="hljs-number">200</span> &amp;&amp; response.status &lt; <span class="hljs-number">300</span>) {
+    <span class="hljs-keyword">return</span> response;
+  }
+
+  <span class="hljs-keyword">const</span> error = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(response.statusText);
+  error.response = response;
+  <span class="hljs-keyword">throw</span> error;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">checkSuccess</span>(<span class="hljs-params">data</span>) </span>{
+  <span class="hljs-keyword">if</span> (data.code == <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> data;
+  }
+
+  <span class="hljs-keyword">const</span> error = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(data.error);
+  <span class="hljs-keyword">throw</span> error;
+}
+
+<span class="hljs-comment">/**
+ * Requests a URL, returning a promise.
+ *
+ * <span class="hljs-doctag">@param  <span class="hljs-type">{string}</span> </span>url       The URL we want to request
+ * <span class="hljs-doctag">@param  <span class="hljs-type">{object}</span> </span>[options] The options we want to pass to "fetch"
+ * <span class="hljs-doctag">@return <span class="hljs-type">{object}</span>           </span>An object containing either "data" or "err"
+ */</span>
+<span class="hljs-keyword">const</span> HOST=<span class="hljs-string">'http://localhost:3000'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">request</span>(<span class="hljs-params">url, options</span>) </span>{
+  <span class="hljs-keyword">return</span> fetch(HOST+url, options)
+    .then(checkStatus)
+    .then(parseJSON)
+    .then(checkSuccess)
+    .catch(<span class="hljs-function"><span class="hljs-params">err</span> =&gt;</span> ({ err }));
+}
+
+</code></pre>
+<h3 id="t83.2 User/Register.js">3.2 User/Register.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t83.2%20User/Register.js"> # </a></h3>
+<p>src/pages/User/Register.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-    onGetCaptcha = () =&gt; {</span>
+<span class="hljs-addition">+    onGetCaptcha=() =&gt; {</span>
+<span class="hljs-addition">+        const {dispatch,form}=this.props;</span>
+<span class="hljs-addition">+        let mobile=form.getFieldValue('mobile');</span>
+<span class="hljs-addition">+        dispatch({</span>
+<span class="hljs-addition">+            type: 'register/getCaptcha',</span>
+<span class="hljs-addition">+            payload:mobile</span>
+<span class="hljs-addition">+        });</span>
+</code></pre>
+<h3 id="t93.3 models/register.js">3.3 models/register.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t93.3%20models/register.js"> # </a></h3>
+<p>src/pages/User/models/register.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> registerService <span class="hljs-keyword">from</span> <span class="hljs-string">'../services/register'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">namespace</span>: <span class="hljs-string">'register'</span>,
+  <span class="hljs-attr">state</span>: {
+
+  },
+  <span class="hljs-attr">effects</span>: {
+      *getCaptcha({payload},{call,put}) {
+        <span class="hljs-keyword">const</span> {data} = <span class="hljs-keyword">yield</span> call(registerService.getCaptcha,payload);
+        <span class="hljs-built_in">console</span>.log(data);
+    }
+  },
+  <span class="hljs-attr">reducers</span>: {}
+};
+</code></pre>
+<h3 id="t103.4 services/register.js">3.4 services/register.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t103.4%20services/register.js"> # </a></h3>
+<p>src/pages/User/services/register.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> request <span class="hljs-keyword">from</span> <span class="hljs-string">'../../../utils/request'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaptcha</span>(<span class="hljs-params">mobile</span>) </span>{
+  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/user/getCaptcha?mobile=<span class="hljs-subst">${mobile}</span>`</span>);
+}
+</code></pre>
+<h3 id="t113.5 server/app.js">3.5 server/app.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t113.5%20server/app.js"> # </a></h3>
+<p>server/app.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> express=<span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">let</span> session=<span class="hljs-built_in">require</span>(<span class="hljs-string">'express-session'</span>);
+<span class="hljs-keyword">const</span> cors=<span class="hljs-built_in">require</span>(<span class="hljs-string">'cors'</span>);
+<span class="hljs-keyword">let</span> app=express();
+app.use(cors());
+app.use(session({
+    <span class="hljs-attr">resave</span>:<span class="hljs-literal">true</span>,
+    <span class="hljs-attr">secret</span>:<span class="hljs-string">'zfpx'</span>,
+    <span class="hljs-attr">saveUninitialized</span>:<span class="hljs-literal">true</span>
+}));
+<span class="hljs-keyword">let</span> user=<span class="hljs-built_in">require</span>(<span class="hljs-string">'./routes/user'</span>);
+app.use(<span class="hljs-string">'/user'</span>,user);
+app.listen(<span class="hljs-number">3000</span>);
+</code></pre>
+<h3 id="t123.6 routes/user.js">3.6 routes/user.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t123.6%20routes/user.js"> # </a></h3>
+<p>server/routes/user.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> express=<span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">let</span> router=express.Router();
+<span class="hljs-keyword">let</span> axios=<span class="hljs-built_in">require</span>(<span class="hljs-string">'axios'</span>);
+<span class="hljs-keyword">let</span> {SMS}=<span class="hljs-built_in">require</span>(<span class="hljs-string">'../config'</span>);
+router.get(<span class="hljs-string">'/getCaptcha'</span>,<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res</span>) </span>{
+    <span class="hljs-keyword">let</span> {mobile}=req.query;
+    <span class="hljs-keyword">let</span> captcha=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getMilliseconds();
+    req.session.captcha = captcha;
+    <span class="hljs-keyword">let</span> {data} = <span class="hljs-keyword">await</span> axios({
+        <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+        <span class="hljs-attr">url</span>: <span class="hljs-string">'https://open.ucpaas.com/ol/sms/sendsms'</span>,
+        <span class="hljs-attr">data</span>: {
+            ...SMS,
+            mobile,
+            <span class="hljs-attr">param</span>:captcha,
+        },
+        <span class="hljs-attr">headers</span>: {
+            <span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"application/json;charset=utf-8"</span>,
+            <span class="hljs-string">"Accept"</span>: <span class="hljs-string">"application/json"</span>
+        }
+    });
+    <span class="hljs-keyword">if</span> (data.code == <span class="hljs-string">'000000'</span>) {
+        res.json({<span class="hljs-attr">code</span>: <span class="hljs-number">0</span>,<span class="hljs-attr">data</span>:captcha});
+    } <span class="hljs-keyword">else</span> {
+        res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">error</span>:<span class="hljs-string">'获取验证码失败!'</span>});
+    }
+});
+<span class="hljs-built_in">module</span>.exports=router;
+</code></pre>
+<h3 id="t133.7 server/config.js">3.7 server/config.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t133.7%20server/config.js"> # </a></h3>
+<p>server/config.js</p>
+<pre><code class="lang-js"><span class="hljs-built_in">module</span>.exports={
+    <span class="hljs-attr">SMS</span>: {
+        <span class="hljs-attr">sid</span>: <span class="hljs-string">'32548fb951ac0df279db0e6e9a515566@'</span>,   <span class="hljs-comment">//开发者账号id 去掉@</span>
+    <span class="hljs-attr">token</span>: <span class="hljs-string">'aa0309c08920ca38201de69eb3c745b6@'</span>, <span class="hljs-comment">//开发者token</span>
+    <span class="hljs-attr">appid</span>: <span class="hljs-string">'16129d504b7c484c9e8f09b4ec929983@'</span>, <span class="hljs-comment">//应用id</span>
+        <span class="hljs-attr">templateid</span>: <span class="hljs-string">'387675'</span>,                      <span class="hljs-comment">//短信模板id</span>
+    }
+}
+</code></pre>
+<h2 id="t144.手机注册和登录">4.手机注册和登录 <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t144.%E6%89%8B%E6%9C%BA%E6%B3%A8%E5%86%8C%E5%92%8C%E7%99%BB%E5%BD%95"> # </a></h2>
+<h3 id="t154.1 server/app.js">4.1 server/app.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t154.1%20server/app.js"> # </a></h3>
+<p>server/app.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+const bodyParser=require('body-parser');</span>
+ let app=express();
+<span class="hljs-deletion">-app.use(cors());</span>
+<span class="hljs-addition">+app.use(cors({</span>
+<span class="hljs-addition">+    origin:'http://localhost:8000',</span>
+<span class="hljs-addition">+    credentials:true</span>
+<span class="hljs-addition">+}));</span>
+<span class="hljs-addition">+app.use(bodyParser.json());</span>
+</code></pre>
+<h3 id="t164.2 server/config.js">4.2 server/config.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t164.2%20server/config.js"> # </a></h3>
+<p>server/config.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+    DB: {</span>
+<span class="hljs-addition">+        url:'mongodb://localhost/chat'</span>
+<span class="hljs-addition">+    }</span>
+</code></pre>
+<h3 id="t174.3 models/index.js">4.3 models/index.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t174.3%20models/index.js"> # </a></h3>
+<p>server/models/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mongoose'</span>);
+<span class="hljs-keyword">const</span> Schema = mongoose.Schema;
+<span class="hljs-keyword">const</span> ObjectId = Schema.Types.ObjectId;
+<span class="hljs-keyword">const</span> {
+  DB
+} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config'</span>);
+<span class="hljs-keyword">const</span> conn = mongoose.createConnection(DB.url,{ <span class="hljs-attr">useNewUrlParser</span>: <span class="hljs-literal">true</span> });
+<span class="hljs-keyword">const</span> User = conn.model(<span class="hljs-string">'User'</span>, {
+    <span class="hljs-attr">email</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,<span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>},
+    <span class="hljs-attr">password</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,<span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>},
+    <span class="hljs-attr">mobile</span>:{<span class="hljs-attr">type</span>:<span class="hljs-built_in">String</span>,<span class="hljs-attr">required</span>:<span class="hljs-literal">true</span>}
+});
+<span class="hljs-built_in">module</span>.exports={
+    User
+}
+</code></pre>
+<h3 id="t184.4 routes/user.js">4.4 routes/user.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t184.4%20routes/user.js"> # </a></h3>
+<p>server/routes/user.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> express=<span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">let</span> router=express.Router();
+<span class="hljs-keyword">let</span> axios=<span class="hljs-built_in">require</span>(<span class="hljs-string">'axios'</span>);
+<span class="hljs-keyword">let</span> {SMS}=<span class="hljs-built_in">require</span>(<span class="hljs-string">'../config'</span>);
+<span class="hljs-keyword">const</span> {User}=<span class="hljs-built_in">require</span>(<span class="hljs-string">'../models'</span>);
+router.get(<span class="hljs-string">'/getCaptcha'</span>,<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res</span>) </span>{
+    <span class="hljs-keyword">let</span> {mobile}=req.query;
+    <span class="hljs-keyword">let</span> captcha=<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().getMilliseconds();
+    req.session.mobile=mobile;
+    req.session.captcha=captcha;
+    <span class="hljs-keyword">let</span> {data} = <span class="hljs-keyword">await</span> axios({
+        <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+        <span class="hljs-attr">url</span>: <span class="hljs-string">'https://open.ucpaas.com/ol/sms/sendsms'</span>,
+        <span class="hljs-attr">data</span>: {
+            ...SMS,
+            mobile,
+            <span class="hljs-attr">param</span>:captcha,
+        },
+        <span class="hljs-attr">headers</span>: {
+            <span class="hljs-string">"Content-Type"</span>: <span class="hljs-string">"application/json;charset=utf-8"</span>,
+            <span class="hljs-string">"Accept"</span>: <span class="hljs-string">"application/json"</span>
+        }
+    });
+    <span class="hljs-keyword">if</span> (data.code == <span class="hljs-string">'000000'</span>) {
+        res.json({<span class="hljs-attr">code</span>: <span class="hljs-number">0</span>,<span class="hljs-attr">data</span>:captcha});
+    } <span class="hljs-keyword">else</span> {
+
+        res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">error</span>:<span class="hljs-string">'error'</span>});
+    } 
+});
+
+router.post(<span class="hljs-string">'/register'</span>,<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res</span>) </span>{
+    <span class="hljs-keyword">let</span> {email,password,mobile,captcha}=req.body;
+    <span class="hljs-keyword">if</span> (req.session.captcha != captcha) {
+        <span class="hljs-keyword">return</span> res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">error</span>:<span class="hljs-string">'验证码错误!'</span>});
+    }
+    <span class="hljs-keyword">let</span> user=<span class="hljs-keyword">new</span> User({email,password,mobile});
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">await</span> user.save();
+        res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">data</span>:<span class="hljs-string">'注册成功'</span>});
+    } <span class="hljs-keyword">catch</span> (error) {
+        res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">1</span>,error});
+    }
+});
+router.post(<span class="hljs-string">'/login'</span>,<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res</span>) </span>{
+    <span class="hljs-keyword">let</span> {email,password,captcha,type}=req.body;
+    <span class="hljs-keyword">if</span> (type==<span class="hljs-string">'mobile'</span>) {
+        <span class="hljs-keyword">if</span> (req.session.captcha != captcha) {
+            <span class="hljs-keyword">return</span> res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">error</span>:<span class="hljs-string">'登录失败!'</span>});
+        }
+        <span class="hljs-keyword">let</span> mobile=req.session.mobile;
+        <span class="hljs-built_in">console</span>.log(mobile,req.session.captcha , captcha);
+        <span class="hljs-keyword">let</span> oldUser=<span class="hljs-keyword">await</span> User.findOne({mobile});
+        <span class="hljs-keyword">if</span> (oldUser) {
+            req.session.user=oldUser;
+            res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">data</span>:<span class="hljs-string">'登录成功'</span>});
+        } <span class="hljs-keyword">else</span> {
+            res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">error</span>:<span class="hljs-string">'用户名或密码错误'</span>});
+        }
+    } <span class="hljs-keyword">else</span> {
+        <span class="hljs-keyword">let</span> oldUser=<span class="hljs-keyword">await</span> User.findOne({email,password});
+        <span class="hljs-keyword">if</span> (oldUser) {
+            req.session.user=oldUser;
+            res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">0</span>,<span class="hljs-attr">data</span>:<span class="hljs-string">'登录成功'</span>});
+        } <span class="hljs-keyword">else</span> {
+            res.json({<span class="hljs-attr">code</span>:<span class="hljs-number">1</span>,<span class="hljs-attr">error</span>:<span class="hljs-string">'用户名或密码错误'</span>});
+        }
+    }
+});
+<span class="hljs-built_in">module</span>.exports=router;
+</code></pre>
+<h3 id="t194.5 Rooms/index.jsx">4.5 Rooms/index.jsx <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t194.5%20Rooms/index.jsx"> # </a></h3>
+<p>src/pages/Rooms/index.jsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rooms</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span></span>{
+    render(){
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>Rooms<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+        )    
+    }
+}
+</code></pre>
+<h3 id="t204.6 User/Login.jsx">4.6 User/Login.jsx <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t204.6%20User/Login.jsx"> # </a></h3>
+<p>src/pages/User/Login.jsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">'dva'</span>;
+<span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">'umi/link'</span>;
+<span class="hljs-keyword">import</span> {
+    Form,
+    Input,
+    Button,
+    Select,
+    Row,
+    Col,
+    Popover,
+    Progress,
+    Tabs
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">import</span> styles <span class="hljs-keyword">from</span> <span class="hljs-string">'./Login.less'</span>;
+<span class="hljs-keyword">const</span> FormItem=Form.Item;
+<span class="hljs-keyword">const</span> {Option}=Select;
+<span class="hljs-keyword">const</span> InputGroup=Input.Group;
+<span class="hljs-keyword">const</span> TabPane = Tabs.TabPane;
+
+@connect(<span class="hljs-function">(<span class="hljs-params">{register,loading}</span>) =&gt;</span> ({register,<span class="hljs-attr">submitting</span>: loading.effects[<span class="hljs-string">'register/submit'</span>]}))
+@Form.create()
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    state={
+        <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">type</span>:<span class="hljs-string">'account'</span>
+    };
+
+    onGetCaptcha=<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> {dispatch,form}=<span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">let</span> mobile=form.getFieldValue(<span class="hljs-string">'mobile'</span>);
+        dispatch({<span class="hljs-attr">type</span>: <span class="hljs-string">'register/getCaptcha'</span>,<span class="hljs-attr">payload</span>: mobile});
+        <span class="hljs-keyword">let</span> count=<span class="hljs-number">59</span>;
+        <span class="hljs-keyword">this</span>.setState({count});
+        <span class="hljs-keyword">this</span>.interval=setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            count-=<span class="hljs-number">1</span>;
+            <span class="hljs-keyword">this</span>.setState({count});
+            <span class="hljs-keyword">if</span> (count===<span class="hljs-number">0</span>) {
+                clearInterval(<span class="hljs-keyword">this</span>.interval);
+            }
+        },<span class="hljs-number">1000</span>);
+    };
+    handleSubmit=<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+        e.preventDefault();
+        <span class="hljs-keyword">const</span> {form,dispatch}=<span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">const</span> {type}=<span class="hljs-keyword">this</span>.state;
+        form.validateFields({
+            <span class="hljs-attr">force</span>: <span class="hljs-literal">true</span>
+        },(err,values) =&gt; {
+            <span class="hljs-keyword">if</span> (!err) {
+                dispatch({
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">'login/submit'</span>,
+                    <span class="hljs-attr">payload</span>: {
+                        ...values,
+                        type
+                    }
+                });
+            }
+        });
+    };
+    onSwitch = <span class="hljs-function"><span class="hljs-params">type</span> =&gt;</span> {
+        <span class="hljs-keyword">this</span>.setState({
+          type,
+        });
+    };
+    render() {
+        <span class="hljs-keyword">const</span> {form,submitting}=<span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">const</span> {getFieldDecorator}=form;
+        <span class="hljs-keyword">const</span> {count}=<span class="hljs-keyword">this</span>.state;
+        <span class="hljs-keyword">return</span> (
+            &lt;div className={styles.register}&gt;
+                &lt;h3&gt;用户注册&lt;/h3&gt;
+                &lt;Form onSubmit={this.handleSubmit}&gt;
+                    &lt;Tabs defaultActiveKey="account" onChange={this.onSwitch}&gt;
+                      &lt;TabPane tab="账号密码登录" key="account"&gt;
+                        &lt;FormItem&gt;
+                            {getFieldDecorator('email',{
+                                rules: [
+                                    {
+                                        required: true,
+                                        message: '邮箱必须输入'
+                                    },{
+                                        type: 'email',
+                                        message: '邮箱格式不合法'
+                                    }
+                                ]
+                            })(&lt;Input size="large" placeholder="邮箱" /&gt;)}
+                        &lt;/FormItem&gt;
+                        &lt;FormItem&gt;
+                            {getFieldDecorator('password',{
+                                rules: [
+                                    {
+                                        required: true,
+                                        message: '请输入密码！'
+                                    }
+                                ]
+                            })(&lt;Input size="large" type="password" placeholder="密码" /&gt;)}
+                        &lt;/FormItem&gt;
+                    &lt;/TabPane&gt;
+...
+
+</code></pre>
+<h3 id="t214.7 User/Login.less">4.7 User/Login.less <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t214.7%20User/Login.less"> # </a></h3>
+<p>src/pages/User/Login.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.register</span>{
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">450px</span>;
+    <span class="hljs-attribute">border</span>:<span class="hljs-number">1px</span> solid <span class="hljs-number">#CCC</span>;
+    <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">10px</span>;
+    <span class="hljs-attribute">padding</span>:<span class="hljs-number">20px</span>;
+    <span class="hljs-selector-tag">h3</span>{
+        <span class="hljs-attribute">text-align</span>: center;
+    }
+    <span class="hljs-selector-class">.getCaptcha</span>{
+        <span class="hljs-attribute">width</span>:<span class="hljs-number">100%</span>;
+        <span class="hljs-attribute">display</span>:block;
+    }
+    <span class="hljs-selector-class">.toRegister</span>{
+        <span class="hljs-attribute">float</span>:right;
+    }
+}
+</code></pre>
+<h3 id="t224.8 User/Register.jsx">4.8 User/Register.jsx <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t224.8%20User/Register.jsx"> # </a></h3>
+<p>src/pages/User/Register.jsx</p>
+<pre><code class="lang-jsx"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">'dva'</span>;
+<span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">'umi/link'</span>;
+<span class="hljs-keyword">import</span> {
+    Form,
+    Input,
+    Button,
+    Select,
+    Row,
+    Col,
+    Popover,
+    Progress
+} <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">import</span> styles <span class="hljs-keyword">from</span> <span class="hljs-string">'./Register.less'</span>;
+<span class="hljs-keyword">const</span> FormItem=Form.Item;
+<span class="hljs-keyword">const</span> {Option}=Select;
+<span class="hljs-keyword">const</span> InputGroup=Input.Group;
+
+<span class="hljs-keyword">const</span> passwordStatusMap={
+    <span class="hljs-attr">ok</span>: (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.success}</span>&gt;</span>
+            强度: 强
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    ),
+    <span class="hljs-attr">pass</span>: (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.warning}</span>&gt;</span>
+            v强度: 中
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    ),
+    <span class="hljs-attr">poor</span>: (
+        <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.error}</span>&gt;</span>
+            强度: 太短
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+    )
+};
+<span class="hljs-keyword">const</span> passwordProgressMap={
+    <span class="hljs-attr">ok</span>: <span class="hljs-string">'success'</span>,
+    <span class="hljs-attr">pass</span>: <span class="hljs-string">'normal'</span>,
+    <span class="hljs-attr">poor</span>: <span class="hljs-string">'exception'</span>
+};
+
+@connect(<span class="hljs-function">(<span class="hljs-params">{register,loading}</span>) =&gt;</span> ({register,<span class="hljs-attr">submitting</span>: loading.effects[<span class="hljs-string">'register/submit'</span>]}))
+@Form.create()
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    state={
+        <span class="hljs-attr">count</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">confirmDirty</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">visible</span>: <span class="hljs-literal">false</span>,
+        <span class="hljs-attr">help</span>: <span class="hljs-string">''</span>,
+        <span class="hljs-attr">prefix</span>: <span class="hljs-string">'86'</span>
+    };
+    getPasswordStatus=<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> {form}=<span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">const</span> value=form.getFieldValue(<span class="hljs-string">'password'</span>);
+        <span class="hljs-keyword">if</span> (value&amp;&amp;value.length&gt;<span class="hljs-number">9</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">'ok'</span>;
+        }
+        <span class="hljs-keyword">if</span> (value&amp;&amp;value.length&gt;<span class="hljs-number">5</span>) {
+            <span class="hljs-keyword">return</span> <span class="hljs-string">'pass'</span>;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'poor'</span>;
+    };
+
+    renderPasswordProgress=<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> {form}=<span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">const</span> value=form.getFieldValue(<span class="hljs-string">'password'</span>);
+        <span class="hljs-keyword">const</span> passwordStatus=<span class="hljs-keyword">this</span>.getPasswordStatus();
+        <span class="hljs-keyword">return</span> value&amp;&amp;value.length
+            ? (
+                <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles[</span>`<span class="hljs-attr">progress-</span>${<span class="hljs-attr">passwordStatus</span>}`]}&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Progress</span>
+                        <span class="hljs-attr">status</span>=<span class="hljs-string">{passwordProgressMap[passwordStatus]}</span>
+                        <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.progress}</span>
+                        <span class="hljs-attr">strokeWidth</span>=<span class="hljs-string">{6}</span>
+                        <span class="hljs-attr">percent</span>=<span class="hljs-string">{value.length*10</span>&gt;</span>100
+                            ? 100
+                            :value.length*10}
+                        showInfo={false} /&gt;
+                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+            )
+            :<span class="hljs-literal">null</span>;
+    };
+
+    checkPassword=<span class="hljs-function">(<span class="hljs-params">rule,value,callback</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> {visible,confirmDirty}=<span class="hljs-keyword">this</span>.state;
+        <span class="hljs-keyword">if</span> (!value) {
+            <span class="hljs-keyword">this</span>.setState({
+                <span class="hljs-attr">help</span>: <span class="hljs-string">"请输入密码!"</span>,
+                <span class="hljs-attr">visible</span>: !!value
+            });
+            callback(<span class="hljs-string">'error'</span>);
+        } <span class="hljs-keyword">else</span> {
+            <span class="hljs-keyword">this</span>.setState({<span class="hljs-attr">help</span>: <span class="hljs-string">''</span>});
+            <span class="hljs-keyword">if</span> (!visible) {
+                <span class="hljs-keyword">this</span>.setState({
+                    <span class="hljs-attr">visible</span>: !!value
+                });
+            }
+            <span class="hljs-keyword">if</span> (value.length&lt;<span class="hljs-number">6</span>) {
+                callback(<span class="hljs-string">'error'</span>);
+            } <span class="hljs-keyword">else</span> {
+                <span class="hljs-keyword">const</span> {form}=<span class="hljs-keyword">this</span>.props;
+                <span class="hljs-keyword">if</span> (value&amp;&amp;confirmDirty) {
+                    form.validateFields([<span class="hljs-string">'confirm'</span>],{<span class="hljs-attr">force</span>: <span class="hljs-literal">true</span>});
+                }
+                callback();
+            }
+        }
+    };
+    checkConfirm=<span class="hljs-function">(<span class="hljs-params">rule,value,callback</span>) =&gt;</span> {
+        <span class="hljs-keyword">const</span> {form}=<span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">if</span> (value&amp;&amp;value!==form.getFieldValue(<span class="hljs-string">'password'</span>)) {
+            callback(<span class="hljs-string">'两次输入的密码不匹配!'</span>);
+        } <span class="hljs-keyword">else</span> {
+            callback();
+        }
+    };
+    changePrefix=<span class="hljs-function"><span class="hljs-params">value</span> =&gt;</span> {
+        <span class="hljs-keyword">this</span>.setState({<span class="hljs-attr">prefix</span>: value});
+    };
+    onGetCaptcha=<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">const</span> {dispatch,form}=<span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">let</span> mobile=form.getFieldValue(<span class="hljs-string">'mobile'</span>);
+        dispatch({<span class="hljs-attr">type</span>: <span class="hljs-string">'register/getCaptcha'</span>,<span class="hljs-attr">payload</span>: mobile});
+        <span class="hljs-keyword">let</span> count=<span class="hljs-number">59</span>;
+        <span class="hljs-keyword">this</span>.setState({count});
+        <span class="hljs-keyword">this</span>.interval=setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+            count-=<span class="hljs-number">1</span>;
+            <span class="hljs-keyword">this</span>.setState({count});
+            <span class="hljs-keyword">if</span> (count===<span class="hljs-number">0</span>) {
+                clearInterval(<span class="hljs-keyword">this</span>.interval);
+            }
+        },<span class="hljs-number">1000</span>);
+    };
+    handleSubmit=<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
+        e.preventDefault();
+        <span class="hljs-keyword">const</span> {form,dispatch}=<span class="hljs-keyword">this</span>.props;
+        form.validateFields({
+            <span class="hljs-attr">force</span>: <span class="hljs-literal">true</span>
+        },(err,values) =&gt; {
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'values'</span>,values);
+            <span class="hljs-keyword">if</span> (!err) {
+                <span class="hljs-keyword">const</span> {prefix}=<span class="hljs-keyword">this</span>.state;
+                dispatch({
+                    <span class="hljs-attr">type</span>: <span class="hljs-string">'register/submit'</span>,
+                    <span class="hljs-attr">payload</span>: {
+                        ...values,
+                        prefix
+                    }
+                });
+            }
+        });
+    };
+    render() {
+        <span class="hljs-keyword">const</span> {form,submitting}=<span class="hljs-keyword">this</span>.props;
+        <span class="hljs-keyword">const</span> {getFieldDecorator}=form;
+        <span class="hljs-keyword">const</span> {count,prefix,help,visible}=<span class="hljs-keyword">this</span>.state;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.register}</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">h3</span>&gt;</span>用户注册<span class="hljs-tag">&lt;/<span class="hljs-name">h3</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Form</span> <span class="hljs-attr">onSubmit</span>=<span class="hljs-string">{this.handleSubmit}</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span>&gt;</span>
+                        {getFieldDecorator('email',{
+                            rules: [
+                                {
+                                    required: true,
+                                    message: '邮箱必须输入'
+                                },{
+                                    type: 'email',
+                                    message: '邮箱格式不合法'
+                                }
+                            ]
+                        })(<span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"邮箱"</span> /&gt;</span>)}
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span> <span class="hljs-attr">help</span>=<span class="hljs-string">{help}</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Popover</span>
+                            <span class="hljs-attr">content</span>=<span class="hljs-string">{</span>
+                                &lt;<span class="hljs-attr">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{padding:</span> '<span class="hljs-attr">4px</span> <span class="hljs-attr">0</span>'}}&gt;</span>
+                                    {passwordStatusMap[this.getPasswordStatus()]}
+                                    {this.renderPasswordProgress()}
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{marginTop:</span> <span class="hljs-attr">10</span>}}&gt;</span>
+                                      请至少输入 6 个字符。请不要使用容易被猜到的密码。
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                            }
+                            overlayStyle={{width: 240}}
+                            placement="right"
+                            visible={visible}
+                        &gt;
+                            {getFieldDecorator('password',{
+                                rules: [
+                                    {
+                                        validator: this.checkPassword
+                                    }
+                                ]
+                            })(<span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">'至少六位密码，区分大小写'</span> /&gt;</span>)}
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Popover</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span>&gt;</span>
+                        {getFieldDecorator('confirm',{
+                            rules: [
+                                {
+                                    required: true,
+                                    message: '请输入确认密码！'
+                                },{
+                                    validator: this.checkConfirm
+                                }
+                            ]
+                        })(<span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"password"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"确认密码"</span> /&gt;</span>)}
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">InputGroup</span> <span class="hljs-attr">compact</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Select</span>
+                                <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                                <span class="hljs-attr">value</span>=<span class="hljs-string">{prefix}</span>
+                                <span class="hljs-attr">onChange</span>=<span class="hljs-string">{this.changePrefix}</span>
+                                <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span>
+                                    <span class="hljs-attr">width:</span> '<span class="hljs-attr">20</span>%'
+                                }}&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"86"</span>&gt;</span>+86<span class="hljs-tag">&lt;/<span class="hljs-name">Option</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Option</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"87"</span>&gt;</span>+87<span class="hljs-tag">&lt;/<span class="hljs-name">Option</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Select</span>&gt;</span>
+                            {getFieldDecorator('mobile',{
+                                rules: [
+                                    {
+                                        required: true,
+                                        message: '请输入手机号!'
+                                    },{
+                                        pattern: /^\d{11}$/,
+                                        message: '手机号格式错误！'
+                                    }
+                                ]
+                            })(<span class="hljs-tag">&lt;<span class="hljs-name">Input</span>
+                                <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                                <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span>
+                                    <span class="hljs-attr">width:</span> '<span class="hljs-attr">80</span>%'
+                                }}
+                                <span class="hljs-attr">placeholder</span>=<span class="hljs-string">'手机号'</span> /&gt;</span>)}
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">InputGroup</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">gutter</span>=<span class="hljs-string">{8}</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{16}</span>&gt;</span>
+                                {getFieldDecorator('captcha',{
+                                    rules: [
+                                        {
+                                            required: true,
+                                            message: '请输入验证码！'
+                                        }
+                                    ]
+                                })(<span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"验证码"</span> /&gt;</span>)}
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{8}</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+                                    <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                                    <span class="hljs-attr">disabled</span>=<span class="hljs-string">{count}</span>
+                                    <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.getCaptcha}</span>
+                                    <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.onGetCaptcha}</span>&gt;</span>
+                                    {count
+                                        ? `${count} s`
+                                        :'获取验证码'}
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">FormItem</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Button</span>
+                            <span class="hljs-attr">size</span>=<span class="hljs-string">"large"</span>
+                            <span class="hljs-attr">loading</span>=<span class="hljs-string">{submitting}</span>
+                            <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.submit}</span>
+                            <span class="hljs-attr">type</span>=<span class="hljs-string">"primary"</span>
+                            <span class="hljs-attr">htmlType</span>=<span class="hljs-string">"submit"</span>&gt;</span>
+                            注册
+                                                <span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Link</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.login}</span> <span class="hljs-attr">to</span>=<span class="hljs-string">"/User/Login"</span>&gt;</span>
+                            使用已有账户登录
+                                                <span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">FormItem</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Form</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>
+
+        );
+    }
+}
+</code></pre>
+<h3 id="t234.9 models/login.js">4.9 models/login.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t234.9%20models/login.js"> # </a></h3>
+<p>src/pages/User/models/login.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> loginService <span class="hljs-keyword">from</span> <span class="hljs-string">'../services/login'</span>;
+<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">'umi/router'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">namespace</span>: <span class="hljs-string">'login'</span>,
+
+  <span class="hljs-attr">state</span>: {
+
+  },
+
+  <span class="hljs-attr">effects</span>: {
+      *getCaptcha({payload},{call,put}) {
+         <span class="hljs-keyword">yield</span> call(loginService.getCaptcha,payload);
+    },
+    *submit({payload},{call,put}) {
+      <span class="hljs-keyword">let</span> {code}=<span class="hljs-keyword">yield</span> call(loginService.submit,payload);
+      <span class="hljs-keyword">if</span>(code == <span class="hljs-number">0</span>)
+        router.push(<span class="hljs-string">'/Rooms'</span>);
+    }
+  },
+
+  <span class="hljs-attr">reducers</span>: {
+
+  },
+};
+
+</code></pre>
+<h3 id="t244.10 models/register.js">4.10 models/register.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t244.10%20models/register.js"> # </a></h3>
+<p>src/pages/User/models/register.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> registerService <span class="hljs-keyword">from</span> <span class="hljs-string">'../services/register'</span>;
+<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">'umi/router'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">namespace</span>: <span class="hljs-string">'register'</span>,
+
+  <span class="hljs-attr">state</span>: {
+
+  },
+
+  <span class="hljs-attr">effects</span>: {
+      *getCaptcha({payload},{call,put}) {
+         <span class="hljs-keyword">yield</span> call(registerService.getCaptcha,payload);
+    },
+    *submit({payload},{call,put}) {
+      <span class="hljs-keyword">yield</span> call(registerService.submit,payload);
+      router.push(<span class="hljs-string">'/User/Login'</span>);
+    }
+  },
+
+  <span class="hljs-attr">reducers</span>: {
+
+  },
+};
+
+</code></pre>
+<h3 id="t254.11 services/login.js">4.11 services/login.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t254.11%20services/login.js"> # </a></h3>
+<p>src/pages/User/services/login.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> request <span class="hljs-keyword">from</span> <span class="hljs-string">'../../../utils/request'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getCaptcha</span>(<span class="hljs-params">mobile</span>) </span>{
+  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/user/getCaptcha?mobile=<span class="hljs-subst">${mobile}</span>`</span>);
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">submit</span>(<span class="hljs-params">values</span>) </span>{
+  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/user/login`</span>,{
+    <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+    <span class="hljs-attr">body</span>: <span class="hljs-built_in">JSON</span>.stringify(values),
+    <span class="hljs-attr">headers</span>: {
+      <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">"application/json"</span>,
+      <span class="hljs-string">"Accept"</span>:<span class="hljs-string">"application/json'"</span>
+    }
+  });
+}
+
+</code></pre>
+<h3 id="t264.12 services/register.js">4.12 services/register.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t264.12%20services/register.js"> # </a></h3>
+<p>src/pages/User/services/register.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">submit</span>(<span class="hljs-params">values</span>) </span>{
+  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/user/register`</span>,{
+    <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+    <span class="hljs-attr">body</span>: <span class="hljs-built_in">JSON</span>.stringify(values),
+    <span class="hljs-attr">headers</span>: {
+      <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">"application/json"</span>,
+      <span class="hljs-string">"Accept"</span>:<span class="hljs-string">"application/json'"</span>
+    }
+  });
+}
+</code></pre>
+<h3 id="t274.13 utils/request.js">4.13 utils/request.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t274.13%20utils/request.js"> # </a></h3>
+<p>src/utils/request.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-  return fetch(HOST+url, options)</span>
+<span class="hljs-addition">+  return fetch(HOST+url,{</span>
+<span class="hljs-addition">+    ...options,</span>
+<span class="hljs-addition">+    credentials:'include'</span>
+<span class="hljs-addition">+  })</span>
+</code></pre>
+<h2 id="t285. 实现房间功能">5. 实现房间功能 <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t285.%20%E5%AE%9E%E7%8E%B0%E6%88%BF%E9%97%B4%E5%8A%9F%E8%83%BD"> # </a></h2>
+<h3 id="t295.1 server/app.js">5.1 server/app.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t295.1%20server/app.js"> # </a></h3>
+<p>server/app.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+ let room=require('./routes/room');</span>
+app.use('/user',user);
+<span class="hljs-addition">+ app.use('/room',room);</span>
+</code></pre>
+<h3 id="t305.2 models/index.js">5.2 models/index.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t305.2%20models/index.js"> # </a></h3>
+<p>server/models/index.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+</span>
+<span class="hljs-addition">+const Room = conn.model('Room', {</span>
+<span class="hljs-addition">+    name: {type: String,required: true}</span>
+<span class="hljs-addition">+});</span>
+<span class="hljs-addition">+</span>
+ module.exports={
+<span class="hljs-deletion">-    User</span>
+<span class="hljs-addition">+    User,</span>
+<span class="hljs-addition">+    Room</span>
+ }
+</code></pre>
+<h3 id="t315.3 routes/room.js">5.3 routes/room.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t315.3%20routes/room.js"> # </a></h3>
+<p>server/routes/room.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> express=<span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">let</span> router=express.Router();
+<span class="hljs-keyword">const</span> {Room}=<span class="hljs-built_in">require</span>(<span class="hljs-string">'../models'</span>);
+
+router.get(<span class="hljs-string">'/list'</span>,<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res</span>) </span>{
+    <span class="hljs-keyword">let</span> list = <span class="hljs-keyword">await</span> Room.find();
+    res.json({
+        <span class="hljs-attr">code</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">data</span>:list
+    });
+});
+
+router.post(<span class="hljs-string">'/create'</span>,<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req,res</span>) </span>{
+    <span class="hljs-keyword">let</span> {name}=req.body;
+    <span class="hljs-keyword">await</span> Room.create({name});
+    res.json({
+        <span class="hljs-attr">code</span>: <span class="hljs-number">0</span>,
+        <span class="hljs-attr">data</span>:<span class="hljs-string">'房间创建成功'</span>
+    });
+});
+
+<span class="hljs-built_in">module</span>.exports=router;
+</code></pre>
+<h3 id="t325.4 Room/index.jsx">5.4 Room/index.jsx <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t325.4%20Room/index.jsx"> # </a></h3>
+<p>src/pages/Room/index.jsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">'umi/link'</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">'dva'</span>;
+<span class="hljs-keyword">import</span> {Layout,Menu,Card,Input,Row,Col,Button,Form} <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">import</span> styles <span class="hljs-keyword">from</span> <span class="hljs-string">'./index.less'</span>;
+<span class="hljs-keyword">const</span> {Header,Footer,Content}=Layout;
+
+@connect(<span class="hljs-function">(<span class="hljs-params">{room,loading}</span>) =&gt;</span> ({room,<span class="hljs-attr">loading</span>: loading.effects[<span class="hljs-string">'room/list'</span>]}))
+@Form.create()
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rooms</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    createRoom=<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">let</span> name=<span class="hljs-keyword">this</span>.props.form.getFieldValue(<span class="hljs-string">'keyword'</span>);
+        <span class="hljs-keyword">if</span> (name) {
+            <span class="hljs-keyword">this</span>.props.dispatch({
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'room/create'</span>,
+                <span class="hljs-attr">payload</span>:{name}
+            });
+        }
+    }
+    render() {
+        <span class="hljs-keyword">let</span> name=<span class="hljs-keyword">this</span>.props.form.getFieldValue(<span class="hljs-string">'keyword'</span>);
+        <span class="hljs-keyword">let</span> rooms=<span class="hljs-keyword">this</span>.props.room.list;
+        <span class="hljs-keyword">if</span> (name) {
+            rooms = rooms.filter(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> item.name.indexOf(name)!=<span class="hljs-number">-1</span>);
+        }
+
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Layout</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Header</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.logo}</span>&gt;</span>珠峰聊天室<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Menu</span>
+                        <span class="hljs-attr">theme</span>=<span class="hljs-string">"dark"</span>
+                        <span class="hljs-attr">mode</span>=<span class="hljs-string">"horizontal"</span>
+                        <span class="hljs-attr">defaultSelectedKeys</span>=<span class="hljs-string">{[</span>'<span class="hljs-attr">register</span>']}
+                        <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lineHeight:</span> '<span class="hljs-attr">64px</span>' }}
+                    &gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Menu.Item</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"register"</span>&gt;</span>注册<span class="hljs-tag">&lt;/<span class="hljs-name">Menu.Item</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Menu.Item</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"login"</span>&gt;</span>登录<span class="hljs-tag">&lt;/<span class="hljs-name">Menu.Item</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Menu</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Header</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">gutter</span>=<span class="hljs-string">{16}</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{6}</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">{8}</span>&gt;</span>
+                                {
+                                    this.props.form.getFieldDecorator('keyword')(
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"请输入房间名"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Input</span>&gt;</span>
+                                    )
+                                }
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span>                
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">gutter</span>=<span class="hljs-string">{16}</span>&gt;</span>
+                            {
+                                rooms.length&gt;0?rooms.map(item =&gt; (
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{6}</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{item._id}</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>
+                                            <span class="hljs-attr">title</span>=<span class="hljs-string">{item.name}</span>
+                                            <span class="hljs-attr">extra</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">{</span>`/<span class="hljs-attr">Rooms</span>/${<span class="hljs-attr">item._id</span>}`}&gt;</span>进入<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>}
+                                        &gt;
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>用户1<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>用户2<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                            <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>用户3<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>    
+                                )):<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.createRoom}</span>&gt;</span>创建房间<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                            }
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Footer</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.copyright}</span>&gt;</span> ©2018 珠峰培训<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Footer</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Layout</span>&gt;</span></span>
+        )
+    }
+}
+</code></pre>
+<h3 id="t335.5 Room/index.less">5.5 Room/index.less <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t335.5%20Room/index.less"> # </a></h3>
+<p>src/pages/Room/index.less</p>
+<pre><code class="lang-less"><span class="hljs-selector-class">.logo</span>{
+    <span class="hljs-attribute">width</span>:<span class="hljs-number">120px</span>;
+    <span class="hljs-attribute">height</span>:<span class="hljs-number">64px</span>;
+    <span class="hljs-attribute">line-height</span>: <span class="hljs-number">64px</span>;
+    <span class="hljs-attribute">float</span>:left;
+}
+
+<span class="hljs-selector-class">.copyright</span>{
+    <span class="hljs-attribute">text-align</span>:center;
+}
+
+</code></pre>
+<h3 id="t345.6 models/room.js">5.6 models/room.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t345.6%20models/room.js"> # </a></h3>
+<p>src/pages/Room/models/room.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> roomService <span class="hljs-keyword">from</span> <span class="hljs-string">'../services/room'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+
+  <span class="hljs-attr">namespace</span>: <span class="hljs-string">'room'</span>,
+
+  <span class="hljs-attr">state</span>: {
+    <span class="hljs-attr">list</span>: []
+  },
+
+  <span class="hljs-attr">subscriptions</span>: {
+    setup({ dispatch, history }) {
+      history.listen(<span class="hljs-function">(<span class="hljs-params">{pathname,query}</span>) =&gt;</span> {
+        <span class="hljs-keyword">if</span>(pathname == <span class="hljs-string">'/Room'</span>){
+          dispatch({
+            <span class="hljs-attr">type</span>:<span class="hljs-string">'getRooms'</span>
+          });
+        }
+      });
+    },
+  },
+
+  <span class="hljs-attr">effects</span>: {
+    *getRooms({ payload }, { call, put }) {
+      <span class="hljs-keyword">let</span> {<span class="hljs-attr">data</span>: list}=<span class="hljs-keyword">yield</span> call(roomService.getRooms);
+      <span class="hljs-keyword">yield</span> put({<span class="hljs-attr">type</span>: <span class="hljs-string">'save'</span>,<span class="hljs-attr">payload</span>: {list}});
+    },
+    *create({ payload }, { call, put }) {
+      <span class="hljs-keyword">yield</span> call(roomService.create,payload);
+      <span class="hljs-keyword">yield</span> put({<span class="hljs-attr">type</span>: <span class="hljs-string">'getRooms'</span>});
+    }
+  },
+
+  <span class="hljs-attr">reducers</span>: {
+    save(state, action) {
+      <span class="hljs-keyword">return</span> { ...state, ...action.payload };
+    },
+  },
+};
+</code></pre>
+<h3 id="t355.7 services/room.js">5.7 services/room.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t355.7%20services/room.js"> # </a></h3>
+<p>src/pages/Room/services/room.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> request <span class="hljs-keyword">from</span> <span class="hljs-string">'../../../utils/request'</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getRooms</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/room/list`</span>);
+}
+<span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">create</span>(<span class="hljs-params">values</span>) </span>{
+  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/room/create`</span>,{
+    <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+    <span class="hljs-attr">body</span>: <span class="hljs-built_in">JSON</span>.stringify(values),
+    <span class="hljs-attr">headers</span>: {
+      <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">"application/json"</span>,
+      <span class="hljs-string">"Accept"</span>:<span class="hljs-string">"application/json'"</span>
+    }
+  });
+}
+</code></pre>
+<h2 id="t366. 实现聊天功能">6. 实现聊天功能 <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t366.%20%E5%AE%9E%E7%8E%B0%E8%81%8A%E5%A4%A9%E5%8A%9F%E8%83%BD"> # </a></h2>
+<h3 id="t376.1 server/app.js">6.1 server/app.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t376.1%20server/app.js"> # </a></h3>
+<p>server/app.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> express=<span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">let</span> session=<span class="hljs-built_in">require</span>(<span class="hljs-string">'express-session'</span>);
+<span class="hljs-keyword">const</span> cors=<span class="hljs-built_in">require</span>(<span class="hljs-string">'cors'</span>);
+<span class="hljs-keyword">const</span> bodyParser=<span class="hljs-built_in">require</span>(<span class="hljs-string">'body-parser'</span>);
+<span class="hljs-keyword">const</span> {User,Room,Message}=<span class="hljs-built_in">require</span>(<span class="hljs-string">'./models'</span>);
+<span class="hljs-keyword">let</span> app=express();
+app.use(cors({
+    <span class="hljs-attr">origin</span>:<span class="hljs-string">'http://localhost:8000'</span>,
+    <span class="hljs-attr">credentials</span>:<span class="hljs-literal">true</span>
+}));
+app.use(bodyParser.json());
+app.use(session({
+    <span class="hljs-attr">resave</span>:<span class="hljs-literal">true</span>,
+    <span class="hljs-attr">secret</span>:<span class="hljs-string">'zfpx'</span>,
+    <span class="hljs-attr">saveUninitialized</span>:<span class="hljs-literal">true</span>
+}));
+<span class="hljs-keyword">let</span> user=<span class="hljs-built_in">require</span>(<span class="hljs-string">'./routes/user'</span>);
+<span class="hljs-keyword">let</span> room=<span class="hljs-built_in">require</span>(<span class="hljs-string">'./routes/room'</span>);
+app.use(<span class="hljs-string">'/user'</span>,user);
+app.use(<span class="hljs-string">'/room'</span>,room);
+<span class="hljs-keyword">let</span> server=<span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>).createServer(app);
+server.listen(<span class="hljs-number">3000</span>);
+<span class="hljs-keyword">let</span> io=<span class="hljs-built_in">require</span>(<span class="hljs-string">'socket.io'</span>)(server);
+io.on(<span class="hljs-string">'connection'</span>,<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    <span class="hljs-keyword">let</span> userId=socket.handshake.query.user;<span class="hljs-comment">//用户</span>
+    <span class="hljs-keyword">let</span> user=<span class="hljs-keyword">await</span> User.findById(userId);
+    <span class="hljs-keyword">let</span> roomId=socket.handshake.query.room; <span class="hljs-comment">//房间</span>
+    <span class="hljs-comment">//查找房间</span>
+    <span class="hljs-keyword">let</span> room=<span class="hljs-keyword">await</span> Room.findById(roomId);
+    socket.join(roomId);<span class="hljs-comment">//把当前socket添加到房间里</span>
+    <span class="hljs-comment">//把用户放到房间里</span>
+    <span class="hljs-keyword">await</span> User.findByIdAndUpdate(userId,{<span class="hljs-attr">room</span>: roomId});
+    socket.on(<span class="hljs-string">'getRoom'</span>,<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-comment">//查找房间中的用户</span>
+        <span class="hljs-keyword">let</span> users=<span class="hljs-keyword">await</span> User.find({<span class="hljs-attr">room</span>: roomId});
+        <span class="hljs-comment">//查找房间里的消息</span>
+        <span class="hljs-keyword">let</span> messages = <span class="hljs-keyword">await</span> Message.find({<span class="hljs-attr">room</span>: roomId}); 
+        socket.emit(<span class="hljs-string">'room'</span>,{room,users,messages});
+    });
+    socket.on(<span class="hljs-string">'message'</span>,<span class="hljs-keyword">async</span> <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">content</span>) </span>{
+        <span class="hljs-keyword">let</span> {_id} = <span class="hljs-keyword">await</span> Message.create({
+            <span class="hljs-attr">user</span>:userId,
+            content,
+            <span class="hljs-attr">room</span>:roomId
+        });
+        <span class="hljs-keyword">let</span> message=<span class="hljs-keyword">await</span> Message.findById(_id).populate(<span class="hljs-string">'user'</span>).populate(<span class="hljs-string">'room'</span>).exec();
+        io.in(roomId).emit(<span class="hljs-string">'message'</span>,message);
+    });
+
+});
+</code></pre>
+<h3 id="t386.2 models/index.js">6.2 models/index.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t386.2%20models/index.js"> # </a></h3>
+<p>server/models/index.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> mongoose = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mongoose'</span>);
+<span class="hljs-keyword">const</span> Schema = mongoose.Schema;
+<span class="hljs-keyword">const</span> ObjectId = Schema.Types.ObjectId;
+<span class="hljs-keyword">const</span> {DB} = <span class="hljs-built_in">require</span>(<span class="hljs-string">'../config'</span>);
+<span class="hljs-keyword">const</span> conn = mongoose.createConnection(DB.url,{ <span class="hljs-attr">useNewUrlParser</span>: <span class="hljs-literal">true</span> });
+<span class="hljs-keyword">const</span> User = conn.model(<span class="hljs-string">'User'</span>, {
+    <span class="hljs-attr">email</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,<span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>},        <span class="hljs-comment">//邮箱 </span>
+    <span class="hljs-attr">password</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,<span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>},     <span class="hljs-comment">//密码</span>
+    <span class="hljs-attr">mobile</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,<span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>},       <span class="hljs-comment">//手机号</span>
+    <span class="hljs-attr">avatar</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,<span class="hljs-attr">required</span>: <span class="hljs-literal">false</span>},      <span class="hljs-comment">//头像</span>
+    <span class="hljs-attr">createAt</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">Date</span>,<span class="hljs-attr">default</span>: <span class="hljs-built_in">Date</span>.now},    <span class="hljs-comment">//创建时间 </span>
+    <span class="hljs-attr">room</span>:{<span class="hljs-attr">type</span>:ObjectId,<span class="hljs-attr">ref</span>:<span class="hljs-string">'Room'</span>}              <span class="hljs-comment">//所属房间</span>
+});
+
+<span class="hljs-keyword">const</span> Room = conn.model(<span class="hljs-string">'Room'</span>, {
+    <span class="hljs-attr">name</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>,<span class="hljs-attr">required</span>: <span class="hljs-literal">true</span>},         <span class="hljs-comment">//房间名</span>
+    <span class="hljs-attr">avatar</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>},                      <span class="hljs-comment">//房间图片</span>
+    <span class="hljs-attr">createAt</span>:{<span class="hljs-attr">type</span>:<span class="hljs-built_in">Date</span>,<span class="hljs-attr">default</span>:<span class="hljs-built_in">Date</span>.now}        <span class="hljs-comment">//创建时间</span>
+});
+
+<span class="hljs-keyword">const</span> Message = conn.model(<span class="hljs-string">'Message'</span>, {
+    <span class="hljs-attr">content</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">String</span>},                     <span class="hljs-comment">//内容</span>
+    <span class="hljs-attr">user</span>: {<span class="hljs-attr">type</span>: ObjectId,<span class="hljs-attr">ref</span>: <span class="hljs-string">'User'</span>},          <span class="hljs-comment">//用户</span>
+    <span class="hljs-attr">createAt</span>: {<span class="hljs-attr">type</span>: <span class="hljs-built_in">Date</span>,<span class="hljs-attr">default</span>: <span class="hljs-built_in">Date</span>.now},    <span class="hljs-comment">//创建时间 </span>
+    <span class="hljs-attr">room</span>:{<span class="hljs-attr">type</span>:ObjectId,<span class="hljs-attr">ref</span>:<span class="hljs-string">'Room'</span>}              <span class="hljs-comment">//房间</span>
+});
+
+
+<span class="hljs-built_in">module</span>.exports={
+    User,
+    Room,
+    Message
+}
+</code></pre>
+<h3 id="t396.3 routes/user.js">6.3 routes/user.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t396.3%20routes/user.js"> # </a></h3>
+<p>server/routes/user.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+ const gravatar=require('gravatar');</span>
+<span class="hljs-deletion">-    let user=new User({email,password,mobile});</span>
+<span class="hljs-addition">+    let user=new User({email,password,mobile,avatar});</span>
+<span class="hljs-deletion">-            res.json({code:0,data:'登录成功'});</span>
+<span class="hljs-addition">+            res.json({code:0,data:oldUser});</span>
+<span class="hljs-deletion">-            res.json({code:0,data:'登录成功'});</span>
+<span class="hljs-addition">+            res.json({code:0,data:oldUser});</span>
+</code></pre>
+<h3 id="t406.4 Room/$id.jsx">6.4 Room/$id.jsx <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t406.4%20Room/$id.jsx"> # </a></h3>
+<p>src/pages/Room/$id.jsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">'dva'</span>;
+<span class="hljs-keyword">import</span> {Layout,Menu,Card,Input,Row,Col,Button,Form,List,Avatar} <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">const</span> {Header,Sider,Footer,Content}=Layout;
+@connect(<span class="hljs-function">(<span class="hljs-params">{chat}</span>) =&gt;</span> ({chat}))
+@Form.create()    
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Chat</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    talk=<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">let</span> content=<span class="hljs-keyword">this</span>.props.form.getFieldValue(<span class="hljs-string">'content'</span>);
+        <span class="hljs-keyword">this</span>.props.dispatch({
+            <span class="hljs-attr">type</span>: <span class="hljs-string">'chat/talk'</span>,
+            <span class="hljs-attr">payload</span>:content
+        });
+    }
+    render() {
+        <span class="hljs-keyword">let</span> {users,messages}=<span class="hljs-keyword">this</span>.props.chat;
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Layout</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Header</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"#"</span>&gt;</span>珠峰聊天室<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Header</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Layout</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Sider</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Menu</span>
+                            <span class="hljs-attr">theme</span>=<span class="hljs-string">"dark"</span>
+                            <span class="hljs-attr">mode</span>=<span class="hljs-string">"vertical"</span>
+                            <span class="hljs-attr">defaultSelectedKeys</span>=<span class="hljs-string">{[]}</span>
+                        &gt;</span>
+                            {
+                                users.map(user =&gt; (<span class="hljs-tag">&lt;<span class="hljs-name">Menu.Item</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{user._id}</span>&gt;</span>{user.email}<span class="hljs-tag">&lt;/<span class="hljs-name">Menu.Item</span>&gt;</span>))
+                            }
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Menu</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Sider</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Content</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{height:</span> '<span class="hljs-attr">600px</span>'}}&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">List</span>
+                                <span class="hljs-attr">itemLayout</span>=<span class="hljs-string">"horizontal"</span>
+                                <span class="hljs-attr">dataSource</span>=<span class="hljs-string">{messages}</span>
+                                <span class="hljs-attr">renderItem</span>=<span class="hljs-string">{item</span> =&gt;</span> (
+                                <span class="hljs-tag">&lt;<span class="hljs-name">List.Item</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">List.Item.Meta</span>
+                                        <span class="hljs-attr">avatar</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">Avatar</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{item.user.avatar}</span> /&gt;</span>}
+                                        title={item.user.email}
+                                        description={item.content}
+                                    /&gt;
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">List.Item</span>&gt;</span>
+                            )}
+                         /&gt;
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">gutter</span>=<span class="hljs-string">{8}</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{23}</span>&gt;</span>
+                                    {
+                                        this.props.form.getFieldDecorator('content')(<span class="hljs-tag">&lt;<span class="hljs-name">Input</span>/&gt;</span>)
+                                    }
+                                <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                                <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{1}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.talk}</span>&gt;</span>发言<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Layout</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Footer</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{textAlign:</span>'<span class="hljs-attr">center</span>'}}&gt;</span>
+                        @2018 珠峰培训
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Footer</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Layout</span>&gt;</span></span>
+        )
+    }
+}
+
+</code></pre>
+<h3 id="t416.5 Room/index.jsx">6.5 Room/index.jsx <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t416.5%20Room/index.jsx"> # </a></h3>
+<p>src/pages/Room/index.jsx</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-     extra={&lt;Link to={`/Rooms/${item._id}`}&gt;进入&lt;/Link&gt;}</span>
+<span class="hljs-addition">+     extra={&lt;Link to={`/Room/${item._id}`}&gt;进入&lt;/Link&gt;}</span>
+</code></pre>
+<h3 id="t426.6 models/chat.js">6.6 models/chat.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t426.6%20models/chat.js"> # </a></h3>
+<p>src/pages/Room/models/chat.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> IO <span class="hljs-keyword">from</span> <span class="hljs-string">'socket.io-client'</span>;
+<span class="hljs-keyword">import</span> router <span class="hljs-keyword">from</span> <span class="hljs-string">'umi/router'</span>;
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> {
+  <span class="hljs-attr">namespace</span>: <span class="hljs-string">'chat'</span>,
+
+  <span class="hljs-attr">state</span>: {
+    <span class="hljs-attr">room</span>: {},
+    <span class="hljs-attr">users</span>: [],
+    <span class="hljs-attr">messages</span>:[]
+  },
+
+  <span class="hljs-attr">subscriptions</span>: {
+    setup({ dispatch, history }) {
+      history.listen(<span class="hljs-function">(<span class="hljs-params">{pathname,query}</span>) =&gt;</span> {
+        <span class="hljs-keyword">let</span> regexp=<span class="hljs-regexp">/\/Room\/([^/]+)$/</span>;
+        <span class="hljs-keyword">let</span> result=pathname.match(regexp);
+        <span class="hljs-keyword">if</span> (result) {
+          <span class="hljs-keyword">let</span> roomId=result[<span class="hljs-number">1</span>];
+          <span class="hljs-keyword">let</span> userStr = <span class="hljs-built_in">window</span>.sessionStorage.getItem(<span class="hljs-string">'user'</span>);
+          <span class="hljs-keyword">if</span> (userStr) {
+            <span class="hljs-keyword">let</span> user=<span class="hljs-built_in">JSON</span>.parse(userStr);
+            <span class="hljs-keyword">const</span> socket= <span class="hljs-built_in">window</span>.socket = <span class="hljs-keyword">new</span> IO(<span class="hljs-string">'http://localhost:3000'</span>,{<span class="hljs-attr">query</span>:{<span class="hljs-attr">user</span>:user._id,<span class="hljs-attr">room</span>:roomId}});
+            socket.on(<span class="hljs-string">'room'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">{room,users,messages}</span>) </span>{
+                dispatch({<span class="hljs-attr">type</span>: <span class="hljs-string">'save'</span>,<span class="hljs-attr">payload</span>: {room,users,messages}});
+            });
+            socket.emit(<span class="hljs-string">'getRoom'</span>);
+            socket.on(<span class="hljs-string">'message'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">message</span>) </span>{
+              <span class="hljs-built_in">console</span>.log(message);
+              dispatch({<span class="hljs-attr">type</span>: <span class="hljs-string">'messageAdded'</span>,<span class="hljs-attr">payload</span>:message});
+            });
+          } <span class="hljs-keyword">else</span> {
+            router.push(<span class="hljs-string">'/User/Login'</span>);
+          }
+        } 
+      });
+    },
+  },
+  <span class="hljs-attr">effects</span>: {
+    *talk({payload},{call,put,select}) {
+      <span class="hljs-built_in">window</span>.socket.emit(<span class="hljs-string">'message'</span>,payload);
+   }
+  },
+  <span class="hljs-attr">reducers</span>: {
+    save(state, action) {
+      <span class="hljs-keyword">return</span> { ...state, ...action.payload };
+    },
+    messageAdded(state,{payload}) {
+      <span class="hljs-keyword">return</span> {...state, <span class="hljs-attr">messages</span>:[...state.messages,payload] };
+    }
+  }
+};
+
+</code></pre>
+<h3 id="t436.7 models/room.js">6.7 models/room.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t436.7%20models/room.js"> # </a></h3>
+<p>src/pages/Room/models/room.js</p>
+<pre><code class="lang-js">-    dispatch({
+-       type:<span class="hljs-string">'getRooms'</span>
+-    });
++    dispatch({<span class="hljs-attr">type</span>:<span class="hljs-string">'getRooms'</span>});
+</code></pre>
+<h3 id="t446.8 models/login.js">6.8 models/login.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t446.8%20models/login.js"> # </a></h3>
+<p>src/pages/User/models/login.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-      let {code}=yield call(loginService.submit,payload);</span>
+<span class="hljs-deletion">-      if(code == 0)</span>
+<span class="hljs-deletion">-        router.push('/Rooms');</span>
+<span class="hljs-addition">+      let {code,data}=yield call(loginService.submit,payload);</span>
+<span class="hljs-addition">+      if (code==0) {</span>
+<span class="hljs-addition">+        yield put({type: 'save',payload: {user: data}});</span>
+<span class="hljs-addition">+        window.sessionStorage.setItem('user',JSON.stringify(data));</span>
+<span class="hljs-addition">+        router.push('/Room');</span>
+<span class="hljs-addition">+      }</span>
+</code></pre>
+<h2 id="t457. 上传图片">7. 上传图片 <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t457.%20%E4%B8%8A%E4%BC%A0%E5%9B%BE%E7%89%87"> # </a></h2>
+<h3 id="t467.1 server/app.js">7.1 server/app.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t467.1%20server/app.js"> # </a></h3>
+<p>server/app.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-app.use(bodyParser.json());</span>
+<span class="hljs-addition">+app.use(bodyParser.json({limit:'1000kb'}));</span>
+
+<span class="hljs-deletion">-        let messages = await Message.find({room: roomId}); </span>
+<span class="hljs-deletion">-        console.log(room,users,messages);</span>
+<span class="hljs-addition">+        let messages = await Message.find({room: roomId}).populate('user'); </span>
+</code></pre>
+<h3 id="t477.2 models/index.js">7.2 models/index.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t477.2%20models/index.js"> # </a></h3>
+<p>server/models/index.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-    createAt:{type:Date,default:Date.now}        //创建时间</span>
+<span class="hljs-addition">+    createAt: {type: Date,default: Date.now},        //创建时间</span>
+<span class="hljs-addition">+    users:[{type:ObjectId,ref:'User'}]</span>
+</code></pre>
+<h3 id="t487.3 routes/room.js">7.3 routes/room.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t487.3%20routes/room.js"> # </a></h3>
+<p>server/routes/room.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-const {Room}=require('../models');</span>
+<span class="hljs-addition">+const {Room,User}=require('../models');</span>
+
+<span class="hljs-deletion">-    let list = await Room.find();</span>
+<span class="hljs-addition">+    let list=await Room.find();</span>
+<span class="hljs-addition">+    for (let i=0;i&lt;list.length;i++){</span>
+<span class="hljs-addition">+        let users=await User.find({room: list[i]._id});</span>
+<span class="hljs-addition">+        console.log(users);</span>
+<span class="hljs-addition">+        list[i].users=users;</span>
+<span class="hljs-addition">+    }</span>
+<span class="hljs-addition">+    console.log(list);</span>
+</code></pre>
+<h3 id="t497.4 routes/user.js">7.4 routes/user.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t497.4%20routes/user.js"> # </a></h3>
+<p>server/routes/user.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+ router.post('/changeAvatar',async function (req,res) {</span>
+<span class="hljs-addition">+     let {userId,avatar}=req.body;</span>
+<span class="hljs-addition">+     try {</span>
+<span class="hljs-addition">+         let user = await User.findById(userId);</span>
+<span class="hljs-addition">+         user.avatar=avatar;</span>
+<span class="hljs-addition">+         await user.save();</span>
+<span class="hljs-addition">+         res.json({code:0,data:user});</span>
+<span class="hljs-addition">+     } catch (error) {</span>
+<span class="hljs-addition">+         res.json({code:1,error});</span>
+<span class="hljs-addition">+     }</span>
+<span class="hljs-addition">+ });</span>
+</code></pre>
+<h3 id="t507.5 Room/index.jsx">7.5 Room/index.jsx <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t507.5%20Room/index.jsx"> # </a></h3>
+<p>src/pages/Room/index.jsx</p>
+<pre><code class="lang-js"><span class="hljs-keyword">import</span> React,{Component} <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
+<span class="hljs-keyword">import</span> Link <span class="hljs-keyword">from</span> <span class="hljs-string">'umi/link'</span>;
+<span class="hljs-keyword">import</span> {connect} <span class="hljs-keyword">from</span> <span class="hljs-string">'dva'</span>;
+<span class="hljs-keyword">import</span> Cropper <span class="hljs-keyword">from</span> <span class="hljs-string">'react-cropper'</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">'cropperjs/dist/cropper.css'</span>; 
+<span class="hljs-keyword">import</span> {Layout,Menu,Card,Input,Row,Col,Button,Form,List,Avatar,Modal} <span class="hljs-keyword">from</span> <span class="hljs-string">'antd'</span>;
+<span class="hljs-keyword">import</span> styles <span class="hljs-keyword">from</span> <span class="hljs-string">'./index.less'</span>;
+<span class="hljs-keyword">const</span> {Header,Footer,Content}=Layout;
+
+@connect(<span class="hljs-function">(<span class="hljs-params">{room,login,loading}</span>) =&gt;</span> ({room,login}))
+@Form.create()
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Rooms</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
+    state={
+        <span class="hljs-attr">src</span>: <span class="hljs-string">''</span>,
+        <span class="hljs-attr">cropperVisible</span>: <span class="hljs-literal">false</span>
+    }
+    createRoom=<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+        <span class="hljs-keyword">let</span> name=<span class="hljs-keyword">this</span>.props.form.getFieldValue(<span class="hljs-string">'keyword'</span>);
+        <span class="hljs-keyword">if</span> (name) {
+            <span class="hljs-keyword">this</span>.props.dispatch({
+                <span class="hljs-attr">type</span>: <span class="hljs-string">'room/create'</span>,
+                <span class="hljs-attr">payload</span>:{name}
+            });
+        }
+    }
+    <span class="hljs-comment">//上传图片</span>
+    changeAvatar=<span class="hljs-function">(<span class="hljs-params">userId</span>) =&gt;</span> {
+        <span class="hljs-keyword">let</span> that=<span class="hljs-keyword">this</span>;
+        <span class="hljs-keyword">const</span> $input=<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">'input'</span>);
+        $input.style.display = <span class="hljs-string">'none'</span>;
+        $input.setAttribute(<span class="hljs-string">'type'</span>, <span class="hljs-string">'file'</span>);
+        $input.setAttribute(<span class="hljs-string">'accept'</span>,<span class="hljs-string">'*/*'</span>);
+        $input.onchange=<span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+            <span class="hljs-keyword">const</span> file=e.target.files[<span class="hljs-number">0</span>];
+            <span class="hljs-keyword">if</span> (!file) <span class="hljs-keyword">return</span>;
+            <span class="hljs-keyword">const</span> reader=<span class="hljs-keyword">new</span> FileReader();
+            reader.onloadend=<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+                <span class="hljs-keyword">let</span> avatar=<span class="hljs-keyword">this</span>.result;
+                that.setState({
+                    <span class="hljs-attr">src</span>: avatar,
+                    <span class="hljs-attr">cropperVisible</span>:<span class="hljs-literal">true</span>
+                });
+
+            }
+            reader.readAsDataURL(file);
+        }
+        $input.click();
+    }
+    confirmChange=<span class="hljs-function">(<span class="hljs-params">userId</span>) =&gt;</span> {
+        <span class="hljs-keyword">let</span> avatar = <span class="hljs-keyword">this</span>.cropper.getCroppedCanvas().toDataURL();
+        <span class="hljs-keyword">this</span>.setState({<span class="hljs-attr">cropperVisible</span>:<span class="hljs-literal">false</span>});
+        <span class="hljs-keyword">this</span>.props.dispatch({
+               <span class="hljs-attr">type</span>: <span class="hljs-string">'login/changeAvatar'</span>,
+               <span class="hljs-attr">payload</span>: {userId,avatar}
+        }); 
+    }
+    render() {
+        <span class="hljs-keyword">let</span> name=<span class="hljs-keyword">this</span>.props.form.getFieldValue(<span class="hljs-string">'keyword'</span>);
+        <span class="hljs-keyword">let</span> rooms=<span class="hljs-keyword">this</span>.props.room.list;
+        <span class="hljs-keyword">if</span> (name) {
+            rooms = rooms.filter(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> item.name.indexOf(name)!=<span class="hljs-number">-1</span>);
+        }
+
+        <span class="hljs-keyword">return</span> (
+            <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Layout</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Header</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Row</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{2}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">a</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.logo}</span>&gt;</span>珠峰聊天室<span class="hljs-tag">&lt;/<span class="hljs-name">a</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{21}</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">Menu</span>
+                        <span class="hljs-attr">theme</span>=<span class="hljs-string">"dark"</span>
+                        <span class="hljs-attr">mode</span>=<span class="hljs-string">"horizontal"</span>
+                        <span class="hljs-attr">defaultSelectedKeys</span>=<span class="hljs-string">{[</span>'<span class="hljs-attr">register</span>']}
+                        <span class="hljs-attr">style</span>=<span class="hljs-string">{{</span> <span class="hljs-attr">lineHeight:</span> '<span class="hljs-attr">64px</span>' }}
+                        &gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Menu.Item</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"register"</span>&gt;</span>注册<span class="hljs-tag">&lt;/<span class="hljs-name">Menu.Item</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Menu.Item</span> <span class="hljs-attr">key</span>=<span class="hljs-string">"login"</span>&gt;</span>登录<span class="hljs-tag">&lt;/<span class="hljs-name">Menu.Item</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Menu</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{1}</span>&gt;</span>{this.props.login.user&amp;&amp;<span class="hljs-tag">&lt;<span class="hljs-name">Avatar</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{()</span>=&gt;</span>this.changeAvatar(this.props.login.user._id)} src={this.props.login.user.avatar}/&gt;}<span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Header</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Content</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">gutter</span>=<span class="hljs-string">{16}</span>&gt;</span>
+                            <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{6}</span> <span class="hljs-attr">offset</span>=<span class="hljs-string">{8}</span>&gt;</span>
+                                {
+                                    this.props.form.getFieldDecorator('keyword')(
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">Input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">"请输入房间名"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">Input</span>&gt;</span>
+                                    )
+                                }
+                            <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span>                
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>&gt;</span>
+                        <span class="hljs-tag">&lt;<span class="hljs-name">Row</span> <span class="hljs-attr">gutter</span>=<span class="hljs-string">{16}</span>&gt;</span>
+                            {
+                                rooms.length&gt;0?rooms.map(item =&gt; (
+                                    <span class="hljs-tag">&lt;<span class="hljs-name">Col</span> <span class="hljs-attr">span</span>=<span class="hljs-string">{6}</span> <span class="hljs-attr">key</span>=<span class="hljs-string">{item._id}</span>&gt;</span>
+                                        <span class="hljs-tag">&lt;<span class="hljs-name">Card</span>
+                                            <span class="hljs-attr">title</span>=<span class="hljs-string">{item.name}</span>
+                                            <span class="hljs-attr">extra</span>=<span class="hljs-string">{</span>&lt;<span class="hljs-attr">Link</span> <span class="hljs-attr">to</span>=<span class="hljs-string">{</span>`/<span class="hljs-attr">Room</span>/${<span class="hljs-attr">item._id</span>}`}&gt;</span>进入<span class="hljs-tag">&lt;/<span class="hljs-name">Link</span>&gt;</span>}
+                                        &gt;
+                                            {
+                                                item.users.map(user =&gt; <span class="hljs-tag">&lt;<span class="hljs-name">Avatar</span> <span class="hljs-attr">style</span>=<span class="hljs-string">{{marginLeft:5}}</span> <span class="hljs-attr">src</span>=<span class="hljs-string">{user.avatar}</span> /&gt;</span>)
+                                            }
+                                        <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+                                    <span class="hljs-tag">&lt;/<span class="hljs-name">Col</span>&gt;</span>    
+                                )):<span class="hljs-tag">&lt;<span class="hljs-name">Button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{this.createRoom}</span>&gt;</span>创建房间<span class="hljs-tag">&lt;/<span class="hljs-name">Button</span>&gt;</span>
+                            }
+                        <span class="hljs-tag">&lt;/<span class="hljs-name">Row</span>&gt;</span>
+                    <span class="hljs-tag">&lt;/<span class="hljs-name">Card</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Content</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Footer</span>&gt;</span>
+                    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{styles.copyright}</span>&gt;</span> ©2018 珠峰培训<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Footer</span>&gt;</span>
+                <span class="hljs-tag">&lt;<span class="hljs-name">Modal</span>
+                    <span class="hljs-attr">onOk</span>=<span class="hljs-string">{()</span>=&gt;</span>this.confirmChange(this.props.login.user._id)}
+                    onCancel={()=&gt;this.setState({cropperVisible:false})}
+                    visible={this.state.cropperVisible} &gt;
+                    <span class="hljs-tag">&lt;<span class="hljs-name">Cropper</span>
+                            <span class="hljs-attr">ref</span>=<span class="hljs-string">{i</span>=&gt;</span>this.cropper =i}
+                            src={this.state.src}
+                            style={{height: 400, width: 400}}
+                            aspectRatio={16 / 9}
+                        guides={false} /&gt;
+                <span class="hljs-tag">&lt;/<span class="hljs-name">Modal</span>&gt;</span>
+            <span class="hljs-tag">&lt;/<span class="hljs-name">Layout</span>&gt;</span></span>
+        )
+    }
+}
+</code></pre>
+<h3 id="t517.6 /models/chat.js">7.6 /models/chat.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t517.6%20/models/chat.js"> # </a></h3>
+<p>src/pages/Room/models/chat.js</p>
+<pre><code class="lang-js">+ dispatch({<span class="hljs-attr">type</span>: <span class="hljs-string">'login/save'</span>,<span class="hljs-attr">payload</span>: {user}});
+</code></pre>
+<h3 id="t527.7 models/room.js">7.7 models/room.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t527.7%20models/room.js"> # </a></h3>
+<p>src/pages/Room/models/room.js</p>
+<pre><code class="lang-diff"><span class="hljs-deletion">-        if(pathname == '/Room'){</span>
+<span class="hljs-deletion">-          dispatch({type:'getRooms'});</span>
+<span class="hljs-addition">+        if (pathname=='/Room') {</span>
+<span class="hljs-addition">+          let userStr = window.sessionStorage.getItem('user');</span>
+<span class="hljs-addition">+          if (userStr) {</span>
+<span class="hljs-addition">+            let user=JSON.parse(userStr);</span>
+<span class="hljs-addition">+            dispatch({type: 'login/save',payload: {user}});</span>
+<span class="hljs-addition">+            dispatch({type:'getRooms'});</span>
+<span class="hljs-addition">+          } else {</span>
+<span class="hljs-addition">+            router.push('/User/Login');</span>
+<span class="hljs-addition">+          }</span>
+</code></pre>
+<h3 id="t537.8 models/login.js">7.8 models/login.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t537.8%20models/login.js"> # </a></h3>
+<p>src/pages/User/models/login.js</p>
+<pre><code class="lang-diff"><span class="hljs-addition">+    *changeAvatar({payload},{call,put}) {</span>
+<span class="hljs-addition">+      let {code,data}=yield call(loginService.changeAvatar,payload);</span>
+<span class="hljs-addition">+      if (code==0) {</span>
+<span class="hljs-addition">+        window.sessionStorage.setItem('user',JSON.stringify(data));</span>
+<span class="hljs-addition">+        yield put({type: 'save',payload: {user: data}});</span>
+<span class="hljs-addition">+      }</span>
+</code></pre>
+<h3 id="t547.9 services/login.js">7.9 services/login.js <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t547.9%20services/login.js"> # </a></h3>
+<p>src/pages/User/services/login.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">export</span> <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">changeAvatar</span>(<span class="hljs-params">values</span>) </span>{
+  <span class="hljs-keyword">return</span> request(<span class="hljs-string">`/user/changeAvatar`</span>,{
+    <span class="hljs-attr">method</span>: <span class="hljs-string">'POST'</span>,
+    <span class="hljs-attr">body</span>: <span class="hljs-built_in">JSON</span>.stringify(values),
+    <span class="hljs-attr">headers</span>: {
+      <span class="hljs-string">'Content-Type'</span>: <span class="hljs-string">"application/json"</span>,
+      <span class="hljs-string">"Accept"</span>:<span class="hljs-string">"application/json'"</span>
+    }
+  });
+}
+</code></pre>
+<h2 id="t55参考链接">参考链接 <a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html#t55%E5%8F%82%E8%80%83%E9%93%BE%E6%8E%A5"> # </a></h2>
+<ul>
+<li><a href="https://gitee.com/zhufengpeixun/zhufeng-dva-chat">zhufeng-dva-chat</a></li>
+<li><a href="https://ant.design/docs/react/introduce-cn">ant.design</a></li>
+<li><a href="https://pro.ant.design/index-cn">pro.ant.design</a></li>
+<li><a href="https://umijs.org/zh/">umijs</a></li>
+<li><a href="http://www.ucpaas.com/">ucpaas</a></li>
+</ul>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

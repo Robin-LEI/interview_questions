@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t01.%20%E9%85%8D%E7%BD%AEIP%E5%9C%B0%E5%9D%80">1. 配置IP地址</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t11.1%20ifconifg%E4%B8%B4%E6%97%B6%E9%85%8D%E7%BD%AEIP">1.1 ifconifg临时配置IP</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t21.2%20setup%E6%B0%B8%E4%B9%85%E9%85%8D%E7%BD%AEIP">1.2 setup永久配置IP</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t32.%20%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">2. 网络配置文件</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t42.1%20%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE">2.1 网卡配置</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t52.2%20%E4%B8%BB%E6%9C%BA%E5%90%8D">2.2 主机名</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t62.3%20DNS%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">2.3 DNS配置文件</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t73.%20%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83">3. 查看网络环境</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t83.1%20ifconifg">3.1 ifconifg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t93.2%20%E5%85%B3%E9%97%AD%E5%92%8C%E5%90%AF%E5%8A%A8%E7%BD%91%E5%8D%A1">3.2 关闭和启动网卡</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t103.3%20%E6%9F%A5%E8%AF%A2%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81">3.3 查询网络状态</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t113.4%20netstat%20-rn">3.4 netstat -rn</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t123.5%20%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%91%BD%E4%BB%A4">3.5 域名解析命令</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t134.%20%E7%BD%91%E7%BB%9C%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4">4. 网络测试命令</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t144.1%20ping">4.1 ping</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t154.2%20traceroute%20[%E9%80%89%E9%A1%B9]%20IP%E6%88%96%E5%9F%9F%E5%90%8D">4.2 traceroute [选项] IP或域名</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t164.3%20wget">4.3 wget</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t174.4%20tcpdump%E5%91%BD%E4%BB%A4">4.4 tcpdump命令</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t185.%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95">5.远程登录</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t195.1%20SSH%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86">5.1 SSH协议原理</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t205.1.1%20%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95">5.1.1 对称加密算法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t215.1.2%20SSH%20%E5%AE%89%E5%85%A8%E5%A4%96%E5%A3%B3%E5%8D%8F%E8%AE%AE">5.1.2 SSH 安全外壳协议</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t225.1.3%20scp">5.1.3 scp</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t235.1.3.1%20%E4%BB%8E%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A4%8D%E5%88%B6%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8">5.1.3.1 从本地服务器复制到远程服务器</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t245.1.3.2%20%E4%BB%8E%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A4%8D%E5%88%B6%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8">5.1.3.2 从远程服务器复制到本地服务器</a></li></ul></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t256.%20%E9%99%84%E5%BD%95">6. 附录</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t266.1%20%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8">6.1 搭建FTP服务器</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t276.1.1%20%E6%9F%A5%E8%AF%A2%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E4%BA%86vsftpd%E6%9C%8D%E5%8A%A1">6.1.1 查询是否安装了vsftpd服务</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t286.1.2%20%E5%AE%89%E8%A3%85vsftpd">6.1.2 安装vsftpd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t296.1.3%20%E4%BF%AE%E6%94%B9vsftpd%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">6.1.3 修改vsftpd配置文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t306.1.4%20%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AEhome%E6%96%87%E4%BB%B6%E5%A4%B9">6.1.4 设置用户可以访问home文件夹</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t316.1.5%20%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1">6.1.5 启动服务</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t326.1.6%20%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7">6.1.6 创建用户</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t336.1.7%20CMD%E4%B8%AD%E7%9A%84FTP%E5%91%BD%E4%BB%A4">6.1.7 CMD中的FTP命令</a></li></ul></li></ul></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. 配置IP地址">1. 配置IP地址 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t01.%20%E9%85%8D%E7%BD%AEIP%E5%9C%B0%E5%9D%80"> # </a></h2>
+<h3 id="t11.1 ifconifg临时配置IP">1.1 ifconifg临时配置IP <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t11.1%20ifconifg%E4%B8%B4%E6%97%B6%E9%85%8D%E7%BD%AEIP"> # </a></h3>
+<ul>
+<li>查看与配置网络状态</li>
+<li>临时设置eth0网卡的IP地址与子网掩码</li>
+</ul>
+<pre><code class="lang-js">[root@localhost cron.daily]# ifconfig
+eth0      Link encap:Ethernet  HWaddr 00:0C:29:E5:3C:11  
+          inet addr:172.18.0.252  Bcast:172.18.3.255  Mask:255.255.252.0
+</code></pre>
+<pre><code class="lang-js">ifconfig eth0 <span class="hljs-number">172.18</span><span class="hljs-number">.0</span><span class="hljs-number">.254</span> netmask <span class="hljs-number">255.355</span><span class="hljs-number">.255</span><span class="hljs-number">.0</span>
+
+</code></pre>
+<h3 id="t21.2 setup永久配置IP">1.2 setup永久配置IP <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t21.2%20setup%E6%B0%B8%E4%B9%85%E9%85%8D%E7%BD%AEIP"> # </a></h3>
+<pre><code class="lang-js">setup 
+service network restart
+</code></pre>
+<h2 id="t32. 网络配置文件">2. 网络配置文件 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t32.%20%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"> # </a></h2>
+<h3 id="t42.1 网卡配置">2.1 网卡配置 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t42.1%20%E7%BD%91%E5%8D%A1%E9%85%8D%E7%BD%AE"> # </a></h3>
+<p>/etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<pre><code class="lang-js">vi /etc/sysconfig/network-scripts/ifcfg-eth0
+
+DEVICE=eth0 网卡设备号
+BOOTPROTO=none  是否自动获取IP地址(none、<span class="hljs-keyword">static</span>、dhcp)
+HWADDR=<span class="hljs-number">00</span>:<span class="hljs-number">0</span>c:<span class="hljs-number">29</span>:e5:<span class="hljs-number">3</span>c:<span class="hljs-number">11</span> MAC地址
+ONBOOT=yes 是否随网络服务启动，eth0生效
+TYPE=Ethernet 类型为以太网
+ NM_CONTROLLED=yes 是否可以由Network Manager图形管理工具托管
+ UUID=<span class="hljs-string">"825f66ab-edd7-4076-a256-7a68fb94bf43"</span> 唯一识别码
+ USERCTL=no 不允许非root用户控制此网卡
+ IPV6INIT=no 不启用IPV6
+ IPADDR=<span class="hljs-number">172.18</span><span class="hljs-number">.0</span><span class="hljs-number">.240</span> IP地址
+ NETMASK=<span class="hljs-number">255.255</span><span class="hljs-number">.252</span><span class="hljs-number">.0</span> 子网掩码
+ DNS2=<span class="hljs-number">8.8</span><span class="hljs-number">.8</span><span class="hljs-number">.8</span> DNS服务器
+ GATEWAY=<span class="hljs-number">172.18</span><span class="hljs-number">.0</span><span class="hljs-number">.1</span> 网关
+ DNS1=<span class="hljs-number">8.8</span><span class="hljs-number">.8</span><span class="hljs-number">.8</span> DNS1服务器
+</code></pre>
+<ul>
+<li>复制的虚拟机能共存于同一个局域网？Mac地址是否会相同？IP地址会相同？<ul>
+<li>能共存于同一局域网，Mac地址不同，IP地址不同。</li>
+<li>对于复制的虚拟机，在开机时，VMware自动为其分配了不同的Mac地址以及IP地址。</li>
+</ul>
+</li>
+<li>为什么拷贝的CentOS系统网络配置文件中的UUID与原系统相同？<ul>
+<li>UUID（Universally Unique Identifier）是系统层面的全局唯一标识符号，Mac地址以及IP地址是网络层面的标识号；</li>
+<li>两台不同的Linux系统拥有相同的UUID并不影响系统的使用以及系统之间的通信</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js">可输入如下命令获得新UUID号
+# uuidgen ens33
+</code></pre>
+<h3 id="t52.2 主机名">2.2 主机名 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t52.2%20%E4%B8%BB%E6%9C%BA%E5%90%8D"> # </a></h3>
+<p>/etc/sysconfig/network</p>
+<pre><code class="lang-js">NETWORKING=yes 网络功能是否起作用
+HOSTNAME=localhost.localdomain 主机名
+
+hostname zhufengjiagou
+service network restart
+</code></pre>
+<h3 id="t62.3 DNS配置文件">2.3 DNS配置文件 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t62.3%20DNS%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"> # </a></h3>
+<pre><code class="lang-js"># cat /etc/resolv.conf
+nameserver 8.8.8.8  DNS服务器
+search localhost
+nameserver 8.8.8.8
+</code></pre>
+<h2 id="t73. 查看网络环境">3. 查看网络环境 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t73.%20%E6%9F%A5%E7%9C%8B%E7%BD%91%E7%BB%9C%E7%8E%AF%E5%A2%83"> # </a></h2>
+<h3 id="t83.1 ifconifg">3.1 ifconifg <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t83.1%20ifconifg"> # </a></h3>
+<ul>
+<li>查看与配置网络状态命令</li>
+<li>ifconifg看不到网关和DNS <code>ipconfig /all</code></li>
+</ul>
+<pre><code class="lang-js">   物理地址. . . . . . . . . . . . . : <span class="hljs-number">14</span><span class="hljs-number">-4</span>F<span class="hljs-number">-8</span>A<span class="hljs-number">-98</span>-F2-EC
+   IPv4 地址 . . . . . . . . . . . . : <span class="hljs-number">192.171</span><span class="hljs-number">.207</span><span class="hljs-number">.104</span>(首选)
+   子网掩码  . . . . . . . . . . . . : <span class="hljs-number">255.255</span><span class="hljs-number">.255</span><span class="hljs-number">.0</span>
+   默认网关. . . . . . . . . . . . . : <span class="hljs-number">192.171</span><span class="hljs-number">.207</span><span class="hljs-number">.1</span>
+   DHCP 服务器 . . . . . . . . . . . : <span class="hljs-number">192.171</span><span class="hljs-number">.207</span><span class="hljs-number">.1</span>
+   DNS 服务器  . . . . . . . . . . . : <span class="hljs-number">192.171</span><span class="hljs-number">.207</span><span class="hljs-number">.1</span>
+</code></pre>
+<h3 id="t93.2 关闭和启动网卡">3.2 关闭和启动网卡 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t93.2%20%E5%85%B3%E9%97%AD%E5%92%8C%E5%90%AF%E5%8A%A8%E7%BD%91%E5%8D%A1"> # </a></h3>
+<ul>
+<li>禁用该网卡设备  <code>ifdown 网卡设备名</code></li>
+<li>启用该网卡设备 <code>ifup 网卡设备名</code></li>
+</ul>
+<h3 id="t103.3 查询网络状态">3.3 查询网络状态 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t103.3%20%E6%9F%A5%E8%AF%A2%E7%BD%91%E7%BB%9C%E7%8A%B6%E6%80%81"> # </a></h3>
+<ul>
+<li>netstat 选项</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">选项</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-t</td>
+<td style="text-align:left">列出TCP协议端口</td>
+</tr>
+<tr>
+<td style="text-align:left">-u</td>
+<td style="text-align:left">列出UDP协议端口</td>
+</tr>
+<tr>
+<td style="text-align:left">-n</td>
+<td style="text-align:left">不使用域名与服务名，而使用IP地址和端口号</td>
+</tr>
+<tr>
+<td style="text-align:left">-l</td>
+<td style="text-align:left">仅列出在监听状态网络服务</td>
+</tr>
+<tr>
+<td style="text-align:left">-a</td>
+<td style="text-align:left">列出所有的网络连接</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js">netstat -tlun
+netstat -an | more
+netstat -unt | grep  ESTABLISHED
+</code></pre>
+<h3 id="t113.4 netstat -rn">3.4 netstat -rn <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t113.4%20netstat%20-rn"> # </a></h3>
+<ul>
+<li>-r: 列出路由列表，功能和<code>route</code>命令一致</li>
+</ul>
+<pre><code class="lang-js"># netstat -rn
+Kernel IP routing table
+Destination     Gateway         Genmask         Flags   MSS Window  irtt Iface
+192.171.207.0   0.0.0.0         255.255.255.0   U         0 0          0 eth0
+169.254.0.0     0.0.0.0         255.255.0.0     U         0 0          0 eth0
+0.0.0.0         192.171.207.1   0.0.0.0         UG        0 0          0 eth0
+
+# route -n
+给路由添加默认网关地址 192.171.207.1
+route add default gw 192.171.207.2
+route del default gw 192.171.207.2
+</code></pre>
+<h3 id="t123.5 域名解析命令">3.5 域名解析命令 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t123.5%20%E5%9F%9F%E5%90%8D%E8%A7%A3%E6%9E%90%E5%91%BD%E4%BB%A4"> # </a></h3>
+<ul>
+<li>nslookup [主机名或IP]</li>
+<li>进行域名与IP地址解析</li>
+<li>查看本机的DNS服务器</li>
+</ul>
+<pre><code class="lang-js"># nslookup www.baidu.com
+Server:        192.171.207.1
+Address:    192.171.207.1#53
+
+Name:    www.baidu.com
+Address: 61.135.169.125
+</code></pre>
+<p>查看当前的DNS服务器</p>
+<pre><code class="lang-js">[root@192-171-207-101-static ~]# nslookup
+&gt; server
+Default server: 192.171.207.1
+Address: 192.171.207.1#53
+</code></pre>
+<h2 id="t134. 网络测试命令">4. 网络测试命令 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t134.%20%E7%BD%91%E7%BB%9C%E6%B5%8B%E8%AF%95%E5%91%BD%E4%BB%A4"> # </a></h2>
+<h3 id="t144.1 ping">4.1 ping <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t144.1%20ping"> # </a></h3>
+<ul>
+<li>ping [选项] ip或域名</li>
+<li>测试指定IP或域名的网络状况</li>
+<li>选项<ul>
+<li>-c  次数指定ping包的次数</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js">ping www.baidu.com -c <span class="hljs-number">3</span>
+</code></pre>
+<h3 id="t154.2 traceroute [选项] IP或域名">4.2 traceroute [选项] IP或域名 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t154.2%20traceroute%20[%E9%80%89%E9%A1%B9]%20IP%E6%88%96%E5%9F%9F%E5%90%8D"> # </a></h3>
+<ul>
+<li>路由跟踪命令</li>
+<li>选项<ul>
+<li>-n 使用IP，不使用域名，速度更快</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js">root@192-171-207-101-static ~]# traceroute www.baidu.com
+traceroute to www.baidu.com (61.135.169.125), 30 hops max, 60 byte packets
+ 1  192-171-207-1-static.bbn.ken-tennwireless.com (192.171.207.1)  0.434 ms  0.323 ms  0.359 ms
+ 2  localhost (192.168.0.1)  0.948 ms  0.922 ms  1.023 ms
+ 3  111.196.181.1 (111.196.181.1)  6.849 ms  6.829 ms  9.585 ms
+ 4  123.126.25.209 (123.126.25.209)  12.284 ms  12.405 ms  12.471 ms
+ 5  125.33.185.165 (125.33.185.165)  11.276 ms  11.253 ms  11.384 ms
+ 6  bt-227-030.bta.net.cn (202.106.227.30)  11.580 ms  15.564 ms  15.909 ms
+ 7  123.125.248.106 (123.125.248.106)  57.920 ms * 123.125.248.110 (123.125.248.110)  13.546 ms
+</code></pre>
+<h3 id="t164.3 wget">4.3 wget <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t164.3%20wget"> # </a></h3>
+<ul>
+<li>下载命令</li>
+</ul>
+<pre><code class="lang-js">wget http:<span class="hljs-comment">//www.baidu.com</span>
+</code></pre>
+<h3 id="t174.4 tcpdump命令">4.4 tcpdump命令 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t174.4%20tcpdump%E5%91%BD%E4%BB%A4"> # </a></h3>
+<ul>
+<li><p><code>tcpdump -i eth0 -nnX port 21</code></p>
+</li>
+<li><p>选项</p>
+<ul>
+<li>-i 指定网卡接口</li>
+<li>-nn 将数据包中的域名与服务转为IP和端口</li>
+<li>-X 以十六进制和ASCII码显示数据包内容</li>
+<li>port 指定监听的端口</li>
+</ul>
+</li>
+</ul>
+<h2 id="t185.远程登录">5.远程登录 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t185.%E8%BF%9C%E7%A8%8B%E7%99%BB%E5%BD%95"> # </a></h2>
+<h3 id="t195.1 SSH协议原理">5.1 SSH协议原理 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t195.1%20SSH%E5%8D%8F%E8%AE%AE%E5%8E%9F%E7%90%86"> # </a></h3>
+<h4 id="t205.1.1 对称加密算法">5.1.1 对称加密算法 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t205.1.1%20%E5%AF%B9%E7%A7%B0%E5%8A%A0%E5%AF%86%E7%AE%97%E6%B3%95"> # </a></h4>
+<ul>
+<li>采用单密钥系统的加密方法，同一个密钥可以同时用作信息的加密和解密，这种加密被称为对称加密。</li>
+<li>非对称加密算法 需要公钥和私钥</li>
+</ul>
+<h4 id="t215.1.2 SSH 安全外壳协议">5.1.2 SSH 安全外壳协议 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t215.1.2%20SSH%20%E5%AE%89%E5%85%A8%E5%A4%96%E5%A3%B3%E5%8D%8F%E8%AE%AE"> # </a></h4>
+<ul>
+<li>ssh 用户名@ip</li>
+<li>远程管理指定Linux服务器</li>
+</ul>
+<pre><code class="lang-js">[root@192-171-207-101-static ~]# ssh root@192.171.207.101
+The authenticity of host '192.171.207.101 (192.171.207.101)' can't be established.
+RSA key fingerprint is a4:97:52:eb:0a:0b:35:a0:98:7d:4f:c8:3b:dc:f9:0a.
+Are you sure you want to continue connecting (yes/no)? yes
+Warning: Permanently added '192.171.207.101' (RSA) to the list of known hosts.
+</code></pre>
+<p>/root/.ssh/known_hosts</p>
+<pre><code class="lang-js"><span class="hljs-number">192.171</span><span class="hljs-number">.207</span><span class="hljs-number">.101</span> ssh-rsa AAAAB3NzaC1yc2EAAAABIwAAAQEAomDpQxV3RmjJyKkf7elMTInbdm+<span class="hljs-regexp">/ZLnFpfbAryi5PSb2ewfYbwRaBcVl1lBta6yjFuz0J12p9qy90DBhadvoBsfwTB8lQhmlT8B2eCcHr0bfLa1IdKMcjImxRJiD4v0emCGFquHnHIr41vs8uxQ2Ek28mH/</span><span class="hljs-number">1</span>JC0e/+VPEvylBB4+Kk2789ACdAlmhGTtlu7zgeUoLaWQSl1/<span class="hljs-number">6</span>g7zfSLIz+<span class="hljs-regexp">/U8qGiRSPaGT+M40oqx/</span>PZdoGOMTRhHgNIR5qgvcNaJXhlZGYT42fLFSmtzUHJ030hP7JGZ99oXS20/mnc8qvonC9itp0+K/nCj5g6uR/gPFb5B0NmTZCM2/gcLkHumw==
+</code></pre>
+<h4 id="t225.1.3 scp">5.1.3 scp <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t225.1.3%20scp"> # </a></h4>
+<ul>
+<li>scp是 secure copy的缩写, scp是linux系统下基于ssh登陆进行安全的远程文件拷贝命令</li>
+<li>linux的scp命令可以在linux服务器之间复制文件和目录</li>
+<li>命令格式 scp [参数] [原路径] [目标路径]</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-r</td>
+<td style="text-align:left">递归复制整个目录</td>
+</tr>
+<tr>
+<td style="text-align:left">-v</td>
+<td style="text-align:left">详细方式显示输出</td>
+</tr>
+</tbody>
+</table>
+<h5 id="t235.1.3.1 从本地服务器复制到远程服务器">5.1.3.1 从本地服务器复制到远程服务器 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t235.1.3.1%20%E4%BB%8E%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A4%8D%E5%88%B6%E5%88%B0%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h5>
+<pre><code class="lang-js">scp local_file remote_username@remote_ip:remote_folder  
+scp -r local_folder remote_username@remote_ip:remote_folder  
+</code></pre>
+<h5 id="t245.1.3.2 从远程服务器复制到本地服务器">5.1.3.2 从远程服务器复制到本地服务器 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t245.1.3.2%20%E4%BB%8E%E8%BF%9C%E7%A8%8B%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%A4%8D%E5%88%B6%E5%88%B0%E6%9C%AC%E5%9C%B0%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h5>
+<pre><code class="lang-js">scp  remote_username@remote_ip:remote_folder  local_file
+scp -r  remote_username@remote_ip:remote_folder local_folder
+</code></pre>
+<h2 id="t256. 附录">6. 附录 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t256.%20%E9%99%84%E5%BD%95"> # </a></h2>
+<h3 id="t266.1 搭建FTP服务器">6.1 搭建FTP服务器 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t266.1%20%E6%90%AD%E5%BB%BAFTP%E6%9C%8D%E5%8A%A1%E5%99%A8"> # </a></h3>
+<h4 id="t276.1.1 查询是否安装了vsftpd服务">6.1.1 查询是否安装了vsftpd服务 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t276.1.1%20%E6%9F%A5%E8%AF%A2%E6%98%AF%E5%90%A6%E5%AE%89%E8%A3%85%E4%BA%86vsftpd%E6%9C%8D%E5%8A%A1"> # </a></h4>
+<pre><code class="lang-js">rpm -q vsftpd
+</code></pre>
+<h4 id="t286.1.2 安装vsftpd">6.1.2 安装vsftpd <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t286.1.2%20%E5%AE%89%E8%A3%85vsftpd"> # </a></h4>
+<pre><code class="lang-js">yum install -y vsftpd 
+</code></pre>
+<h4 id="t296.1.3 修改vsftpd配置文件">6.1.3 修改vsftpd配置文件 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t296.1.3%20%E4%BF%AE%E6%94%B9vsftpd%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"> # </a></h4>
+<ul>
+<li><code>vi /etc/vsftpd/vsftpd.conf</code> 修改vsftpd配置文件</li>
+</ul>
+<pre><code class="lang-js">anonymous_enable=NO  是否允许匿名用户登录
+local_enable=YES 允许本地用户登录
+Write_enable=YES     是否可以写入
+chroot_local_user=YES #是否将所有用户限制在主目录,YES为启用 NO禁用
+chroot_list_enable=YES #是否启动限制用户的名单
+chroot_list_file=/etc/vsftpd/chroot_list  #是否限制在主目录下的用户名单
+</code></pre>
+<h4 id="t306.1.4 设置用户可以访问home文件夹">6.1.4 设置用户可以访问home文件夹 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t306.1.4%20%E8%AE%BE%E7%BD%AE%E7%94%A8%E6%88%B7%E5%8F%AF%E4%BB%A5%E8%AE%BF%E9%97%AEhome%E6%96%87%E4%BB%B6%E5%A4%B9"> # </a></h4>
+<pre><code class="lang-js">getsebool -a|grep ftp  #查看selinux配置
+setsebool -P ftp_home_dir 1 #更改设置(-P 是开机自动使用，无需每次开机都输入该命令)
+service vsftpd restart 重启vsftpd
+</code></pre>
+<pre><code class="lang-js">vi /etc/selinux/config
+SELINUX=disabled
+</code></pre>
+<h4 id="t316.1.5 启动服务">6.1.5 启动服务 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t316.1.5%20%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1"> # </a></h4>
+<pre><code class="lang-js">chmod -R <span class="hljs-number">777</span> /home/zhangsan2
+chkconfig vsftpd on
+service iptables stop
+service vsftpd restart
+</code></pre>
+<h4 id="t326.1.6 创建用户">6.1.6 创建用户 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t326.1.6%20%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"> # </a></h4>
+<pre><code class="lang-js">adduser lisi 
+passwd zhaoliu 设置密码 zhaoliu
+</code></pre>
+<h4 id="t336.1.7 CMD中的FTP命令">6.1.7 CMD中的FTP命令 <a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html#t336.1.7%20CMD%E4%B8%AD%E7%9A%84FTP%E5%91%BD%E4%BB%A4"> # </a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">ftp 192.168.1.3</td>
+<td style="text-align:left">登陆ftp</td>
+</tr>
+<tr>
+<td style="text-align:left">dir</td>
+<td style="text-align:left">显示远程主机目录</td>
+</tr>
+<tr>
+<td style="text-align:left">help[cmd]</td>
+<td style="text-align:left">显示ftp内部命令cmd的帮助信息</td>
+</tr>
+<tr>
+<td style="text-align:left">get remote-file[local-file]</td>
+<td style="text-align:left">将远程主机的文件remote-file传至本地硬盘的local-file(本地文件夹)</td>
+</tr>
+<tr>
+<td style="text-align:left">put local-file[remote-file]</td>
+<td style="text-align:left">将本地文件local-file传送至远程主机</td>
+</tr>
+<tr>
+<td style="text-align:left">quit</td>
+<td style="text-align:left">同bye,退出ftp会话</td>
+</tr>
+</tbody>
+</table>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

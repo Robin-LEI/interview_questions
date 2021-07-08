@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t01.%20%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E8%AE%BE%E8%AE%A1%E6%95%B0%E6%8D%AE%E5%BA%93">1. 为什么需要设计数据库</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t11.1%20%E8%89%AF%E5%A5%BD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1">1.1 良好的数据库设计</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t21.2%20%E7%B3%9F%E7%B3%95%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1">1.2 糟糕的数据库设计</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t32.%20%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%91%A8%E6%9C%9F%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1">2. 软件项目开发周期中的数据库设计</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t43.%E8%AE%BE%E8%AE%A1%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%AD%A5%E9%AA%A4">3.设计数据库的步骤</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t53.1%20%E6%94%B6%E9%9B%86%E4%BF%A1%E6%81%AF">3.1 收集信息</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t63.2%20%E6%A0%87%E7%A4%BA%E5%AE%9E%E4%BD%93(Entity)">3.2 标示实体(Entity)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t73.3%20%E6%A0%87%E7%A4%BA%E5%AE%9E%E4%BD%93%E7%9A%84%E5%B1%9E%E6%80%A7(Attribute)">3.3 标示实体的属性(Attribute)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t83.4%20%E6%A0%87%E7%A4%BA%E5%AE%9E%E4%BD%93%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB(RelationShip)">3.4 标示实体之间的关系(RelationShip)</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t94.%20%E6%95%B0%E6%8D%AE%E5%BA%93ER%E5%9B%BE">4. 数据库ER图</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t104.1%20ER%E5%9B%BE%E7%9A%84%E5%AE%9E%E4%BD%93%EF%BC%88entity%EF%BC%89">4.1 ER图的实体（entity）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t114.2%20ER%E5%9B%BE%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%88attribute%EF%BC%89">4.2 ER图的属性（attribute）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t124.3%20ER%E5%9B%BE%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%88relationship%EF%BC%89">4.3 ER图的关系（relationship）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t134.4%20ER%E5%9B%BE%E4%B8%AD%E5%85%B3%E8%81%94%E5%85%B3%E7%B3%BB">4.4 ER图中关联关系</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t144.4.1%201%E5%AF%B91%20(1:1)">4.4.1 1对1 (1:1)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t154.4.2%201%E5%AF%B9%E5%A4%9A%EF%BC%881:N%EF%BC%89">4.4.2 1对多（1:N）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t164.4.3%20%E5%A4%9A%E5%AF%B9%E5%A4%9A%EF%BC%88M:N%EF%BC%89">4.4.3 多对多（M:N）</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t175.%20%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F">5. 数据库设计三大范式</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t185.1%20%E4%B8%8D%E5%90%88%E7%90%86%E7%9A%84%E8%A1%A8%E8%AE%BE%E8%AE%A1">5.1 不合理的表设计</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t195.2%20%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F">5.2 三大范式</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t205.2.1%20%20%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F%EF%BC%881NF%EF%BC%89">5.2.1  第一范式（1NF）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t215.2.2%20%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F%EF%BC%882NF%EF%BC%89">5.2.2 第二范式（2NF）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t225.2.3%20%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F%EF%BC%883NF%EF%BC%89">5.2.3 第三范式（3NF）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t235.2.4%20%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%8C%BA%E5%88%86%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F">5.2.4 如何更好的区分三大范式</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t245.RBAC">5.RBAC</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t255.1%20%E5%AE%89%E5%85%A8%E5%8E%9F%E5%88%99">5.1 安全原则</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t265.2%20ER%E5%9B%BE">5.2 ER图</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t275.2.1%20%E7%94%A8%E6%88%B7%E8%A1%A8">5.2.1 用户表</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t285.2.2%20%E8%A7%92%E8%89%B2%E8%A1%A8">5.2.2 角色表</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t295.2.3%20%E8%B5%84%E6%BA%90%E8%A1%A8">5.2.3 资源表</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t305.2.4%20%E7%94%A8%E6%88%B7%E8%A7%92%E8%89%B2%E8%A1%A8">5.2.4 用户角色表</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t315.2.5%20%E8%A7%92%E8%89%B2%E8%B5%84%E6%BA%90">5.2.5 角色资源</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t325.3%20%E6%95%B0%E6%8D%AE%E5%BA%93%E8%84%9A%E6%9C%AC">5.3 数据库脚本</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t336.%E4%BA%8B%E5%8A%A1">6.事务</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t346.1%20%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E4%BA%8B%E5%8A%A1">6.1 为什么需要事务</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t356.2%20%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E5%8A%A1">6.2 什么是事务</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t366.3%20%E4%BA%8B%E5%8A%A1%E7%9A%84%E7%89%B9%E6%80%A7">6.3 事务的特性</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t376.4%20%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%BA%8B%E5%8A%A1">6.4 如何创建事务</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t387.%E5%9C%A8node%E4%B8%AD%E4%BD%BF%E7%94%A8mysql">7.在node中使用mysql</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t397.1%20%E4%BD%BF%E7%94%A8mysql">7.1 使用mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t407.2%20%E4%BD%BF%E7%94%A8mysql%E8%BF%9E%E6%8E%A5%E6%B1%A0">7.2 使用mysql连接池</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t417.3%20%E4%BD%BF%E7%94%A8mysql%E4%BA%8B%E5%8A%A1">7.3 使用mysql事务</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t428.%E9%94%81">8.锁</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t438.1%20%E9%94%81%E7%9A%84%E5%88%86%E7%B1%BB">8.1 锁的分类</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t448.2%20%E8%A1%A8%E9%94%81">8.2 表锁</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t458.2.1%20%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE">8.2.1 准备数据</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t468.2.2%20%E5%8A%A0%E8%AF%BB%E9%94%81">8.2.2 加读锁</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t478.2.3%20%E5%8A%A0%E5%86%99%E9%94%81">8.2.3 加写锁</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t488.3%20%E8%A1%8C%E9%94%81">8.3 行锁</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t498.3.1%20%E8%A1%8C%E9%94%81%E6%94%AF%E6%8C%81%E4%BA%8B%E5%8A%A1">8.3.1 行锁支持事务</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t508.3.1.1%20%E5%B9%B6%E5%8F%91%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98">8.3.1.1 并发事务处理带来的问题</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t518.3.1.1.1%20%E6%9B%B4%E6%96%B0%E4%B8%A2%E5%A4%B1%EF%BC%88Lost%20Update%EF%BC%89">8.3.1.1.1 更新丢失（Lost Update）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t528.3.1.1.2%20%E8%84%8F%E8%AF%BB%EF%BC%88Dirty%20Reads%EF%BC%89">8.3.1.1.2 脏读（Dirty Reads）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t538.3.1.1.3%20%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB%EF%BC%88Non-Repeatable%20Reads%EF%BC%89">8.3.1.1.3 不可重复读（Non-Repeatable Reads）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t548.3.1.1.4%20%E5%B9%BB%E8%AF%BB%EF%BC%88Phantom%20Reads%EF%BC%89">8.3.1.1.4 幻读（Phantom Reads）</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t558.3.1.2%20%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E4%BA%94%E7%A7%8D%E7%BA%A7%E5%88%AB">8.3.1.2 事务隔离五种级别</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t568.3.2%20%E6%AD%BB%E9%94%81">8.3.2 死锁</a></li></ul></li></ul></li></ul></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. 为什么需要设计数据库">1. 为什么需要设计数据库 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t01.%20%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E8%AE%BE%E8%AE%A1%E6%95%B0%E6%8D%AE%E5%BA%93"> # </a></h2>
+<h3 id="t11.1 良好的数据库设计">1.1 良好的数据库设计 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t11.1%20%E8%89%AF%E5%A5%BD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"> # </a></h3>
+<ul>
+<li>节省数据的存储空间</li>
+<li>能够保证数据的完整性</li>
+<li>方便进行数据库系统的开发</li>
+</ul>
+<h3 id="t21.2 糟糕的数据库设计">1.2 糟糕的数据库设计 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t21.2%20%E7%B3%9F%E7%B3%95%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"> # </a></h3>
+<ul>
+<li>数据冗余，存储空间浪费</li>
+<li>内存空间浪费</li>
+<li>数据和更新插入异常</li>
+</ul>
+<h2 id="t32. 软件项目开发周期中的数据库设计">2. 软件项目开发周期中的数据库设计 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t32.%20%E8%BD%AF%E4%BB%B6%E9%A1%B9%E7%9B%AE%E5%BC%80%E5%8F%91%E5%91%A8%E6%9C%9F%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1"> # </a></h2>
+<ul>
+<li>需求分析阶段: 分析客户的业务和数据处理需求</li>
+<li>概要设计阶段： 设计数据库的E-R模型图，确认需求的正确和完整性</li>
+<li>详细设计阶段： 应用三大范式审核数据库</li>
+<li>代码编写阶段： 物理实现数据库，编码实现应用</li>
+<li>软件测试阶段</li>
+<li>安装部署</li>
+</ul>
+<blockquote>
+<p>现实世界-&gt;信息世界-&gt;数据库模型图-&gt;数据库</p>
+</blockquote>
+<h2 id="t43.设计数据库的步骤">3.设计数据库的步骤 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t43.%E8%AE%BE%E8%AE%A1%E6%95%B0%E6%8D%AE%E5%BA%93%E7%9A%84%E6%AD%A5%E9%AA%A4"> # </a></h2>
+<h3 id="t53.1 收集信息">3.1 收集信息 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t53.1%20%E6%94%B6%E9%9B%86%E4%BF%A1%E6%81%AF"> # </a></h3>
+<p>与相关人员进行交流、访谈充分了解用户需求，理解数据库需要完成的任务</p>
+<h3 id="t63.2 标示实体(Entity)">3.2 标示实体(Entity) <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t63.2%20%E6%A0%87%E7%A4%BA%E5%AE%9E%E4%BD%93(Entity)"> # </a></h3>
+<p>标识数据库要管理的关键对象或者实体，实体一般是名词</p>
+<h3 id="t73.3 标示实体的属性(Attribute)">3.3 标示实体的属性(Attribute) <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t73.3%20%E6%A0%87%E7%A4%BA%E5%AE%9E%E4%BD%93%E7%9A%84%E5%B1%9E%E6%80%A7(Attribute)"> # </a></h3>
+<h3 id="t83.4 标示实体之间的关系(RelationShip)">3.4 标示实体之间的关系(RelationShip) <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t83.4%20%E6%A0%87%E7%A4%BA%E5%AE%9E%E4%BD%93%E4%B9%8B%E9%97%B4%E7%9A%84%E5%85%B3%E7%B3%BB(RelationShip)"> # </a></h3>
+<h2 id="t94. 数据库ER图">4. 数据库ER图 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t94.%20%E6%95%B0%E6%8D%AE%E5%BA%93ER%E5%9B%BE"> # </a></h2>
+<p>ER图：实体关系图，简记E-R图，是指以实体、关系、属性三个基本概念概括数据的基本结构，从而描述静态数据结构的概念模式</p>
+<p><img src="./珠峰架构师成长计划_files/er.png" alt="er"></p>
+<h3 id="t104.1 ER图的实体（entity）">4.1 ER图的实体（entity） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t104.1%20ER%E5%9B%BE%E7%9A%84%E5%AE%9E%E4%BD%93%EF%BC%88entity%EF%BC%89"> # </a></h3>
+<ul>
+<li>ER图的实体（entity）即数据模型中的数据对象，例如人、学生、音乐都可以作为一个数据对象，用长方体来表示</li>
+</ul>
+<h3 id="t114.2 ER图的属性（attribute）">4.2 ER图的属性（attribute） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t114.2%20ER%E5%9B%BE%E7%9A%84%E5%B1%9E%E6%80%A7%EF%BC%88attribute%EF%BC%89"> # </a></h3>
+<ul>
+<li>ER图的属性（attribute）即数据对象所具有的属性，例如学生具有姓名、学号、年级等属性，用椭圆形表示</li>
+<li>属性分为唯一属性（ unique attribute）和非唯一属性</li>
+<li>唯一属性指的是唯一可用来标识该实体实例或者成员的属性，用下划线表示，一般来讲实体都至少有一个唯一属性。</li>
+</ul>
+<h3 id="t124.3 ER图的关系（relationship）">4.3 ER图的关系（relationship） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t124.3%20ER%E5%9B%BE%E7%9A%84%E5%85%B3%E7%B3%BB%EF%BC%88relationship%EF%BC%89"> # </a></h3>
+<ul>
+<li>ER图的关系（relationship）用来表现数据对象与数据对象之间的联系</li>
+<li>例如学生的实体和成绩表的实体之间有一定的联系，每个学生都有自己的成绩表，这就是一种关系，关系用菱形来表示。</li>
+</ul>
+<h3 id="t134.4 ER图中关联关系">4.4 ER图中关联关系 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t134.4%20ER%E5%9B%BE%E4%B8%AD%E5%85%B3%E8%81%94%E5%85%B3%E7%B3%BB"> # </a></h3>
+<h4 id="t144.4.1 1对1 (1:1)">4.4.1 1对1 (1:1) <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t144.4.1%201%E5%AF%B91%20(1:1)"> # </a></h4>
+<p>1对1关系是指对于实体集A与实体集B，A中的每一个实体至多与B中一个实体有关系；反之，在实体集B中的每个实体至多与实体集A中一个实体有关系。</p>
+<p><img src="./珠峰架构师成长计划_files/onetoone.png" alt="er"></p>
+<h4 id="t154.4.2 1对多（1:N）">4.4.2 1对多（1:N） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t154.4.2%201%E5%AF%B9%E5%A4%9A%EF%BC%881:N%EF%BC%89"> # </a></h4>
+<p>1对多关系是指实体集A与实体集B中至少有N(N&gt;0)个实体有关系；并且实体集B中每一个实体至多与实体集A中一个实体有关系。</p>
+<p><img src="./珠峰架构师成长计划_files/onetomany.png" alt="er"></p>
+<h4 id="t164.4.3 多对多（M:N）">4.4.3 多对多（M:N） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t164.4.3%20%E5%A4%9A%E5%AF%B9%E5%A4%9A%EF%BC%88M:N%EF%BC%89"> # </a></h4>
+<p>多对多关系是指实体集A中的每一个实体与实体集B中至少有M(M&gt;0)个实体有关系，并且实体集B中的每一个实体与实体集A中的至少N（N&gt;0）个实体有关系。</p>
+<p><img src="./珠峰架构师成长计划_files/manytomany.png" alt="er"></p>
+<h2 id="t175. 数据库设计三大范式">5. 数据库设计三大范式 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t175.%20%E6%95%B0%E6%8D%AE%E5%BA%93%E8%AE%BE%E8%AE%A1%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F"> # </a></h2>
+<h3 id="t185.1 不合理的表设计">5.1 不合理的表设计 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t185.1%20%E4%B8%8D%E5%90%88%E7%90%86%E7%9A%84%E8%A1%A8%E8%AE%BE%E8%AE%A1"> # </a></h3>
+<ul>
+<li>信息重复</li>
+<li>更新异常</li>
+<li>插入异常</li>
+<li>删除异常</li>
+</ul>
+<h3 id="t195.2 三大范式">5.2 三大范式 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t195.2%20%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F"> # </a></h3>
+<h4 id="t205.2.1  第一范式（1NF）">5.2.1  第一范式（1NF） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t205.2.1%20%20%E7%AC%AC%E4%B8%80%E8%8C%83%E5%BC%8F%EF%BC%881NF%EF%BC%89"> # </a></h4>
+<ul>
+<li>数据表中的每一列（每个字段）必须是不可拆分的最小单元，也就是确保每一列的原子性；</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/firstpattern.png" alt="firstpattern"></p>
+<h4 id="t215.2.2 第二范式（2NF）">5.2.2 第二范式（2NF） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t215.2.2%20%E7%AC%AC%E4%BA%8C%E8%8C%83%E5%BC%8F%EF%BC%882NF%EF%BC%89"> # </a></h4>
+<ul>
+<li>满足1NF后，要求表中的所有列，都必须依赖于主键，而不能有任何一列与主键没有关系，也就是说一个表只描述一件事情</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/2th1.jpg" alt="2th1"></p>
+<p><img src="./珠峰架构师成长计划_files/2th2.jpg" alt="2th2"></p>
+<p><img src="./珠峰架构师成长计划_files/2th3.jpg" alt="2th3"></p>
+<blockquote>
+<p>一个人同时订几个房间，就会出来一个订单号多条数据，这样子联系人都是重复的，就会造成数据冗余</p>
+</blockquote>
+<h4 id="t225.2.3 第三范式（3NF）">5.2.3 第三范式（3NF） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t225.2.3%20%E7%AC%AC%E4%B8%89%E8%8C%83%E5%BC%8F%EF%BC%883NF%EF%BC%89"> # </a></h4>
+<ul>
+<li>必须先满足第二范式（2NF），要求：表中的每一列只与主键直接相关而不是间接相关，(表中的每一列只能依赖于主键)</li>
+<li>数据不能存在传递关系,即每个属性都跟主键有直接关系而不是间接关系</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/thirdpattern.png" alt="thirdpattern"></p>
+<h4 id="t235.2.4 如何更好的区分三大范式">5.2.4 如何更好的区分三大范式 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t235.2.4%20%E5%A6%82%E4%BD%95%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%8C%BA%E5%88%86%E4%B8%89%E5%A4%A7%E8%8C%83%E5%BC%8F"> # </a></h4>
+<ul>
+<li>第一范式和第二范式的区别在于有没有分出两张表,第二范式是说一张表中包含了所种不同的实体属性，那么要必须分成多张表</li>
+<li>第三范式是要求已经分成了多张表，那么一张表中只能有另一张表中的id（主键），而不能有其他的任何信息（其他的信息一律用外键在另一表的主键看查询）。</li>
+</ul>
+<h2 id="t245.RBAC">5.RBAC <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t245.RBAC"> # </a></h2>
+<ul>
+<li>基于角色的权限访问控制（Role-Based Access Control） </li>
+<li>RBAC（Role-Based Access Control，基于角色的访问控制），就是用户通过角色与权限进行关联</li>
+<li>简单地说，一个用户拥有若干角色，每一个角色拥有若干权限。这样，就构造成“用户-角色-权限-资源”的授权模型</li>
+<li>在这种模型中，用户与角色之间，角色与权限之间，权限与资源之间一般是多对多的关系。</li>
+<li>在RBAC中最重要的概念包括：用户(User)，角色(Role)，权限(Permission)，资源(Resource) <h3 id="t255.1 安全原则">5.1 安全原则 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t255.1%20%E5%AE%89%E5%85%A8%E5%8E%9F%E5%88%99"> # </a></h3>
+</li>
+<li>最小权限原则之所以被RBAC所支持，是因为RBAC可以将其角色配置成其完成任务所需要的最小的权限集</li>
+<li>责任分离原则可以通过调用相互独立互斥的角色来共同完成敏感的任务而体现，比如要求一个计帐员和财务管理员共参与同一过帐。</li>
+<li>数据抽象可以通过权限的抽象来体现，如财务操作用借款、存款等抽象权限，而不用操作系统提供的典型的读、写、执行权限</li>
+</ul>
+<h3 id="t265.2 ER图">5.2 ER图 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t265.2%20ER%E5%9B%BE"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/cms-er.png" alt="er"></p>
+<h3 id="t275.2.1 用户表">5.2.1 用户表 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t275.2.1%20%E7%94%A8%E6%88%B7%E8%A1%A8"> # </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">字段名</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">ID</td>
+<td style="text-align:left">int(11)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">username</td>
+<td style="text-align:left">用户名</td>
+<td style="text-align:left">varchar(255)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">password</td>
+<td style="text-align:left">密码</td>
+<td style="text-align:left">varchar(255)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">email</td>
+<td style="text-align:left">邮箱</td>
+<td style="text-align:left">varchar(255)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">phone</td>
+<td style="text-align:left">手机号</td>
+<td style="text-align:left">varchar(255)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">gender</td>
+<td style="text-align:left">性别</td>
+<td style="text-align:left">tinyint</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">birthday</td>
+<td style="text-align:left">生日</td>
+<td style="text-align:left">datetime</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">addresss</td>
+<td style="text-align:left">地址</td>
+<td style="text-align:left">varchar(255)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">create_time</td>
+<td style="text-align:left">创建时间</td>
+<td style="text-align:left">datetime</td>
+<td style="text-align:left">CURRENT_TIMESTAMP</td>
+</tr>
+<tr>
+<td style="text-align:left">last_login</td>
+<td style="text-align:left">上次登录时间</td>
+<td style="text-align:left">datetime</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">状态</td>
+<td style="text-align:left">tinyint</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t285.2.2 角色表">5.2.2 角色表 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t285.2.2%20%E8%A7%92%E8%89%B2%E8%A1%A8"> # </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">字段名</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">ID</td>
+<td style="text-align:left">int(11)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">名称</td>
+<td style="text-align:left">varchar(255)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">create_time</td>
+<td style="text-align:left">创建时间</td>
+<td style="text-align:left">datetime</td>
+<td style="text-align:left">CURRENT_TIMESTAMP</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">状态</td>
+<td style="text-align:left">tinyint</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t295.2.3 资源表">5.2.3 资源表 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t295.2.3%20%E8%B5%84%E6%BA%90%E8%A1%A8"> # </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">字段名</th>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">默认</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">id</td>
+<td style="text-align:left">ID</td>
+<td style="text-align:left">int(11)</td>
+<td style="text-align:left"></td>
+<td></td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">名称</td>
+<td style="text-align:left">varchar(255)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">key</td>
+<td style="text-align:left">路径</td>
+<td style="text-align:left">varchar(255)</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">create_time</td>
+<td style="text-align:left">创建时间</td>
+<td style="text-align:left">datetime</td>
+<td style="text-align:left">CURRENT_TIMESTAMP</td>
+</tr>
+<tr>
+<td style="text-align:left">status</td>
+<td style="text-align:left">状态</td>
+<td style="text-align:left">tinyint</td>
+<td style="text-align:left">1</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t305.2.4 用户角色表">5.2.4 用户角色表 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t305.2.4%20%E7%94%A8%E6%88%B7%E8%A7%92%E8%89%B2%E8%A1%A8"> # </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">字段名</th>
+<th style="text-align:left">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">user_id</td>
+<td style="text-align:left">用户ID</td>
+<td style="text-align:left">int(11)</td>
+</tr>
+<tr>
+<td style="text-align:left">role_id</td>
+<td style="text-align:left">角色ID</td>
+<td style="text-align:left">int(11)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t315.2.5 角色资源">5.2.5 角色资源 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t315.2.5%20%E8%A7%92%E8%89%B2%E8%B5%84%E6%BA%90"> # </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">字段名</th>
+<th style="text-align:left">类型</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">role_id</td>
+<td style="text-align:left">角色ID</td>
+<td style="text-align:left">int(11)</td>
+</tr>
+<tr>
+<td style="text-align:left">resource_id</td>
+<td style="text-align:left">资源ID</td>
+<td style="text-align:left">int(11)</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t325.3 数据库脚本">5.3 数据库脚本 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t325.3%20%E6%95%B0%E6%8D%AE%E5%BA%93%E8%84%9A%E6%9C%AC"> # </a></h3>
+<pre><code class="lang-sql"><span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`categories`</span> <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> <span class="hljs-string">`fk_category_parent_id`</span>;
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`articles`</span> <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> <span class="hljs-string">`fk_article_category_id`</span>;
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`user_role`</span> <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> <span class="hljs-string">`fk_user_role_user_id`</span>;
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`user_role`</span> <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> <span class="hljs-string">`fk_user_role_role_id`</span>;
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`role_resource`</span> <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> <span class="hljs-string">`fk_role_resource_role_id`</span>;
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`role_resource`</span> <span class="hljs-keyword">DROP</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> <span class="hljs-string">`fk_role_resource_resource_id`</span>;
+
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`users`</span>;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`carousels`</span>;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`categories`</span>;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`articles`</span>;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`navigations`</span>;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`links`</span>;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`config`</span>;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`roles`</span>;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`user_role`</span>;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`resources`</span>;
+<span class="hljs-keyword">DROP</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`role_resource`</span>;
+
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`users`</span> (
+<span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`username`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`password`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`last_login`</span> datetime <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,
+<span class="hljs-string">`create_time`</span> datetime <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,
+<span class="hljs-string">`status`</span> <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+<span class="hljs-string">`email`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`phone`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`gender`</span> <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`birthday`</span> datetime <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`address`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>) 
+);
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`carousels`</span> (
+<span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`title`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`url`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`create_time`</span> datetime <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,
+<span class="hljs-string">`status`</span> <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>) 
+);
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`categories`</span> (
+<span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`title`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`description`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`keywords`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`create_time`</span> datetime <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,
+<span class="hljs-string">`status`</span> <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+<span class="hljs-string">`parent_id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-literal">NULL</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>) 
+);
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`articles`</span> (
+<span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`category_id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`title`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`content`</span> <span class="hljs-built_in">text</span> <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`user_id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`keywords`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`create_time`</span> datetime <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,
+<span class="hljs-string">`status`</span> <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+<span class="hljs-string">`pv`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>) 
+);
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`navigations`</span> (
+<span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`title`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`url`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`create_time`</span> datetime <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,
+<span class="hljs-string">`status`</span> <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>) 
+);
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`links`</span> (
+<span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`title`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`logo`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`url`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`create_time`</span> datetime <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,
+<span class="hljs-string">`status`</span> <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>) 
+);
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`config`</span> (
+<span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`name`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`logo`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`url`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`create_time`</span> datetime <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,
+<span class="hljs-string">`status`</span> <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+<span class="hljs-string">`keywords`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`description`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`icp`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`about`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>) 
+);
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`roles`</span> (
+<span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`name`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`create_time`</span> datetime <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,
+<span class="hljs-string">`status`</span> <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>) 
+);
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`user_role`</span> (
+<span class="hljs-string">`user_id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`role_id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`user_id`</span>, <span class="hljs-string">`role_id`</span>) 
+);
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`resources`</span> (
+<span class="hljs-string">`id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`name`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`key`</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span>,
+<span class="hljs-string">`create_time`</span> datetime <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CURRENT_TIMESTAMP</span>,
+<span class="hljs-string">`status`</span> <span class="hljs-built_in">tinyint</span>(<span class="hljs-number">255</span>) <span class="hljs-literal">NULL</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-number">1</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`id`</span>) 
+);
+<span class="hljs-keyword">CREATE</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`role_resource`</span> (
+<span class="hljs-string">`role_id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">11</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span> AUTO_INCREMENT,
+<span class="hljs-string">`resource_id`</span> <span class="hljs-built_in">int</span>(<span class="hljs-number">255</span>) <span class="hljs-keyword">NOT</span> <span class="hljs-literal">NULL</span>,
+PRIMARY <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`role_id`</span>, <span class="hljs-string">`resource_id`</span>) 
+);
+
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`categories`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> <span class="hljs-string">`fk_category_parent_id`</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`parent_id`</span>) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-string">`categories`</span> (<span class="hljs-string">`id`</span>);
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`articles`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> <span class="hljs-string">`fk_article_category_id`</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`category_id`</span>) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-string">`categories`</span> (<span class="hljs-string">`id`</span>);
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`user_role`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> <span class="hljs-string">`fk_user_role_user_id`</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`user_id`</span>) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-string">`users`</span> (<span class="hljs-string">`id`</span>);
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`user_role`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> <span class="hljs-string">`fk_user_role_role_id`</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`role_id`</span>) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-string">`roles`</span> (<span class="hljs-string">`id`</span>);
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`role_resource`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> <span class="hljs-string">`fk_role_resource_role_id`</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`role_id`</span>) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-string">`roles`</span> (<span class="hljs-string">`id`</span>);
+<span class="hljs-keyword">ALTER</span> <span class="hljs-keyword">TABLE</span> <span class="hljs-string">`role_resource`</span> <span class="hljs-keyword">ADD</span> <span class="hljs-keyword">CONSTRAINT</span> <span class="hljs-string">`fk_role_resource_resource_id`</span> <span class="hljs-keyword">FOREIGN</span> <span class="hljs-keyword">KEY</span> (<span class="hljs-string">`resource_id`</span>) <span class="hljs-keyword">REFERENCES</span> <span class="hljs-string">`resources`</span> (<span class="hljs-string">`id`</span>);
+</code></pre>
+<h2 id="t336.事务">6.事务 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t336.%E4%BA%8B%E5%8A%A1"> # </a></h2>
+<h3 id="t346.1 为什么需要事务">6.1 为什么需要事务 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t346.1%20%E4%B8%BA%E4%BB%80%E4%B9%88%E9%9C%80%E8%A6%81%E4%BA%8B%E5%8A%A1"> # </a></h3>
+<ul>
+<li>银行转账问题</li>
+<li>A账户资金减少</li>
+<li>B账户资金增加</li>
+</ul>
+<pre><code class="lang-sql"><span class="hljs-keyword">create</span> <span class="hljs-keyword">database</span> bank;
+<span class="hljs-keyword">use</span> bank;
+<span class="hljs-keyword">create</span> <span class="hljs-keyword">table</span> <span class="hljs-keyword">account</span>
+(
+    <span class="hljs-keyword">name</span> <span class="hljs-built_in">varchar</span>(<span class="hljs-number">64</span>),
+    balance <span class="hljs-built_in">decimal</span>(<span class="hljs-number">10</span>,<span class="hljs-number">2</span>)
+) <span class="hljs-keyword">ENGINE</span>=<span class="hljs-keyword">InnoDB</span> <span class="hljs-keyword">DEFAULT</span> <span class="hljs-keyword">CHARSET</span>=utf8;
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">account</span>(<span class="hljs-keyword">name</span>,balance) <span class="hljs-keyword">values</span>(<span class="hljs-string">'张三'</span>,<span class="hljs-number">100</span>);
+<span class="hljs-keyword">insert</span> <span class="hljs-keyword">into</span> <span class="hljs-keyword">account</span>(<span class="hljs-keyword">name</span>,balance) <span class="hljs-keyword">values</span>(<span class="hljs-string">'李四'</span>,<span class="hljs-number">100</span>);
+
+<span class="hljs-keyword">update</span> <span class="hljs-keyword">account</span> <span class="hljs-keyword">set</span> balance = balance - <span class="hljs-number">10</span> <span class="hljs-keyword">where</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">'张三'</span>;
+<span class="hljs-keyword">update</span> <span class="hljs-keyword">account</span> <span class="hljs-keyword">set</span> balance = balance + <span class="hljs-number">10</span> <span class="hljs-keyword">where</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">'李四'</span>;
+</code></pre>
+<h3 id="t356.2 什么是事务">6.2 什么是事务 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t356.2%20%E4%BB%80%E4%B9%88%E6%98%AF%E4%BA%8B%E5%8A%A1"> # </a></h3>
+<ul>
+<li>事务是作为单个逻辑工作单元执行的一系列操作</li>
+<li>多个操作作为一个整体向系统提交，要么都执行，要么都不执行</li>
+<li>事务是一个不可分割的工作逻辑单元</li>
+</ul>
+<blockquote>
+<p>转账过程就是一个整体，它需要两条UPDATE语句，如果任何一个出错，则整个转账业务取消，两个账户的余额都恢复到原来的数据，确保总余额不变</p>
+</blockquote>
+<h3 id="t366.3 事务的特性">6.3 事务的特性 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t366.3%20%E4%BA%8B%E5%8A%A1%E7%9A%84%E7%89%B9%E6%80%A7"> # </a></h3>
+<ul>
+<li>原子性(Atomicity)  事务是一个完整的操作，事务各个部分是不可分的，要么都执行，要么都不执行</li>
+<li>一致性(Consistency)  当事务完成后，数据必须处理完整的状态</li>
+<li>隔离性(Isolation) 并发事务彼此隔离、独立，它不应该以任何方式依赖于其它事务</li>
+<li>持久性(Durability) 事务完成后，它对数据库的修改被永久保持</li>
+</ul>
+<h3 id="t376.4 如何创建事务">6.4 如何创建事务 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t376.4%20%E5%A6%82%E4%BD%95%E5%88%9B%E5%BB%BA%E4%BA%8B%E5%8A%A1"> # </a></h3>
+<ul>
+<li>开始事务 <code>START TRANSACTION</code> 或者 <code>BEGIN</code></li>
+<li>提交事务 <code>COMMIT</code></li>
+<li>回滚或者说撤销事务 <code>ROLLBACK</code></li>
+</ul>
+<pre><code class="lang-sql"><span class="hljs-keyword">BEGIN</span>;
+<span class="hljs-keyword">update</span> <span class="hljs-keyword">account</span> <span class="hljs-keyword">set</span> balance = balance - <span class="hljs-number">10</span> <span class="hljs-keyword">where</span> <span class="hljs-keyword">name</span> = <span class="hljs-string">'张三'</span>;
+<span class="hljs-keyword">ROLLBACK</span>;
+</code></pre>
+<ul>
+<li>默认情况下，每条单独的SQL语句视为一个事务</li>
+<li>关闭默认提交状态后，可手动开启、关闭事务</li>
+<li>关闭/开启自动提交状态 <code>SET autocommit=0|1</code> 0关闭 1开启</li>
+</ul>
+<blockquote>
+<p>关闭自动提交后，从下一条SQL语句开始开启新的事务，需要使用COMMIT或ROLLBACK结束该事务</p>
+</blockquote>
+<h2 id="t387.在node中使用mysql">7.在node中使用mysql <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t387.%E5%9C%A8node%E4%B8%AD%E4%BD%BF%E7%94%A8mysql"> # </a></h2>
+<ul>
+<li><a href="https://www.npmjs.com/package/mysql">mysql</a></li>
+</ul>
+<pre><code class="lang-js">npm install mysql
+</code></pre>
+<h3 id="t397.1 使用mysql">7.1 使用mysql <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t397.1%20%E4%BD%BF%E7%94%A8mysql"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> mysql      = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mysql'</span>);
+<span class="hljs-keyword">var</span> connection = mysql.createConnection({
+  <span class="hljs-attr">host</span>     : <span class="hljs-string">'localhost'</span>,
+  <span class="hljs-attr">user</span>     : <span class="hljs-string">'me'</span>,
+  <span class="hljs-attr">password</span> : <span class="hljs-string">'secret'</span>,
+  <span class="hljs-attr">database</span> : <span class="hljs-string">'my_db'</span>
+});
+
+connection.connect();
+
+connection.query(<span class="hljs-string">'SELECT 1 + 1 AS solution'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, results, fields</span>) </span>{
+  <span class="hljs-keyword">if</span> (error) <span class="hljs-keyword">throw</span> error;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'The solution is: '</span>, results[<span class="hljs-number">0</span>].solution);
+});
+
+connection.end();
+</code></pre>
+<h3 id="t407.2 使用mysql连接池">7.2 使用mysql连接池 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t407.2%20%E4%BD%BF%E7%94%A8mysql%E8%BF%9E%E6%8E%A5%E6%B1%A0"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">var</span> mysql = <span class="hljs-built_in">require</span>(<span class="hljs-string">'mysql'</span>);
+<span class="hljs-keyword">var</span> pool  = mysql.createPool({
+  <span class="hljs-attr">connectionLimit</span> : <span class="hljs-number">10</span>,
+  <span class="hljs-attr">host</span>            : <span class="hljs-string">'example.org'</span>,
+  <span class="hljs-attr">user</span>            : <span class="hljs-string">'bob'</span>,
+  <span class="hljs-attr">password</span>        : <span class="hljs-string">'secret'</span>,
+  <span class="hljs-attr">database</span>        : <span class="hljs-string">'my_db'</span>
+});
+
+pool.query(<span class="hljs-string">'SELECT 1 + 1 AS solution'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, results, fields</span>) </span>{
+  <span class="hljs-keyword">if</span> (error) <span class="hljs-keyword">throw</span> error;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'The solution is: '</span>, results[<span class="hljs-number">0</span>].solution);
+});
+</code></pre>
+<h3 id="t417.3 使用mysql事务">7.3 使用mysql事务 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t417.3%20%E4%BD%BF%E7%94%A8mysql%E4%BA%8B%E5%8A%A1"> # </a></h3>
+<pre><code class="lang-js">connection.beginTransaction(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+  <span class="hljs-keyword">if</span> (err) { <span class="hljs-keyword">throw</span> err; }
+  connection.query(<span class="hljs-string">'INSERT INTO posts SET title=?'</span>, title, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, results, fields</span>) </span>{
+    <span class="hljs-keyword">if</span> (error) {
+      <span class="hljs-keyword">return</span> connection.rollback(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">throw</span> error;
+      });
+    }
+
+    <span class="hljs-keyword">var</span> log = <span class="hljs-string">'Post '</span> + results.insertId + <span class="hljs-string">' added'</span>;
+
+    connection.query(<span class="hljs-string">'INSERT INTO log SET data=?'</span>, log, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error, results, fields</span>) </span>{
+      <span class="hljs-keyword">if</span> (error) {
+        <span class="hljs-keyword">return</span> connection.rollback(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+          <span class="hljs-keyword">throw</span> error;
+        });
+      }
+      connection.commit(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">err</span>) </span>{
+        <span class="hljs-keyword">if</span> (err) {
+          <span class="hljs-keyword">return</span> connection.rollback(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+            <span class="hljs-keyword">throw</span> err;
+          });
+        }
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'success!'</span>);
+      });
+    });
+  });
+});
+</code></pre>
+<h2 id="t428.锁">8.锁 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t428.%E9%94%81"> # </a></h2>
+<ul>
+<li>锁时计算机协调多个进程或线程并发访问某一资源的机制</li>
+</ul>
+<h3 id="t438.1 锁的分类">8.1 锁的分类 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t438.1%20%E9%94%81%E7%9A%84%E5%88%86%E7%B1%BB"> # </a></h3>
+<ul>
+<li>从对数据库操作的类型分，分为读锁和写锁 <ul>
+<li>读锁（共享锁）：针对同一份数据，多个读操作可以同时进行而不会互相影响 </li>
+<li>写锁（排它锁）：当前写操作没有完成前，它会阻断其他写锁和读锁</li>
+</ul>
+</li>
+<li>从对数据操作的粒度分，分为<ul>
+<li>表锁</li>
+<li>行锁</li>
+</ul>
+</li>
+</ul>
+<h3 id="t448.2 表锁">8.2 表锁 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t448.2%20%E8%A1%A8%E9%94%81"> # </a></h3>
+<ul>
+<li>表锁偏向<code>MyISAM</code>存储引擎，开销小，加锁快，锁定粒度大，发生锁冲突的概率最高，并发度最低</li>
+</ul>
+<h4 id="t458.2.1 准备数据">8.2.1 准备数据 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t458.2.1%20%E5%87%86%E5%A4%87%E6%95%B0%E6%8D%AE"> # </a></h4>
+<pre><code class="lang-js">CREATE TABLE <span class="hljs-string">`users`</span> (
+  <span class="hljs-string">`id`</span> int(<span class="hljs-number">11</span>) NOT NULL AUTO_INCREMENT,
+  <span class="hljs-string">`NAME`</span> varchar(<span class="hljs-number">20</span>) DEFAULT NULL,
+  PRIMARY KEY (<span class="hljs-string">`id`</span>)
+) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+
+INSERT INTO <span class="hljs-string">`users`</span> (<span class="hljs-string">`id`</span>, <span class="hljs-string">`NAME`</span>) VALUES (<span class="hljs-string">'1'</span>, <span class="hljs-string">'a'</span>);
+INSERT INTO <span class="hljs-string">`users`</span> (<span class="hljs-string">`id`</span>, <span class="hljs-string">`NAME`</span>) VALUES (<span class="hljs-string">'2'</span>, <span class="hljs-string">'b'</span>);
+INSERT INTO <span class="hljs-string">`users`</span> (<span class="hljs-string">`id`</span>, <span class="hljs-string">`NAME`</span>) VALUES (<span class="hljs-string">'3'</span>, <span class="hljs-string">'c'</span>);
+INSERT INTO <span class="hljs-string">`users`</span> (<span class="hljs-string">`id`</span>, <span class="hljs-string">`NAME`</span>) VALUES (<span class="hljs-string">'4'</span>, <span class="hljs-string">'d'</span>);
+
+
+lock table 表名称 read(write),表名称<span class="hljs-number">2</span> read(write);
+unlock tables;
+</code></pre>
+<h4 id="t468.2.2 加读锁">8.2.2 加读锁 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t468.2.2%20%E5%8A%A0%E8%AF%BB%E9%94%81"> # </a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">会话1</th>
+<th style="text-align:left">会话2</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">lock table users read;</td>
+<td style="text-align:left">连接数据库</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">select * from users;</td>
+<td style="text-align:left">select * from users;</td>
+<td style="text-align:left">都可以查询</td>
+</tr>
+<tr>
+<td style="text-align:left">select * from role;</td>
+<td style="text-align:left">select * from role;</td>
+<td style="text-align:left">会话1不能查询没有锁定的表，会话2可以查询没有锁定的表或更新未锁定的表</td>
+</tr>
+<tr>
+<td style="text-align:left">INSERT INTO <code>users</code> (<code>id</code>, <code>NAME</code>) VALUES ('5', 'e');</td>
+<td style="text-align:left">INSERT INTO <code>users</code> (<code>id</code>, <code>NAME</code>) VALUES ('5', 'e');</td>
+<td style="text-align:left">会话1插入或更新会提示错误，会话2插入或更新会提示等待</td>
+</tr>
+<tr>
+<td style="text-align:left">unlock tables;</td>
+<td style="text-align:left">INSERT INTO <code>users</code> (<code>id</code>, <code>NAME</code>) VALUES ('5', 'e');</td>
+<td style="text-align:left">会话1释放锁后，会话2完成插入操作</td>
+</tr>
+</tbody>
+</table>
+<h4 id="t478.2.3 加写锁">8.2.3 加写锁 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t478.2.3%20%E5%8A%A0%E5%86%99%E9%94%81"> # </a></h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">会话1</th>
+<th style="text-align:left">会话2</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">lock table users write;</td>
+<td style="text-align:left">连接数据库</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">select * from users;</td>
+<td style="text-align:left">select * from users;</td>
+<td style="text-align:left">会话1可以对锁定表进行插入更新和删除操作,会话2的查询操作也会被阻塞</td>
+</tr>
+<tr>
+<td style="text-align:left">unlock tables;</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">会话1释放锁，会话2返回结果</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>读锁会阻塞写，但是不会阻塞读。而写锁则会把读和写都阻塞</p>
+</blockquote>
+<h3 id="t488.3 行锁">8.3 行锁 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t488.3%20%E8%A1%8C%E9%94%81"> # </a></h3>
+<ul>
+<li>行锁偏向InnoDB存储引擎，开销大，加锁慢，会出现死锁，锁定粒度最小，发生锁冲突的概率最低，并发度也最高</li>
+<li>InnoDB与MYISAM的最大不同有两点：一是支持事务（TRANSACTION）；二是采用了行级锁</li>
+</ul>
+<h4 id="t498.3.1 行锁支持事务">8.3.1 行锁支持事务 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t498.3.1%20%E8%A1%8C%E9%94%81%E6%94%AF%E6%8C%81%E4%BA%8B%E5%8A%A1"> # </a></h4>
+<h5 id="t508.3.1.1 并发事务处理带来的问题">8.3.1.1 并发事务处理带来的问题 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t508.3.1.1%20%E5%B9%B6%E5%8F%91%E4%BA%8B%E5%8A%A1%E5%A4%84%E7%90%86%E5%B8%A6%E6%9D%A5%E7%9A%84%E9%97%AE%E9%A2%98"> # </a></h5>
+<h6 id="t518.3.1.1.1 更新丢失（Lost Update）">8.3.1.1.1 更新丢失（Lost Update） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t518.3.1.1.1%20%E6%9B%B4%E6%96%B0%E4%B8%A2%E5%A4%B1%EF%BC%88Lost%20Update%EF%BC%89"> # </a></h6>
+<ul>
+<li>当两个或多个事务选择同一行，然后基于最初选定的值更新该行时，由于每个事务都不知道其他事务的存在，就会发生丢失更新问题–最后的更新覆盖了由其他事务所做的更新。 </li>
+<li>后面的事务覆盖了前面的值,这是正常现象</li>
+</ul>
+<pre><code class="lang-js">create table account3 (id int,balance int) ENGINE=InnoDB;
+insert into account3(id,balance) values(<span class="hljs-number">1</span>,<span class="hljs-number">100</span>);
+insert into account3(id,balance) values(<span class="hljs-number">2</span>,<span class="hljs-number">100</span>);
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">set</span> autocommit=0;
+begin;
+update account3 <span class="hljs-keyword">set</span> balance=90 where id=1;
+commit;
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">set</span> autocommit=0;
+begin;
+update account3 <span class="hljs-keyword">set</span> balance=80 where id=1;
+commit;
+</code></pre>
+<p>　　 </p>
+<h6 id="t528.3.1.1.2 脏读（Dirty Reads）">8.3.1.1.2 脏读（Dirty Reads） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t528.3.1.1.2%20%E8%84%8F%E8%AF%BB%EF%BC%88Dirty%20Reads%EF%BC%89"> # </a></h6>
+<ul>
+<li>一个事务正在对一条记录做修改，在这个事务完成并提交前，这条记录的数据就处于不一致的状态；这时，另一个事务也来读取同一条记录，如果不加控制，第二个事务读取了这些<code>脏</code>数据，并据此作进一步的处理，就会产生未提交的数据依赖关系。这种现象被形象的叫做<code>脏读</code>。 </li>
+<li>一句话：事务A读取到了事务B已经修改但尚未提交的数据，还在这个数据基础上做了操作。此时，如果B事务回滚，A读取的数据无效，不符合一致性要求。 </li>
+<li>脏读是事务B里面修改了数据 ,这是不正常的 </li>
+<li>解决办法：如果在第一个事务提交前，任何其他事务不可读取其修改过的值，则可  以避免该问题。</li>
+</ul>
+<p>修改日志的隔离级别</p>
+<pre><code class="lang-js">-- 支持的存储引擎
+SHOW ENGINES;
+-- 当前的数据库默认引擎
+SHOW VARIABLES LIKE <span class="hljs-string">'storage_engine'</span>;
+SET SESSION TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+SET GLOBAL TRANSACTION ISOLATION LEVEL READ UNCOMMITTED;
+
+SELECT @@global.tx_isolation;
+SELECT @@session.tx_isolation;
+SELECT @@tx_isolation;
+</code></pre>
+<pre><code class="lang-js">start TRANSACTION;
+insert into account3(id,balance) values(<span class="hljs-number">3</span>,<span class="hljs-number">100</span>);
+</code></pre>
+<pre><code class="lang-js">start TRANSACTION;
+select * <span class="hljs-keyword">from</span> account3;
+</code></pre>
+<h6 id="t538.3.1.1.3 不可重复读（Non-Repeatable Reads）">8.3.1.1.3 不可重复读（Non-Repeatable Reads） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t538.3.1.1.3%20%E4%B8%8D%E5%8F%AF%E9%87%8D%E5%A4%8D%E8%AF%BB%EF%BC%88Non-Repeatable%20Reads%EF%BC%89"> # </a></h6>
+<ul>
+<li>一个事务在读取某些数据后的某个时间，再次读取以前读过的数据，却发现其读出的数据已经发生了改变、或某些记录已经被删除了！这种现象就叫做"不可重复读"。</li>
+<li>一句话：事务A读取到了事务B已经提交的修改数据，不符合隔离性,这是不正常的 </li>
+<li>解决办法：如果只有在修改事务完全提交之后才可以读取数据，则可以避免该问题</li>
+<li>针对的是update或delete</li>
+</ul>
+<p>修改日志级别</p>
+<pre><code class="lang-js">SET SESSION TRANSACTION ISOLATION LEVEL read committed;
+SET GLOBAL TRANSACTION ISOLATION LEVEL read committed;
+SELECT @@global.tx_isolation;
+SELECT @@session.tx_isolation;
+SELECT @@tx_isolation;
+</code></pre>
+<p>会话2</p>
+<pre><code class="lang-js">start TRANSACTION;
+select * <span class="hljs-keyword">from</span> account3;
+</code></pre>
+<p>会话2</p>
+<pre><code class="lang-js">start TRANSACTION;
+<span class="hljs-keyword">delete</span> <span class="hljs-keyword">from</span> account3 where id=<span class="hljs-number">1</span>;
+commit;
+</code></pre>
+<h6 id="t548.3.1.1.4 幻读（Phantom Reads）">8.3.1.1.4 幻读（Phantom Reads） <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t548.3.1.1.4%20%E5%B9%BB%E8%AF%BB%EF%BC%88Phantom%20Reads%EF%BC%89"> # </a></h6>
+<ul>
+<li>一个事务按相同的查询条件重新读取以前检索过的数据，却发现其他事务插入了满足其查询条件的新数据，这种现象就称为"幻读"。 </li>
+<li>一句话：事务A读取到了事务B提交的新增数据，不符合隔离性</li>
+<li>幻读是事务B里面新增了数据,这是不正常的</li>
+<li>解决办法：如果在操作事务完成数据处理之前，任何其他事务都不可以添加新数据，则可避免该问题</li>
+<li>针对的是 <code>insert</code></li>
+<li>要更新隐藏的行之后才能看到幻读现象</li>
+</ul>
+<pre><code class="lang-js">SELECT @@tx_isolation;
+SET SESSION TRANSACTION ISOLATION LEVEL repeatable read;
+SET GLOBAL TRANSACTION ISOLATION LEVEL repeatable read;
+SELECT @@global.tx_isolation;
+SELECT @@session.tx_isolation;
+SELECT @@tx_isolation;
+</code></pre>
+<pre><code class="lang-js">start TRANSACTION;
+insert into account3(id,balance) values(<span class="hljs-number">5</span>,<span class="hljs-number">100</span>);
+commit;
+</code></pre>
+<pre><code class="lang-js">start TRANSACTION;
+select * <span class="hljs-keyword">from</span> account3;
+update account3 <span class="hljs-keyword">set</span> balance =balance-10;
+commit;
+</code></pre>
+<h5 id="t558.3.1.2 事务隔离五种级别">8.3.1.2 事务隔离五种级别 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t558.3.1.2%20%E4%BA%8B%E5%8A%A1%E9%9A%94%E7%A6%BB%E4%BA%94%E7%A7%8D%E7%BA%A7%E5%88%AB"> # </a></h5>
+<ul>
+<li>read uncommitted : 读取尚未提交的数据 ：就是脏读</li>
+<li>read committed：读取已经提交的数据 ：可以解决脏读</li>
+<li>repeatable read：可重读读取：可以解决脏读和不可重复读 ---mysql默认的</li>
+<li>serializable：串行化：可以解决 脏读、不可重复读和幻读---相当于锁表</li>
+<li>Innodb的默认事务隔离级别是重复读 <code>repeatable read</code></li>
+</ul>
+<pre><code class="lang-js">SELECT @@tx_isolation;
+<span class="hljs-keyword">set</span> session transaction isolation level
+<span class="hljs-keyword">set</span> session transaction isolation level read uncommitted;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">隔离级别</th>
+<th style="text-align:left">脏读</th>
+<th style="text-align:left">非重复读</th>
+<th style="text-align:left">幻读</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">read uncommitted</td>
+<td style="text-align:left">允许</td>
+<td style="text-align:left">允许</td>
+<td style="text-align:left">允许</td>
+</tr>
+<tr>
+<td style="text-align:left">read committed</td>
+<td style="text-align:left"></td>
+<td style="text-align:left">允许</td>
+<td style="text-align:left">允许</td>
+</tr>
+<tr>
+<td style="text-align:left">repeatable read</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+<td style="text-align:left">允许</td>
+</tr>
+<tr>
+<td style="text-align:left">serializable</td>
+<td style="text-align:left"></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="t568.3.2 死锁">8.3.2 死锁 <a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html#t568.3.2%20%E6%AD%BB%E9%94%81"> # </a></h5>
+<ul>
+<li>只有在INNODB引擎上的索引键上才会启用行级锁</li>
+<li>Deadlock found when trying to get lock; try restarting transaction</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">会话1</th>
+<th style="text-align:left">会话2</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">set autocommit=0</td>
+<td style="text-align:left">set autocommit=0</td>
+<td style="text-align:left">都关闭默认提交</td>
+</tr>
+<tr>
+<td style="text-align:left">update account set balance = balance -10 where name = '张三'</td>
+<td style="text-align:left">update account2 set balance = balance -10 where name = '李四'</td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left">update account2 set balance = balance -10 where name = '李四';</td>
+<td style="text-align:left">update account2 set balance = balance -10 where name = '张三';</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="http://www.zsythink.net/archives/1233">日志级别</a></li>
+</ul>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

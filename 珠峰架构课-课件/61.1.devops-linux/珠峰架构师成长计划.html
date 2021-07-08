@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<!-- saved from url=(0063)http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t01.%20Linux">1. Linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12.%E7%89%88%E6%9C%AC">2.版本</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t23.%20Linux%E4%B8%8EWindows%E7%9A%84%E4%B8%8D%E5%90%8C">3. Linux与Windows的不同</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t34.%20VMware%E5%AE%89%E8%A3%85">4. VMware安装</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t44.1%20%E4%BB%80%E4%B9%88%E6%98%AF%E8%99%9A%E6%8B%9F%E6%9C%BA">4.1 什么是虚拟机</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t54.2%20%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E7%89%B9%E7%82%B9">4.2 虚拟机的主要特点</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t64.3%20%E5%BB%BA%E8%AE%AEVMWare%E9%85%8D%E7%BD%AE">4.3 建议VMWare配置</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t74.4%20%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%AE%89%E8%A3%85">4.4 虚拟机的安装</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t85.linux%20%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8">5.linux 系统启动</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t95.1%20BIOS">5.1 BIOS</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t105.2%20%E7%A1%AC%E4%BB%B6%E8%87%AA%E6%A3%80">5.2 硬件自检</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t115.3%20%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F">5.3 启动顺序</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t125.4%20%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95">5.4 主引导记录</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t135.5%20%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95%E7%9A%84%E7%BB%93%E6%9E%84">5.5 主引导记录的结构</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t145.6%20%E5%88%86%E5%8C%BA%E8%A1%A8">5.6 分区表</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t155.6.1%20%E6%89%87%E5%8C%BA">5.6.1 扇区</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t165.6.1.1%20%E7%89%A9%E7%90%86%E6%89%87%E5%8C%BA">5.6.1.1 物理扇区</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t175.6.1.2%20%E9%80%BB%E8%BE%91%E6%89%87%E5%8C%BA">5.6.1.2 逻辑扇区</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t185.7%20%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8">5.7 硬盘启动</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t195.8%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F">5.8 操作系统</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t206.%20%E7%A1%AC%E4%BB%B6%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6%E5%90%8D">6. 硬件设备文件名</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t216.1%20IDE%E7%A1%AC%E7%9B%98%E6%8E%A5%E5%8F%A3">6.1 IDE硬盘接口</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t226.2%20SCSI%E7%A1%AC%E7%9B%98%E6%8E%A5%E5%8F%A3">6.2 SCSI硬盘接口</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t236.3%20SATA%E7%A1%AC%E7%9B%98%E6%8E%A5%E5%8F%A3">6.3 SATA硬盘接口</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t247.%20%E5%88%86%E5%8C%BA">7. 分区</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t257.1%20%E6%89%A9%E5%B1%95%E5%88%86%E5%8C%BA">7.1 扩展分区</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t268.%20%E6%A0%BC%E5%BC%8F%E5%8C%96">8. 格式化</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t279.%20%E6%8C%82%E8%BD%BD%E7%82%B9">9. 挂载点</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t289.1%20%E6%8C%82%E8%BD%BD%E7%A4%BA%E4%BE%8B">9.1 挂载示例</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t2910.%20%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8">10. 虚拟机使用</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3010.1%20%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA">10.1 新建虚拟机</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3110.2%20%E7%BD%91%E7%BB%9C%E9%93%BE%E6%8E%A5">10.2 网络链接</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3210.2.1%20bridged(%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F)">10.2.1 bridged(桥接模式)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3310.2.2%20host-only(%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F)">10.2.2 host-only(主机模式)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3410.2.3%20NAT(%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F)">10.2.3 NAT(网络地址转换模式)</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3510.3%20%E4%BD%BF%E7%94%A8%E5%BF%AB%E7%85%A7">10.3 使用快照</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3610.4%20%E5%85%8B%E9%9A%86">10.4 克隆</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3711.linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85">11.linux系统安装</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3811.1%20%E8%AE%BE%E7%BD%AE%E7%A1%AC%E4%BB%B6%E7%8E%AF%E5%A2%83">11.1 设置硬件环境</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3911.2%20%E8%AE%BE%E7%BD%AE%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B">11.2 设置安装类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4011.3%20%E8%B7%B3%E8%BF%87%E6%A3%80%E6%9F%A5%E5%92%8C%E8%AD%A6%E5%91%8A">11.3 跳过检查和警告</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4111.4%20%E9%80%89%E6%8B%A9%E8%AF%AD%E8%A8%80">11.4 选择语言</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4211.5%20%E4%B8%BB%E6%9C%BA%E5%90%8D">11.5 主机名</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4311.6%20%E8%AE%BE%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D%E5%92%8C%E7%BD%91%E7%BB%9C">11.6 设置主机名和网络</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4411.7%20%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81">11.7 设置密码</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4511.8%20%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4">11.8 使用存储空间</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4611.9%20%E5%88%86%E5%8C%BA">11.9 分区</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4711.10%20%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E7%B1%BB%E5%9E%8B">11.10 服务器的类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4811.11%20%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE">11.11 网络配置</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4911.11.1%20%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97">11.11.1 安装日志</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5011.11.2%20setup">11.11.2 setup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5111.11.3%20ifcfg-eth0">11.11.3 ifcfg-eth0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5211.11.4%20%E7%BD%91%E5%8D%A1%E6%8E%A5%E5%8F%A3%E5%85%B3%E9%97%AD%E4%B8%8E%E6%BF%80%E6%B4%BB">11.11.4 网卡接口关闭与激活</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5311.11.5%20%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E4%B8%8E%E5%85%B3%E9%97%AD">11.11.5 网络服务启动与关闭</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5412.linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4">12.linux常用命令</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5512.1%20%E5%B8%B8%E8%A7%81%E7%9B%AE%E5%BD%95">12.1 常见目录</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5612.2%20%E5%91%BD%E4%BB%A4%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F">12.2 命令基本格式</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5712.2.1%20%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6">12.2.1 命令提示符</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5812.2.2%20%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F">12.2.2 命令格式</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5912.2.3%20ls">12.2.3 ls</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6012.2.3.1%20-l">12.2.3.1 -l</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6112.3%20%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4">12.3 文件处理命令</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6212.3.1%20mkdir">12.3.1 mkdir</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6312.3.2%20cd">12.3.2 cd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6412.3.3%20pwd">12.3.3 pwd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6512.3.4%20rmdir">12.3.4 rmdir</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6612.3.5%20rm">12.3.5 rm</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6712.3.6%20cp">12.3.6 cp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6812.3.7%20mv">12.3.7 mv</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6912.3.8%20ln">12.3.8 ln</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7012.3.8.1%20%20%E7%A1%AC%E9%93%BE%E6%8E%A5%E7%89%B9%E5%BE%81">12.3.8.1  硬链接特征</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7112.3.8.2%20%20%E8%BD%AF%E9%93%BE%E6%8E%A5%E7%89%B9%E5%BE%81">12.3.8.2  软链接特征</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7212.4%20%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%91%BD%E4%BB%A4">12.4 文件搜索命令</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7312.4.1%20locate">12.4.1 locate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7412.4.2%20whereis">12.4.2 whereis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7512.4.3%20which">12.4.3 which</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7612.4.4%20%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F">12.4.4 环境变量</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7712.4.5%20find">12.4.5 find</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7812.4.5.1%20%E6%8C%89%E5%90%8D%E7%A7%B0%E6%90%9C%E7%B4%A2">12.4.5.1 按名称搜索</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7912.4.5.2%20%E9%80%9A%E9%85%8D%E7%AC%A6">12.4.5.2 通配符</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8012.4.5.3%20-i">12.4.5.3 -i</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8112.4.5.4%20-user">12.4.5.4 -user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8212.4.5.5%20%E6%8C%89%E6%97%B6%E9%97%B4%E6%90%9C%E7%B4%A2">12.4.5.5 按时间搜索</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8312.4.5.6%20%E6%8C%89%E5%A4%A7%E5%B0%8F%E6%90%9C%E7%B4%A2">12.4.5.6 按大小搜索</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8412.4.5.7%20%E6%8C%89i%E8%8A%82%E7%82%B9%E6%90%9C%E7%B4%A2">12.4.5.7 按i节点搜索</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8512.4.5.8%20%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8">12.4.5.8 综合应用</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8612.4.5.9%20grep">12.4.5.9 grep</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8712.5%20%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4">12.5 帮助命令</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8812.5.1%20%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95">12.5.1 基本用法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8912.5.2%20man%E7%9A%84%E7%BA%A7%E5%88%AB">12.5.2 man的级别</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9012.5.3%20%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4%E7%BA%A7%E5%88%AB">12.5.3 查看命令级别</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9112.5.4%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%90%9C%E7%B4%A2">12.5.4 关键字搜索</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9212.5.5%20shell%20%E5%86%85%E9%83%A8%E5%B8%AE%E5%8A%A9">12.5.5 shell 内部帮助</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9312.6%20%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4">12.6 压缩与解压缩命令</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9412.6.1%20zip%E6%A0%BC%E5%BC%8F">12.6.1 zip格式</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9512.6.2%20gzip">12.6.2 gzip</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9612.6.3%20.bz2%E6%A0%BC%E5%BC%8F%E5%8E%8B%E7%BC%A9">12.6.3 .bz2格式压缩</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9712.6.4%20tar">12.6.4 tar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9812.6.4%20tar.gz%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F">12.6.4 tar.gz压缩格式</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9912.7%20%E5%85%B3%E6%9C%BA%E5%92%8C%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4">12.7 关机和重启命令</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10012.7.1%20shutdown">12.7.1 shutdown</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10112.7.2%20init">12.7.2 init</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10212.7.3%20logout">12.7.3 logout</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10312.8%20%E6%9F%A5%E7%9C%8B%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF">12.8 查看登录用户信息</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10412.8.1%20w">12.8.1 w</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10512.8.2%20who">12.8.2 who</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10612.8.3%20last">12.8.3 last</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10712.8.4%20lastlog">12.8.4 lastlog</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10812.9%20%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86">12.9 磁盘管理</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10912.9.1%20df">12.9.1 df</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11012.9.2%20du">12.9.2 du</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11112.9.3%20%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%A1%AC%E7%9B%98%E5%90%8E%E7%9A%84%E5%88%86%E5%8C%BA%E5%92%8C%E6%A0%BC%E5%BC%8F%E5%8C%96">12.9.3 添加新硬盘后的分区和格式化</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11212.9.4%20GPT">12.9.4 GPT</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11312.9.5%20%E6%A0%BC%E5%BC%8F%E5%8C%96">12.9.5 格式化</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11412.9.6%20%E6%8C%82%E8%BD%BD">12.9.6 挂载</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11512.9.7%20%20%E6%B7%BB%E5%8A%A0swap%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA">12.9.7  添加swap交换分区</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11612.9.8%20%E6%8C%82%E8%BD%BD">12.9.8 挂载</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11712.9.8.1%20%E6%8C%82%E8%BD%BD%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F">12.9.8.1 挂载命令格式</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11812.9.8.2%20%E6%8C%82%E8%BD%BD%E5%85%89%E9%A9%B1">12.9.8.2 挂载光驱</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11912.9.8.3%20%E5%8D%B8%E8%BD%BD%E5%85%89%E9%A9%B1">12.9.8.3 卸载光驱</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12012.9.8.4%20%E6%8C%82%E8%BD%BDU%E7%9B%98">12.9.8.4 挂载U盘</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12112.10%20%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4">12.10 文件查看命令</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12212.10.1%20cat">12.10.1 cat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12312.10.2%20more">12.10.2 more</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12412.10.3%20head">12.10.3 head</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12512.10.4%20tail">12.10.4 tail</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12612.10.5%20%E7%AC%AC%E4%BA%8C%E9%A1%B5">12.10.5 第二页</a></li></ul></li></ul></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. Linux">1. Linux <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t01.%20Linux"> # </a></h2>
+<ul>
+<li>Linux是一套免费使用和自由传播的类Unix操作系统</li>
+<li>在服务器端领域和嵌入式领域有非常广泛的应用</li>
+</ul>
+<h2 id="t12.版本">2.版本 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12.%E7%89%88%E6%9C%AC"> # </a></h2>
+<p>分为内核版本和发型版本</p>
+<ul>
+<li><a href="https://www.kernel.org/">kernel</a></li>
+<li>各个厂商会制作自己的发行版本<ul>
+<li>redhat</li>
+<li>CentOS</li>
+<li>ubuntu</li>
+<li>fedora</li>
+</ul>
+</li>
+</ul>
+<h2 id="t23. Linux与Windows的不同">3. Linux与Windows的不同 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t23.%20Linux%E4%B8%8EWindows%E7%9A%84%E4%B8%8D%E5%90%8C"> # </a></h2>
+<ul>
+<li>Linux严格区分大小写</li>
+<li>Linux中所有的内容以文件形式保存，包括硬件、用户和文件。</li>
+<li>Linux不靠扩展名区分文件类型，是靠权限来区分，但是有一些约定的扩展名，是给管理员看的<ul>
+<li>压缩包 <code>.gz</code> <code>.bz2</code> <code>.tar.bz2</code> <code>.tgz</code></li>
+<li>二进制文件 <code>.rpm</code></li>
+<li>网页文件 <code>.html .php</code></li>
+<li>脚本文件 <code>.sh</code></li>
+<li>配置文件 <code>.conf</code></li>
+</ul>
+</li>
+<li>Windows下的程序不能直接在Linux中安装和运行</li>
+<li>Linux更多使用字符界面<ul>
+<li>占用的系统资源更少</li>
+<li>减少了出错和被攻击的可能性，会让系统更稳定</li>
+</ul>
+</li>
+</ul>
+<h2 id="t34. VMware安装">4. VMware安装 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t34.%20VMware%E5%AE%89%E8%A3%85"> # </a></h2>
+<h3 id="t44.1 什么是虚拟机">4.1 什么是虚拟机 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t44.1%20%E4%BB%80%E4%B9%88%E6%98%AF%E8%99%9A%E6%8B%9F%E6%9C%BA"> # </a></h3>
+<ul>
+<li>是一个虚拟PC的软件</li>
+<li>可以在现有的操作系统上虚拟出一个新的硬件环境</li>
+<li>相当于模拟出一台新的个人电脑</li>
+<li>可以实现在一台机器上真正同时运行两个独立的操作系统</li>
+<li><a href="http://www.vmware.com/">VMware</a> </li>
+</ul>
+<h3 id="t54.2 虚拟机的主要特点">4.2 虚拟机的主要特点 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t54.2%20%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E4%B8%BB%E8%A6%81%E7%89%B9%E7%82%B9"> # </a></h3>
+<ul>
+<li>不需要分区或重新开机就能在同一台PC上使用两种以上的操作系统</li>
+<li>本机系统可以与虚拟机系统网络通信</li>
+<li>可以设定并且随时修改虚拟机操作系统的硬件环境</li>
+<li>系统快照可以方便备份和回滚</li>
+</ul>
+<h3 id="t64.3 建议VMWare配置">4.3 建议VMWare配置 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t64.3%20%E5%BB%BA%E8%AE%AEVMWare%E9%85%8D%E7%BD%AE"> # </a></h3>
+<ul>
+<li>CPU 建议主频1GHz以上</li>
+<li>内存 建议2GB以上</li>
+<li>硬盘 建议分区空闲空间8GB以上</li>
+</ul>
+<h3 id="t74.4 虚拟机的安装">4.4 虚拟机的安装 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t74.4%20%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%9A%84%E5%AE%89%E8%A3%85"> # </a></h3>
+<ul>
+<li><a href="http://www.vmware.com/">VMware8.0</a> </li>
+<li><a href="https://pan.baidu.com/s/1kliOXFDYq4bp8jPgYs-pBg">4m2g</a></li>
+</ul>
+<h2 id="t85.linux 系统启动">5.linux 系统启动 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t85.linux%20%E7%B3%BB%E7%BB%9F%E5%90%AF%E5%8A%A8"> # </a></h2>
+<h3 id="t95.1 BIOS">5.1 BIOS <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t95.1%20BIOS"> # </a></h3>
+<ul>
+<li>计算机通电后，第一件事就是读取刷入ROM芯片的开机程序，这个程序叫做基本输入输出系统(Basic Input/Output System)</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/bios.jpg" alt="bios"></p>
+<h3 id="t105.2 硬件自检">5.2 硬件自检 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t105.2%20%E7%A1%AC%E4%BB%B6%E8%87%AA%E6%A3%80"> # </a></h3>
+<ul>
+<li>BIOS程序首先检查，计算机硬件能否满足运行的基本条件，这叫做"硬件自检"（Power-On Self-Test)</li>
+<li>如果硬件出现问题，主板会发出不同含义的蜂鸣，启动中止。如果没有问题，屏幕就会显示出CPU、内存、硬盘等信息。</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/PowerOnSelfTest.jpg" alt="PowerOnSelfTest"></p>
+<h3 id="t115.3 启动顺序">5.3 启动顺序 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t115.3%20%E5%90%AF%E5%8A%A8%E9%A1%BA%E5%BA%8F"> # </a></h3>
+<ul>
+<li>硬件自检完成后，BIOS把控制权转交给下一阶段的启动程序。</li>
+<li>这时，BIOS需要知道<code>下一阶段的启动程序</code>具体存放在哪一个设备</li>
+<li>BIOS需要有一个外部储存设备的排序，排在前面的设备就是优先转交控制权的设备。这种排序叫做"启动顺序"（Boot Sequence）</li>
+<li>BIOS按照"启动顺序"，把控制权转交给排在第一位的储存设备</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/BootSequence.jpg" alt="BootSequence"></p>
+<h3 id="t125.4 主引导记录">5.4 主引导记录 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t125.4%20%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95"> # </a></h3>
+<ul>
+<li>计算机读取该设备的第一个扇区，也就是读取最前面的<code>512</code>个字节。如果这512个字节的最后两个字节是<code>0x55</code>和<code>0xAA</code>，表明这个设备可以用于启动；如果不是，表明设备不能用于启动，控制权于是被转交给<code>启动顺序</code>中的下一个设备</li>
+<li>这最前面的<code>512</code>个字节，就叫做<code>主引导记录</code>（Master boot record，缩写为MBR）</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/mbr.png" alt="mbr"></p>
+<h3 id="t135.5 主引导记录的结构">5.5 主引导记录的结构 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t135.5%20%E4%B8%BB%E5%BC%95%E5%AF%BC%E8%AE%B0%E5%BD%95%E7%9A%84%E7%BB%93%E6%9E%84"> # </a></h3>
+<ul>
+<li>主引导记录只有512个字节。它的主要作用是告诉计算机到硬盘的哪一个位置去找操作系统。<ul>
+<li>（1） 第1-446字节：是用来记录系统的启动信息的,调用操作系统的机器码</li>
+<li>（2） 第447-510字节(64个字节)：分区表（Partition table），分区表的作用，是将硬盘分成若干个区</li>
+<li>（3） 第511-512字节：主引导记录签名（0x55和0xAA）</li>
+</ul>
+</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/mbr.jpg" alt="mbr"></p>
+<h3 id="t145.6 分区表">5.6 分区表 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t145.6%20%E5%88%86%E5%8C%BA%E8%A1%A8"> # </a></h3>
+<ul>
+<li>磁盘分区是使用分区编辑器在磁盘上划分几个逻辑部分</li>
+<li>磁盘一旦划分成多个分区，不同类的目录与文件可以存储进不同的分区内</li>
+<li>主引导记录因此必须知道将控制权转交给哪个区</li>
+<li>分区表的长度只有64个字节，里面又分成四项，每项16个字节。所以，一个硬盘最多只能分四个一级分区，又叫做<code>主分区</code><ul>
+<li>（1） 第1个字节：如果为0x80，就表示该主分区是激活分区，控制权要转交给这个分区。四个主分区里面只能有一个是激活的。</li>
+<li>（2） 第2-4个字节：主分区第一个扇区的物理位置(柱面(Cylinder)、磁头(Heads)、扇区号(Sector)等等)</li>
+<li>（3） 第5个字节：主分区类型，比如FAT32、NTFS等</li>
+<li>（4） 第6-8个字节：主分区最后一个扇区的物理位置</li>
+<li>（5） 第9-12字节：主分区第一个扇区的逻辑地址</li>
+<li>（6） 第13-16字节：主分区的扇区总数</li>
+</ul>
+</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/mbrpartial.jpg" alt="mbrpartial"></p>
+<h4 id="t155.6.1 扇区">5.6.1 扇区 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t155.6.1%20%E6%89%87%E5%8C%BA"> # </a></h4>
+<ul>
+<li>扇区是硬盘存储上的概念，机械硬盘的内部是金属盘片，将圆形的盘片划分成若干个扇形区域，这就是扇区，若干个扇区就组成整个盘片</li>
+<li>扇区是硬盘上最小的读写单位，这个是硬盘决定的，不是操作系统决定的</li>
+<li>对现在的硬盘来说，逻辑扇区的大小等于物理扇区的大小，所以也并没有严格区分物理扇区和逻辑扇区<h5 id="t165.6.1.1 物理扇区">5.6.1.1 物理扇区 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t165.6.1.1%20%E7%89%A9%E7%90%86%E6%89%87%E5%8C%BA"> # </a></h5>
+</li>
+<li>物理扇区就是底层硬件意义上的扇区<h5 id="t175.6.1.2 逻辑扇区">5.6.1.2 逻辑扇区 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t175.6.1.2%20%E9%80%BB%E8%BE%91%E6%89%87%E5%8C%BA"> # </a></h5>
+</li>
+<li>而在物理扇区之上，操作系统划分的逻辑扇区，是为了方便操作系统读取写入硬盘数据而设置的，其大小与具体地址，都可以通过一定的公式与物理地址对应</li>
+<li>同时如果出现的坏扇区，系统可以通过逻辑扇区，将物理上的坏扇区地址，重新定位到硬盘上备用的好扇区上，这样也就延长了硬盘的使用寿命</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/diskfan.jpg" alt="diskfan"></p>
+<h3 id="t185.7 硬盘启动">5.7 硬盘启动 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t185.7%20%E7%A1%AC%E7%9B%98%E5%90%AF%E5%8A%A8"> # </a></h3>
+<ul>
+<li>计算机的控制权就要转交给硬盘的某个分区了</li>
+<li>四个主分区里面，只有一个是激活的。计算机会读取激活分区的第一个扇区，叫做"卷引导记录"(Volume boot record，缩写为VBR)</li>
+</ul>
+<h3 id="t195.8 操作系统">5.8 操作系统 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t195.8%20%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F"> # </a></h3>
+<ul>
+<li>控制权转交给操作系统后，操作系统的内核首先被载入内存。</li>
+<li>以Linux系统为例，先载入<code>/boot</code>目录下面的<code>kernel</code>。内核加载成功后，第一个运行的程序是<code>/sbin/init</code>。它根据配置文件（Debian系统是/etc/initab）产生init进程。这是Linux启动后的第一个进程，pid进程编号为1，其他进程都是它的后代</li>
+<li>然后，<code>init</code>线程加载系统的各个模块，比如窗口程序和网络程序，直至执行<code>/bin/login</code>程序，跳出登录界面，等待用户输入用户名和密码。</li>
+</ul>
+<h2 id="t206. 硬件设备文件名">6. 硬件设备文件名 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t206.%20%E7%A1%AC%E4%BB%B6%E8%AE%BE%E5%A4%87%E6%96%87%E4%BB%B6%E5%90%8D"> # </a></h2>
+<ul>
+<li>只要插入硬盘，Linux会自动检测和分配名称</li>
+<li>一个硬盘可以分成多个分区，每个分区都会有一个系统分配的名称</li>
+<li>第一块SCSI硬盘名称叫<code>sda</code>,它的第一个分区叫<code>sda1</code></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">硬件</th>
+<th style="text-align:left">设备文件名</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">IDE硬盘</td>
+<td style="text-align:left">/dev/hd[a-d]</td>
+</tr>
+<tr>
+<td style="text-align:left">SCSI/SATA/USB硬盘</td>
+<td style="text-align:left">/dev/sd[a-p]</td>
+</tr>
+<tr>
+<td style="text-align:left">光驱</td>
+<td style="text-align:left">/dev/cdrom或/dev/hdc</td>
+</tr>
+<tr>
+<td style="text-align:left">软盘</td>
+<td style="text-align:left">/dev/fd[0-1]</td>
+</tr>
+<tr>
+<td style="text-align:left">打印机(25针)</td>
+<td style="text-align:left">/dev/lp[0-2]</td>
+</tr>
+<tr>
+<td style="text-align:left">打印机(USB)</td>
+<td style="text-align:left">/dev/usb/lp[0-15]</td>
+</tr>
+<tr>
+<td style="text-align:left">鼠标</td>
+<td style="text-align:left">/dev/mouse</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t216.1 IDE硬盘接口">6.1 IDE硬盘接口 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t216.1%20IDE%E7%A1%AC%E7%9B%98%E6%8E%A5%E5%8F%A3"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/idedisk.jpg" alt="idedisk"></p>
+<h3 id="t226.2 SCSI硬盘接口">6.2 SCSI硬盘接口 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t226.2%20SCSI%E7%A1%AC%E7%9B%98%E6%8E%A5%E5%8F%A3"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/SCSIdisk.jpg" alt="SCSIdisk"></p>
+<h3 id="t236.3 SATA硬盘接口">6.3 SATA硬盘接口 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t236.3%20SATA%E7%A1%AC%E7%9B%98%E6%8E%A5%E5%8F%A3"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/satadisk.jpeg" alt="satadisk"></p>
+<h2 id="t247. 分区">7. 分区 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t247.%20%E5%88%86%E5%8C%BA"> # </a></h2>
+<p><img src="./珠峰架构师成长计划_files/diskformat2.jpg" alt="diskformat2"></p>
+<ul>
+<li>磁盘分区是使用分区编辑器在磁盘上划分几个逻辑部分</li>
+<li>磁盘一旦划分成多个分区，不同类的目录与文件可以存储进不同的分区内</li>
+<li>分区表的长度只有64个字节，里面又分成四项，每项16个字节。所以，一个硬盘最多只能分四个一级分区，又叫做<code>主分区</code></li>
+</ul>
+<h3 id="t257.1 扩展分区">7.1 扩展分区 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t257.1%20%E6%89%A9%E5%B1%95%E5%88%86%E5%8C%BA"> # </a></h3>
+<ul>
+<li>随着硬盘越来越大,四个主分区已经不够了,需要更多的分区. 但是,分区表只有四项，因此规定有且仅有一个区可以被定义成扩展分区(Extended partition)</li>
+<li>所谓扩展分区，就是指这个区里面又分成多个区。这种分区里面的分区，就叫做逻辑分区(logical partition)</li>
+<li>为了突破4个分区的限制，就取出一个分区作为<code>扩展分区</code><ul>
+<li>扩展分区最多只能有<code>1</code>个</li>
+<li>主分区加扩展分区最多有<code>4</code>个</li>
+<li>不能写入数据，只能包含逻辑分区，逻辑分区最多是23个</li>
+</ul>
+</li>
+</ul>
+<h2 id="t268. 格式化">8. 格式化 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t268.%20%E6%A0%BC%E5%BC%8F%E5%8C%96"> # </a></h2>
+<ul>
+<li>格式化是指根据用户选定的文件系统(如FAT16(2G),FAT32(4G)、NTFS、EXT2、EXT3、EXT4)对分区进行划分</li>
+<li>目的是为了更好的写入和读取数据</li>
+<li>主要是把整个分区切分成等大小的数据块，每个数据块是4KB，10K需要使用2个半的数据块。是存放文件的最小空间。</li>
+<li>微软操作系统（DOS、WINDOWS等）中磁盘文件存储管理的最小单位叫做<code>簇</code></li>
+<li>簇(cluster)的本意就是<code>一组</code>，即一组扇区(一个磁道可以分割成若干个大小相等的圆弧，叫扇区)的意思。因为扇区的单位太小，因此把它捆在一起，组成一个更大的单位簇更方便进行灵活管理</li>
+<li>在分区中划出一片用于存放文件分配表，目录表等用户文件管理的磁盘空间。<ul>
+<li>ID</li>
+<li>修改时间</li>
+<li>权限</li>
+<li>数据块位置</li>
+</ul>
+</li>
+<li>格式化会清空数据</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/fileallocate.png" alt="fileallocate"></p>
+<h2 id="t279. 挂载点">9. 挂载点 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t279.%20%E6%8C%82%E8%BD%BD%E7%82%B9"> # </a></h2>
+<ul>
+<li>为了让Linux系统中可以访问这些分区，需要把这些分区挂载到对应的目录上</li>
+<li>在Linux中是把目录称为<code>挂载点</code></li>
+<li>把目录和分区链接在一起的过程成为<code>挂载</code></li>
+<li><code>/</code>为根目录，必须挂载到一个分区上，默认所有子目录都会写入这个分区</li>
+<li>同一级目录下面的所有子目录可以有自己的独立存储空间</li>
+<li>必须有的分区<ul>
+<li>/ 根分区</li>
+<li>swap分区(交换分区，虚拟内存，一般为内存的2倍，不要超过2G)</li>
+</ul>
+</li>
+<li>推荐分区<ul>
+<li>/boot (启动分区,200M) 单独分区，避免分区写满造成系统无法启动</li>
+</ul>
+</li>
+</ul>
+<h3 id="t289.1 挂载示例">9.1 挂载示例 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t289.1%20%E6%8C%82%E8%BD%BD%E7%A4%BA%E4%BE%8B"> # </a></h3>
+<ul>
+<li><code>/dev/sd2</code>挂载到了 <code>/</code>目录上,也就是说向<code>/</code>目录下在写文件就是往<code>/dev/sd2</code>分区里写文件</li>
+<li><code>/dev/sd1</code>挂载到了 <code>/boot</code>目录上,也就是说向<code>/boot</code>目录下在写文件就是往<code>/dev/sd1</code>分区里写文件</li>
+<li><code>/dev/sd3</code>挂载到了 <code>//home</code>目录上,也就是说向<code>//home</code>目录下在写文件就是往<code>/dev/sd3</code>分区里写文件</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/mount.jpg" alt="mount"></p>
+<h2 id="t2910. 虚拟机使用">10. 虚拟机使用 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t2910.%20%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BD%BF%E7%94%A8"> # </a></h2>
+<h3 id="t3010.1 新建虚拟机">10.1 新建虚拟机 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3010.1%20%E6%96%B0%E5%BB%BA%E8%99%9A%E6%8B%9F%E6%9C%BA"> # </a></h3>
+<ul>
+<li><ol>
+<li>Create a New Virtual Machine开始新建虚拟机向导</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>我以后再安装操作系统</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>Linux  CentOS 32位</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>20G硬盘</li>
+</ol>
+</li>
+</ul>
+<h3 id="t3110.2 网络链接">10.2 网络链接 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3110.2%20%E7%BD%91%E7%BB%9C%E9%93%BE%E6%8E%A5"> # </a></h3>
+<ul>
+<li>VMWare提供了三种工作模式，它们是<code>bridged</code>(桥接模式)、<code>NAT</code>(网络地址转换模式)和<code>host-only</code>(主机模式)</li>
+</ul>
+<h4 id="t3210.2.1 bridged(桥接模式)">10.2.1 bridged(桥接模式) <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3210.2.1%20bridged(%E6%A1%A5%E6%8E%A5%E6%A8%A1%E5%BC%8F)"> # </a></h4>
+<ul>
+<li>在这种模式下，VMWare虚拟出来的操作系统就像是局域网中的一台独立的主机，它可以访问网内任何一台机器。</li>
+<li>在桥接模式下，你需要手工为虚拟系统配置IP地址、子网掩码，而且还要和宿主机器处于同一网段，这样虚拟系统才能和宿主机器进行通信</li>
+<li>如果你想利用VMWare在局域网内新建一个虚拟服务器，为局域网用户提供网络服务，就应该选择桥接模式</li>
+<li>bridged模式下的<code>VMnet0</code>虚拟网络不提供DHCP服务</li>
+<li>vmnet0，实际上就是一个虚拟的网桥，这个网桥有若干个端口，一个端口用于连接你的Host，一个端口用于连接你的虚拟机，他们的位置是对等的，谁也不是谁的网关</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/bridage.jpg" alt="桥接网络"></p>
+<h4 id="t3310.2.2 host-only(主机模式)">10.2.2 host-only(主机模式) <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3310.2.2%20host-only(%E4%B8%BB%E6%9C%BA%E6%A8%A1%E5%BC%8F)"> # </a></h4>
+<ul>
+<li>所有的虚拟系统是可以相互通信的，但虚拟系统和真实的网络是被隔离开的</li>
+<li>虚拟系统和宿主机器系统是可以相互通信的</li>
+<li>虚拟系统的TCP/IP配置信息(如IP地址、网关地址、DNS服务器等)，都是由VMnet1(host-only)虚拟网络的DHCP服务器来动态分配的,IP地址是随机生成的</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/hostonly.gif" alt="主机网络"></p>
+<h4 id="t3410.2.3 NAT(网络地址转换模式)">10.2.3 NAT(网络地址转换模式) <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3410.2.3%20NAT(%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2%E6%A8%A1%E5%BC%8F)"> # </a></h4>
+<ul>
+<li>使用NAT模式，就是让虚拟系统借助NAT(网络地址转换)功能，通过宿主机器所在的网络来访问公网</li>
+<li>使用NAT模式可以实现在虚拟系统里访问互联网。NAT模式下的虚拟系统的TCP/IP配置信息是由VMnet8(NAT)虚拟网络的DHCP服务器提供的，无法进行手工修改</li>
+<li>使用Vmnet8虚拟交换机，此时虚拟机可以通过主机单向访问网络上的其他工作站，其他工作站不能访问虚拟机</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/nat.jpg" alt="NAT"></p>
+<h3 id="t3510.3 使用快照">10.3 使用快照 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3510.3%20%E4%BD%BF%E7%94%A8%E5%BF%AB%E7%85%A7"> # </a></h3>
+<ul>
+<li>可以使用快照</li>
+<li>在合适的时间恢复快照</li>
+</ul>
+<h3 id="t3610.4 克隆">10.4 克隆 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3610.4%20%E5%85%8B%E9%9A%86"> # </a></h3>
+<p>从当前的虚拟机克隆出一个虚拟机</p>
+<ul>
+<li>可以克隆当前或者快照</li>
+<li>克隆方式可以选择链接克隆或者完整克隆</li>
+</ul>
+<h2 id="t3711.linux系统安装">11.linux系统安装 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3711.linux%E7%B3%BB%E7%BB%9F%E5%AE%89%E8%A3%85"> # </a></h2>
+<h3 id="t3811.1 设置硬件环境">11.1 设置硬件环境 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3811.1%20%E8%AE%BE%E7%BD%AE%E7%A1%AC%E4%BB%B6%E7%8E%AF%E5%A2%83"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/bridageconnection.png" alt="networknat"></p>
+<h3 id="t3911.2 设置安装类型">11.2 设置安装类型 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t3911.2%20%E8%AE%BE%E7%BD%AE%E5%AE%89%E8%A3%85%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li><code>Install or upgrade an existing system</code> <code>安装或者升级现有系统</code></li>
+<li><code>Install system with basic video driver</code> 安装过程采用基本的显卡驱动</li>
+<li><code>Rescue installed system</code> 进入系统修复模式</li>
+<li><code>Boot from local drive</code> 退出安装从硬盘启动</li>
+<li><code>Memory test</code> 存储介质检测</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/welcomeinstallcentos.png" alt="welcomeinstallcentos"></p>
+<h3 id="t4011.3 跳过检查和警告">11.3 跳过检查和警告 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4011.3%20%E8%B7%B3%E8%BF%87%E6%A3%80%E6%9F%A5%E5%92%8C%E8%AD%A6%E5%91%8A"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/skiptest.png" alt="skiptest"></p>
+<p><img src="./珠峰架构师成长计划_files/skipwarning.png" alt="skipwarning"></p>
+<h3 id="t4111.4 选择语言">11.4 选择语言 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4111.4%20%E9%80%89%E6%8B%A9%E8%AF%AD%E8%A8%80"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/1.selectchinese.png" alt="chooselanguage"></p>
+<h3 id="t4211.5 主机名">11.5 主机名 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4211.5%20%E4%B8%BB%E6%9C%BA%E5%90%8D"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/choosehostname.png" alt="choosehostname"></p>
+<h3 id="t4311.6 设置主机名和网络">11.6 设置主机名和网络 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4311.6%20%E8%AE%BE%E7%BD%AE%E4%B8%BB%E6%9C%BA%E5%90%8D%E5%92%8C%E7%BD%91%E7%BB%9C"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/4.setuphostname.png" alt="4.setuphostname.png"></p>
+<h3 id="t4411.7 设置密码">11.7 设置密码 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4411.7%20%E8%AE%BE%E7%BD%AE%E5%AF%86%E7%A0%81"> # </a></h3>
+<ul>
+<li>复杂性<ul>
+<li>八位字符以上、大小写字母、数字、符号</li>
+<li>不能是英文单词</li>
+<li>不能是和用户相关的内容</li>
+</ul>
+</li>
+<li>易记忆性</li>
+<li>实效性</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/5.setuppassword.png" alt="5.setuppassword.png"></p>
+<h3 id="t4511.8 使用存储空间">11.8 使用存储空间 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4511.8%20%E4%BD%BF%E7%94%A8%E5%AD%98%E5%82%A8%E7%A9%BA%E9%97%B4"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/6.layout.png" alt="6.layout.png"></p>
+<h3 id="t4611.9 分区">11.9 分区 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4611.9%20%E5%88%86%E5%8C%BA"> # </a></h3>
+<p><img src="./珠峰架构师成长计划_files/dividedisk.png" alt="dividedisk"></p>
+<p><img src="./珠峰架构师成长计划_files/storewarning.png" alt="storewarning"></p>
+<p><img src="./珠峰架构师成长计划_files/7.mbr.png" alt="7.mbr.png"></p>
+<h3 id="t4711.10 服务器的类型">11.10 服务器的类型 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4711.10%20%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%9A%84%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>Desktop (桌面)</li>
+<li>Minimal Desktop (最小化桌面)</li>
+<li>Minimal (最小化)</li>
+<li><code>Basic Server</code> (基本服务器,推荐)</li>
+<li>Database Server (数据库服务器)</li>
+<li>Web Server (网页服务器)</li>
+<li>Virutal Host (虚拟主机)</li>
+<li>software development workstation(软件开发工作站)</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/centostype.png" alt="centostype"></p>
+<h3 id="t4811.11 网络配置">11.11 网络配置 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4811.11%20%E7%BD%91%E7%BB%9C%E9%85%8D%E7%BD%AE"> # </a></h3>
+<h4 id="t4911.11.1 安装日志">11.11.1 安装日志 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t4911.11.1%20%E5%AE%89%E8%A3%85%E6%97%A5%E5%BF%97"> # </a></h4>
+<ul>
+<li>/root/install.log 存储了安装在系统中的软件包及其版本信息</li>
+<li>/root/install.log.syslog 存储了安装过程中留下的事件记录</li>
+<li>/root/anaconda-ks.cfg 记录了安装过程中设置的选项信息，可以做为安装的模版文件</li>
+</ul>
+<h4 id="t5011.11.2 setup">11.11.2 setup <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5011.11.2%20setup"> # </a></h4>
+<ul>
+<li>网络配置</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/network1.png" alt="network1"></p>
+<p><img src="./珠峰架构师成长计划_files/network2.png" alt="network2"></p>
+<p><img src="./珠峰架构师成长计划_files/network3.png" alt="network3"></p>
+<h4 id="t5111.11.3 ifcfg-eth0">11.11.3 ifcfg-eth0 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5111.11.3%20ifcfg-eth0"> # </a></h4>
+<p>cat /etc/sysconfig/network-scripts/ifcfg-eth0</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">TYPE=Ethernet</td>
+<td style="text-align:left">#网卡类型</td>
+</tr>
+<tr>
+<td style="text-align:left">DEVICE=eth0</td>
+<td style="text-align:left">#网卡接口名称</td>
+</tr>
+<tr>
+<td style="text-align:left">ONBOOT=yes</td>
+<td style="text-align:left">#系统启动时是否自动加载</td>
+</tr>
+<tr>
+<td style="text-align:left">BOOTPROTO=static</td>
+<td style="text-align:left">#启用地址协议 --static:静态协议 --bootp协议 --dhcp协议</td>
+</tr>
+<tr>
+<td style="text-align:left">IPADDR=192.168.1.11</td>
+<td style="text-align:left">#网卡IP地址</td>
+</tr>
+<tr>
+<td style="text-align:left">NETMASK=255.255.255.0</td>
+<td style="text-align:left">#网卡网络地址</td>
+</tr>
+<tr>
+<td style="text-align:left">GATEWAY=192.168.1.1</td>
+<td style="text-align:left">#网卡网关地址</td>
+</tr>
+<tr>
+<td style="text-align:left">DNS1=10.203.104.41</td>
+<td style="text-align:left">#网卡DNS地址</td>
+</tr>
+<tr>
+<td style="text-align:left">HWADDR=00:0C:29:13:5D:74</td>
+<td style="text-align:left">#网卡设备MAC地址</td>
+</tr>
+<tr>
+<td style="text-align:left">BROADCAST=192.168.1.255</td>
+<td style="text-align:left">#网卡广播地址</td>
+</tr>
+<tr>
+<td style="text-align:left">NM_CONTROLLED=yes</td>
+<td style="text-align:left">Network manger服务</td>
+</tr>
+</tbody>
+</table>
+<h4 id="t5211.11.4 网卡接口关闭与激活">11.11.4 网卡接口关闭与激活 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5211.11.4%20%E7%BD%91%E5%8D%A1%E6%8E%A5%E5%8F%A3%E5%85%B3%E9%97%AD%E4%B8%8E%E6%BF%80%E6%B4%BB"> # </a></h4>
+<pre><code class="lang-js">ifdown eth0     #关闭网络
+ifup eth0       #启动网络
+</code></pre>
+<h4 id="t5311.11.5 网络服务启动与关闭">11.11.5 网络服务启动与关闭 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5311.11.5%20%E7%BD%91%E7%BB%9C%E6%9C%8D%E5%8A%A1%E5%90%AF%E5%8A%A8%E4%B8%8E%E5%85%B3%E9%97%AD"> # </a></h4>
+<pre><code class="lang-js">service network restart #重启网络服务
+</code></pre>
+<h2 id="t5412.linux常用命令">12.linux常用命令 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5412.linux%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4"> # </a></h2>
+<h3 id="t5512.1 常见目录">12.1 常见目录 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5512.1%20%E5%B8%B8%E8%A7%81%E7%9B%AE%E5%BD%95"> # </a></h3>
+<ul>
+<li>/ 根目录</li>
+<li>/boot 启动目录，启动相关文件</li>
+<li>/dev 设备文件</li>
+<li>/etc 配置文件</li>
+<li>/home 普通用户的家目录,可以操作</li>
+<li>/lib 系统库保存目录</li>
+<li>/mnt 移动设备挂载目录</li>
+<li>/media 光盘挂载目录</li>
+<li>/misc 磁带机挂载目录</li>
+<li>/root 超级用户的家目录,可以操作</li>
+<li>/tmp 临时目录,可以操作</li>
+<li>/proc 正在运行的内核信息映射, 主要输出进程信息、内存资源信息和磁盘分区信息等等</li>
+<li>/sys 硬件设备的驱动程序信息</li>
+<li>/var 变量</li>
+<li>/bin 普通的基本命令，如ls,chmod等,一般的用户也都可以使用</li>
+<li>/sbin 基本的系统命令，如shutdown，reboot，用于启动系统，修复系统,只有管理员才可以运行</li>
+<li>/usr/bin 是你在后期安装的一些软件的运行脚本</li>
+<li>/usr/sbin 置一些用户安装的系统管理的必备程序</li>
+</ul>
+<h3 id="t5612.2 命令基本格式">12.2 命令基本格式 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5612.2%20%E5%91%BD%E4%BB%A4%E5%9F%BA%E6%9C%AC%E6%A0%BC%E5%BC%8F"> # </a></h3>
+<h4 id="t5712.2.1 命令提示符">12.2.1 命令提示符 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5712.2.1%20%E5%91%BD%E4%BB%A4%E6%8F%90%E7%A4%BA%E7%AC%A6"> # </a></h4>
+<pre><code class="lang-sh">[root@zhangrenyang ~]<span class="hljs-comment">#</span>
+</code></pre>
+<ul>
+<li>root 当前登录用户</li>
+<li>localhost 主机名</li>
+<li>~ 当前工作目录,默认是当前用户的家目录，root就是/root,普通用户是 /home/用户名</li>
+<li>提示符 超级用户是 #,普通用户是$</li>
+</ul>
+<h4 id="t5812.2.2 命令格式">12.2.2 命令格式 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5812.2.2%20%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"> # </a></h4>
+<ul>
+<li>命令 [选项] [参数]</li>
+<li>当有多个选项时，可以写在一起</li>
+<li>一般参数有简化和完整写法两种   <code>-a</code> 与 <code>--all</code>等效</li>
+</ul>
+<h4 id="t5912.2.3 ls">12.2.3 ls <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t5912.2.3%20ls"> # </a></h4>
+<ul>
+<li>查询目录中的内容</li>
+<li>ls [选项] [文件或者目录]</li>
+<li>选项<ul>
+<li>-a 显示所有文件，包括隐藏文件</li>
+<li>-l 显示详细信息</li>
+<li>-d 查看目录本身的属性而非子文件 ls /etc/</li>
+<li>-h 人性化的方式显示文件大小</li>
+<li>-i 显示inode,也就是i节点，每个节点都有ID号</li>
+</ul>
+</li>
+<li>默认当前目录下的文件列表</li>
+</ul>
+<h5 id="t6012.2.3.1 -l">12.2.3.1 -l <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6012.2.3.1%20-l"> # </a></h5>
+<p>显示详细信息</p>
+<pre><code class="lang-sh">drwxr-xr-x .  1 root  root   800 Sep 16 00:19 logs
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">drwxr-xr-x</th>
+<th style="text-align:left">.</th>
+<th style="text-align:left">1</th>
+<th style="text-align:left">root</th>
+<th style="text-align:left">root</th>
+<th style="text-align:left">800</th>
+<th style="text-align:left">Sep 16 00:19</th>
+<th style="text-align:left">logs</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">文件类型和权限</td>
+<td style="text-align:left">ACL权限</td>
+<td style="text-align:left">硬链接引用计数</td>
+<td style="text-align:left">所有者</td>
+<td style="text-align:left">所属组</td>
+<td style="text-align:left">文件大小</td>
+<td style="text-align:left">最后修改时间</td>
+<td style="text-align:left">文件名</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t6112.3 文件处理命令">12.3 文件处理命令 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6112.3%20%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86%E5%91%BD%E4%BB%A4"> # </a></h3>
+<h4 id="t6212.3.1 mkdir">12.3.1 mkdir <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6212.3.1%20mkdir"> # </a></h4>
+<ul>
+<li>建立目录 make directory</li>
+<li>mkdir -p [目录名]<ul>
+<li>-p 递归创建</li>
+</ul>
+</li>
+</ul>
+<h4 id="t6312.3.2 cd">12.3.2 cd <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6312.3.2%20cd"> # </a></h4>
+<ul>
+<li>切换所在目录 change directory</li>
+<li>cd [目录]<ul>
+<li>~ 家目录</li>
+<li>家目录</li>
+<li><ul>
+<li>上次目录</li>
+</ul>
+</li>
+<li>. 当前目录</li>
+<li>.. 上级目录</li>
+</ul>
+</li>
+<li>相对路径是参照当前所在目录</li>
+<li>绝对路径是从根目录开始</li>
+<li>按TAB键可以补全命令和目录</li>
+</ul>
+<h4 id="t6412.3.3 pwd">12.3.3 pwd <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6412.3.3%20pwd"> # </a></h4>
+<ul>
+<li>显示当前目录 pwd</li>
+</ul>
+<h4 id="t6512.3.4 rmdir">12.3.4 rmdir <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6512.3.4%20rmdir"> # </a></h4>
+<ul>
+<li>删除目录 remove empty  directory</li>
+<li>rmdir [目录名]</li>
+</ul>
+<h4 id="t6612.3.5 rm">12.3.5 rm <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6612.3.5%20rm"> # </a></h4>
+<ul>
+<li>删除文件或者目录 remove</li>
+<li>rm [文件或者目录]<ul>
+<li>-r 删除目录</li>
+<li>-f 强制删除</li>
+</ul>
+</li>
+<li>rm -rf 文件或者目录] 递归强制删除所有目录</li>
+</ul>
+<h4 id="t6712.3.6 cp">12.3.6 cp <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6712.3.6%20cp"> # </a></h4>
+<ul>
+<li>copy 复制命令</li>
+<li>copy [源文件或者目录] [目标文件]<ul>
+<li>-r 复制目录,默认是复制文件</li>
+<li>-p 连带文件属性复制</li>
+<li>-d 若源文件是链接文件，则复制连接属性</li>
+<li>-a 相当于 -rpd</li>
+</ul>
+</li>
+</ul>
+<h4 id="t6812.3.7 mv">12.3.7 mv <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6812.3.7%20mv"> # </a></h4>
+<ul>
+<li>移动文件或者改名 move</li>
+<li>mv [源文件或者目录] [目标文件]</li>
+</ul>
+<h4 id="t6912.3.8 ln">12.3.8 ln <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t6912.3.8%20ln"> # </a></h4>
+<ul>
+<li>链接命令,生成链接文件 <code>link</code></li>
+</ul>
+<h5 id="t7012.3.8.1  硬链接特征">12.3.8.1  硬链接特征 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7012.3.8.1%20%20%E7%A1%AC%E9%93%BE%E6%8E%A5%E7%89%B9%E5%BE%81"> # </a></h5>
+<ul>
+<li>拥有相同的i节点和存储block块，可以看作是同一个文件</li>
+<li>可以通过i节点访问</li>
+<li>不能跨分区</li>
+<li>不能针对目录使用</li>
+<li>一般不使用</li>
+</ul>
+<h5 id="t7112.3.8.2  软链接特征">12.3.8.2  软链接特征 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7112.3.8.2%20%20%E8%BD%AF%E9%93%BE%E6%8E%A5%E7%89%B9%E5%BE%81"> # </a></h5>
+<ul>
+<li>ln -s [源文件] [目标文件] <ul>
+<li>-s 创建软链接</li>
+</ul>
+</li>
+<li>类似Windows快捷方式</li>
+<li>软链接拥有自己的i节点和Block块，但是数据块中只保存源文件的文件名和i节点号，并没有实际的文件数据</li>
+<li>lrwxrwxrwx l 软链接  软链接的文件权限都是 777</li>
+<li>修改任意一个文件，另一个都会改变</li>
+<li>删除源文件，软链接不能使用</li>
+<li>软链接源文件必须写绝对路径</li>
+</ul>
+<h3 id="t7212.4 文件搜索命令">12.4 文件搜索命令 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7212.4%20%E6%96%87%E4%BB%B6%E6%90%9C%E7%B4%A2%E5%91%BD%E4%BB%A4"> # </a></h3>
+<h4 id="t7312.4.1 locate">12.4.1 locate <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7312.4.1%20locate"> # </a></h4>
+<ul>
+<li>在后台数据库中按文件名搜索，速度比较快</li>
+<li>数据保存在<code>/var/lib/mlocate</code>后台数据库，每天更新一次</li>
+<li>可以<code>updatedb</code>命令立刻更新数据库</li>
+<li>只能搜索文件名</li>
+<li><code>/etc/updatedb.conf</code> 建立索引的配置文件<ul>
+<li>PRUNE_BIND_MOUNTS = "yes" 全部生效，开启搜索限制</li>
+<li>PRUNEFS 不搜索的文件系统</li>
+<li>PRUNENAMES 忽略的文件类型</li>
+<li>PRUNEPATHS 忽略的路径 /tmp</li>
+</ul>
+</li>
+</ul>
+<h4 id="t7412.4.2 whereis">12.4.2 whereis <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7412.4.2%20whereis"> # </a></h4>
+<ul>
+<li>搜索命令所在路径以及帮助文档所在位置</li>
+<li>whereis 命令名 <code>whereis ls</code><ul>
+<li>-b 只查找可执行文件</li>
+<li>-m 只查找帮助文件</li>
+</ul>
+</li>
+</ul>
+<h4 id="t7512.4.3 which">12.4.3 which <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7512.4.3%20which"> # </a></h4>
+<ul>
+<li>可以看到别名 <code>which ls</code></li>
+<li>能看到的都是外部安装的命令</li>
+<li>无法查看Shell自带的命令，如 <code>which cd</code></li>
+</ul>
+<h4 id="t7612.4.4 环境变量">12.4.4 环境变量 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7612.4.4%20%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"> # </a></h4>
+<p><code>/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin</code></p>
+<ul>
+<li>定义的是系统搜索命令的路径</li>
+<li>echo $PATH</li>
+</ul>
+<h4 id="t7712.4.5 find">12.4.5 find <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7712.4.5%20find"> # </a></h4>
+<ul>
+<li>文件搜索命令</li>
+<li>find [搜索范围] [搜索条件]</li>
+</ul>
+<h5 id="t7812.4.5.1 按名称搜索">12.4.5.1 按名称搜索 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7812.4.5.1%20%E6%8C%89%E5%90%8D%E7%A7%B0%E6%90%9C%E7%B4%A2"> # </a></h5>
+<ul>
+<li>避免大范围的搜索，会非常消耗系统资源<pre><code class="lang-sh">find / -name aaa.log
+</code></pre>
+</li>
+</ul>
+<h5 id="t7912.4.5.2 通配符">12.4.5.2 通配符 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t7912.4.5.2%20%E9%80%9A%E9%85%8D%E7%AC%A6"> # </a></h5>
+<ul>
+<li>find是在系统当中搜索符合条件的文件名，如果需要匹配，使用通配符匹配，通配符是完全匹配</li>
+<li>通配符<ul>
+<li><code>*</code>  匹配任意内容</li>
+<li><code>?</code> 匹配任意一个字符</li>
+<li><code>[]</code> 匹配任意一个中括号内的字符</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-sh">find . -name <span class="hljs-string">"ab[cdef]"</span>
+</code></pre>
+<h5 id="t8012.4.5.3 -i">12.4.5.3 -i <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8012.4.5.3%20-i"> # </a></h5>
+<p>不区分大小写</p>
+<pre><code class="lang-sh">find / -iname A.log
+</code></pre>
+<h5 id="t8112.4.5.4 -user">12.4.5.4 -user <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8112.4.5.4%20-user"> # </a></h5>
+<p>按所有者进行搜索</p>
+<pre><code class="lang-sh">find /root -user root
+find /root -nouser
+</code></pre>
+<h5 id="t8212.4.5.5 按时间搜索">12.4.5.5 按时间搜索 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8212.4.5.5%20%E6%8C%89%E6%97%B6%E9%97%B4%E6%90%9C%E7%B4%A2"> # </a></h5>
+<pre><code class="lang-sh">find /nginx/access.log -mtime +5
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">atime</td>
+<td style="text-align:left">文件访问时间</td>
+</tr>
+<tr>
+<td style="text-align:left">ctime</td>
+<td style="text-align:left">改变文件属性</td>
+</tr>
+<tr>
+<td style="text-align:left">mtime</td>
+<td style="text-align:left">修改文件内容</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-5</td>
+<td style="text-align:left">5天内修改的文件</td>
+</tr>
+<tr>
+<td style="text-align:left">5</td>
+<td style="text-align:left">5天前当前修改的文件</td>
+</tr>
+<tr>
+<td style="text-align:left">+5</td>
+<td style="text-align:left">5天前修改的文件</td>
+</tr>
+</tbody>
+</table>
+<h5 id="t8312.4.5.6 按大小搜索">12.4.5.6 按大小搜索 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8312.4.5.6%20%E6%8C%89%E5%A4%A7%E5%B0%8F%E6%90%9C%E7%B4%A2"> # </a></h5>
+<ul>
+<li>k小写,M大写</li>
+</ul>
+<pre><code class="lang-sh">find . -size 100k
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-8k</td>
+<td style="text-align:left">小于8K</td>
+</tr>
+<tr>
+<td style="text-align:left">8k</td>
+<td style="text-align:left">等于8K</td>
+</tr>
+<tr>
+<td style="text-align:left">+8k</td>
+<td style="text-align:left">大于8K</td>
+</tr>
+<tr>
+<td style="text-align:left">+8M</td>
+<td style="text-align:left">小于8M</td>
+</tr>
+</tbody>
+</table>
+<h5 id="t8412.4.5.7 按i节点搜索">12.4.5.7 按i节点搜索 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8412.4.5.7%20%E6%8C%89i%E8%8A%82%E7%82%B9%E6%90%9C%E7%B4%A2"> # </a></h5>
+<pre><code class="lang-sh">find . -inum 123456
+</code></pre>
+<h5 id="t8512.4.5.8 综合应用">12.4.5.8 综合应用 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8512.4.5.8%20%E7%BB%BC%E5%90%88%E5%BA%94%E7%94%A8"> # </a></h5>
+<pre><code class="lang-sh">find /tmp -size +10k -a -size -20k
+</code></pre>
+<ul>
+<li>查找/etc目录下，大于10KB并且小于20KB的文件</li>
+<li>-a and 逻辑与，两个条件都满足</li>
+<li>-o or 逻辑或，两个条件满足一个就可以</li>
+</ul>
+<pre><code class="lang-sh">find /tmp -size +10k -a -size -20k -<span class="hljs-built_in">exec</span> ls -lh {} \;
+</code></pre>
+<ul>
+<li>exec  对上个命令的结果进行操作</li>
+</ul>
+<h5 id="t8612.4.5.9 grep">12.4.5.9 grep <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8612.4.5.9%20grep"> # </a></h5>
+<ul>
+<li>在文件当中匹配符合条件的字符串</li>
+<li>grep "10"  access.log<ul>
+<li><code>-i</code> 忽略大小写 </li>
+<li><code>-v</code> 排除指定字符串</li>
+</ul>
+</li>
+<li>find命令，在系统当中搜索符合条件的文件名，如果需要匹配，使用通配符匹配，通配符是完全匹配</li>
+<li>grep命令 在文件当中搜索符合条件的字符串，如果需要匹配，使用正则表达式进行匹配，正则表达式时包含匹配</li>
+</ul>
+<h3 id="t8712.5 帮助命令">12.5 帮助命令 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8712.5%20%E5%B8%AE%E5%8A%A9%E5%91%BD%E4%BB%A4"> # </a></h3>
+<h4 id="t8812.5.1 基本用法">12.5.1 基本用法 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8812.5.1%20%E5%9F%BA%E6%9C%AC%E7%94%A8%E6%B3%95"> # </a></h4>
+<ul>
+<li>man 命令 获取指定命令的帮助</li>
+<li><code>man ls</code>  查看ls的帮助</li>
+</ul>
+<h4 id="t8912.5.2 man的级别">12.5.2 man的级别 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t8912.5.2%20man%E7%9A%84%E7%BA%A7%E5%88%AB"> # </a></h4>
+<ul>
+<li>1 查看命令的帮助</li>
+<li>2 查看可被内核调用的函数的帮助</li>
+<li>3 查看函数和函数库的帮助</li>
+<li>4 查看特殊文件的帮助</li>
+<li>5 查看配置文件的帮助</li>
+<li>6 查看游戏的帮助</li>
+<li>7 查看其它的帮助</li>
+<li>8 查看系统管理员可用命令的帮助</li>
+<li>9 查看和内核相关文件的帮助</li>
+</ul>
+<h4 id="t9012.5.3 查看命令级别">12.5.3 查看命令级别 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9012.5.3%20%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4%E7%BA%A7%E5%88%AB"> # </a></h4>
+<ul>
+<li>查看命令级别</li>
+<li>1p: POSIX utilities</li>
+<li>POSIX表示可移植操作系统接口（Portable Operating System Interface of UNIX，缩写为 POSIX ），POSIX标准定义了操作系统应该为应用程序提供的接口标准.</li>
+</ul>
+<pre><code class="lang-js">man -f ls
+whatis ls
+man <span class="hljs-number">1</span> ls
+man <span class="hljs-number">1</span>p ls
+</code></pre>
+<h4 id="t9112.5.4 关键字搜索">12.5.4 关键字搜索 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9112.5.4%20%E5%85%B3%E9%94%AE%E5%AD%97%E6%90%9C%E7%B4%A2"> # </a></h4>
+<pre><code class="lang-js">- man -k passwd
+</code></pre>
+<h4 id="t9212.5.5 shell 内部帮助">12.5.5 shell 内部帮助 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9212.5.5%20shell%20%E5%86%85%E9%83%A8%E5%B8%AE%E5%8A%A9"> # </a></h4>
+<ul>
+<li><code>whereis</code>找到就是外部，找不到就是内部<pre><code class="lang-sh"><span class="hljs-built_in">help</span> <span class="hljs-built_in">cd</span>
+</code></pre>
+</li>
+</ul>
+<h3 id="t9312.6 压缩与解压缩命令">12.6 压缩与解压缩命令 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9312.6%20%E5%8E%8B%E7%BC%A9%E4%B8%8E%E8%A7%A3%E5%8E%8B%E7%BC%A9%E5%91%BD%E4%BB%A4"> # </a></h3>
+<p><code>.zip</code> <code>.gz</code> <code>.bz2</code>  <code>.tar.gz</code> <code>.tar.bz2</code></p>
+<h4 id="t9412.6.1 zip格式">12.6.1 zip格式 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9412.6.1%20zip%E6%A0%BC%E5%BC%8F"> # </a></h4>
+<p>压缩文件或目录,是一种压缩格式</p>
+<ul>
+<li>压缩文件  <code>zip 压缩文件名.zip 源文件</code></li>
+<li>压缩目录  <code>zip -r 压缩目录名.zip 源目录</code></li>
+<li>解压      <code>unzip 压缩目录名.zip</code></li>
+</ul>
+<pre><code class="lang-js">mkdir book
+touch book/<span class="hljs-number">1.</span>txt
+touch book/<span class="hljs-number">2.</span>txt
+zip -r book.zip book
+unzip book.zip
+</code></pre>
+<h4 id="t9512.6.2 gzip">12.6.2 gzip <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9512.6.2%20gzip"> # </a></h4>
+<p>gzip为高压，可以把文件压缩得更小</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">示例</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">gzip 源文件</td>
+<td style="text-align:left">gzip a.txt</td>
+<td style="text-align:left">压缩为.gz格式的压缩文件，源文件会消失</td>
+</tr>
+<tr>
+<td style="text-align:left">gzip -c 源文件 &gt; 压缩文件</td>
+<td style="text-align:left">gzip -c yum.txt &gt; yum.txt.gz</td>
+<td style="text-align:left">压缩为.gz格式的压缩文件，源文件不会消失</td>
+</tr>
+<tr>
+<td style="text-align:left">gzip -r 目录</td>
+<td style="text-align:left">gzip -r xx</td>
+<td style="text-align:left">把目录下的每个子文件都变成压缩包，并删除原文件，当前目录无变化</td>
+</tr>
+<tr>
+<td style="text-align:left">gzip -d  压缩文件名</td>
+<td style="text-align:left">gzip -d  yum.txt.gz</td>
+<td style="text-align:left">解压缩文件,不保留压缩包</td>
+</tr>
+<tr>
+<td style="text-align:left">gunzip 压缩文件</td>
+<td style="text-align:left">gunzip  yum.txt.gz</td>
+<td style="text-align:left">解压缩文件,也不保留压缩包</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>压缩是压缩目录下的文件</li>
+</ul>
+<h4 id="t9612.6.3 .bz2格式压缩">12.6.3 .bz2格式压缩 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9612.6.3%20.bz2%E6%A0%BC%E5%BC%8F%E5%8E%8B%E7%BC%A9"> # </a></h4>
+<p>bzip2是一个压缩能力更强的压缩程序</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">示例</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">bzip2 源文件</td>
+<td style="text-align:left">bzip2 1.txt</td>
+<td style="text-align:left">压缩为.bz2格式的文件，不保留源文件</td>
+</tr>
+<tr>
+<td style="text-align:left">bzip2 -k 源文件</td>
+<td style="text-align:left">bzip2 -k 1.txt</td>
+<td style="text-align:left">压缩为.bz2格式的文件，保留源文件</td>
+</tr>
+<tr>
+<td style="text-align:left">bzip2 -d 压缩文件名</td>
+<td style="text-align:left">bzip2 -d 1.txt.bz2</td>
+<td style="text-align:left">解压压缩包,不保留压缩包</td>
+</tr>
+<tr>
+<td style="text-align:left">bunzip2 压缩文件名</td>
+<td style="text-align:left">bunzip2 1.txt.bz2</td>
+<td style="text-align:left">解压压缩包,也不保留压缩包</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>bzip2 不能压缩目录</li>
+</ul>
+<h4 id="t9712.6.4 tar">12.6.4 tar <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9712.6.4%20tar"> # </a></h4>
+<ul>
+<li>打包命令,只打包并不压缩</li>
+<li>tar -cvf 打包文件名 源文件<ul>
+<li>-c 打包</li>
+<li>-v 显示过程</li>
+<li>-f 指定打包后的文件名</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-sh">tar -cvf book.tar book    会找出一个book.tar文件
+</code></pre>
+<ul>
+<li>x 解打包<pre><code class="lang-sh">tar -xvf book.tar
+</code></pre>
+</li>
+</ul>
+<h4 id="t9812.6.4 tar.gz压缩格式">12.6.4 tar.gz压缩格式 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9812.6.4%20tar.gz%E5%8E%8B%E7%BC%A9%E6%A0%BC%E5%BC%8F"> # </a></h4>
+<ul>
+<li>zip可以压缩目录但压缩效率不高，gzip和bzip2压缩效率高但不支持目录</li>
+<li>可以先打包为<code>.tar</code>格式，再压缩为<code>.gz</code>格式
+-z 压缩为.tar.gz格式
+-x 解压缩.tar.gz格式</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">示例</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">tar -zcvf 压缩包名 <code>.tar.gz</code>源文件</td>
+<td style="text-align:left">tar -zcvf book.gar.gz book</td>
+<td style="text-align:left">可以先打包为<code>.tar</code>格式，再压缩为<code>.gz</code>格式</td>
+</tr>
+<tr>
+<td style="text-align:left">tar -zxvf 压缩包名.tar.gz</td>
+<td style="text-align:left">tar -zxvf book.tar.gz</td>
+<td style="text-align:left">解压tar.gz压缩包</td>
+</tr>
+<tr>
+<td style="text-align:left">tar -jcvf 压缩包名 <code>.tar.bz2</code>源文件</td>
+<td style="text-align:left">tar -jcvf book.tar.bz2 book</td>
+<td style="text-align:left">可以先打包为<code>.tar</code>格式，再压缩为<code>.bz2</code>格式</td>
+</tr>
+<tr>
+<td style="text-align:left">tar -jxvf 压缩包名.tar.bz2</td>
+<td style="text-align:left">tar -jxvf book.tar.bz2</td>
+<td style="text-align:left">解压tar.bz2压缩包</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t9912.7 关机和重启命令">12.7 关机和重启命令 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t9912.7%20%E5%85%B3%E6%9C%BA%E5%92%8C%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4"> # </a></h3>
+<h4 id="t10012.7.1 shutdown">12.7.1 shutdown <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10012.7.1%20shutdown"> # </a></h4>
+<p>shutdown 关机命令</p>
+<ul>
+<li>-c 取消前一个关机命令</li>
+<li>-h 关机</li>
+<li>-r 重启<pre><code class="lang-sh">shutdown -r 06:00
+shutdown -c
+</code></pre>
+</li>
+</ul>
+<h4 id="t10112.7.2 init">12.7.2 init <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10112.7.2%20init"> # </a></h4>
+<p>关机</p>
+<pre><code class="lang-js">init <span class="hljs-number">0</span>
+</code></pre>
+<p>重启</p>
+<pre><code class="lang-js">init <span class="hljs-number">6</span>
+</code></pre>
+<h4 id="t10212.7.3 logout">12.7.3 logout <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10212.7.3%20logout"> # </a></h4>
+<p>退出登录</p>
+<pre><code class="lang-sh"><span class="hljs-built_in">logout</span>
+</code></pre>
+<h3 id="t10312.8 查看登录用户信息">12.8 查看登录用户信息 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10312.8%20%E6%9F%A5%E7%9C%8B%E7%99%BB%E5%BD%95%E7%94%A8%E6%88%B7%E4%BF%A1%E6%81%AF"> # </a></h3>
+<h4 id="t10412.8.1 w">12.8.1 w <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10412.8.1%20w"> # </a></h4>
+<p>查看登录用户信息</p>
+<ul>
+<li>USER 登录的用户名</li>
+<li>TTY 登录的终端 tty1 本地终端 pts/0远程终端</li>
+<li>FROM 登录的IP</li>
+<li>LOGIN  登录时间</li>
+<li>IDLE 用户闲置时间</li>
+<li>JCPU 该终端所有进程占用的时间</li>
+<li>PCPU 当前进程所占用的时间</li>
+<li>WHAT 正在执行的命令</li>
+</ul>
+<h4 id="t10512.8.2 who">12.8.2 who <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10512.8.2%20who"> # </a></h4>
+<p>查看登录用户信息</p>
+<ul>
+<li>USER 登录的用户名</li>
+<li>TTY 登录的终端 tty1 本地终端 pts/0远程终端</li>
+<li>LOGIN  登录时间（登录的IP）</li>
+</ul>
+<h4 id="t10612.8.3 last">12.8.3 last <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10612.8.3%20last"> # </a></h4>
+<p>查看当前登录和过去登录的用户信息
+默认读取 <code>/var/log/wtmp</code> 文件</p>
+<ul>
+<li>用户名</li>
+<li>登录终端</li>
+<li>登录IP</li>
+<li>登录时间</li>
+<li>退出时间(在线时间)</li>
+</ul>
+<h4 id="t10712.8.4 lastlog">12.8.4 lastlog <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10712.8.4%20lastlog"> # </a></h4>
+<p>查看所有用户的最后一次登录时间</p>
+<ul>
+<li>用户名</li>
+<li>登录终端</li>
+<li>登录IP</li>
+<li>最后一次登录时间</li>
+</ul>
+<h3 id="t10812.9 磁盘管理">12.9 磁盘管理 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10812.9%20%E7%A3%81%E7%9B%98%E7%AE%A1%E7%90%86"> # </a></h3>
+<h4 id="t10912.9.1 df">12.9.1 df <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t10912.9.1%20df"> # </a></h4>
+<ul>
+<li>查看磁盘分区使用状况</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-l</td>
+<td style="text-align:left">仅显示本地磁盘(默认)</td>
+</tr>
+<tr>
+<td style="text-align:left">-a</td>
+<td style="text-align:left">显示所有文件系统的使用情况</td>
+</tr>
+<tr>
+<td style="text-align:left">-h</td>
+<td style="text-align:left">以1024进制计算最合适的单位显示磁盘容量</td>
+</tr>
+<tr>
+<td style="text-align:left">-H</td>
+<td style="text-align:left">以1000进制计算最合适的单位显示磁盘容量</td>
+</tr>
+<tr>
+<td style="text-align:left">-T</td>
+<td style="text-align:left">显示磁盘分区类型</td>
+</tr>
+<tr>
+<td style="text-align:left">-t</td>
+<td style="text-align:left">显示指定类型文件系统的磁盘分区</td>
+</tr>
+<tr>
+<td style="text-align:left">-x</td>
+<td style="text-align:left">不显示指定类型文件系统的磁盘分区</td>
+</tr>
+</tbody>
+</table>
+<h4 id="t11012.9.2 du">12.9.2 du <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11012.9.2%20du"> # </a></h4>
+<ul>
+<li>统计以磁盘上的文件大小</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">-b</td>
+<td style="text-align:left">以byte为单位统计文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-k</td>
+<td style="text-align:left">以KB为单位统计文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-m</td>
+<td style="text-align:left">以MB为单位统计文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-h</td>
+<td style="text-align:left">以1024为单位统计文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-H</td>
+<td style="text-align:left">以1000为单位统计文件</td>
+</tr>
+<tr>
+<td style="text-align:left">-s</td>
+<td style="text-align:left">指定统计目标</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js">du -s /etc
+du -sH  /etc
+</code></pre>
+<h4 id="t11112.9.3 添加新硬盘后的分区和格式化">12.9.3 添加新硬盘后的分区和格式化 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11112.9.3%20%E6%B7%BB%E5%8A%A0%E6%96%B0%E7%A1%AC%E7%9B%98%E5%90%8E%E7%9A%84%E5%88%86%E5%8C%BA%E5%92%8C%E6%A0%BC%E5%BC%8F%E5%8C%96"> # </a></h4>
+<ul>
+<li>硬件设备是由linux系统自动识别并以文件的形式存在于根目录下的<code>dev</code>目录下</li>
+<li>1-4分区编号是留给主分区和扩展分区的,逻辑分区只能从5开始</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">含义</th>
+<th>中文</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">m</td>
+<td style="text-align:left">print this menu</td>
+<td>打印菜单</td>
+</tr>
+<tr>
+<td style="text-align:left">n</td>
+<td style="text-align:left">add a new partition</td>
+<td>添加一个分区</td>
+</tr>
+<tr>
+<td style="text-align:left">d</td>
+<td style="text-align:left">delete a partition</td>
+<td>删除一个分区</td>
+</tr>
+<tr>
+<td style="text-align:left">p</td>
+<td style="text-align:left">print the partition table</td>
+<td>打印分区表</td>
+</tr>
+<tr>
+<td style="text-align:left">q</td>
+<td style="text-align:left">quit without saving changes</td>
+<td>退出不保存</td>
+</tr>
+<tr>
+<td style="text-align:left">w</td>
+<td style="text-align:left">write table to disk and exit</td>
+<td>写入分区表并保存</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js">fdisk -l
+Disk /dev/sda: <span class="hljs-number">21.5</span> GB, <span class="hljs-number">21474836480</span> bytes
+Device      Boot      Start         End      Blocks   Id  System
+/dev/sda1   *           <span class="hljs-number">1</span>            <span class="hljs-number">26</span>      <span class="hljs-number">204800</span>   <span class="hljs-number">83</span>  Linux
+
+Disk /dev/sdb: <span class="hljs-number">8589</span> MB, <span class="hljs-number">8589934592</span> bytes
+fdisk /dev/sdb 开始对这块硬盘进行分区
+m 打印命令
+n 创建一个分区
+Partition number (<span class="hljs-number">1</span><span class="hljs-number">-4</span>): <span class="hljs-number">1</span> 选择分区编号
+First cylinder (<span class="hljs-number">1</span><span class="hljs-number">-1044</span>, <span class="hljs-keyword">default</span> <span class="hljs-number">1</span>): <span class="hljs-number">1</span> 输入开始扇区
+Last cylinder, +cylinders or +size{K,M,G} (<span class="hljs-number">1</span><span class="hljs-number">-1044</span>, <span class="hljs-keyword">default</span> <span class="hljs-number">1044</span>): +<span class="hljs-number">3000</span>M 输入结束扇区
+p 查看当前分区
+n 创建分区
+e 扩展分区
+l 创建逻辑分区 
+d 删除分区
+w 分区表写入磁盘
+</code></pre>
+<h4 id="t11212.9.4 GPT">12.9.4 GPT <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11212.9.4%20GPT"> # </a></h4>
+<ul>
+<li>MBR下主分区最多4个，GPT可达128个</li>
+<li>MBR下主分区容量最大2TB，GPT模式下容量可达18EB(1EB=1024PB,1PB=1024TB,1TB=1024GB)</li>
+</ul>
+<pre><code class="lang-js">parted 开始分区,默认是对第一块硬盘分区
+mklabel gpt  指定分区表的类型为gpt
+print 查看分区表的类型
+mkpart 开始分区
+分区名称？  []? system                                                    
+文件系统类型？  [ext2]?                                                   
+起始点？ <span class="hljs-number">0</span>                                                                
+结束点？ <span class="hljs-number">2000</span>                                                             
+警告: The resulting partition is not properly aligned <span class="hljs-keyword">for</span> best performance.
+忽略/Ignore/放弃/Cancel? c 
+(parted) <span class="hljs-number">1</span>  
+结束点？ <span class="hljs-number">2000</span>  
+mkpart <span class="hljs-number">2</span>th <span class="hljs-number">2000</span> <span class="hljs-number">3000</span>
+quit 退出编辑
+</code></pre>
+<h4 id="t11312.9.5 格式化">12.9.5 格式化 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11312.9.5%20%E6%A0%BC%E5%BC%8F%E5%8C%96"> # </a></h4>
+<pre><code class="lang-js">ls -l /dev/sdb*
+mkfs.ext3 /dev/sdb1
+mkfs -t ext4 /dev/sdb2
+</code></pre>
+<h4 id="t11412.9.6 挂载">12.9.6 挂载 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11412.9.6%20%E6%8C%82%E8%BD%BD"> # </a></h4>
+<pre><code class="lang-js">mkdir /mnt/zhufeng
+mount /dev/sdb1 /mnt/zhufeng
+umount /mnt/zhufeng
+vim + <span class="hljs-regexp">/etc/</span>fstab
+
+/dev/sdb1  /mnt/zhufeng  ext3    defaults        <span class="hljs-number">0</span> <span class="hljs-number">0</span>
+分区名称      挂载点      文件系统类型  
+</code></pre>
+<h4 id="t11512.9.7  添加swap交换分区">12.9.7  添加swap交换分区 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11512.9.7%20%20%E6%B7%BB%E5%8A%A0swap%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA"> # </a></h4>
+<ul>
+<li>建立普通的linux分区</li>
+<li>修改分区类型的16进制编码</li>
+<li>格式化成交换分类</li>
+<li>启动交换分区</li>
+</ul>
+<pre><code class="lang-js">fdisk /dev/sdb
+p 查看当前的分区
+Command (m <span class="hljs-keyword">for</span> help): t 修改分区的系统ID
+Partition number (<span class="hljs-number">1</span><span class="hljs-number">-4</span>): <span class="hljs-number">3</span> 修改分区编号为<span class="hljs-number">3</span>的分区
+Hex code (type L to list codes): L 列出所有编号
+Hex code (type L to list codes): <span class="hljs-number">82</span> 把编号修改为<span class="hljs-number">16</span>进制的<span class="hljs-number">82</span>
+Changed system type <span class="hljs-keyword">of</span> partition <span class="hljs-number">3</span> to <span class="hljs-number">82</span> (Linux swap / Solaris)
+p
+/dev/sdb3 <span class="hljs-number">767</span> <span class="hljs-number">1044</span> <span class="hljs-number">2233035</span> <span class="hljs-number">82</span> Linux swap / Solaris
+
+free 查看剩余内存
+mkswap /dev/sdb3  把sdb3设置为交换分区
+swapon /dev/sdb3  挂载sdb3成交换区
+free
+swapoff /dev/sdb3
+</code></pre>
+<h4 id="t11612.9.8 挂载">12.9.8 挂载 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11612.9.8%20%E6%8C%82%E8%BD%BD"> # </a></h4>
+<h5 id="t11712.9.8.1 挂载命令格式">12.9.8.1 挂载命令格式 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11712.9.8.1%20%E6%8C%82%E8%BD%BD%E5%91%BD%E4%BB%A4%E6%A0%BC%E5%BC%8F"> # </a></h5>
+<ul>
+<li>mount [-t 文件系统] [-o 特殊选项] 设备文件名 挂载点</li>
+<li>选项<ul>
+<li>-t 文件系统 ext4 iso9660</li>
+<li>-o 特殊选项 </li>
+</ul>
+</li>
+</ul>
+<h5 id="t11812.9.8.2 挂载光驱">12.9.8.2 挂载光驱 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11812.9.8.2%20%E6%8C%82%E8%BD%BD%E5%85%89%E9%A9%B1"> # </a></h5>
+<pre><code class="lang-sh">mkdir /mnt/<span class="hljs-built_in">cd</span>
+mount -t iso9660 /dev/sr0 /mnt/cdrom
+</code></pre>
+<h5 id="t11912.9.8.3 卸载光驱">12.9.8.3 卸载光驱 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t11912.9.8.3%20%E5%8D%B8%E8%BD%BD%E5%85%89%E9%A9%B1"> # </a></h5>
+<pre><code class="lang-sh">umount /mnt/cdrom
+</code></pre>
+<h5 id="t12012.9.8.4 挂载U盘">12.9.8.4 挂载U盘 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12012.9.8.4%20%E6%8C%82%E8%BD%BDU%E7%9B%98"> # </a></h5>
+<pre><code class="lang-sh">fdisk -l 查看硬盘及分区信息
+mount -t vfat /dev/sdb1 /mnt/usb
+</code></pre>
+<ul>
+<li>linux默认不支持NTFS格式</li>
+</ul>
+<h3 id="t12112.10 文件查看命令">12.10 文件查看命令 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12112.10%20%E6%96%87%E4%BB%B6%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4"> # </a></h3>
+<h4 id="t12212.10.1 cat">12.10.1 cat <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12212.10.1%20cat"> # </a></h4>
+<ul>
+<li>cat 命令用于连接文件并打印到标准输出设备上。</li>
+<li>cat [-AbeEnstTuv] [--help] [--version] fileName</li>
+<li>参数<ul>
+<li>-n 或 --number：由 1 开始对所有输出的行数编号。<pre><code class="lang-js">cat -n textfile1
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="t12312.10.2 more">12.10.2 more <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12312.10.2%20more"> # </a></h4>
+<ul>
+<li>Linux more 命令类似 cat ，不过会以一页一页的形式显示，更方便使用者逐页阅读，而最基本的指令就是按空白键（space）就往下一页显示，按 b 键就会往回（back）一页显示，而且还有搜寻字串的功能（与 vi 相似），使用中的说明文件，请按 h 。</li>
+<li>more fileName</li>
+</ul>
+<pre><code class="lang-js">more  testfile
+<span class="hljs-string">`
+</span></code></pre>
+<h4 id="t12412.10.3 head">12.10.3 head <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12412.10.3%20head"> # </a></h4>
+<ul>
+<li>用来显示开头某个数量的文字区块</li>
+</ul>
+<pre><code class="lang-js">head <span class="hljs-number">-5</span> readme.txt
+</code></pre>
+<h4 id="t12512.10.4 tail">12.10.4 tail <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12512.10.4%20tail"> # </a></h4>
+<ul>
+<li>tail命令可用于查看文件的内容</li>
+<li>有一个常用的参数 -f 常用于查阅正在改变的日志文件。</li>
+<li>tail [参数] [文件]  </li>
+<li>参数<ul>
+<li>-f 循环读取</li>
+<li>-n&lt;行数&gt; 显示文件的尾部 n 行内容<pre><code class="lang-js">tail <span class="hljs-number">-5</span> mail.txt
+tail -f access.log
+</code></pre>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="t12612.10.5 第二页">12.10.5 第二页 <a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html#t12612.10.5%20%E7%AC%AC%E4%BA%8C%E9%A1%B5"> # </a></h4>
+<pre><code class="lang-js">　head <span class="hljs-number">-10</span> file | tail <span class="hljs-number">-5</span>
+</code></pre>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

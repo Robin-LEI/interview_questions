@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<!-- saved from url=(0060)http://www.zhufengpeixun.com/strong/html/36.websocket-1.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t01.%20HTTP%E7%9A%84%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F">1. HTTP的架构模式</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t11.1.%20HTTP%E7%9A%84%E7%89%B9%E7%82%B9">1.1. HTTP的特点</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t22.%20%E5%8F%8C%E5%90%91%E9%80%9A%E4%BF%A1">2. 双向通信</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t32.1%20%E8%BD%AE%E8%AF%A2">2.1 轮询</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t41.2%20%E9%95%BF%E8%BD%AE%E8%AF%A2">1.2 长轮询</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t51.3%20iframe%E6%B5%81">1.3 iframe流</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t61.4%20EventSource%E6%B5%81">1.4 EventSource流</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t71.4.1%20%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AB%AF">1.4.1 浏览器端</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t81.4.2%20%E6%9C%8D%E5%8A%A1%E7%AB%AF">1.4.2 服务端</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t92.websocket">2.websocket</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t102.1%20websocket%20%E4%BC%98%E5%8A%BF">2.1 websocket 优势</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t112.2%20websocket%E5%AE%9E%E6%88%98">2.2 websocket实战</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t122.2.1%20%E6%9C%8D%E5%8A%A1%E7%AB%AF">2.2.1 服务端</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t132.2.2%20%E5%AE%A2%E6%88%B7%E7%AB%AF">2.2.2 客户端</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t142.3%20%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5">2.3 如何建立连接</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t152.3.1%20%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9A%E7%94%B3%E8%AF%B7%E5%8D%8F%E8%AE%AE%E5%8D%87%E7%BA%A7">2.3.1 客户端：申请协议升级</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t162.3.2%20%E6%9C%8D%E5%8A%A1%E7%AB%AF%EF%BC%9A%E5%93%8D%E5%BA%94%E5%8D%8F%E8%AE%AE%E5%8D%87%E7%BA%A7">2.3.2 服务端：响应协议升级</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t172.3.3%20Sec-WebSocket-Accept%E7%9A%84%E8%AE%A1%E7%AE%97">2.3.3 Sec-WebSocket-Accept的计算</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t182.3.4%20%20Sec-WebSocket-Key/Accept%E7%9A%84%E4%BD%9C%E7%94%A8">2.3.4  Sec-WebSocket-Key/Accept的作用</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t192.4%20%E6%95%B0%E6%8D%AE%E5%B8%A7%E6%A0%BC%E5%BC%8F">2.4 数据帧格式</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t202.4.1%20%E6%95%B0%E6%8D%AE%E5%B8%A7%E6%A0%BC%E5%BC%8F">2.4.1 数据帧格式</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t212.4.2%20%E6%8E%A9%E7%A0%81%E7%AE%97%E6%B3%95">2.4.2 掩码算法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t222.4.3%20%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E6%88%98">2.4.3 服务器实战</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t23%E5%8F%82%E8%80%83">参考</a></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. HTTP的架构模式">1. HTTP的架构模式 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t01.%20HTTP%E7%9A%84%E6%9E%B6%E6%9E%84%E6%A8%A1%E5%BC%8F"> # </a></h2>
+<p>Http是客户端/服务器模式中请求-响应所用的协议，在这种模式中，客户端(一般是web浏览器)向服务器提交HTTP请求，服务器响应请求的资源</p>
+<h3 id="t11.1. HTTP的特点">1.1. HTTP的特点 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t11.1.%20HTTP%E7%9A%84%E7%89%B9%E7%82%B9"> # </a></h3>
+<ul>
+<li>HTTP是半双工协议，也就是说，在同一时刻数据只能单向流动，客户端向服务器发送请求(单向的)，然后服务器响应请求(单向的)。</li>
+<li>服务器不能主动推送数据给浏览器。</li>
+</ul>
+<h2 id="t22. 双向通信">2. 双向通信 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t22.%20%E5%8F%8C%E5%90%91%E9%80%9A%E4%BF%A1"> # </a></h2>
+<p>Comet是一种用于web的推送技术，能使服务器能实时地将更新的信息传送到客户端，而无须客户端发出请求，目前有三种实现方式:轮询（polling） 长轮询（long-polling）和iframe流（streaming）。</p>
+<h3 id="t32.1 轮询">2.1 轮询 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t32.1%20%E8%BD%AE%E8%AF%A2"> # </a></h3>
+<ul>
+<li>轮询是客户端和服务器之间会一直进行连接，每隔一段时间就询问一次</li>
+<li>这种方式连接数会很多，一个接受，一个发送。而且每次发送请求都会有Http的Header，会很耗流量，也会消耗CPU的利用率</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/polling.jpg" alt="polling"></p>
+<p>server.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">let</span> app = express();
+app.use(express.static(__dirname));
+app.use(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res,next</span>)</span>{
+    res.header(<span class="hljs-string">'Access-Control-Allow-Origin'</span>, <span class="hljs-string">'http://localhost:8000'</span>);
+    res.end(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toLocaleTimeString());
+});
+app.listen(<span class="hljs-number">8080</span>);
+</code></pre>
+<pre><code class="lang-js">&lt;body&gt;
+    &lt;div id="clock"&gt;&lt;/div&gt;
+    &lt;script&gt;
+            setInterval(function () {
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', 'http://localhost:8080', true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) {
+                        document.querySelector('#clock').innerHTML = xhr.responseText;
+                    }
+                }
+                xhr.send();
+            }, 1000);
+    &lt;/script&gt;
+&lt;/body&gt;
+</code></pre>
+<h3 id="t41.2 长轮询">1.2 长轮询 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t41.2%20%E9%95%BF%E8%BD%AE%E8%AF%A2"> # </a></h3>
+<ul>
+<li>长轮询是对轮询的改进版，客户端发送HTTP给服务器之后，看有没有新消息，如果没有新消息，就一直等待</li>
+<li>当有新消息的时候，才会返回给客户端。在某种程度上减小了网络带宽和CPU利用率等问题。</li>
+<li>由于http数据包的头部数据量往往很大（通常有400多个字节），但是真正被服务器需要的数据却很少（有时只有10个字节左右），这样的数据包在网络上周期性的传输，难免对网络带宽是一种浪费</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/longpolling.png" alt="longpolling"></p>
+<p>clock.html</p>
+<pre><code class="lang-js">  &lt;div id="clock"&gt;&lt;/div&gt;
+    &lt;script&gt;
+        (function poll() {
+                let xhr = new XMLHttpRequest();
+                xhr.open('GET', 'http://localhost:8080', true);
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) {
+                        document.querySelector('#clock').innerHTML = xhr.responseText;
+                        poll();
+                    }
+                }
+                xhr.send();
+        })();
+    &lt;/script&gt;
+</code></pre>
+<blockquote>
+<p>long poll 需要有很高的并发能力</p>
+</blockquote>
+<h3 id="t51.3 iframe流">1.3 iframe流 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t51.3%20iframe%E6%B5%81"> # </a></h3>
+<ul>
+<li>通过在HTML页面里嵌入一个隐藏的iframe,然后将这个iframe的src属性设为对一个长连接的请求,服务器端就能源源不断地往客户推送数据。</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/iframeflow.png" alt="iframeflow"></p>
+<p>server.js</p>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">const</span> app = express();
+app.use(express.static(__dirname));
+app.get(<span class="hljs-string">'/clock'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+    setInterval(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        res.write(<span class="hljs-string">`
+            &lt;script type="text/javascript"&gt;
+                parent.document.getElementById('clock').innerHTML = "<span class="hljs-subst">${<span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toLocaleTimeString()}</span>";
+            &lt;/script&gt;
+        `</span>);
+    }, <span class="hljs-number">1000</span>);
+});
+app.listen(<span class="hljs-number">8080</span>);
+</code></pre>
+<p>client.html</p>
+<pre><code class="lang-html">    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"clock"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">iframe</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"/clock"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">" display:none"</span> /&gt;</span>
+</code></pre>
+<h2 id="t61.4 EventSource流">1.4 EventSource流 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t61.4%20EventSource%E6%B5%81"> # </a></h2>
+<ul>
+<li>HTML5规范中提供了服务端事件EventSource，浏览器在实现了该规范的前提下创建一个EventSource连接后，便可收到服务端的发送的消息，这些消息需要遵循一定的格式，对于前端开发人员而言，只需在浏览器中侦听对应的事件皆可</li>
+<li>SSE的简单模型是：一个客户端去从服务器端订阅一条<code>流</code>，之后服务端可以发送消息给客户端直到服务端或者客户端关闭该“流”，所以eventsource也叫作<code>"</code>server-sent-event`</li>
+<li>EventSource流的实现方式对客户端开发人员而言非常简单，兼容性良好</li>
+<li>对于服务端，它可以兼容老的浏览器，无需upgrade为其他协议，在简单的服务端推送的场景下可以满足需求</li>
+</ul>
+<h3 id="t71.4.1 浏览器端">1.4.1 浏览器端 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t71.4.1%20%E6%B5%8F%E8%A7%88%E5%99%A8%E7%AB%AF"> # </a></h3>
+<ul>
+<li>浏览器端，需要创建一个<code>EventSource</code>对象，并且传入一个服务端的接口URI作为参</li>
+<li>默认EventSource对象通过侦听<code>message</code>事件获取服务端传来的消息</li>
+<li><code>open</code>事件则在http连接建立后触发</li>
+<li><code>error</code>事件会在通信错误（连接中断、服务端返回数据失败）的情况下触发</li>
+<li>同时<code>EventSource</code>规范允许服务端指定自定义事件，客户端侦听该事件即可</li>
+</ul>
+<pre><code class="lang-js"> &lt;script&gt;
+var eventSource = new EventSource('/eventSource');
+eventSource.onmessage  = function(e){
+    console.log(e.data);
+}
+eventSource.onerror  = function(err){
+    console.log(err);
+}
+ &lt;/script&gt;
+</code></pre>
+<h3 id="t81.4.2 服务端">1.4.2 服务端 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t81.4.2%20%E6%9C%8D%E5%8A%A1%E7%AB%AF"> # </a></h3>
+<ul>
+<li>事件流的对应MIME格式为<code>text/event-stream</code>，而且其基于HTTP长连接。针对HTTP1.1规范默认采用长连接，针对HTTP1.0的服务器需要特殊设置。</li>
+<li>event-source必须编码成<code>utf-8</code>的格式，消息的每个字段使用"\n"来做分割，并且需要下面4个规范定义好的字段：<ul>
+<li>Event: 事件类型</li>
+<li>Data: 发送的数据</li>
+<li>ID: 每一条事件流的ID</li>
+<li>Retry： 告知浏览器在所有的连接丢失之后重新开启新的连接等待的时间，在自动重新连接的过程中，之前收到的最后一个事件流ID会被发送到服务端</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span>  express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">let</span> app = express();
+app.use(express.static(__dirname));
+<span class="hljs-keyword">let</span> sendCount = <span class="hljs-number">1</span>;
+app.get(<span class="hljs-string">'/eventSource'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>{
+    res.header(<span class="hljs-string">'Content-Type'</span>,<span class="hljs-string">'text/event-stream'</span>,);
+    setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      res.write(<span class="hljs-string">`event:message\nid:<span class="hljs-subst">${sendCount++}</span>\ndata:<span class="hljs-subst">${<span class="hljs-built_in">Date</span>.now()}</span>\n\n`</span>);
+    }, <span class="hljs-number">1000</span>)
+});
+app.listen(<span class="hljs-number">8888</span>);
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span>  express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">let</span> app = express();
+app.use(express.static(__dirname));
+<span class="hljs-keyword">const</span> SseStream = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ssestream'</span>);
+<span class="hljs-keyword">let</span> sendCount = <span class="hljs-number">1</span>;
+app.get(<span class="hljs-string">'/eventSource'</span>,<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">req,res</span>)</span>{
+    <span class="hljs-keyword">const</span> sseStream = <span class="hljs-keyword">new</span> SseStream(req);
+    sseStream.pipe(res);
+    <span class="hljs-keyword">const</span> pusher = setInterval(<span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> {
+      sseStream.write({
+        <span class="hljs-attr">id</span>: sendCount++,
+        <span class="hljs-attr">event</span>: <span class="hljs-string">'message'</span>,
+        <span class="hljs-attr">retry</span>: <span class="hljs-number">20000</span>, <span class="hljs-comment">// 告诉客户端,如果断开连接后,20秒后再重试连接</span>
+        <span class="hljs-attr">data</span>: {<span class="hljs-attr">ts</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toTimeString()}
+      })
+    }, <span class="hljs-number">1000</span>)
+
+    res.on(<span class="hljs-string">'close'</span>, () =&gt; {
+      clearInterval(pusher);
+      sseStream.unpipe(res);
+    })
+});
+app.listen(<span class="hljs-number">8888</span>);
+</code></pre>
+<h2 id="t92.websocket">2.websocket <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t92.websocket"> # </a></h2>
+<ul>
+<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">WebSockets_API</a> 规范定义了一个 API 用以在网页浏览器和服务器建立一个 socket 连接。通俗地讲：在客户端和服务器保有一个持久的连接，两边可以在任意时间开始发送数据。</li>
+<li>HTML5开始提供的一种浏览器与服务器进行全双工通讯的网络技术</li>
+<li>属于应用层协议，它基于TCP传输协议，并复用HTTP的握手通道。</li>
+</ul>
+<h3 id="t102.1 websocket 优势">2.1 websocket 优势 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t102.1%20websocket%20%E4%BC%98%E5%8A%BF"> # </a></h3>
+<ul>
+<li>支持双向通信，实时性更强。</li>
+<li>更好的二进制支持。</li>
+<li>较少的控制开销。连接创建后，ws客户端、服务端进行数据交换时，协议控制的数据包头部较小。</li>
+</ul>
+<h3 id="t112.2 websocket实战">2.2 websocket实战 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t112.2%20websocket%E5%AE%9E%E6%88%98"> # </a></h3>
+<h4 id="t122.2.1 服务端">2.2.1 服务端 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t122.2.1%20%E6%9C%8D%E5%8A%A1%E7%AB%AF"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> express = <span class="hljs-built_in">require</span>(<span class="hljs-string">'express'</span>);
+<span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">'path'</span>);
+<span class="hljs-keyword">let</span> app = express();
+<span class="hljs-keyword">let</span> server = <span class="hljs-built_in">require</span>(<span class="hljs-string">'http'</span>).createServer(app);
+app.get(<span class="hljs-string">'/'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">req, res</span>) </span>{
+    res.sendFile(path.resolve(__dirname, <span class="hljs-string">'index.html'</span>));
+});
+app.listen(<span class="hljs-number">3000</span>);
+
+
+<span class="hljs-comment">//-----------------------------------------------</span>
+<span class="hljs-keyword">let</span> WebSocketServer = <span class="hljs-built_in">require</span>(<span class="hljs-string">'ws'</span>).Server;
+<span class="hljs-keyword">let</span> wsServer = <span class="hljs-keyword">new</span> WebSocketServer({ <span class="hljs-attr">port</span>: <span class="hljs-number">8888</span> });
+wsServer.on(<span class="hljs-string">'connection'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'连接成功'</span>);
+    socket.on(<span class="hljs-string">'message'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">message</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'接收到客户端消息:'</span> + message);
+        socket.send(<span class="hljs-string">'服务器回应:'</span> + message);
+    });
+});
+</code></pre>
+<h4 id="t132.2.2 客户端">2.2.2 客户端 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t132.2.2%20%E5%AE%A2%E6%88%B7%E7%AB%AF"> # </a></h4>
+<pre><code class="lang-html">    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+        <span class="hljs-keyword">let</span> ws = <span class="hljs-keyword">new</span> WebSocket(<span class="hljs-string">'ws://localhost:8888'</span>);
+        ws.onopen = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'客户端连接成功'</span>);
+            ws.send(<span class="hljs-string">'hello'</span>);
+        }
+        ws.onmessage = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+            <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'收到服务器的响应 '</span> + event.data);
+        }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+<h3 id="t142.3 如何建立连接">2.3 如何建立连接 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t142.3%20%E5%A6%82%E4%BD%95%E5%BB%BA%E7%AB%8B%E8%BF%9E%E6%8E%A5"> # </a></h3>
+<p>WebSocket复用了HTTP的握手通道。具体指的是，客户端通过HTTP请求与WebSocket服务端协商升级协议。协议升级完成后，后续的数据交换则遵照WebSocket的协议。</p>
+<h4 id="t152.3.1 客户端：申请协议升级">2.3.1 客户端：申请协议升级 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t152.3.1%20%E5%AE%A2%E6%88%B7%E7%AB%AF%EF%BC%9A%E7%94%B3%E8%AF%B7%E5%8D%8F%E8%AE%AE%E5%8D%87%E7%BA%A7"> # </a></h4>
+<p>首先，客户端发起协议升级请求。可以看到，采用的是标准的HTTP报文格式，且只支持GET方法。</p>
+<pre><code class="lang-js">GET ws:<span class="hljs-comment">//localhost:8888/ HTTP/1.1</span>
+Host: localhost:<span class="hljs-number">8888</span>
+<span class="hljs-attr">Connection</span>: Upgrade
+<span class="hljs-attr">Upgrade</span>: websocket
+Sec-WebSocket-Version: <span class="hljs-number">13</span>
+Sec-WebSocket-Key: IHfMdf8a0aQXbwQO1pkGdA==
+</code></pre>
+<ul>
+<li>Connection: Upgrade：表示要升级协议</li>
+<li>Upgrade: websocket：表示要升级到websocket协议</li>
+<li>Sec-WebSocket-Version: 13：表示websocket的版本</li>
+<li>Sec-WebSocket-Key：与后面服务端响应首部的Sec-WebSocket-Accept是配套的，提供基本的防护，比如恶意的连接，或者无意的连接。</li>
+</ul>
+<h4 id="t162.3.2 服务端：响应协议升级">2.3.2 服务端：响应协议升级 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t162.3.2%20%E6%9C%8D%E5%8A%A1%E7%AB%AF%EF%BC%9A%E5%93%8D%E5%BA%94%E5%8D%8F%E8%AE%AE%E5%8D%87%E7%BA%A7"> # </a></h4>
+<p>服务端返回内容如下，状态代码101表示协议切换。到此完成协议升级，后续的数据交互都按照新的协议来。</p>
+<pre><code class="lang-js">HTTP/<span class="hljs-number">1.1</span> <span class="hljs-number">101</span> Switching Protocols
+<span class="hljs-attr">Upgrade</span>: websocket
+<span class="hljs-attr">Connection</span>: Upgrade
+Sec-WebSocket-Accept: aWAY+V/uyz5ILZEoWuWdxjnlb7E=
+
+
+
+</code></pre>
+<h4 id="t172.3.3 Sec-WebSocket-Accept的计算">2.3.3 Sec-WebSocket-Accept的计算 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t172.3.3%20Sec-WebSocket-Accept%E7%9A%84%E8%AE%A1%E7%AE%97"> # </a></h4>
+<p>Sec-WebSocket-Accept根据客户端请求首部的Sec-WebSocket-Key计算出来。
+计算公式为：</p>
+<ul>
+<li>将Sec-WebSocket-Key跟258EAFA5-E914-47DA-95CA-C5AB0DC85B11拼接。</li>
+<li>通过SHA1计算出摘要，并转成base64字符串<pre><code class="lang-js"><span class="hljs-keyword">const</span> crypto = <span class="hljs-built_in">require</span>(<span class="hljs-string">'crypto'</span>);
+<span class="hljs-keyword">const</span> number = <span class="hljs-string">'258EAFA5-E914-47DA-95CA-C5AB0DC85B11'</span>;
+<span class="hljs-keyword">const</span> webSocketKey = <span class="hljs-string">'IHfMdf8a0aQXbwQO1pkGdA=='</span>;
+<span class="hljs-keyword">let</span> websocketAccept = <span class="hljs-built_in">require</span>(<span class="hljs-string">'crypto'</span>).createHash(<span class="hljs-string">'sha1'</span>).update(webSocketKey + number).digest(<span class="hljs-string">'base64'</span>);
+<span class="hljs-built_in">console</span>.log(websocketAccept);<span class="hljs-comment">//aWAY+V/uyz5ILZEoWuWdxjnlb7E=</span>
+</code></pre>
+</li>
+</ul>
+<h4 id="t182.3.4  Sec-WebSocket-Key/Accept的作用">2.3.4  Sec-WebSocket-Key/Accept的作用 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t182.3.4%20%20Sec-WebSocket-Key/Accept%E7%9A%84%E4%BD%9C%E7%94%A8"> # </a></h4>
+<ul>
+<li>避免服务端收到非法的websocket连接</li>
+<li>确保服务端理解websocket连接</li>
+<li>用浏览器里发起ajax请求，设置header时，Sec-WebSocket-Key以及其他相关的header是被禁止的</li>
+<li>Sec-WebSocket-Key主要目的并不是确保数据的安全性，因为Sec-WebSocket-Key、Sec-WebSocket-Accept的转换计算公式是公开的，而且非常简单，最主要的作用是预防一些常见的意外情况（非故意的）</li>
+</ul>
+<h3 id="t192.4 数据帧格式">2.4 数据帧格式 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t192.4%20%E6%95%B0%E6%8D%AE%E5%B8%A7%E6%A0%BC%E5%BC%8F"> # </a></h3>
+<p>WebSocket客户端、服务端通信的最小单位是<a href="https://tools.ietf.org/html/rfc6455#section-5.2">帧</a>，由1个或多个帧组成一条完整的消息（message）。</p>
+<ul>
+<li>发送端：将消息切割成多个帧，并发送给服务端</li>
+<li>接收端：接收消息帧，并将关联的帧重新组装成完整的消息</li>
+</ul>
+<h4 id="t202.4.1 数据帧格式">2.4.1 数据帧格式 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t202.4.1%20%E6%95%B0%E6%8D%AE%E5%B8%A7%E6%A0%BC%E5%BC%8F"> # </a></h4>
+<p>单位是比特。比如FIN、RSV1各占据1比特，opcode占据4比特</p>
+<pre><code class="lang-js">  <span class="hljs-number">0</span>                   <span class="hljs-number">1</span>                   <span class="hljs-number">2</span>                   <span class="hljs-number">3</span>
+  <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span> <span class="hljs-number">2</span> <span class="hljs-number">3</span> <span class="hljs-number">4</span> <span class="hljs-number">5</span> <span class="hljs-number">6</span> <span class="hljs-number">7</span> <span class="hljs-number">8</span> <span class="hljs-number">9</span> <span class="hljs-number">0</span> <span class="hljs-number">1</span>
+ +-+-+-+-+-------+-+-------------+-------------------------------+
+ |F|R|R|R| opcode|M| Payload len |    Extended payload length    |
+ |I|S|S|S|  (<span class="hljs-number">4</span>)  |A|     (<span class="hljs-number">7</span>)     |             (<span class="hljs-number">16</span>/<span class="hljs-number">64</span>)           |
+ |N|V|V|V|       |S|             |   (<span class="hljs-keyword">if</span> payload len==<span class="hljs-number">126</span>/<span class="hljs-number">127</span>)   |
+ | |<span class="hljs-number">1</span>|<span class="hljs-number">2</span>|<span class="hljs-number">3</span>|       |K|             |                               |
+ +-+-+-+-+-------+-+-------------+ - - - - - - - - - - - - - - - +
+ |     Extended payload length continued, <span class="hljs-keyword">if</span> payload len == <span class="hljs-number">127</span>  |
+ + - - - - - - - - - - - - - - - +-------------------------------+
+ |                               |Masking-key, <span class="hljs-keyword">if</span> MASK <span class="hljs-keyword">set</span> to 1  |
+ +-------------------------------+-------------------------------+
+ | Masking-key (continued)       |          Payload Data         |
+ +-------------------------------- - - - - - - - - - - - - - - - +
+ :                     Payload Data continued ...                :
+ + - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - +
+ |                     Payload Data continued ...                |
+ +---------------------------------------------------------------+
+</code></pre>
+<ul>
+<li>FIN：1个比特 如果是1，表示这是消息（message）的最后一个分片（fragment），如果是0，表示不是是消息（message）的最后一个分片（fragment）</li>
+<li>RSV1, RSV2, RSV3：各占1个比特。一般情况下全为0。当客户端、服务端协商采用WebSocket扩展时，这三个标志位可以非0，且值的含义由扩展进行定义。如果出现非零的值，且并没有采用WebSocket扩展，连接出错。</li>
+<li>Opcode: 4个比特。操作代码，Opcode的值决定了应该如何解析后续的数据载荷（data payload）。如果操作代码是不认识的，那么接收端应该断开连接（fail the connection）<ul>
+<li>%x0：表示一个延续帧。当Opcode为0时，表示本次数据传输采用了数据分片，当前收到的数据帧为其中一个数据分片。</li>
+<li>%x1：表示这是一个文本帧（frame）</li>
+<li>%x2：表示这是一个二进制帧（frame）</li>
+<li>%x3-7：保留的操作代码，用于后续定义的非控制帧。</li>
+<li>%x8：表示连接断开。</li>
+<li>%x9：表示这是一个ping操作。</li>
+<li>%xA：表示这是一个pong操作。</li>
+<li>%xB-F：保留的操作代码，用于后续定义的控制帧。</li>
+</ul>
+</li>
+<li>Mask: 1个比特。表示是否要对数据载荷进行掩码操作<ul>
+<li>从客户端向服务端发送数据时，需要对数据进行掩码操作；从服务端向客户端发送数据时，不需要对数据进行掩码操作,如果服务端接收到的数据没有进行过掩码操作，服务端需要断开连接。</li>
+<li>如果Mask是1，那么在Masking-key中会定义一个掩码键（masking key），并用这个掩码键来对数据载荷进行反掩码。所有客户端发送到服务端的数据帧，Mask都是1。</li>
+</ul>
+</li>
+<li>Payload length：数据载荷的长度，单位是字节。为7位，或7+16位，或7+64位。<ul>
+<li>Payload length=x为0~125：数据的长度为x字节。</li>
+<li>Payload length=x为126：后续2个字节代表一个16位的无符号整数，该无符号整数的值为数据的长度。</li>
+<li>Payload length=x为127：后续8个字节代表一个64位的无符号整数（最高位为0），该无符号整数的值为数据的长度。 </li>
+<li>如果payload length占用了多个字节的话，payload length的二进制表达采用网络序（big endian，重要的位在前)</li>
+</ul>
+</li>
+<li>Masking-key：0或4字节(32位) 所有从客户端传送到服务端的数据帧，数据载荷都进行了掩码操作，Mask为1，且携带了4字节的Masking-key。如果Mask为0，则没有Masking-key。载荷数据的长度，不包括mask key的长度</li>
+<li>Payload data：(x+y) 字节<ul>
+<li>载荷数据：包括了扩展数据、应用数据。其中，扩展数据x字节，应用数据y字节。</li>
+<li>扩展数据：如果没有协商使用扩展的话，扩展数据数据为0字节。所有的扩展都必须声明扩展数据的长度，或者可以如何计算出扩展数据的长度。此外，扩展如何使用必须在握手阶段就协商好。如果扩展数据存在，那么载荷数据长度必须将扩展数据的长度包含在内。</li>
+<li>应用数据：任意的应用数据，在扩展数据之后（如果存在扩展数据），占据了数据帧剩余的位置。载荷数据长度 减去 扩展数据长度，就得到应用数据的长度。</li>
+</ul>
+</li>
+</ul>
+<h4 id="t212.4.2 掩码算法">2.4.2 掩码算法 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t212.4.2%20%E6%8E%A9%E7%A0%81%E7%AE%97%E6%B3%95"> # </a></h4>
+<p>掩码键（Masking-key）是由客户端挑选出来的32位的随机数。掩码操作不会影响数据载荷的长度。掩码、反掩码操作都采用如下算法：</p>
+<ul>
+<li>对索引i模以4得到j,因为掩码一共就是四个字节</li>
+<li>对原来的索引进行异或对应的掩码字节</li>
+<li>异或就是两个数的二进制形式，按位对比，相同取0，不同取1<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unmask</span>(<span class="hljs-params">buffer, mask</span>) </span>{
+      <span class="hljs-keyword">const</span> length = buffer.length;
+      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+          buffer[i] ^= mask[i &amp; <span class="hljs-number">3</span>];
+      }
+  }
+</code></pre>
+</li>
+</ul>
+<h4 id="t222.4.3 服务器实战">2.4.3 服务器实战 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t222.4.3%20%E6%9C%8D%E5%8A%A1%E5%99%A8%E5%AE%9E%E6%88%98"> # </a></h4>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> net = <span class="hljs-built_in">require</span>(<span class="hljs-string">'net'</span>);
+<span class="hljs-keyword">const</span> crypto = <span class="hljs-built_in">require</span>(<span class="hljs-string">'crypto'</span>);
+<span class="hljs-keyword">const</span> CODE = <span class="hljs-string">'258EAFA5-E914-47DA-95CA-C5AB0DC85B11'</span>;
+<span class="hljs-keyword">let</span> server = net.createServer(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">socket</span>) </span>{
+    socket.once(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+        data = data.toString();
+        <span class="hljs-keyword">if</span> (data.match(<span class="hljs-regexp">/Upgrade: websocket/</span>)) {
+            <span class="hljs-keyword">let</span> rows = data.split(<span class="hljs-string">'\r\n'</span>);<span class="hljs-comment">//按分割符分开</span>
+            rows = rows.slice(<span class="hljs-number">1</span>, <span class="hljs-number">-2</span>);<span class="hljs-comment">//去掉请求行和尾部的二个分隔符</span>
+            <span class="hljs-keyword">const</span> headers = {};
+            rows.forEach(<span class="hljs-function"><span class="hljs-params">row</span> =&gt;</span> {
+                <span class="hljs-keyword">let</span> [key, value] = row.split(<span class="hljs-string">': '</span>);
+                headers[key] = value;
+            });
+            <span class="hljs-keyword">if</span> (headers[<span class="hljs-string">'Sec-WebSocket-Version'</span>] == <span class="hljs-number">13</span>) {
+                <span class="hljs-keyword">let</span> wsKey = headers[<span class="hljs-string">'Sec-WebSocket-Key'</span>];
+                <span class="hljs-keyword">let</span> acceptKey = crypto.createHash(<span class="hljs-string">'sha1'</span>).update(wsKey + CODE).digest(<span class="hljs-string">'base64'</span>);
+                <span class="hljs-keyword">let</span> response = [
+                    <span class="hljs-string">'HTTP/1.1 101 Switching Protocols'</span>,
+                    <span class="hljs-string">'Upgrade: websocket'</span>,
+                    <span class="hljs-string">`Sec-WebSocket-Accept: <span class="hljs-subst">${acceptKey}</span>`</span>,
+                    <span class="hljs-string">'Connection: Upgrade'</span>,
+                    <span class="hljs-string">'\r\n'</span>
+                ].join(<span class="hljs-string">'\r\n'</span>);
+                socket.write(response);
+                socket.on(<span class="hljs-string">'data'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">buffers</span>) </span>{
+                    <span class="hljs-keyword">let</span> _fin = (buffers[<span class="hljs-number">0</span>] &amp; <span class="hljs-number">0b10000000</span>) === <span class="hljs-number">0b10000000</span>;<span class="hljs-comment">//判断是否是结束位,第一个bit是不是1</span>
+                    <span class="hljs-keyword">let</span> _opcode = buffers[<span class="hljs-number">0</span>] &amp; <span class="hljs-number">0b00001111</span>;<span class="hljs-comment">//取一个字节的后四位,得到的一个是十进制数</span>
+                    <span class="hljs-keyword">let</span> _masked = buffers[<span class="hljs-number">1</span>] &amp; <span class="hljs-number">0b100000000</span> === <span class="hljs-number">0b100000000</span>;<span class="hljs-comment">//第一位是否是1</span>
+                    <span class="hljs-keyword">let</span> _payloadLength = buffers[<span class="hljs-number">1</span>] &amp; <span class="hljs-number">0b01111111</span>;<span class="hljs-comment">//取得负载数据的长度</span>
+                    <span class="hljs-keyword">let</span> _mask = buffers.slice(<span class="hljs-number">2</span>, <span class="hljs-number">6</span>);<span class="hljs-comment">//掩码</span>
+                    <span class="hljs-keyword">let</span> payload = buffers.slice(<span class="hljs-number">6</span>);<span class="hljs-comment">//负载数据</span>
+
+                    unmask(payload, _mask);<span class="hljs-comment">//对数据进行解码处理</span>
+
+                    <span class="hljs-comment">//向客户端响应数据</span>
+                    <span class="hljs-keyword">let</span> response = Buffer.alloc(<span class="hljs-number">2</span> + payload.length);
+                    response[<span class="hljs-number">0</span>] = _opcode | <span class="hljs-number">0b10000000</span>;<span class="hljs-comment">//1表示发送结束</span>
+                    response[<span class="hljs-number">1</span>] = payload.length;<span class="hljs-comment">//负载的长度</span>
+                    payload.copy(response, <span class="hljs-number">2</span>);
+                    socket.write(response);
+                });
+            }
+
+        }
+    });
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">unmask</span>(<span class="hljs-params">buffer, mask</span>) </span>{
+        <span class="hljs-keyword">const</span> length = buffer.length;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+            buffer[i] ^= mask[i &amp; <span class="hljs-number">3</span>];
+        }
+    }
+    socket.on(<span class="hljs-string">'end'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'end'</span>);
+    });
+    socket.on(<span class="hljs-string">'close'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'close'</span>);
+    });
+    socket.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">error</span>) </span>{
+        <span class="hljs-built_in">console</span>.log(error);
+    });
+});
+server.listen(<span class="hljs-number">9999</span>);
+</code></pre>
+<h2 id="t23参考">参考 <a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html#t23%E5%8F%82%E8%80%83"> # </a></h2>
+<ul>
+<li><a href="https://blog.5udou.cn/blog/JSShi-Shi-Tong-Xin-San-Ba-Fu-Xi-Lie-Zhi-San-eventsource55">eventsource</a></li>
+<li><a href="https://www.cnblogs.com/accordion/p/7764460.html">服务端事件EventSource</a></li>
+</ul>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

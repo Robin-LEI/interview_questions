@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<!-- saved from url=(0065)http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t01.%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86">1.软件包管理</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t11.1%20%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E5%88%86%E7%B1%BB">1.1 软件包的分类</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t21.2%20RPM%E5%91%BD%E4%BB%A4%E7%AE%A1%E7%90%86">1.2 RPM命令管理</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t31.3%20RPM%E5%8C%85%E5%91%BD%E5%90%8D%E5%8E%9F%E5%88%99">1.3 RPM包命名原则</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t41.4%20%20RPM%E5%8C%85%E4%BE%9D%E8%B5%96%E6%80%A7">1.4  RPM包依赖性</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t51.5%20%20%E5%8C%85%E5%85%A8%E5%90%8D">1.5  包全名</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t61.6%20RPM%E5%AE%89%E8%A3%85">1.6 RPM安装</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t71.7%20RPM%E5%AE%89%E8%A3%85">1.7 RPM安装</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t81.8%20RPM%E5%8C%85%E5%8D%87%E7%BA%A7">1.8 RPM包升级</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t91.9%20%E5%8D%B8%E8%BD%BD">1.9 卸载</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t101.10%20%E6%9F%A5%E8%AF%A2">1.10 查询</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t111.11%20%E6%A0%A1%E9%AA%8C">1.11 校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t121.12%20%E6%96%87%E4%BB%B6%E6%8F%90%E5%8F%96">1.12 文件提取</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t133.%20YUM%E5%9C%A8%E7%BA%BF%E7%AE%A1%E7%90%86">3. YUM在线管理</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t143.1%20CentOS-Base.repo">3.1 CentOS-Base.repo</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t154.%20%E5%85%89%E7%9B%98%E6%90%AD%E5%BB%BAYUM%E6%BA%90">4. 光盘搭建YUM源</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t164.1%20%E6%8C%82%E8%BD%BD%E5%85%89%E7%9B%98">4.1 挂载光盘</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t174.2%20%E5%A4%B1%E6%95%88%E5%9C%A8%E7%BA%BFyum%E6%BA%90">4.2 失效在线yum源</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t185.%20YUM%E5%91%BD%E4%BB%A4">5. YUM命令</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t194.%20%E6%BA%90%E7%A0%81%E5%8C%85%E7%AE%A1%E7%90%86">4. 源码包管理</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t204.1%20%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E4%B8%8D%E5%90%8C">4.1 安装方式不同</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t214.2%20%E5%AE%89%E8%A3%85%E6%BA%90%E7%A0%81%E5%8C%85">4.2 安装源码包</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t224.2.1%20%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87">4.2.1 安装准备</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t234.2.2%20%E5%AE%89%E8%A3%85%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">4.2.2 安装注意事项</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t244.2.3%20%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B">4.2.3 安装过程</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t254.2.3.1%20%E4%B8%8B%E8%BD%BD">4.2.3.1 下载</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t264.2.3.2%20%E8%A7%A3%E5%8E%8B">4.2.3.2 解压</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t274.2.3.3%20%E8%BF%9B%E5%85%A5%E8%A7%A3%E5%8E%8B%E7%9B%AE%E5%BD%95">4.2.3.3 进入解压目录</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t284.2.3.4%20configure">4.2.3.4 configure</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t294.2.3.5%20%E7%BC%96%E8%AF%91%E5%92%8C%E5%AE%89%E8%A3%85">4.2.3.5 编译和安装</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t304.2.3.6%20%E6%BA%90%E7%A0%81%E5%8C%85%E7%9A%84%E5%8D%B8%E8%BD%BD">4.2.3.6 源码包的卸载</a></li></ul></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t315.%20%E8%84%9A%E6%9C%AC%E5%AE%89%E8%A3%85%E5%8C%85">5. 脚本安装包</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t325.1%20nginx">5.1 nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t335.2%20%E5%AE%89%E8%A3%85lnmp">5.2 安装lnmp</a></li></ul></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01.软件包管理">1.软件包管理 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t01.%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%AE%A1%E7%90%86"> # </a></h2>
+<ul>
+<li>RPM是RedHat Package Manager（RedHat软件包管理工具）类似Windows里面的"添加/删除程序"</li>
+</ul>
+<h3 id="t11.1 软件包的分类">1.1 软件包的分类 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t11.1%20%E8%BD%AF%E4%BB%B6%E5%8C%85%E7%9A%84%E5%88%86%E7%B1%BB"> # </a></h3>
+<ul>
+<li>源码包(需要经过编译，把人所编写的源代码编译成机器语言才能运行)<ul>
+<li>优点<ul>
+<li>开源免费</li>
+<li>可以自由配置功能</li>
+<li>编译安装更适合自己系统，更稳定 </li>
+<li>卸载方便</li>
+</ul>
+</li>
+<li>缺点  <ul>
+<li>安装过程比较复杂</li>
+<li>编译过程比较长</li>
+<li>安装过程一旦报错，非常难以排查</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>二进制包(把源代码包经过编译生成0/1二进制，PRM包、系统默认的安装包)<ul>
+<li>优点<ul>
+<li>包管理系统比较简单，只要通过简单的命令就可以实现包的安装、升级、查询和卸载</li>
+<li>安装速度比源码包快很多</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>经过编译则不能看到源代码</li>
+<li>功能选择不灵活</li>
+<li>依赖性比较麻烦</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>脚本安装包(就是把复杂的安装过程写成了脚本，可以一键安装，本质上安装的还是源代码包和二进制包)<ul>
+<li>优点是安装简单</li>
+<li>缺点是失去了自定义性</li>
+</ul>
+</li>
+</ul>
+<h3 id="t21.2 RPM命令管理">1.2 RPM命令管理 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t21.2%20RPM%E5%91%BD%E4%BB%A4%E7%AE%A1%E7%90%86"> # </a></h3>
+<pre><code class="lang-js">mkdir /mnt/cdrom
+mount /dev/sr0 /mnt/cdrom
+cd /mnt/cdrom/Packages
+</code></pre>
+<h3 id="t31.3 RPM包命名原则">1.3 RPM包命名原则 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t31.3%20RPM%E5%8C%85%E5%91%BD%E5%90%8D%E5%8E%9F%E5%88%99"> # </a></h3>
+<ul>
+<li>httpd-2.2.15-15.el6.centos.1.i686.rpm<ul>
+<li>httpd软件包名</li>
+<li>2.2.15软件版本</li>
+<li>15 软件发布的次数</li>
+<li>el6.centos 适合的Linux平台</li>
+<li>i686 适合的硬件平台</li>
+<li>rpm rpm 包的扩展名</li>
+</ul>
+</li>
+</ul>
+<h3 id="t41.4  RPM包依赖性">1.4  RPM包依赖性 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t41.4%20%20RPM%E5%8C%85%E4%BE%9D%E8%B5%96%E6%80%A7"> # </a></h3>
+<ul>
+<li>树形依赖 a-&gt;b-&gt;c</li>
+<li>环形依赖 a-&gt;b-&gt;c-&gt;a</li>
+<li>模块依赖 <a href="http://www.rpmfind.net/">http://www.rpmfind.net</a></li>
+</ul>
+<pre><code class="lang-js">rpm -ivh mysql-connector-odbc<span class="hljs-number">-5.1</span><span class="hljs-number">.5</span>r1144<span class="hljs-number">-7.</span>el6.i686.rpm 
+rpm -ivh unixODBC<span class="hljs-number">-2.2</span><span class="hljs-number">.14</span><span class="hljs-number">-11.</span>el6.i686.rpm 
+rpm -ivh mysql-connector-odbc<span class="hljs-number">-5.1</span><span class="hljs-number">.5</span>r1144<span class="hljs-number">-7.</span>el6.i686.rpm 
+</code></pre>
+<h3 id="t51.5  包全名">1.5  包全名 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t51.5%20%20%E5%8C%85%E5%85%A8%E5%90%8D"> # </a></h3>
+<ul>
+<li>如果操作的是没有安装过的软件包时，使用包全名，而且要注意路径正确。</li>
+<li>如果是要操作已经安装的软件包时，要使用包名，是搜索<code>/var/lib/rpm</code>中的数据库</li>
+</ul>
+<h3 id="t61.6 RPM安装">1.6 RPM安装 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t61.6%20RPM%E5%AE%89%E8%A3%85"> # </a></h3>
+<ul>
+<li>rpm -ivh  包全名</li>
+<li>选项<ul>
+<li>-i(install) 安装</li>
+<li>-v(verbose) 显示详细安装停下</li>
+<li>-h(hash) 显示进度</li>
+<li>--nodeps 不检测依赖性，正式环境不能使用</li>
+</ul>
+</li>
+</ul>
+<h3 id="t71.7 RPM安装">1.7 RPM安装 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t71.7%20RPM%E5%AE%89%E8%A3%85"> # </a></h3>
+<pre><code class="lang-js">rpm -ivh httpd<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh httpd-devel<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh httpd-manual<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.noarch.rpm 
+</code></pre>
+<pre><code class="lang-js">rpm -ivh httpd<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh apr-util-ldap<span class="hljs-number">-1.3</span><span class="hljs-number">.9</span><span class="hljs-number">-3.</span>el6_0<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh apr-util<span class="hljs-number">-1.3</span><span class="hljs-number">.9</span><span class="hljs-number">-3.</span>el6_0<span class="hljs-number">.1</span>.i686.rpm 
+
+rpm -ivh apr<span class="hljs-number">-1.3</span><span class="hljs-number">.9</span><span class="hljs-number">-3.</span>el6_1<span class="hljs-number">.2</span>.i686.rpm 
+rpm -ivh apr-util<span class="hljs-number">-1.3</span><span class="hljs-number">.9</span><span class="hljs-number">-3.</span>el6_0<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh apr-util-ldap<span class="hljs-number">-1.3</span><span class="hljs-number">.9</span><span class="hljs-number">-3.</span>el6_0<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh httpd<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+
+rpm -ivh httpd-tools<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh httpd<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+
+rpm -ivh httpd-devel<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh httpd-manual<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.noarch.rpm 
+rpm -ivh httpd-devel<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh apr-devel<span class="hljs-number">-1.3</span><span class="hljs-number">.9</span><span class="hljs-number">-3.</span>el6_1<span class="hljs-number">.2</span>.i686.rpm 
+rpm -ivh apr-util-devel<span class="hljs-number">-1.3</span><span class="hljs-number">.9</span><span class="hljs-number">-3.</span>el6_0<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh expat-devel<span class="hljs-number">-2.0</span><span class="hljs-number">.1</span><span class="hljs-number">-11.</span>el6_2.i686.rpm 
+rpm -ivh openldap-devel<span class="hljs-number">-2.4</span><span class="hljs-number">.23</span><span class="hljs-number">-26.</span>el6.i686.rpm 
+rpm -ivh cyrus-sasl-devel<span class="hljs-number">-2.1</span><span class="hljs-number">.23</span><span class="hljs-number">-13.</span>el6.i686.rpm 
+rpm -ivh httpd-devel<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh apr-util-devel<span class="hljs-number">-1.3</span><span class="hljs-number">.9</span><span class="hljs-number">-3.</span>el6_0<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh openldap-devel<span class="hljs-number">-2.4</span><span class="hljs-number">.23</span><span class="hljs-number">-26.</span>el6.i686.rpm 
+rpm -ivh httpd-devel<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh apr-util-devel<span class="hljs-number">-1.3</span><span class="hljs-number">.9</span><span class="hljs-number">-3.</span>el6_0<span class="hljs-number">.1</span>.i686.rpm 
+rpm -ivh httpd-devel<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm 
+</code></pre>
+<h3 id="t81.8 RPM包升级">1.8 RPM包升级 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t81.8%20RPM%E5%8C%85%E5%8D%87%E7%BA%A7"> # </a></h3>
+<ul>
+<li>rpm -Uvh 包全名<ul>
+<li>-U(upgrade) 升级 </li>
+</ul>
+</li>
+<li>如果包没有安装过，则和安装是同等效果</li>
+</ul>
+<pre><code class="lang-js">rpm -ivh httpd-devel<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm
+</code></pre>
+<h3 id="t91.9 卸载">1.9 卸载 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t91.9%20%E5%8D%B8%E8%BD%BD"> # </a></h3>
+<ul>
+<li>rpm -e 包名<ul>
+<li>-e(erase) 卸载</li>
+<li>--nodeps不检查依赖性</li>
+</ul>
+</li>
+<li>安装的时候先安装被依赖包，再安装依赖包</li>
+<li>卸载的时候先卸载依赖包，再卸载被依赖包</li>
+</ul>
+<pre><code class="lang-js">rpm -e httpd
+</code></pre>
+<h3 id="t101.10 查询">1.10 查询 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t101.10%20%E6%9F%A5%E8%AF%A2"> # </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">rpm -q 包名</td>
+<td style="text-align:left">-q(query) 查询</td>
+<td style="text-align:left">查询包是否安装</td>
+</tr>
+<tr>
+<td style="text-align:left">rpm -qa 包名</td>
+<td style="text-align:left">-a(all) 查询</td>
+<td style="text-align:left">查询所有已经安装的RPM包</td>
+</tr>
+<tr>
+<td style="text-align:left">rpm -qi 包名</td>
+<td style="text-align:left">-i(information)</td>
+<td style="text-align:left">查询软件信息</td>
+</tr>
+<tr>
+<td style="text-align:left">rpm -qip 包名</td>
+<td style="text-align:left">-p(package)</td>
+<td style="text-align:left">查询未安装包的信息</td>
+</tr>
+<tr>
+<td style="text-align:left">rpm -ql 包名</td>
+<td style="text-align:left">-l(list) -p(package)</td>
+<td style="text-align:left">查询安装包都安装了哪些文件</td>
+</tr>
+<tr>
+<td style="text-align:left">rpm -qf 文件名</td>
+<td style="text-align:left">-f(file)</td>
+<td style="text-align:left">查询某个文件属于哪个包</td>
+</tr>
+<tr>
+<td style="text-align:left">rpm -qR 包名</td>
+<td style="text-align:left">-R(requires) -p(package)</td>
+<td style="text-align:left">查询软件名的依赖性</td>
+</tr>
+</tbody>
+</table>
+<p>默认安装位置</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">/etc/</td>
+<td style="text-align:left">配置文件的安装目录</td>
+</tr>
+<tr>
+<td style="text-align:left">/usr/bin</td>
+<td style="text-align:left">可执行的命令安装目录</td>
+</tr>
+<tr>
+<td style="text-align:left">/usr/lib</td>
+<td style="text-align:left">程序所使用的函数库保存位置</td>
+</tr>
+<tr>
+<td style="text-align:left">/usr/share/doc</td>
+<td style="text-align:left">基本的软件使用手册保存位置</td>
+</tr>
+<tr>
+<td style="text-align:left">/usr/share/man</td>
+<td style="text-align:left">帮助文件保存位置</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t111.11 校验">1.11 校验 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t111.11%20%E6%A0%A1%E9%AA%8C"> # </a></h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">参数</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">rpm -V 包名</td>
+</tr>
+</tbody>
+</table>
+<p><code>/etc/httpd/conf/httpd.conf</code></p>
+<p>验证信息内容</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">S(Size)</td>
+<td style="text-align:left">文件大小是否改变</td>
+</tr>
+<tr>
+<td style="text-align:left">M(Mode)</td>
+<td style="text-align:left">文件的类型或者文件的权限(rwx)是否被改变</td>
+</tr>
+<tr>
+<td style="text-align:left">5(Md5)</td>
+<td style="text-align:left">文件MD5校验和是否改变(文件内容是否改变)</td>
+</tr>
+<tr>
+<td style="text-align:left">D(Device)</td>
+<td style="text-align:left">设备的主从代码是否改变</td>
+</tr>
+<tr>
+<td style="text-align:left">L(Location)</td>
+<td style="text-align:left">文件路径是否改变</td>
+</tr>
+<tr>
+<td style="text-align:left">U(User)</td>
+<td style="text-align:left">文件的属主(所有者)是否改变</td>
+</tr>
+<tr>
+<td style="text-align:left">G(Group)</td>
+<td style="text-align:left">文件的属组是否改变</td>
+</tr>
+<tr>
+<td style="text-align:left">T(Time)</td>
+<td style="text-align:left">文件的修改时间是否改变</td>
+</tr>
+</tbody>
+</table>
+<p>每个设备号又分为主设备号和次设备号。主设备号用来区分不同种类的设备，而次设备号用来区分同一类型的多个设备</p>
+<pre><code class="lang-js"># ll /dev | grep sda
+brw-rw----. 1 root disk      8,   0 4月   6 17:50 sda
+brw-rw----. 1 root disk      8,   1 4月   6 17:50 sda1
+brw-rw----. 1 root disk      8,   2 4月   6 17:50 sda2
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">参数</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">c(config file)</td>
+<td style="text-align:left">配置文件</td>
+</tr>
+<tr>
+<td style="text-align:left">d(documentation)</td>
+<td style="text-align:left">普通文档</td>
+</tr>
+<tr>
+<td style="text-align:left">g(ghost file)</td>
+<td style="text-align:left">文件根本不应该属于这个软件包</td>
+</tr>
+<tr>
+<td style="text-align:left">L(license file)</td>
+<td style="text-align:left">授权文件</td>
+</tr>
+<tr>
+<td style="text-align:left">r(readme)</td>
+<td style="text-align:left">描述文件</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t121.12 文件提取">1.12 文件提取 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t121.12%20%E6%96%87%E4%BB%B6%E6%8F%90%E5%8F%96"> # </a></h3>
+<ul>
+<li>rpm2cpio 包全名 | cpio -idv .文件绝对路径</li>
+<li>rpm2cpid 将rpm包转换为cpio格式的命令</li>
+<li>cpio 是一个标准工具，用于创建软件档案和从档案文件中提取文件</li>
+</ul>
+<pre><code class="lang-js">rpm2cpio httpd<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm | cpio -idv /etc/httpd/conf/httpd.conf
+</code></pre>
+<ul>
+<li>cpio  选项 &lt; [文件|设备]</li>
+<li>选项<ul>
+<li>-i copy-in模式，还原</li>
+<li>-d 还原时自动新建目录</li>
+<li>-v 显示还原过程</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js">rpm2cpio /mnt/cdrom/Packages/httpd<span class="hljs-number">-2.2</span><span class="hljs-number">.15</span><span class="hljs-number">-15.</span>el6.centos<span class="hljs-number">.1</span>.i686.rpm | cpio -idv ./etc/httpd/conf/httpd.conf
+cp ./etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf
+</code></pre>
+<h2 id="t133. YUM在线管理">3. YUM在线管理 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t133.%20YUM%E5%9C%A8%E7%BA%BF%E7%AE%A1%E7%90%86"> # </a></h2>
+<ul>
+<li>yum = Yellow dog Updater, Modified主要功能是更方便的添加/删除/更新RPM包.它能自动解决包的倚赖性问题.</li>
+<li>这是rpm包的在线管理命令</li>
+<li>将所有的软件名放到官方服务器上，当进行YUM在线安装时，可以自动解决依赖性问题</li>
+<li>/etc/yum.repos.d/<ul>
+<li>CentOS-Base.repo</li>
+<li>CentOS-Debuginfo.repo</li>
+<li>CentOS-Media.repo</li>
+<li>CentOS-Vault.repo</li>
+</ul>
+</li>
+</ul>
+<h3 id="t143.1 CentOS-Base.repo">3.1 CentOS-Base.repo <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t143.1%20CentOS-Base.repo"> # </a></h3>
+<pre><code class="lang-js">[base]
+name=CentOS-$releasever - Base
+mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os
+#baseurl=http://mirror.centos.org/centos/$releasever/os/$basearch/
+gpgcheck=1
+gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">字段</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">base</td>
+<td style="text-align:left">容器名称，一定要放在[]中</td>
+</tr>
+<tr>
+<td style="text-align:left">name</td>
+<td style="text-align:left">容器说明，可以自己随便写</td>
+</tr>
+<tr>
+<td style="text-align:left">mirrorlist</td>
+<td style="text-align:left">镜像站点，可以注释掉</td>
+</tr>
+<tr>
+<td style="text-align:left">baseurl</td>
+<td style="text-align:left">YUM源服务器的地址，默认是CentOS官方的YUM源</td>
+</tr>
+<tr>
+<td style="text-align:left">enable</td>
+<td style="text-align:left">此容器是否生效 不写或者写成enable=1表示生效，写成enable=0表示不生效</td>
+</tr>
+<tr>
+<td style="text-align:left">gpgcheck</td>
+<td style="text-align:left">如果是1就是指 RPM的数字证书生效,如果是0则表示不生效</td>
+</tr>
+<tr>
+<td style="text-align:left">gpgkey</td>
+<td style="text-align:left">数字证书的公钥文件保存位置，不用改</td>
+</tr>
+</tbody>
+</table>
+<h2 id="t154. 光盘搭建YUM源">4. 光盘搭建YUM源 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t154.%20%E5%85%89%E7%9B%98%E6%90%AD%E5%BB%BAYUM%E6%BA%90"> # </a></h2>
+<h3 id="t164.1 挂载光盘">4.1 挂载光盘 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t164.1%20%E6%8C%82%E8%BD%BD%E5%85%89%E7%9B%98"> # </a></h3>
+<pre><code class="lang-js">mkdir /mnt/cdrom
+mount /dev/cdrom /mnt/cdrom
+</code></pre>
+<h3 id="t174.2 失效在线yum源">4.2 失效在线yum源 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t174.2%20%E5%A4%B1%E6%95%88%E5%9C%A8%E7%BA%BFyum%E6%BA%90"> # </a></h3>
+<pre><code class="lang-js">cd /etc/yum.repos.d
+mv CentOS-Base.repo CentOS-Base.repo.bak
+</code></pre>
+<p>查看YUM源里有哪些安装包</p>
+<pre><code class="lang-js">yum list
+</code></pre>
+<p>CentOS-Media.repo </p>
+<pre><code class="lang-js">[c6-media]
+name=CentOS-$releasever - Media
+baseurl=file:<span class="hljs-comment">///mnt/cdrom</span>
+gpgcheck=<span class="hljs-number">1</span>
+enabled=<span class="hljs-number">1</span>
+gpgkey=file:<span class="hljs-comment">///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-6</span>
+</code></pre>
+<h2 id="t185. YUM命令">5. YUM命令 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t185.%20YUM%E5%91%BD%E4%BB%A4"> # </a></h2>
+<ul>
+<li>yum安装只需要写包名即可</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">命令</th>
+<th style="text-align:left">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">yum list</td>
+<td style="text-align:left">查询所有可用软件包列表</td>
+</tr>
+<tr>
+<td style="text-align:left">yum search 关键字</td>
+<td style="text-align:left">搜索服务器上所有和关键字相关的包</td>
+</tr>
+<tr>
+<td style="text-align:left">yum -y install 包名</td>
+<td style="text-align:left">-y 自动回答yes install安装</td>
+</tr>
+<tr>
+<td style="text-align:left">yum -y update 包名</td>
+<td style="text-align:left">-y 自动回答yes update升级</td>
+</tr>
+<tr>
+<td style="text-align:left">yum -y remove 包名</td>
+<td style="text-align:left">-y 自动回答yes remove 卸载,卸载有依赖性，所以尽量不要卸载</td>
+</tr>
+<tr>
+<td style="text-align:left">yum grouplist</td>
+<td style="text-align:left">列出所有可用的软件组列表</td>
+</tr>
+<tr>
+<td style="text-align:left">yum groupinstall 软件组名</td>
+<td style="text-align:left">安装指定的组，组名可以用grouplist查询</td>
+</tr>
+<tr>
+<td style="text-align:left">yum groupremove 软件组名</td>
+<td style="text-align:left">卸载指定软件组</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js">yum -y install gcc  安装C语言安装包
+yum install update httpd 升级httpd
+</code></pre>
+<pre><code class="lang-js">LANG=en_US
+yum grouplist
+yum groupinstall <span class="hljs-string">"Chinese Support"</span>
+LANG=zh_CN.UTF<span class="hljs-number">-8</span>
+</code></pre>
+<h2 id="t194. 源码包管理">4. 源码包管理 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t194.%20%E6%BA%90%E7%A0%81%E5%8C%85%E7%AE%A1%E7%90%86"> # </a></h2>
+<h3 id="t204.1 安装方式不同">4.1 安装方式不同 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t204.1%20%E5%AE%89%E8%A3%85%E6%96%B9%E5%BC%8F%E4%B8%8D%E5%90%8C"> # </a></h3>
+<ul>
+<li>RPM包的安装位置是由软件包作者决定的,不需要指定安装位置</li>
+<li>RPM包安装的服务可以使用系统服务管理命令(service)来管理</li>
+</ul>
+<pre><code class="lang-js">service httpd start
+/etc/init.d/httpd start
+</code></pre>
+<ul>
+<li>源码包安装在指定的位置当中，一般是  <code>/usr/local/软件名</code></li>
+<li>源码包安装的服务不能被服务命令管理，因为没有安装到默认路径中，所以只能用绝对路径进行服务的管理</li>
+<li>httpd和apache关系，简单理解就是apache2以上版本改称为httpd</li>
+</ul>
+<h3 id="t214.2 安装源码包">4.2 安装源码包 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t214.2%20%E5%AE%89%E8%A3%85%E6%BA%90%E7%A0%81%E5%8C%85"> # </a></h3>
+<h4 id="t224.2.1 安装准备">4.2.1 安装准备 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t224.2.1%20%E5%AE%89%E8%A3%85%E5%87%86%E5%A4%87"> # </a></h4>
+<ul>
+<li>安装C语言编译器<pre><code class="lang-js">yum install -y gcc
+</code></pre>
+</li>
+</ul>
+<h4 id="t234.2.2 安装注意事项">4.2.2 安装注意事项 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t234.2.2%20%E5%AE%89%E8%A3%85%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"> # </a></h4>
+<ul>
+<li>源码包一般放在<code>/usr/local/src</code>目录下</li>
+<li>软件的安装位置 <code>/usr/local</code>,相当于<code>program files</code>目录</li>
+<li>如何确定安装过程是否正常<ul>
+<li>安装过程能正常中止</li>
+<li>出现 <code>error warning</code> 等提示</li>
+</ul>
+</li>
+</ul>
+<h4 id="t244.2.3 安装过程">4.2.3 安装过程 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t244.2.3%20%E5%AE%89%E8%A3%85%E8%BF%87%E7%A8%8B"> # </a></h4>
+<h5 id="t254.2.3.1 下载">4.2.3.1 下载 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t254.2.3.1%20%E4%B8%8B%E8%BD%BD"> # </a></h5>
+<p><a href="http://httpd.apache.org/download.cgi">下载</a>
+<a href="http://archive.apache.org/dist/httpd/">镜像下载</a></p>
+<pre><code class="lang-js">wget http:<span class="hljs-comment">//archive.apache.org/dist/httpd/httpd-2.2.11.tar.gz</span>
+</code></pre>
+<h5 id="t264.2.3.2 解压">4.2.3.2 解压 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t264.2.3.2%20%E8%A7%A3%E5%8E%8B"> # </a></h5>
+<pre><code class="lang-js">tar -xzvf httpd<span class="hljs-number">-2.2</span><span class="hljs-number">.11</span>.tar.gz
+</code></pre>
+<h5 id="t274.2.3.3 进入解压目录">4.2.3.3 进入解压目录 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t274.2.3.3%20%E8%BF%9B%E5%85%A5%E8%A7%A3%E5%8E%8B%E7%9B%AE%E5%BD%95"> # </a></h5>
+<pre><code class="lang-js">cd httpd<span class="hljs-number">-2.2</span><span class="hljs-number">.11</span>.tar.gz
+</code></pre>
+<h5 id="t284.2.3.4 configure">4.2.3.4 configure <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t284.2.3.4%20configure"> # </a></h5>
+<p>软件配置与检查</p>
+<ul>
+<li>定义需要的功能选项</li>
+<li>检测系统环境是否符合安装要求</li>
+<li>把定义好的功能选项和检测系统环境的信息都写入<code>Makefile</code>文件中，用于后续的编辑</li>
+</ul>
+<pre><code class="lang-js">./configure --prefix=<span class="hljs-regexp">/usr/</span>local/httpd
+</code></pre>
+<h5 id="t294.2.3.5 编译和安装">4.2.3.5 编译和安装 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t294.2.3.5%20%E7%BC%96%E8%AF%91%E5%92%8C%E5%AE%89%E8%A3%85"> # </a></h5>
+<ul>
+<li>把源码编译成二进制文件</li>
+<li>make <ul>
+<li>make clean 一旦编译报错可以执行这一步进行清理</li>
+</ul>
+</li>
+<li>make install </li>
+</ul>
+<pre><code class="lang-js">make
+make install 
+</code></pre>
+<p>安装帮助文件位置</p>
+<pre><code class="lang-js">cat /usr/local/src/httpd<span class="hljs-number">-2.2</span><span class="hljs-number">.11</span>/INSTALL 这里可以查看安装说明
+cat /<span class="hljs-keyword">var</span>/www/html/index.html 这是用YUM或者说rpm安装的httpd
+cat /usr/local/httpd/htdocs/index.html  这是用源码安装的httpd
+</code></pre>
+<h5 id="t304.2.3.6 源码包的卸载">4.2.3.6 源码包的卸载 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t304.2.3.6%20%E6%BA%90%E7%A0%81%E5%8C%85%E7%9A%84%E5%8D%B8%E8%BD%BD"> # </a></h5>
+<ul>
+<li>不需要卸载命令，直接删除安装目录即可，不会遗留任何垃圾文件</li>
+</ul>
+<h2 id="t315. 脚本安装包">5. 脚本安装包 <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t315.%20%E8%84%9A%E6%9C%AC%E5%AE%89%E8%A3%85%E5%8C%85"> # </a></h2>
+<ul>
+<li>脚本包安装的也是RPM包和源码包</li>
+<li>优点<ul>
+<li>简单快速方便</li>
+</ul>
+</li>
+<li>缺点<ul>
+<li>不能定义安装的版本</li>
+<li>不能定义需要的功能</li>
+</ul>
+</li>
+</ul>
+<h3 id="t325.1 nginx">5.1 nginx <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t325.1%20nginx"> # </a></h3>
+<ul>
+<li>nginx是一款自由的、开源的、高性能的HTTP服务器和反向代理服务器</li>
+<li>nginx可以作为一个HTTP服务器进行网站的发布处理，另外nginx可以作为反向代理进行负载均衡的实现</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">功能</th>
+<th style="text-align:left">Apache/httpd</th>
+<th style="text-align:left">Nginx</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">Proxy代理</td>
+<td style="text-align:left">非常好</td>
+<td style="text-align:left">非常好</td>
+</tr>
+<tr>
+<td style="text-align:left">Rewriter</td>
+<td style="text-align:left">好</td>
+<td style="text-align:left">非常好</td>
+</tr>
+<tr>
+<td style="text-align:left">Fcgi</td>
+<td style="text-align:left">不好</td>
+<td style="text-align:left">好</td>
+</tr>
+<tr>
+<td style="text-align:left">热部署</td>
+<td style="text-align:left">不支持</td>
+<td style="text-align:left">支持</td>
+</tr>
+<tr>
+<td style="text-align:left">系统压力比较</td>
+<td style="text-align:left">很大</td>
+<td style="text-align:left">很小</td>
+</tr>
+<tr>
+<td style="text-align:left">稳定性</td>
+<td style="text-align:left">好</td>
+<td style="text-align:left">非常好</td>
+</tr>
+<tr>
+<td style="text-align:left">安全性</td>
+<td style="text-align:left">好</td>
+<td style="text-align:left">一般</td>
+</tr>
+<tr>
+<td style="text-align:left">技术支持</td>
+<td style="text-align:left">非常好</td>
+<td style="text-align:left">很少</td>
+</tr>
+<tr>
+<td style="text-align:left">静态文件处理</td>
+<td style="text-align:left">一般</td>
+<td style="text-align:left">非常好</td>
+</tr>
+<tr>
+<td style="text-align:left">Vhosts虚拟主机</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">不支持</td>
+</tr>
+<tr>
+<td style="text-align:left">反向代理</td>
+<td style="text-align:left">一般</td>
+<td style="text-align:left">非常好</td>
+</tr>
+<tr>
+<td style="text-align:left">Session sticky</td>
+<td style="text-align:left">支持</td>
+<td style="text-align:left">不支持</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t335.2 安装lnmp">5.2 安装lnmp <a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html#t335.2%20%E5%AE%89%E8%A3%85lnmp"> # </a></h3>
+<ul>
+<li><a href="https://lnmp.org/">lnmp</a></li>
+<li><a href="https://lnmp.org/install.html">install</a></li>
+</ul>
+<p>下载安装脚本</p>
+<pre><code class="lang-js">wget http:<span class="hljs-comment">//soft.vpser.net/lnmp/lnmp1.5.tar.gz -cO lnmp1.5.tar.gz &amp;&amp; tar zxf lnmp1.5.tar.gz &amp;&amp; cd lnmp1.5 &amp;&amp; ./install.sh lnmp</span>
+</code></pre>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">姓名:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统用户名">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

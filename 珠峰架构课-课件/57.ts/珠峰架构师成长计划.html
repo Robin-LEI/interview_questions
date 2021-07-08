@@ -1,0 +1,1723 @@
+<!DOCTYPE html>
+<!-- saved from url=(0051)http://www.zhufengpeixun.com/strong/html/57.ts.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>珠峰架构师成长计划</title>
+    <link rel="stylesheet" type="text/css" href="./珠峰架构师成长计划_files/main.css">
+    <link rel="stylesheet" href="./珠峰架构师成长计划_files/bootstrap.min.css">
+    <style>
+        .page-toc > ul .red {
+            background: #f3f3f3;
+            z-index: 1;
+            border-left: 3px solid #009a61;
+            -webkit-transition: all .2s ease;
+            transition: all .2s ease;
+            color: #000
+        }
+    </style>
+</head>
+<body>
+<div class="nav">
+    <div class="logo">
+        
+                    珠峰架构师成长计划
+                        
+                        </div>
+                        <ul><li><a href="http://www.zhufengpeixun.com/strong/index.html">0.Async</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.editor.html">0.editor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/0.module.html">0.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/1.ES2015.html">1.ES2015</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/2.Promise.html">2.Promise</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/3.Node.html">3.Node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/4.NodeInstall.html">4.NodeInstall</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/5.REPL.html">5.REPL</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/6.NodeCore.html">6.NodeCore</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.module&amp;NPM.html">7.module&amp;NPM</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/8.Encoding.html">8.Encoding</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/9.Buffer.html">9.Buffer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/10.fs.html">10.fs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-1.html">11.Stream-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-2.html">11.Stream-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-3.html">11.Stream-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/11.Stream-4.html">11.Stream-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12-Network-2.html">12-Network-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.NetWork-3.html">12.NetWork-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/12.Network-1.html">12.Network-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/13.tcp.html">13.tcp</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-1.html">14.http-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/14.http-2.html">14.http-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/15.compress.html">15.compress</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/16.crypto.html">16.crypto</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/17.process.html">17.process</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/18.yargs.html">18.yargs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/19.cache.html">19.cache</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/20.action.html">20.action</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/21.https.html">21.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/22.cookie.html">22.cookie</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/23.session.html">23.session</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-1.html">24.express-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-2.html">24.express-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-3.html">24.express-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/24.express-4.html">24.express-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/25.koa-1.html">25.koa-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-1-basic.html">26.webpack-1-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-2-optimize.html">26.webpack-2-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-3-file.html">26.webpack-3-file</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-4.tapable.html">26.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-5-AST.html">26.webpack-5-AST</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-6-sources.html">26.webpack-6-sources</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-7-loader.html">26.webpack-7-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-8-plugin.html">26.webpack-8-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-9-hand.html">26.webpack-9-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/26.webpack-10-prepare.html">26.webpack-10-prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux.html">28.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-back.html">28.redux-jwt-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/28.redux-jwt-front.html">28.redux-jwt-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-1.html">29.mongodb-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-2.html">29.mongodb-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-3.html">29.mongodb-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-4.html">29.mongodb-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-5.html">29.mongodb-5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/29.mongodb-6.html">29.mongodb-6</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-1-mysql.html">30.cms-1-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-2-mysql.html">30.cms-2-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-3-mysql.html">30.cms-3-mysql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-4-nunjucks.html">30.cms-4-nunjucks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-5-mock.html">30.cms-5-mock</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-6-egg.html">30.cms-6-egg</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-7-api.html">30.cms-7-api</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-8-roadhog.html">30.cms-8-roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-9-yaml.html">30.cms-9-yaml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-10-umi.html">30.cms-10-umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-12-dva.html">30.cms-12-dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-13-dva-ant.html">30.cms-13-dva-ant</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-14-front.html">30.cms-14-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/30.cms-15-deploy.html">30.cms-15-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.dva.html">31.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/31.cms-13-dva-antdesign.html">31.cms-13-dva-antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/33.redis.html">33.redis</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/34.unittest.html">34.unittest</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/35.jwt.html">35.jwt</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-1.html">36.websocket-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/36.websocket-2.html">36.websocket-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-1.html">38.chat-api-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-2.html">38.chat-api-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-3.html">38.chat-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat-api-3.html">38.chat-api-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat.html">38.chat</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/38.chat2.html">38.chat2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-0.html">39.crawl-0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-1.html">39.crawl-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/39.crawl-2.html">39.crawl-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/40.deploy.html">40.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/41.safe.html">41.safe</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/42.test.html">42.test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/43.nginx.html">43.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/44.enzyme.html">44.enzyme</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/45.docker.html">45.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/46.elastic.html">46.elastic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/47.oauth.html">47.oauth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/48.wxpay.html">48.wxpay</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/52.UML.html">52.UML</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/53.design.html">53.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/index.html">index</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/54.linux.html">54.linux</a></li><li class="active"><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html">57.ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/56.react-ssr.html">56.react-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/58.ts_react.html">58.ts_react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang.html">59.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/59.ketang2.html">59.ketang2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.1.devops-linux.html">61.1.devops-linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.2.devops-vi.html">61.2.devops-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.3.devops-user.html">61.3.devops-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.4.devops-auth.html">61.4.devops-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.5.devops-shell.html">61.5.devops-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.6.devops-install.html">61.6.devops-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.7.devops-system.html">61.7.devops-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.8.devops-service.html">61.8.devops-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.9.devops-network.html">61.9.devops-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.10.devops-nginx.html">61.10.devops-nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.11.devops-docker.html">61.11.devops-docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.12.devops-jekins.html">61.12.devops-jekins</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.13.devops-groovy.html">61.13.devops-groovy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.14.devops-php.html">61.14.devops-php</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.15.devops-java.html">61.15.devops-java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.16.devops-node.html">61.16.devops-node</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/61.17.devops-k8s.html">61.17.devops-k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.1.react-basic.html">62.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.2.react-state.html">62.2.react-state</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.3.react-high.html">62.3.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.4.react-optimize.html">62.4.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.5.react-hooks.html">62.5.react-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.6.react-immutable.html">62.6.react-immutable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.7.react-mobx.html">62.7.react-mobx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/62.8.react-source.html">62.8.react-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.1.redux.html">63.1.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.2.redux-middleware.html">63.2.redux-middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.3.redux-hooks.html">63.3.redux-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.4.redux-saga.html">63.4.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/63.5.redux-saga-hand.html">63.5.redux-saga-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.1.router.html">64.1.router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/64.2.router-connected.html">64.2.router-connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.1.typescript.html">65.1.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.2.typescript.html">65.2.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.3.typescript.html">65.3.typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.antd.html">65.4.antd</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/65.4.definition.html">65.4.definition</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-1.vue-base.html">66-1.vue-base</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-2.vue-component.html">66-2.vue-component</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-3.vue-cli3.0.html">66-3.vue-cli3.0</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-4.$message%E7%BB%84%E4%BB%B6.html">66-4.$message组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-5.Form%E7%BB%84%E4%BB%B6.html">66-5.Form组件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-6.tree.html">66-6.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-7.vue-router-apply.html">66-7.vue-router-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-8.axios-apply.html">66-8.axios-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-9.vuex-apply.html">66-9.vuex-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-10.jwt-vue.html">66-10.jwt-vue</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-11.vue-ssr.html">66-11.vue-ssr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-12.nuxt-apply.html">66-12.nuxt-apply</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-13.pwa.html">66-13.pwa</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-14.vue%E5%8D%95%E5%85%83%E6%B5%8B%E8%AF%95.html">66-14.vue单元测试</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/66-15.%E6%9D%83%E9%99%90%E6%A0%A1%E9%AA%8C.html">66-15.权限校验</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/67-1-network.html">67-1-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/68-2-wireshark.html">68-2-wireshark</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/7.npm2.html">7.npm2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/69-hooks.html">69-hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/70-deploy.html">70-deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/71-hmr.html">71-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/72.deploy.html">72.deploy</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/73.import.html">73.import</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/74.mobile.html">74.mobile</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-1.%E6%96%87%E4%BB%B6%E5%88%86%E6%9E%90.html">75.webpack-1.文件分析</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-2.loader.html">75.webpack-2.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-3.%E6%BA%90%E7%A0%81%E6%B5%81%E7%A8%8B.html">75.webpack-3.源码流程</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-4.tapable.html">75.webpack-4.tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-5.prepare.html">75.webpack-5.prepare</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-6.resolve.html">75.webpack-6.resolve</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-7.loader.html">75.webpack-7.loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-8.module.html">75.webpack-8.module</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-9.chunk.html">75.webpack-9.chunk</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-10.asset.html">75.webpack-10.asset</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/75.webpack-11.%E5%AE%9E%E7%8E%B0.html">75.webpack-11.实现</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/76.react_optimize.html">76.react_optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_back.html">77.ts_ketang_back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/77.ts_ketang_front.html">77.ts_ketang_front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/78.vue-domdiff.html">78.vue-domdiff</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/79.grammar.html">79.grammar</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/80.tree.html">80.tree</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/81.axios.html">81.axios</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.1.react.html">82.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.2.react-high.html">82.2.react-high</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.3.react-router.html">82.3.react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.4.redux.html">82.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.5.redux_middleware.html">82.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.6.connected.html">82.6.connected</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.7.saga.html">82.7.saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva.html">82.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.8.dva-source.html">82.8.dva-source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.9.roadhog.html">82.9.roadhog</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.10.umi.html">82.10.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.11.antdesign.html">82.11.antdesign</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-front.html">82.12.ketang-front</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/82.12.ketang-back.html">82.12.ketang-back</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/83.upload.html">83.upload</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/84.graphql.html">84.graphql</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/85.antpro.html">85.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.1.uml.html">86.1.uml</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/86.2.design.html">86.2.design</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/87.postcss.html">87.postcss</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/88.react16-1.html">88.react16-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/89.nextjs.html">89.nextjs</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/90.react-test.html">90.react-test</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/91.react-ts.html">91.react-ts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/92.rbac.html">92.rbac</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/93.tsnode.html">93.tsnode</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.1.JavaScript.html">94.1.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.2.JavaScript.html">94.2.JavaScript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.3.MODULE.html">94.3.MODULE</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.4.EventLoop.html">94.4.EventLoop</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.5.%E6%96%87%E4%BB%B6%E4%B8%8A%E4%BC%A0.html">94.5.文件上传</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.6.https.html">94.6.https</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/94.7.%20nginx.html">94.7. nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.1.%20react.html">95.1. react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/95.2.react.html">95.2.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.1.react16.html">96.1.react16</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.2.fiber.html">96.2.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/96.3.fiber.html">96.3.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/97.serverless.html">97.serverless</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/98.websocket.html">98.websocket</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/100.1.react-basic.html">100.1.react-basic</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.1.monitor.html">101.1.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/101.2.monitor.html">101.2.monitor</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/102.java.html">102.java</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.1.webpack-usage.html">103.1.webpack-usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.2.webpack-bundle.html">103.2.webpack-bundle</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.3.webpack-ast.html">103.3.webpack-ast</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.4.webpack-flow.html">103.4.webpack-flow</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.5.webpack-loader.html">103.5.webpack-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.6.webpack-tapable.html">103.6.webpack-tapable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.7.webpack-plugin.html">103.7.webpack-plugin</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.8.webpack-optimize1.html">103.8.webpack-optimize1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.9.webpack-optimize2.html">103.9.webpack-optimize2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.10.webpack-hand.html">103.10.webpack-hand</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.11.webpack-hmr.html">103.11.webpack-hmr</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.13.webpack5.html">103.13.webpack5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.14.webpack-sourcemap.html">103.14.webpack-sourcemap</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler1.html">103.15.webpack-compiler1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/103.15.webpack-compiler2.html">103.15.webpack-compiler2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.1.binary.html">104.1.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/104.2.binary.html">104.2.binary</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/105.skeleton.html">105.skeleton</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react.html">106.1.react</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.1.react_source.html">106.1.react_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks.html">106.2.react_hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.2.react_hooks_source.html">106.2.react_hooks_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.3.react_router.html">106.3.react_router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.4.redux.html">106.4.redux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.5.redux_middleware.html">106.5.redux_middleware</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.6.connected-react-router.html">106.6.connected-react-router</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.7.redux-saga.html">106.7.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.8.dva.html">106.8.dva</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.9.umi.html">106.9.umi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.10.antpro.html">106.10.antpro</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/107.fiber.html">107.fiber</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/108.http.html">108.http</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.1.webpack_usage.html">109.1.webpack_usage</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.2.webpack_source.html">109.2.webpack_source</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/109.3.dll.html">109.3.dll</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/110.nest.js.html">110.nest.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/111.xstate.html">111.xstate</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/112.Form.html">112.Form</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/113.redux-saga.html">113.redux-saga</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/114.react+typescript.html">114.react+typescript</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/115.immer.html">115.immer</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/116.pro5.html">116.pro5</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/117.css-loader.html">117.css-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/118.1.umi-core.html">118.1.umi-core</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.2.module-federation.html">119.2.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/119.1.module-federation.html">119.1.module-federation</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/120.create-react-app.html">120.create-react-app</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/121.react-scripts.html">121.react-scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/122.react-optimize.html">122.react-optimize</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/123.jsx-runtime.html">123.jsx-runtime</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/124.next.js.html">124.next.js</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/106.11.ketang.html">106.11.ketang</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.1.linux.html">125.1.linux</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.2.linux-vi.html">125.2.linux-vi</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.3.linux-user.html">125.3.linux-user</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.4.linux-auth.html">125.4.linux-auth</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.5.linux-shell.html">125.5.linux-shell</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.6.linux-install.html">125.6.linux-install</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.7.linux-system.html">125.7.linux-system</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.8.linux-service.html">125.8.linux-service</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.9.linux-network.html">125.9.linux-network</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.10.nginx.html">125.10.nginx</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.11.docker.html">125.11.docker</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.12.ci.html">125.12.ci</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.11.react-1.html">126.11.react-1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.13.k8s.html">125.13.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.14.k8s.html">125.14.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.15.k8s.html">125.15.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/125.16.k8s.html">125.16.k8s</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-2.html">126.12.react-2</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-3.html">126.12.react-3</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/127.frontend.html">127.frontend</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/128.rollup.html">128.rollup</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/129.px2rem-loader.html">129.px2rem-loader</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/130.health.html">130.health</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/131.hooks.html">131.hooks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/126.12.react-4.html">126.12.react-4</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/132.keepalive.html">132.keepalive</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/133.vue-cli.html">133.vue-cli</a></li></ul>                        </div>
+
+                        
+<div class="warpper">
+    <div class="page-toc">
+        <ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t01.%20typescript%E6%98%AF%E4%BB%80%E4%B9%88">1. typescript是什么</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t12.%20TypeScript%E5%AE%89%E8%A3%85%E5%92%8C%E7%BC%96%E8%AF%91">2. TypeScript安装和编译</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t22.1%20%E5%AE%89%E8%A3%85">2.1 安装</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t32.2%20Vscode+TypeScript">2.2 Vscode+TypeScript</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t42.2.1%20%20%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6">2.2.1  生成配置文件</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t52.2.2%20%E6%89%A7%E8%A1%8C%E7%BC%96%E8%AF%91">2.2.2 执行编译</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t62.2.3%20vscode%E8%BF%90%E8%A1%8C">2.2.3 vscode运行</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t72.2.4%20npm%20scripts">2.2.4 npm scripts</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t82.2.5%20npm%20scripts%20%E7%9A%84%20PATH">2.2.5 npm scripts 的 PATH</a></li></ul></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t93.%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B">3. 数据类型</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t103.1%20%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B(boolean)">3.1 布尔类型(boolean)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t113.2%20%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B(number)">3.2 数字类型(number)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t123.3%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B(string)">3.3 字符串类型(string)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t133.4%20%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B(array)">3.4 数组类型(array)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t143.5%20%E5%85%83%E7%BB%84%E7%B1%BB%E5%9E%8B(tuple)">3.5 元组类型(tuple)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t153.6%20%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B(enum)">3.6 枚举类型(enum)</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t163.6.1%20%E6%99%AE%E9%80%9A%E6%9E%9A%E4%B8%BE">3.6.1 普通枚举</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t173.6.2%20%E5%B8%B8%E6%95%B0%E6%9E%9A%E4%B8%BE">3.6.2 常数枚举</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t183.7%20%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B(any)">3.7 任意类型(any)</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t193.8%20null%20%E5%92%8C%20undefined">3.8 null 和 undefined</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t203.9%20void%20%E7%B1%BB%E5%9E%8B">3.9 void 类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t213.10%20never%E7%B1%BB%E5%9E%8B">3.10 never类型</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t223.10.1">3.10.1</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t233.10.2%20%20strictNullChecks">3.10.2  strictNullChecks</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t243.10.3%20%20never%20%E5%92%8C%20void%20%E7%9A%84%E5%8C%BA%E5%88%AB">3.10.3  never 和 void 的区别</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t253.11%20%E7%B1%BB%E5%9E%8B%E6%8E%A8%E8%AE%BA">3.11 类型推论</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t263.12%20%20%E5%8C%85%E8%A3%85%E5%AF%B9%E8%B1%A1%EF%BC%88Wrapper%20Object%EF%BC%89">3.12  包装对象（Wrapper Object）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t273.13%20%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B">3.13 联合类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t283.14%20%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80">3.14 类型断言</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t293.15%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E6%95%B0%E5%AD%97%E3%80%81%E5%B8%83%E5%B0%94%E5%80%BC%E5%AD%97%E9%9D%A2%E9%87%8F">3.15 字符串、数字、布尔值字面量</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t303.16%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E9%9D%A2%E9%87%8F%20vs%20%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B">3.16 字符串字面量 vs 联合类型</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t314.%20%E5%87%BD%E6%95%B0">4. 函数</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t324.1%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89">4.1 函数的定义</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t334.2%20%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F">4.2 函数表达式</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t344.3%20%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC">4.3 没有返回值</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t354.4%20%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0">4.4 可选参数</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t364.5%20%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0">4.5 默认参数</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t374.6%20%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0">4.6 剩余参数</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t384.7%20%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD">4.7 函数重载</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t395.%20%E7%B1%BB">5. 类</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t405.1%20%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E7%B1%BB">5.1 如何定义类</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t415.2%20%E5%AD%98%E5%8F%96%E5%99%A8">5.2 存取器</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t425.3%20%E5%8F%82%E6%95%B0%E5%B1%9E%E6%80%A7">5.3 参数属性</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t435.4%20readonly">5.4 readonly</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t445.5%20%E7%BB%A7%E6%89%BF">5.5 继承</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t455.6%20%E7%B1%BB%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BF%AE%E9%A5%B0%E7%AC%A6">5.6 类里面的修饰符</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t465.7%20%E9%9D%99%E6%80%81%E5%B1%9E%E6%80%A7%20%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95">5.7 静态属性 静态方法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t475.8%20%E6%8A%BD%E8%B1%A1%E7%B1%BB">5.8 抽象类</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t485.9%20%20%E6%8A%BD%E8%B1%A1%E7%B1%BB%20vs%20%E6%8E%A5%E5%8F%A3">5.9  抽象类 vs 接口</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t495.10%20%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95">5.10 抽象方法</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t505.11%20%E9%87%8D%E5%86%99%EF%BC%88override%EF%BC%89%20vs%20%E9%87%8D%E8%BD%BD%EF%BC%88overload%EF%BC%89">5.11 重写（override） vs 重载（overload）</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t515.12%20%E7%BB%A7%E6%89%BF%20vs%20%E5%A4%9A%E6%80%81">5.12 继承 vs 多态</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t526.%20%E6%8E%A5%E5%8F%A3">6. 接口</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t536.1%20%E6%8E%A5%E5%8F%A3">6.1 接口</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t546.2%20%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%BB%A7%E6%89%BF">6.2 接口的继承</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t556.3%20readonly">6.3 readonly</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t566.4%20%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B%E6%8E%A5%E5%8F%A3">6.4 函数类型接口</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t576.5%20%E5%8F%AF%E7%B4%A2%E5%BC%95%E6%8E%A5%E5%8F%A3">6.5 可索引接口</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t586.6%20%E7%B1%BB%E6%8E%A5%E5%8F%A3">6.6 类接口</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t596.7%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E7%B1%BB%E5%9E%8B">6.7 构造函数的类型</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t607.%20%E6%B3%9B%E5%9E%8B">7. 泛型</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t617.1%20%E6%B3%9B%E5%9E%8B%E5%87%BD%E6%95%B0">7.1 泛型函数</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t627.2%20%E7%B1%BB%E6%95%B0%E7%BB%84">7.2 类数组</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t637.3%20%E6%B3%9B%E5%9E%8B%E7%B1%BB">7.3 泛型类</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t647.5%20%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3">7.5 泛型接口</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t657.6%20%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0">7.6 多个类型参数</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t667.7%20%E9%BB%98%E8%AE%A4%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B">7.7 默认泛型类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t677.8%20%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F">7.8 泛型约束</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t687.9%20%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3">7.9 泛型接口</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t697.10%20%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D">7.10 泛型类型别名</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t707.11%20%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3%20vs%20%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D">7.11 泛型接口 vs 泛型类型别名</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t718.%E7%BB%93%E6%9E%84%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F">8.结构类型系统</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t728.1%20%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7">8.1 接口的兼容性</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t738.2%20%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7">8.2 基本类型的兼容性</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t748.3%20%E7%B1%BB%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7">8.3 类的兼容性</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t758.4%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7">8.4 函数的兼容性</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t768.5%20%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E5%8F%8C%E5%90%91%E5%8D%8F%E5%8F%98">8.5 函数参数的双向协变</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t778.6%20%E6%B3%9B%E5%9E%8B%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7">8.6 泛型的兼容性</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t788.7%20%E6%9E%9A%E4%B8%BE%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7">8.7 枚举的兼容性</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t799.%E7%B1%BB%E5%9E%8B%E4%BF%9D%E6%8A%A4">9.类型保护</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t809.1%20typeof%20%E7%B1%BB%E5%9E%8B%E4%BF%9D%E6%8A%A4">9.1 typeof 类型保护</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t819.2%20instanceof%E7%B1%BB%E5%9E%8B%E4%BF%9D%E6%8A%A4">9.2 instanceof类型保护</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t829.3%20null%E4%BF%9D%E6%8A%A4">9.3 null保护</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t839.4%20%E9%93%BE%E5%88%A4%E6%96%AD%E8%BF%90%E7%AE%97%E7%AC%A6">9.4 链判断运算符</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t849.5%20%E5%8F%AF%E8%BE%A8%E8%AF%86%E7%9A%84%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B">9.5 可辨识的联合类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t859.6%20in%E6%93%8D%E4%BD%9C%E7%AC%A6">9.6 in操作符</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t869.7%20%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%BF%9D%E6%8A%A4">9.7 自定义的类型保护</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t8710.%20%E7%B1%BB%E5%9E%8B%E5%8F%98%E6%8D%A2">10. 类型变换</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t8810.1%20%E4%BA%A4%E5%8F%89%E7%B1%BB%E5%9E%8B">10.1 交叉类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t8910.2%20typeof">10.2 typeof</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9010.3%20%E7%B4%A2%E5%BC%95%E8%AE%BF%E9%97%AE%E6%93%8D%E4%BD%9C%E7%AC%A6">10.3 索引访问操作符</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9110.4%20keyof">10.4 keyof</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9210.5%20%E6%98%A0%E5%B0%84%E7%B1%BB%E5%9E%8B">10.5 映射类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9310.6%20%E5%86%85%E7%BD%AE%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%9E%8B">10.6 内置工具类型</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9410.6.1%20Partial">10.6.1 Partial</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9510.6.2%20Required">10.6.2 Required</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9610.6.3%20Readonly">10.6.3 Readonly</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9710.6.4%20Pick">10.6.4 Pick</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9810.6.5%20%E6%98%A0%E5%B0%84%E7%B1%BB%E5%9E%8B%E4%BF%AE%E9%A5%B0%E7%AC%A6%E7%9A%84%E6%8E%A7%E5%88%B6">10.6.5 映射类型修饰符的控制</a></li></ul></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9910.7%20%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B">10.7 条件类型</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10010.7.1%20%E5%AE%9A%E4%B9%89%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B">10.7.1 定义条件类型</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10110.7.2%20%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%86%E5%8F%91">10.7.2 条件类型的分发</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10210.7.3%20%E5%86%85%E7%BD%AE%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B">10.7.3 内置条件类型</a><ul><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10310.7.3.1%20Exclude">10.7.3.1 Exclude</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10410.7.3.2%20Extract">10.7.3.2 Extract</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10510.7.3.3%20NonNullable">10.7.3.3 NonNullable</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10610.7.3.4%20ReturnType">10.7.3.4 ReturnType</a></li><li><a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10710.7.3.5%20InstanceType">10.7.3.5 InstanceType</a></li></ul></li></ul></li></ul></li></ul>
+    </div>
+    <div class="content markdown-body">
+        <h2 id="t01. typescript是什么">1. typescript是什么 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t01.%20typescript%E6%98%AF%E4%BB%80%E4%B9%88"> # </a></h2>
+<ul>
+<li>Typescript是由微软开发的一款开源的编程语言</li>
+<li>Typescript是Javascript的超集，遵循最新的ES5/ES6规范。TypeScript扩展了Javascript语法</li>
+<li>TypeScript更像后端Java、C#这样的面向对象语言可以让JS开发大型企业应用</li>
+<li>越来越多的项目是基于TS的，比如VSCode、Angular6、Vue3、React16</li>
+<li>TS提供的类型系统可以帮助我们在写代码的时候提供更丰富的语法提示</li>
+<li>在创建前的编译阶段经过类型系统的检查，就可以避免很多线上的错误</li>
+</ul>
+<p><img src="./珠峰架构师成长计划_files/typescript.jpg" alt="typescript"></p>
+<h2 id="t12. TypeScript安装和编译">2. TypeScript安装和编译 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t12.%20TypeScript%E5%AE%89%E8%A3%85%E5%92%8C%E7%BC%96%E8%AF%91"> # </a></h2>
+<h3 id="t22.1 安装">2.1 安装 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t22.1%20%E5%AE%89%E8%A3%85"> # </a></h3>
+<pre><code class="lang-js">cnpm i typescript -g
+</code></pre>
+<pre><code class="lang-js">tsc helloworld.ts
+</code></pre>
+<h3 id="t32.2 Vscode+TypeScript">2.2 Vscode+TypeScript <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t32.2%20Vscode+TypeScript"> # </a></h3>
+<h4 id="t42.2.1  生成配置文件">2.2.1  生成配置文件 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t42.2.1%20%20%E7%94%9F%E6%88%90%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"> # </a></h4>
+<pre><code class="lang-js">tsc --init
+</code></pre>
+<pre><code class="lang-json">{
+  <span class="hljs-attr">"compilerOptions"</span>: {
+    <span class="hljs-comment">/* Basic Options */</span>
+    <span class="hljs-attr">"target"</span>: <span class="hljs-string">"es5"</span>,                          <span class="hljs-comment">/* Specify ECMAScript target version: 'ES3' (default), 'ES5', 'ES2015', 'ES2016', 'ES2017','ES2018' or 'ESNEXT'. 指定ECMAScript的目标版本*/</span>
+    <span class="hljs-attr">"module"</span>: <span class="hljs-string">"commonjs"</span>,                     <span class="hljs-comment">/* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', or 'ESNext'. 指定模块代码的生成方式*/</span>
+    <span class="hljs-comment">// "lib": [],                             /* Specify library files to be included in the compilation. 指定编译的时候用来包含的编译文件*/</span>
+    <span class="hljs-comment">// "allowJs": true,                       /* Allow javascript files to be compiled. 允许编译JS文件*/</span>
+    <span class="hljs-comment">// "checkJs": true,                       /* Report errors in .js files. 在JS中包括错误*/</span>
+    <span class="hljs-comment">// "jsx": "preserve",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. 指定JSX代码的生成方式 是保留还是react-native或者react*/</span>
+    <span class="hljs-comment">// "declaration": true,                   /* Generates corresponding '.d.ts' file.生成相应的类型声明文件 */</span>
+    <span class="hljs-comment">// "declarationMap": true,                /* Generates a sourcemap for each corresponding '.d.ts' file. 为每个类型声明文件生成相应的sourcemap*/</span>
+    <span class="hljs-comment">// "sourceMap": true,                     /* Generates corresponding '.map' file. 生成对应的map文件 */</span>
+    <span class="hljs-comment">// "outFile": "./",                       /* Concatenate and emit output to single file. 合并并且把编译后的内容输出 到一个文件里*/</span>
+    <span class="hljs-comment">// "outDir": "./",                        /* Redirect output structure to the directory.按原始结构输出到目标目录 */</span>
+    <span class="hljs-comment">// "rootDir": "./",                       /* Specify the root directory of input files. Use to control the output directory structure with --outDir. 指定输入文件的根目录，用--outDir来控制输出的目录结构*/</span>
+    <span class="hljs-comment">// "composite": true,                     /* Enable project compilation 启用项目编译*/</span>
+    <span class="hljs-comment">// "removeComments": true,                /* Do not emit comments to output. 移除注释*/</span>
+    <span class="hljs-comment">// "noEmit": true,                        /* Do not emit outputs. 不要输出*/</span>
+    <span class="hljs-comment">// "importHelpers": true,                 /* Import emit helpers from 'tslib'. */</span>
+    <span class="hljs-comment">// "downlevelIteration": true,            /* Provide full support for iterables in 'for-of', spread, and destructuring when targeting 'ES5' or 'ES3'. 当目标是ES5或ES3的时候提供对for-of、扩展运算符和解构赋值中对于迭代器的完整支持*/</span>
+    <span class="hljs-comment">// "isolatedModules": true,               /* Transpile each file as a separate module (similar to 'ts.transpileModule').r把每一个文件转译成一个单独的模块 */</span>
+
+    <span class="hljs-comment">/* Strict Type-Checking Options */</span>
+    <span class="hljs-comment">//"strict": true,                           /* Enable all strict type-checking options. 启用完全的严格类型检查 */</span>
+    <span class="hljs-comment">// "noImplicitAny": true,                 /* Raise error on expressions and declarations with an implied 'any' type. 不能使用隐式的any类型*/</span>
+    <span class="hljs-comment">// "strictNullChecks": true,              /* Enable strict null checks. 启用严格的NULL检查*/</span>
+    <span class="hljs-comment">// "strictFunctionTypes": true,           /* Enable strict checking of function types. 启用严格的函数类型检查*/</span>
+    <span class="hljs-comment">// "strictBindCallApply": true,           /* Enable strict 'bind', 'call', and 'apply' methods on functions.启用函数上严格的bind call 和apply方法 */</span>
+    <span class="hljs-comment">// "strictPropertyInitialization": true,  /* Enable strict checking of property initialization in classes. 启用类上初始化属性检查*/</span>
+    <span class="hljs-comment">// "noImplicitThis": true,                /* Raise error on 'this' expressions with an implied 'any' type.在默认的any中调用 this表达式报错 */</span>
+    <span class="hljs-comment">// "alwaysStrict": true,                  /* Parse in strict mode and emit "use strict" for each source file. 在严格模式下解析并且向每个源文件中发射use strict*/</span>
+
+    <span class="hljs-comment">/* Additional Checks */</span>
+    <span class="hljs-comment">// "noUnusedLocals": true,                /* Report errors on unused locals. 有未使用到的本地变量时报错 */</span>
+    <span class="hljs-comment">// "noUnusedParameters": true,            /* Report errors on unused parameters. 有未使用到的参数时报错*/</span>
+    <span class="hljs-comment">// "noImplicitReturns": true,             /* Report error when not all code paths in function return a value. 当不是所有的代码路径都有返回值的时候报错*/</span>
+    <span class="hljs-comment">// "noFallthroughCasesInSwitch": true,    /* Report errors for fallthrough cases in switch statement. 在switch表达式中没有替代的case会报错 */</span>
+
+    <span class="hljs-comment">/* Module Resolution Options */</span>
+    <span class="hljs-comment">// "moduleResolution": "node",            /* Specify module resolution strategy: 'node' (Node.js) or 'classic' (TypeScript pre-1.6). 指定模块的解析策略 node classic*/</span>
+    <span class="hljs-comment">// "baseUrl": "./",                       /* Base directory to resolve non-absolute module names. 在解析非绝对路径模块名的时候的基准路径*/</span>
+    <span class="hljs-comment">// "paths": {},                           /* A series of entries which re-map imports to lookup locations relative to the 'baseUrl'. 一些路径的集合*/</span>
+    <span class="hljs-comment">// "rootDirs": [],                        /* List of root folders whose combined content represents the structure of the project at runtime. 根目录的列表，在运行时用来合并内容*/</span>
+    <span class="hljs-comment">// "typeRoots": [],                       /* List of folders to include type definitions from. 用来包含类型声明的文件夹列表*/</span>
+    <span class="hljs-comment">// "types": [],                           /* Type declaration files to be included in compilation.在编译的时候被包含的类型声明 */</span>
+    <span class="hljs-comment">// "allowSyntheticDefaultImports": true,  /* Allow default imports from modules with no default export. This does not affect code emit, just typechecking.当没有默认导出的时候允许默认导入，这个在代码执行的时候没有作用，只是在类型检查的时候生效 */</span>
+    <span class="hljs-comment">//"esModuleInterop": true                   /* Enables emit interoperability between CommonJS and ES Modules via creation of namespace objects for all imports. Implies 'allowSyntheticDefaultImports'.*/</span>
+    <span class="hljs-comment">// "preserveSymlinks": true,              /* Do not resolve the real path of symlinks.不要symlinks解析的真正路径 */</span>
+
+    <span class="hljs-comment">/* Source Map Options */</span>
+    <span class="hljs-comment">// "sourceRoot": "",                      /* Specify the location where debugger should locate TypeScript files instead of source locations. 指定ts文件位置*/</span>
+    <span class="hljs-comment">// "mapRoot": "",                         /* Specify the location where debugger should locate map files instead of generated locations. 指定 map文件存放的位置 */</span>
+    <span class="hljs-comment">// "inlineSourceMap": true,               /* Emit a single file with source maps instead of having a separate file. 源文件和sourcemap 文件在同一文件中，而不是把map文件放在一个单独的文件里*/</span>
+    <span class="hljs-comment">// "inlineSources": true,                 /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. 源文件和sourcemap 文件在同一文件中*/</span>
+
+    <span class="hljs-comment">/* Experimental Options */</span>
+    <span class="hljs-comment">// "experimentalDecorators": true,        /* Enables experimental support for ES7 decorators. 启动装饰器*/</span>
+    <span class="hljs-comment">// "emitDecoratorMetadata": true,         /* Enables experimental support for emitting type metadata for decorators. */</span>
+  }
+}
+</code></pre>
+<h4 id="t52.2.2 执行编译">2.2.2 执行编译 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t52.2.2%20%E6%89%A7%E8%A1%8C%E7%BC%96%E8%AF%91"> # </a></h4>
+<pre><code class="lang-js">tsc 
+</code></pre>
+<h4 id="t62.2.3 vscode运行">2.2.3 vscode运行 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t62.2.3%20vscode%E8%BF%90%E8%A1%8C"> # </a></h4>
+<ul>
+<li>Terminal-&gt;Run Task-&gt; tsc:build 编译</li>
+<li>Terminal-&gt;Run Task-&gt; tsc:watch 编译并监听 </li>
+</ul>
+<h4 id="t72.2.4 npm scripts">2.2.4 npm scripts <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t72.2.4%20npm%20scripts"> # </a></h4>
+<ul>
+<li>npm run 实际上是调用本地的 Shell 来执行对应的 script value，所以理论上能兼容所有 bash 命令</li>
+<li>Shell 在类 Unix 系统上是 /bin/sh，在 Windows 上是 cmd.exe</li>
+</ul>
+<h4 id="t82.2.5 npm scripts 的 PATH">2.2.5 npm scripts 的 PATH <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t82.2.5%20npm%20scripts%20%E7%9A%84%20PATH"> # </a></h4>
+<ul>
+<li>npm run 会预置 PATH，对应包下的 node_modules/.bin 目录</li>
+</ul>
+<h2 id="t93. 数据类型">3. 数据类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t93.%20%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"> # </a></h2>
+<h3 id="t103.1 布尔类型(boolean)">3.1 布尔类型(boolean) <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t103.1%20%E5%B8%83%E5%B0%94%E7%B1%BB%E5%9E%8B(boolean)"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> married: boolean=<span class="hljs-literal">false</span>;
+</code></pre>
+<h3 id="t113.2 数字类型(number)">3.2 数字类型(number) <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t113.2%20%E6%95%B0%E5%AD%97%E7%B1%BB%E5%9E%8B(number)"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> age: number=<span class="hljs-number">10</span>;
+</code></pre>
+<h3 id="t123.3 字符串类型(string)">3.3 字符串类型(string) <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t123.3%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E7%B1%BB%E5%9E%8B(string)"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> firstname: string=<span class="hljs-string">'zfpx'</span>;
+</code></pre>
+<h3 id="t133.4 数组类型(array)">3.4 数组类型(array) <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t133.4%20%E6%95%B0%E7%BB%84%E7%B1%BB%E5%9E%8B(array)"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> arr2: number[]=[<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>];
+<span class="hljs-keyword">let</span> arr3: <span class="hljs-built_in">Array</span>&lt;number&gt;=[<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>];
+</code></pre>
+<h3 id="t143.5 元组类型(tuple)">3.5 元组类型(tuple) <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t143.5%20%E5%85%83%E7%BB%84%E7%B1%BB%E5%9E%8B(tuple)"> # </a></h3>
+<ul>
+<li>在 TypeScript 的基础类型中，元组（ Tuple ）表示一个已知<code>数量</code>和<code>类型</code>的数组</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> zhufeng:[string,number] = [<span class="hljs-string">'zhufeng'</span>,<span class="hljs-number">5</span>];
+zhufeng[<span class="hljs-number">0</span>].length;
+zhufeng[<span class="hljs-number">1</span>].toFixed(<span class="hljs-number">2</span>);
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">元组</th>
+<th style="text-align:left">数组</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">每一项可以是不同的类型</td>
+<td style="text-align:left">每一项都是同一种类型</td>
+</tr>
+<tr>
+<td style="text-align:left">有预定义的长度</td>
+<td style="text-align:left">没有长度限制</td>
+</tr>
+<tr>
+<td style="text-align:left">用于表示一个结构</td>
+<td style="text-align:left">用于表示一个列表</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> animal:[string,number,boolean] = [<span class="hljs-string">'zhufeng'</span>,<span class="hljs-number">10</span>,<span class="hljs-literal">true</span>];
+</code></pre>
+<h3 id="t153.6 枚举类型(enum)">3.6 枚举类型(enum) <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t153.6%20%E6%9E%9A%E4%B8%BE%E7%B1%BB%E5%9E%8B(enum)"> # </a></h3>
+<ul>
+<li>事先考虑某一个变量的所有的可能的值，尽量用自然语言中的单词表示它的每一个值</li>
+<li>比如性别、月份、星期、颜色、单位、学历</li>
+</ul>
+<h4 id="t163.6.1 普通枚举">3.6.1 普通枚举 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t163.6.1%20%E6%99%AE%E9%80%9A%E6%9E%9A%E4%B8%BE"> # </a></h4>
+<pre><code class="lang-js">enum Gender{
+    GIRL,
+    BOY
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`李雷是<span class="hljs-subst">${Gender.BOY}</span>`</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`韩梅梅是<span class="hljs-subst">${Gender.GIRL}</span>`</span>);
+
+enum Week{
+    MONDAY=<span class="hljs-number">1</span>,
+    TUESDAY=<span class="hljs-number">2</span>
+}
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">`今天是星期<span class="hljs-subst">${Week.MONDAY}</span>`</span>);
+</code></pre>
+<h4 id="t173.6.2 常数枚举">3.6.2 常数枚举 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t173.6.2%20%E5%B8%B8%E6%95%B0%E6%9E%9A%E4%B8%BE"> # </a></h4>
+<ul>
+<li>常数枚举与普通枚举的区别是，它会在编译阶段被删除，并且不能包含计算成员。</li>
+<li>假如包含了计算成员，则会在编译阶段报错</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> enum Colors {
+    Red,
+    Yellow,
+    Blue
+}
+
+<span class="hljs-keyword">let</span> myColors = [Colors.Red, Colors.Yellow, Colors.Blue];
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-keyword">const</span> enum Color {Red, Yellow, Blue = <span class="hljs-string">"blue"</span>.length};
+</code></pre>
+<h3 id="t183.7 任意类型(any)">3.7 任意类型(any) <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t183.7%20%E4%BB%BB%E6%84%8F%E7%B1%BB%E5%9E%8B(any)"> # </a></h3>
+<ul>
+<li><code>any</code>就是可以赋值给任意类型</li>
+<li>第三方库没有提供类型文件时可以使用<code>any</code></li>
+<li>类型转换遇到困难时</li>
+<li>数据结构太复杂难以定义</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> root:any=<span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>);
+root.style.color=<span class="hljs-string">'red'</span>;
+</code></pre>
+<h3 id="t193.8 null 和 undefined">3.8 null 和 undefined <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t193.8%20null%20%E5%92%8C%20undefined"> # </a></h3>
+<ul>
+<li>null 和 undefined 是其它类型的子类型，可以赋值给其它类型，如数字类型，此时，赋值后的类型会变成 null 或 undefined</li>
+<li>strictNullChecks</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> x: number;
+x = <span class="hljs-number">1</span>;
+x = <span class="hljs-literal">undefined</span>;    
+x = <span class="hljs-literal">null</span>;   
+
+<span class="hljs-keyword">let</span> y: number | <span class="hljs-literal">null</span> | <span class="hljs-literal">undefined</span>;
+y = <span class="hljs-number">1</span>;
+y = <span class="hljs-literal">undefined</span>;   
+y = <span class="hljs-literal">null</span>;   
+</code></pre>
+<h3 id="t203.9 void 类型">3.9 void 类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t203.9%20void%20%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>void 表示没有任何类型</li>
+<li>当一个函数没有返回值时，TS 会认为它的返回值是 void 类型。</li>
+<li>当我们声明一个变量类型是 void 的时候，它的非严格模式下仅可以被赋值为 null 和 undefined;</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greeting</span>(<span class="hljs-params">name:string</span>):<span class="hljs-title">void</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello'</span>,name);
+}
+greeting(<span class="hljs-string">'zfpx'</span>);
+</code></pre>
+<h3 id="t213.10 never类型">3.10 never类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t213.10%20never%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<p>never是其它类型(null undefined)的子类型，代表不会出现的值</p>
+<h4 id="t223.10.1">3.10.1 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t223.10.1"> # </a></h4>
+<ul>
+<li>作为不会返回（ return ）的函数的返回值类型</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">// 返回never的函数 必须存在 无法达到（ unreachable ） 的终点</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">error</span>(<span class="hljs-params">message: string</span>): <span class="hljs-title">never</span> </span>{
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(message);
+}
+
+<span class="hljs-comment">// 由类型推论得到返回值为 never</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fail</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">return</span> error(<span class="hljs-string">"Something failed"</span>);
+}
+
+<span class="hljs-comment">// 返回never的函数 必须存在 无法达到（ unreachable ） 的终点</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">infiniteLoop</span>(<span class="hljs-params"></span>): <span class="hljs-title">never</span> </span>{
+    <span class="hljs-keyword">while</span> (<span class="hljs-literal">true</span>) {}
+}
+</code></pre>
+<h4 id="t233.10.2  strictNullChecks">3.10.2  strictNullChecks <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t233.10.2%20%20strictNullChecks"> # </a></h4>
+<ul>
+<li>在 TS 中， null 和 undefined 是任何类型的有效值，所以无法正确地检测它们是否被错误地使用。于是 TS 引入了 --strictNullChecks 这一种检查模式</li>
+<li>由于引入了 --strictNullChecks ，在这一模式下，null 和 undefined 能被检测到。所以 TS 需要一种新的底部类型（ bottom type ）。所以就引入了 never。</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">// Compiled with --strictNullChecks</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">fn</span>(<span class="hljs-params">x: number | string</span>) </span>{
+  <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x === <span class="hljs-string">'number'</span>) {
+    <span class="hljs-comment">// x: number 类型</span>
+  } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> x === <span class="hljs-string">'string'</span>) {
+    <span class="hljs-comment">// x: string 类型</span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// x: never 类型</span>
+    <span class="hljs-comment">// --strictNullChecks 模式下，这里的代码将不会被执行，x 无法被观察</span>
+  }
+}
+</code></pre>
+<h4 id="t243.10.3  never 和 void 的区别">3.10.3  never 和 void 的区别 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t243.10.3%20%20never%20%E5%92%8C%20void%20%E7%9A%84%E5%8C%BA%E5%88%AB"> # </a></h4>
+<ul>
+<li>void 可以被赋值为 null 和 undefined的类型。 never 则是一个不包含值的类型。</li>
+<li>拥有 void 返回值类型的函数能正常运行。拥有 never 返回值类型的函数无法正常返回，无法终止，或会抛出异常。</li>
+</ul>
+<h3 id="t253.11 类型推论">3.11 类型推论 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t253.11%20%E7%B1%BB%E5%9E%8B%E6%8E%A8%E8%AE%BA"> # </a></h3>
+<ul>
+<li>是指编程语言中能够自动推导出值的类型的能力，它是一些强静态类型语言中出现的特性</li>
+<li>定义时未赋值就会推论成any类型</li>
+<li>如果定义的时候就赋值就能利用到类型推论</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> username2;
+username2 = <span class="hljs-number">10</span>;
+username2 = <span class="hljs-string">'zhufeng'</span>;
+username2 = <span class="hljs-literal">null</span>;
+</code></pre>
+<h3 id="t263.12  包装对象（Wrapper Object）">3.12  包装对象（Wrapper Object） <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t263.12%20%20%E5%8C%85%E8%A3%85%E5%AF%B9%E8%B1%A1%EF%BC%88Wrapper%20Object%EF%BC%89"> # </a></h3>
+<ul>
+<li>JavaScript 的类型分为两种：原始数据类型（Primitive data types）和对象类型（Object types）。</li>
+<li>所有的原始数据类型都没有属性（property）</li>
+<li>原始数据类型<ul>
+<li>布尔值</li>
+<li>数值</li>
+<li>字符串</li>
+<li>null</li>
+<li>undefined </li>
+<li>Symbol</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> name = <span class="hljs-string">'zhufeng'</span>;
+<span class="hljs-built_in">console</span>.log(name.toUpperCase());
+
+<span class="hljs-built_in">console</span>.log((<span class="hljs-keyword">new</span> <span class="hljs-built_in">String</span>(<span class="hljs-string">'zhufeng'</span>)).toUpperCase());
+</code></pre>
+<ul>
+<li>当调用基本数据类型方法的时候，JavaScript 会在原始数据类型和对象类型之间做一个迅速的强制性切换</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> isOK: boolean = <span class="hljs-literal">true</span>; <span class="hljs-comment">// 编译通过</span>
+<span class="hljs-keyword">let</span> isOK: boolean = <span class="hljs-built_in">Boolean</span>(<span class="hljs-number">1</span>) <span class="hljs-comment">// 编译通过</span>
+<span class="hljs-keyword">let</span> isOK: boolean = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Boolean</span>(<span class="hljs-number">1</span>); <span class="hljs-comment">// 编译失败   期望的 isOK 是一个原始数据类型</span>
+</code></pre>
+<h3 id="t273.13 联合类型">3.13 联合类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t273.13%20%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>联合类型上只能访问两个类型共有的属性和方法</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> name4: string | number;
+name4 = <span class="hljs-number">3</span>;
+name4 = <span class="hljs-string">'zhufeng'</span>;
+<span class="hljs-built_in">console</span>.log(name4.toUpperCase());
+</code></pre>
+<h3 id="t283.14 类型断言">3.14 类型断言 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t283.14%20%E7%B1%BB%E5%9E%8B%E6%96%AD%E8%A8%80"> # </a></h3>
+<ul>
+<li>类型断言可以将一个联合类型的变量，指定为一个更加具体的类型</li>
+<li>不能将联合类型断言为不存在的类型</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> name5: string | number;
+(name5 <span class="hljs-keyword">as</span> number).toFixed(<span class="hljs-number">3</span>);
+(name5 <span class="hljs-keyword">as</span> string).length;
+(name5 <span class="hljs-keyword">as</span> boolean);
+</code></pre>
+<h3 id="t293.15 字符串、数字、布尔值字面量">3.15 字符串、数字、布尔值字面量 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t293.15%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E3%80%81%E6%95%B0%E5%AD%97%E3%80%81%E5%B8%83%E5%B0%94%E5%80%BC%E5%AD%97%E9%9D%A2%E9%87%8F"> # </a></h3>
+<pre><code class="lang-js">type Lucky = <span class="hljs-number">1</span> | <span class="hljs-string">'One'</span>|<span class="hljs-literal">true</span>;
+<span class="hljs-keyword">let</span> foo:Lucky = <span class="hljs-string">'One'</span>;
+</code></pre>
+<h3 id="t303.16 字符串字面量 vs 联合类型">3.16 字符串字面量 vs 联合类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t303.16%20%E5%AD%97%E7%AC%A6%E4%B8%B2%E5%AD%97%E9%9D%A2%E9%87%8F%20vs%20%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>字符串字面量类型用来约束取值只能是某<code>几个字符串</code>中的一个, 联合类型（Union Types）表示取值可以为<code>多种类型</code>中的一种</li>
+<li>字符串字面量 限定了使用该字面量的地方仅接受特定的值,联合类型 对于值并没有限定，仅仅限定值的类型需要保持一致</li>
+</ul>
+<h2 id="t314. 函数">4. 函数 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t314.%20%E5%87%BD%E6%95%B0"> # </a></h2>
+<h3 id="t324.1 函数的定义">4.1 函数的定义 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t324.1%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">hello</span>(<span class="hljs-params">name:string</span>):<span class="hljs-title">void</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello'</span>,name);
+}
+hello(<span class="hljs-string">'zfpx'</span>);
+</code></pre>
+<h3 id="t334.2 函数表达式">4.2 函数表达式 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t334.2%20%E5%87%BD%E6%95%B0%E8%A1%A8%E8%BE%BE%E5%BC%8F"> # </a></h3>
+<ul>
+<li>定义函数类型</li>
+</ul>
+<pre><code class="lang-js">type GetUsernameFunction = <span class="hljs-function">(<span class="hljs-params">x:string,y:string</span>)=&gt;</span>string;
+<span class="hljs-keyword">let</span> getUsername:GetUsernameFunction = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">firstName,lastName</span>)</span>{
+  <span class="hljs-keyword">return</span> firstName + lastName;
+}
+</code></pre>
+<h3 id="t344.3 没有返回值">4.3 没有返回值 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t344.3%20%E6%B2%A1%E6%9C%89%E8%BF%94%E5%9B%9E%E5%80%BC"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> hello2 = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">name:string</span>):<span class="hljs-title">void</span> </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'hello2'</span>,name);
+}
+hello(<span class="hljs-string">'zfpx'</span>);
+hello2(<span class="hljs-string">'zfpx'</span>);
+</code></pre>
+<h3 id="t354.4 可选参数">4.4 可选参数 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t354.4%20%E5%8F%AF%E9%80%89%E5%8F%82%E6%95%B0"> # </a></h3>
+<p>在TS中函数的形参和实参必须一样，不一样就要配置可选参数,而且必须是最后一个参数</p>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">print</span>(<span class="hljs-params">name:string,age?:number</span>):<span class="hljs-title">void</span> </span>{
+    <span class="hljs-built_in">console</span>.log(name,age);
+}
+print(<span class="hljs-string">'zfpx'</span>);
+</code></pre>
+<h3 id="t364.5 默认参数">4.5 默认参数 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t364.5%20%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ajax</span>(<span class="hljs-params">url:string,method:string=<span class="hljs-string">'GET'</span></span>) </span>{
+    <span class="hljs-built_in">console</span>.log(url,method);
+}
+ajax(<span class="hljs-string">'/users'</span>);
+</code></pre>
+<h3 id="t374.6 剩余参数">4.6 剩余参数 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t374.6%20%E5%89%A9%E4%BD%99%E5%8F%82%E6%95%B0"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">...numbers:number[]</span>) </span>{
+    <span class="hljs-keyword">return</span> numbers.reduce(<span class="hljs-function">(<span class="hljs-params">val,item</span>)=&gt;</span>val+=item,<span class="hljs-number">0</span>);
+}
+<span class="hljs-built_in">console</span>.log(sum(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>));
+</code></pre>
+<h3 id="t384.7 函数重载">4.7 函数重载 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t384.7%20%E5%87%BD%E6%95%B0%E9%87%8D%E8%BD%BD"> # </a></h3>
+<ul>
+<li>在Java中的重载，指的是两个或者两个以上的同名函数，参数不一样</li>
+<li>在TypeScript中，表现为给同一个函数提供多个函数类型定义</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-keyword">let</span> obj: any={};
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">attr</span>(<span class="hljs-params">val: string</span>): <span class="hljs-title">void</span>;
+<span class="hljs-title">function</span> <span class="hljs-title">attr</span>(<span class="hljs-params">val: number</span>): <span class="hljs-title">void</span>;
+<span class="hljs-title">function</span> <span class="hljs-title">attr</span>(<span class="hljs-params">val:any</span>):<span class="hljs-title">void</span> </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> val === <span class="hljs-string">'number'</span>) {
+        obj.age=val;
+    } <span class="hljs-keyword">else</span> {
+        obj.name=val;
+    }
+}
+attr(<span class="hljs-string">'zfpx'</span>);
+attr(<span class="hljs-number">9</span>);
+attr(<span class="hljs-literal">true</span>);
+<span class="hljs-built_in">console</span>.log(obj);
+</code></pre>
+<h2 id="t395. 类">5. 类 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t395.%20%E7%B1%BB"> # </a></h2>
+<h3 id="t405.1 如何定义类">5.1 如何定义类 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t405.1%20%E5%A6%82%E4%BD%95%E5%AE%9A%E4%B9%89%E7%B1%BB"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>{
+    <span class="hljs-attr">name</span>:string;
+    getName():<span class="hljs-keyword">void</span>{
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name);
+    }
+}
+<span class="hljs-keyword">let</span> p1 = <span class="hljs-keyword">new</span> Person();
+p1.name = <span class="hljs-string">'zhufeng'</span>;
+p1.getName();
+</code></pre>
+<h3 id="t415.2 存取器">5.2 存取器 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t415.2%20%E5%AD%98%E5%8F%96%E5%99%A8"> # </a></h3>
+<ul>
+<li>在 TypeScript 中，我们可以通过存取器来改变一个类中属性的读取和赋值行为</li>
+<li>构造函数<ul>
+<li>主要用于初始化类的成员变量属性</li>
+<li>类的对象创建时自动调用执行</li>
+<li>没有返回值</li>
+</ul>
+</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+    <span class="hljs-attr">myname</span>:string;
+    <span class="hljs-keyword">constructor</span>(myname: string) {
+        <span class="hljs-keyword">this</span>.myname = myname;
+    }
+    <span class="hljs-keyword">get</span> name() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.myname;
+    }
+    <span class="hljs-keyword">set</span> name(value) {
+        <span class="hljs-keyword">this</span>.myname = value;
+    }
+}
+
+<span class="hljs-keyword">let</span> user = <span class="hljs-keyword">new</span> User(<span class="hljs-string">'zhufeng'</span>);
+user.name = <span class="hljs-string">'jiagou'</span>; 
+<span class="hljs-built_in">console</span>.log(user.name); 
+</code></pre>
+<h3 id="t425.3 参数属性">5.3 参数属性 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t425.3%20%E5%8F%82%E6%95%B0%E5%B1%9E%E6%80%A7"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">User</span> </span>{
+    <span class="hljs-keyword">constructor</span>(public myname: string) {}
+    <span class="hljs-keyword">get</span> name() {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.myname;
+    }
+    <span class="hljs-keyword">set</span> name(value) {
+        <span class="hljs-keyword">this</span>.myname = value;
+    }
+}
+
+<span class="hljs-keyword">let</span> user = <span class="hljs-keyword">new</span> User(<span class="hljs-string">'zhufeng'</span>);
+<span class="hljs-built_in">console</span>.log(user.name); 
+user.name = <span class="hljs-string">'jiagou'</span>; 
+<span class="hljs-built_in">console</span>.log(user.name);
+</code></pre>
+<h3 id="t435.4 readonly">5.4 readonly <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t435.4%20readonly"> # </a></h3>
+<ul>
+<li>readonly修饰的变量只能在<code>构造函数</code>中初始化</li>
+<li>在 TypeScript 中，const 是<code>常量</code>标志符，其值不能被重新分配</li>
+<li>TypeScript 的类型系统同样也允许将 interface、type、 class 上的属性标识为 readonly</li>
+<li>readonly 实际上只是在<code>编译</code>阶段进行代码检查。而 const 则会在<code>运行时</code>检查（在支持 const 语法的 JavaScript 运行时环境中）</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span> </span>{
+    public readonly name: string
+    <span class="hljs-keyword">constructor</span>(name) {
+        <span class="hljs-keyword">this</span>.name = name;
+    }
+    changeName(name:string){
+        <span class="hljs-keyword">this</span>.name = name;
+    }
+}
+
+<span class="hljs-keyword">let</span> a = <span class="hljs-keyword">new</span> Animal(<span class="hljs-string">'zhufeng'</span>);
+a.changeName(<span class="hljs-string">'jiagou'</span>);
+</code></pre>
+<h3 id="t445.5 继承">5.5 继承 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t445.5%20%E7%BB%A7%E6%89%BF"> # </a></h3>
+<ul>
+<li>子类继承父类后子类的实例就拥有了父类中的属性和方法，可以增强代码的可复用性</li>
+<li>将子类公用的方法抽象出来放在父类中，自己的特殊逻辑放在子类中重写父类的逻辑</li>
+<li>super可以调用父类上的方法和属性</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span> </span>{
+    <span class="hljs-attr">name</span>: string;<span class="hljs-comment">//定义实例的属性，默认省略public修饰符</span>
+    age: number;
+    <span class="hljs-keyword">constructor</span>(name:string,age:number) {<span class="hljs-comment">//构造函数</span>
+        <span class="hljs-keyword">this</span>.name=name;
+        <span class="hljs-keyword">this</span>.age=age;
+    }
+    getName():string {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;
+    }
+    setName(name:string): <span class="hljs-keyword">void</span>{
+        <span class="hljs-keyword">this</span>.name=name;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Student</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Person</span></span>{
+    <span class="hljs-attr">no</span>: number;
+    <span class="hljs-keyword">constructor</span>(name:string,age:number,no:number) {
+        <span class="hljs-keyword">super</span>(name,age);
+        <span class="hljs-keyword">this</span>.no=no;
+    }
+    getNo():number {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.no;
+    }
+}
+<span class="hljs-keyword">let</span> s1=<span class="hljs-keyword">new</span> Student(<span class="hljs-string">'zfpx'</span>,<span class="hljs-number">10</span>,<span class="hljs-number">1</span>);
+<span class="hljs-built_in">console</span>.log(s1);
+
+</code></pre>
+<h3 id="t455.6 类里面的修饰符">5.6 类里面的修饰符 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t455.6%20%E7%B1%BB%E9%87%8C%E9%9D%A2%E7%9A%84%E4%BF%AE%E9%A5%B0%E7%AC%A6"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Father</span> </span>{
+    public name: string;  <span class="hljs-comment">//类里面 子类 其它任何地方外边都可以访问</span>
+    protected age: number; <span class="hljs-comment">//类里面 子类 都可以访问,其它任何地方不能访问</span>
+    private money: number; <span class="hljs-comment">//类里面可以访问， 子类和其它任何地方都不可以访问</span>
+    <span class="hljs-keyword">constructor</span>(name:string,age:number,money:number) {<span class="hljs-comment">//构造函数</span>
+        <span class="hljs-keyword">this</span>.name=name;
+        <span class="hljs-keyword">this</span>.age=age;
+        <span class="hljs-keyword">this</span>.money=money;
+    }
+    getName():string {
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.name;
+    }
+    setName(name:string): <span class="hljs-keyword">void</span>{
+        <span class="hljs-keyword">this</span>.name=name;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Child</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Father</span></span>{
+    <span class="hljs-keyword">constructor</span>(name:string,age:number,money:number) {
+        <span class="hljs-keyword">super</span>(name,age,money);
+    }
+    desc() {
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">`<span class="hljs-subst">${<span class="hljs-keyword">this</span>.name}</span> <span class="hljs-subst">${<span class="hljs-keyword">this</span>.age}</span> <span class="hljs-subst">${<span class="hljs-keyword">this</span>.money}</span>`</span>);
+    }
+}
+
+<span class="hljs-keyword">let</span> child = <span class="hljs-keyword">new</span> Child(<span class="hljs-string">'zfpx'</span>,<span class="hljs-number">10</span>,<span class="hljs-number">1000</span>);
+<span class="hljs-built_in">console</span>.log(child.name);
+<span class="hljs-built_in">console</span>.log(child.age);
+<span class="hljs-built_in">console</span>.log(child.money);
+</code></pre>
+<h3 id="t465.7 静态属性 静态方法">5.7 静态属性 静态方法 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t465.7%20%E9%9D%99%E6%80%81%E5%B1%9E%E6%80%A7%20%E9%9D%99%E6%80%81%E6%96%B9%E6%B3%95"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Father</span> </span>{
+    <span class="hljs-keyword">static</span> className=<span class="hljs-string">'Father'</span>;
+    <span class="hljs-keyword">static</span> getClassName() {
+        <span class="hljs-keyword">return</span> Father.className;
+    }
+    public name: string;
+    <span class="hljs-keyword">constructor</span>(name:string) {<span class="hljs-comment">//构造函数</span>
+        <span class="hljs-keyword">this</span>.name=name;
+    }
+
+}
+<span class="hljs-built_in">console</span>.log(Father.className);
+<span class="hljs-built_in">console</span>.log(Father.getClassName());
+</code></pre>
+<h3 id="t475.8 抽象类">5.8 抽象类 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t475.8%20%E6%8A%BD%E8%B1%A1%E7%B1%BB"> # </a></h3>
+<ul>
+<li>抽象描述一种抽象的概念，无法被实例化，只能被继承</li>
+<li>无法创建抽象类的实例</li>
+<li>抽象方法不能在抽象类中实现，只能在抽象类的具体子类中实现，而且必须实现</li>
+</ul>
+<pre><code class="lang-js">
+abstract <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal3</span> </span>{
+    <span class="hljs-attr">name</span>:string;
+    abstract speak();
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal3</span></span>{
+    speak(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'喵喵喵'</span>);
+    }
+}
+<span class="hljs-keyword">let</span> cat = <span class="hljs-keyword">new</span> Cat();
+cat.speak();
+</code></pre>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">访问控制修饰符</th>
+<th style="text-align:left">private protected public</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">只读属性</td>
+<td style="text-align:left">readonly</td>
+</tr>
+<tr>
+<td style="text-align:left">静态属性</td>
+<td style="text-align:left">static</td>
+</tr>
+<tr>
+<td style="text-align:left">抽象类、抽象方法</td>
+<td style="text-align:left">abstract</td>
+</tr>
+</tbody>
+</table>
+<h3 id="t485.9  抽象类 vs 接口">5.9  抽象类 vs 接口 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t485.9%20%20%E6%8A%BD%E8%B1%A1%E7%B1%BB%20vs%20%E6%8E%A5%E5%8F%A3"> # </a></h3>
+<ul>
+<li>不同类之间公有的属性或方法，可以抽象成一个接口（Interfaces）</li>
+<li>而抽象类是供其他类继承的基类，抽象类不允许被实例化。抽象类中的抽象方法必须在子类中被实现</li>
+<li>抽象类本质是一个无法被实例化的类，其中能够实现方法和初始化属性，而接口仅能够用于描述,既不提供方法的实现，也不为属性进行初始化</li>
+<li>一个类可以继承一个类或抽象类，但可以实现（implements）多个接口</li>
+<li>抽象类也可以实现接口</li>
+</ul>
+<pre><code class="lang-js">abstract <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal5</span></span>{
+  <span class="hljs-attr">name</span>:string;
+  <span class="hljs-keyword">constructor</span>(name:string){
+    <span class="hljs-keyword">this</span>.name = name;
+  }
+  abstract speak();
+}
+interface Flying{
+    fly()
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Duck</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal5</span> <span class="hljs-title">implements</span> <span class="hljs-title">Flying</span></span>{
+    speak(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'汪汪汪'</span>);
+    }
+    fly(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'我会飞'</span>);
+    }
+}
+<span class="hljs-keyword">let</span> duck = <span class="hljs-keyword">new</span> Duck(<span class="hljs-string">'zhufeng'</span>);
+duck.speak();
+duck.fly();
+</code></pre>
+<h3 id="t495.10 抽象方法">5.10 抽象方法 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t495.10%20%E6%8A%BD%E8%B1%A1%E6%96%B9%E6%B3%95"> # </a></h3>
+<ul>
+<li>抽象类和方法不包含具体实现，必须在子类中实现</li>
+<li>抽象方法只能出现在抽象类中</li>
+</ul>
+<pre><code class="lang-js">abstract <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>{
+    abstract speak():<span class="hljs-keyword">void</span>;
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-keyword">extends</span>  <span class="hljs-title">Animal</span></span>{
+    speak(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'小狗汪汪汪'</span>);
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat</span> <span class="hljs-keyword">extends</span>  <span class="hljs-title">Animal</span></span>{
+    speak(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'小猫喵喵喵'</span>);
+    }
+}
+<span class="hljs-keyword">let</span> dog=<span class="hljs-keyword">new</span> Dog();
+<span class="hljs-keyword">let</span> cat=<span class="hljs-keyword">new</span> Cat();
+dog.speak();
+cat.speak();
+</code></pre>
+<h3 id="t505.11 重写（override） vs 重载（overload）">5.11 重写（override） vs 重载（overload） <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t505.11%20%E9%87%8D%E5%86%99%EF%BC%88override%EF%BC%89%20vs%20%E9%87%8D%E8%BD%BD%EF%BC%88overload%EF%BC%89"> # </a></h3>
+<ul>
+<li>重写是指子类重写继承自父类中的方法</li>
+<li>重载是指为同一个函数提供多个类型定义</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat6</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal6</span></span>{
+    speak(word:string):string{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Cat:'</span>+word;
+    }
+}
+<span class="hljs-keyword">let</span> cat6 = <span class="hljs-keyword">new</span> Cat6();
+<span class="hljs-built_in">console</span>.log(cat6.speak(<span class="hljs-string">'hello'</span>));
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">double</span>(<span class="hljs-params">val:number</span>):<span class="hljs-title">number</span>
+<span class="hljs-title">function</span> <span class="hljs-title">double</span>(<span class="hljs-params">val:string</span>):<span class="hljs-title">string</span>
+<span class="hljs-title">function</span> <span class="hljs-title">double</span>(<span class="hljs-params">val:any</span>):<span class="hljs-title">any</span></span>{
+  <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> val == <span class="hljs-string">'number'</span>){
+    <span class="hljs-keyword">return</span> val *<span class="hljs-number">2</span>;
+  }
+  <span class="hljs-keyword">return</span> val + val;
+}
+
+<span class="hljs-keyword">let</span> r = double(<span class="hljs-number">1</span>);
+<span class="hljs-built_in">console</span>.log(r);
+</code></pre>
+<h3 id="t515.12 继承 vs 多态">5.12 继承 vs 多态 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t515.12%20%E7%BB%A7%E6%89%BF%20vs%20%E5%A4%9A%E6%80%81"> # </a></h3>
+<ul>
+<li>继承（Inheritance）子类继承父类，子类除了拥有父类的所有特性外，还有一些更具体的特性</li>
+<li>多态（Polymorphism）由继承而产生了相关的不同的类，对同一个方法可以有不同的响应</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal7</span></span>{
+    speak(word:string):string{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Animal: '</span>+word;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Cat7</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal7</span></span>{
+    speak(word:string):string{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Cat:'</span>+word;
+    }
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog7</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal7</span></span>{
+    speak(word:string):string{
+        <span class="hljs-keyword">return</span> <span class="hljs-string">'Dog:'</span>+word;
+    }
+}
+<span class="hljs-keyword">let</span> cat7 = <span class="hljs-keyword">new</span> Cat7();
+<span class="hljs-built_in">console</span>.log(cat7.speak(<span class="hljs-string">'hello'</span>));
+<span class="hljs-keyword">let</span> dog7 = <span class="hljs-keyword">new</span> Dog7();
+<span class="hljs-built_in">console</span>.log(dog7.speak(<span class="hljs-string">'hello'</span>));
+</code></pre>
+<h2 id="t526. 接口">6. 接口 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t526.%20%E6%8E%A5%E5%8F%A3"> # </a></h2>
+<ul>
+<li>接口一方面可以在面向对象编程中表示为<code>行为的抽象</code>，另外可以用来描述<code>对象的形状</code></li>
+<li>接口就是把一些类中共有的属性和方法抽象出来,可以用来约束实现此接口的类</li>
+<li>一个类可以继承另一个类并实现多个接口</li>
+<li>接口像插件一样是用来增强类的，而抽象类是具体类的抽象概念</li>
+<li>一个类可以实现多个接口，一个接口也可以被多个类实现，但一个类的可以有多个子类，但只能有一个父类</li>
+</ul>
+<h3 id="t536.1 接口">6.1 接口 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t536.1%20%E6%8E%A5%E5%8F%A3"> # </a></h3>
+<ul>
+<li>interface中可以用分号或者逗号分割每一项，也可以什么都不加</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">//接口可以用来描述`对象的形状`,少属性或者多属性都会报错</span>
+interface Speakable{
+  speak():<span class="hljs-keyword">void</span>;
+  name?:string;<span class="hljs-comment">//？表示可选属性</span>
+}
+
+<span class="hljs-keyword">let</span> speakman:Speakable = {
+  <span class="hljs-attr">name</span>:string;<span class="hljs-comment">//多属性也会报错</span>
+  speak(){}<span class="hljs-comment">//少属性会报错</span>
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//接口可以在面向对象编程中表示为行为的抽象</span>
+interface Speakable{
+    speak():<span class="hljs-keyword">void</span>;
+}
+interface Eatable{
+    eat():<span class="hljs-keyword">void</span>
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person5</span> <span class="hljs-title">implements</span> <span class="hljs-title">Speakable</span>,<span class="hljs-title">Eatable</span></span>{
+    speak(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Person5说话'</span>);
+    }
+    eat(){}
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TangDuck</span> <span class="hljs-title">implements</span> <span class="hljs-title">Speakable</span></span>{
+    speak(){
+        <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'TangDuck说话'</span>);
+    }
+    eat(){}
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//无法预先知道有哪些新的属性的时候,可以使用 `[propName:string]:any`,propName名字是任意的</span>
+interface Person {
+  readonly id: number;
+  name: string;
+  [propName: string]: any;
+}
+
+<span class="hljs-keyword">let</span> p1 = {
+  <span class="hljs-attr">id</span>:<span class="hljs-number">1</span>,
+  <span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,
+  <span class="hljs-attr">age</span>:<span class="hljs-number">10</span>
+}
+</code></pre>
+<h3 id="t546.2 接口的继承">6.2 接口的继承 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t546.2%20%E6%8E%A5%E5%8F%A3%E7%9A%84%E7%BB%A7%E6%89%BF"> # </a></h3>
+<ul>
+<li>一个接口可以继承自另外一个接口</li>
+</ul>
+<pre><code class="lang-js">interface Speakable{
+  speak():<span class="hljs-keyword">void</span>
+}
+interface SpeakChinese extends Speakable{
+  speakChinese():<span class="hljs-keyword">void</span>
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person5</span> <span class="hljs-title">implements</span> <span class="hljs-title">SpeakChinese</span></span>{
+  speak(){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'Person5'</span>)
+  }
+  speakChinese(){
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">'speakChinese'</span>)
+  }
+}
+</code></pre>
+<h3 id="t556.3 readonly">6.3 readonly <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t556.3%20readonly"> # </a></h3>
+<ul>
+<li>用 readonly 定义只读属性可以避免由于多人协作或者项目较为复杂等因素造成对象的值被重写</li>
+</ul>
+<pre><code class="lang-js">interface Person{
+  readonly id:number;
+  name:string
+}
+<span class="hljs-keyword">let</span> tom:Person = {
+  <span class="hljs-attr">id</span> :<span class="hljs-number">1</span>,
+  <span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>
+}
+tom.id = <span class="hljs-number">1</span>;
+</code></pre>
+<h3 id="t566.4 函数类型接口">6.4 函数类型接口 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t566.4%20%E5%87%BD%E6%95%B0%E7%B1%BB%E5%9E%8B%E6%8E%A5%E5%8F%A3"> # </a></h3>
+<ul>
+<li>对方法传入的参数和返回值进行约束</li>
+</ul>
+<pre><code class="lang-js">interface discount{
+  (price:number):number
+}
+<span class="hljs-keyword">let</span> cost:discount = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">price:number</span>):<span class="hljs-title">number</span></span>{
+   <span class="hljs-keyword">return</span> price * <span class="hljs-number">.8</span>;
+}
+</code></pre>
+<h3 id="t576.5 可索引接口">6.5 可索引接口 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t576.5%20%E5%8F%AF%E7%B4%A2%E5%BC%95%E6%8E%A5%E5%8F%A3"> # </a></h3>
+<ul>
+<li>对数组和对象进行约束</li>
+<li>userInterface 表示：只要 index 的类型是 number，那么值的类型必须是 string</li>
+<li>UserInterface2 表示：只要 index 的类型是 string，那么值的类型必须是 string</li>
+</ul>
+<pre><code class="lang-js">interface UserInterface {
+  [index:number]:string
+}
+<span class="hljs-keyword">let</span> arr:UserInterface = [<span class="hljs-string">'zfpx1'</span>,<span class="hljs-string">'zfpx2'</span>];
+<span class="hljs-built_in">console</span>.log(arr);
+
+interface UserInterface2 {
+  [index:string]:string
+}
+<span class="hljs-keyword">let</span> obj:UserInterface2 = {<span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>};
+
+</code></pre>
+<h3 id="t586.6 类接口">6.6 类接口 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t586.6%20%E7%B1%BB%E6%8E%A5%E5%8F%A3"> # </a></h3>
+<ul>
+<li>对类的约束</li>
+</ul>
+<pre><code class="lang-js">interface Speakable{
+  <span class="hljs-attr">name</span>:string;
+  speak(words:string):<span class="hljs-keyword">void</span>
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Dog</span> <span class="hljs-title">implements</span> <span class="hljs-title">Speakable</span></span>{
+   <span class="hljs-attr">name</span>:string;
+   speak(words){
+    <span class="hljs-built_in">console</span>.log(words);
+   }
+}
+<span class="hljs-keyword">let</span> dog=<span class="hljs-keyword">new</span> Dog();
+dog.speak(<span class="hljs-string">'汪汪汪'</span>);
+</code></pre>
+<h3 id="t596.7 构造函数的类型">6.7 构造函数的类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t596.7%20%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0%E7%9A%84%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>在 TypeScript 中，我们可以用 interface 来描述类</li>
+<li>同时也可以使用interface里特殊的new()关键字来描述类的构造函数类型</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>{
+  <span class="hljs-keyword">constructor</span>(public name:string){
+  }
+}
+interface WithNameClass{
+  <span class="hljs-keyword">new</span>(name:string):Animal
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createAnimal</span>(<span class="hljs-params">clazz:WithNameClass,name:string</span>)</span>{
+   <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> clazz(name);
+}
+<span class="hljs-keyword">let</span> a = createAnimal(Animal,<span class="hljs-string">'zhufeng'</span>);
+<span class="hljs-built_in">console</span>.log(a.name);
+</code></pre>
+<h2 id="t607. 泛型">7. 泛型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t607.%20%E6%B3%9B%E5%9E%8B"> # </a></h2>
+<ul>
+<li>泛型（Generics）是指在定义函数、接口或类的时候，不预先指定具体的类型，而在使用的时候再指定类型的一种特性</li>
+<li>泛型<code>T</code>作用域只限于函数内部使用</li>
+</ul>
+<h3 id="t617.1 泛型函数">7.1 泛型函数 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t617.1%20%E6%B3%9B%E5%9E%8B%E5%87%BD%E6%95%B0"> # </a></h3>
+<ul>
+<li>首先，我们来实现一个函数 createArray，它可以创建一个指定长度的数组，同时将每一项都填充一个默认值</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createArray</span>(<span class="hljs-params">length: number, value: any</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">any</span>&gt; </span>{
+  <span class="hljs-keyword">let</span> result: any = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    result[i] = value;
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+<span class="hljs-keyword">let</span> result = createArray(<span class="hljs-number">3</span>,<span class="hljs-string">'x'</span>);
+<span class="hljs-built_in">console</span>.log(result);
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createArray</span>(<span class="hljs-params">length: number, value: any</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">any</span>&gt; </span>{
+  <span class="hljs-keyword">let</span> result: any = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    result[i] = value;
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+<span class="hljs-keyword">let</span> result = createArray(<span class="hljs-number">3</span>,<span class="hljs-string">'x'</span>);
+<span class="hljs-built_in">console</span>.log(result);
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createArray2</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">length: number, value: T</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-keyword">let</span> result: T[] = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    result[i] = value;
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+<span class="hljs-keyword">let</span> result2 = createArray2&lt;string&gt;(<span class="hljs-number">3</span>,<span class="hljs-string">'x'</span>);
+<span class="hljs-built_in">console</span>.log(result);
+</code></pre>
+<h3 id="t627.2 类数组">7.2 类数组 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t627.2%20%E7%B1%BB%E6%95%B0%E7%BB%84"> # </a></h3>
+<ul>
+<li>类数组（Array-like Object）不是数组类型，比如 <code>arguments</code></li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">sum</span>(<span class="hljs-params">...parameters:number[]</span>)</span>{
+  <span class="hljs-keyword">let</span> args:IArguments = <span class="hljs-built_in">arguments</span>;
+  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;args.length;i++){
+    <span class="hljs-built_in">console</span>.log(args[i]);
+  }
+}
+sum(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>);
+<span class="hljs-keyword">let</span> root = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'root'</span>);
+<span class="hljs-keyword">let</span> children:HTMLCollection = root.children;
+children.length;
+<span class="hljs-keyword">let</span> nodeList:NodeList = root.childNodes;
+nodeList.length;
+</code></pre>
+<h3 id="t637.3 泛型类">7.3 泛型类 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t637.3%20%E6%B3%9B%E5%9E%8B%E7%B1%BB"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyArray</span>&lt;<span class="hljs-title">T</span>&gt;</span>{
+    private list:T[]=[];
+    add(value:T) {
+        <span class="hljs-keyword">this</span>.list.push(value);
+    }
+    getMax():T {
+        <span class="hljs-keyword">let</span> result=<span class="hljs-keyword">this</span>.list[<span class="hljs-number">0</span>];
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i=<span class="hljs-number">0</span>;i&lt;<span class="hljs-keyword">this</span>.list.length;i++){
+            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">this</span>.list[i]&gt;result) {
+                result=<span class="hljs-keyword">this</span>.list[i];
+            }
+        }
+        <span class="hljs-keyword">return</span> result;
+    }
+}
+<span class="hljs-keyword">let</span> arr=<span class="hljs-keyword">new</span> MyArray();
+arr.add(<span class="hljs-number">1</span>); arr.add(<span class="hljs-number">2</span>); arr.add(<span class="hljs-number">3</span>);
+<span class="hljs-keyword">let</span> ret = arr.getMax();
+<span class="hljs-built_in">console</span>.log(ret);
+</code></pre>
+<h3 id="t647.5 泛型接口">7.5 泛型接口 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t647.5%20%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3"> # </a></h3>
+<ul>
+<li>泛型接口可以用来约束函数</li>
+</ul>
+<pre><code class="lang-js">interface Calculate{
+  &lt;T&gt;(a:T,<span class="hljs-attr">b</span>:T):T
+}
+<span class="hljs-keyword">let</span> add:Calculate = <span class="hljs-function"><span class="hljs-keyword">function</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">a:T,b:T</span>)</span>{
+  <span class="hljs-keyword">return</span> a;
+}
+add&lt;number&gt;(<span class="hljs-number">1</span>,<span class="hljs-number">2</span>);
+
+</code></pre>
+<h3 id="t657.6 多个类型参数">7.6 多个类型参数 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t657.6%20%E5%A4%9A%E4%B8%AA%E7%B1%BB%E5%9E%8B%E5%8F%82%E6%95%B0"> # </a></h3>
+<ul>
+<li>泛型可以有多个</li>
+</ul>
+<pre><code class="lang-js">function swap&lt;A,B&gt;(tuple:[A,B]):[B,A]{
+  return [tuple[1],tuple[0]];
+}
+let swapped = swap&lt;string,number&gt;(['a',1]);
+console.log(swapped);
+console.log(swapped[0].toFixed(2));
+console.log(swapped[1].length);
+</code></pre>
+<h3 id="t667.7 默认泛型类型">7.7 默认泛型类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t667.7%20%E9%BB%98%E8%AE%A4%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">createArray3</span>&lt;<span class="hljs-title">T</span>=<span class="hljs-title">number</span>&gt;(<span class="hljs-params">length: number, value: T</span>): <span class="hljs-title">Array</span>&lt;<span class="hljs-title">T</span>&gt; </span>{
+  <span class="hljs-keyword">let</span> result: T[] = [];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; length; i++) {
+    result[i] = value;
+  }
+  <span class="hljs-keyword">return</span> result;
+}
+<span class="hljs-keyword">let</span> result2 = createArray3(<span class="hljs-number">3</span>,<span class="hljs-string">'x'</span>);
+<span class="hljs-built_in">console</span>.log(result2);
+</code></pre>
+<h3 id="t677.8 泛型约束">7.8 泛型约束 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t677.8%20%E6%B3%9B%E5%9E%8B%E7%BA%A6%E6%9D%9F"> # </a></h3>
+<ul>
+<li>在函数中使用泛型的时候，由于预先并不知道泛型的类型，所以不能随意访问相应类型的属性或方法。</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logger</span>&lt;<span class="hljs-title">T</span>&gt;(<span class="hljs-params">val:T</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(val.length)
+}
+interface LengthWise{
+  <span class="hljs-attr">length</span>:number
+}
+<span class="hljs-comment">//可以让泛型继承一个接口</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">logger2</span>&lt;<span class="hljs-title">T</span> <span class="hljs-title">extends</span> <span class="hljs-title">LengthWise</span>&gt;(<span class="hljs-params">val:T</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(val.length)
+}
+logger2(<span class="hljs-number">1</span>);
+logger2(<span class="hljs-string">'zhufeng'</span>);
+</code></pre>
+<h3 id="t687.9 泛型接口">7.9 泛型接口 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t687.9%20%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3"> # </a></h3>
+<ul>
+<li>定义接口的时候也可以指定泛型 </li>
+</ul>
+<pre><code class="lang-js">interface Cart&lt;T&gt;{
+  <span class="hljs-attr">list</span>:T[]
+}
+<span class="hljs-keyword">let</span> cart:Cart&lt;{<span class="hljs-attr">name</span>:string,<span class="hljs-attr">price</span>:number}&gt; = {
+  <span class="hljs-attr">list</span>:[{<span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,<span class="hljs-attr">price</span>:<span class="hljs-number">10</span>}]
+}
+<span class="hljs-built_in">console</span>.log(cart.list[<span class="hljs-number">0</span>].name,cart.list[<span class="hljs-number">0</span>].price);
+</code></pre>
+<h3 id="t697.10 泛型类型别名">7.10 泛型类型别名 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t697.10%20%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"> # </a></h3>
+<ul>
+<li>泛型类型别名可以表达更复杂的类型</li>
+</ul>
+<pre><code class="lang-js">type Cart&lt;T&gt; = {<span class="hljs-attr">list</span>:T[]} | T[];
+<span class="hljs-keyword">let</span> c1:Cart&lt;string&gt; = {<span class="hljs-attr">list</span>:[<span class="hljs-string">'1'</span>]};
+<span class="hljs-keyword">let</span> c2:Cart&lt;number&gt; = [<span class="hljs-number">1</span>];
+</code></pre>
+<h3 id="t707.11 泛型接口 vs 泛型类型别名">7.11 泛型接口 vs 泛型类型别名 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t707.11%20%E6%B3%9B%E5%9E%8B%E6%8E%A5%E5%8F%A3%20vs%20%E6%B3%9B%E5%9E%8B%E7%B1%BB%E5%9E%8B%E5%88%AB%E5%90%8D"> # </a></h3>
+<ul>
+<li>接口创建了一个新的名字，它可以在其他任意地方被调用。而类型别名并不创建新的名字，例如报错信息就不会使用别名</li>
+<li>类型别名不能被 extends和 implements,这时我们应该尽量使用接口代替类型别名</li>
+<li>当我们需要使用联合类型或者元组类型的时候，类型别名会更合适</li>
+</ul>
+<h2 id="t718.结构类型系统">8.结构类型系统 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t718.%E7%BB%93%E6%9E%84%E7%B1%BB%E5%9E%8B%E7%B3%BB%E7%BB%9F"> # </a></h2>
+<h3 id="t728.1 接口的兼容性">8.1 接口的兼容性 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t728.1%20%E6%8E%A5%E5%8F%A3%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7"> # </a></h3>
+<ul>
+<li>如果传入的变量和声明的类型不匹配，TS就会进行兼容性检查</li>
+<li>原理是<code>Duck-Check</code>,就是说只要目标类型中声明的属性变量在源类型中都存在就是兼容的</li>
+</ul>
+<pre><code class="lang-js">interface Animal{
+  <span class="hljs-attr">name</span>:string;
+  age:number;
+  gender:number
+}
+
+<span class="hljs-keyword">let</span> a1 = {
+  <span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,
+  <span class="hljs-attr">age</span>:<span class="hljs-number">10</span>,
+  <span class="hljs-attr">gender</span>:<span class="hljs-number">0</span>
+}
+
+interface Person{
+  <span class="hljs-attr">name</span>:string;
+  age:number
+}
+<span class="hljs-comment">////- 要判断目标类型`Person`是否能够兼容输入的源类型`Animal`</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span>(<span class="hljs-params">p:Person</span>):<span class="hljs-title">string</span></span>{
+  <span class="hljs-keyword">return</span> p.name;
+}
+getName(a1);
+<span class="hljs-comment">//只有在传参的时候两个变量之间才会进行兼容性的比较，赋值的时候并不会比较,会直接报错</span>
+<span class="hljs-keyword">let</span> x:Person = {
+  <span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,
+  <span class="hljs-attr">age</span>:<span class="hljs-number">10</span>,
+  <span class="hljs-attr">gender</span>:<span class="hljs-number">0</span>
+}
+</code></pre>
+<h3 id="t738.2 基本类型的兼容性">8.2 基本类型的兼容性 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t738.2%20%E5%9F%BA%E6%9C%AC%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-comment">//基本数据类型也有兼容性判断</span>
+<span class="hljs-keyword">let</span> num : string|number;
+<span class="hljs-keyword">let</span> str:string;
+num = str;
+
+<span class="hljs-comment">//只要有toString()方法</span>
+<span class="hljs-keyword">let</span> num2 : {
+  toString():string
+}
+
+<span class="hljs-keyword">let</span> str2:string;
+num2 = str2;
+</code></pre>
+<h3 id="t748.3 类的兼容性">8.3 类的兼容性 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t748.3%20%E7%B1%BB%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7"> # </a></h3>
+<ul>
+<li>在TS中是结构类型系统，只会对比结构而不在意类型</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>{
+    <span class="hljs-attr">name</span>:string
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bird</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span></span>{
+   <span class="hljs-attr">swing</span>:number
+}
+
+<span class="hljs-keyword">let</span> a:Animal;
+a = <span class="hljs-keyword">new</span> Bird();
+
+<span class="hljs-keyword">let</span> b:Bird;
+<span class="hljs-comment">//并不是父类兼容子类，子类不兼容父类</span>
+b = <span class="hljs-keyword">new</span> Animal();
+</code></pre>
+<pre><code class="lang-js">
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>{
+  <span class="hljs-attr">name</span>:string
+}
+<span class="hljs-comment">//如果父类和子类结构一样，也可以的</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bird</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span></span>{}
+
+<span class="hljs-keyword">let</span> a:Animal;
+a = <span class="hljs-keyword">new</span> Bird();
+
+<span class="hljs-keyword">let</span> b:Bird;
+b = <span class="hljs-keyword">new</span> Animal();
+
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//甚至没有关系的两个类的实例也是可以的</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>{
+  <span class="hljs-attr">name</span>:string
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bird</span></span>{
+  <span class="hljs-attr">name</span>:string
+}
+<span class="hljs-keyword">let</span> a:Animal ;
+a = <span class="hljs-keyword">new</span> Bird();
+<span class="hljs-keyword">let</span> b:Bird;
+b = <span class="hljs-keyword">new</span> Animal();
+
+</code></pre>
+<h3 id="t758.4 函数的兼容性">8.4 函数的兼容性 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t758.4%20%E5%87%BD%E6%95%B0%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7"> # </a></h3>
+<ul>
+<li>比较函数的时候是要先比较函数的参数，再比较函数的返回值</li>
+<li>参数可以省略</li>
+</ul>
+<pre><code class="lang-js">type sumFunc = <span class="hljs-function">(<span class="hljs-params">a:number,b:number</span>)=&gt;</span>number;
+<span class="hljs-keyword">let</span> sum:sumFunc;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f1</span>(<span class="hljs-params">a:number,b:number</span>)</span>{
+  <span class="hljs-keyword">return</span> a+b;
+}
+sum = f1;
+<span class="hljs-comment">//可以省略一个参数</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f2</span>(<span class="hljs-params">a:number</span>):<span class="hljs-title">number</span></span>{
+   <span class="hljs-keyword">return</span> a;
+}
+sum = f2;
+<span class="hljs-comment">//可以省略二个参数</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f3</span>(<span class="hljs-params"></span>):<span class="hljs-title">number</span></span>{
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+ }
+ sum = f3;
+ <span class="hljs-comment">//多一个参数可不行</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f4</span>(<span class="hljs-params">a:number,b:number,c:number</span>)</span>{
+    <span class="hljs-keyword">return</span> a+b+c;
+}
+sum = f4;
+
+</code></pre>
+<pre><code class="lang-js">type GetPerson = <span class="hljs-function"><span class="hljs-params">()</span>=&gt;</span>{<span class="hljs-attr">name</span>:string,<span class="hljs-attr">age</span>:number};
+<span class="hljs-keyword">let</span> getPerson:GetPerson;
+<span class="hljs-comment">//参数一样可以</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">g1</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">return</span> {<span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">10</span>};
+}
+getPerson = g1;
+<span class="hljs-comment">//多一个属性也可以</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">g2</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">return</span> {<span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">10</span>,<span class="hljs-attr">gender</span>:<span class="hljs-string">'male'</span>};
+}
+getPerson = g2;
+<span class="hljs-comment">//少一个属性不行</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">g3</span>(<span class="hljs-params"></span>)</span>{
+    <span class="hljs-keyword">return</span> {<span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>};
+}
+getPerson = g3;
+<span class="hljs-comment">//因为有可能要调用返回值上的方法</span>
+getPerson().age.toFixed();
+</code></pre>
+<h3 id="t768.5 函数参数的双向协变">8.5 函数参数的双向协变 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t768.5%20%E5%87%BD%E6%95%B0%E5%8F%82%E6%95%B0%E7%9A%84%E5%8F%8C%E5%90%91%E5%8D%8F%E5%8F%98"> # </a></h3>
+<ul>
+<li>函数的参数中目标兼容源，或者源兼容目标都可以，只要有一个成立就可以</li>
+</ul>
+<pre><code class="lang-js">type LogFunc = <span class="hljs-function">(<span class="hljs-params">a:number|string</span>)=&gt;</span><span class="hljs-keyword">void</span>;
+<span class="hljs-keyword">let</span> log:LogFunc;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">log1</span>(<span class="hljs-params">a:number</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(a);
+}
+<span class="hljs-comment">//在这里定义的参数类型兼容实际的参数类型</span>
+log = log1;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">log2</span>(<span class="hljs-params">a:number|string|boolean</span>)</span>{
+  <span class="hljs-built_in">console</span>.log(a);
+}
+<span class="hljs-comment">//在这里实际的参数类型兼容定义的参数类型</span>
+log = log2;
+</code></pre>
+<h3 id="t778.6 泛型的兼容性">8.6 泛型的兼容性 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t778.6%20%E6%B3%9B%E5%9E%8B%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7"> # </a></h3>
+<ul>
+<li>泛型在判断兼容性的时候会先判断具体的类型,然后再进行兼容性判断</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">//接口内容为空没用到泛型的时候是可以的</span>
+interface Empty&lt;T&gt;{}
+<span class="hljs-keyword">let</span> x:Empty&lt;string&gt;;
+<span class="hljs-keyword">let</span> y:Empty&lt;number&gt;;
+x = y;
+
+<span class="hljs-comment">//接口内容不为空的时候不可以</span>
+interface NotEmpty&lt;T&gt;{
+  <span class="hljs-attr">data</span>:T
+}
+<span class="hljs-keyword">let</span> x1:NotEmpty&lt;string&gt;;
+<span class="hljs-keyword">let</span> y1:NotEmpty&lt;number&gt;;
+x1 = y1;
+
+interface NotEmptyString{
+    <span class="hljs-attr">data</span>:string
+}
+
+interface NotEmptyNumber{
+    <span class="hljs-attr">data</span>:number
+}
+<span class="hljs-keyword">let</span> xx3:NotEmptyString;
+<span class="hljs-keyword">let</span> yy3:NotEmptyNumber;
+xx3 = yy3;
+</code></pre>
+<h3 id="t788.7 枚举的兼容性">8.7 枚举的兼容性 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t788.7%20%E6%9E%9A%E4%B8%BE%E7%9A%84%E5%85%BC%E5%AE%B9%E6%80%A7"> # </a></h3>
+<ul>
+<li>枚举类型与数字类型兼容，并且数字类型与枚举类型兼容</li>
+<li>不同枚举类型之间是不兼容的</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">//数字可以赋给枚举</span>
+enum Colors {Red,Yellow}
+<span class="hljs-keyword">let</span> c:Colors;
+c = Colors.Red;
+c = <span class="hljs-number">1</span>;
+c = <span class="hljs-string">'1'</span>;
+
+<span class="hljs-comment">//枚举值可以赋给数字</span>
+<span class="hljs-keyword">let</span> n:number;
+n = <span class="hljs-number">1</span>;
+n = Colors.Red;
+</code></pre>
+<h2 id="t799.类型保护">9.类型保护 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t799.%E7%B1%BB%E5%9E%8B%E4%BF%9D%E6%8A%A4"> # </a></h2>
+<ul>
+<li>类型保护就是一些表达式，他们在编译的时候就能通过类型信息确保某个作用域内变量的类型</li>
+<li>类型保护就是能够通过关键字判断出分支中的类型<h3 id="t809.1 typeof 类型保护">9.1 typeof 类型保护 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t809.1%20typeof%20%E7%B1%BB%E5%9E%8B%E4%BF%9D%E6%8A%A4"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">double</span>(<span class="hljs-params">input:string|number|boolean</span>)</span>{
+<span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> input === <span class="hljs-string">'string'</span>){
+  <span class="hljs-keyword">return</span> input + input;
+}<span class="hljs-keyword">else</span> {
+    <span class="hljs-keyword">if</span>(<span class="hljs-keyword">typeof</span> input === <span class="hljs-string">'number'</span>){
+      <span class="hljs-keyword">return</span> input*<span class="hljs-number">2</span>;
+    }<span class="hljs-keyword">else</span>{
+        <span class="hljs-keyword">return</span> !input;
+    }
+}
+}
+</code></pre>
+</li>
+</ul>
+<h3 id="t819.2 instanceof类型保护">9.2 instanceof类型保护 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t819.2%20instanceof%E7%B1%BB%E5%9E%8B%E4%BF%9D%E6%8A%A4"> # </a></h3>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Animal</span></span>{
+  <span class="hljs-attr">name</span>:string;
+}
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Bird</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Animal</span></span>{
+  <span class="hljs-attr">swing</span>:number
+}
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span>(<span class="hljs-params">animal:Animal</span>)</span>{
+  <span class="hljs-keyword">if</span>(animal <span class="hljs-keyword">instanceof</span> Bird){
+      <span class="hljs-built_in">console</span>.log(animal.swing);
+  }<span class="hljs-keyword">else</span>{
+      <span class="hljs-built_in">console</span>.log(animal.name);
+  }
+}
+</code></pre>
+<h3 id="t829.3 null保护">9.3 null保护 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t829.3%20null%E4%BF%9D%E6%8A%A4"> # </a></h3>
+<ul>
+<li>如果开启了<code>strictNullChecks</code>选项，那么对于可能为null的变量不能调用它上面的方法和属性</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFirstLetter</span>(<span class="hljs-params">s:string|null</span>)</span>{
+  <span class="hljs-comment">//第一种方式是加上null判断</span>
+  <span class="hljs-keyword">if</span>(s == <span class="hljs-literal">null</span>){
+    <span class="hljs-keyword">return</span> <span class="hljs-string">''</span>;
+  }
+  <span class="hljs-comment">//第二种处理是增加一个或的处理</span>
+  s = s || <span class="hljs-string">''</span>;
+  <span class="hljs-keyword">return</span> s.charAt(<span class="hljs-number">0</span>);
+}
+<span class="hljs-comment">//它并不能处理一些复杂的判断，需要加链判断运算符</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getFirstLetter2</span>(<span class="hljs-params">s:string|null</span>)</span>{
+    <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">log</span>(<span class="hljs-params"></span>)</span>{
+        <span class="hljs-built_in">console</span>.log(s!.trim());
+    }
+    s = s || <span class="hljs-string">''</span>;
+    log();
+    <span class="hljs-keyword">return</span> s.charAt(<span class="hljs-number">0</span>);
+}
+</code></pre>
+<h3 id="t839.4 链判断运算符">9.4 链判断运算符 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t839.4%20%E9%93%BE%E5%88%A4%E6%96%AD%E8%BF%90%E7%AE%97%E7%AC%A6"> # </a></h3>
+<ul>
+<li>链判断运算符是一种先检查属性是否存在，再尝试访问该属性的运算符，其符号为 ?.</li>
+<li>如果运算符左侧的操作数 ?. 计算为 undefined 或 null，则表达式求值为 undefined 。否则，正常触发目标属性访问，方法或函数调用。</li>
+</ul>
+<pre><code class="lang-js">a?.b; <span class="hljs-comment">//如果a是null/undefined,那么返回undefined，否则返回a.b的值.</span>
+a == <span class="hljs-literal">null</span> ? <span class="hljs-literal">undefined</span> : a.b;
+
+a?.[x]; <span class="hljs-comment">//如果a是null/undefined,那么返回undefined，否则返回a[x]的值</span>
+a == <span class="hljs-literal">null</span> ? <span class="hljs-literal">undefined</span> : a[x];
+
+a?.b(); <span class="hljs-comment">// 如果a是null/undefined,那么返回undefined</span>
+a == <span class="hljs-literal">null</span> ? <span class="hljs-literal">undefined</span> : a.b(); <span class="hljs-comment">//如果a.b不函数的话抛类型错误异常,否则计算a.b()的结果</span>
+
+a?.(); <span class="hljs-comment">//如果a是null/undefined,那么返回undefined</span>
+a == <span class="hljs-literal">null</span> ? <span class="hljs-literal">undefined</span> : a(); <span class="hljs-comment">//如果A不是函数会抛出类型错误</span>
+<span class="hljs-comment">//否则 调用a这个函数</span>
+</code></pre>
+<h3 id="t849.5 可辨识的联合类型">9.5 可辨识的联合类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t849.5%20%E5%8F%AF%E8%BE%A8%E8%AF%86%E7%9A%84%E8%81%94%E5%90%88%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>就是利用联合类型中的共有字段进行类型保护的一种技巧</li>
+<li>相同字段的不同取值就是可辨识</li>
+</ul>
+<pre><code class="lang-js">interface WarningButton{
+  <span class="hljs-attr">class</span>:<span class="hljs-string">'warning'</span>,
+  <span class="hljs-attr">text1</span>:<span class="hljs-string">'修改'</span>
+}
+interface DangerButton{
+  <span class="hljs-attr">class</span>:<span class="hljs-string">'danger'</span>,
+  <span class="hljs-attr">text2</span>:<span class="hljs-string">'删除'</span>
+}
+type Button = WarningButton|DangerButton;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getButton</span>(<span class="hljs-params">button:Button</span>)</span>{
+ <span class="hljs-keyword">if</span>(button.class==<span class="hljs-string">'warning'</span>){
+  <span class="hljs-built_in">console</span>.log(button.text1);
+ }
+ <span class="hljs-keyword">if</span>(button.class==<span class="hljs-string">'danger'</span>){
+  <span class="hljs-built_in">console</span>.log(button.text2);
+ }
+}
+</code></pre>
+<h3 id="t859.6 in操作符">9.6 in操作符 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t859.6%20in%E6%93%8D%E4%BD%9C%E7%AC%A6"> # </a></h3>
+<ul>
+<li>in 运算符可以被用于参数类型的判断</li>
+</ul>
+<pre><code class="lang-js">interface Bird {
+    <span class="hljs-attr">swing</span>: number;
+}
+
+interface Dog {
+    <span class="hljs-attr">leg</span>: number;
+}
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getNumber</span>(<span class="hljs-params">x: Bird | Dog</span>) </span>{
+    <span class="hljs-keyword">if</span> (<span class="hljs-string">"swing"</span> <span class="hljs-keyword">in</span> x) {
+      <span class="hljs-keyword">return</span> x.swing;
+    }
+    <span class="hljs-keyword">return</span> x.leg;
+}
+</code></pre>
+<h3 id="t869.7 自定义的类型保护">9.7 自定义的类型保护 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t869.7%20%E8%87%AA%E5%AE%9A%E4%B9%89%E7%9A%84%E7%B1%BB%E5%9E%8B%E4%BF%9D%E6%8A%A4"> # </a></h3>
+<ul>
+<li>TypeScript 里的类型保护本质上就是一些表达式，它们会在运行时检查类型信息，以确保在某个作用域里的类型是符合预期的</li>
+<li>要自定义一个类型保护，只需要简单地为这个类型保护定义一个函数即可，这个函数的返回值是一个类型谓词</li>
+<li>类型谓词的语法为 <code>parameterName is Type</code> 这种形式，其中 <code>parameterName</code> 必须是当前函数签名里的一个参数名`</li>
+</ul>
+<pre><code class="lang-js">interface Bird {
+  <span class="hljs-attr">swing</span>: number;
+}
+
+interface Dog {
+  <span class="hljs-attr">leg</span>: number;
+}
+
+<span class="hljs-comment">//没有相同字段可以定义一个类型保护函数</span>
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">isBird</span>(<span class="hljs-params">x:Bird|Dog</span>): <span class="hljs-title">x</span> <span class="hljs-title">is</span> <span class="hljs-title">Bird</span></span>{
+  <span class="hljs-keyword">return</span> (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Bird</span>&gt;</span>x).swing == 2;
+  return (x as Bird).swing == 2;
+}
+function getAnimal(x: Bird | Dog) {
+  if (isBird(x)) {
+    return x.swing;
+  }
+  return x.leg;
+}
+</span></code></pre>
+<h2 id="t8710. 类型变换">10. 类型变换 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t8710.%20%E7%B1%BB%E5%9E%8B%E5%8F%98%E6%8D%A2"> # </a></h2>
+<h3 id="t8810.1 交叉类型">10.1 交叉类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t8810.1%20%E4%BA%A4%E5%8F%89%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>交叉类型（Intersection Types）表示将多个类型合并为一个类型<pre><code class="lang-js">interface Bird{
+<span class="hljs-attr">name</span>:string,
+fly():<span class="hljs-keyword">void</span>
+}
+interface Person{
+ <span class="hljs-attr">name</span>:string,
+ talk():<span class="hljs-keyword">void</span>
+}
+type BirdPerson = Bird &amp; Person;
+<span class="hljs-keyword">let</span> p:BirdPerson={<span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,fly(){},talk(){}};
+p.fly;
+p.name
+p.talk;
+</code></pre>
+</li>
+</ul>
+<h3 id="t8910.2 typeof">10.2 typeof <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t8910.2%20typeof"> # </a></h3>
+<ul>
+<li>可以获取一个变量的类型 </li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">//先定义类型，再定义变量</span>
+type People = {
+    <span class="hljs-attr">name</span>:string,
+    <span class="hljs-attr">age</span>:number,
+    <span class="hljs-attr">gender</span>:string
+}
+<span class="hljs-keyword">let</span> p1:People = {
+    <span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,
+    <span class="hljs-attr">age</span>:<span class="hljs-number">10</span>,
+    <span class="hljs-attr">gender</span>:<span class="hljs-string">'male'</span>
+}
+</code></pre>
+<pre><code class="lang-js"><span class="hljs-comment">//先定义变量，再定义类型</span>
+<span class="hljs-keyword">let</span> p1 = {
+    <span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,
+    <span class="hljs-attr">age</span>:<span class="hljs-number">10</span>,
+    <span class="hljs-attr">gender</span>:<span class="hljs-string">'male'</span>
+}
+type People = <span class="hljs-keyword">typeof</span> p1;
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getName</span>(<span class="hljs-params">p:People</span>):<span class="hljs-title">string</span></span>{
+    <span class="hljs-keyword">return</span> p.name;
+}
+</code></pre>
+<h3 id="t9010.3 索引访问操作符">10.3 索引访问操作符 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9010.3%20%E7%B4%A2%E5%BC%95%E8%AE%BF%E9%97%AE%E6%93%8D%E4%BD%9C%E7%AC%A6"> # </a></h3>
+<ul>
+<li>可以通过[]获取一个类型的子类型</li>
+</ul>
+<pre><code class="lang-js">interface Person{
+    <span class="hljs-attr">name</span>:string;
+    age:number;
+    job:{
+        <span class="hljs-attr">name</span>:string
+    };
+    interests:{<span class="hljs-attr">name</span>:string,<span class="hljs-attr">level</span>:number}[]
+}
+<span class="hljs-keyword">let</span> FrontEndJob:Person[<span class="hljs-string">'job'</span>] = {
+    <span class="hljs-attr">name</span>:<span class="hljs-string">'前端工程师'</span>
+}
+<span class="hljs-keyword">let</span> interestLevel:Person[<span class="hljs-string">'interests'</span>][<span class="hljs-number">0</span>][<span class="hljs-string">'level'</span>] = <span class="hljs-number">2</span>;
+</code></pre>
+<h3 id="t9110.4 keyof">10.4 keyof <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9110.4%20keyof"> # </a></h3>
+<ul>
+<li>索引类型查询操作符</li>
+</ul>
+<pre><code class="lang-js">interface Person{
+  <span class="hljs-attr">name</span>:string;
+  age:number;
+  gender:<span class="hljs-string">'male'</span>|<span class="hljs-string">'female'</span>;
+}
+<span class="hljs-comment">//type PersonKey = 'name'|'age'|'gender';</span>
+type PersonKey = keyof Person;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getValueByKey</span>(<span class="hljs-params">p:Person,key:PersonKey</span>)</span>{
+  <span class="hljs-keyword">return</span> p[key];
+}
+<span class="hljs-keyword">let</span> val = getValueByKey({<span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,<span class="hljs-attr">age</span>:<span class="hljs-number">10</span>,<span class="hljs-attr">gender</span>:<span class="hljs-string">'male'</span>},<span class="hljs-string">'name'</span>);
+<span class="hljs-built_in">console</span>.log(val);
+</code></pre>
+<h3 id="t9210.5 映射类型">10.5 映射类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9210.5%20%E6%98%A0%E5%B0%84%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>在定义的时候用in操作符去批量定义类型中的属性</li>
+</ul>
+<pre><code class="lang-js">interface Person{
+  <span class="hljs-attr">name</span>:string;
+  age:number;
+  gender:<span class="hljs-string">'male'</span>|<span class="hljs-string">'female'</span>;
+}
+<span class="hljs-comment">//批量把一个接口中的属性都变成可选的</span>
+type PartPerson = {
+  [Key <span class="hljs-keyword">in</span> keyof Person]?:Person[Key]
+}
+
+<span class="hljs-keyword">let</span> p1:PartPerson={};
+<span class="hljs-comment">//也可以使用泛型</span>
+type Part&lt;T&gt; = {
+  [key <span class="hljs-keyword">in</span> keyof T]?:T[key]
+}
+<span class="hljs-keyword">let</span> p2:Part&lt;Person&gt;={};
+</code></pre>
+<h3 id="t9310.6 内置工具类型">10.6 内置工具类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9310.6%20%E5%86%85%E7%BD%AE%E5%B7%A5%E5%85%B7%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>TS 中内置了一些工具类型来帮助我们更好地使用类型系统<h4 id="t9410.6.1 Partial">10.6.1 Partial <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9410.6.1%20Partial"> # </a></h4>
+</li>
+<li>Partial 可以将传入的属性由非可选变为可选，具体使用如下：</li>
+</ul>
+<pre><code class="lang-js">type Partial&lt;T&gt; = { [P <span class="hljs-keyword">in</span> keyof T]?: T[P] };
+
+interface A {
+  <span class="hljs-attr">a1</span>: string;
+  a2: number;
+  a3: boolean;
+}
+
+type aPartial = Partial&lt;A&gt;;
+
+<span class="hljs-keyword">const</span> a: aPartial = {}; <span class="hljs-comment">// 不会报错</span>
+</code></pre>
+<h4 id="t9510.6.2 Required">10.6.2 Required <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9510.6.2%20Required"> # </a></h4>
+<ul>
+<li>Required 可以将传入的属性中的可选项变为必选项，这里用了 -? 修饰符来实现。</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * Make all properties in T required
+ */</span>
+type Required&lt;T&gt; = { [P <span class="hljs-keyword">in</span> keyof T]-?: T[P] };
+
+interface Person{
+  <span class="hljs-attr">name</span>:string;
+  age:number;
+  gender?:<span class="hljs-string">'male'</span>|<span class="hljs-string">'female'</span>;
+}
+<span class="hljs-keyword">let</span> p:Required&lt;Person&gt; = {
+  <span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,
+  <span class="hljs-attr">age</span>:<span class="hljs-number">10</span>,
+  <span class="hljs-comment">//gender:'male'</span>
+}
+</code></pre>
+<h4 id="t9610.6.3 Readonly">10.6.3 Readonly <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9610.6.3%20Readonly"> # </a></h4>
+<ul>
+<li>Readonly 通过为传入的属性每一项都加上 readonly 修饰符来实现。</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * Make all properties in T readonly
+ */</span>
+type Readonly&lt;T&gt; = { readonly [P <span class="hljs-keyword">in</span> keyof T]: T[P] };
+
+interface Person{
+  <span class="hljs-attr">name</span>:string;
+  age:number;
+  gender?:<span class="hljs-string">'male'</span>|<span class="hljs-string">'female'</span>;
+}
+<span class="hljs-keyword">let</span> p:Readonly&lt;Person&gt; = {
+  <span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,
+  <span class="hljs-attr">age</span>:<span class="hljs-number">10</span>,
+  <span class="hljs-attr">gender</span>:<span class="hljs-string">'male'</span>
+}
+p.age = <span class="hljs-number">11</span>;
+</code></pre>
+<h4 id="t9710.6.4 Pick">10.6.4 Pick <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9710.6.4%20Pick"> # </a></h4>
+<ul>
+<li>Pick 能够帮助我们从传入的属性中摘取某一项返回</li>
+</ul>
+<pre><code class="lang-js"><span class="hljs-comment">/**
+ * From T pick a set of properties K
+ */</span>
+type Pick&lt;T, K extends keyof T&gt; = { [P <span class="hljs-keyword">in</span> K]: T[P] };
+
+interface Animal {
+  <span class="hljs-attr">name</span>: string;
+  age: number;
+}
+<span class="hljs-comment">// 摘取 Animal 中的 name 属性</span>
+type AnimalSub = Pick&lt;Animal, <span class="hljs-string">"name"</span>&gt;; <span class="hljs-comment">// { name: string; }</span>
+</code></pre>
+<h4 id="t9810.6.5 映射类型修饰符的控制">10.6.5 映射类型修饰符的控制 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9810.6.5%20%E6%98%A0%E5%B0%84%E7%B1%BB%E5%9E%8B%E4%BF%AE%E9%A5%B0%E7%AC%A6%E7%9A%84%E6%8E%A7%E5%88%B6"> # </a></h4>
+<ul>
+<li>TypeScript中增加了对映射类型修饰符的控制</li>
+<li>具体而言，一个 <code>readonly</code> 或 <code>?</code> 修饰符在一个映射类型里可以用前缀 <code>+</code> 或<code>-</code>来表示这个修饰符应该被添加或移除</li>
+<li>TS 中部分内置工具类型就利用了这个特性（Partial、Required、Readonly...），这里我们可以参考 Partial、Required 的实现</li>
+</ul>
+<h3 id="t9910.7 条件类型">10.7 条件类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t9910.7%20%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B"> # </a></h3>
+<ul>
+<li>在定义泛型的时候能够添加进逻辑分支，以后泛型更加灵活</li>
+</ul>
+<h4 id="t10010.7.1 定义条件类型">10.7.1 定义条件类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10010.7.1%20%E5%AE%9A%E4%B9%89%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B"> # </a></h4>
+<pre><code class="lang-js">interface Fish{
+  <span class="hljs-attr">name</span>:string
+}
+interface Water{
+  <span class="hljs-attr">name</span>:string
+}
+interface Bird{
+  <span class="hljs-attr">name</span>:string
+}
+interface Sky{
+  <span class="hljs-attr">name</span>:string
+}
+<span class="hljs-comment">//三元运算符</span>
+type Condition&lt;T&gt; = T extends Fish?Water:Sky;
+<span class="hljs-keyword">let</span> con:Condition&lt;Fish&gt; = {<span class="hljs-attr">name</span>:<span class="hljs-string">'水'</span>};
+</code></pre>
+<h4 id="t10110.7.2 条件类型的分发">10.7.2 条件类型的分发 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10110.7.2%20%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B%E7%9A%84%E5%88%86%E5%8F%91"> # </a></h4>
+<pre><code class="lang-js">interface Fish{
+  <span class="hljs-attr">name</span>:string
+}
+interface Water{
+  <span class="hljs-attr">name1</span>:string
+}
+interface Bird{
+  <span class="hljs-attr">name</span>:string
+}
+interface Sky{
+  <span class="hljs-attr">name2</span>:string
+}
+<span class="hljs-comment">//三元运算符</span>
+type Condition&lt;T&gt; = T extends Fish?Water:Sky;
+<span class="hljs-keyword">let</span> con1:Condition&lt;Fish|Water&gt; = {<span class="hljs-attr">name1</span>:<span class="hljs-string">'水'</span>};
+<span class="hljs-keyword">let</span> con2:Condition&lt;Fish|Water&gt; = {<span class="hljs-attr">name2</span>:<span class="hljs-string">'水'</span>};
+</code></pre>
+<h4 id="t10210.7.3 内置条件类型">10.7.3 内置条件类型 <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10210.7.3%20%E5%86%85%E7%BD%AE%E6%9D%A1%E4%BB%B6%E7%B1%BB%E5%9E%8B"> # </a></h4>
+<ul>
+<li>TS 在内置了一些常用的条件类型，可以在 lib.es5.d.ts 中查看：</li>
+</ul>
+<pre><code class="lang-js">Exclude&lt;T, U&gt; <span class="hljs-comment">// 从 T 可分配给的类型中排除 U。</span>
+Extract&lt;T, U&gt; <span class="hljs-comment">// 从 T 可分配的类型中提取 U。</span>
+NonNullable&lt;T&gt; <span class="hljs-comment">// 从 T 中排除 null 和 undefined。</span>
+ReturnType&lt;T&gt; <span class="hljs-comment">// 获取函数类型的返回类型。</span>
+InstanceType&lt;T&gt; <span class="hljs-comment">// 获取构造函数类型的实例类型。</span>
+</code></pre>
+<h5 id="t10310.7.3.1 Exclude">10.7.3.1 Exclude <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10310.7.3.1%20Exclude"> # </a></h5>
+<pre><code class="lang-js">type  E = Exclude&lt;string|number,string&gt;;
+<span class="hljs-keyword">let</span> e:E = <span class="hljs-number">10</span>;
+</code></pre>
+<h5 id="t10410.7.3.2 Extract">10.7.3.2 Extract <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10410.7.3.2%20Extract"> # </a></h5>
+<pre><code class="lang-js">type  E = Extract&lt;string|number,string&gt;;
+<span class="hljs-keyword">let</span> e:E = <span class="hljs-string">'1'</span>;
+</code></pre>
+<h5 id="t10510.7.3.3 NonNullable">10.7.3.3 NonNullable <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10510.7.3.3%20NonNullable"> # </a></h5>
+<pre><code class="lang-js">type  E = NonNullable&lt;string|number|<span class="hljs-literal">null</span>|<span class="hljs-literal">undefined</span>&gt;;
+<span class="hljs-keyword">let</span> e:E = <span class="hljs-literal">null</span>;
+</code></pre>
+<h5 id="t10610.7.3.4 ReturnType">10.7.3.4 ReturnType <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10610.7.3.4%20ReturnType"> # </a></h5>
+<pre><code class="lang-js"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">getUserInfo</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> { <span class="hljs-attr">name</span>: <span class="hljs-string">"zhufeng"</span>, <span class="hljs-attr">age</span>: <span class="hljs-number">10</span> };
+}
+
+<span class="hljs-comment">// 通过 ReturnType 将 getUserInfo 的返回值类型赋给了 UserInfo</span>
+type UserInfo = ReturnType&lt;<span class="hljs-keyword">typeof</span> getUserInfo&gt;;
+
+<span class="hljs-keyword">const</span> userA: UserInfo = {
+  <span class="hljs-attr">name</span>: <span class="hljs-string">"zhufeng"</span>,
+  <span class="hljs-attr">age</span>: <span class="hljs-number">10</span>
+};
+</code></pre>
+<h5 id="t10710.7.3.5 InstanceType">10.7.3.5 InstanceType <a href="http://www.zhufengpeixun.com/strong/html/57.ts.html#t10710.7.3.5%20InstanceType"> # </a></h5>
+<pre><code class="lang-js"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Person</span></span>{
+  <span class="hljs-attr">name</span>:string;
+  <span class="hljs-keyword">constructor</span>(name){
+    <span class="hljs-keyword">this</span>.name = name;
+  }
+  getName(){<span class="hljs-built_in">console</span>.log(<span class="hljs-keyword">this</span>.name)}
+}
+
+type  P = InstanceType&lt;<span class="hljs-keyword">typeof</span> Person&gt;;
+<span class="hljs-keyword">let</span> p:P = {<span class="hljs-attr">name</span>:<span class="hljs-string">'zhufeng'</span>,getName(){}};
+</code></pre>
+
+    </div>
+</div>
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-labelledby="loginModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+                <h4 class="modal-title" id="loginModalLabel">请登录</h4>
+            </div>
+            <div class="modal-body">
+                <form>
+                    <div class="form-group">
+                        <label for="username" class="control-label">学号:</label>
+                        <input type="text" class="form-control" id="username" placeholder="珠峰架构VIP会员系统学号">
+                    </div>
+                    <div class="form-group">
+                        <label for="password" class="control-label">密码:</label>
+                        <input type="text" class="form-control" id="password" placeholder="珠峰架构VIP会员系统密码">
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">登录</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="./珠峰架构师成长计划_files/jquery.min.js.下载"></script>
+<script src="./珠峰架构师成长计划_files/bootstrap.min.js.下载"></script>
+<script>
+let zhufengjiagou = localStorage.getItem('zhufengjiagou');
+const host = 'http://login.zhufengpeixun.com';
+if(zhufengjiagou){
+  fetch(host+'/check',{method:"GET",mode: 'cors',
+　　headers: {'Content-Type': 'application/json', authorization: `Bearer ${zhufengjiagou}`}}).then(response => response.json()).then(res => {
+    if(res.success){
+     
+    }else{
+      $('#loginModal').modal('show')
+    }
+  }) 
+}else{
+   $('#loginModal').modal('show')
+}
+
+$('#loginModal').on('hidden.bs.modal', function (event) {
+  var modal = $(this)
+  let username = modal.find('.modal-body #username').val();
+  let password = modal.find('.modal-body #password').val();
+  fetch(host+'/login',{method:"POST",mode: 'cors',
+　　headers: {'Content-Type': 'application/json'},
+　　body:JSON.stringify({username,password})}).then(response => response.json()).then(res => {
+  console.log(res);
+    if(res.success){
+      localStorage.setItem('zhufengjiagou',res.zhufengjiagou);
+    }else{
+      window.location.href = 'http://www.zhufengpeixun.cn';
+    }
+  })
+})
+</script>
+<script>
+$('.warpper .page-toc ul ul li a').on('click',function(){
+  $('.warpper .page-toc ul ul li a').removeClass('my-active')
+  $(this).addClass('my-active')
+})
+$('.logo').on('mouseenter',function(){
+  $('.nav').height('450px');
+})
+$('.nav').on('mouseleave',function(){
+  $('.nav').height('80px');
+})
+$('.logo').on('click',function(){
+  $('.nav').css('display','none');
+ $('.warpper').css('padding','0px');
+})
+</script>
+
+
+</body></html>

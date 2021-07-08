@@ -4769,6 +4769,101 @@
 165. 虚拟列表是什么?说一下它的实现原理?
 
      > 虚拟列表是一种根据滚动容器元素的可视区域来渲染长列表数据中的某一个部分数据的技术。
+     >
+     > ```js
+     > // 固定高度
+     > <template>
+     >   <div class="list-box">
+     >     <!-- 滚动条 -->
+     >     <div id="scrollbar"></div>
+     >     <div class="wrapper">
+     >       <p v-for="(item, index) in render_list" :key="index">{{ item }}</p>
+     >     </div>
+     >   </div>
+     > </template>
+     > 
+     > <script>
+     > export default {
+     >   data() {
+     >     return {
+     >       list: [],
+     >       render_list: [],
+     >       startIndex: 0,
+     >       endIndex: 18,
+     >       pageSize: 18,
+     >       offset: 18
+     >     };
+     >   },
+     >   // 要解决的是什么问题
+     >   // 如果要展示的信息量过大也就是数据过多，比如一次性展示十万条数据
+     >   // 通常的做法是采用分页，但是用户体验不是很友好
+     >   // 因为有的用户喜欢向下滚动查看内容，如果不采取措施的话，随着用户的滚动
+     >   // 页面堆积的节点越来越多，最后导致页面卡顿严重
+     > 
+     >   // 所以需要采用虚拟列表，就是对可见区域进行渲染，非可见区域不渲染或者部分渲染，从而达到极高性能
+     >   // 当滚动事件发生的时候，动态计算可见区域需要展示的数据项，对非可见区域的数据进行删除
+     >   created() {
+     >     let arr = [];
+     > 
+     >     for (let i = 0; i < 1000; i++) {
+     >       arr.push(i);
+     >     }
+     > 
+     >     this.list = arr;
+     > 
+     >     this.render_list = this.list.slice(this.startIndex, this.endIndex);
+     >   },
+     > 
+     >   mounted() {
+     >     let box = document.querySelector(".list-box");
+     >     let scrollbar = document.getElementById("scrollbar");
+     >     let wrapper = document.querySelector('.wrapper')
+     > 
+     >     // 根据列表的长度，设置滚动条的高度
+     >     scrollbar.style.height = this.list.length * 30 + "px";
+     > 
+     >     box.addEventListener(
+     >       "scroll",
+     >       () => {
+     >         // 实时获取滚动条距离顶部的距离
+     >         let scrollTop = box.scrollTop;
+     >         wrapper.style.top = scrollTop + 'px';
+     >         this.startIndex = Math.ceil(scrollTop / 30);
+     >         this.endIndex = this.startIndex + this.pageSize + this.offset;
+     >         this.render_list = this.list.slice(this.startIndex, this.endIndex);
+     >         console.log(scrollTop, this.startIndex, this.endIndex, this.render_list);
+     >       },
+     >       false
+     >     );
+     >   },
+     > };
+     > </script>
+     > 
+     > <style lang='scss' scoped>
+     > .list-box {
+     >   width: 300px;
+     >   height: 500px;
+     >   border: 1px solid red;
+     >   margin: 20px auto;
+     >   overflow: auto;
+     >   position: relative;
+     > 
+     >   .wrapper {
+     >     position: absolute;
+     >     top: 0px;
+     >     left: 0px;
+     >     width: 100%;
+     >     p {
+     >       height: 30px;
+     >       border-bottom: 1px solid #e6e6e6;
+     >       padding: 10px 10px;
+     >     }
+     >   }
+     > }
+     > </style>
+     > ```
+     >
+     > 
 
 166. 说说ES6对Object类型做了哪些优化更新?
 
