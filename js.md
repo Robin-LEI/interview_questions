@@ -5143,5 +5143,17 @@
 
      
 
-175. 
+175. 说一下jQuery的Ajax、axios、fetch的区别
+
+     - Ajax是对原生XHR的封装，增加了对JSONP的支持，但是Ajax本身是针对MVC编程的，不符合现在的MVVM编程，如果单纯为了使用Ajax引入jQuery，会使得项目的体积变大
+     - axios本身也是对XHR的封装，只不过它是promise的实现版本，支持promise api，提供了一些并发请求的接口
+     - fetch语法简洁，支持async/await
+
+176. websocket如何断开重连?
+
+177. 了解websocket吗？websocket如何进行握手的？
+
+178. 说一下进程和线程的区别？
+
+179. 为什么WeakMap和WeakSet的键只能使用对象？在什么情况下使用？
 
