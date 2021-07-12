@@ -527,3 +527,39 @@ vue编码但是不渲染的标签，vue-fragment，`npm install -g vue-fragment`
 - `npm view packageName versions`
 - `npm info packageName`
 - 查看npm源：`npm config get registry`
+
+
+
+# vue-ssr
+
+1. 什么是服务端渲染？
+
+   > 通常，我们使用vue开发的单页面应用属于客户端渲染。
+   >
+   > 放在服务器进行的渲染就是服务端渲染，放在浏览器进行渲染的就是浏览器渲染，服务端渲染就是在服务器端让数据和模板进行结合，然后返回一个html字符串给浏览器，这样浏览器拿到字符串之后就可以直接进行渲染。
+
+2. 为什么需要服务端渲染？
+
+   > 客户端不利于SEO，因为默认html文件就是一个空的div标签，没有任何内容。
+   >
+   > 采用服务端渲染之后返回的内容是带有内容的，可以被爬虫爬取。
+   >
+   > 采用服务端渲染可以减少首页加载的白屏时间，因为SSR已经将HTML字符串返回给浏览器。
+   >
+   > 同时SSR也存在弊端，比如占用CPU和内存资源过多，一些常用的浏览器api可能无法使用，无法操作dom。
+   >
+   > 在vue中只支持beforeCreate和created两个生命周期。
+
+3. 开启vue-ssr
+
+   - 服务端采用nodejs，因为nodejs天生支持js
+   - 【在没有采取模板渲染的情况下】服务端需要安装 vue-server-renderer vue，引入vue-server-renderer，调用其createRenderer函数，创建一个渲染函数，链式调用 renderToString，渲染出一个字符串，把这个字符串作为内容响应给浏览器。
+   - 【采取模板渲染】配合webpack，可以让服务端开发变得更方便，可以像客户端开发一样，编写.vue文件，通过模板调用createRenderer创建渲染函数，把模板解析为字符串返回给客户端
+   - 通过webpack实现编译vue项目，`npm install webpack webpack-cli vue vue-loader vue-style-loader css-loader webpack-dev-server @bable/core babel-loader @babel/preset-env html-webpack-plugin vue-template-compiler `
+     - webpack-cli解析命令行参数的，比如 --config
+     - vue-loader 解析.vue文件
+     - vue-style-loader 用于服务端插入css，客户端使用的是style-loader，但是不支持服务端
+     - vue-template-compiler 解析vue模板
+
+4. 
+
