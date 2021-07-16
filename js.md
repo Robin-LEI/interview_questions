@@ -1179,6 +1179,12 @@
 
 45. V8引擎的垃圾回收机制
 
+    > JavaScript具有自动的垃圾回收机制，也就是说执行环境会管理代码运行过程中使用的内存。
+
+    > 这种垃圾回收机制的原理是：找出那些不在继续使用的变量，然后释放其占用的内存。为此，垃圾回收器会按照固定的时间间隔（或者代码执行中预订的收集时间），周期性的执行这一操作。
+
+    > 局部变量只在函数执行过程中存在，在这个过程中，会为局部变量在栈或者堆内存上分配空间，以便存储他们的值。
+
 46. 哪些操作会造成内存泄露？
 
     > 1. 闭包
@@ -1362,9 +1368,9 @@
     // toString
     // 每个对象的原型上面都有一个toString方法，这是最常用的，也是最准确的
     ```
-    
 
     
+
 56. 给DOM打断点
 
     > 审查元素，定位到想要打断点的元素，右键，break on，有选项subtree modifications、attributes modifications，根据自己的需要勾选，当dom元素属性或者增加删除子节点的时候，会自动定位到是哪一行js代码导致的更改。
@@ -1769,7 +1775,7 @@
 
     
 
-71. 实现一个reduce方法
+70. 实现一个reduce方法
 
     ```js
     // reduce方法的第二个参数哪怕是undefined，也会当做初始化值使用
@@ -1800,7 +1806,7 @@
 
     
 
-72. 手写一个Ajax
+71. 手写一个Ajax
 
     ```js
     const ajax = {
@@ -2501,7 +2507,7 @@
     > > - 创建变量环境组件
     >
     > **2**
-    
+
 92. 输出结果
 
     ```js
@@ -5263,11 +5269,169 @@
 
 192. 回调函数和任务队列的区别
 
+     > 回调函数是把一个函数作为参数传递给另外一个函数，这个函数会在另外一个函数执行完成之后执行。
+
 193. 词法作用域和this的区别
 
 194. 请用JS代码实现事件代理
 
-195. 说一下栈和堆的区别，垃圾回收时栈和堆的区别？
+     > 什么是事件代理
+     >
+     > 事件委托或事件代理：根据红宝书来说：就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。举例：dom需要事件处理程序，我们都会直接给它设置事件处理程序。但是在ul中1000个li全部需要添加事件处理程序，其具有相同的点击事件，那么可以根据for来进行遍历，也可以在ul上来进行添加。在性能的角度上来看，在ul建立事件会减少dom的交互次数，提高性能。
+
+     > 事件代理的原理
+     >
+     > 事件委托就是利用事件的冒泡原理来实现的，就是事件从最深的节点开始，然后逐步向上传播事件。
+     >
+     > 举例：页面上有这么一个节点树，div>ul>li>a;比如给最里面的a加一个click点击事件，那么这个事件就会一层一层的往外执行，执行顺序a>li>ul>div,有这样一个机制，那么我们给最外面的div加点击事件，那么里面的ul、li、a做点击事件的时候，都会冒泡到最外层的div上，所以都会触发，这就是事件委托，委托它们父级代为执行事件
+
+     ```js
+     // 实现ul中li的事件代理
+     window.onload=function(){
+         var oBtn=document.getElementById('btn');
+         var oUl=document.getElementById('ul1');
+         var aLi=oUl.getElementsByTagName('li');
+         var num=4;
+         //事件委托，添加的子元素也有事件
+         oUl.onmouseover=function(e){
+             var e=e||window.event;
+             var target=e.target||e.srcElement;
+             if(target.nodeName.toLowerCase()==='li'){
+                 target.style.background="red";
+             }
+         };
+         oUl.onmouseout=function(e){
+             var e=e||window.event;
+             var target=e.target||e.srcElement;
+             if(target.nodeName.toLowerCase()==='li'){
+                 target.style.background="blue"
+             }
+         };
+         //添加新节点
+         oBtn.onclick=function(){
+             num++;
+             var oLi=document.createElement('li');
+             oLi.innerHTML=111*num;
+             oUl.appendChild(oLi)
+         };
+     }
+     ```
+
+     ```js
+     // 简单封装一个事件代理的通用代码
+     // ! 代表是匿名函数自执行
+     !function (root, doc) {
+         class Delegator {
+             constructor(selector) {
+                 this.selector = selector;
+                 // 委托给谁进行代理
+                 this.root = document.querySelector(this.selector);//父级dom
+                 this.delegatorEvents = {}//代理元素及事件
+     
+                 //代理逻辑
+                 this.delegator = (e) => {
+                     let currentNode = e.target//目标节点
+                     const targetEventList = this.delegatorEvents[e.type];
+                     //如果当前目标节点等于事件目前所在的节点，不再往上冒泡
+                     while (currentNode !== e.currentTarget) {
+                         targetEventList.forEach(target => {
+                             if (currentNode.matches(target.matcher)) {
+                                 //开始委托并把当前目标节点的event对象传过去
+                                 target.callback.call(currentNode, e)
+                             }
+                         })
+                         currentNode = currentNode.parentNode;
+                     }
+                 }
+     
+             }
+     
+             //绑定事件  event---绑定事件类型  selector---需要被代理的选择器  fn---触发函数
+             on = (event, selector, fn) => {
+                 //相同事件只能添加一次，如果存在，则在对应的代理事件里添加
+                 if (!this.delegatorEvents[event]) {
+                     this.delegatorEvents[event] = [{
+                         matcher: selector,
+                         callback: fn
+                     }]
+                     this.root.addEventListener(event, this.delegator)
+                 } else {
+                     this.delegatorEvents[event].push({
+                         matcher: seletor,
+                         callback: fn
+                     })
+                 }
+                 return this;
+             }
+     
+             // 移除事件
+             destory = () => {
+                 Object.keys(this.delegatorEvents).forEach(eventName => {
+                     this.root.removeEventListener(eventName, this.delegator)
+                 })
+             }
+     
+     }
+     
+     
+     root.Delegator = Delegator;
+     }(window, document);
+     
+     console.log(window)
+     let delegator = new Delegator('#ul1');
+     
+     delegator.on('mouseover', 'li', (e) => {
+         var e = e || window.event;
+         var target = e.target || e.srcElement;
+         if (target.nodeName.toLowerCase() === 'li') {
+             target.style.background = "red";
+         }
+     });
+     
+     delegator.on('mouseout', 'li', e => {
+         var e = e || window.event;
+         var target = e.target || e.srcElement;
+         if (target.nodeName.toLowerCase() === 'li') {
+             target.style.background = "blue"
+         }
+     });
+     
+     btn.onclick = function () {
+         var oLi = document.createElement('li');
+         oLi.innerHTML = 111;
+         delegator.root.appendChild(oLi)
+     };
+     ```
+
+     
+
+195. 说一下栈和堆的区别，垃圾回收时栈和堆的区别？（**涉及到垃圾回收机制**）
+
+     > `栈：`其操作系统自动分配释放，存放函数的参数值和局部变量的值等。其操作方式类似于数据结构中的栈。简单的理解就是当定义一个变量的时候，计算机会在内存中开辟一块存储空间来存放这个变量的值，这块空间叫做栈，然而栈中一般存放的是基本数据类型，栈的特点就是先进后出(或者后进先出)
+     >
+     > `堆：`一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收，分配方式倒是类似于链表。其实在堆中一般存放变量的是一些对象类型
+     >
+     > - \>1.存储大小
+     >
+     > 栈内存的存储大小是固定的，申请时由系统自动分配内存空间，运行的效率比较快，但是因为存储的大小固定，所以容易存储的大小超过存储的大小，导致溢栈。
+     >
+     > 堆内存的存储的值是大小不定，是由程序员自己申请并指明大小。因为堆内存是new分配的内存，所以运行的效率会比较低
+     >
+     > - \>2.存储对象
+     >
+     > 栈内存存储的是基础数据类型，并且是按值访问的，因为栈是一块连续的内存区域，以`后进先出`的原则存储调用的，所以是连续存储的
+     >
+     > 堆内存是向高地址扩展的数据结构，是不连续的内存区域，系统也是用链表来存储空闲的内存地址，所以是不连续的。因为是记录的内存地址，所以获取是通过引用，存储的是对象居多
+     >
+     > - \>3.回收
+     >
+     > 栈的回收是系统控制实现的
+     >
+     > 堆内存的回收是人为控制的，当程序结束后，系统会自动回收
+
+     > 栈内存的数据只要结束，则直接回收
+     >
+     > 堆内存中的对象回收标准是否可达，在V8中对象先分配到新生代的From中，如果不可达直接释放，如果可达，就复制到TO中，然后将TO和From互换。当多次复制后依然没有回收，则放入老生代中，进行标记回收。之后将内存碎片进行整合放到一端。
 
 196. 介绍js全部数据类型，基本数据类型和引用数据类型的区别
 
