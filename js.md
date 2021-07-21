@@ -5249,19 +5249,341 @@
 
 182. 面向对象的三要素是什么，分别是什么意思?
 
+     > 封装
+     >
+     > 把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏
+
+     > 继承
+     >
+     > 使用现有类的所有功能并在无需重新编写原来的类的情况下对这些功能进行扩展
+
+     > 多态
+     >
+     > 建立在继承的基础上的，先有继承才能有多态。
+     >
+     > 多态是指不同的子类在继承父类后分别都重写覆盖了父类的方法，即父类同一个方法在继承的子类中表现出不同的形式。
+
 183. 说一下你所了解的javascript的作用域链?
 
-184. 如何判断一个对象是否属于某个类?
+     > JS中的执行环境包含全局执行环境和函数执行环境。
+     >
+     > 全局执行环境处在最外层，每一个函数都有一个自己的执行环境，叫做函数执行环境。
+     >
+     > 在web浏览器中，全局执行环境被认为是window对象，某个执行环境中的所有代码执行完毕后，该环境被销毁，保存在其中的所有的变量和函数定义也随之销毁，全局执行环境直到应用程序退出例如关闭网页或浏览器才会被销毁。
+
+     > 当代码在一个环境中执行时，会创建变量对象的一个作用域链，作用域链的前端是当前执行的代码所在环境的变量对象。
+     >
+     > 如果这个环境是函数，则将其活动对象（AO）作为变量对象。
+     >
+     > 活动对象在最开始的时候，只包含一个对象叫做arguments。
+     >
+     > 作用域链的末端是全局执行环境的变量对象。
+
+     > 通过作用域链，我们可以访问到外层环境的变量和函数。
+     >
+     > 当我们查找一个变量的时候，如果当前执行环境中没有找到，我们可以沿着作用域链向后查找。
+
+184. 如何判断一个对象是否属于某个类(构造函数)?
+
+     - 使用instanceof运算符判断构造函数的prototype属性是否出现在对象的原型链的任何位置
+     - 通过constructor属性，对象的constructor属性指向对象的构造函数
+     - 如果需要判断的是某个内置的引用类型的话，可以使用Object.prototype.toString.call()方法来打印对象的[[class]]属性来进行判断
 
 185. 检测浏览器版本有哪些方式?
 
+     ```js
+     // 1. 利用 navigator.userAgent
+     // 2. 利用功能检测，根据每个浏览器独有的特性进行判断，如IE下独有的ActiveXObject
+     ```
+
+     
+
 186. 内部属性[[Class]]是什么?
+
+     ```js
+     // 所有typeof返回值为"object"的对象（比如数组）都包含一个内部属性[[Class]]，我们可以把它看做一个内部的分类，而不是传统意义上的类，这个属性无法直接访问，一般可以通过Object.prototype.toString去访问
+     
+     // 多数情况下，对象内部的[[Class]]属性和创建这个对象的构造函数是一致的，不过也不是总这样
+     
+     // 基本类型值的[[Class]]属性
+     // null和undefined
+     // null和undefined的构造函数并不存在，但是内部的[[Class]]属性是Null和Undefined
+     console.log(Object.prototype.toString.call(null)); //[object Null]
+     console.log(Object.prototype.toString.call(/\d/)); // [object RegExp]
+     // 其它基本类型值得到的是其包装对象
+     
+     // 包装对象
+     // 由于JS的基本数据类型没有.length和.toString这样的属性和方法，需要通过包装对象才能访问，此时JavaScript引擎会自动为基本类型包装一个对象
+     
+     // 使用valueof可以拆封
+     var s = new String( "abc" );
+     console.log(s.valueOf());
+     ```
+
+     
 
 187. for...in和Object.keys的区别
 
+     ```js
+     // for...in 用来枚举对象的属性，但是它会枚举对象原型链上的所有可枚举属性，但是Object.keys不会
+     // for...in在某些情况下，可能按照随机顺序遍历数组的元素
+     function Parent() {
+         this.parent = 'parent'
+     }
+     
+     function Person() {
+         this.name = 'name'
+         this.age = 20
+     }
+     
+     Person.prototype = new Parent();
+     Person.prototype.constructor = Person;
+     
+     let obj = new Person()
+     
+     console.log(Object.keys(obj))
+     
+     for (let key in obj) {
+         console.log(key, '---', obj[key])
+     }
+     
+     // for...of不支持遍历普通对象
+     let obj = {
+         name: 'obj',
+         age: 20,
+         sm: Symbol()
+     }
+     for (let key of obj) { // 报错 obj is not iterable
+         console.log(key, obj[key])
+     }
+     // 采用for...of遍历数组的时候，拿到的是每一项的值，而非索引
+     ```
+
+     
+
 188. 请说出目前主流的js模块化实现的技术有哪些?他们的区别在哪儿?
 
-189. 三种事件模型是什么?
+     > 目前流行的JS模块化规范有CommonJS、AMD、CMD以及ES6的模块系统
+
+     > **CommonJS**
+     >
+     > *CommonJS的出发点：*js没有完善的模块系统，标准库较少，缺少包管理工具，伴随着Nodejs的兴起，能让js在任何地方运行，特别是服务端，也达到了具备开发大型项目的能力，所以commonjs出现了。
+     >
+     > Nodejs是commonjs规范的主要实践者，有四个重要的环境变量为模块化的实现提供支持：module、exports、require、global。
+     >
+     > 实际使用的时候，使用module.exports定义当前模块对外输出的接口，用require加载模块。
+     >
+     > commonjs用同步的方式加载模块。
+     >
+     > 但是在浏览器端，由于网络原因的限制，更合理的是使用异步加载。
+     >
+     > > *CommonJS的规范*
+     > >
+     > > - 一个文件就是模块，拥有单独的作用域
+     > > - 普通方式定义的变量、函数、模块都属于该模块的内容
+     > > - 通过require加载模块
+     > > - 通过exports和module.exports来暴露模块的内容
+     >
+     > > *注意事项*
+     > >
+     > > - 当exports和module.exports同时存在的时候，module.exports会覆盖exports
+     > > - 当模块内全是exports时，就等同于module.exports
+     > > - exports就是module.exports的子集
+     > > - 所有代码都运行在模块作用域内，不会污染全局
+     > > - 模块可以多次加载，但是在第一次加载的时候，会对模块进行缓存，以后在加载的时候直接读取缓存结果
+     > > - 模块加载顺序：按照代码出现的顺序同步加载
+
+     > **ES6模块化**
+     >
+     > ES6在语言标准的层面上，实现了模块化功能，而且实现的相当简单，主要为浏览器和服务器通用的解决方案。
+     >
+     > 其模块功能主要由两个命令构成：export和import，export用于规定对外暴露接口，import用于引入其它模块的功能。
+     >
+     > 其实ES6还提供了export default命令，为模块指定默认输出，对应的import语句不需要使用大括号，类似AMD的引用写法
+     >
+     > ES6的模块不是对象，import命令会被JS引擎静态分析，在编译的时候就会引入模块代码，而不是在代码运行的时候加载，所以无法实现条件加载。
+
+     > **AMD**
+     >
+     > 异步加载模块。它是一个在浏览器端模块化开发的规范。
+     >
+     > 不是原生JS的规范，使用AMD规范进行页面的开发需要用到对应的函数库，RequireJS。
+     >
+     > AMD规范采用异步方式进行加载，模块的加载不影响后面的语句运行，所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。
+     >
+     > 使用require.js实现AMD规范的模块化：
+     >
+     > ```js
+     > require.config() // 指定引用路径
+     > define() // 定义模块
+     > require() // 加载模块
+     > ```
+     >
+     > *RequireJS主要解决的问题*
+     >
+     > > - 文件可能有依赖关系，被依赖的文件需要早于依赖它的文件加载到浏览器
+     > > - js加载的时候浏览器会停止页面的渲染，加载的文件越多，页面响应时间越长
+     > > - 异步前置加载
+
+     > **CMD**
+     >
+     > CMD是另外一种js模块化方案，与AMD很类似，不同点在于：AMD推崇依赖前置，提前执行，CMD推崇依赖就近，延迟执行，此规范其实是在sea.js【遵循CMD规范】推广过程中产生的。
+     >
+     > ```js
+     > //定义没有依赖的模块
+     > define(function(require,exports,module){
+     >     export.xxx=val
+     >     module.exports=val
+     > })
+     > //定义有依赖的模块
+     > define(function(require,exports,module){
+     >     //同步引入模块
+     >     var module1=reuqire('./module1.js')
+     >     //异步引入模块
+     >     require.async('./module2.js',function(val){
+     >         //代码逻辑
+     >     })
+     >     exports.xxx=value 
+     > })
+     > //引入模块
+     > define(function(require){
+     >     const val1=require('./module1.js')
+     >     val1.show()
+     > })
+     > ```
+
+     > **UMD**
+     >
+     > 一种整合CommonJS和AMD规范的方法，希望解决跨平台模块方案。
+     >
+     > ```js
+     > (function (window,factory){
+     >     if(typeof exports === 'Object'{
+     >         module.exports=factory();
+     >     }else if(typeof define === 'function' && define.amd){
+     >         define(factory);
+     >     }else{
+     >         window.eventUtil=factory()
+     >     })
+     > })(this,function(){
+     >     //执行代码
+     > })
+     > // 不支持的话 typeof define就等于undefined
+     > ```
+
+     > **总结**
+     >
+     > - CommonJS是同步加载的。主要是在nodejs也就是服务端应用的模块化机制，通过`module.export`导出声明，通过`require()`加载。每一个文件都是一个模块。它有自己的作用域，文件内的变量，属性函数等不能被外界访问。node会将模块缓存，第二次加载会直接在缓存中获取
+     > - AMD是异步加载的。主要应用在浏览器环境下。requireJS是遵循AMD规范化的模块化工具。它是通过`define()`定义声明，通过`require(['a','b'],function(a,b){})`加载
+     > - ES6的模块的运行机制与Common不一样，js引擎对脚本静态分析的时候，遇到模块加载指令后会生成一个只读引用，等到脚本真正执行的时候才会通过去模块中获取值，在引用到执行的过程中模块中的值发生了变化，导入的这里也会跟着变化，ES6模块是动态引用，并不会缓存值，模块里总是绑定其所在的模块。
+
+     
+
+189. 三种事件模型是什么？
+
+     > 现代浏览器一共有三种事件模型
+     >
+     > - DOM0级事件模型，第一种事件模型是最早的DOM0级模型，这种模型不会传播，所以没有事件流的概念，但是现在有的浏览器支持以冒泡的方式实现，它可以在网页中直接定义监听函数，也可以通过js属性来指定监听函数，这种方式是所有浏览器都兼容的。
+     >
+     >   ```js
+     >   // 浏览器会把一些常用事件挂载到元素对象的私有属性上，让我们可以实现DOM0事件绑定。
+     >   // DOM0级事件绑定通常有两种方式，一种是直接将事件处理程序作为html元素的属性值：
+     >   // 示例一
+     >   <div onclick="alert('点了我一下')">点击一下</div>
+     >   // 或
+     >   <div onclick="clickFn()">点击一下</div>
+     >   <script>
+     >     function clickFn(){
+     >       alert('点了我一下');
+     >     }
+     >   </script>
+     >   
+     >   // 另一种是，通过js将事件处理程序添加到元素属性上：
+     >   // 示例二
+     >   <div>点击一下</div>
+     >   <script>
+     >     document.querySelector('div').onclick = clickFn;
+     >     function clickFn(){
+     >        alert('点了我一下');
+     >     }
+     >   </script>
+     >   
+     >   // DOM0级的事件监听，移除时只需将其属性设置为null即可。
+     >   // 需要注意的是：DOM0级的事件监听，只能为其指定一个事件处理函数，当指定了多个，后者会把前面的覆盖。
+     >   // 示例三
+     >   <button>点击一下</button>
+     >   <script>
+     >     document.querySelector('button').onclick = clickFn1; 
+     >     document.querySelector('button').onclick = clickFn2; 
+     >     function clickFn1(){
+     >       console.log('第一个')
+     >     };
+     >     function clickFn2(){
+     >       console.log('第二个')
+     >     }
+     >   </script>
+     >   ```
+     >
+     >   
+     >
+     > - IE事件模型 在该事件模型中，一次事件共有两个过程，事件处理阶段，和事件冒泡阶段。事件处理阶段会首先执行目标元素绑定的监听事件。然后是事件冒泡阶段，冒泡指的是事件从目标元素冒泡到 document，依次检查经过的节点是否绑定了事件监听函数，果有则执行。这种模型通过 attachEvent 来添加监听函数，可以添加多个监听函数，会按顺序依次执行。
+     >
+     >   ```js
+     >   // IE的事件机制没有捕获阶段，事件流是非标准的，只有目标阶段和冒泡阶段。
+     >   
+     >   // 事件注册方式
+     >   <button id="btn">点我</button>
+     >   <script type="text/javascript">
+     >   
+     >   var target = document.getElementById("btn");
+     >   
+     >   target.attachEvent('onclick',function(){
+     >           alert("我是button");
+     >   });
+     >   
+     >   </script>
+     >   // 与之对应的也有事件的移除函数 ：detachEvent() ；
+     >   // 同样也有阻止事件冒泡的方法：首先获得event对象，e = window.event（可见IE中的event对象是个全局属性)，然后设置event的cancelBubble属性为true即可e.cancelBubble = true;
+     >   // 阻止默认事件发生：先也是获得event对象，设置returnValue属性为false即可，e.returnValue = false;
+     >   ```
+     >
+     >   
+     >
+     > - DOM2 级事件模型 在该事件模型中，一次事件共有三个过程，第一个过程是事件捕获阶段。捕获指的是事件 document 一直向下传播到目标元素，依次检查经过的节点是否绑定了事件监听函数，如果有则执行。后面两个阶段和 IE 事件模型的两个阶段相同。这种事件模型，事件绑定的函数是 addEventListener，其中第三个参数可以指定事件是否在捕获阶段执行。
+     >
+     >   ```js
+     >   // DOM2级事件模型分为三个阶段：
+     >   // 1. 捕获阶段：事件从Document对象沿着文档树向下传播给节点。如果目标的任何一个祖先专门注册了事件监听函数，那么在事件传播的过程中就会运行这些函数。（0级DOM事件模型处理没有捕获阶段）
+     >   // 2. 目标阶段：下一个阶段发生在目标节点自身，直接注册在目标上的适合的事件监听函数将运行。（一般将此阶段看作冒泡阶段的一部分）
+     >   // 3. 冒泡阶段：这个阶段事件将从目标元素向上传播回Document对象（与捕获相反的阶段）。虽然所有事件都受捕获阶段的支配，但并不是所有类型的事件都冒泡。
+     >   
+     >   // DOM2级事件绑定是使用addEventListener方法（IE使用attachEvent方法）：
+     >   // 浏览器会给当前元素的某个事件行为开辟一个事件池（事件队列）【浏览器有一个统一的事件池，每个元素绑定的行为都放在这里，通过相关标志区分】，当我们通过addEventListener/attachEvent进行事件绑定的时候，会把绑定的方法放在事件池中；当元素的某一行为被触发，浏览器回到对应事件池中，把当前放在事件池的所有方法按序依次执行；
+     >   
+     >   // 示例四
+     >   <div>
+     >     <button>点击一下</button>
+     >   </div>
+     >   <script>
+     >     document.querySelector('button').addEventListener('click',clickBtn);
+     >     document.querySelector('div').addEventListener('click', bubbleDiv)
+     >     document.body.addEventListener('click', bubbleBody)
+     >     document.querySelector('div').addEventListener('click', captureDiv, true)
+     >     document.body.addEventListener('click', captureBody, true)
+     >     function clickBtn(){ console.log('click button'); }
+     >     function bubbleDiv(){ console.log('bubble div'); }
+     >     function bubbleBody(){ console.log('bubble body'); }
+     >     function captureDiv(){ console.log('capture div'); }
+     >     function captureBody(){ console.log('capture body'); }
+     >   </script>
+     >   // 使用addEventListener添加的事件监听，移除时需使用removeEventListener方法，且其参数需与addEventListener的参数完全一致！
+     >   // 与DOM0级不同的是，使用addEvenListener可以为当前元素的某一事件行为绑定多个不同方法，同样的，可以使用removeEventListener移除当前元素的某一事件行为的多个不同方法。
+     >   // 需要注意的是，事件处理函数若是匿名函数，则无法被移除！
+     >   ```
+     >
+     >   
+     >
+     > - ***注意，没有DOM1级事件模型，因为DOM1级标准中没有定义事件相关的内容***
 
 190. 描述下JS中Prototype的概念？
 
