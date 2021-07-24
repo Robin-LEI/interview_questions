@@ -1,4 +1,4 @@
-1. 跨站请求伪造
+1. 前面提到找不到文件就找文件夹，但是不可能将整个文件夹都加载进来，加载文件夹的时候也是有一个加载顺序的：跨站请求伪造
 
    指的是黑客诱导用户点击链接，打开黑客的网站，然后黑客利用用户**目前的登录状态**发起跨站请求。介绍防抖节流原理、区别以及应用，并用JavaScript进行实现
 
@@ -1179,6 +1179,12 @@
 
 45. V8引擎的垃圾回收机制
 
+    > JavaScript具有自动的垃圾回收机制，也就是说执行环境会管理代码运行过程中使用的内存。
+
+    > 这种垃圾回收机制的原理是：找出那些不在继续使用的变量，然后释放其占用的内存。为此，垃圾回收器会按照固定的时间间隔（或者代码执行中预订的收集时间），周期性的执行这一操作。
+
+    > 局部变量只在函数执行过程中存在，在这个过程中，会为局部变量在栈或者堆内存上分配空间，以便存储他们的值。
+
 46. 哪些操作会造成内存泄露？
 
     > 1. 闭包
@@ -1362,9 +1368,9 @@
     // toString
     // 每个对象的原型上面都有一个toString方法，这是最常用的，也是最准确的
     ```
-    
 
     
+
 56. 给DOM打断点
 
     > 审查元素，定位到想要打断点的元素，右键，break on，有选项subtree modifications、attributes modifications，根据自己的需要勾选，当dom元素属性或者增加删除子节点的时候，会自动定位到是哪一行js代码导致的更改。
@@ -1769,7 +1775,7 @@
 
     
 
-71. 实现一个reduce方法
+70. 实现一个reduce方法
 
     ```js
     // reduce方法的第二个参数哪怕是undefined，也会当做初始化值使用
@@ -1800,7 +1806,7 @@
 
     
 
-72. 手写一个Ajax
+71. 手写一个Ajax
 
     ```js
     const ajax = {
@@ -2501,7 +2507,7 @@
     > > - 创建变量环境组件
     >
     > **2**
-    
+
 92. 输出结果
 
     ```js
@@ -5153,7 +5159,703 @@
 
 177. 了解websocket吗？websocket如何进行握手的？
 
-178. 说一下进程和线程的区别？
+178. 说一下进程（process）和线程（thread）的区别？
+
+     > 计算机的核心任务是CPU，承担了所有的计算任务。
+     >
+     > CPU就像是一座工厂，时刻在运行。
+     >
+     > 单个CPU一次只能运行一个任务，demo：
+     >
+     > 假定工厂的电力有限，一次只能供给一个车间使用。也就是说，一个车间开工的时候，其它车间都必须停工。
+     >
+     > 进程就好比工厂的车间，它代表CPU所能处理的单个任务，任一时刻，CPU总是运行一个进程，其它进程处于非运行状态。
+     >
+     > 一个车间里，可以有很多工人，他们协同完成一个任务。
+     >
+     > 线程就好比车间里的工人，一个进程可以包括多个线程。
+     >
+     > 车间的空间是工人们共享的，比如许多房间是每个工人都可以进出的，这代表一个进程的内存空间是共享的，每个线程都可以使用这些共享内存。
+     >
+     > 可是，每间房间的大小不一样，有些房间最多只能容纳一人，比如厕所。里面有人的时候，其他人就不能进去，这代表一个线程使用某些共享内存时，其它线程必须等他结束，才能使用这一块内存。
+     >
+     > 一个防止他人进入的简单方法，就是门口加一把锁。先到的人锁上门，后到的人看到上锁，就在门口排队，等锁打开在进去，这就叫“互斥锁”，防止多个线程同时读写某一块内存区域。
+     >
+     > 还有些房间，可以同时容纳n个人，比如厨房。也就是说，如果人数大于n，多出来的人只能在门口等着，这就好比某些内存区域只能供给固定数目的线程使用。
+     >
+     > 这时的解决方法，就是在门口挂n把钥匙。进去的人就取一把钥匙，出来时再把钥匙挂回原处。后到的人发现钥匙架空了，就知道必须在门口排队等着了。这种做法叫做“信号量”，用来保证多个线程不会互相冲突。
+     >
+     > 操作系统的设计，可以归纳为以下几点：
+     >
+     > - 多进程，允许多个任务同时运行
+     > - 多线程，允许单个任务拆分成不同的部分运行
+     > - 提供协调机制，一方面防止进程之间和线程之间产生冲突，另外一方面允许进程和线程之间共享资源
+
+     > 进程：指在系统中正在运行的一个应用程序，程序一旦运行就是进程；进程----资源分配的最小单元。
+     >
+     > 线程：进行内部独立执行的一个单元执行流，线程----程序执行的最小单位。
+
+     > 内存
+     >
+     > 我们通常所理解的内存就是我们见到的（2G/4G/8G/16G）的物理内存，它为什么存在于进程中呢？
+     >
+     > 实际上，这里的内存指的是逻辑内存。指的是内存的寻址空间，每个进程的内存是相互独立的。
+     >
+     > 否则的话会出现一个问题：我们把指针的值改一改就指向其它进程的内存了，通过这样就可以看到其它进程的内存了，容易造成信息泄露。
+
+     > 进程之间通过TCP/IP的端口来实现交互的。
+     >
+     > 线程的通信就比较简单，有一大块共享的内存，只要大家的指针是同一个就可以看到各自的内存。
+
+     > 进程要分配一大部分的内存，而线程只需要分配一部分栈就可以了
+     >
+     > 一个程序至少有一个进程，一个进程至少有一个线程
+     >
+     > 进程是资源分配的最小单位，线程是程序执行的最小单位
+     >
+     > 一个线程可以创建和撤销另外一个线程，同一个进程中的多个线程之间可以并发执行
 
 179. 为什么WeakMap和WeakSet的键只能使用对象？在什么情况下使用？
 
+     ```js
+     // 使用对象是为了在赋值的时候让对象的地址和赋的值关联起来，如果采用基本数据类型，不合适，因为传递的是值，而不是引用。
+     
+     // const a = {};
+     // 在创建对象时，分配了一块内存，并把这块内存的地址传给 a
+     // m.set(a, 100);
+     // 执行 set 操作时，实际上是将 a 指向的内存地址和 100 关联起来
+     
+     const ba = "abc";
+     // 由于基本数据类型在传递时，传递的是值，而不是引用。
+     m.set(ba, 100);
+     // 所以执行 set 操作时，实际上是将新的 'abc' 和 100 关联起来，而不是原来 a 变量指向的那个。
+     // 那这样就会有问题，m 里存储的永远是没有被引用的键，随时都会被回收。
+     
+     WeakMap的key必须是对象，WeakSet没有key，只有value，并且value要求是对象。
+     WeakMap和WeakSet都是弱引用的。
+     
+     弱引用：引用对象的时候，对象的引用计数器不会增加，在回收对象的时候，不会去考虑WeakMap和WeakSet是否引用了这个对象。
+     ```
+
+     ```js
+     // 通过WeakMap缓存计算结果
+     ```
+
+     
+
+180. require模式引入的查找方式是什么?
+
+     > nodejs中的模块分为内置模块和文件模块
+     >
+     > 内置模块：就是nodejs原生提供的功能，比如fs、http等，这些模块在nodejs进程起来时就加载了。
+     >
+     > 文件模块：node_modules下面的模块都是文件模块。
+
+     > 加载顺序
+     >
+     > 加载顺序是指当我们require(X)时，应该按照什么顺序去哪里找X。
+     >
+     > > 1. 优先加载内置模块，即使有同名文件，也会优先使用内置模块。
+     > > 2. 不是内置模块，先去缓存找【加载过一次就回把这个文件进行缓存到Module._cache中】。
+     > > 3. 缓存没有就去找对应路径的文件。
+     > > 4. 不存在对应的文件，就将这个路径作为文件夹加载。
+     > > 5. 对应的文件和文件夹都找不到就去`node_modules`下面找。
+     > > 6. 还找不到就报错了。
+
+     > 加载文件夹
+     >
+     > 前面提到找不到文件就找文件夹，但是不可能将整个文件夹都加载进来，加载文件夹的时候也是有一个加载顺序的：
+     >
+     > > 1. 先看看这个文件夹下面有没有`package.json`，如果有就找里面的`main`字段，`main`字段有值就加载对应的文件。所以如果大家在看一些第三方库源码时找不到入口就看看他`package.json`里面的`main`字段吧，比如`jquery`的`main`字段就是这样：`"main": "dist/jquery.js"`。
+     > > 2. 如果没有`package.json`或者`package.json`里面没有`main`就找`index`文件。
+     > > 3. 如果这两步都找不到就报错了。
+
+     > 支持的文件类型
+     >
+     > require主要支持三种文件类型
+     >
+     > > 1. .js
+     > > 2. .json
+     > > 3. .node，.node文件是C++编译后的二进制文件，纯前端一般很少接触这个类型
+
+     ```js
+     // Nodejs模块加载的功能全部在Module类里面
+     // require是Module类的一个实例方法
+     ```
+
+     
+
+181. Reflect 对象创建目的是什么?
+
+     > - 将`Object`对象的一些明显属于语言内部的方法（比如`Object.defineProperty`），放到`Reflect`对象上。现阶段，某些方法同时在`Object`和`Reflect`对象上部署，未来的新方法将只部署在`Reflect`对象上。也就是说，从`Reflect`对象上可以拿到语言内部的方法。
+     >
+     > 
+
+182. 面向对象的三要素是什么，分别是什么意思?
+
+     > 封装
+     >
+     > 把客观事物封装成抽象的类，并且类可以把自己的数据和方法只让可信的类或者对象操作，对不可信的进行信息隐藏
+
+     > 继承
+     >
+     > 使用现有类的所有功能并在无需重新编写原来的类的情况下对这些功能进行扩展
+
+     > 多态
+     >
+     > 建立在继承的基础上的，先有继承才能有多态。
+     >
+     > 多态是指不同的子类在继承父类后分别都重写覆盖了父类的方法，即父类同一个方法在继承的子类中表现出不同的形式。
+
+183. 说一下你所了解的javascript的作用域链?
+
+     > JS中的执行环境包含全局执行环境和函数执行环境。
+     >
+     > 全局执行环境处在最外层，每一个函数都有一个自己的执行环境，叫做函数执行环境。
+     >
+     > 在web浏览器中，全局执行环境被认为是window对象，某个执行环境中的所有代码执行完毕后，该环境被销毁，保存在其中的所有的变量和函数定义也随之销毁，全局执行环境直到应用程序退出例如关闭网页或浏览器才会被销毁。
+
+     > 当代码在一个环境中执行时，会创建变量对象的一个作用域链，作用域链的前端是当前执行的代码所在环境的变量对象。
+     >
+     > 如果这个环境是函数，则将其活动对象（AO）作为变量对象。
+     >
+     > 活动对象在最开始的时候，只包含一个对象叫做arguments。
+     >
+     > 作用域链的末端是全局执行环境的变量对象。
+
+     > 通过作用域链，我们可以访问到外层环境的变量和函数。
+     >
+     > 当我们查找一个变量的时候，如果当前执行环境中没有找到，我们可以沿着作用域链向后查找。
+
+184. 如何判断一个对象是否属于某个类(构造函数)?
+
+     - 使用instanceof运算符判断构造函数的prototype属性是否出现在对象的原型链的任何位置
+     - 通过constructor属性，对象的constructor属性指向对象的构造函数
+     - 如果需要判断的是某个内置的引用类型的话，可以使用Object.prototype.toString.call()方法来打印对象的[[class]]属性来进行判断
+
+185. 检测浏览器版本有哪些方式?
+
+     ```js
+     // 1. 利用 navigator.userAgent
+     // 2. 利用功能检测，根据每个浏览器独有的特性进行判断，如IE下独有的ActiveXObject
+     ```
+
+     
+
+186. 内部属性[[Class]]是什么?
+
+     ```js
+     // 所有typeof返回值为"object"的对象（比如数组）都包含一个内部属性[[Class]]，我们可以把它看做一个内部的分类，而不是传统意义上的类，这个属性无法直接访问，一般可以通过Object.prototype.toString去访问
+     
+     // 多数情况下，对象内部的[[Class]]属性和创建这个对象的构造函数是一致的，不过也不是总这样
+     
+     // 基本类型值的[[Class]]属性
+     // null和undefined
+     // null和undefined的构造函数并不存在，但是内部的[[Class]]属性是Null和Undefined
+     console.log(Object.prototype.toString.call(null)); //[object Null]
+     console.log(Object.prototype.toString.call(/\d/)); // [object RegExp]
+     // 其它基本类型值得到的是其包装对象
+     
+     // 包装对象
+     // 由于JS的基本数据类型没有.length和.toString这样的属性和方法，需要通过包装对象才能访问，此时JavaScript引擎会自动为基本类型包装一个对象
+     
+     // 使用valueof可以拆封
+     var s = new String( "abc" );
+     console.log(s.valueOf());
+     ```
+
+     
+
+187. for...in和Object.keys的区别
+
+     ```js
+     // for...in 用来枚举对象的属性，但是它会枚举对象原型链上的所有可枚举属性，但是Object.keys不会
+     // for...in在某些情况下，可能按照随机顺序遍历数组的元素
+     function Parent() {
+         this.parent = 'parent'
+     }
+     
+     function Person() {
+         this.name = 'name'
+         this.age = 20
+     }
+     
+     Person.prototype = new Parent();
+     Person.prototype.constructor = Person;
+     
+     let obj = new Person()
+     
+     console.log(Object.keys(obj))
+     
+     for (let key in obj) {
+         console.log(key, '---', obj[key])
+     }
+     
+     // for...of不支持遍历普通对象
+     let obj = {
+         name: 'obj',
+         age: 20,
+         sm: Symbol()
+     }
+     for (let key of obj) { // 报错 obj is not iterable
+         console.log(key, obj[key])
+     }
+     // 采用for...of遍历数组的时候，拿到的是每一项的值，而非索引
+     ```
+
+     
+
+188. 请说出目前主流的js模块化实现的技术有哪些?他们的区别在哪儿?
+
+     > 目前流行的JS模块化规范有CommonJS、AMD、CMD以及ES6的模块系统
+
+     > **CommonJS**
+     >
+     > *CommonJS的出发点：*js没有完善的模块系统，标准库较少，缺少包管理工具，伴随着Nodejs的兴起，能让js在任何地方运行，特别是服务端，也达到了具备开发大型项目的能力，所以commonjs出现了。
+     >
+     > Nodejs是commonjs规范的主要实践者，有四个重要的环境变量为模块化的实现提供支持：module、exports、require、global。
+     >
+     > 实际使用的时候，使用module.exports定义当前模块对外输出的接口，用require加载模块。
+     >
+     > commonjs用同步的方式加载模块。
+     >
+     > 但是在浏览器端，由于网络原因的限制，更合理的是使用异步加载。
+     >
+     > > *CommonJS的规范*
+     > >
+     > > - 一个文件就是模块，拥有单独的作用域
+     > > - 普通方式定义的变量、函数、模块都属于该模块的内容
+     > > - 通过require加载模块
+     > > - 通过exports和module.exports来暴露模块的内容
+     >
+     > > *注意事项*
+     > >
+     > > - 当exports和module.exports同时存在的时候，module.exports会覆盖exports
+     > > - 当模块内全是exports时，就等同于module.exports
+     > > - exports就是module.exports的子集
+     > > - 所有代码都运行在模块作用域内，不会污染全局
+     > > - 模块可以多次加载，但是在第一次加载的时候，会对模块进行缓存，以后在加载的时候直接读取缓存结果
+     > > - 模块加载顺序：按照代码出现的顺序同步加载
+
+     > **ES6模块化**
+     >
+     > ES6在语言标准的层面上，实现了模块化功能，而且实现的相当简单，主要为浏览器和服务器通用的解决方案。
+     >
+     > 其模块功能主要由两个命令构成：export和import，export用于规定对外暴露接口，import用于引入其它模块的功能。
+     >
+     > 其实ES6还提供了export default命令，为模块指定默认输出，对应的import语句不需要使用大括号，类似AMD的引用写法
+     >
+     > ES6的模块不是对象，import命令会被JS引擎静态分析，在编译的时候就会引入模块代码，而不是在代码运行的时候加载，所以无法实现条件加载。
+
+     > **AMD**
+     >
+     > 异步加载模块。它是一个在浏览器端模块化开发的规范。
+     >
+     > 不是原生JS的规范，使用AMD规范进行页面的开发需要用到对应的函数库，RequireJS。
+     >
+     > AMD规范采用异步方式进行加载，模块的加载不影响后面的语句运行，所有依赖这个模块的语句，都定义在一个回调函数中，等到加载完成之后，这个回调函数才会运行。
+     >
+     > 使用require.js实现AMD规范的模块化：
+     >
+     > ```js
+     > require.config() // 指定引用路径
+     > define() // 定义模块
+     > require() // 加载模块
+     > ```
+     >
+     > *RequireJS主要解决的问题*
+     >
+     > > - 文件可能有依赖关系，被依赖的文件需要早于依赖它的文件加载到浏览器
+     > > - js加载的时候浏览器会停止页面的渲染，加载的文件越多，页面响应时间越长
+     > > - 异步前置加载
+
+     > **CMD**
+     >
+     > CMD是另外一种js模块化方案，与AMD很类似，不同点在于：AMD推崇依赖前置，提前执行，CMD推崇依赖就近，延迟执行，此规范其实是在sea.js【遵循CMD规范】推广过程中产生的。
+     >
+     > ```js
+     > //定义没有依赖的模块
+     > define(function(require,exports,module){
+     >     export.xxx=val
+     >     module.exports=val
+     > })
+     > //定义有依赖的模块
+     > define(function(require,exports,module){
+     >     //同步引入模块
+     >     var module1=reuqire('./module1.js')
+     >     //异步引入模块
+     >     require.async('./module2.js',function(val){
+     >         //代码逻辑
+     >     })
+     >     exports.xxx=value 
+     > })
+     > //引入模块
+     > define(function(require){
+     >     const val1=require('./module1.js')
+     >     val1.show()
+     > })
+     > ```
+
+     > **UMD**
+     >
+     > 一种整合CommonJS和AMD规范的方法，希望解决跨平台模块方案。
+     >
+     > ```js
+     > (function (window,factory){
+     >     if(typeof exports === 'Object'{
+     >         module.exports=factory();
+     >     }else if(typeof define === 'function' && define.amd){
+     >         define(factory);
+     >     }else{
+     >         window.eventUtil=factory()
+     >     })
+     > })(this,function(){
+     >     //执行代码
+     > })
+     > // 不支持的话 typeof define就等于undefined
+     > ```
+
+     > **总结**
+     >
+     > - CommonJS是同步加载的。主要是在nodejs也就是服务端应用的模块化机制，通过`module.export`导出声明，通过`require()`加载。每一个文件都是一个模块。它有自己的作用域，文件内的变量，属性函数等不能被外界访问。node会将模块缓存，第二次加载会直接在缓存中获取
+     > - AMD是异步加载的。主要应用在浏览器环境下。requireJS是遵循AMD规范化的模块化工具。它是通过`define()`定义声明，通过`require(['a','b'],function(a,b){})`加载
+     > - ES6的模块的运行机制与Common不一样，js引擎对脚本静态分析的时候，遇到模块加载指令后会生成一个只读引用，等到脚本真正执行的时候才会通过去模块中获取值，在引用到执行的过程中模块中的值发生了变化，导入的这里也会跟着变化，ES6模块是动态引用，并不会缓存值，模块里总是绑定其所在的模块。
+
+     
+
+189. 三种事件模型是什么？
+
+     > 现代浏览器一共有三种事件模型
+     >
+     > - DOM0级事件模型，第一种事件模型是最早的DOM0级模型，这种模型不会传播，所以没有事件流的概念，但是现在有的浏览器支持以冒泡的方式实现，它可以在网页中直接定义监听函数，也可以通过js属性来指定监听函数，这种方式是所有浏览器都兼容的。
+     >
+     >   ```js
+     >   // 浏览器会把一些常用事件挂载到元素对象的私有属性上，让我们可以实现DOM0事件绑定。
+     >   // DOM0级事件绑定通常有两种方式，一种是直接将事件处理程序作为html元素的属性值：
+     >   // 示例一
+     >   <div onclick="alert('点了我一下')">点击一下</div>
+     >   // 或
+     >   <div onclick="clickFn()">点击一下</div>
+     >   <script>
+     >     function clickFn(){
+     >       alert('点了我一下');
+     >     }
+     >   </script>
+     >   
+     >   // 另一种是，通过js将事件处理程序添加到元素属性上：
+     >   // 示例二
+     >   <div>点击一下</div>
+     >   <script>
+     >     document.querySelector('div').onclick = clickFn;
+     >     function clickFn(){
+     >        alert('点了我一下');
+     >     }
+     >   </script>
+     >   
+     >   // DOM0级的事件监听，移除时只需将其属性设置为null即可。
+     >   // 需要注意的是：DOM0级的事件监听，只能为其指定一个事件处理函数，当指定了多个，后者会把前面的覆盖。
+     >   // 示例三
+     >   <button>点击一下</button>
+     >   <script>
+     >     document.querySelector('button').onclick = clickFn1; 
+     >     document.querySelector('button').onclick = clickFn2; 
+     >     function clickFn1(){
+     >       console.log('第一个')
+     >     };
+     >     function clickFn2(){
+     >       console.log('第二个')
+     >     }
+     >   </script>
+     >   ```
+     >
+     >   
+     >
+     > - IE事件模型 在该事件模型中，一次事件共有两个过程，事件处理阶段，和事件冒泡阶段。事件处理阶段会首先执行目标元素绑定的监听事件。然后是事件冒泡阶段，冒泡指的是事件从目标元素冒泡到 document，依次检查经过的节点是否绑定了事件监听函数，果有则执行。这种模型通过 attachEvent 来添加监听函数，可以添加多个监听函数，会按顺序依次执行。
+     >
+     >   ```js
+     >   // IE的事件机制没有捕获阶段，事件流是非标准的，只有目标阶段和冒泡阶段。
+     >   
+     >   // 事件注册方式
+     >   <button id="btn">点我</button>
+     >   <script type="text/javascript">
+     >   
+     >   var target = document.getElementById("btn");
+     >   
+     >   target.attachEvent('onclick',function(){
+     >           alert("我是button");
+     >   });
+     >   
+     >   </script>
+     >   // 与之对应的也有事件的移除函数 ：detachEvent() ；
+     >   // 同样也有阻止事件冒泡的方法：首先获得event对象，e = window.event（可见IE中的event对象是个全局属性)，然后设置event的cancelBubble属性为true即可e.cancelBubble = true;
+     >   // 阻止默认事件发生：先也是获得event对象，设置returnValue属性为false即可，e.returnValue = false;
+     >   ```
+     >
+     >   
+     >
+     > - DOM2 级事件模型 在该事件模型中，一次事件共有三个过程，第一个过程是事件捕获阶段。捕获指的是事件 document 一直向下传播到目标元素，依次检查经过的节点是否绑定了事件监听函数，如果有则执行。后面两个阶段和 IE 事件模型的两个阶段相同。这种事件模型，事件绑定的函数是 addEventListener，其中第三个参数可以指定事件是否在捕获阶段执行。
+     >
+     >   ```js
+     >   // DOM2级事件模型分为三个阶段：
+     >   // 1. 捕获阶段：事件从Document对象沿着文档树向下传播给节点。如果目标的任何一个祖先专门注册了事件监听函数，那么在事件传播的过程中就会运行这些函数。（0级DOM事件模型处理没有捕获阶段）
+     >   // 2. 目标阶段：下一个阶段发生在目标节点自身，直接注册在目标上的适合的事件监听函数将运行。（一般将此阶段看作冒泡阶段的一部分）
+     >   // 3. 冒泡阶段：这个阶段事件将从目标元素向上传播回Document对象（与捕获相反的阶段）。虽然所有事件都受捕获阶段的支配，但并不是所有类型的事件都冒泡。
+     >   
+     >   // DOM2级事件绑定是使用addEventListener方法（IE使用attachEvent方法）：
+     >   // 浏览器会给当前元素的某个事件行为开辟一个事件池（事件队列）【浏览器有一个统一的事件池，每个元素绑定的行为都放在这里，通过相关标志区分】，当我们通过addEventListener/attachEvent进行事件绑定的时候，会把绑定的方法放在事件池中；当元素的某一行为被触发，浏览器回到对应事件池中，把当前放在事件池的所有方法按序依次执行；
+     >   
+     >   // 示例四
+     >   <div>
+     >     <button>点击一下</button>
+     >   </div>
+     >   <script>
+     >     document.querySelector('button').addEventListener('click',clickBtn);
+     >     document.querySelector('div').addEventListener('click', bubbleDiv)
+     >     document.body.addEventListener('click', bubbleBody)
+     >     document.querySelector('div').addEventListener('click', captureDiv, true)
+     >     document.body.addEventListener('click', captureBody, true)
+     >     function clickBtn(){ console.log('click button'); }
+     >     function bubbleDiv(){ console.log('bubble div'); }
+     >     function bubbleBody(){ console.log('bubble body'); }
+     >     function captureDiv(){ console.log('capture div'); }
+     >     function captureBody(){ console.log('capture body'); }
+     >   </script>
+     >   // 使用addEventListener添加的事件监听，移除时需使用removeEventListener方法，且其参数需与addEventListener的参数完全一致！
+     >   // 与DOM0级不同的是，使用addEvenListener可以为当前元素的某一事件行为绑定多个不同方法，同样的，可以使用removeEventListener移除当前元素的某一事件行为的多个不同方法。
+     >   // 需要注意的是，事件处理函数若是匿名函数，则无法被移除！
+     >   ```
+     >
+     >   
+     >
+     > - ***注意，没有DOM1级事件模型，因为DOM1级标准中没有定义事件相关的内容***
+
+190. 描述下JS中Prototype的概念？
+
+     > 每一个函数就是一个对象，函数对象有一个子对象叫prototype对象，prototype表示函数的原型。
+     >
+     > 构造函数创造的实例对象内部有一个内部属性`__proto__`,作为一个指针，指向构造函数原型所指的对象，所有的实例共享原型对象上的属性和方法。
+
+191. 说下JS继承的原理？
+
+     > 在`oop`中，通过类的继承来实现代码的复用，通过实例化一个类可以创建许多对象，在js中继承是通过原型来实现的。
+
+     ```js
+     Object.prototype.__proto__ === null
+     Object.__proto__ === Function.prototype
+     Function.prototype.__proto__ === Object.prototype
+     Function.__proto__ === Object.prototype
+     ```
+
+     
+
+192. 请用JS代码实现事件代理
+
+     > 什么是事件代理
+     >
+     > 事件委托或事件代理：根据红宝书来说：就是利用事件冒泡，只指定一个事件处理程序，就可以管理某一类型的所有事件。举例：dom需要事件处理程序，我们都会直接给它设置事件处理程序。但是在ul中1000个li全部需要添加事件处理程序，其具有相同的点击事件，那么可以根据for来进行遍历，也可以在ul上来进行添加。在性能的角度上来看，在ul建立事件会减少dom的交互次数，提高性能。
+
+     > 事件代理的原理
+     >
+     > 事件委托就是利用事件的冒泡原理来实现的，就是事件从最深的节点开始，然后逐步向上传播事件。
+     >
+     > 举例：页面上有这么一个节点树，div>ul>li>a;比如给最里面的a加一个click点击事件，那么这个事件就会一层一层的往外执行，执行顺序a>li>ul>div,有这样一个机制，那么我们给最外面的div加点击事件，那么里面的ul、li、a做点击事件的时候，都会冒泡到最外层的div上，所以都会触发，这就是事件委托，委托它们父级代为执行事件
+
+     ```js
+     // 实现ul中li的事件代理
+     window.onload=function(){
+         var oBtn=document.getElementById('btn');
+         var oUl=document.getElementById('ul1');
+         var aLi=oUl.getElementsByTagName('li');
+         var num=4;
+         //事件委托，添加的子元素也有事件
+         oUl.onmouseover=function(e){
+             var e=e||window.event;
+             var target=e.target||e.srcElement;
+             if(target.nodeName.toLowerCase()==='li'){
+                 target.style.background="red";
+             }
+         };
+         oUl.onmouseout=function(e){
+             var e=e||window.event;
+             var target=e.target||e.srcElement;
+             if(target.nodeName.toLowerCase()==='li'){
+                 target.style.background="blue"
+             }
+         };
+         //添加新节点
+         oBtn.onclick=function(){
+             num++;
+             var oLi=document.createElement('li');
+             oLi.innerHTML=111*num;
+             oUl.appendChild(oLi)
+         };
+     }
+     ```
+
+     ```js
+     // 简单封装一个事件代理的通用代码
+     // ! 代表是匿名函数自执行
+     !function (root, doc) {
+         class Delegator {
+             constructor(selector) {
+                 this.selector = selector;
+                 // 委托给谁进行代理
+                 this.root = document.querySelector(this.selector);//父级dom
+                 this.delegatorEvents = {}//代理元素及事件
+     
+                 //代理逻辑
+                 this.delegator = (e) => {
+                     let currentNode = e.target//目标节点
+                     const targetEventList = this.delegatorEvents[e.type];
+                     //如果当前目标节点等于事件目前所在的节点，不再往上冒泡
+                     while (currentNode !== e.currentTarget) {
+                         targetEventList.forEach(target => {
+                             if (currentNode.matches(target.matcher)) {
+                                 //开始委托并把当前目标节点的event对象传过去
+                                 target.callback.call(currentNode, e)
+                             }
+                         })
+                         currentNode = currentNode.parentNode;
+                     }
+                 }
+     
+             }
+     
+             //绑定事件  event---绑定事件类型  selector---需要被代理的选择器  fn---触发函数
+             on = (event, selector, fn) => {
+                 //相同事件只能添加一次，如果存在，则在对应的代理事件里添加
+                 if (!this.delegatorEvents[event]) {
+                     this.delegatorEvents[event] = [{
+                         matcher: selector,
+                         callback: fn
+                     }]
+                     this.root.addEventListener(event, this.delegator)
+                 } else {
+                     this.delegatorEvents[event].push({
+                         matcher: seletor,
+                         callback: fn
+                     })
+                 }
+                 return this;
+             }
+     
+             // 移除事件
+             destory = () => {
+                 Object.keys(this.delegatorEvents).forEach(eventName => {
+                     this.root.removeEventListener(eventName, this.delegator)
+                 })
+             }
+     
+     }
+     
+     
+     root.Delegator = Delegator;
+     }(window, document);
+     
+     console.log(window)
+     let delegator = new Delegator('#ul1');
+     
+     delegator.on('mouseover', 'li', (e) => {
+         var e = e || window.event;
+         var target = e.target || e.srcElement;
+         if (target.nodeName.toLowerCase() === 'li') {
+             target.style.background = "red";
+         }
+     });
+     
+     delegator.on('mouseout', 'li', e => {
+         var e = e || window.event;
+         var target = e.target || e.srcElement;
+         if (target.nodeName.toLowerCase() === 'li') {
+             target.style.background = "blue"
+         }
+     });
+     
+     btn.onclick = function () {
+         var oLi = document.createElement('li');
+         oLi.innerHTML = 111;
+         delegator.root.appendChild(oLi)
+     };
+     ```
+
+     
+
+193. 说一下栈和堆的区别，垃圾回收时栈和堆的区别？（**涉及到垃圾回收机制**）
+
+     > `栈：`其操作系统自动分配释放，存放函数的参数值和局部变量的值等。其操作方式类似于数据结构中的栈。简单的理解就是当定义一个变量的时候，计算机会在内存中开辟一块存储空间来存放这个变量的值，这块空间叫做栈，然而栈中一般存放的是基本数据类型，栈的特点就是先进后出(或者后进先出)
+     >
+     > `堆：`一般由程序员分配释放，若程序员不释放，程序结束时可能由OS回收，分配方式倒是类似于链表。其实在堆中一般存放变量的是一些对象类型
+     >
+     > - \>1.存储大小
+     >
+     > 栈内存的存储大小是固定的，申请时由系统自动分配内存空间，运行的效率比较快，但是因为存储的大小固定，所以容易存储的大小超过存储的大小，导致溢栈。
+     >
+     > 堆内存的存储的值是大小不定，是由程序员自己申请并指明大小。因为堆内存是new分配的内存，所以运行的效率会比较低
+     >
+     > - \>2.存储对象
+     >
+     > 栈内存存储的是基础数据类型，并且是按值访问的，因为栈是一块连续的内存区域，以`后进先出`的原则存储调用的，所以是连续存储的
+     >
+     > 堆内存是向高地址扩展的数据结构，是不连续的内存区域，系统也是用链表来存储空闲的内存地址，所以是不连续的。因为是记录的内存地址，所以获取是通过引用，存储的是对象居多
+     >
+     > - \>3.回收
+     >
+     > 栈的回收是系统控制实现的
+     >
+     > 堆内存的回收是人为控制的，当程序结束后，系统会自动回收
+
+     > 栈内存的数据只要结束，则直接回收
+     >
+     > 堆内存中的对象回收标准是否可达，在V8中对象先分配到新生代的From中，如果不可达直接释放，如果可达，就复制到TO中，然后将TO和From互换。当多次复制后依然没有回收，则放入老生代中，进行标记回收。之后将内存碎片进行整合放到一端。
+
+194. 介绍js全部数据类型，基本数据类型和引用数据类型的区别
+
+     > 内置类型
+     >
+     > null、undefined、boolean、number、string、object、symbol、bigint
+
+     > 基本数据类型
+     >
+     > undefined、null、number、boolean、string、symbol
+     >
+     > 基本数据类型是按值访问的，就是说我们可以操作保存在变量中的实际的值
+     >
+     > 基本数据类型是存放在栈区的
+     >
+     > 基本数据类型的比较是值的比较
+
+     > 除了基本数据类型之外，剩下的就是引用类型了，也可以说是对象
+     >
+     > 比如，object、array、function、regext、date
+     >
+     > 引用类型是同时存在栈区和堆区的
+     >
+     > 引用类型可以添加属性和方法
+
+     > 基本数据类型和引用数据类型的区别
+     >
+     > - 声明变量时不同的内存分配
+     >
+     >   > `原始值：`存储在栈(stack)中的简单数据段，也就是说，它们的值直接存储在变量访问的位置。是因为这些原始类型占据的空间是固定的，所以可以将它们存储在较小的内存区域---栈中，这样存储便于迅速查询变量的值.
+     >   >
+     >   > `引用值：`存储在堆(heap)中的对象。也就是说，存储在变量处的值是一个指针(point)，指向存储对象的内存地址。是因为引用值的大小会改变，所以不能把它放在栈中，否则会降低变量查询的速度。相反，放在变量的栈空间中的值是该对象存储在堆中的地址。地址的大小是固定的，所以把它存储在栈中对变量性能无任何负面影响。
+     >
+     > - 不同的内存分配机制也带来了不同的访问机制
+     >
+     >   > 在js中是不允许直接访问保存在堆内存中的对象的，所以在访问一个对象时，首先得到的是这个对象在堆内存中的地址，然后再按照这个地址去获得这个对象中的值，这就是传说中的按引用访问。而原始类型的值是可以直接访问到的。
+     >
+     > - 复制变量时的不同
+     >
+     >   > `原始值：`在将一个保存着原始值的变量复制给另一个变量时，会将原始值的副本赋值给新变量，此后这两个变量是完全独立的，它们只是拥有相同的value而已.
+     >   >
+     >   > `引用值：`在将一个保存着对象内存地址的变量复制给另一个变量时，会把这个内存地址赋值给新变量，也就是说这两个变量都指向了堆内存中同一个对象，他们中任何一个做出的改变都会反映在另一个身上。(需要理解的一点是：复制对象时并不会在堆内存中新生成一个一模一样的对象，只是多了一个保存指向这个对象指针的变量罢了)
+     >
+     > - 参数传递的不同(把实参复制给形参的过程)
+     >
+     >   > 首先我们应该明确的一点是：ESCMAScript中所有函数的参数都是按值来传递的。 但是为什么涉及到原始类型与引用类型的值时仍然有区别呢？这就是因为内存分配时的差别。
+     >   >
+     >   > `原始值：`只是把变量里的值传递给参数，之后参数和这个变量互不影响
+     >   >
+     >   > `引用值：`对象变量里面的值是这个对象在堆内存中的内存地址，这一点很重要！因此它传递的值也就是这个内存地址，这也就是为什么函数内部对这个参数的修改会体现在外部的原因，因为它们都指向同一个对象。
+
+195. 
