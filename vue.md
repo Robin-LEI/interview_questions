@@ -563,3 +563,139 @@ vue编码但是不渲染的标签，vue-fragment，`npm install -g vue-fragment`
 
 4. 
 
+
+
+1. vue是什么？它的特点？
+
+   > - vue的核心库只关注视图层，vue框架是数据驱动视图，数据喝视图的变化是同步的，采用的架构是MVVM
+   >
+   > - vue可以自底向上逐层应用
+   >
+   >   > 从基层开始做起，把基础的东西写好，在逐渐的添加功能喝效果
+   >
+   > - vue是一个渐进式的框架
+   >
+   >   > 渐进式的意思是从少到多，从弱到强，vue并不强制开发者一下就使用它的全部
+   >
+   > - 声明式渲染
+   >
+   >   > vue.js的核心是一个允许采用简洁的模板语法来声明式的将数据渲染进dom的系统
+   >   >
+   >   > ```vue
+   >   > <div id="app">
+   >   >   {{ message }}
+   >   > </div>
+   >   > ```
+   >   >
+   >   > 
+   >
+   > - 采用组件化构建应用，在vue中，一个组件本质上就是一个vue实例
+   >
+   >   ```vue
+   >   // 注册一个组件
+   >   Vue.component('todo-item', {
+   >     props: ['todo'], // 可以接收父组件传递过来的数据
+   >     template: '<li>这是个待办项</li>'
+   >   })
+   >   ```
+   >
+   >   
+   >
+   > - 
+
+2. vue实例
+
+   > - 每一个应用都是通过用Vue函数创建一个新的Vue实例开始的
+   > - 创建vue实例的时候，可以传入一个选项对象
+   > - 所有的vue组件都是vue实例，并且接收相同的选项对象（一些根实例特有的选项除外）
+   > - 当一个vue实例被创建的时候，它将data对象中的所有属性加入到vue的响应式系统中，当这些属性的值发生改变的时候，视图将会产生响应，，即匹配更新为新的值。注意，不在data中的数据不是响应式的，比如通过vm新增的。
+   > - 对于采用`Object.freeze`冻结的属性即使存在于data中，也不会被vue的响应式系统追踪变化。
+
+3. 生命周期钩子
+
+   > - 每一个vue实例在被创建的时候都需要经过一系列的初始化过程，比如需要设置数据监听、编译模板、将实例挂载到dom并且在数据变化的时候更新dom等，同时在这个过程中也会运行一些叫做生命周期钩子的函数，这给了用户在不同阶段添加自己代码的机会。
+   > - 生命周期钩子中的this指向的是调用它的vue实例，需要注意的是，钩子不要使用箭头函数去定义，因为箭头函数本身没有this，this作为一个变量一直向上级的词法作用域去查找。
+   > - beforeCreate、created、beforeMount、mounted、beforeUpdate、updated、beforeDestroy、destroyed
+
+4. vue从2.6.0开始支持动态参数
+
+   ```js
+   <a v-bind:[attributeName]="url"> ... </a>
+   ```
+
+   
+
+5. 修饰符
+
+   ```js
+   // .lazy
+   <input v-modal.lazy="input_lazy" />
+   // 这样当焦点没有从输入框失去的时候，不会更新input_lazy的值，只有当失去焦点的时候，才会更新数据
+       
+   // .number
+   <input v-modal.number="input_number" /> 
+   // 自动将数据的内容转为数值
+   
+   // .trim
+   <input v-modal.trim="input_trim" /> 
+   // 自动将数据框的前后空格给去除
+       
+   // 以上三个属于v-model的修饰符
+       
+   // 以下几个属于事件修饰符
+   
+   // .stop
+   var vm = new Vue({
+      el: "#app",
+      methods: {
+        div_click: function () {
+          console.log("div click...");
+        },
+        stop_click: function () {
+          console.log("stop_click...");
+        }
+      }
+    });
+    <div class="row">
+      <h2>v-on.stop</h2>
+      <div @click="div_click">
+        <button type="button" @click.stop="stop_click">StopPropagation</button>
+      </div>
+      <hr />
+    </div>
+   // 该修饰符阻止事件向上冒泡，内部相当于调用了stopPropagation()，这样当触发stop_click事件的时候，就不会触发div_click事件
+   
+   // .prevent，相当于调用preventDefault()
+    <div class="row">
+      <h2>v-on.prevent</h2>
+      <form @submit.prevent="form_submit">
+        <button type="submit">Submit</button>
+      </form>
+      <hr />
+    </div>
+   // 阻止事件默认行为
+   
+   // .self
+    <div class="row">
+      <h2>v-on.self</h2>
+      <div @click.self="div_click" style="display:inline-block; width: px; background-color:red;">
+        <button type="button" @click="stop_click">Button</button>
+      </div>
+      <hr />
+    </div>
+   // 只有当事件在自己元素本身上点击才会触发回调
+   
+   // .one
+   // 表示绑定的事件只会触发一次，也就是说多次点击，只会在第一次点击的时候触发
+   
+   // 键盘修饰符可以自定义
+   Vue.config.keyCodes.ent = 13; // 值13是键盘上enter键的keyCode
+   <input type="text" @keyup.ent="enter_click"/>
+   // 上面这种写法等价于下面
+   <input type="text" @keyup.enter="enter_click"/>
+   ```
+
+   
+
+6. 
+
