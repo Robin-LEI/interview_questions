@@ -697,5 +697,510 @@ vue编码但是不渲染的标签，vue-fragment，`npm install -g vue-fragment`
 
    
 
-6. 
+6. 计算属性
+
+   > 计算属性具备缓存
+   >
+   > 基于它们的响应式依赖进行缓存的，只有相关依赖发生改变的时候，才会重新计算值。
+   >
+   > 计算属性可以依赖其它计算属性，计算属性不仅可以依赖当前vue实例数据，也可以依赖其它实例的数据。
+
+   > 为什么计算属性需要缓存？
+   >
+   > 假设我们有一个性能开销比较大的计算属性A，它需要遍历一个巨大的数组并做大量的计算，然后我们可能有其它的计算属性依赖于A，如果没有缓存，我们将不可避免的多次执行A的getter，造成性能的浪费，如果不希望有缓存，可以使用方法替代。
+
+   > 计算属性默认只有getter，在需要的时候可以提供一个setter
+   >
+   > ```js
+   > computed: {
+   >   fullName: {
+   >     // getter
+   >     get: function () {
+   >       return this.firstName + ' ' + this.lastName
+   >     },
+   >     // setter
+   >     set: function (newValue) {
+   >       var names = newValue.split(' ')
+   >       this.firstName = names[0]
+   >       this.lastName = names[names.length - 1]
+   >     }
+   >   }
+   > }
+   > // 现在再运行 vm.fullName = 'John Doe' 时，setter 会被调用，vm.firstName 和 vm.lastName 也会相应地被更新。
+   > ```
+   >
+   > 
+
+7. 绑定class
+
+   ```vue
+   // active 这个class存在与否，取决于isActive是否为true
+   <div v-bind:class="{ active: isActive }"></div>
+   
+   // 绑定的数据对象不必内联定义在模板里，即采用下面这种写法
+   <div v-bind:class="classObject"></div>
+   data: {
+     classObject: {
+       active: true,
+       'text-danger': false
+     }
+   }
+   
+   // 也可以绑定一个返回对象的计算属性
+   <div v-bind:class="classObject"></div>
+   data: {
+     isActive: true,
+     error: null
+   },
+   computed: {
+     classObject: function () {
+       return {
+         active: this.isActive && !this.error,
+         'text-danger': this.error && this.error.type === 'fatal'
+       }
+     }
+   }
+   
+   // 采用数组的语法
+   <div v-bind:class="[activeClass, errorClass]"></div>
+   data: {
+     activeClass: 'active',
+     errorClass: 'text-danger'
+   }
+   
+   // 数组中增加条件判断，下面这种写法将始终添加errorClass，但是只有在isActive为真的时候，才会有activeClass类名
+   <div v-bind:class="[isActive ? activeClass : '', errorClass]"></div>
+   
+   // class也可以用在组件上，当在一个自定义组件上使用calss属性时，这些class将被添加到该组件的根元素上面，这个元素上已经存在的class不会被覆盖
+   Vue.component('my-component', {
+     template: '<p class="foo bar">Hi</p>'
+   })
+   // 然后在使用它的时候添加一些 class：
+   <my-component class="baz boo"></my-component>
+   // HTML 将被渲染为：
+   <p class="foo bar baz boo">Hi</p>
+   ```
+
+   
+
+8. style绑定
+
+   ```vue
+   // 对象语法
+   <div v-bind:style="{ color: activeColor, fontSize: fontSize + 'px' }"></div>
+   data: {
+     activeColor: 'red',
+     fontSize: 30
+   }
+   
+   // 直接绑定一个样式对象，注意，对象语法常常结合返回对象的计算属性使用
+   <div v-bind:style="styleObject"></div>
+   data: {
+     styleObject: {
+       color: 'red',
+       fontSize: '13px'
+     }
+   }
+   
+   // 数组语法，可以将多个样式对象应用到同一个元素上
+   <div v-bind:style="[baseStyles, overridingStyles]"></div>
+   
+   // 当v-bind:style使用需要添加浏览器前缀的css属性时，比如transform，vuejs会自动侦测并添加相应的前缀。
+   
+   // 从2.3.0开始可以为style绑定中的属性提供一个包含多个值的数组，常用语提供多钱带前缀的值
+   <div :style="{ display: ['-webkit-box', '-ms-flexbox', 'flex'] }"></div>
+   // 这样写只会渲染数组中最后一个被浏览器支持的值。在本例中，如果浏览器支持不带浏览器前缀的 flexbox，那么就只会渲染 display: flex。
+   ```
+
+   
+
+9. v-if和v-show
+
+   > - v-if是“真正”的条件渲染，因为它会在切换的过程中把条件块内的事件监听器和子组件适当的销毁和重建
+   > - v-if也是惰性的，如果初始渲染条件为假，则什么也不做，一直到条件第一次变为真的时候，才会开始渲染条件块
+   > - v-show不管初始条件是什么，元素总是会被渲染，并且只是简单的基于css进行切换
+   > - 一般来说，v-if有更高的切换开销，v-show有更高的初始渲染开销。因此，如果需要频繁的切换，使用v-show更好，如果在运行的时候，条件很少改变，使用v-if更好
+   > - 带有v-show的元素始终会被渲染并保留在dom中，v-show只是简单的切换元素的css属性display，注意，v-show不支持<template>元素，也不支持v-else
+
+10. v-if和v-for为什么不推荐在一起使用
+
+    > 不推荐同时使用v-if和v-for
+    >
+    > 当二者一起使用时，v-for具有比v-if更高的优先级，意味着v-if将分别重复的运行于每个v-for循环中。
+
+11. 组件
+
+    ```js
+    // 组件是可复用的vue实例，组件定义好之后，可以作为自定义元素来使用
+    // 因为组件是可复用的vue实例，所以它们与new vue接受相同的选项，例如data、computed、watch、methods以及生命周期钩子等。仅有的例外是el这样只有根实例特有的选项除外。
+    
+    // 组件可以被复用
+    // 每使用一次组件，就会有一个它的新实例被创建，每个组件会维护自己各自的数据
+    
+    // 组件的注册分为全局注册和局部注册
+    // Vue.component属于全局注册，也就是说它们在注册之后可以用在任何新创建的Vue根实例（new Vue）的模板中
+    
+    // 全局注册往往是不够理想的，比如，如果你使用webpack这种构建工具，全局注册所有的组件意味着即使你不在使用一个组件了，它仍然会被包含在你最终的构建结果中，这就造成了用户下载的JavaScript的无谓增加。
+    
+    // 局部注册的组件
+    var ComponentA = { /* ... */ }
+    var ComponentB = { /* ... */ }
+    // 然后在 components 选项中定义你想要使用的组件：
+    new Vue({
+      el: '#app',
+      components: {
+        'component-a': ComponentA,
+        'component-b': ComponentB
+      }
+    })
+    // 注意，局部注册的组件在其子组件中不可用，.vue文件也是局部组件
+    import ComponentA from './ComponentA.vue'
+    export default {
+      components: {
+        ComponentA
+      },
+      // ...
+    }
+    
+    // 可以有动态组件
+    <!-- 组件会在 `currentTabComponent` 改变时改变 -->
+    <component v-bind:is="currentTabComponent"></component>
+    ```
+
+    
+
+12. data必须是一个函数
+
+    > 一个组件的data选项必须是一个函数，因此每个实例可以维护一份被返回对象的独立的拷贝
+    >
+    > 如果没有这条规则，在一个组件中修改了数据，其它依赖这个数据的组件也会发生改变。
+
+13. prop
+
+    > - prop的传递遵循单向数据流，也就是说父级prop的更新会向下流动到子组件中，但是反过来则不行，这样可以防止子组件意外的改变父组件的状态
+    > - 注意在 JavaScript 中对象和数组是通过引用传入的，所以对于一个数组或对象类型的 prop 来说，在子组件中改变变更这个对象或数组本身**将会**影响到父组件的状态。
+    >
+    > ```js
+    > // props验证
+    > // 带有默认值的对象
+    > propE: {
+    >     type: Object,
+    >     // 对象或数组默认值必须从一个工厂函数获取
+    >     default: function () {
+    >     	return { message: 'hello' }
+    >     }
+    > }
+    > 
+    > // 自定义验证函数
+    > propF: {
+    >     validator: function (value) {
+    >         // 这个值必须匹配下列字符串中的一个
+    >         return ['success', 'warning', 'danger'].indexOf(value) !== -1
+    >     }
+    > }
+    > ```
+    >
+    > - 禁用属性继承：inheritAttrs: false
+
+14. 自定义组件的v-model
+
+    - 一个组件上的v-model默认会利用名为value的属性和名为input的事件
+    - model选项可以修改默认的value属性和input事件
+
+    ```js
+    Vue.component('base-checkbox', {
+      model: {
+        prop: 'checked',
+        event: 'change'
+      },
+      props: {
+        checked: Boolean
+      },
+      template: `
+        <input
+          type="checkbox"
+          v-bind:checked="checked"
+          v-on:change="$emit('change', $event.target.checked)"
+        >
+      `
+    })
+    
+    // 使用
+    <base-checkbox v-model="lovingVue"></base-checkbox>
+    // lovingVue的值会传递给checked，当change事件触发的时候，lovingValue的值也会更新
+    ```
+
+    
+
+15. .async修饰符
+
+    ```js
+    // 是update:myPropName语法糖
+    
+    // 父组件
+    <template>
+    <div>
+      <text-comp :title="doc.title" v-on:update:title="doc.title=$event"></text-comp>
+    </div>
+    </template>
+    
+    <script>
+    import textComp from './text-comp.vue'
+    export default {
+      components: {
+        textComp
+      },
+      data() {
+        return {
+          doc: {
+            title: 'hello world'
+          }
+        }
+      },
+    }
+    </script>
+    
+    // 子组件
+    <template>
+      <div>
+        <h1>{{title}}</h1>
+        <button @click="$emit('update:title', 'hello 666')">update title</button>
+      </div>
+    </template>
+    
+    <script>
+    export default {
+      props: {
+        title: String,
+        default: ''
+      }
+    }
+    </script>
+    
+    // 使用了 .async 修饰符之后，父组件这样写，等价于上面那种写法，只不过简化了书写
+    <text-comp :title.sync="doc.title"></text-comp>
+    ```
+
+    
+
+16. 插槽
+
+    - 后背内容
+
+      ```js
+      // 后背内容（插槽的默认内容）
+      <button type='submit'>
+          <slot>默认Submit</slot>
+      </button>
+      // 使用的时候，如果不提供默认的插槽内容，那么就显示“默认Submit”，如果提供则会覆盖
+      ```
+
+    - 具名插槽
+
+      ```js
+      // 具名插槽
+      // 应用场景：有时候我们需要有多个插槽，例如对于一个layout组件，需要包含头部、主体、底部
+      <div class="container">
+        <header>
+          <!-- 我们希望把页头放这里 -->
+        </header>
+        <main>
+          <!-- 我们希望把主要内容放这里 -->
+        </main>
+        <footer>
+          <!-- 我们希望把页脚放这里 -->
+        </footer>
+      </div>
+      
+      // 利用slot元素有一个name属性解决
+      <div class="container">
+        <header>
+          <slot name="header"></slot>
+        </header>
+        <main>
+          <slot></slot>
+        </main>
+        <footer>
+          <slot name="footer"></slot>
+        </footer>
+      </div>
+      // 即使不写name，默认也是存在的，即是default
+      
+      // 在向具名插槽提供内容的时候，我们可以在一个template元素上使用v-slot指令传递slot的name
+      <base-layout>
+        <template v-slot:header>
+          <h1>Here might be a page title</h1>
+        </template>
+      
+        <p>A paragraph for the main content.</p>
+        <p>And another one.</p>
+      
+        <template v-slot:footer>
+          <p>Here's some contact info</p>
+        </template>
+      </base-layout>
+      // 注意，任何没有被包裹在带有v-slot的template中的内容都会被视为默认插槽的内容
+      // 当然也可以这么写
+      <template v-slot:default>
+          <p>A paragraph for the main content.</p>
+          <p>And another one.</p>
+      </template>
+      // 注意，v-slot只能加在template上
+      
+      // 具名插槽可以缩写，把v-slot缩写为#
+      <template #footer>
+          <p>Here's some contact info</p>
+      </template>
+      ```
+
+      
+
+    - 作用域插槽
+
+    ```js
+    // 作用域插槽
+    // 应用场景：有时候需要让父级插槽内容能够访问子组件的数据
+    // 这个时候可以把子组件的数据作为slot的属性绑定上去，绑定在slot元素上的属性被称为插槽的prop
+    
+    // 子组件
+    <span>
+      <slot v-bind:user="user">
+        {{ user.lastName }}
+      </slot>
+    </span>
+    // 父组件
+    <current-user>
+      <template v-slot:default="slotProps"> // slotProps 插槽prop的名字，可以随意起
+        {{ slotProps.user.firstName }}
+      </template>
+    </current-user>
+    // 父组件还可以这么写
+    <current-user v-slot:default="slotProps">
+      {{ slotProps.user.firstName }}
+    </current-user>
+    // 父组件也可以这么写
+    <current-user v-slot="slotProps">
+      {{ slotProps.user.firstName }}
+    </current-user>
+    
+    // 注意：如果出现多个插槽，只能这么写
+    <current-user>
+      <template v-slot:default="slotProps">
+        {{ slotProps.user.firstName }}
+      </template>
+    
+      <template v-slot:other="otherSlotProps">
+        ...
+      </template>
+    </current-user>
+    
+    
+    // 解构插槽prop
+    <current-user v-slot="{ user }">
+      {{ user.firstName }}
+    </current-user>
+    // 解构重命名
+    <current-user v-slot="{ user: person }">
+      {{ person.firstName }}
+    </current-user>
+    // 定义后背内容prop
+    <current-user v-slot="{ user = { firstName: 'Guest' } }">
+      {{ user.firstName }}
+    </current-user>
+    
+    ```
+    
+    - 动态插槽名
+    
+    ```js
+    // 插槽的名称支持动态插槽名
+    <base-layout>
+      <template v-slot:[dynamicSlotName]>
+    ...
+      </template>
+</base-layout>
+    ```
+    
+      
+
+    - 插槽的应用场景
+
+    ```js
+    // 比如当我们使用todo-list组件的时候，可以为todo定义一个不一样的template，这样可以避免封装的todo-list组件内部的结构写死，同时结合作用域插槽一起使用，可以在父组件拿到子组件的数据做业务逻辑
+    
+    // 父组件
+    <template>
+      <div>
+        <todo-list v-bind:todos="todos">
+          <template v-slot:todo="{ todo }">
+            <span v-if="todo.isComplete">✓</span>
+            {{ todo.text }}
+          </template>
+        </todo-list>
+      </div>
+    </template>
+    
+    <script>
+    import TodoList from "./todo-list.vue";
+    export default {
+      components: {
+        TodoList,
+      },
+      data() {
+        return {
+          todos: [
+            {
+              id: 1,
+              text: "js",
+              isComplete: true
+            },
+            {
+              id: 2,
+              text: "html",
+              isComplete: false
+            },
+          ],
+        };
+      },
+    };
+    </script>
+    
+    // todo-list组件
+    <template>
+      <div>
+        <ul>
+          <li v-for="todo in filteredTodos" v-bind:key="todo.id">
+            <!--
+        我们为每个 todo 准备了一个插槽，
+        将 `todo` 对象作为一个插槽的 prop 传入。
+        -->
+            <slot name="todo" v-bind:todo="todo">
+              <!-- 后备内容 -->
+              {{ todo.text }}
+            </slot>
+          </li>
+        </ul>
+      </div>
+    </template>
+    
+    <script>
+    export default {
+      props: {
+        todos: Array
+      },
+      data() {
+        return {
+          filteredTodos: this.todos
+        };
+      },
+    };
+    </script>
+    ```
+
+
+
+17. 动态组件
+18. 异步组件
+19. 处理边界情况
+20. 
 
