@@ -1368,11 +1368,58 @@ vue编码但是不渲染的标签，vue-fragment，`npm install -g vue-fragment`
 
 13. 说一下Vue单页与多页的区别?
 
+    > SPA：指的是只有一个主页应用（一个html页面），一开始只需要加载一次js、css等相关资源。所有的内容都包含在主页面，对每一个功能模块组件化，单页应用跳转，就是切换相关组件，仅仅刷新局部资源。
+    >
+    > MPA：指的是有多个独立页面的应用（多个html页面），每个页面必须重复加载js、css，多页面应用跳转，需要整页资源刷新。
+
+    > 区别
+    >
+    > - 刷新方式
+    >   - SPA：相关组件切换，页面局部刷新或更改
+    >   - MPA：整页刷新
+    > - 路由模式
+    >   - SPA：可以使用hash或者history
+    >   - MPA：普通链接跳转
+    > - 用户体验
+    >   - SPA：页面切换的时间短，用户体验好，但是第一次需要加载的文件过多
+    >   - MPA：页面切换缓慢，流畅度不够，用户体验比较差，尤其网速慢的情况
+    > - 数据传递
+    >   - SPA：容易实现数据的传递，有多种方式
+    >   - MPA：依赖URL传参，本地存储等
+    > - 使用范围
+    >   - SPA：追求较高的流畅度，对SEO要求不高
+    >   - MPA：对SEO要求较高的网站
+    > - 资源文件
+    >   - SPA：组件公用的资源只需要加载一次
+    >   - MPA：每个页面都需要加载公用的资源
+
+    
+
 14. 说一下Vue的$nextTick原理
 
 15. 使用过 Vue SSR 吗？说说 SSR？
 
 16. 说一下Vue 的父组件和子组件生命周期钩子函数执行顺序？
+
+    > 分为以下四类
+    >
+    > - 加载渲染过程
+    >
+    >   `父beforeCreate -> 父created -> 父beforeMount -> 子beforeCreate -> 子created -> 子beforeMount -> 子mounted -> 父mounted`
+    >
+    > - 子组件更新过程
+    >
+    >   `父beforeUpdate -> 子beforeUpdate -> 子updated -> 父updated`
+    >
+    > - 父组件更新过程
+    >
+    >   `父beforeUpdate -> 父updated`
+    >
+    > - 销毁过程
+    >
+    >   `父beforeDestroy -> 子beforeDestroy -> 子destroyed -> 父destroyed`
+
+    
 
 17. 在哪个生命周期内调用异步请求？
 
