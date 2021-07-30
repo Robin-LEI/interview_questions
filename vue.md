@@ -1201,9 +1201,45 @@ vue编码但是不渲染的标签，vue-fragment，`npm install -g vue-fragment`
 
 17. 动态组件
 
+    > component标签配合is属性
+    >
+    > 动态组件一般和keep-alive元素配合使用，使用keep-alive对其进行包裹，可以使得组件实例在第一次创建的时候被缓存下来
+
 18. 异步组件
 
+    > 在大型应用中，有时候需要将应用分割成小一些的代码块，并且只在需要的时候才从服务器加载一个模块。
+    >
+    > Vue.component定义组件的时候支持定义一个异步组件
+    >
+    > ```js
+    > Vue.component('async-example', function (resolve, reject) {
+    >   setTimeout(function () {
+    >     // 向 `resolve` 回调传递组件定义
+    >     resolve({
+    >       template: '<div>I am async!</div>'
+    >     })
+    >   }, 1000)
+    > })
+    > ```
+    >
+    > 局部注册组件的时候，也可以声明把组件定义为一个异步组件
+    >
+    > ```js
+    > new Vue({
+    >   // ...
+    >   components: {
+    >     'my-component': () => import('./my-async-component')
+    >   }
+    > })
+    > ```
+    >
+    > 
+
 19. 处理边界情况
+
+    - 在每一个new Vue的实例的子组件中，可以通过 $root 访问到根实例，【所以，所有的子组件可以将这个实例作为一个全局的store来访问或使用，当然这只是对于demo或者非常小的应用来说是很方便的，对于中大型应用还是推荐使用vuex来管理应用的状态】
+    - $parent，子组件可以访问到父组件的实例
+    - $refs，可以访问到子组件的实例
 
 20. 自定义指令
 
@@ -1264,7 +1300,181 @@ vue编码但是不渲染的标签，vue-fragment，`npm install -g vue-fragment`
 
       
 
-21. 
+21. 内联模板
+
+    ```js
+    // 在组件上添加属性 inline-template
+    // 这个时候渲染的不再是组件本身的内容，而是包含在组件内部的内容
+    <my-component inline-template>
+      <div>
+        <p>These are compiled as the component's own template.</p>
+        <p>Not parent's transclusion content.</p>
+      </div>
+    </my-component>
+    ```
+
+    
+
+22. 使用v-once创建低开销的静态组件
+
+    > 应用场景：有的时候有一个组件包含了大量的静态内容，在这种情况下，在根元素上添加v-once属性确保这些内容只被计算一次，然后被缓存起来
+    >
+    > ```js
+    > Vue.component('terms-of-service', {
+    >   template: `
+    >     <div v-once>
+    >       <h1>Terms of Service</h1>
+    >       ... a lot of static content ...
+    >     </div>
+    >   `
+    > })
+    > ```
+    >
+    > 
+
+23. vue动画
+
+    > 在vue中怎么做动画的？
+    >
+    > 可以采用第三方css库和js库，比如animate.css，velocity.js等
+    >
+    > 在css过度和动画中自动应用vue本身提供的class
+    >
+    > vue本身提供了transition的封装组件，可以实现进入/离开的过渡效果
+    >
+    > ```js
+    > <transition name="fade"> // name是给过渡起个名字
+    >     <p v-if="show">hello</p>
+    > </transition>
+    > 
+    > .fade-enter-active, .fade-leave-active {
+    >   transition: opacity .5s;
+    > }
+    > .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+    >   opacity: 0;
+    > }
+    > ```
+
+    > 过渡的类名
+    >
+    > 在进入/离开过渡中，会有6个class切换
+    >
+    > - v-enter：进入过渡的开始状态
+    > - v-enter-active：进入过渡生效时的状态
+    > - v-enter-to：接入过渡结束的状态
+    > - v-leave：离开过渡是的开始状态
+    > - v-leave-active：离开过渡生效时的状态
+    > - v-leave-to：离开过渡的结束状态
+
+    > transition常用的JS属性钩子
+    >
+    > <transition
+    >
+    > ​	v-on:before-enter="beforeEnter"
+    >
+    > ​	v-on:enter="enter"
+    >
+    > ​	v-on:after-enter="afterEnter"
+    >
+    > ​	v-on:enter-cancelled="enterCancelled"
+    >
+    > ​	v-on:before-leave="beforeLeave"
+    > ​	v-on:leave="leave"
+    > ​	v-on:after-leave="afterLeave"
+    > ​	v-on:leave-cancelled="leaveCancelled"
+
+    > \>
+    >
+    > </transition>
+
+24. 混入
+
+    ```js
+    // 用来分发vue组件中的可复用的功能
+    // 一个混入对象可以包含任意组件选项
+    // 当组件使用混入对象时，所有混入对象的选项将被混合进入该组件本身的选项
+    // 定义一个混入对象
+    var myMixin = {
+      created: function () {
+        this.hello()
+      },
+      methods: {
+        hello: function () {
+          console.log('hello from mixin!')
+        }
+      }
+    }
+    
+    // 定义一个使用混入对象的组件
+    var Component = Vue.extend({
+      mixins: [myMixin]
+    })
+    
+    var component = new Component() // => "hello from mixin!"
+    
+    // 数据对象在内部会进行递归内并，并在冲突时以组件数据优先
+    // 同名钩子函数将合并为一个数组，因此都会被调用，另外混入对象的钩子将在组件自身的钩子之前调用
+    
+    // 值为对象的选项，例如methods、components和directive，将被合并为同一个对象，两个对象的键名冲突时，取组件对象的键值对
+    
+    // 以上策略对Vue.extend()也同样适用
+    ```
+
+    ```js
+    // 全局混入 Vue.mixin
+    // 一旦使用全局混入，它将影响每一个之后创建的vue实例
+    ```
+
+    
+
+25. 渲染函数(render函数)
+
+    > render函数就一定比模板好用吗？
+    >
+    > 
+
+26. 过滤器
+
+    ```js
+    // 在vue中可以自定义过滤器，用于一些常见的文本格式化
+    // 过滤器可以用在两个地方：双花括号插值和v-bind表达式
+    
+    <!-- 在双花括号中 -->
+    {{ message | capitalize }}
+    
+    <!-- 在 `v-bind` 中 -->
+    <div v-bind:id="rawId | formatId"></div>
+    
+    // 定义局部的过滤器
+    filters: {
+      capitalize: function (value) {
+        if (!value) return ''
+        value = value.toString()
+        return value.charAt(0).toUpperCase() + value.slice(1)
+      }
+    }
+    
+    // 在创建Vue实例之前定义全局过滤器
+    Vue.filter('capitalize', function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.charAt(0).toUpperCase() + value.slice(1)
+    })
+    
+    // 当局部过滤器和全局过滤器重名时，采取局部过滤器
+    
+    // 过滤器可以接受参数
+    {{ message | filterA('arg1', arg2) }}
+    // 第一个参数是message，第二个参数是agr1，第三个参数是arg2
+    ```
+
+    
+
+27. vue的单文件组件有什么好处？
+
+    > vue中单文件组件是以.vue结尾文件，这个文件中包含了template、script、style，自身是一个独立的组件，所以叫做单文件组件
+
+28. 
 
 
 
