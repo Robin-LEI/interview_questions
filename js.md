@@ -1,87 +1,83 @@
-1. 前面提到找不到文件就找文件夹，但是不可能将整个文件夹都加载进来，加载文件夹的时候也是有一个加载顺序的：跨站请求伪造
+防抖
 
-   指的是黑客诱导用户点击链接，打开黑客的网站，然后黑客利用用户**目前的登录状态**发起跨站请求。介绍防抖节流原理、区别以及应用，并用JavaScript进行实现
+- 原理：在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时
 
-2. 1. 防抖
+- 适用场景：按钮提交，防止多次提交按钮，只执行最后提交的一次；搜索框联想场景，防止联想发送请求，只发送最后一次输入；判断scroll是否滑动到底部（滚动事件+防抖）。
 
-      - 原理：在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时
+- 总的来说，适合多次事件，一次响应的情况。
 
-      - 适用场景：按钮提交，防止多次提交按钮，只执行最后提交的一次；搜索框联想场景，防止联想发送请求，只发送最后一次输入；判断scroll是否滑动到底部（滚动事件+防抖）。
+- 简易版实现
 
-      - 总的来说，适合多次事件，一次响应的情况。
-
-      - 简易版实现
-
-        ```html
-        <button onclick="clickBtn()">click me</button>
-        <script>
-        function debounce(fn, wait) {
-            var timer = null;
-            return function() {
-                let context = this;
-                let args = arguments;
-                if (timer) {
-                    clearTimeout(timer);
-                    timer = null;
-                }
-                timer = setTimeout(function() {
-                   fn.apply(context, args); 
-                }, wait);
-            }
-        }
-        let fn = function() {
-            console.log('debounce');
-        }
-        let d = debounce(fn, 1000)
-        function clickBtn() {
-            d()
-        }
-        </script>
-        ```
-
-   2. 节流
-
-      - 规定一个单位时间，在这个单位时间内，只能有一次触发事件的回调函数执行，如果在同一个单位时间内，某事件被触发多次，只能有一次生效。
-
-      - 适用场景：拖拽场景，固定时间内只执行一次，防止超高频次触发位置变动；缩放场景，监控浏览器resize。
-
-        ```html
-        <!-- 定时器实现 -->
-        function throttle(func, wait) {
-            let timeout;
-            return function () {
-                const context = this;
-                const args = arguments;
-                if (!timeout) {
-                        timeout = setTimeout(function () {
-                        timeout = null;
-                        func.apply(context, args)
-                    }, wait)
-                }
-            }
-        }
-        <!-- 时间戳实现 -->
-        function throttle(func, wait) {
-          let context, args;
-          let previous = 0;
-          return function () {
-            let now = +new Date();
-            context = this;
-            args = arguments;
-            if (now - previous > wait) {
-              func.apply(context, args);
-              previous = now;
-            }
+  ```html
+  <button onclick="clickBtn()">click me</button>
+  <script>
+  function debounce(fn, wait) {
+      var timer = null;
+      return function() {
+          let context = this;
+          let args = arguments;
+          if (timer) {
+              clearTimeout(timer);
+              timer = null;
           }
-        }
-        let fn = function () {
-        	console.log('scroll');
-        }
-        let d = throttle(fn, 1000);
-        window.onscroll = function () {
-        	d();
-        }
-        ```
+          timer = setTimeout(function() {
+             fn.apply(context, args); 
+          }, wait);
+      }
+  }
+  let fn = function() {
+      console.log('debounce');
+  }
+  let d = debounce(fn, 1000)
+  function clickBtn() {
+      d()
+  }
+  </script>
+  ```
+
+2. 节流
+
+   - 规定一个单位时间，在这个单位时间内，只能有一次触发事件的回调函数执行，如果在同一个单位时间内，某事件被触发多次，只能有一次生效。
+
+   - 适用场景：拖拽场景，固定时间内只执行一次，防止超高频次触发位置变动；缩放场景，监控浏览器resize。
+
+     ```html
+     <!-- 定时器实现 -->
+     function throttle(func, wait) {
+         let timeout;
+         return function () {
+             const context = this;
+             const args = arguments;
+             if (!timeout) {
+                     timeout = setTimeout(function () {
+                     timeout = null;
+                     func.apply(context, args)
+                 }, wait)
+             }
+         }
+     }
+     <!-- 时间戳实现 -->
+     function throttle(func, wait) {
+       let context, args;
+       let previous = 0;
+       return function () {
+         let now = +new Date();
+         context = this;
+         args = arguments;
+         if (now - previous > wait) {
+           func.apply(context, args);
+           previous = now;
+         }
+       }
+     }
+     let fn = function () {
+     	console.log('scroll');
+     }
+     let d = throttle(fn, 1000);
+     window.onscroll = function () {
+     	d();
+     }
+     ```
 
 
 2. 对闭包的看法，为什么要用闭包？说一下闭包原理以及应用场景？
@@ -100,6 +96,58 @@
      - 函数执行分为两个阶段（预编译阶段和执行阶段）
        - 预编译阶段，如果发现内部函数使用了外部函数的变量，则会在内存中创建一个“闭包”对象并保存对应变量值，如果已存在“闭包”，则只需要增加对应的属性值即可。
        - 执行完后，函数执行上下文会被销毁，函数对“闭包”对象的引用也会被销毁，但其内部函数还持用该“闭包”的引用，所以内部函数可以继续使用“外部函数”中的变量，直到内部函数被销毁后才被销毁
+       
+       > **JS运行三部曲**
+       >
+       > - 语法分析
+       > - 预编译：预编译就是把函数参数、变量声明、函数声明提升到逻辑的最前面，发生在函数执行的前一刻
+       > - 解释执行
+       >
+       > > js是单线程的解释型语言
+       > >
+       > > 单线程就是先执行一个，在执行另外一个
+       > >
+       > > 解释型语言就是先翻译一行，在执行一行，在翻译一行，在执行一行
+       > >
+       > > 但是js在执行之前通常会先通篇扫描一遍代码，而不执行代码，通篇扫描的目的是看看有没有什么低级语法错误，这个过程就叫做语法分析。
+       > >
+       > > 扫描完成之后，才真正开始预编译。
+       >
+       > > **预编译四部曲（函数内的预编译）**
+       > >
+       > > - 创建AO对象
+       > > - 找形参和变量声明，将变量和形参名作为AO属性名，值为undefined
+       > > - 将实参值和形参统一
+       > > - 在函数体里面找函数声明，值赋予函数体
+       >
+       > > AO对象（活跃对象/执行期对象），在函数执行前执行函数预编译，此时产生一个AO对象，AO对象保存这个函数的参数变量
+       > >
+       > > GO对象（全局对象，等同于window）：在开始预编译时产生的对象，比AO对象先产生，用于存放全局变量，也称为全局作用域
+       >
+       > > js中常见的函数声明
+       > >
+       > > ```js
+       > > // 表达式声明
+       > > var a = function() {}
+       > > 
+       > > // 函数声明
+       > > function b() {}
+       > > 
+       > > // 区别1
+       > > // 函数声明可以提前被解析出来，但是表达式声明不可以
+       > > // 解析器会先读取函数声明，并使其在执行任何代码之前可以访问，在任何地方调用都可以
+       > > // 函数表达式必须要等到解析器执行到它所在的代码才会被真正的执行，提前调用会报错
+       > > 
+       > > // 区别2
+       > > // 函数表达式可以直接后面加括号，而函数声明不可以
+       > > var a = function() {}();
+       > > 
+       > > function b() {}() // 会报错
+       > > 
+       > > // 注意：当同时使用这两种方式声明同一个函数名，最终执行的是函数表达式声明的函数
+       > > ```
+       > >
+       > > 
 
    - 闭包的优点？
 
@@ -181,7 +229,7 @@
      - 设置length属性，可以截断数组
      - 从Array.prototype中继承了方法
 
-   - 类数组是一个拥有length属性，并且它的属性为非负整数的普通对象，类数组不能直接调用数组的方法
+   - 类数组是一个拥有length属性，并且它的属性为非负整数的普通对象，*类数组不能直接调用数组的方法*
 
    - 本质区别：类数组是简单对象，它的原型关系和数组不同
 
@@ -215,6 +263,37 @@
 5. 说一下事件循环机制（node、浏览器）
 
    [点击查看](https://blog.csdn.net/weixin_42259266/article/details/110492036?ops_request_misc=%257B%2522request%255Fid%2522%253A%2522161836442916780265449871%2522%252C%2522scm%2522%253A%252220140713.130102334.pc%255Fblog.%2522%257D&request_id=161836442916780265449871&biz_id=0&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~first_rank_v2~rank_v29-1-110492036.nonecase&utm_term=%E4%BA%8B%E4%BB%B6%E5%BE%AA%E7%8E%AF)
+
+   > **宏任务和微任务**
+   >
+   > 宏任务是宿主环境提供的，比如浏览器
+   >
+   > 微任务是语言本身提供的，比如promise.then
+   >
+   > 常见的宏任务：ajax，setTimeout，setInterval，requestAnimationFrame，messageChannel，UI渲染，setImmediate（只在IE下才会执行）
+   >
+   > 常见的微任务：then、queueMicrotask、mutationObserver（浏览器提供的）
+
+   > **GUI渲染线程和JS引擎线程**
+   >
+   > GUI渲染线程和JS引擎线程是互斥的，当JS引擎执行的时候GUI线程会被挂起，保存在一个队列中，等到JS引擎空闲的时候，立即被执行
+   >
+   > ```js
+   >   <body>
+   >   <div id="div">
+   >     1
+   >   </div>
+   >   <div id="div1">123</div>
+   >   <script>
+   >     while (true) { }
+   > 
+   >   </script>
+   >   <script>console.log(3)</script>
+   >   <div id="div2">333</div>
+   > </body>
+   > ```
+   >
+   > 
 
 6. 介绍下promise的特性、优缺点，内部是如何实现的，动手实现promise
 
@@ -948,7 +1027,7 @@
     > let p = new Person()
     >
     > Object.setPrototypeOf(p, Obj) 等同于 p.\__proto__ = Obj.prototype;
-    
+
 39. JavaScript的深浅拷贝
 
     > 浅拷贝
@@ -5858,4 +5937,188 @@
      >   >
      >   > `引用值：`对象变量里面的值是这个对象在堆内存中的内存地址，这一点很重要！因此它传递的值也就是这个内存地址，这也就是为什么函数内部对这个参数的修改会体现在外部的原因，因为它们都指向同一个对象。
 
-195. 
+195. 关于DOM，dom2和dom3，dom的版本区别，dom的节点类型，获取dom的方法
+
+     > **dom2和dom3**
+     >
+     > dom2和dom3的目的在于扩展DOM API，以满足操作XML的所有需求，同时提供更好的错误处理和特性检测能力。
+     >
+     > dom0就是直接通过onclick写在html里面的事件。
+     >
+     > DOM2是通过addEventListener绑定的事件, 还有IE下的DOM2事件通过attachEvent绑定; DOM3是一些新的事件。
+
+     > **dom的节点类型**
+     >
+     > 根据nodeType判断
+     >
+     > - 元素节点--1
+     > - 文本节点--3
+     > - 注释节点--8
+
+     > **获取dom的方法**
+     >
+     > 通过id--getElementById
+     >
+     > 通过class--getElementsByClassName
+     >
+     > 通过tagName--getElementsByTagName
+
+196. 词法作用域
+
+     > 词法作用域是作用域的一种工作模型。
+     >
+     > 由此可以看出，没有作用域就没有词法作用域。
+     >
+     > “词法作用域是作用域的一种工作模型”，作用域有两种工作模型，在JavaScript中的词法作用域是比较主流的一种，另一种动态作用域（比较少的语言在用）。
+
+     > 作用域就是一套规则，确定如何查找变量（标识符）。
+     >
+     > 在查找的时候，先在自己所处的作用域中查找，没有找到，再去全局作用域中查找，有一个往外层查找的过程，我们好像是顺着一条链条从下到上查找变量，这条链条就是作用域链。
+
+     > 作用域嵌套。
+     >
+     > 在还没有接触到es6的let、const之前，只有函数作用域和全局作用域，函数作用域包含在全局作用域里面，而函数作用域又可以继续嵌套函数作用域。
+
+     > 在代码执行之前从上到下的进行编译，当遇到某个用var声明的变量的时候，先检查在当前作用域下是否存在了该变量。如果存在，则忽略这个声明；如果不存在，则在当前作用域中声明该变量。
+
+     > 词法作用域
+     >
+     > 是静态的作用域，在你写代码的时候就已经确定了。
+     >
+     > **注1**：eval()和with可以通过其特殊性用来“欺骗”词法作用域，不过正常情况下都不建议使用，会产生性能问题。
+     >
+     > **注2**：ES6中有了let、const就有了块级作用域，后面会专门介绍。
+     >
+     > 词法作用域是定义在词法阶段的作用域，js在编译过程中在词法分析的阶段会形成抽象语法树，在同一时间还会根据相应的分析生成对应的作用域。根据这种工作机制我们不难知道，某个标识符属于哪个作用域、作用域的嵌套关系（作用域链）其实在书写时已经决定了。
+     >
+     > ```js
+     > var a = 'global'
+     > 
+     > function foo() {
+     >   console.log(a);
+     > }
+     > 
+     > function bar() {
+     >   var a = 'bar'
+     >   foo()
+     > }
+     > 
+     > bar()  // global
+     > // 这个简单的例子有些人可能会觉得打印的结果为 bar，但事实上并不是。需要我们注意的是 JavaScript 应用的是词法作用域模型，所以 函数的作用域取决于它声明的位置与实际调用位置无关 ，上述例子的作用域嵌套关系如下图所示：
+     > ```
+     >
+     > ![](https://p1-juejin.byteimg.com/tos-cn-i-k3u1fbpfcp/1cf756e5740a449cb018be427fefb6ba~tplv-k3u1fbpfcp-watermark.image)
+     >
+     > 按照上图所示的嵌套关系，我们知道在 `foo` 函数执行的时候需要 `a` 变量，但是在当前作用域当中查找不到，引擎就会顺着作用域链向外层寻找，此时全局作用域当中正好有名为 `a` 的变量所以打印的结果是 global。
+
+     > 欺骗词法作用域
+     >
+     > 因为 JavaScript 使用的是词法作用域模型，所以作用域在书写时已经确定，那我们有没有能够在运行时动态改变作用域的方法呢？
+     >
+     > 当然有，接下来我们就来看看 eval 和 with 它们是如何动态改变作用域的。
+     >
+     > `eval(...)` 函数会接受一个字符串作为参数，并且将这句字符串视为在书写时就存在的代码一样去执行，通过这个函数就可以实现欺骗词法作用域的效果，请看以下例子：
+     >
+     > ```js
+     > var a = 'global'
+     > 
+     > function foo(str) {
+     >   eval(str)
+     >   console.log(a)
+     > }
+     > 
+     > foo('var a = "eval"') // eval
+     > // 如果我们遵照词法作用域模型来分析上述的代码，在词法阶段应该只有全局作用域当中存在值为 global 的变量 a。但是在 foo 函数运行时 eval（...） 函数会将 var a = "eval" 字符串当作本身就书写在这里的代码一样执行。这时 foo 函数作用域内部就生成了一个值为 eval 的变量 a ，因为同名变量的遮蔽作用所以最终打印出了 eval 。
+     > 
+     > ```
+     >
+     > `with` 关键字可能大家都很陌生，我们先来看一段代码再来解释 `with` 的工作机制。
+     >
+     > ```js
+     > function foo(obj) {
+     >   with (obj) {
+     >     a = 2
+     >   }
+     > }
+     > 
+     > var o = {
+     >   a: 3
+     > }
+     > 
+     > foo(o)
+     > 
+     > console.log(o.a) // 2
+     > // 上述代码中，with 使得 o 对象上的属性 a 被重新赋值了，其实 with 会利用传入的对象开辟一个新的作用域，并且将对象上的属性作为当前作用域内的变量，这个作用域在词法阶段其实并不存在。
+     > ```
+     >
+     > `with` 能够创建一个新的作用域，在这个作用域当中查找变量仍然遵循一般的规则，所以我们需要避免因为 `with` 导致的误生成全局变量的行为，将上面的例子修改一下：
+     >
+     > ```js
+     > function foo(obj) {
+     >   with (obj) {
+     >     a = 2
+     >   }
+     > }
+     > 
+     > var o = {
+     >   b: 3
+     > }
+     > 
+     > foo(o)
+     > 
+     > console.log(o.a, a) // undefined 2
+     > // with 当中需要对 a 变量进行赋值操作，所以引擎会使用 LHS 查询方式查找变量 a。从 with 生成的作用域出发直到查询到全局作用域都无法找到变量 a ，此时引擎就会在全局作用域当中创建新变量并执行对它的赋值操作。
+     > 
+     > // LHS，可以理解为赋值
+     > // RHS，理解为查询值
+     > console.log(name); // 输出undefined
+     > var name = 'iceman'; 
+     > // 输出变量的值的时候的查找类型是RHS，找到变量为其赋值的查找类型是LHS。
+     > ```
+     >
+     > 
+
+197. IntersectionObserver，交叉观察器
+
+     - 网页开发时，常常需要了解某个元素是否进入了“视口”，也就是用户能不能看到它
+     - 由于可见的本质是：目标元素和视口产生一个交叉区，所以这个API叫做“交叉观察器”
+     - 浏览器原生提供的构造函数
+     - 这是一个异步的API，不随着模板元素的滚动同步触发，这个观察器的优先级非常低，只在其它任务执行完，浏览器有了空闲才会执行
+
+     ```js
+     // 用法
+     // callback:可见性发生变化时的回调函数
+     // option：可选参数，配置对象
+     // 返回值io是一个观察器实例，实例上有个方法叫做 observer 方法可以指定观察哪个DOM节点
+     option = {
+         threshold // 属性决定了什么时候触发回调函数。它是一个数组，每个成员都是一个门槛值，默认为[0]，即交叉比例（intersectionRatio）达到0时触发回调函数。
+         // 用户可以自定义这个数组。比如，[0, 0.25, 0.5, 0.75, 1]就表示当目标元素 0%、25%、50%、75%、100% 可见时，会触发回调函数。
+     }
+     var io = new IntersectionObserver(callback, option = {
+         threshold: [0, 0.25, 0.5, 0.75, 1]
+     });
+     
+     // 实例上的常用方法
+     io.observe(document.getElementById('example')); // 开始观察
+     io.unobserve(element); // 停止观察
+     io.disconnect(); // 关闭观察器
+     
+     // 注意observer的参数是一个DOM节点对象，如果要观察多个节点，就要多次调用这个方法
+     
+     // 一般而言，callback回调函数会触发两次，一次是刚刚进入视口（开始可见），另一次是完全离开视口（开始不可见）
+     
+     var io = new IntersectionObserver(
+       // entries是一个数组，每一个成员代表的是被观察的对象
+       entries => {
+         console.log(entries);
+       }
+     );
+     
+     // 应用场景：惰性加载
+     // 有时，我们希望某些静态资源（比如图片），只有用户向下滚动，它们进入视口时才加载，这样可以节省带宽，提高网页性能。这就叫做"惰性加载"。
+     ```
+
+     
+
+198. 
+
