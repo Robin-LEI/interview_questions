@@ -439,6 +439,85 @@
 
 10. 有哪几种方式可以解决跨域问题？（描述对应的原理）
 
+    > 跨域是因为浏览器的同源策略导致的，所谓的同源策略是指协议+域名+端口号，全部相同才可以
+
+    > 一个域名的地址组成
+    >
+    > https:// www.abc.com:9000/scripts/jquery.js
+    >
+    > https:// 协议
+    >
+    > www 子域名
+    >
+    > abc.com  主域名
+    >
+    > 9000  端口号
+    >
+    > scripts/jquery.js  请求资源地址
+
+    > 有三个标签是允许跨域加载资源的
+    >
+    > img的src
+    >
+    > link的href
+    >
+    > script的src
+
+    > 请求跨域时，不是请求发布出去，请求可以发出去，服务端能接受到正常请求并作出响应，只是结果被浏览器拦截了
+    >
+    > **通过表单可以发起跨域请求**
+    >
+    > 比如a页面有form表单，b页面的路径是a的提交地址
+    >
+    > a页面submit后，浏览器刷新页面，页面显示b页面的内容
+    >
+    > form表单是将数据提交给了b页面，a页面并没有读取b页面的内容
+    >
+    > **ajax跨域是因为要读取接口地址的信息**
+
+    > **跨域的解决方案**
+    >
+    > 1. jsonp
+    >
+    >    > 原理是利用script标签的src没有跨域限制的漏洞，jsonp请求一定需要对方的服务器做支持才可以
+    >    >
+    >    > jsonp和ajax相同，都是客户端向服务端发送请求，从服务端获取数据的方式，但是ajax属于同源策略，jsonp属于非同源策略，jsonp是异步请求的
+    >    >
+    >    > jsonp的优点是简单方便，缺点是只支持get请求，会遭受xss攻击
+    >
+    > 2. cors
+    >
+    >    > cors需要浏览器和后端同时支持，浏览器会自动进行cors通信，主要是后端需要配置各种头，服务端设置Access-Control-Allow-Origin就可以开启cors
+    >
+    > 3. postMessage
+    >
+    >    > 支持当前页面和打开的新窗口的数据传递，支持多窗口之间的消息传递，页面和iframe的消息传递，支持这三个场景的跨域数据传递
+    >    >
+    >    > `otherWindow.postMessage(message, targetOrigin, [transfer]);`
+    >    >
+    >    > message要发送的数据
+    >    >
+    >    > targetOrigin 目标源
+    >
+    > 4. websocket
+    >
+    >    > websocket是一种双向通信协议，在建立连接之后，websocket的server和client都可以主动向对方发送数据，此时它们的通信和http无关
+    >
+    > 5. nginx反向代理
+    >
+    >    > 需要搭建一个中转的nginx的服务器，用于转发请求
+    >    >
+    >    > 原理是通过nginx配置一个代理服务器（域名和domain1相同，端口不同）做跳板机，反向代理访问domain2接口，并且可以顺序修改cookie中domain信息，方便当前域cookie写入，实现跨域登录
+    >    >
+    >    > ```js
+    >    > // nginx.conf 文件
+    >    > 
+    >    > ```
+    >    >
+    >    > 
+    >
+    > 6. 
+
 11. 原生实现ES5的Object.create() 方法
 
     ```js
