@@ -511,20 +511,60 @@
     >    >
     >    > ```js
     >    > // nginx.conf 文件
+    >    > server {
+    >    >     listen	80;
+    >    >     server_name	localhost;
+    >    >     location / {
+    >    >         proxy_pass	https://fxtest.accuat.com;
+    >    >     }
+    >    > }
+    >    > // 这样当我们访问 localhost:80/test 时候会间接请求 https://fxtest.accuat.com/test
     >    > 
+    >    > // 在webpack.config.js中的devServer属性也可以进行配置proxy
+    >    > devServer: {
+    >    >     port: 8080,
+    >    >     open: true,
+    >    >     host: "localhost",
+    >    >     proxy: {
+    >    >       "/api": {
+    >    >         target: "https://fstest.accuat.com",
+    >    >         changeOrigin: true,
+    >    >         pathRewrite: {
+    >    >           "^/api": ""
+    >    >         }
+    >    >       }
+    >    >     }
+    >    >   }
     >    > ```
     >    >
     >    > 
     >
-    > 6. 
+    > 6. window.name + iframe
+    >
+    >    > name值在不同的页面（甚至不同域名）加载后依旧存在
+    >    >
+    >    > window.name可以支持2MB的数据
+    >
+    > 7. location.hash + iframe
 
 11. 原生实现ES5的Object.create() 方法
 
     ```js
     // Object.create(proto[, propertiesObject])
     // 此方法使用指定的原型对象和其属性创建了一个新的对象
-    // 第二个参数表示属性描述符，如果是null或非原始包装对象，则抛出一个TypeError异常
+    // 第二个参数表示属性描述符，如果是null或非原始包装对象，则抛出一个TypeError异常【经过测试传null报错】
     // 如果不指定对应的属性描述符，默认都是false
+    
+    let obj = {name: 'obj'}
+    let x = Object.create(obj)
+    x.__proto__ === obj; // true
+    
+    // 使用Object.create(null)初始化一个新对象相比直接使用对象字面量的形式有什么好处
+    1. 使用前者创建出来的对象干净，没有任何其它属性，我们可以自己定义hasOwnProperty、toString等方法，不用担心覆盖原型链上的方法
+    2. 使用for...in遍历的时候，会遍历对象原型链上的所有属性，使用前者可以减少遍历的次数
+    3. 当需要一个非常干净且高度可定制的对象作为数据字典的时候，同时想提高一点性能的时候可以采用前者，其它情况均可以采用后者
+    
+    
     /*
         enumerable可枚举，默认为false
         configurable可删除，默认为false,true表示不能删除，false可以删除
@@ -540,7 +580,8 @@
         }
     });
     // Object.defineProperties() 直接在一个对象上定义新的属性或者修改现有的属性，并返回该对象
-    // 判断一个值不是对象或者非原始包装对象：value === Object(value) 则是对象，反之不是
+    // 判断一个值是不是对象：value === Object(value) 则是对象，反之不是
+    因为Object(1)会调用Number对1进行包装，返回一个包装对象
     // 模拟实现
     Object.create = function(prototype, properties) {
         if (typeof prototype !== 'object') {
@@ -548,18 +589,45 @@
         }
         function Ctor() {}
         Ctor.prototype = prototype;
-        let o = new Ctor();
+        let o = new Ctor(); // o 就会继承 prototype 上的所有属性和方法
         if (prototype) {
+            // 实例对象的constructor属性指向其构造函数
+            这里为什么要改？
+            实例对象的constructor属性指向其构造函数，不指向构造函数的prototype
+            实例对象的__proto__指向构造函数的prototype
             o.constructor = Ctor;
         }
         if (properties != undefined) {
-            if (properties !== Object(properties)) {
+            if (properties !== Object(properties)) { // 不是对象
                 throw TypeError();
             }
             Object.defineProperties(o, properties);
         }
         return o;
     }
+    
+    在JS中，为什么在构造函数上设置原型会改变其实例上的constructor属性？
+    function Person() {}
+    function Animal() {}
+    
+    Person.prototype = Animal;
+    
+    let p = new Person();
+    
+    // 为什么Person.prototype = Animal;会导致这个打印为false
+    console.log(p)
+    console.log(p.constructor === Person) // false
+    
+    下面打印为true的原因是，实例对象本身没有constructor属性，查找的时候会沿着原型链向上查找，这里就会沿着 __proto__ 向上查找
+    而 实例对象的 __proto__ 指向构造函数的原型对象
+    这里的原型对象被修改成了 Animal构造函数 
+    而Animal构造函数本身没有 constructor 属性，但是它是Function的实例，所以会沿着 __proto__ 继续向上查找 找到Function构造函数
+    原型对象上有constructor属性指向构造函数
+    console.log(p.constructor === Function) // true
+    console.log(p.constructor === Animal) // false
+    
+    // 想知道构造函数有几个参数
+    实例.constructor.length
     ```
 
     
