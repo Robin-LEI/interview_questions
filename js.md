@@ -511,20 +511,60 @@
     >    >
     >    > ```js
     >    > // nginx.conf 文件
+    >    > server {
+    >    >     listen	80;
+    >    >     server_name	localhost;
+    >    >     location / {
+    >    >         proxy_pass	https://fxtest.accuat.com;
+    >    >     }
+    >    > }
+    >    > // 这样当我们访问 localhost:80/test 时候会间接请求 https://fxtest.accuat.com/test
     >    > 
+    >    > // 在webpack.config.js中的devServer属性也可以进行配置proxy
+    >    > devServer: {
+    >    >     port: 8080,
+    >    >     open: true,
+    >    >     host: "localhost",
+    >    >     proxy: {
+    >    >       "/api": {
+    >    >         target: "https://fstest.accuat.com",
+    >    >         changeOrigin: true,
+    >    >         pathRewrite: {
+    >    >           "^/api": ""
+    >    >         }
+    >    >       }
+    >    >     }
+    >    >   }
     >    > ```
     >    >
     >    > 
     >
-    > 6. 
+    > 6. window.name + iframe
+    >
+    >    > name值在不同的页面（甚至不同域名）加载后依旧存在
+    >    >
+    >    > window.name可以支持2MB的数据
+    >
+    > 7. location.hash + iframe
 
 11. 原生实现ES5的Object.create() 方法
 
     ```js
     // Object.create(proto[, propertiesObject])
     // 此方法使用指定的原型对象和其属性创建了一个新的对象
-    // 第二个参数表示属性描述符，如果是null或非原始包装对象，则抛出一个TypeError异常
+    // 第二个参数表示属性描述符，如果是null或非原始包装对象，则抛出一个TypeError异常【经过测试传null报错】
     // 如果不指定对应的属性描述符，默认都是false
+    
+    let obj = {name: 'obj'}
+    let x = Object.create(obj)
+    x.__proto__ === obj; // true
+    
+    // 使用Object.create(null)初始化一个新对象相比直接使用对象字面量的形式有什么好处
+    1. 使用前者创建出来的对象干净，没有任何其它属性，我们可以自己定义hasOwnProperty、toString等方法，不用担心覆盖原型链上的方法
+    2. 使用for...in遍历的时候，会遍历对象原型链上的所有属性，使用前者可以减少遍历的次数
+    3. 当需要一个非常干净且高度可定制的对象作为数据字典的时候，同时想提高一点性能的时候可以采用前者，其它情况均可以采用后者
+    
+    
     /*
         enumerable可枚举，默认为false
         configurable可删除，默认为false,true表示不能删除，false可以删除
@@ -540,7 +580,8 @@
         }
     });
     // Object.defineProperties() 直接在一个对象上定义新的属性或者修改现有的属性，并返回该对象
-    // 判断一个值不是对象或者非原始包装对象：value === Object(value) 则是对象，反之不是
+    // 判断一个值是不是对象：value === Object(value) 则是对象，反之不是
+    因为Object(1)会调用Number对1进行包装，返回一个包装对象
     // 模拟实现
     Object.create = function(prototype, properties) {
         if (typeof prototype !== 'object') {
@@ -548,35 +589,74 @@
         }
         function Ctor() {}
         Ctor.prototype = prototype;
-        let o = new Ctor();
+        let o = new Ctor(); // o 就会继承 prototype 上的所有属性和方法
         if (prototype) {
+            // 实例对象的constructor属性指向其构造函数
+            这里为什么要改？
+            实例对象的constructor属性指向其构造函数，不指向构造函数的prototype
+            实例对象的__proto__指向构造函数的prototype
             o.constructor = Ctor;
         }
         if (properties != undefined) {
-            if (properties !== Object(properties)) {
+            if (properties !== Object(properties)) { // 不是对象
                 throw TypeError();
             }
             Object.defineProperties(o, properties);
         }
         return o;
     }
+    
+    在JS中，为什么在构造函数上设置原型会改变其实例上的constructor属性？
+    function Person() {}
+    function Animal() {}
+    
+    Person.prototype = Animal;
+    
+    let p = new Person();
+    
+    // 为什么Person.prototype = Animal;会导致这个打印为false
+    console.log(p)
+    console.log(p.constructor === Person) // false
+    
+    下面打印为true的原因是，实例对象本身没有constructor属性，查找的时候会沿着原型链向上查找，这里就会沿着 __proto__ 向上查找
+    而 实例对象的 __proto__ 指向构造函数的原型对象
+    这里的原型对象被修改成了 Animal构造函数 
+    而Animal构造函数本身没有 constructor 属性，但是它是Function的实例，所以会沿着 __proto__ 继续向上查找 找到Function构造函数
+    原型对象上有constructor属性指向构造函数
+    console.log(p.constructor === Function) // true
+    console.log(p.constructor === Animal) // false
+    
+    // 想知道构造函数有几个参数
+    实例.constructor.length
     ```
 
     
 
 12. 请列出至少5个JavaScript常用的内置对象，说明其用途
 
+    - js的标准内置对象分为：值属性和函数属性，值属性指的是全局属性，函数属性指的是全局方法
+    - 值属性：undefined、NaN、Infinity、globalThis
+
     - 常用的五种内置对象
       - encodeURI() 对统一资源标识符（URI）进行编码
       - eval() 函数将传入的字符串当做JavaScript代码进行执行
       - isFinite() 判断传入的参数是否为一个有限的数值
       - isNaN() 判断一个值是否为NaN
-      - parseInt(string, radix) 将一个字符串string转换为radix进制的整数，radix为介于2-36之间的数
+      - parseInt(string, radix) 将一个字符串string转换为radix进制的整数，radix为介于2-36之间的数，第二个参数默认是10
+      
     - 这里的术语“全局对象”（或标准内置对象）不应该与global对象混淆，这里的“全局对象”指的是处在全局作用域里面的多个对象。
+
     - global对象在全局作用域下可以通过this访问到（非严格模式下，严格模式下得到undefined）
+
     - 基本对象（包括一般对象、函数对象、错误对象）
       - Object、Function、Boolean、Symbol（一般对象）
-      - Error、TypeError、SyntaxError、ReferenceError、RangeError（错误对象）
+      - Error（通过Error对象可以自定义错误对象 ，throw new Error('自定义错误') ）、TypeError（变量或者参数不是预期类型时发生的错误，比如new 字符串，布尔值，数字，var obj = {}; obj.test() ）、SyntaxError（console.log(1 ）、ReferenceError（y=xx，引用一个不存在的变量xx）、RangeError（范围错误，当一个值超出有效范围的时候，new Array(-1) ）（错误对象）
+      
+    - **escape、encodeURI、encodeURIComponent的区别**
+
+      > escape用于给字符串编码的，返回一个字符的Unicode编码值，对应的解码函数是unescape，不适合使用对URL编码，因为不对ASCII字母、数字进行编码，也不对 *@-+_./进行编码
+      >
+      > encodeURI，编码的字符范围没有encodeURIComponent广
 
 13. 实现格式化输出，比如输入999999999，输出999,999,999
 
@@ -602,7 +682,7 @@
     
     // 实现2
     function formatNumber(num){
-      return num.toLocaleString('en-US'); // 返回这个数字在特定语言环境下的表示字符串
+      return Number(num).toLocaleString('en-US'); // 返回这个数字在特定语言环境下的表示字符串
     }
     
     // 实现3
@@ -610,6 +690,29 @@
         // Intl对象是ECMAScript国际化API的一个命名空间，它提供了精确的字符串对比，数字格式化，日期和时间格式化
         return new Intl.NumberFormat().format(num);
     }
+    
+     function parse(number) {
+         if (!number) return number;
+         if (!isFinite(number)) return number; // 如果不是有限的
+         let result = '';
+    
+         number = (number + '').split('').reverse(); // 变为字符数组
+    
+         for (let i = 1; i <= number.length; i++) {
+             if (i % 3 === 0) {
+                 result += number[i - 1] + ',';
+             } else {
+                 result += number[i - 1];
+             }
+         }
+    
+         result = result.split('').join('');
+         result = result.slice(-1) === ',' ? result.slice(0, -1) : result;
+    
+         return result.split('').reverse().join('');
+     }
+    
+    console.log(parse(12345424235))
     ```
 
     
@@ -659,10 +762,27 @@
       > 1. XMLHttpRequest取消请求的方法，abort
       > 2. Axios取消请求的方法，cancelToken
 
-    - 伪代码模拟实现(以setTimeout模拟请求、clearTimeout取消请求)
+    - 请求取消的方法
 
       ```js
+      // 原生ajax
+      XMLHttpRequest返回的实例对象上有abort方法，调用即可
       
+      // jQuery 的$.ajax
+      let ajax = $.ajax()
+      ajax.abort()
+      和原生一样，都是调用abort方法，但是操作的对象不一样，取消ajax之后，会触发$.ajax的error方法
+      
+      // axios
+      var CancelToken = axios.CancelToken();
+      var source = CancelToken.source();
+      
+      axios({
+          // cancelToken的值起着标识作用，标识由source控制，可以实现精确取消具体哪一个请求
+          cancelToken: source.token
+      })
+      
+      source.cancel('请求被手动取消');
       ```
 
       
@@ -683,7 +803,7 @@
       >
       > </code>
       >
-      > <!-- 注意：一下情况不属于尾调用 -->
+      > <!-- 注意：以下情况不属于尾调用 -->
       >
       > <code>
       >
@@ -710,7 +830,31 @@
     - 尾调用优化
 
       - [点击查看](http://www.ruanyifeng.com/blog/2015/04/tail-call.html)
+
       - 只保留内层函数的调用记录，如果所有函数都是尾调用，那么完全可以做到每次执行时，调用记录只有一项，这将大大节省内存，这就是尾调用优化的意义。
+
+        ```js
+        function f() {
+          let m = 1;
+          let n = 2;
+          return g(m + n);
+        }
+        f();
+        
+        // 等同于
+        function f() {
+          return g(3);
+        }
+        f();
+        
+        // 等同于
+        g(3);
+        
+        // 上面的代码中，如果函数g不是尾调用，函数f就需要保存内部变量m和n的值、g的调用位置等信息
+        // 但是由于调用g之后，函数f就结束了，所以执行到最后一步，完全可以删除f()的调用记录，只保留g(3)的调用记录
+        ```
+
+        
 
     - 尾递归应用
 
@@ -729,11 +873,11 @@
 
         ```js
         // 0 1 1 2 3 5 8 13 21 ...
-        function Fibonacci(n, prev = 1, current = 1) {
-            if (n <= 1) {
-                return current;
+        function Fibonacci(n) {
+            if (n === 1 || n === 2) {
+                return 1;
             }
-            return Fibonacci(n - 1, prev, prev + current);
+            return Fibonacci(n - 2) + Fibonacci(n - 1);
         }
         ```
 
@@ -798,6 +942,14 @@
 20. cookie 与 session 的区别
 
 21. 浏览器如何做到 session 的功能的。
+
+    > **什么是cookie**
+    >
+    > 
+
+    > **什么是session**
+    >
+    > https://juejin.cn/post/6844904034181070861#heading-3
 
 22. 写一个处理加法可能产生精度的函数，比如 0.1 + 0.2 = 0.3
 
@@ -6199,5 +6351,5 @@
 
      
 
-198. 
+198. 在平时写项目时遇到了哪些错
 
