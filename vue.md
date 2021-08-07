@@ -1118,7 +1118,7 @@ vue编码但是不渲染的标签，vue-fragment，`npm install -g vue-fragment`
       <template v-slot:[dynamicSlotName]>
     ...
       </template>
-</base-layout>
+    </base-layout>
     ```
     
       
@@ -1730,3 +1730,30 @@ vue编码但是不渲染的标签，vue-fragment，`npm install -g vue-fragment`
 
 24. computed和watch的使用场景区分
 25. vue的长列表性能优化
+
+
+
+
+
+# vue3
+
+完整递归，set、get方法、性能不高
+
+options api，一个功能拆分到了不同的模块，定位比较麻烦
+
+composition api：一个功能放在一起
+
+rollup比较纯粹，专注于js
+
+rm -rf
+
+
+
+package.json中的module字段，表示import的时候，指定入口
+
+main指定的入口主要是给commonjs规范去使用的，比如node
+
+formats 指定打包后的包的支持类型
+
+
+
