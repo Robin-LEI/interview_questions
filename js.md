@@ -945,9 +945,44 @@
 
     > **什么是cookie**
     >
+    > http是无状态的协议
+    >
+    > 无状态的协议就是对于事务处理没有记忆能力，每次客户端和服务端会话完成时，服务端不会保存任何会话信息
+    >
+    > 每个请求都是完全独立的，服务端无法确认当前访问者的身份信息，无法分辨上一次的发送者和这一次的发送者是不是同一个人。
+    >
+    > 所以服务器和浏览器为了进行会话跟踪，就必须主动的去维护一个状态，这个状态告知服务端前后两个请求是否来自同一个浏览器，这个状态需要cookie和session来完成。
+    >
+    > <mark>cookie存储在客户端</mark>，是服务端发送到浏览器并保存在本地的，会在下一次浏览器向同一个服务器发送请求时被携带并发送到服务器上。
+    >
+    > <mark>cookie是不能跨域的</mark>，每个cookie会绑定一个单一的域名，无法在别的域下使用，一级域名和二级域名可以共享使用（靠的是domain）。
+    >
+    > **cookie的常用属性**
+    >
+    > | 属性    | 说明                                                         |
+    > | ------- | ------------------------------------------------------------ |
+    > | domain  | cookie的所属域名，默认是当前域名                             |
+    > | path    | cookie在哪个路径下生效，默认是 /<br />如果设置为 /abc，那么只有访问 /abc 下面的路由才能访问到cookie，比如 /abc/test |
+    > | maxAge  | cookie的失效时间，单位秒，如果为负数，该cookie为临时cookie，关闭浏览器就生效，如果为0，表示删除cookie。默认为 -1 |
+    > | expires | 过期时间，在设置的某个时间点后该cookie就会失效，一般浏览器的cookie都是默认存储的，当关闭浏览器结束这个会话的时候，这个cookie就会被删除 |
+    > |         | cookie是否只是在使用安全协议的情况下传输，比如https、ssl等，如果为true，在http下无效 |
+    > |         | 如果给cookie设置了httpOnly属性，那么就无法通过js脚本读取到cookie的信息，但是还是可以在application中手动修改coolie |
+    >
     > 
 
     > **什么是session**
+    >
+    > session是另外一种记录服务端和客户端会话状态的机制
+    >
+    > session是基于cookie实现的，session存储在服务器端，sessionId存储在客户端的cookie中
+    >
+    > ![](https://p1-jj.byteimg.com/tos-cn-i-t2oaga2asx/gold-user-assets/2019/12/29/16f523a04d0b3cf5~tplv-t2oaga2asx-zoom-in-crop-mark:652:0:0:0.awebp)
+    >
+    > **session认证流程**
+    >
+    > - 用户第一次请求服务器的时候，服务器根据用户提交的信息，创建对应的session
+    > - 请求返回时将session的唯一标识sessionId返回给浏览器
+    > - 
     >
     > https://juejin.cn/post/6844904034181070861#heading-3
 
