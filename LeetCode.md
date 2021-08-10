@@ -141,9 +141,40 @@
    }
    
    console.log(multiply("123456789", "987654321"))
+   
+   // ===========================
+   /**
+    * @param {string} num1
+    * @param {string} num2
+    * @return {string}
+    */
+    var multiply = function(num1, num2) {
+       if (!num1 || !num2) return;
+       if (!num1.length || !num2.length) return;
+       if (!num1.trim().length || !num2.trim().length) return;
+       if ([...new Set(num1)][0] === '0' || [...new Set(num2)][0] === '0') return '0';
+   
+       // 定义一个存储结果的数组
+       // index1 表示个位
+       // index2 表示十位
+       let ans = [], index1, index2;
+   
+       for (let i = num1.length - 1; i >= 0; i--) {
+           for (let j = num2.length - 1; j >= 0; j--) {
+               index1 = i + j;
+               index2 = i + j + 1;
+               let mul = num1[i] * num2[j] + (ans[index2] || 0);
+               ans[index2] = mul % 10;
+               ans[index1] = (ans[index1] || 0) + parseInt(mul / 10);
+           }
+       }
+   
+       return ans.join('').replace(/^0+/, '')
+    }
+   
    ```
 
-   
+   ![](https://segmentfault.com/img/bVbfc14?w=969&h=789)
 
 4. 实现 [pow(*x*, *n*)](https://www.cplusplus.com/reference/valarray/pow/) ，即计算 x 的 n 次幂函数（即，xn）。
 

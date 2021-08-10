@@ -1,4 +1,4 @@
-防抖
+https://juejin.cn/post/6844903689702866952 防抖
 
 - 原理：在事件被触发n秒后再执行回调，如果在这n秒内又被触发，则重新计时
 
@@ -1045,32 +1045,108 @@
 23. 写一个大数相乘的解决方案。传两个字符串进来，返回一个字符串
 
     ```js
+    /**
+     * @param {string} num1
+     * @param {string} num2
+     * @return {string}
+     */
+     var multiply = function(num1, num2) {
+        if (!num1 || !num2) return;
+        if (!num1.length || !num2.length) return;
+        if (!num1.trim().length || !num2.trim().length) return;
+        if ([...new Set(num1)][0] === '0' || [...new Set(num2)][0] === '0') return '0';
+    
+        // 定义一个存储结果的数组
+        // index1 表示个位
+        // index2 表示十位
+        let ans = [], index1, index2;
+    
+        for (let i = num1.length - 1; i >= 0; i--) {
+            for (let j = num2.length - 1; j >= 0; j--) {
+                index1 = i + j;
+                index2 = i + j + 1;
+                let mul = num1[i] * num2[j] + (ans[index2] || 0);
+                ans[index2] = mul % 10;
+                ans[index1] = (ans[index1] || 0) + parseInt(mul / 10);
+            }
+        }
+    
+        return ans.join('').replace(/^0+/, '')
+     }
     
     ```
 
-    
+    ![](https://segmentfault.com/img/bVbfc14?w=969&h=789)
 
 24. 解释一下：csrf 和 xss
 
     > xss：跨站脚本攻击，通常将恶意代码注入到网页上，其他用户浏览的时候就会受到影响。
     >
-    > 反射型：http://localhost:3000/welcome?type=\<script>alert(1)</script>
+    > <mark>反射型：</mark>http://localhost:3000/welcome?type=\<script>alert(1)</script>
     >
-    > chrome发现路径存在异常，会有xss屏蔽功能
+    > 攻击步骤：
     >
-    > 一般情况下会让cookie在前端不可以获取，并不是xss的解决方案，只是降低受损的范围
+    > 1. 攻击者构造出特殊的 URL，其中包含恶意代码。
+    > 2. 用户打开带有恶意代码的 URL 时，网站服务端将恶意代码从 URL 中取出，拼接在 HTML 中返回给浏览器。
+    > 3. 用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行。
+    > 4. 恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。
     >
-    > 转码：encodeURIComponent
+    > ==============start=========================================
     >
-    > 不基于后端，DOM-Based，修改属性，插入内容，document.write，改变结构后，会造成攻击，xss payload
+    > xss属于跨站脚本攻击，是一种代码注入攻击，攻击者通过在目标网站上注入恶意脚本，使他在用户浏览器上运行，利用这些恶意脚本，攻击者可以获取到cookie和sessionId
     >
-    > 可以使用encodeURI转义URL
+    > XSS攻击页面被注入了恶意的代码
     >
-    > 存储型：恶意的脚本存储到了服务器上，所有人访问时都会造成攻击，比反射型和DOM-Based范围更大。比如，提交评论。
+    > 例如：根据URL的参数决定页面的搜索关键词
     >
-    > 
+    > 可以通过HTML转义来解决，但是HTML转义并不等于彻底解决问题，escapeHTML用来转义HTML
     >
-    > csrf：跨站请求伪造
+    > 对于链接跳转，比如a标签的href和location.href，要检验内容，禁止以JavaScript: 开头的链接
+    >
+    > 注意，插入JSON的地方不能使用 escapeHTML转义，因为此方法会把 " 转义，破坏JSON格式
+    >
+    > **XSS注入有哪些方法**
+    >
+    > 1. 在HTML的内嵌文本中，恶意内容以script标签注入
+    > 2. href、src属性，包含JavaScript: 可执行代码
+    > 3. style属性和标签中，包含background-image:url("javascript:...");
+    >
+    > ==============end===========================================
+    >
+    > <mark>存储型</mark>：恶意的脚本存储到了服务器上，所有人访问时都会造成攻击，比反射型和DOM-Based范围更大。比如，提交评论。
+    >
+    > 攻击步骤：
+    >
+    > 1. 攻击者将恶意代码提交到目标网站的数据库中。
+    >
+    > 2. 用户打开目标网站时，网站服务端将恶意代码从数据库取出，拼接在 HTML 中返回给浏览器。
+    >
+    > 3. 用户浏览器接收到响应后解析执行，混在其中的恶意代码也被执行。
+    >
+    > 4. 恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。
+    >
+    >    这种攻击常见于带有用户保存数据的网站功能，如论坛发帖、商品评论、用户私信等。
+    >
+    > 反射型 XSS 跟存储型 XSS 的区别是：存储型 XSS 的恶意代码存在数据库里，反射型 XSS 的恶意代码存在 URL 里。
+    >
+    > 反射型 XSS 漏洞常见于通过 URL 传递参数的功能，如网站搜索、跳转等。
+    >
+    > <mark>DOM型XSS</mark>:
+    >
+    > 1. 攻击者构造出特殊的 URL，其中包含恶意代码。
+    >
+    > 2. 用户打开带有恶意代码的 URL。
+    >
+    > 3. 用户浏览器接收到响应后解析执行，前端 JavaScript 取出 URL 中的恶意代码并执行。
+    >
+    > 4. 恶意代码窃取用户数据并发送到攻击者的网站，或者冒充用户的行为，调用目标网站接口执行攻击者指定的操作。
+    >
+    >
+    > DOM 型 XSS 跟前两种 XSS 的区别：DOM 型 XSS 攻击中，取出和执行恶意代码由浏览器端完成，属于前端 JavaScript 自身的安全漏洞，而其他两种 XSS 都属于服务端的安全漏洞。
+    >
+    > https://juejin.cn/post/6844903685122703367#heading-13
+    >
+    > ### csrf：跨站请求伪造
     >
     > 攻击者盗用你的身份，以你的名义来发送恶意请求，对服务器来说，这个请求是完全合法的。
     >
@@ -1079,6 +1155,10 @@
     > 3. 用户未退出网站A之前，在同一浏览器中，打开一个TAB页访问网站B；
     > 4. 网站B接收到用户请求后，返回攻击性代码，并发出一个请求要求访问第三方站点A；
     > 5. 浏览器在接收到这些攻击性代码后，根据网站B的请求，在用户不知情的情况下携带Cookie信息，向网站A发出请求。网站A并不知道该请求其实是由B发起的，所以会根据用户C的Cookie信息以C的权限处理该请求，导致来自网站B的恶意代码被执行。
+    >
+    > ===================================================================
+    >
+    > https://juejin.cn/post/6844903689702866952
 
 25. 怎么防止 csrf 和 xss
 
@@ -1087,6 +1167,8 @@
     > 1. 客户端发送给服务器时，需要先校验过滤一下
     > 2. 服务端在做一次过滤（转义）
     > 3. 直接在输出的时候过滤
+    > 4. 纯前端渲染
+    > 5. 输入内容长度限制
     >
     > 防止csrf攻击：
     >
@@ -1326,6 +1408,54 @@
     - 概念
 
       > 将值从一种类型转换为另外一种类型通常称为类型转换，也叫做显式转换，隐式转换也叫做强制类型转换。
+
+    ```js
+    let result = 100 + true + 21.2 + null + undefined + "Tencent" + [] + null + 9 + false;
+    // result应该是？
+    
+    在 JavaScript 语言中数据类型分为2大类：原始值类型和对象类型
+    原始值类型，就是我们常说的「值类型/基本数据类型」
+    number
+    string
+    boolean
+    null
+    undefined
+    symbol
+    bigint
+    
+    而对象类型指的是「引用数据类型」
+    标准普通对象：object
+    标准特殊对象：Array、RegExp、Date、Math、Error……
+    非标准特殊对象：Number、String、Boolean……
+    可调用/执行对象「函数」：function
+    
+    类型转换可以分为两种：🌛隐式类型转换和☀️显式类型转换。
+    显示类型使用编写代码在类型之间进行转换，比如 Number(value)
+    隐式类型，在不同类型的值使用运算符时，比如 1 == null
+    
+    在 JS 中只有 3 种类型的转换
+    转化为 Number 类型：Number() / parseFloat() / parseInt()
+    转化为 String 类型：String() / toString()
+    转化为 Boolean 类型: Boolean()
+    
+    对象 == 字符串 // 将对象转为字符串
+    {} + [] === 0               // true
+    [] + {} === 0               // false
+    
+    + 会进行隐式类型转换，规则是调用其valueOf或toString
+    {} + [] 这里把 {} 看成一个空的代码块了
+    + [] 调用数组的 valueOf方法返回[],接着调用toString方法返回空字符串，最终转为0
+    
+    [] + {}
+    [] 转为 ''
+    +{} 最终调用toString转为 [object Object]
+    
+    注意，有运算符参与的情况下，valueOf的优先级高于toString
+    一般情况下，toString优先级高
+    当调用valueOf拿不到原始值的时候，会继续调用toString
+    ```
+
+    
 
 38. Object.setPrototypeOf()
 
