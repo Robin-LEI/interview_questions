@@ -526,5 +526,41 @@
 
     
 
-15. 
+15. 字符串相加
+
+    > 给定两个字符串形式的非负整数 `num1` 和`num2` ，计算它们的和。
+    >
+    > 1. num1 和num2 的长度都小于 5100
+    > 2. num1 和num2 都只包含数字 0-9
+    > 3. num1 和num2 都不包含任何前导零
+    > 4. 你不能使用任何內建 BigInteger 库， 也不能直接将输入的字符串转换为整数形式
+    
+    ```js
+    /**
+     * @param {string} num1
+     * @param {string} num2
+     * @return {string}
+     */
+    var addStrings = function(num1, num2) {
+    
+        let ans = [], len = Math.max(num1.length, num2.length);
+        num1 = num1.padStart(len, 0);
+        num2 = num2.padStart(len, 0);
+    
+        for (let i = len - 1; i >= 0; i--) {
+            let sum = Number(num1[i] || 0) + Number(num2[i] || 0) + (ans[i] || 0);
+            ans[i] = sum % 10;
+            if ((i - 1) < 0) {
+                ans.unshift(parseInt(sum / 10));
+            } else {
+                ans[i - 1] = parseInt(sum / 10);
+            }
+        }
+    
+        const tempRes = ans.join('').replace(/^0+/, '');
+        return !tempRes ? '0' : tempRes;
+    };
+    ```
+    
+    
 
