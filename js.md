@@ -1038,6 +1038,12 @@ https://juejin.cn/post/6844903689702866952 防抖
         m=Math.pow(10,Math.max(r1,r2));
         return (arg1*m+arg2*m)/m;
     }
+    
+    为什么 0.2+0.3 = 0.5
+    0.2和0.3都转化为二进制在进行运算，进行二进制相加之后，尾数大于52位，是53位，但是实际取值只会精确到52位尾数，截取后恰好结果是0.5
+    
+    既然0.1不是0.1了，为什么console.log(0.1)还是0.1呢？
+    在console.log的时候会把二进制转为十进制，十进制在转为字符串，在转换的过程中发生了近似取值，所以打印出来的是一个近似值的字符串
     ```
 
     
@@ -1429,6 +1435,9 @@ https://juejin.cn/post/6844903689702866952 防抖
     非标准特殊对象：Number、String、Boolean……
     可调用/执行对象「函数」：function
     
+    基本数据类型存储在栈中，引用数据类型存储在堆中，但是引用数据类型的地址存储在栈中
+    栈内存是自动分配的，当函数执行完成，形成的私有作用域会自动释放，栈中存储的变量也会自动释放，堆内存是动态分配的，不会自动释放，所以每次使用完对象需要赋值为null，手动释放，减少无用内存的消耗
+    
     类型转换可以分为两种：🌛隐式类型转换和☀️显式类型转换。
     显示类型使用编写代码在类型之间进行转换，比如 Number(value)
     隐式类型，在不同类型的值使用运算符时，比如 1 == null
@@ -1536,6 +1545,18 @@ https://juejin.cn/post/6844903689702866952 防抖
     > a instanceof b
     >
     > b的prototype是否在a的原型链上
+    >
+    > 作用是用来做类型检测的
+    >
+    > - 可以检测某个对象是不是另外一个对象的实例
+    >
+    >   ```js
+    >   let Person = function() {}
+    >   let student = new Person()
+    >   studend instanceof Person // true
+    >   ```
+    >
+    > **原理是：判断对象B的prototype原型对象是不是在A的原型链上，如果在，返回true，如果不在返回false**
 
 41. 数组扁平化的几种方式
 
@@ -1545,20 +1566,18 @@ https://juejin.cn/post/6844903689702866952 防抖
     console.log(arr.flat(Infinity))
     // 方法2
     let arr = [1, [2,3], [4,5,6]];
-    let result = []
-    function flat(arr) {
+    function flat(arr, result = []) {
         if (!Array.isArray(arr)) return result.push(arr)
         arr.forEach(item => {
             if (Array.isArray(item)) {
-                flat(item)
+                flat(item, result)
             } else {
                 result.push(item)
             }
         })
         return result
     }
-    flat(arr)
-    console.log(result)
+    console.log(flat(arr))
     // 方法3
     let arr = [1, [2, 3], [4, 5, 6]];
     function flat(arr) {
@@ -1566,6 +1585,7 @@ https://juejin.cn/post/6844903689702866952 防抖
             return pre.concat(cur)
         }, [])
     }
+    // 这个方法有个弊端，只能扁平化一层
     console.log(flat(arr))
     ```
 
@@ -1881,6 +1901,9 @@ https://juejin.cn/post/6844903689702866952 防抖
             }
             leftProto = leftProto.__proto__
         }
+        
+        // while(true)可以使用 for(;;)代替
+        // for(;;)比while(true)好，因为for编译后指令少 不占用寄存器
     }
     
     // toString
@@ -2231,9 +2254,17 @@ https://juejin.cn/post/6844903689702866952 防抖
     // 如果绑定的函数的返回值函数被new了，当前绑定函数的this就是当前的实例
     // new出来的结果可以找到原有类(构造函数)的原型
     
+    // 只有函数才能调用bind
+    
     Function.prototype.bind = function(context) {
+        context = context || window;
         // 保存绑定函数
         const that = this;
+        	
+       	if (typeof that !== 'function') {
+            throw new Error('not a function')
+        }
+        
         // 获取bind函数的参数
         const bindArgs = [].slice.call(arguments, 1);
         function Fn() { // bind是一个高阶函数
@@ -2243,9 +2274,15 @@ https://juejin.cn/post/6844903689702866952 防抖
             return that.apply(this instanceof Fn ? this : context, bindArgs.concat(args));
         }
         // new出来的结果可以找到原有构造函数的原型
-        const Tn = function() {}
-        Tn.prototype = that.prototype;
-        Fn.prototype = new Tn();
+        // const Tn = function() {}
+        // Tn.prototype = that.prototype;
+        // Fn.prototype = new Tn();
+        
+        // 维护原型链的关系
+        if (that.prototype) {
+            Fn.prototype = Object.create(that.prototype);
+        }
+        
         // 这里避免这样写：Fn.prototype = that.prototype; 如果这样写，当在Fn的原型对象上扩展方法的时候，会污染绑定函数的原型，且构不成一个完整的原型链，采取上面这种写法，Fn的原型对象相当于是一个实例对象，在实例对象上添加属性和方法不会影响绑定函数的原型，且构成了一个原型链
         return Fn;
     }
@@ -2958,6 +2995,37 @@ https://juejin.cn/post/6844903689702866952 防抖
     console.log(getType(null)) // null
     console.log(getType(undefined)) // undefined
     console.log(getType(Symbol())) // symbol
+    
+    typeof只能判断基本数据类型
+    typeof 1 // number
+    typeof null || [] || {} // object
+    弊端就是判断对象类型不准确
+    
+    instanceof 判断B的prototype是否在A的原型链上，不能准确判断是哪一个类型
+    
+    Object.prototype.toString.call()使用最多，最靠谱，但是缺点就是不能细分谁谁的实例
+    比如
+    function Person() {}
+    let p = new Person()
+    Object.prototype.toString.call(p) // [object Object]
+    
+    constructor
+    实例.contructor.name
+    弊端就是对于原型继承的判断不准确
+    function Person() {}
+    function Student() {}
+    Person.prototype = new Student()
+    let p = new Person()
+    console.log(p.constructor.name) // Student，需要我们需要手动修改实例的constructor指向，指向Person
+    
+    为什么typeof null是object
+    因为在JavaScript中，不同对象都是用二进制存储的，如果二进制前三位都是0，系统会判断为object类型，null的二进制全是0，所以自然而然表示为object
+    这个bug是初版本的JavaScript中留下的，扩展一下其他五种标识位
+    000 对象
+    1 整型
+    010 双精度类型
+    100 字符串
+    110 布尔类型
     ```
 
     
@@ -6560,4 +6628,14 @@ https://juejin.cn/post/6844903689702866952 防抖
      
 
 198. 在平时写项目时遇到了哪些错
+
+199. 字面量创建对象和new创建对象有什么不同，new内部实现了什么，手写一个new
+
+     ```js
+     
+     ```
+
+     
+
+200. 
 
