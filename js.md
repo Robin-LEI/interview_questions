@@ -1736,18 +1736,18 @@ https://juejin.cn/post/6844903689702866952 防抖
     >    ```js
     >    // dom 元素移除，但 对 dom 元素的引用没有解除，会导致内存泄漏。
     >    // 解决办法：手工移除。elements.button = null
-    >    
+    >       
     >    var elements = {
     >    	button: document.getElementById('button'),
     >    	image: document.getElementById('image')
     >    }
-    >    
+    >       
     >    function doStuff() {
     >        image.src = 'http://some.url/image';
     >        button.click();
     >        console.log(text.innerHTML);
     >    }
-    >    
+    >       
     >    function removeButton() {
     >        document.body.removeChild(document.getElementById('button'));
     >        // 虽然我们用removeChild移除了button, 但是还在elements对象里保存着#button的引用
@@ -6127,7 +6127,7 @@ https://juejin.cn/post/6844903689702866952 防抖
      >       alert('点了我一下');
      >     }
      >   </script>
-     >   
+     >     
      >   // 另一种是，通过js将事件处理程序添加到元素属性上：
      >   // 示例二
      >   <div>点击一下</div>
@@ -6137,7 +6137,7 @@ https://juejin.cn/post/6844903689702866952 防抖
      >        alert('点了我一下');
      >     }
      >   </script>
-     >   
+     >     
      >   // DOM0级的事件监听，移除时只需将其属性设置为null即可。
      >   // 需要注意的是：DOM0级的事件监听，只能为其指定一个事件处理函数，当指定了多个，后者会把前面的覆盖。
      >   // 示例三
@@ -6160,17 +6160,17 @@ https://juejin.cn/post/6844903689702866952 防抖
      >
      >   ```js
      >   // IE的事件机制没有捕获阶段，事件流是非标准的，只有目标阶段和冒泡阶段。
-     >   
+     >     
      >   // 事件注册方式
      >   <button id="btn">点我</button>
      >   <script type="text/javascript">
-     >   
+     >     
      >   var target = document.getElementById("btn");
-     >   
+     >     
      >   target.attachEvent('onclick',function(){
      >           alert("我是button");
      >   });
-     >   
+     >     
      >   </script>
      >   // 与之对应的也有事件的移除函数 ：detachEvent() ；
      >   // 同样也有阻止事件冒泡的方法：首先获得event对象，e = window.event（可见IE中的event对象是个全局属性)，然后设置event的cancelBubble属性为true即可e.cancelBubble = true;
@@ -6186,10 +6186,10 @@ https://juejin.cn/post/6844903689702866952 防抖
      >   // 1. 捕获阶段：事件从Document对象沿着文档树向下传播给节点。如果目标的任何一个祖先专门注册了事件监听函数，那么在事件传播的过程中就会运行这些函数。（0级DOM事件模型处理没有捕获阶段）
      >   // 2. 目标阶段：下一个阶段发生在目标节点自身，直接注册在目标上的适合的事件监听函数将运行。（一般将此阶段看作冒泡阶段的一部分）
      >   // 3. 冒泡阶段：这个阶段事件将从目标元素向上传播回Document对象（与捕获相反的阶段）。虽然所有事件都受捕获阶段的支配，但并不是所有类型的事件都冒泡。
-     >   
+     >     
      >   // DOM2级事件绑定是使用addEventListener方法（IE使用attachEvent方法）：
      >   // 浏览器会给当前元素的某个事件行为开辟一个事件池（事件队列）【浏览器有一个统一的事件池，每个元素绑定的行为都放在这里，通过相关标志区分】，当我们通过addEventListener/attachEvent进行事件绑定的时候，会把绑定的方法放在事件池中；当元素的某一行为被触发，浏览器回到对应事件池中，把当前放在事件池的所有方法按序依次执行；
-     >   
+     >     
      >   // 示例四
      >   <div>
      >     <button>点击一下</button>
@@ -6637,5 +6637,147 @@ https://juejin.cn/post/6844903689702866952 防抖
 
      
 
-200. 
+200. es6
+
+     ```js
+     ##################### symbol start ##########################
+     
+     /**
+      * 表示独一无二的类型
+      * 常用作对象的key
+      * symbol属性默认不能被枚举
+      * Object.keys()也不行
+      * getOwnPropertySymbols
+      */
+     
+     // 这个方法可以获取
+     Reflect.ownKeys
+     
+     function fn(a, b) {
+       console.log(a, b)
+     }
+     Function.prototype.apply.call(fn, null, [1,2])
+     // 等价于
+     Reflect.apply(fn, null, [1,2])
+     
+     Symbol.for实现复用
+     第一次是声明一个全新的，第二次是把之前已有的拿过来使用
+     s1 === s2 // true
+     
+     Symbol具有元编程的能力---可以改写语法本身
+     let obj = {
+       [Symbol.toStringTag]: 'lei'
+     }
+     // [object lei]
+     console.log(Object.prototype.toString.call(obj))
+     
+     隐式类型转化
+     obj = {
+       [Symbol.toPrimitive](type) {
+         return '123'
+       }
+     }
+     console.log(obj + '1') // 1231
+     调用toString的时候会调用toPrimitive
+     
+     let instance = {
+       [Symbol.hasInstance](value) {
+         return 'name' in value
+       }
+     }
+     console.log({name: 'test'} instanceof instance)
+     
+     ##################### symbol end ##########################
+     
+     ##################### set map  start #############################
+     set\map\weakSet\WeakMap
+     
+     set值不重复
+     add、delete、has、entries、forEach
+     对象和对象永远不相等
+     
+     map
+     键值对
+     new Map([['a', 1]])
+     set、size、forEach
+     key可以使用对象
+     
+     [object Map]
+     console.log(Object.prototype.toString.call(new Map()))
+     
+     交集、并集、补集、差集
+     
+     迭代的意思是内部有 Symbol.iterator 方法
+     
+     WeakMap 弱引用
+     
+     
+     class MyTest {}
+     let my = new MyTest()
+     let map = new Map()
+     map.set(my, 1)
+     
+     map引用的对象不会被回收掉
+     my = null
+     
+     当你给变量设置null的时候，不会马上回收，会在合适
+     的时机回收
+     
+     WeakMap引用的对象被设置为null，后续会被清空垃圾回收
+     key只能是对象
+     
+     ########################## set map end ####################
+     
+     # 扩展运算符
+     ...默认只展开第一层
+     相等于Object.assign
+     
+     ########## compose 函数 start ############
+     
+     // compose会把多个函数组合起来
+     function sum(a, b) {
+       return a + b;
+     }
+     function len(str) {
+       return str.length;
+     }
+     function addPrefix(str) {
+       return '$' + str;
+     }
+     
+     console.log(addPrefix(len(sum('a', 'b'))))
+     
+     function compose(...fns) {
+       return function(...args) {
+         // fns 是一个数组 [ [Function: addPrefix], [Function: len], [Function: sum] ]
+         // 执行顺序是从右到左执行
+         let lastFn = fns.pop();
+         return fns.reduceRight((prev, current) => {
+           return current(prev);
+         }, lastFn(...args));
+       }
+     }
+     
+     // compose函数的返回值是一个函数
+     let final = compose(addPrefix, len, sum)
+     console.log(final('a', 'b'))
+     
+     // 使用reduce实现
+     function compose2(...fns) {
+       // reduce 不传递第二个参数prev就取数组的第一个
+       return fns.reduce((prev, current) => {
+         return function(...args) {
+           return prev(current(...args));
+         };
+       })
+     }
+     let final2 = compose2(addPrefix, len, sum)
+     console.log(final2('a', 'b'))
+     ########### compose 函数 end ######################
+     
+     ```
+
+     
+
+201. 
 
