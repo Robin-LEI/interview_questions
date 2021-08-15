@@ -1233,7 +1233,7 @@
     >   ```html
     >   <!DOCTYPE html>
     >   <html lang="en">
-    >   
+    >     
     >   <head>
     >       <meta charset="UTF-8">
     >       <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -1250,7 +1250,7 @@
     >           }
     >       </style>
     >   </head>
-    >   
+    >     
     >   <body>
     >       <div class="father">
     >           <div class="son"></div>
@@ -1258,7 +1258,7 @@
     >           <div class="son"></div>
     >       </div>
     >   </body>
-    >   
+    >     
     >   </html>
     >   ```
     >
@@ -1388,7 +1388,7 @@
       >    ```css
       >    <link rel="stylesheet" href="./index2.css" media="none" onload="this.media='all'">
       >    这样浏览器将会异步加载这个CSS文件（优先度比较低），在加载完毕之后，使用onload属性将link的媒体类型设置为all，然后便开始渲染。
-      >    
+      >       
       >    <link rel="stylesheet" href="./index1.css">
       >    ```
       >
@@ -1470,5 +1470,112 @@
     >
     >    
 
-32. 
+32. 关于移动端适配的认知
+
+    > **像素的认识**
+    >
+    > 一个图像由一个个的像素点组成的，像素点的颜色和位置决定了图像的颜色和位置
+    >
+    > 我们通常说的分辨率就是也是由横纵像素点组成的
+    >
+    > 每个像素点由红绿蓝三种颜色按照比例混合而成的
+    >
+    > 每个像素的大小是不固定的，由设备的实际分辨率决定
+
+    > **分辨率**
+    >
+    > 分辨率指的就是横纵方向上的像素点的个数
+    >
+    > 分辨率的单位是px
+
+    > **设备的物理分辨率（设备像素）**
+    >
+    > 如果手机的分辨率翻倍，图像就得压缩一倍
+    >
+    > 所以不同的设备的分辨率不一定一样，我们也不可能针对每个设备的分辨率做出一个对应的设计稿
+
+    > **逻辑分辨率（设备独立像素）**
+    >
+    > 很多的设备它的物理分辨率不一样，但是他们的逻辑分辨率都差不多
+    >
+    > 逻辑像素由物理像素得来的
+
+    > **设备像素比（dpr）**
+    >
+    > 物理像素和设备独立像素的比值
+    >
+    > 这个像素比会产生一个问题 1px边框问题
+
+    > **1px边框问题**
+    >
+    > CSS里面写的px指的是逻辑像素
+    >
+    > 所以1px边框映射到不同dpr的设备上，就会出现不同大小的边框，比如2px、3px
+    >
+    > **如何解决**
+    >
+    > 浏览器提供了一个方法可以获取设备的dpr，`window.devicePixelRatio`，也可以利用css中关于dpr的媒体查询，min-device-pixel-ratio，根据dpr实际求出不同设备的实际大小，但是不同的浏览器渲染0.5px的时候会有兼容问题
+    >
+    > 比如chrome会把小于0.5px的当做0处理
+    >
+    > firefox会把大于等于0.55px的当做1px处理
+    >
+    > Safari会把大于等于0.75的当做1px处理
+    >
+    > 所以我们常用的是transform的scale属性
+    >
+    > ```css
+    > div {
+    >     height: 1px;
+    >     background: red;
+    >     transform: scaleY(0.5);
+    >     transform-origin: 0 0;
+    > }
+    > ```
+    >
+    > 
+
+33. first-of-type和first-child的区别
+
+    - first-of-type指的是父级元素下面的特定类型的第一个，不要求是真正意义上的第一个
+
+    - first-child指的是父级下面的真正意义上的第一个元素
+
+    - demo
+
+      ```css
+      <!DOCTYPE html>
+      <html lang="en">
+      <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+          /* 父级元素第一个 */
+          p:first-child {
+            /* 1 */
+            color: red;
+          }
+      
+          p:first-of-type {
+            /* 1 5 */
+            /* color: blue; */
+          }
+        </style>
+      </head>
+      <body>
+        <p>1</p>
+        <p>2</p>
+        <div>
+          <span>4</span>
+          <p>5</p>
+        </div>
+      </body>
+      </html>
+      ```
+
+      
+
+34. 
 
