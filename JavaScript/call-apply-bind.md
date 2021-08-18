@@ -49,3 +49,54 @@
    
 
 3. bind
+
+   ```js
+   1. 函数调用bind函数之后，并不会立即执行
+   2. 而是返回一个新的函数
+   3. 应用场景：改变this指向，把返回的函数作为构造函数使用
+   
+   Function.prototype.bind = function(context) {
+       context = context || window
+       const that = this
+       
+       if (typeof that !== 'function') {
+           throw TypeError('caller must be a function')
+       }
+       
+       const bindArgs = [].slice.call(arguments, 1)
+       
+       function Fn() {
+           const args = Array.prototype.slice.call(arguments)
+           // 判断返回值函数是否被new
+           return this instanceof Fn ? that.apply(this, bindArgs.concat(args)) : that.apply(context, bindArgs.concat(args))
+       }
+       
+       // 维护原型链
+       // 如果不维护，new bind返回的新函数实例找不到绑定函数的原型
+       if (that.prototype) {
+           Fn.prototype = Object.create(that.prototype)
+       }
+       
+       return Fn
+   }
+   
+   // 测试用例
+   function fn(name) {
+       console.log(this, name)
+   }
+   
+   fn.prototype.test = function() {
+       console.log(1)
+   }
+   
+   let obj = {
+       name: 'xiaoming',
+       age: 10
+   }
+   
+   let r = fn.bind(obj, 'hello')
+   let o = new r()
+   o.test()
+   ```
+
+   
