@@ -1,0 +1,9 @@
+loader
+
+loader是加载器的意思，webpack将一切文件都看做模块，webpack原生只能打包js文件，如果需要打包解析其他类型的文件，就需要借助于loader，所以loader使得webpack具备了打包解析非js文件的能力
+
+
+
+plugin
+
+plugin是插件的意思，用于扩展webpack的功能。
