@@ -1,19 +1,3 @@
-6. CSS选择符有哪些?
-
-   > ```
-   > id 选择器（#myid）
-   > 类选择器（.myclassname）
-   > 标签选择器（div,h1,p）
-   > 后代选择器（h1 p）
-   > 相邻后代选择器（子）选择器（ul>li）
-   > 兄弟选择器（li~a）
-   > 相邻兄弟选择器（li+a）
-   > 属性选择器（a[rel="external"]）
-   > 伪类选择器（a:hover,li:nth-child）
-   > 伪元素选择器（::before、::after）
-   > 通配符选择器（*）
-   > ```
-
 7. 如何处理HTML5新标签的浏览器兼容问题?
 
    > - (1) IE8/IE7/IE6 支持通过 document.createElement 方法产生的标签，可以利用这一特性让这些浏览器支持 HTML5 新标签，浏览器支持新标签后，还需要添加标签默认的样式。
