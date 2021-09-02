@@ -1736,18 +1736,18 @@ https://juejin.cn/post/6844903689702866952 防抖
     >    ```js
     >    // dom 元素移除，但 对 dom 元素的引用没有解除，会导致内存泄漏。
     >    // 解决办法：手工移除。elements.button = null
-    >          
+    >             
     >    var elements = {
     >    	button: document.getElementById('button'),
     >    	image: document.getElementById('image')
     >    }
-    >          
+    >             
     >    function doStuff() {
     >        image.src = 'http://some.url/image';
     >        button.click();
     >        console.log(text.innerHTML);
     >    }
-    >          
+    >             
     >    function removeButton() {
     >        document.body.removeChild(document.getElementById('button'));
     >        // 虽然我们用removeChild移除了button, 但是还在elements对象里保存着#button的引用
@@ -2183,113 +2183,6 @@ https://juejin.cn/post/6844903689702866952 防抖
 
     
 
-63. call的原理
-
-    ```js
-    // 可以改变this指向
-    // 调用函数会立即执行
-    function fn1(name, age) {
-        console.log(1, name, age)
-    }
-    function fn2() {
-        console.log(2)
-    }
-    Function.prototype.call = function(context) {
-        context = context ? Object(context) : window;
-        context.fn = this;
-        let args = [];
-        for (let i = 1; i < arguments.length; i++) {
-            args.push(`arguments[${i}]`);
-        }
-        const r = eval(`context.fn(${args})`)
-        delete context.fn;
-        return r;
-    }
-    fn1.call(fn2, 'xiaoming', 11);
-    fn1.call.call.call(fn2);
-    ```
-
-    
-
-64. apply的原理
-
-    ```js
-    // 可以改变this指向
-    // 调用函数立即执行，参数是数组
-    function fn1(name, age) {
-        console.log(1, name, age)
-    }
-    function fn2(name) {
-        console.log(2, name)
-    }
-    Function.prototype.apply = function(context, args) {
-        context = context ? Object(context) : window;
-        context.fn = this;
-        if (!args) return eval(`context.fn()`);
-        if (!Array.isArray(args)) {
-            throw TypeError('CreateListFromArrayLike called on non-object');
-        }
-        let arr = []
-        for (let i = 0;i < args.length; i++) {
-            arr.push(`args[${i}]`);
-        }
-        const r = eval(`context.fn(${arr})`);
-        delete context.fn;
-        return r;
-    }
-    fn1.apply(fn2)
-    fn1.apply(fn2, ['xiaoming', 11])
-    fn1.apply.apply(fn2, ['xiaohua'])
-    ```
-
-    
-
-65. bind的原理
-
-    ```js
-    // 使用bind绑定之后，并不会立即执行，而是返回一个新的方法，我们需要执行新的方法
-    // 可以绑定this指向
-    // bind本身就是一个高阶函数
-    // bind函数第一个参数是上下文，第二个之后的参数的需要绑定传递的参数，这些参数也可以在其返回函数调用的时候传递
-    // 如果绑定的函数的返回值函数被new了，当前绑定函数的this就是当前的实例
-    // new出来的结果可以找到原有类(构造函数)的原型
-    
-    // 只有函数才能调用bind
-    
-    Function.prototype.bind = function(context) {
-        context = context || window;
-        // 保存绑定函数
-        const that = this;
-        	
-       	if (typeof that !== 'function') {
-            throw new Error('not a function')
-        }
-        
-        // 获取bind函数的参数
-        const bindArgs = [].slice.call(arguments, 1);
-        function Fn() { // bind是一个高阶函数
-            // 返回值函数也可以传递参数
-            const args = Array.prototype.slice.call(arguments);
-            // 执行绑定函数，并传入参数，如果绑定的函数的返回值函数被new了，当前绑定函数的this就是当前的实例
-            return that.apply(this instanceof Fn ? this : context, bindArgs.concat(args));
-        }
-        // new出来的结果可以找到原有构造函数的原型
-        // const Tn = function() {}
-        // Tn.prototype = that.prototype;
-        // Fn.prototype = new Tn();
-        
-        // 维护原型链的关系
-        if (that.prototype) {
-            Fn.prototype = Object.create(that.prototype);
-        }
-        
-        // 这里避免这样写：Fn.prototype = that.prototype; 如果这样写，当在Fn的原型对象上扩展方法的时候，会污染绑定函数的原型，且构不成一个完整的原型链，采取上面这种写法，Fn的原型对象相当于是一个实例对象，在实例对象上添加属性和方法不会影响绑定函数的原型，且构成了一个原型链
-        return Fn;
-    }
-    ```
-
-    
-
 66. 变量提升
 
 67. 说说js中的词法作用域
@@ -2586,7 +2479,7 @@ https://juejin.cn/post/6844903689702866952 防抖
     >
     > https://www.cnblogs.com/fayin/p/6831071.html
 
-79. 判断对象为空
+75. 判断对象为空
 
     ```js
     function judge(value) {
@@ -2598,34 +2491,6 @@ https://juejin.cn/post/6844903689702866952 防抖
     // 在最版本的JS标准中，数据类型分为了8类，包括
     // 7种基本数据类型，undefined、null、string、boolean、number、symbol(es新增)、bigint(es10新增)
     // 1种引用类型，包括function、array、date等
-    ```
-
-    
-
-80. var let const 区别
-
-    ```js
-    // let 与 const 声明的全局变量不会挂载到顶层对象window的下面，但是var声明的全局变量会
-    // let 与 const 声明的变量不存在变量提升，var声明的变量会进行变量提升
-    // let 与 const 声明的变量不可重复声明，但是var声明的变量可以重复声明，但是后面的会覆盖前面的
-    // let 与 var 声明变量可以不立即进行赋值，但是const声明的变量必须立即进行赋值
-    
-    // 临时死区（TDZ  Temporal dead zone）
-    /* 
-    	let 与 const声明的变量不会被提升，如果在声明之前访问这些变量会报错。
-    这是因为JavaScript引擎在扫描代码发现变量声明时，要么将它们提升到作用域顶部（遇到var声明），要么将它们放在TDZ中（遇到let与const声明）。访问TDZ中的变量会触发报错。
-    只有执行过变量声明的语句之后，变量才会从TDZ中移除，然后才可以访问。
-    */
-    
-    // let在循环中会形成块级作用域
-    
-    // let到底有没有进行提升
-    let a = 1
-    {
-        a = 2
-        let a
-    }
-    // 上面的代码会报错，这也说明了let声明会进行提升，如果不会进行提升，那么a=2会将a=1修改，所以let提升了， 但是由于TDZ的存在，不能在let声明之前使用变量。
     ```
 
     
@@ -3875,30 +3740,13 @@ https://juejin.cn/post/6844903689702866952 防抖
 
      
 
-124. forEach中return有效果吗？如何终止forEach循环？
+119. forEach中return有效果吗？如何终止forEach循环？
 
      ```js
      // 在forEach中使用return无效
      // 解决办法
      // 1. 使用try监视代码块，在需要中断的地方抛出异常
      // 2. 官方推荐：用every和some方法替换forEach，every在遇到return false的时候退出循环，some在遇到return true的时候退出循环
-     ```
-
-     
-
-125. 箭头函数
-
-     ```js
-     箭头函数没有this，里面的this会指向当前最近的非箭头函数的this，找不到就是window（严格模式下是undefined）
-     let obj = {
-       a: function() {
-         let do = () => {
-           console.log(this);
-         }
-         do();
-       }
-     }
-     obj.a(); // 找到最近的非箭头函数a，a现在绑定着obj, 因此箭头函数中的this是obj
      ```
 
      
@@ -4435,7 +4283,7 @@ https://juejin.cn/post/6844903689702866952 防抖
 
      
 
-147. 说说js语言
+141. 说说js语言
 
      > js是一个解释型语言
      >
@@ -4465,81 +4313,7 @@ https://juejin.cn/post/6844903689702866952 防抖
      >
      > 解析：根据词法单元流（数组）构建ast抽象语法树，代表了程序的语法结构
      >
-     > 代码生成：将ast转换为可执行代码的过程被称为代码生成。简单来说就是有某种方法可以将var a = 2；的ast转化为一组机器指令。
-
-148. 说说严格模式有什么特点
-
-     > 优点：使用严格模式的好处是可以提早知道代码中存在的错误
-
-     ```js
-     // 1. 不允许创建没有声明的变量
-     a = 1 // 不允许，报错，非严格模式下，声明为全局变量
-     
-     // 2. 不能对变量调用delete删除符
-     let color = 'red'
-     delete color; // 报错
-     
-     // 3. 不能使用关键字、保留字命名变量，否则会报错
-     // 如：interface、yield、implements、static、let、var、const、package等等
-     
-     // 4. 如果一个对象的某一个属性的 configurable 为false，此时如果使用 delete 删除属性，会报错
-     'use strict';
-     let obj = {}
-     Object.defineProperty(obj, 'name', {
-         value: 'name',
-         configurable: false
-     })
-     
-     delete obj.name
-     
-     // 5. 如果给一个不可扩展属性的对象添加新的属性，在严格模式下报错
-     
-     // 6. 严格模式下，函数的形参名称不允许重复，否则报错，非严格模式下，不会报错，第二个会覆盖第一个
-     function add(num, num) {
-         console.log(num)
-     }
-     
-     // 7. 非严格模式下，修改函数的形参值，最终会反映到形参arguments，但是在严格模式下不会，保持独立
-     
-     'use strict';
-     function add(num) {
-         num = 2
-         console.log(num, arguments[0]) // 2, 1
-     }
-     add(1)
-     
-     // 8. 在严格模式下，调用arguments.callee（引用函数本身）报错
-     
-     // 9. 严格模式对函数名也做了限制，不允许使用关键字和保留字作为函数名
-     
-     // 10. 在严格模式下，eval不会在上下文中创建变量或者函数
-     'use strict';
-     function add(num) {
-         eval('var a = 10')
-         console.log(a) // 报错 读取不到 a
-     }
-     
-     // 11. 严格模式下，抑制this，非严格模式下，调用call传入null或者undefined作为第一个参数，内部this指向window，但是在严格模式下，内部this指向undefined
-     
-     // 12. 严格模式下不能用with语句
-     
-     // 13. 严格模式下，不允许使用八进制，会报错，严格模式下 调用parseInt解析八进制字符串的时候，会把八进制字符串当做十进制去解析
-     'use strict';
-     let value = 010;
-     console.log(value) // 报错
-     console.log(parseInt('010')) // 10 非严格模式下为 8
-     ```
-
-     
-
-149. delete运算符
-
-     ```js
-     // 删除不了变量
-     let color = 'red'
-     delete color
-     console.log(color) // red
-     ```
+     > 代码生成：将ast转换为可执行代码的过程被称为代码生成。简单来说就是有某种方法可以将var a = 2；的ast转化为一组机器指令
 
      
 
@@ -6035,7 +5809,7 @@ https://juejin.cn/post/6844903689702866952 防抖
      >       alert('点了我一下');
      >     }
      >   </script>
-     >       
+     >         
      >   // 另一种是，通过js将事件处理程序添加到元素属性上：
      >   // 示例二
      >   <div>点击一下</div>
@@ -6045,7 +5819,7 @@ https://juejin.cn/post/6844903689702866952 防抖
      >        alert('点了我一下');
      >     }
      >   </script>
-     >       
+     >         
      >   // DOM0级的事件监听，移除时只需将其属性设置为null即可。
      >   // 需要注意的是：DOM0级的事件监听，只能为其指定一个事件处理函数，当指定了多个，后者会把前面的覆盖。
      >   // 示例三
@@ -6068,17 +5842,17 @@ https://juejin.cn/post/6844903689702866952 防抖
      >
      >   ```js
      >   // IE的事件机制没有捕获阶段，事件流是非标准的，只有目标阶段和冒泡阶段。
-     >       
+     >         
      >   // 事件注册方式
      >   <button id="btn">点我</button>
      >   <script type="text/javascript">
-     >       
+     >         
      >   var target = document.getElementById("btn");
-     >       
+     >         
      >   target.attachEvent('onclick',function(){
      >           alert("我是button");
      >   });
-     >       
+     >         
      >   </script>
      >   // 与之对应的也有事件的移除函数 ：detachEvent() ；
      >   // 同样也有阻止事件冒泡的方法：首先获得event对象，e = window.event（可见IE中的event对象是个全局属性)，然后设置event的cancelBubble属性为true即可e.cancelBubble = true;
@@ -6094,10 +5868,10 @@ https://juejin.cn/post/6844903689702866952 防抖
      >   // 1. 捕获阶段：事件从Document对象沿着文档树向下传播给节点。如果目标的任何一个祖先专门注册了事件监听函数，那么在事件传播的过程中就会运行这些函数。（0级DOM事件模型处理没有捕获阶段）
      >   // 2. 目标阶段：下一个阶段发生在目标节点自身，直接注册在目标上的适合的事件监听函数将运行。（一般将此阶段看作冒泡阶段的一部分）
      >   // 3. 冒泡阶段：这个阶段事件将从目标元素向上传播回Document对象（与捕获相反的阶段）。虽然所有事件都受捕获阶段的支配，但并不是所有类型的事件都冒泡。
-     >       
+     >         
      >   // DOM2级事件绑定是使用addEventListener方法（IE使用attachEvent方法）：
      >   // 浏览器会给当前元素的某个事件行为开辟一个事件池（事件队列）【浏览器有一个统一的事件池，每个元素绑定的行为都放在这里，通过相关标志区分】，当我们通过addEventListener/attachEvent进行事件绑定的时候，会把绑定的方法放在事件池中；当元素的某一行为被触发，浏览器回到对应事件池中，把当前放在事件池的所有方法按序依次执行；
-     >       
+     >         
      >   // 示例四
      >   <div>
      >     <button>点击一下</button>
