@@ -1,47 +1,3 @@
-2. 节流
-
-   - 规定一个单位时间，在这个单位时间内，只能有一次触发事件的回调函数执行，如果在同一个单位时间内，某事件被触发多次，只能有一次生效。
-
-   - 适用场景：拖拽场景，固定时间内只执行一次，防止超高频次触发位置变动；缩放场景，监控浏览器resize。
-
-     ```html
-     <!-- 定时器实现 -->
-     function throttle(func, wait) {
-         let timeout;
-         return function () {
-             const context = this;
-             const args = arguments;
-             if (!timeout) {
-                     timeout = setTimeout(function () {
-                     timeout = null;
-                     func.apply(context, args)
-                 }, wait)
-             }
-         }
-     }
-     <!-- 时间戳实现 -->
-     function throttle(func, wait) {
-       let context, args;
-       let previous = 0;
-       return function () {
-         let now = +new Date();
-         context = this;
-         args = arguments;
-         if (now - previous > wait) {
-           func.apply(context, args);
-           previous = now;
-         }
-       }
-     }
-     let fn = function () {
-     	console.log('scroll');
-     }
-     let d = throttle(fn, 1000);
-     window.onscroll = function () {
-     	d();
-     }
-     ```
-
 
 2. 对闭包的看法，为什么要用闭包？说一下闭包原理以及应用场景？
 
@@ -1445,64 +1401,19 @@
     >
     > 如果拷贝的属性是基础类型，那么拷贝的是基础类型的值，如果属性是引用类型，那么拷贝的是属性的内存地址。
     >
-    > ```js
-    > // 方法1
-    > function shalldowCopy(obj) {
-    >     let result = {}
-    >     for (let k in obj) {
-    >         if (obj.hasOwnProperty(k)) {
-    >             result[k] = obj[k]
-    >         }
-    >     }
-    >     return result
-    > }
-    > // 方法2
-    > Object.assign()
-    > // 方法3
-    > ...
-    > // 方法4
-    > // 数组的concat
-    > ```
-    >
     > 
-    >
+    > 
     > **浅拷贝和赋值的区别**
-    >
-    > 赋值：`let b = a;`，这个时候是把a在栈中的地址赋值给b，此时a和b就指向了一块内存空间，它们二者之间是联动的。
-    >
-    > 赋值操作得到的结果和原数据指向同一对象。
-    >
-    > 浅拷贝：重新在堆中创建内存，拷贝前后对象的基本数据类型互不影响，拷贝前后对象的引用类型共享一块内存，会互相影响。 
-    >
+    >    
+    >    赋值：`let b = a;`，这个时候是把a在栈中的地址赋值给b，此时a和b就指向了一块内存空间，它们二者之间是联动的。
+    >    
+    >    赋值操作得到的结果和原数据指向同一对象。
+    >    
+    >    浅拷贝：重新在堆中创建内存，拷贝前后对象的基本数据类型互不影响，拷贝前后对象的引用类型共享一块内存，会互相影响。 
+    >    
     > 浅拷贝得到的结果和原数据不是指向同一对象。
-    >
-    > <hr>
-    > 深拷贝
-    >
-    > 将对象从内存中完整的拷贝一份出来，并且在堆中开辟一个新的区域存放这个新对象，修改原对象不会影响新对象，反之亦然。
-    >
-    > ```js
-    > // 方法1
-    > function deepCopy(obj) {
-    >     let result = {}
-    >     if (obj instanceof RegExp) return new RegExp(obj)
-    >     if (obj instanceof Date) return new Date(obj)
-    >     if (typeof obj !== 'object' || obj === null) return obj
-    >     for (let k in obj) {
-    >         if (obj.hasOwnProperty(k)) {
-    >             result[k] = deepCopy(obj[k])
-    >         }
-    >     }
-    >     return result
-    > }
-    > // 方法2
-    > JSON.parse(JSON.stringify()) // 但是这种方式有问题，遇到有日期类、函数类、正则类属性时，失效
-    > // 方法3
-    > $.extend()
-    > // 方法4
-    > lodash的deepClone
-    > ```
-
+    > 
+    
 40. instanceof
 
     > a instanceof b
@@ -1699,18 +1610,18 @@
     >    ```js
     >    // dom 元素移除，但 对 dom 元素的引用没有解除，会导致内存泄漏。
     >    // 解决办法：手工移除。elements.button = null
-    >                
+    >                   
     >    var elements = {
     >    	button: document.getElementById('button'),
     >    	image: document.getElementById('image')
     >    }
-    >                
+    >                   
     >    function doStuff() {
     >        image.src = 'http://some.url/image';
     >        button.click();
     >        console.log(text.innerHTML);
     >    }
-    >                
+    >                   
     >    function removeButton() {
     >        document.body.removeChild(document.getElementById('button'));
     >        // 虽然我们用removeChild移除了button, 但是还在elements对象里保存着#button的引用
@@ -5772,7 +5683,7 @@
      >       alert('点了我一下');
      >     }
      >   </script>
-     >           
+     >             
      >   // 另一种是，通过js将事件处理程序添加到元素属性上：
      >   // 示例二
      >   <div>点击一下</div>
@@ -5782,7 +5693,7 @@
      >        alert('点了我一下');
      >     }
      >   </script>
-     >           
+     >             
      >   // DOM0级的事件监听，移除时只需将其属性设置为null即可。
      >   // 需要注意的是：DOM0级的事件监听，只能为其指定一个事件处理函数，当指定了多个，后者会把前面的覆盖。
      >   // 示例三
@@ -5805,17 +5716,17 @@
      >
      >   ```js
      >   // IE的事件机制没有捕获阶段，事件流是非标准的，只有目标阶段和冒泡阶段。
-     >           
+     >             
      >   // 事件注册方式
      >   <button id="btn">点我</button>
      >   <script type="text/javascript">
-     >           
+     >             
      >   var target = document.getElementById("btn");
-     >           
+     >             
      >   target.attachEvent('onclick',function(){
      >           alert("我是button");
      >   });
-     >           
+     >             
      >   </script>
      >   // 与之对应的也有事件的移除函数 ：detachEvent() ；
      >   // 同样也有阻止事件冒泡的方法：首先获得event对象，e = window.event（可见IE中的event对象是个全局属性)，然后设置event的cancelBubble属性为true即可e.cancelBubble = true;
@@ -5831,10 +5742,10 @@
      >   // 1. 捕获阶段：事件从Document对象沿着文档树向下传播给节点。如果目标的任何一个祖先专门注册了事件监听函数，那么在事件传播的过程中就会运行这些函数。（0级DOM事件模型处理没有捕获阶段）
      >   // 2. 目标阶段：下一个阶段发生在目标节点自身，直接注册在目标上的适合的事件监听函数将运行。（一般将此阶段看作冒泡阶段的一部分）
      >   // 3. 冒泡阶段：这个阶段事件将从目标元素向上传播回Document对象（与捕获相反的阶段）。虽然所有事件都受捕获阶段的支配，但并不是所有类型的事件都冒泡。
-     >           
+     >             
      >   // DOM2级事件绑定是使用addEventListener方法（IE使用attachEvent方法）：
      >   // 浏览器会给当前元素的某个事件行为开辟一个事件池（事件队列）【浏览器有一个统一的事件池，每个元素绑定的行为都放在这里，通过相关标志区分】，当我们通过addEventListener/attachEvent进行事件绑定的时候，会把绑定的方法放在事件池中；当元素的某一行为被触发，浏览器回到对应事件池中，把当前放在事件池的所有方法按序依次执行；
-     >           
+     >             
      >   // 示例四
      >   <div>
      >     <button>点击一下</button>
