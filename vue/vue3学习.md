@@ -112,9 +112,61 @@ let fullName = computed({
 
 5. watch
 
-6. watchEffect
+vue3中可以使用 vue2的watch
 
-7. 自定义hook
+```js
+// vue3 ref
+watch('sum', (newValue, oldValue) => {})
+
+// 简写 这个时候 newValue oldValue 变成了一个数组
+watch(['sum', 'msg'], (newValue, oldValue) => {})
+
+// 立即执行
+watch('sum', () => {}, {
+    immediate: true
+})
+```
+
+
+
+watch监视 reactive 定义的数据
+
+此处无法正确获得  oldValue
+
+强制开启了深度监视，不用 deep: false 还可以监听
+
+监视某一个属性：
+
+watch(() => person.name, () => {})
+
+监视对象中的某些属性：
+
+```js
+watch([() => person.name, () => person.age], () => {})
+```
+
+
+
+```js
+person = {
+    name,
+    age,
+    job: {
+        a: {
+            salary
+        }
+    }
+}
+// job 嵌套过深，需要加 deep: true
+watch(() => person.job, () => {}, {deep: true})
+```
+
+
+
+
+
+5. watchEffect
+6. 自定义hook
 
 
 
