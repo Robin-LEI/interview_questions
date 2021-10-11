@@ -161,12 +161,30 @@ person = {
 watch(() => person.job, () => {}, {deep: true})
 ```
 
+watch(() => person.value, () => {})
 
+watch(() => person, () => {}, {deep: true})
 
 
 
 5. watchEffect
-6. 自定义hook
+
+它不说它监视谁
+
+```js
+watchEffect(() => {
+    // 这里面用到了谁 就监视谁
+})
+// 默认开启了 immediate
+```
+
+
+
+
+
+
+
+5. 自定义hook
 
 
 
