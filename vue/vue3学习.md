@@ -94,6 +94,13 @@ module.exports = {
 
 **ref 和 reactive 的区别?**
 
+- ref用来把基本数据类型（也可以把对象，但是不推荐）变成响应式
+- reactive用来把对象或数组类型变成响应式
+- ref通过 Object.defineProperty 的 get 和 set 方法来实现响应式
+- reactive 通过Proxy来实现响应式，并通过Reflect反射来操作源对象的内部数据
+- ref定义的数据，操作数据需要 .value，在模板中读取的时候不需要加 .value，因为vue已经默认帮助我们加了
+- reactive定义的数据，不管读取还是操作都不需要加 .value
+
 
 
 4. computed
@@ -173,18 +180,25 @@ watch(() => person, () => {}, {deep: true})
 
 ```js
 watchEffect(() => {
-    // 这里面用到了谁 就监视谁
+    // 这里面用到了哪个属性 就监视谁
 })
 // 默认开启了 immediate
+
+watchEffect有点像 computed
+但是computed注重的是计算出来的值，所以必须要写返回值
+watcherEffect更注重的是过程，所以不用写返回值
 ```
 
 
 
-
-
-
-
 5. 自定义hook
+
+- hook本质上是一个函数，文件的命名一般是 use 开头，比如 usePoint
+- 作用是把setup中的用到的 composition api 进行了封装
+- 方便代码的复用
+- 让setup中代码更加简洁，更容易维护
+
+
 
 
 
@@ -192,31 +206,68 @@ watchEffect(() => {
 
 
 
-toRef
+6. toRef
+
+- 不能直接采用 ref ，会导致数据分家了
+
+- toRef 创建一个ref对象，它的value值指向另外一个对象的某个属性
+- 语法：`const name = toRef(person, 'name')`
+- 应用场景就是 将响应式对象的某个属性单独暴露给外部使用，方便用户的操作
 
 
 
-toRefs
+7. toRefs
+
+- 批量处理
+
+- 方便了第一层
+- 语法：`toRefs(person)`
 
 
 
-shallowReactive
+8. shallowReactive
+
+- 只处理对象的第一层，变成响应式
+
+- 可以做性能上的优化
 
 
 
-readonly
+9. shallowRef
+
+- shallowRef 和 ref 如果都传入基本数据类型的时候，没有区别
+- 传入对象的时候，shallowRef 不会去处理变成响应式
+- 可以做性能上的优化，后续功能不会修改 obj 中的属性
 
 
 
-toRaw
+10. readonly 和 shallowReadonly
 
-markRaw
+- 语法：`readonly(person)`，数据不让改
+- shallowReadonly，只有第一层不让改
+- 二者接受的参数是 响应式的数据，也就是经过 ref 和 reactive 加工过的
+- 二者处理 基本数据类型 的时候没有区别
 
 
 
-customRef
+11. toRaw
 
-provide\inject
+- toRaw 还原回原始数据，只能处理 reactive 加工过的响应式数据，拿到对应的普通对象，对这个普通对象的操作不会引起页面的更新
+
+
+
+12. markRaw
+
+- 经过 markRaw 处理的对象数据，永远不会变成响应式
+- 应用场景：有些值不应该变成响应式的，比如复杂的第三方类库，如axios，当渲染具有不可变数据源的大列表时候，跳过响应式的转换可以提高性能
+
+
+
+13. customRef
+
+
+
+14. provide \ inject
 
 
 
