@@ -265,13 +265,77 @@ watcherEffect更注重的是过程，所以不用写返回值
 
 13. customRef
 
+自定义一个ref，借助于 api customRef，接受一个函数参数，这个函数有两个参数，一个是 track， 一个是 trigger，且这个函数返回一个对象，对象上需要包括get、set方法，get方法需要调用 track，通知vue追踪返回数据的变化，set方法接受一个参数 newValue，赋值给 value，并调用 trigger方法
+
+ref：精装
+
+customRef：毛坯
+
+用途：可以延迟更改页面数据显示
+
+```js
+<template>
+  <div>
+    <input type="text" v-model="keyword" />
+    <h3>{{ keyword }}</h3>
+  </div>
+</template>
+
+<script>
+import { customRef } from "vue";
+export default {
+  setup() {
+    function myRef(value) {
+      let timer;
+      return customRef((track, trigger) => {
+        return {
+          get() {
+            track();
+            return value;
+          },
+          set(newValue) {
+            if (timer) clearTimeout(timer);
+            timer = setTimeout(() => {
+              value = newValue;
+              trigger();
+            }, 500);
+          },
+        };
+      })
+    }
+
+    let keyword = myRef("vue3");
+
+    return {
+      keyword,
+    };
+  },
+};
+</script>
+```
+
+
+
 
 
 14. provide \ inject
 
+用于祖孙组件之间的通信。
+
+父组件有一个 provide 提供数据，子组件有一个 inject 选项来注入，使用这些数据。
 
 
-Fragment组件
+
+15. 响应式数据的判断
+
+1. isRef，检查一个值是否是一个 ref 对象
+2. isReactive，检查一个对象是否由 reactive 创建的代理对象
+3. isReadonly，检查是否经过readonly修饰变成的只读代理对象
+4. isProxy，检查一个对象是否经过 reactive 或 readonly 修饰
+
+
+
+16. Fragment组件
 
 - 在vue2中组件必须有一个根标签
 
@@ -281,7 +345,7 @@ Fragment组件
 
 
 
-Teleport组件
+17. Teleport组件
 
 - 可以把我们的组件 HTML结构 移动到指定位置
 
@@ -289,7 +353,7 @@ Teleport组件
 
 
 
-Suspense 组件
+18. Suspense 组件
 
 - 配合 defineAsyncComponent 定义一个异步组件api，配合 import 动态引入
 
