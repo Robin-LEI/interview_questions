@@ -39,3 +39,48 @@ vite 开发
 vite build 构建
 vite preview 预览
 ```
+
+npm init @vitejs/app name --template vue
+
+
+
+当冷启动开发服务器时，基于打包器的方式是在提供服务之前去急切地抓取和构建你的应用。
+
+vite只需要在浏览器请求源码的时候进行转换并按需提供源码，根据情景动态导入的代码，只需要在当前屏幕上实际使用的时候才会被处理。
+
+
+
+![](https://vitejs.cn/assets/bundler.37740380.png)
+
+如果改了其中的某一个模块，webpack会重新打包的
+
+![](https://vitejs.cn/assets/esm.3070012d.png)
+
+
+
+type='module'
+
+
+
+vite在开发环境不打包，那么产生这么多零散的文件会不会对浏览器产生阻塞呢？
+
+不会，http2 多路复用
+
+裸模块地址重写，不是裸模块，直接返回结果
+
+import xx from 'vue'
+
+import xx from '/@modules/vue'
+
+如果 请求url 以 /@modules/ 开头，需要去node_modules查找
+
+1. 拿到裸模块名称
+2. 根据这个名称去node_modules目录查找
+3. 从对应的包下的package.json中查找module字段对应的值
+4. 返回处理结果
+
+
+
+处理 sfc 请求
+
+读取vue文件，解析为js，主要经过代码生成，模板编译
