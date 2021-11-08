@@ -11,3 +11,25 @@ vue中事件绑定分为两种，一种是原生dom的绑定，一种是组件�
 <div @click="() => {}"></div>
 ```
 
+
+
+vue事件的绑定分为两种：
+
+1. 原生的事件绑定
+
+   ```js
+   <div @click="fn()"></div>
+   采用的是 addEventListener
+   ```
+
+   
+
+2. 组件的事件绑定
+
+   ```js
+   <my-component @click.native="fn" @click="fn1"></my- component>
+   
+   对于组件来说，采用的是 $on
+   ```
+
+   
